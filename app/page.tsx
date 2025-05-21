@@ -38,7 +38,7 @@ const Home = () => {
       <PortfolioSection />
       <OurServices />
       <LaunchSection />
-<StackingCards/>
+{/* <StackingCards/> */}
       <div style={{ textAlign: "left", width: "100%" }}>
         <FAQSection />
       </div>

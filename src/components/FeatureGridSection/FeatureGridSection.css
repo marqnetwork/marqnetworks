@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+.feature__section {
+  background: #000;
+  color: white;
+  padding: 4rem 2rem;
+  font-family: "Poppins", sans-serif;
+  text-align: left;
+}
+
+.feature__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Each card */
+.feature__card {
+  background: radial-gradient(
+    circle at bottom left,
+    rgba(0, 255, 149, 0.2),
+    #0a0a0a 60%,
+    #000 100%
+  );
+  border-radius: 16px;
+  padding: 1.5rem;
+  position: relative;
+  border: 1px solid #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.feature__card:hover {
+  transform: translateY(-4px);
+}
+
+/* Icon and Arrow */
+.feature__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feature__icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.feature__arrow {
+  font-size: 1rem;
+  color: #777;
+}
+
+/* Title and PRO badge */
+.feature__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.feature__title h4 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.feature__badge {
+  background: #36d576;
+  color: black;
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* Label and Description */
+.feature__label {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.feature__desc {
+  font-size: 0.85rem;
+  color: #888;
+  line-height: 1.6;
+  margin: 0;
+  text-align: left;
+}
+
+/* 📱 Small Screens */
+@media (max-width: 480px) {
+  .feature__section {
+    padding: 2rem 1rem;
+  }
+
+  .feature__title h4 {
+    font-size: 1rem;
+  }
+
+  .feature__desc {
+    font-size: 0.8rem;
+  }
+
+  .feature__badge {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+  }
+}
+
+/* 💻 Extra Large Screens */
+@media (min-width: 1280px) {
+  .feature__section {
+    padding: 6rem 4rem;
+  }
+
+  .feature__desc {
+    font-size: 0.95rem;
+  }
+
+  .feature__label {
+    font-size: 1rem;
+  }
+}
+
+/* 🖥️ Large Screens */
+@media (min-width: 1024px) {
+  .feature__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

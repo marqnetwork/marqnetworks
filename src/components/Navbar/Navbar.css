@@ -1,0 +1,103 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Poppins:wght@400;600&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar container styles */
+.navbar {
+    max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 0 4rem; */
+  height: 72px;
+  background-color: black;
+  color: white;
+  position: relative;
+  z-index: 100;
+  width: 100%;
+
+}
+
+/* Logo styling */
+.navbar__logo img {
+  height: 50px;
+}
+
+/* Menu list */
+.navbar__menu {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+.navbar__menu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar__menu li a:hover {
+  color: #ccc;
+}
+
+/* CTA Button styling */
+.navbar__button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.navbar__button:hover {
+  background-color: #45a049;
+}
+
+/* Hamburger icon */
+.navbar__hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .navbar__hamburger {
+    display: block;
+  }
+
+  .navbar__menu {
+    display: none;
+    position: absolute;
+    top: 72px;
+    right: 0;
+    background: black;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+
+  .navbar__menu--active {
+    display: flex;
+  }
+
+  .navbar__button {
+    display: none;
+  }
+}

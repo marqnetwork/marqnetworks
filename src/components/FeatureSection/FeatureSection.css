@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+
+.feature {
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 3rem;
+  flex-wrap: wrap;
+}
+
+/* Content */
+.feature__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.feature__tag {
+  background-color: #111;
+  color: #aaa;
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.feature__headline {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-family: "Poppins", sans-serif;
+  margin: 1.5rem 0;
+  font-weight:500;
+}
+
+.feature__headline span {
+  background: linear-gradient(90deg, #cccccc 0%, #999999 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.feature__description {
+  color: #aaa;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.feature__actions {
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Green Glow Button */
+.feature__button {
+  padding: 0.75rem 1.5rem;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 139, 0.6), 0 3px 6px rgba(0, 0, 139, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .feature {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .feature__content {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .feature__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .feature {
+    padding: 3rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .feature__headline {
+    font-size: 2rem;
+  }
+
+  .feature__description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .feature__button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature {
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .feature__headline {
+    font-size: 1.6rem;
+  }
+
+  .feature__description {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .feature__tag {
+    font-size: 0.8rem;
+    padding: 5px 12px;
+  }
+
+  .feature__button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}

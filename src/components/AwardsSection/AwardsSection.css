@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+.awards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 5rem 2rem;
+  background: #000;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Left column */
+.awards__left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.awards__tag {
+  background: #0a0f1a;
+  color: #ccc;
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.awards__left h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.awards__left h2 span {
+  color: #aaa;
+  font-weight: 400;
+}
+
+.awards__left p {
+  color: #aaa;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.awards__list {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+  list-style: none;
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  
+}
+
+
+.award__desc {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+}
+
+/* Right Grid */
+.awards__grid {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Award Card */
+.award__card {
+  background: linear-gradient(145deg, #0b0c11, #111118);
+  border-radius: 18px;
+  padding: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  border: 1px solid #1a1a1a;
+}
+
+.award__card img {
+  height: 30px;
+  object-fit: contain;
+  align-content: center;
+}
+
+.award__info h4 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.award__info p {
+  margin: 0;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* Count badge */
+.award__count {
+  position: absolute;
+  top: 180px;
+  right: 50px;
+  background: #0a0f1a;
+  color: #ccc;
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .awards {
+    flex-direction: column;
+  }
+
+  .awards__left {
+    text-align: center;
+  }
+
+  .awards__left h2 {
+    font-size: 2rem;
+  }
+
+  .awards__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+

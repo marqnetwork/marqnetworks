@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+.integration__section {
+  background: #000;
+  color: white;
+  padding: 4rem 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.integration__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Each card */
+.integration__card {
+  background: linear-gradient(to right, #1d2b1f, #103c1c);
+  border-radius: 16px;
+  padding: 1.5rem;
+  position: relative;
+  border: 1px solid #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.integration__card:hover {
+  transform: translateY(-4px);
+}
+
+/* Icon and Arrow */
+.card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.card__arrow {
+  font-size: 1rem;
+  color: #777;
+}
+
+/* Title and PRO badge */
+.card__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.card__title h4 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.pro__badge {
+  background: #36d576;
+  color: black;
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* Label and Description */
+.card__label {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.card__desc {
+  font-size: 0.85rem;
+  color: #888;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .integration__section {
+    padding: 2rem 1rem;
+  }
+
+  .card__title h4 {
+    font-size: 1rem;
+  }
+
+  .card__desc {
+    font-size: 0.8rem;
+  }
+
+  .pro__badge {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+  }
+}
+
+/* 💻 Extra Large Screens */
+@media (min-width: 1280px) {
+  .integration__section {
+    padding: 6rem 4rem;
+  }
+
+  .card__desc {
+    font-size: 0.95rem;
+  }
+
+  .card__label {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .integration__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

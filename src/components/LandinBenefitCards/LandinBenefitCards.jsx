@@ -14,7 +14,7 @@ const LandinBenefitCards = () => {
         </p>
         <div className="button-group">
           <button className="primary-btn">Book an Appointment</button>
-          <button className="secondary-btn">What is Landin?</button>
+          <button className="secondary-btn3">What is Landin?</button>
         </div>
       </div>
 

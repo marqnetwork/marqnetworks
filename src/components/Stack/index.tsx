@@ -4,24 +4,9 @@ import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 
 const cards = [
-  {
-    id: 1,
-    title: "Card One",
-    description: "This is the first card in our stacking sequence.",
-    color: "bg-rose-400",
-  },
-  {
-    id: 2,
-    title: "Card Two",
-    description: "As you scroll, this card will stack on top of the first one.",
-    color: "bg-amber-400",
-  },
-  {
-    id: 3,
-    title: "Card Three",
-    description: "Keep scrolling to see this card stack on top.",
-    color: "bg-emerald-400",
-  }
+  { id: 1, image: "images/watch.png" },
+  { id: 2, image: "images/cap.png" },
+  { id: 3, image: "images/spray.png" }
 ]
 
 export default function StackingCards() {
@@ -35,7 +20,7 @@ export default function StackingCards() {
       style={{ height: containerHeight }}
     >
       <div className="sticky top-0 h-screen flex items-center justify-center">
-        <div className="relative w-full max-w-5xl mx-auto h-[70vh]">
+        <div className="relative w-full max-w-5xl mx-auto h-[90vh]"> {/* Increased height */}
           {cards.map((card, index) => (
             <CardItem 
               key={card.id} 
@@ -57,52 +42,52 @@ function CardItem({ card, index, totalCards, containerRef }: any) {
     offset: ["start end", "end start"],
   })
 
-  // Smooth animation ranges
   const cardStart = index / totalCards
   const cardEnd = (index + 1) / totalCards
-  
-  // Stacking effect with 20px overlap
+
   const stackOffset = `${index * 20}px`
 
-  const y = useTransform(
-    scrollYProgress,
-    [cardStart, cardEnd],
-    ["100%", stackOffset]
-  )
-
-  const scale = useTransform(
-    scrollYProgress,
-    [cardStart, cardEnd],
-    [0.95, 1]
-  )
-
-  const opacity = useTransform(
-    scrollYProgress,
-    [cardStart, cardStart + 0.2],
-    [0, 1]
-  )
-
+  const y = useTransform(scrollYProgress, [cardStart, cardEnd], ["100%", stackOffset])
+  const scale = useTransform(scrollYProgress, [cardStart, cardEnd], [0.95, 1])
+  const opacity = useTransform(scrollYProgress, [cardStart, cardStart + 0.2], [0, 1])
   const zIndex = index + 1
 
   return (
     <motion.div
-      className={`absolute inset-0 rounded-2xl ${card.color} shadow-xl p-8 flex flex-col justify-between`}
-      style={{
-        y,
-        scale,
-        opacity,
-        zIndex,
-      }}
+      className="absolute inset-0 bg-neutral-900 rounded-2xl shadow-xl p-6 flex flex-col justify-between"
+      style={{ y, scale, opacity, zIndex }}
       transition={{ type: "spring", damping: 20, stiffness: 100 }}
     >
-      <div>
-        <h2 className="text-3xl font-bold text-white mb-2">{card.title}</h2>
-        <p className="text-white/90 text-lg">{card.description}</p>
-      </div>
-      <div className="self-end">
-        <span className="text-white/70 text-xl font-medium">
-          {index + 1}/{totalCards}
-        </span>
+      {/* Image Section */}
+      {card.image && (
+        <img 
+          src={card.image} 
+          alt="Card Image"
+          className="w-full rounded-xl object-cover h-[550px] mb-6" // Increased height
+        />
+      )}
+
+      {/* Footer Section */}
+      <div className="w-full bg-[#0a0a0a] text-white p-4 rounded-xl shadow-inner border border-neutral-800">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          
+          <div className="text-sm md:text-base font-medium">
+            Way Fields • <span className="text-neutral-400">2024</span>
+          </div>
+
+          <div className="flex-1 w-full max-w-md h-3 bg-neutral-800 rounded-full overflow-hidden">
+            <div className="h-full bg-green-500 rounded-full" style={{ width: "80%" }}></div>
+          </div>
+
+          <div className="flex gap-2">
+            <button className="px-4 py-1 text-sm rounded-lg bg-neutral-800 border border-neutral-700 hover:bg-neutral-700 transition">
+              E-Commerce
+            </button>
+            <button className="px-4 py-1 text-sm rounded-lg bg-neutral-800 border border-neutral-700 hover:bg-neutral-700 transition">
+              Portfolio
+            </button>
+          </div>
+        </div>
       </div>
     </motion.div>
   )

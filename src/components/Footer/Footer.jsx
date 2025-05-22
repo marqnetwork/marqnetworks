@@ -3,6 +3,7 @@ import './Footer.css';
 
 const Footer = () => {
   return (
+    <div className='bg-[#000]'>
     <footer className="footer">
       <div className="footer__top">
         {/* Left */}
@@ -73,6 +74,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </div>
   );
 };
 

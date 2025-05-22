@@ -141,14 +141,16 @@ background-size: cover;
   border-radius: 8px;
   color: white;
   font-weight: 500;
+  margin:10px 0px;
 }
 
 .service-card__features {
   list-style: none;
   padding: 0;
   display: flex;
+  margin-top:10px;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 2rem;
   text-align: left;
 }
 

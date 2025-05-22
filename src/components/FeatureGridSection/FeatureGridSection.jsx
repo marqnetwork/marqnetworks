@@ -64,7 +64,7 @@ const FeatureSection = () => {
       <div className="feature__grid">
         {cards.map(({ id, icon, name, label, description, pro }) => (
           <div key={id} className="feature__card">
-            <div className="card__top">
+            <div className="flex justify-between">
               <img src={icon} alt={name} className="card__icon" />
               <span className="card__arrow">↗</span>
             </div>

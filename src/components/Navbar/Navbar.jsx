@@ -10,9 +10,9 @@ const Navbar = () => {
   };
 
   return (
-    
+    <div className='bg-[#000]'>
     <nav className="navbar">
-      {/* Logo */}
+     
       <div className="navbar__logo">
         <img src="/images/logo.png" alt="Logo" />
       </div>
@@ -34,6 +34,7 @@ const Navbar = () => {
       {/* CTA Button */}
       <button className="navbar__button">Get in Touch</button>
     </nav>
+    </div>
   );
 };
 

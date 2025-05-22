@@ -1,6 +1,8 @@
 .explore-section {
   padding: 1rem 2rem;
   text-align: center;
+ background-color: black;
+  /* background: #000; */
 }
 
 .explore-container {
@@ -16,6 +18,10 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.explore-heading{
+  color: #fff;
 }
 
 .explore-tag {

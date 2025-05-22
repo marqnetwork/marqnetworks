@@ -26,9 +26,10 @@ const Navbar = () => {
       <ul className={`navbar__menu ${isMenuOpen ? 'navbar__menu--active' : ''}`}>
         <li><a href="/">Home</a></li>
         <li><a href="/About">About</a></li>
+        <li><a href="/Solutions">Solutions</a></li>
         <li><a href="/Portfolio">Portfolio</a></li>
         <li><a href="/Contact">Contact</a></li>
-        <li><a href="/Faq">FAQ</a></li>
+        <li><a href="/Faq">Blog</a></li>
       </ul>
 
       {/* CTA Button */}

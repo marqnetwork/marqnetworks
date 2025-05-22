@@ -18,15 +18,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* <Provider store={store}>
-          <PersistGate loading={null} persistor={persistor}> */}
+    
             <Navbar />
-            <Footer/>
+            
           
 
             {children}
-          {/* </PersistGate>
-        </Provider> */}
+            <Footer/>
+          
       </body>
     </html>
   );

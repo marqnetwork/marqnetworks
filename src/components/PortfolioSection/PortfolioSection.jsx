@@ -4,6 +4,7 @@ import React from 'react';
 import './PortfolioSection.css'; // new CSS file
 import { motion } from "framer-motion";
 import PortfolioSlider from '../PortfolioSlider/PortfolioSlider';
+import StackingCards from '../Stack';
 
 const PortfolioSection = () => {
   return (
@@ -32,7 +33,9 @@ const PortfolioSection = () => {
         <br />
         <br />
 
-        <PortfolioSlider/>
+        {/* <PortfolioSlider/> */}
+              <StackingCards/>
+        
       </div>
     </section>
   );

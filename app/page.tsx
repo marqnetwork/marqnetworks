@@ -17,6 +17,7 @@ import JoinUsNow from "@/components/JoinUsNow/JoinUsNow";
 // import Footer from '@/components/Footer/Footer'
 import FAQSection from "@/components/FAQSection/FAQSection";
 import LandinBenefitCards from "@/components/LandinBenefitCards/LandinBenefitCards";
+import StackingCards from "@/components/Stack";
 // import StackingCards from "@/components/StickyCards";
 // import "./page.css";
 
@@ -38,8 +39,12 @@ const Home = () => {
       <LandinBenefits />
       <LandinBenefitCards />
       <PortfolioSection />
+
+      {/* <StackingCards/> */}
       <OurServices />
       <LaunchSection />
+
+
 {/* <StackingCards/> */}
       <div style={{ textAlign: "left", width: "100%" }}>
         <FAQSection />

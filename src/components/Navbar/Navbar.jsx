@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import './Navbar.css';
 
@@ -24,10 +25,10 @@ const Navbar = () => {
       {/* Navigation Links */}
       <ul className={`navbar__menu ${isMenuOpen ? 'navbar__menu--active' : ''}`}>
         <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/portfolio">Portfolio</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/About">About</a></li>
+        <li><a href="/Portfolio">Portfolio</a></li>
+        <li><a href="/Contact">Contact</a></li>
+        <li><a href="/Faq">FAQ</a></li>
       </ul>
 
       {/* CTA Button */}

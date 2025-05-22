@@ -10,13 +10,13 @@ const ClassicSkillSection = () => {
 
             <div className="classic-skill__content">
                 <span className="classic-skill__tag">• About marQ</span>
-                <h2 className="classic-skill__headline">
-                   An Agency Where <br />
+                <h2 className=" text-[60px] text-base/16 ">
+                   An Agency Where
                     <span> Craft  Meets  Code.</span>
                 </h2>
 
                 <h4>Your Growth, Our Benchmark</h4>
-                <p className="classic-skill__description">
+                <p className="text-[16px]">
                 marQ Networks embeds with your team to unlock the KPIs that really<br />
                 matter—revenue, retention, and runway.
                 </p>

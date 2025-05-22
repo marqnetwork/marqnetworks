@@ -9,6 +9,7 @@ const Navbar = () => {
   };
 
   return (
+    
     <nav className="navbar">
       {/* Logo */}
       <div className="navbar__logo">

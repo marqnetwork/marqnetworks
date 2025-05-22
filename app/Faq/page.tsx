@@ -1,10 +1,10 @@
 "use client";
 import React from 'react'
-import FieldsStudio from '../../components/FieldsStudio/FieldsStudio'
-import Gallery from '../../components/Gallery/Gallery'
-import JoinUsNow from '../../components/JoinUsNow/JoinUsNow'
-import AnalysisSection from '../../components/AnalysisSection/AnalysisSection'
-import AnalysisSection2 from '../../components/AnalysisSection2/AnalysisSection2'
+import FieldsStudio from '@/components/FieldsStudio/FieldsStudio'
+import Gallery from '@/components/Gallery/Gallery'
+import JoinUsNow from '@/components/JoinUsNow/JoinUsNow'
+import AnalysisSection from '@/components/AnalysisSection/AnalysisSection'
+import AnalysisSection2 from '@/components/AnalysisSection2/AnalysisSection2'
 
 const Faq = () => {
   return (

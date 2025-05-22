@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import FieldsStudio from '../../components/FieldsStudio/FieldsStudio'
 import Gallery from '../../components/Gallery/Gallery'

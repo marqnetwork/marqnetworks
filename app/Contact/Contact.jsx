@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import './Contact.css'
 import ExplorePortfolio from '../../components/ExplorePortfolio/ExplorePortfolio'

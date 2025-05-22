@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import ExplorePortfolio from '../../components/ExplorePortfolio/ExplorePortfolio'
 import FAQSection from '../../components/FAQSection/FAQSection'

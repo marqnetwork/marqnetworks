@@ -15,7 +15,7 @@ import JoinUsNow from "@/components/JoinUsNow/JoinUsNow";
 // import Footer from '../../components/Footer/Footer'
 import FAQSection from "@/components/FAQSection/FAQSection";
 import LandinBenefitCards from "@/components/LandinBenefitCards/LandinBenefitCards";
-import StackingCards from "@/components/StickyCards";
+// import StackingCards from "@/components/StickyCards";
 // import "./page.css";
 
 const Home = () => {

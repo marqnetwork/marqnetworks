@@ -8,9 +8,12 @@ body {
 }
 
 .team-members {
-  padding: 4rem 2rem;
+ 
   display: flex;
   justify-content: center;
+  max-width: 1200px;
+  margin:0 auto;
+
 }
 
 .team-members__grid {

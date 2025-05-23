@@ -5,37 +5,37 @@ const teamMembers = [
   {
     name: "Daniel Reed",
     role: "Co-Founder, CEO",
-    image: "/images/boy.jpg",
+    image: "/images/boy1.png",
     linkedin: "https://www.linkedin.com/in/danielreed",
   },
   {
     name: "James Turner",
     role: "Developer, Tech Lead",
-    image: "/images/girl.jpeg",
+    image: "/images/boy2.png",
     linkedin: "https://www.linkedin.com/in/jamesturner",
   },
   {
     name: "Michael Carter",
     role: "Marketing Organizer",
-    image: "/images/boy.jpg",
+    image: "/images/boy3.png",
     linkedin: "https://www.linkedin.com/in/michaelcarter",
   },
   {
     name: "William Scott",
     role: "Designer, Art Lead",
-    image: "/images/girl.jpeg",
+    image: "/images/boy4.png",
     linkedin: "https://www.linkedin.com/in/williamscott",
   },
   {
     name: "Ethan Mitchell",
     role: "UX/UI Specialist",
-    image: "/images/boy.jpg",
+    image: "/images/boy5.png",
     linkedin: "https://www.linkedin.com/in/ethanmitchell",
   },
   {
     name: "Isabella Hughes",
     role: "Content Creator, Writer",
-    image: "/images/girl.jpeg",
+    image: "/images/girl6.png",
     linkedin: "https://www.linkedin.com/in/isabellahughes",
   },
 ];

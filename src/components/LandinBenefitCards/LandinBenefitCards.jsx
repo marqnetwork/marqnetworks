@@ -55,9 +55,9 @@ const LandinBenefitCards = () => {
       </div>
 
       {/* Publish in Seconds */}
-      <div className="benefit-card small top">
-        <img src="/images/card3.png" alt="Publish in Seconds" />
-        <h4>Off-Shore Excellence Hub</h4>
+      <div className="benefit-card small top extra">
+        <img src="/images/card1.png" alt="Publish in Seconds" />
+        <h4 className=''>Off-Shore Excellence Hub</h4>
         <p>
           U.S.-friendly hours + global talent. Get senior expertise at 30-40 % savings, with an on-shore PM bridging every call.
         </p>

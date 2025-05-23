@@ -102,8 +102,8 @@
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.3s ease;
-    background-color: #56B84880; /* same semi-transparent green */
- box-shadow: 0 10px 25px #56B84880;
+    
+ box-shadow: 0 5px 15px #4CAF50;
 }
 
 .about__button:hover {

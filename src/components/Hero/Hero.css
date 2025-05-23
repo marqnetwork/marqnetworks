@@ -113,12 +113,19 @@
     justify-content: center;
   }
 
+  .hero__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .hero__content {
     max-width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
   }
 
   .hero__content h1 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     text-align: center;
   }
 
@@ -134,9 +141,19 @@
   }
 
   .primary-btn,
-  .secondary-btn {
+  .secondary-btn2 {
     width: 100%;
     max-width: 300px;
+  }
+
+  .hero__image {
+    justify-content: center;
+    margin-bottom: 0;
+  }
+
+  .hero__image img {
+    width: 100%;
+    max-width: 400px;
   }
 }
 
@@ -146,10 +163,19 @@
   }
 
   .hero__content h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .hero__content p {
     font-size: 0.95rem;
+  }
+
+  .hero__buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .hero__image img {
+    max-width: 300px;
   }
 }

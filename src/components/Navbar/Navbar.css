@@ -79,6 +79,11 @@ body {
 
 /* Responsive styling */
 @media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
   .navbar__hamburger {
     display: block;
   }
@@ -92,6 +97,9 @@ body {
     flex-direction: column;
     width: 100%;
     padding: 1rem 2rem;
+    z-index: 99;
+    align-items: center;
+    text-align: center;
   }
 
   .navbar__menu--active {

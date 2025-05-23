@@ -8,13 +8,13 @@ const ToolsSection = () => {
         <span className="tools__tag">• Tools</span>
 
         <h2 className="tools__headline">
-          Tools and Technologies<br />
-          <span>Powering our Productivity</span>
+         Our Proven Tech Arsenal<br />
+          <span>Tailored to Every Business Stage</span>
         </h2>
 
         <p className="tools__description">
-         Our toolkit is made up of the latest and most reliable tech to ensure  <br />
-          your project is executed to perfection. 
+         From idea to enterprise rollout, marQ Networks selects the perfect stack <br />
+         so your strategy, design, code, growth, and scale run on best-in-class tools.
         </p>
 
         <div className="tools__actions">

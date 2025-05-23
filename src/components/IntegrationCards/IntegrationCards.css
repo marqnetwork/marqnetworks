@@ -82,6 +82,7 @@
   color: #888;
   line-height: 1.6;
   margin: 0;
+  text-align: justify;
 }
 
 @media (max-width: 480px) {

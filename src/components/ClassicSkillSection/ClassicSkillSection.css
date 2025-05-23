@@ -85,7 +85,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.3s ease;
-  box-shadow: 0 10px 25px rgba(0, 0, 139, 0.6), 0 3px 6px rgba(0, 0, 139, 0.2);
+  box-shadow: 0 5px 15px #4CAF50;
 }
 
 .classic-skill__rating {

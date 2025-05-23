@@ -34,6 +34,25 @@
   transition: transform 0.3s ease;
 }
 
+.feature__card::before {
+  content: "";
+  position: absolute;
+  top: -5;
+  left: 20%;
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 255, 149, 0.8),
+    transparent
+  );
+  filter: blur(6px);
+  z-index: 1;
+}
+
+
+
 .feature__card:hover {
   transform: translateY(-4px);
 }

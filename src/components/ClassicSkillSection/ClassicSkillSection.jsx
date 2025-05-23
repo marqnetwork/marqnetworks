@@ -16,7 +16,7 @@ const ClassicSkillSection = () => {
                 </h2>
 
                 <h4>Your Growth, Our Benchmark</h4>
-                <p className="text-[16px]">
+                <p className="text-[#aaa] text-[0.9rem] font-light leading-[1.8] mb-8 text-left">
                 marQ Networks embeds with your team to unlock the KPIs that really<br />
                 matter—revenue, retention, and runway.
                 </p>

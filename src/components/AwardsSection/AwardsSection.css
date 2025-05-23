@@ -4,10 +4,12 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  padding: 5rem 2rem;
+   max-width: 1200px;
+  margin:0 auto;
   background: #000;
   color: #fff;
   font-family: 'Poppins', sans-serif;
+  padding: 4rem 3rem;
 }
 
 /* Left column */

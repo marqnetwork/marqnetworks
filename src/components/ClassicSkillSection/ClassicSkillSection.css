@@ -7,11 +7,14 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  /* gap: 3rem; */
-  /* padding: 4rem 2rem; */
+
+  padding: 4rem 3rem;
+ 
   flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
+   max-width: 1200px;
+  
 }
 
 .classic-skill__image img {

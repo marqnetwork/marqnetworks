@@ -16,7 +16,7 @@
     #0a0a0a 60%,
     #000 100%
   );
-  box-shadow: 0 0 30px rgba(0, 255, 150, 0.05);
+  box-shadow: 0 4 30px rgba(0, 255, 150, 0.05);
   border-radius: 16px;
   padding: 20px;
   color: #fff;
@@ -30,6 +30,7 @@
   border: 1px solid rgba(0, 255, 136, 0.08);
   /* box-shadow: 0 0 24px rgba(0, 255, 136, 0.04); */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height:100%;
 }
 
 .benefit-card:hover {
@@ -48,10 +49,14 @@
   max-width: 820px;
 }
 
-.benefit-card.small {
-  min-height: 230px;
+.benefit-card.small.top {
+  /* min-height: 230px; */
+  margin-top:-240px;
 }
-
+.benefit-card.small.top img{
+  height:370px;
+  object-fit: cover;
+}
 .card-header {
   display: flex;
   justify-content: space-between;

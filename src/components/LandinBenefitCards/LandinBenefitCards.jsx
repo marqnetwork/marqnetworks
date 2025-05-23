@@ -55,7 +55,7 @@ const LandinBenefitCards = () => {
       </div>
 
       {/* Publish in Seconds */}
-      <div className="benefit-card small">
+      <div className="benefit-card small top">
         <img src="/images/card3.png" alt="Publish in Seconds" />
         <h4>Off-Shore Excellence Hub</h4>
         <p>

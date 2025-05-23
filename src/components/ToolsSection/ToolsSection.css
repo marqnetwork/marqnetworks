@@ -86,3 +86,34 @@ box-shadow: 0 5px 15px #4CAF50;
     align-items: center;
   }
 }
+
+@media (max-width: 480px) {
+  .tools {
+    padding: 3rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .tools__headline {
+    font-size: 1.8rem;
+  }
+
+  .tools__description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .tools__tag {
+    font-size: 0.75rem;
+    padding: 5px 12px;
+  }
+
+  .tools__button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .tools__actions {
+    gap: 1rem;
+  }
+}
+

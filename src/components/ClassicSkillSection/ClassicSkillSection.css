@@ -165,3 +165,64 @@
     align-items: center;
   }
 }
+
+@media (max-width: 480px) {
+  .classic-skill {
+    padding: 2rem 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .classic-skill__image img {
+    height: 250px;
+    border-radius: 20px;
+  }
+
+  .classic-skill__content {
+    max-width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .classic-skill__tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .classic-skill__content h2 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .classic-skill__content h4 {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .classic-skill__description,
+  .classic-skill__content p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    padding: 0 0.5rem;
+  }
+
+  .classic-skill__actions {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .classic-skill__button {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .classic-skill__stars {
+    font-size: 1rem;
+  }
+
+  .classic-skill__reviews {
+    font-size: 0.75rem;
+  }
+}

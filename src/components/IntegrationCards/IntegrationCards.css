@@ -3,8 +3,10 @@
 .integration__section {
   background: #000;
   color: white;
-  padding: 4rem 2rem;
+  /* padding: 4rem 2rem; */
   font-family: 'Poppins', sans-serif;
+  max-width:1200px;
+  margin:0 auto;  
 }
 
 .integration__grid {
@@ -15,7 +17,14 @@
 
 /* Each card */
 .integration__card {
-  background: linear-gradient(to right, #1d2b1f, #103c1c);
+  /* background: linear-gradient(to right, #1d2b1f, #103c1c);
+   */
+    background: radial-gradient(
+    circle at bottom left,
+    rgba(0, 255, 149, 0.2),
+    #0a0a0a 80%,
+    #000 100%
+  );
   border-radius: 16px;
   padding: 1.5rem;
   position: relative;
@@ -55,7 +64,9 @@
   gap: 0.5rem;
   font-weight: 600;
 }
-
+.awards__list{
+  list-style-type:disc;
+}
 .card__title h4 {
   font-size: 1.1rem;
   margin: 0;
@@ -107,7 +118,7 @@
 /* 💻 Extra Large Screens */
 @media (min-width: 1280px) {
   .integration__section {
-    padding: 6rem 4rem;
+    padding: 6rem 0rem;
   }
 
   .card__desc {

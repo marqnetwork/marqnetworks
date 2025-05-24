@@ -9,8 +9,8 @@ const LandinBenefitCards = () => {
         <img src="/images/card1.png" alt="Unlimited Requests" />
         <h3>Submit Unlimited Requests</h3>
         <p>
-           Fire off as many tasks as you like—design, dev, or copy. Your dedicated pod works through them in your chosen priority, no tickets lost.
-
+          Enjoy the freedom to submit unlimited requests without any restrictions.
+          Whether you need design tweaks, we’re here to assist you at every step.
         </p>
         <div className="button-group">
           <button className="primary-btn">Book an Appointment</button>
@@ -19,26 +19,15 @@ const LandinBenefitCards = () => {
       </div>
 
       {/* Requests & Revisions */}
-      <div className="benefit-card">
+      <div className="benefit-card medium">
         <img src="/images/card1.png" alt="Requests & Revisions" />
         <div className="card-header">
           <h4>Requests & Revisions</h4>
           <span className="pill">NEW</span>
         </div>
         <p>
-          Every deliverable includes built-in feedback rounds. We refine fast, documenting changes so you see progress—not guesswork.
-        </p>
-      </div>
-
-      {/* Worry Free Pricing */}
-      <div className="benefit-card">
-        <img src="/images/card1.png" alt="Worry Free Pricing" />
-        <div className="card-header">
-          <h4> Lightning-Fast Turnaround</h4>
-          <span className="pill">NEW</span>
-        </div>
-        <p>
-          Our follow-the-sun workflow ships polished assets in a day or two, keeping your launches ahead of schedule.
+          Our process includes multiple rounds of requests and revisions, ensuring
+          that your feedback is incorporated and that the final product meets your expectations.
         </p>
       </div>
 
@@ -46,20 +35,35 @@ const LandinBenefitCards = () => {
       <div className="benefit-card small">
         <img src="/images/card2.png" alt="Quick Turnaround" />
         <div className="card-header">
-          <h4>Worry-Free Pricing</h4>
+          <h4>Quick Turnaround</h4>
           <span className="pill">NEW</span>
         </div>
         <p>
-          Flexible monthly plans cover strategy, design, and code. Cancel anytime, own every file—no hidden fees or hourly overages.
+          We prioritize efficiency without compromising quality.
         </p>
       </div>
 
       {/* Publish in Seconds */}
-      <div className="benefit-card small top extra">
-        <img src="/images/card1.png" alt="Publish in Seconds" />
-        <h4 className=''>Off-Shore Excellence Hub</h4>
+      <div className="benefit-card small">
+        <img src="/images/card2.png" alt="Publish in Seconds" />
+        <div className="card-header">
+          <h4>Publish in Seconds</h4>
+        </div>
         <p>
-          U.S.-friendly hours + global talent. Get senior expertise at 30-40 % savings, with an on-shore PM bridging every call.
+          Publish your site in seconds with our streamlined process.
+        </p>
+      </div>
+
+      {/* Worry-Free Pricing */}
+      <div className="benefit-card smallx">
+        <img src="/images/card1.png" alt="Worry-Free Pricing" />
+        <div className="card-header">
+          <h4>Worry-Free Pricing</h4>
+          <span className="pill">NEW</span>
+        </div>
+        <p>
+          Whether you’re just starting or scaling up, our flexible pricing plans
+          are designed to fit your needs and budget.
         </p>
       </div>
     </div>

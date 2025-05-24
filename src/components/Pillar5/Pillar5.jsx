@@ -16,6 +16,12 @@ const steps = [
     desc: "Streamline ops with backend bots, Zapier/Make integrations, and custom APIs.",
     icon: "/images/solutionlogo.png",
     image: "/images/Villa.png"
+  },
+   {
+    title: "Automation Workflows",
+    desc: "Streamline ops with backend bots, Zapier/Make integrations, and custom APIs.",
+    icon: "/images/solutionlogo.png",
+    image: "/images/Villa.png"
   }
 ];
 
@@ -32,20 +38,20 @@ const Pillar5 = () => {
           transition={{ duration: 1.2, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.5 }}
         >
-          AI & Automation Enablement
+          Off-Shore Excellence Hub (operating model)
         </motion.h2>
 
         <p className="solution-pillars__description">
-          We design and deploy intelligent workflows that reduce manual work, enhance decisions, and scale support.
+          Align teams, de-risk spend, and launch initiatives with a proven 90-day execution map.
         </p>
 
-        <ul className="solution-pillars__list">
-          <li>AI agent design (OpenAI, LangChain, RAG)</li>
-          <li>Internal tools with GPT copilots</li>
-          <li>Ops automation (Zapier, Make, APIs)</li>
-          <li>Support bots & knowledge bases</li>
-          <li>Analytics & ROI tracking dashboards</li>
-        </ul>
+      <ul className="solution-pillars__list">
+  <li>EST-aligned project manager</li>
+  <li>24/7 design / dev velocity</li>
+  <li>Flat-rate or fixed-bid pods</li>
+  <li>45-day website guarantee</li>
+</ul>
+
 
         <button className="solution-pillars__cta-button">Book an Appointment</button>
         <p className="solution-pillars__footer">MarQ Consultancy</p>
@@ -76,7 +82,7 @@ const Pillar5 = () => {
       </div>
 
       <div className="solution-pillars__right">
-        <img src="/images/pillar1img.png" alt="AI & Automation" />
+        <img src="/images/pillar5img.png" alt="AI & Automation" />
       </div>
     </section>
   );

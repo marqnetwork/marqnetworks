@@ -38,20 +38,21 @@ const Pillar3 = () => {
           transition={{ duration: 1.2, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.5 }}
         >
-          Full-Stack Engineering & DevOps
+          Custom Software & Automation
         </motion.h2>
 
         <p className="solution-pillars__description">
-          Build secure, scalable software with AI, custom APIs, and modern infrastructure.
+         Align teams, de-risk spend, and launch initiatives with a proven 90-day execution map.
         </p>
 
-        <ul className="solution-pillars__list">
-          <li>React & Next.js frameworks</li>
-          <li>Custom AI & automation tools</li>
-          <li>Backend APIs & database design</li>
-          <li>DevOps & cloud architecture</li>
-          <li>QA, CI/CD & performance tuning</li>
-        </ul>
+      <ul className="solution-pillars__list">
+  <li>API, ERP, CRM integrations</li>
+  <li>A1 & RPA process automation</li>
+  <li>Cloud migration & DevOps</li>
+  <li>Change-management playbooks</li>
+  <li>Funnel architecture & CRO</li>
+</ul>
+
 
         <button className="solution-pillars__cta-button">Book an Appointment</button>
         <p className="solution-pillars__footer">MarQ Consultancy</p>
@@ -82,7 +83,7 @@ const Pillar3 = () => {
       </div>
 
       <div className="solution-pillars__right">
-        <img src="/images/pillar1img.png" alt="Engineering Strategy" />
+        <img src="/images/pillar3img.png" alt="Engineering Strategy" />
       </div>
     </section>
   );

@@ -16,6 +16,12 @@ const steps = [
     desc: "We turn insights into high-converting UIs, landing pages, and onboarding flows.",
     icon: "/images/solutionlogo.png",
     image: "/images/Villa.png"
+  },
+    {
+    title: "Product-Led Growth Assets",
+    desc: "We turn insights into high-converting UIs, landing pages, and onboarding flows.",
+    icon: "/images/solutionlogo.png",
+    image: "/images/Villa.png"
   }
 ];
 
@@ -32,20 +38,20 @@ const Pillar4 = () => {
           transition={{ duration: 1.2, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.5 }}
         >
-          Product & UX Design
+          Growth Marketing & Lead Gen
         </motion.h2>
 
         <p className="solution-pillars__description">
-          We bring design systems, data, and behavioral science together to create experiences people love.
+         Align teams, de-risk spend, and launch initiatives with a proven 90-day execution map.
         </p>
 
         <ul className="solution-pillars__list">
-          <li>UX audits & research</li>
-          <li>Design systems & wireframes</li>
-          <li>Conversion-focused landing pages</li>
-          <li>Prototyping & motion design</li>
-          <li>Onboarding & growth flows</li>
-        </ul>
+  <li>SEO, paid ads, social & email</li>
+  <li>CRM setup + nurture</li>
+  <li>A1 & workflow transformation automations</li>
+  <li>Data dashboards & analytics</li>
+</ul>
+
 
         <button className="solution-pillars__cta-button">Book an Appointment</button>
         <p className="solution-pillars__footer">MarQ Consultancy</p>
@@ -76,7 +82,7 @@ const Pillar4 = () => {
       </div>
 
       <div className="solution-pillars__right">
-        <img src="/images/pillar1img.png" alt="UX Design Strategy" />
+        <img src="/images/pillar4img.png" alt="UX Design Strategy" />
       </div>
     </section>
   );

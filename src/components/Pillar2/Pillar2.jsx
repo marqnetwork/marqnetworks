@@ -38,19 +38,19 @@ const Pillar2 = () => {
           transition={{ duration: 1.2, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.5 }}
         >
-          Growth & Go-To-Market Strategy
+          Brand + Experience Design
         </motion.h2>
 
         <p className="solution-pillars__description">
-          We partner with founders and marketers to launch, test, and scale with clear ROI tracking.
+         Align teams, de-risk spend, and launch initiatives with a proven 90-day execution map.
         </p>
 
         <ul className="solution-pillars__list">
-          <li>GTM & positioning</li>
-          <li>Paid search & social</li>
-          <li>Landing page design</li>
-          <li>Brand partnerships</li>
-          <li>Attribution & analytics</li>
+          <li>UX/UI for web, SaaS, mobile</li>
+          <li>High-conversion sites & e-commerce</li>
+          <li>Motion, 3-D & interactive content</li>
+          <li>Web / mobile / SaaS builds</li>
+          <li>Brand identity & guidelines</li>
         </ul>
 
         <button className="solution-pillars__cta-button">Book an Appointment</button>
@@ -82,7 +82,7 @@ const Pillar2 = () => {
       </div>
 
       <div className="solution-pillars__right">
-        <img src="/images/pillar1img.png" alt="Growth Strategy" />
+        <img src="/images/pillar2img.png" alt="Growth Strategy" />
       </div>
     </section>
   );

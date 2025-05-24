@@ -8,8 +8,8 @@ const WorkSmarterSection = () => {
                 <span className="work-smarter__tag">• About marQ</span>
                 <h2 className="work-smarter__headline">
                     Work Smarter
-Scale  Faster <br />
-                    <span>Every  Minute  Counts.</span>
+Scale  Faster 
+                 <br/>   <span>Every  Minute  Counts.</span>
                 </h2>
 
                 <h4>Guided From Vision to Launch</h4>

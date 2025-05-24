@@ -44,7 +44,7 @@ const AwardsSection = () => {
         <span className="awards__tag">• Proof, Not Promises</span>
         <h2>What Makes<br /><span>MarQ Different</span></h2>
         <p>Seven core values, one 360° delivery model, zero excuses. From discovery to scale, every MarQ project is run on the same playbook:</p>
-        <ul className="awards__list">
+        <ul className="awards__list ">
           <li>Client-Obsessed Impact</li>
           <li>360° Thinking</li>
           <li>Radical Transparency</li>

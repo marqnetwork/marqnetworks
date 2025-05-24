@@ -8,14 +8,14 @@
   background-color: #000;
   color: white;
   /* padding: 4rem 2rem; */
-  gap: 3rem;
+  /* gap: 3rem; */
   font-family: 'Poppins', sans-serif;
 }
 
 /* Left column */
 .faq__intro {
   flex: 1;
-  min-width: 280px;
+  min-width: 480px;
 }
 
 .faq__tag {

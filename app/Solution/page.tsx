@@ -7,6 +7,7 @@ import Piller2 from '@/components/Pillar2/Pillar2'
 import Piller3 from '@/components/Pillar3/Pillar3'
 import Piller4 from '@/components/Pillar4/Pillar4'
 import Piller5 from '@/components/Pillar5/Pillar5'
+import JoinUsNow from '@/components/JoinUsNow/JoinUsNow'
 
 const Solution = () => {
   return (
@@ -18,6 +19,9 @@ const Solution = () => {
       <Piller3/>
        <Piller4/>
         <Piller5/>
+            <div style={{ display: 'flex', justifyContent: 'center' ,textAlign:'center' }}>
+  <JoinUsNow />
+</div>
 
     </div>
   )

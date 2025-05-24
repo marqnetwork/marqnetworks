@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.solution-pillars {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.solution-pillars__left {
+  flex: 1;
+}
+
+.solution-pillars__right {
+  flex: 1;
+  position: sticky;
+  top: 5rem;
+  align-self: flex-start;
+}
+
+.solution-pillars__right img {
+  width: 100%;
+  max-width: 450px;
+  height: 500px;
+  border-radius: 30px;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.solution-pillars__tag {
+  background-color: #111;
+  color: #aaa;
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.solution-pillars__headline {
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 1.3;
+  font-family: "Poppins", sans-serif;
+  margin: 1.5rem 0;
+  color: white;
+  text-align: left;
+}
+
+.solution-pillars__headline span {
+  background: linear-gradient(90deg, #cccccc 0%, #999999 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.solution-pillars__description {
+  color: #aaa;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.solution-pillars__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.step-card {
+  background-image: url(/images/workbg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  color: #fff;
+  position: relative;
+  backdrop-filter: blur(12px);
+}
+
+.step-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.2rem;
+}
+
+.step-card__icon {
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-card__icon img {
+  width: 200%;
+  height: 80px;
+  object-fit: contain;
+}
+
+.step-card__badge {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  color: #ccc;
+}
+
+.step-card__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  text-align: left;
+}
+
+.step-card__desc {
+  font-size: 0.88rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.step-card__actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.step-card__action {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.solution-pillars__cta-button {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  margin-top: 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 5px 15px #4caf50;
+}
+
+.solution-pillars__cta-button:hover {
+  background-color: #4caf50;
+}
+
+@media (max-width: 768px) {
+  .solution-pillars {
+    flex-direction: column;
+  }
+
+  .solution-pillars__right {
+    position: static;
+    margin-top: 2rem;
+  }
+}

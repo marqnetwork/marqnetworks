@@ -1,35 +1,35 @@
 "use client";
 
 import React from "react";
-import "./SolutionPillars.css";
+import '../../components/SolutionPillars/SolutionPillars.css'
 import { motion } from "framer-motion";
 
 const steps = [
   {
-    title: "AI-Powered Development",
-    desc: "We build AI-driven websites that adapt to users and automation.",
+    title: "Growth Marketing & GTM Strategy",
+    desc: "Launch, test, and scale your product with proven paid, organic, and partnership playbooks.",
     icon: "/images/solutionlogo.png",
     image: "/images/Villa.png"
   },
   {
-    title: "Strategy & Digital Transformation",
-    desc: "Align teams, de-risk spend, and launch initiatives with a proven 90-day execution map.",
+    title: "Data-Driven Campaigns",
+    desc: "We build attribution-ready campaigns across search, social, and outbound channels.",
     icon: "/images/solutionlogo.png",
     image: "/images/Villa.png"
   },
-   {
-    title: "Strategy & Digital Transformation",
-    desc: "Align teams, de-risk spend, and launch initiatives with a proven 90-day execution map.",
+    {
+    title: "Data-Driven Campaigns",
+    desc: "We build attribution-ready campaigns across search, social, and outbound channels.",
     icon: "/images/solutionlogo.png",
     image: "/images/Villa.png"
   }
 ];
 
-const SolutionPillars = () => {
+const Pillar2 = () => {
   return (
     <section className="solution-pillars">
       <div className="solution-pillars__left">
-        <span className="solution-pillars__tag">• Pillar 01</span>
+        <span className="solution-pillars__tag">• Pillar 02</span>
 
         <motion.h2
           className="solution-pillars__headline"
@@ -38,19 +38,19 @@ const SolutionPillars = () => {
           transition={{ duration: 1.2, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.5 }}
         >
-          Strategy & Digital Transformation
+          Growth & Go-To-Market Strategy
         </motion.h2>
 
         <p className="solution-pillars__description">
-          Align teams, de-risk spend, and launch initiatives with a proven 90-day execution map.
+          We partner with founders and marketers to launch, test, and scale with clear ROI tracking.
         </p>
 
         <ul className="solution-pillars__list">
-          <li>Vision & road-mapping</li>
-          <li>Tech / security audits</li>
-          <li>AI & workflow transformation</li>
-          <li>Change-management playbooks</li>
-          <li>Brand identity & guidelines</li>
+          <li>GTM & positioning</li>
+          <li>Paid search & social</li>
+          <li>Landing page design</li>
+          <li>Brand partnerships</li>
+          <li>Attribution & analytics</li>
         </ul>
 
         <button className="solution-pillars__cta-button">Book an Appointment</button>
@@ -82,10 +82,10 @@ const SolutionPillars = () => {
       </div>
 
       <div className="solution-pillars__right">
-        <img src="/images/pillar1img.png" alt="Strategy Meeting" />
+        <img src="/images/pillar1img.png" alt="Growth Strategy" />
       </div>
     </section>
   );
 };
 
-export default SolutionPillars;
+export default Pillar2;

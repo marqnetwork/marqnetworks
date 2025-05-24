@@ -11,6 +11,7 @@
   gap: 4rem;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 5rem 2rem;
   text-align: left;
 }
 
@@ -50,7 +51,6 @@
   font-family: "Poppins", sans-serif;
   margin: 1.5rem 0;
   color: white;
-  text-align: left;
 }
 
 .solution-pillars__headline span {
@@ -66,86 +66,19 @@
   font-weight: 300;
   line-height: 1.8;
   margin-bottom: 2rem;
-  text-align: left;
 }
 
-.solution-pillars__steps {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.step-card {
-  background-image: url(/images/workbg.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 2rem;
+.solution-pillars__list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 2rem;
   color: #fff;
-  position: relative;
-  backdrop-filter: blur(12px);
 }
 
-.step-card__top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1.2rem;
-}
-
-.step-card__icon {
-  width: 60px;
-  height: 60px;
-  padding: 10px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.step-card__icon img {
-  width: 200%;
-  height: 80px;
-  object-fit: contain;
-}
-
-.step-card__badge {
-  font-size: 0.75rem;
-  padding: 0.3rem 0.8rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  color: #ccc;
-}
-
-.step-card__title {
-  font-size: 1.2rem;
-  font-weight: 600;
+.solution-pillars__list li {
   margin-bottom: 0.6rem;
-  text-align: left;
-}
-
-.step-card__desc {
-  font-size: 0.88rem;
-  color: #ccc;
-  margin-bottom: 1rem;
-  line-height: 1.7;
-  text-align: left;
-}
-
-.step-card__actions {
-  display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-}
-
-.step-card__action {
-  padding: 0.5rem 1rem;
-  font-size: 0.75rem;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 300;
 }
 
 .solution-pillars__cta-button {
@@ -165,6 +98,87 @@
   background-color: #4caf50;
 }
 
+.solution-pillars__footer {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* Cards Section - Vertical flow like steps */
+.solution-pillars__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.pillar-card {
+  background-color: #0f0f0f;
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.pillar-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.pillar-card__icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 8px;
+  object-fit: contain;
+}
+
+.pillar-card__arrow {
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.pillar-card__body {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.pillar-card__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.pillar-card__desc {
+  font-size: 0.88rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.pillar-card__image-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.pillar-card__image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .solution-pillars {
     flex-direction: column;
@@ -173,5 +187,9 @@
   .solution-pillars__right {
     position: static;
     margin-top: 2rem;
+  }
+
+  .pillar-card__image {
+    height: 160px;
   }
 }

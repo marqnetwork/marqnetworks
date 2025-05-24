@@ -1,13 +1,15 @@
 .solution-section {
-  padding: 6rem 3rem;
+  padding: 6rem 0rem;
   text-align: center;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
   background-image: url('/images/solutionbg.png');
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   border-radius: 20px;
+  height:100vh;
+  
  
 }
 

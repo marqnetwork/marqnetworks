@@ -3,14 +3,17 @@ import React from 'react'
 import ExplorePortfolio from '@/components/ExplorePortfolio/ExplorePortfolio'
 import FAQSection from '@/components/FAQSection/FAQSection'
 import JoinUsNow from '@/components/JoinUsNow/JoinUsNow'
-import Gallery from '@/components/Gallery/Gallery'
+import StackingCards from '@/components/Stack/index';
+
 
 const Portfolio = () => {
   return (
     <div className='portfolio'>
 
         <ExplorePortfolio/>
-        <Gallery/>
+
+        <StackingCards/>
+        
         <FAQSection/>
            <div style={{ display: 'flex', justifyContent: 'center' ,textAlign:'center' }}>
   <JoinUsNow />

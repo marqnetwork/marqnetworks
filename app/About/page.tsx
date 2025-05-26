@@ -11,8 +11,9 @@ import TeamSection from '@/components/TeamSection/TeamSection'
 import AwardsSection from '@/components/AwardsSection/AwardsSection'
 import ToolsSection from '@/components/ToolsSection/ToolsSection'
 import IntegrationCards from '@/components/IntegrationCards/IntegrationCards'
-import FAQSection from '@/components/FAQSection/FAQSection'
+// import FAQSection from '@/components/FAQSection/FAQSection'
 import JoinUsNow from '@/components/JoinUsNow/JoinUsNow'
+import AboutFAQ from '@/components/AboutFAQ/AboutFAQ'
 
 
 const About = () => {
@@ -27,7 +28,7 @@ const About = () => {
       <AwardsSection/>
       <ToolsSection/>
       <IntegrationCards/>
-      <FAQSection/>
+      <AboutFAQ/>
       <div style={{ display: 'flex', justifyContent: 'center' ,textAlign:'center' }}>
   <JoinUsNow />
 </div>

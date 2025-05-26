@@ -11,8 +11,8 @@ const Footer = () => {
           <img src="/images/logo.png" alt="marqnetworks logo" className="footer__logo" />
           
           <div className="footer__subscribe">
-            <input type="email" placeholder="Enter Your Email..." />
-            <button>Subscribe Us</button>
+            <input type="email" placeholder="Your work e-mail…" />
+            <button>Keep Me in the Loop</button>
           </div>
         </div>
 
@@ -22,7 +22,9 @@ const Footer = () => {
           <ul>
             <li>Home</li>
             <li>About</li>
+            <li>Solution</li>
             <li>Portfolio</li>
+            <li>Blog</li>
             <li>Contact</li>
             <li>FAQ</li>
           </ul>
@@ -34,10 +36,12 @@ const Footer = () => {
             <div className="footer__social-sales">
               <h4>Social</h4>
               <ul>
-                <li>Twitter (X)</li>
+                
+                <li>LinkedIn</li>
+                <li>X (Twitter)</li>
                 <li>Instagram</li>
                 <li>Youtube</li>
-                <li>Framer</li>
+                
               </ul>
 
               
@@ -67,7 +71,7 @@ const Footer = () => {
       </div>
 
       <div className="footer__bottom">
-        <p>© 2024 Mark Networks</p>
+        <p>© 2024 marQ Networks LLC. All rights reserved. </p>
         <div className="footer__links">
           <a href="#">Terms & Conditions</a>
           <a href="#">Privacy Policy</a>

@@ -8,23 +8,23 @@ const ExplorePortfolio = () => {
         {/* Tag */}
         <div className="explore-tag">
           <span className="year">2025</span>
-          <span className="tag-text">Explore Our Portfolio</span>
+          <span className="tag-text">Let’s Build Together</span>
         </div>
 
         {/* Headings */}
         <h1 className="explore-heading">
-          Check <span>Out Some</span><br />Extra- <span>Ordinary Work</span>
+         Questions? Ideas?<br /> <span>Let’s Talk.</span>
         </h1>
 
         {/* Subtext */}
         <p className="explore-subtext">
-          From startups to established brand , we create<br className="break" />
-         tailored solutions that drive success and make a real impact.
+         Whether you’re validating an idea, need a rescue squad for a live project, or just want a second opinion,<br className="break" />
+         the marQ Networks team is here—on EST hours, ready to dive in.
         </p>
 
         {/* Buttons */}
         <div className="explore-buttons">
-         <button  className="about__button">Build Your Product</button>
+         <button  className="about__button">Book a Discovery Call</button>
         </div>
 
         

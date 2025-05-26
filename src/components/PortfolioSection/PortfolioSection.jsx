@@ -1,9 +1,8 @@
 "use client";
 
 import React from 'react';
-import './PortfolioSection.css'; // new CSS file
+import './PortfolioSection.css'; 
 import { motion } from "framer-motion";
-import PortfolioSlider from '../PortfolioSlider/PortfolioSlider';
 import StackingCards from '../Stack';
 
 const PortfolioSection = () => {
@@ -33,7 +32,7 @@ const PortfolioSection = () => {
         <br />
         <br />
 
-        {/* <PortfolioSlider/> */}
+       
               <StackingCards/>
         
       </div>

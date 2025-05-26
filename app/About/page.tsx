@@ -11,7 +11,6 @@ import TeamSection from '@/components/TeamSection/TeamSection'
 import AwardsSection from '@/components/AwardsSection/AwardsSection'
 import ToolsSection from '@/components/ToolsSection/ToolsSection'
 import IntegrationCards from '@/components/IntegrationCards/IntegrationCards'
-// import FAQSection from '@/components/FAQSection/FAQSection'
 import JoinUsNow from '@/components/JoinUsNow/JoinUsNow'
 import AboutFAQ from '@/components/AboutFAQ/AboutFAQ'
 

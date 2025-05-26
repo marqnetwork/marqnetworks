@@ -19,12 +19,7 @@
   /* height:50vh; */
 }
 
-.footer__left,
-.footer__middle,
-.footer__right {
-  flex: 1;
-  /* min-width: 250px; */
-}
+
 
 .footer__logo {
   width: 250px;

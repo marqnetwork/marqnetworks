@@ -1,11 +1,12 @@
 .footer {
-  background-color: #000;
+ 
+  background-image: url(/images/footerbg.png);
+  background-size: cover;
+  background-position: center;
   color: white;
-  padding: 3rem 2rem;
   font-family: "Poppins", sans-serif;
-  border-top: 1px solid #222;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 3rem 2rem;
+  
 }
 
 .footer__top {

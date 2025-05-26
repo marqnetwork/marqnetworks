@@ -29,6 +29,12 @@ const PortfolioSection = () => {
           <button className="portfolio__button">View Portfolio</button>
         </div>
 
+
+         
+         {/* <div className="results__svg-wrapper">
+    <img src="/images/resultleft.svg" alt="Left Decoration" className="results__svg results__svg--left" />
+    <img src="/images/resultright.svg" alt="Right Decoration" className="results__svg results__svg--right" />
+  </div> */}
         
 
         <br />

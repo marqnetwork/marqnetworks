@@ -6,8 +6,10 @@
   gap: 2rem;
   padding: 4rem 3rem;
   flex-wrap: wrap;
+    position: relative;
+  z-index: 1;
 }
-.results__svg {
+.feature__svg {
   position: absolute;
   z-index: 0;
   pointer-events: none;
@@ -17,16 +19,16 @@
 }
 
 /* Left SVG */
-.results__svg--left {
-  bottom:  60%;
+.feature__svg--left {
+  top:  60%;
   left: 0;
   transform: translate(-50%, -50%) scale(1.5);
 }
 
 /* Right SVG */
-.results__svg--right {
+.feature__svg--right {
 
-  bottom:  60%;
+  top:  60%;
   
   right: 0;
   transform: translate(50%, -50%) scale(1.5);

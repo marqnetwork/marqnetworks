@@ -36,8 +36,10 @@ const ResultsSection = () => {
           <button className="results__button">Book a 15-min call</button>
         </div>
 
-         <img src="/images/resultleft.svg" alt="Left Decoration" className="results__svg results__svg--left" />
-           <img src="/images/resultright.svg" alt="Right Decoration" className="results__svg results__svg--right" />
+         <div className="results__svg-wrapper">
+    <img src="/images/resultleft.svg" alt="Left Decoration" className="results__svg results__svg--left" />
+    <img src="/images/resultright.svg" alt="Right Decoration" className="results__svg results__svg--right" />
+  </div>
         <InfiniteCardsSlider />
       </div>
       

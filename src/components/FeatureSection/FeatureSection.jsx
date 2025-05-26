@@ -29,6 +29,9 @@ const FeatureSection = () => {
           <button className="feature__button">View About MarQ</button>
         </div>
 
+        <img src="/images/resultleft.svg" alt="Left Decoration" className="feature__svg feature__svg--left" />
+           <img src="/images/resultright.svg" alt="Right Decoration" className="feature__svg feature__svg--right" />
+
          
 
         

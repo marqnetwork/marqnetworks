@@ -9,11 +9,15 @@ const Footer = () => {
         {/* Left */}
         <div className="footer__left">
           <img src="/images/logo.png" alt="marqnetworks logo" className="footer__logo" />
+
+<p>Operating 24/7 from our EST-aligned off-shore hub and US/GCC leadership teams.</p>
           
           <div className="footer__subscribe">
             <input type="email" placeholder="Your work e-mail…" />
             <button>Keep Me in the Loop</button>
           </div>
+
+       
         </div>
 
         {/* Middle */}

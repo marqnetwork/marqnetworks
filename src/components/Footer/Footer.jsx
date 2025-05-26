@@ -3,9 +3,9 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <div className='bg-[#000]'>
-    <footer className="footer">
-      <div className="footer__top">
+    <div className='footer'>
+    <footer className="footer_content">
+      <div className="flex justify-center items-top">
         {/* Left */}
         <div className="footer__left">
           <img src="/images/logo.png" alt="marqnetworks logo" className="footer__logo" />

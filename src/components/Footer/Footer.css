@@ -5,8 +5,14 @@
   background-position: center;
   color: white;
   font-family: "Poppins", sans-serif;
-  /* padding: 3rem 2rem; */
-  max-width:1200px
+
+
+}
+.footer_content{
+  /* display:flex;
+  justify-content:center;
+  align-items:center; */
+  max-width:1200px;
 margin:0 auto;  
 }
 

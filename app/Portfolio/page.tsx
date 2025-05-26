@@ -3,7 +3,9 @@ import React from 'react'
 import ExplorePortfolio from '@/components/ExplorePortfolio/ExplorePortfolio'
 import PortfolioFAQ from '@/components/PortfolioFAQ/PortfolioFAQ'
 import JoinUsNow from '@/components/JoinUsNow/JoinUsNow'
-import StackingCards from '@/components/Stack/index';
+import Portfoliostack1 from '@/components/portfoliostack1/portfoliostack1'
+import Portfoliostack2 from'@/components/Portfoliostack2/Portfoliostack2'
+import Portfoliostack3 from '@/components/Portfoliostack3/Portfoliostack3'
 
 
 const Portfolio = () => {
@@ -11,10 +13,20 @@ const Portfolio = () => {
     <div className='portfolio'>
 
         <ExplorePortfolio/>
+        <div style={{ textAlign:'center' }}>
+        <Portfoliostack1/>
+        </div>
 
-        <StackingCards/>
-        <StackingCards/>
-        <StackingCards/>
+        <div style={{ textAlign:'center' }}>
+        <Portfoliostack2/>
+        </div>
+
+        <div style={{ textAlign:'center' }}>
+        <Portfoliostack3/>
+        </div>
+
+      
+       
 
         <br /><br />
         

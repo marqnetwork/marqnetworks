@@ -1,9 +1,9 @@
 // src/components/Work.js
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import "./Work.css";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const steps = [
   {
@@ -53,10 +53,13 @@ const steps = [
 ];
 
 const Work = () => {
+  const containerRef = useRef(null); // Wrap for global scroll tracking
+
   return (
-    <section className="work">
+    <section className="work" ref={containerRef}>
       <div className="work__left">
         <span className="work__tag">• How We Work?</span>
+
         <motion.h2
           className="work__headline"
           initial={{ x: -20, opacity: 0.6, filter: "blur(4px)" }}
@@ -68,41 +71,61 @@ const Work = () => {
           <span>From Idea to Impact</span>
         </motion.h2>
 
-        <p className="work__description">
+        <p className="work__description"
+         initial={{ x: -20, opacity: 0.6, filter: "blur(4px)" }}
+          whileInView={{ x: 0, opacity: 1, filter: "blur(0px)" }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.5 }}>
           We’ve battle-tested a three-stage framework that eliminates guesswork,
           keeps you in the loop, and gets your product in market faster.
         </p>
 
         <div className="work__steps">
-          {steps.map((step, index) => (
-            <div className="step-card" key={index}>
-              <div className="step-card__top">
-                <div className="step-card__icon">
-                  <img src={step.icon} alt="icon" />
+          {steps.map((step, index) => {
+            const cardRef = useRef(null);
+            const { scrollYProgress } = useScroll({
+              target: cardRef,
+              offset: ["start end", "end start"], 
+            });
+
+            const scale = useTransform(scrollYProgress, [0, 0.7, 0.6], [0.95, 1.05, 0.95]);
+
+            return (
+              <motion.div
+                key={index}
+                ref={cardRef}
+                className="step-card"
+                style={{ scale }}
+                
+              >
+                <div className="step-card__top">
+                  <div className="step-card__icon">
+                    <img src={step.icon} alt="icon" />
+                  </div>
+                  <span className="step-card__badge">{step.subtitle}</span>
                 </div>
-                <span className="step-card__badge">{step.subtitle}</span>
-              </div>
-              <h3 className="step-card__title">{step.title}</h3>
-              <p className="step-card__desc">{step.desc}</p>
-             <div className="step-card__actions">
-  {step.actions.map((action, i) => (
-    <span key={i} className="step-card__action">
-      {action}
-    </span>
-  ))}
+                <h3 className="step-card__title">{step.title}</h3>
+                <p className="step-card__desc">{step.desc}</p>
 
-  {/* Show CTA button only in last step (Stage 4) */}
-  {index === steps.length - 1 && (
-    <button className="work__cta-button" style={{ marginTop: "20px" }}>
-      Book an Appointment
-    </button>
-  )}
-</div>
+                <div className="step-card__actions">
+                  {step.actions.map((action, i) => (
+                    <span key={i} className="step-card__action">
+                      {action}
+                    </span>
+                  ))}
 
-            </div>
-          ))}
+                  {index === steps.length - 1 && (
+                    <button className="work__cta-button" style={{ marginTop: "20px" }}>
+                      Book an Appointment
+                    </button>
+                  )}
+                </div>
+              </motion.div>
+            );
+          })}
+
+          
         </div>
-
       </div>
 
       <div className="work__right">

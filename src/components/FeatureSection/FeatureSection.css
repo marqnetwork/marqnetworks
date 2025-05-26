@@ -7,6 +7,30 @@
   padding: 4rem 3rem;
   flex-wrap: wrap;
 }
+.results__svg {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  width: 300px; 
+
+  height: auto;
+}
+
+/* Left SVG */
+.results__svg--left {
+  bottom:  60%;
+  left: 0;
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* Right SVG */
+.results__svg--right {
+
+  bottom:  60%;
+  
+  right: 0;
+  transform: translate(50%, -50%) scale(1.5);
+}
 
 /* Content */
 .feature__content {

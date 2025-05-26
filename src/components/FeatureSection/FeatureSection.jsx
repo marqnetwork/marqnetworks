@@ -29,8 +29,11 @@ const FeatureSection = () => {
           <button className="feature__button">View About MarQ</button>
         </div>
 
+         
+
         
       </div>
+     
     </section>
     
   );

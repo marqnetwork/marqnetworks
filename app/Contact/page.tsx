@@ -1,7 +1,7 @@
 "use client";
 import React from 'react'
 import './Contact.css'
-import ExplorePortfolio from '@/components/ExplorePortfolio/ExplorePortfolio'
+import ContactIntro from '@/components/ContactIntro/ContactIntro'
 import ContactSection from '@/components/ContactSection/ContactSection'
 import ContactFAQ from '@/components/ContactFAQ/ContactFAQ'
 
@@ -10,7 +10,7 @@ import JoinUsNow from '@/components/JoinUsNow/JoinUsNow'
 const Contact = () => {
   return (
     <div className='Contactt'>
-        <ExplorePortfolio/>
+        <ContactIntro/>
         <ContactSection/>
         <ContactFAQ/>
         

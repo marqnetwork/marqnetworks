@@ -14,18 +14,13 @@ import LaunchSection from "@/components/LaunchSection/LaunchSection";
 import JoinUsNow from "@/components/JoinUsNow/JoinUsNow";
 import FAQSection from "@/components/FAQSection/FAQSection";
 import LandinBenefitCards from "@/components/LandinBenefitCards/LandinBenefitCards";
-import StackingCards from "@/components/Stack";
+
 
 
 const Home = () => {
   return (
     <div
-      className="
-    bg-black text-white min-h-[70vh] pt-2 text-center
-
-    "
-    >
-     
+      className=" bg-black text-white min-h-[70vh] pt-2 text-center">
       <Hero />
       <AboutSection />
       <ResultsSection />

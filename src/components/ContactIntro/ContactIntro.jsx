@@ -1,5 +1,5 @@
 import React from 'react';
-import './ExplorePortfolio.css';
+import '../ExplorePortfolio/ExplorePortfolio.css';
 
 const ExplorePortfolio = () => {
   return (
@@ -8,24 +8,23 @@ const ExplorePortfolio = () => {
         {/* Tag */}
         <div className="explore-tag">
           <span className="year">2025</span>
-          <span className="tag-text"> Signature Showcase</span>
+          <span className="tag-text">Let’s Build Together</span>
         </div>
 
         {/* Headings */}
         <h1 className="explore-heading">
-         See What Happens<br /> <span>When Idea × Craft × Code Collide.
-Support line</span>
+         Questions? Ideas?<br /> <span>Let’s Talk.</span>
         </h1>
 
         {/* Subtext */}
         <p className="explore-subtext">
-        From pre-seed disruptors to Fortune-listed giants, our 360° studios turn bold concepts  <br className="break" />
-        into products that ship, scale & sell.
+         Whether you’re validating an idea, need a rescue squad for a live project, or just want a second opinion,<br className="break" />
+         the marQ Networks team is here—on EST hours, ready to dive in.
         </p>
 
         {/* Buttons */}
         <div className="explore-buttons">
-         <button  className="about__button">Start Your Own Case Study</button>
+         <button  className="about__button">Book a Discovery Call</button>
         </div>
 
         

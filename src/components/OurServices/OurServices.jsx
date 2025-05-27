@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 const services = [
   {
     title: "Digital Strategy Sprint",
-    
     desc: "Align vision, goals & tech in 2 weeks.",
     icon: "/images/sprint.png",
     price: " Strategy & Digital Transformation",
@@ -15,9 +14,9 @@ const services = [
     features: [
       " North-Star roadmap",
       " Ops & tech stack blueprint",
-      " Quick-win priority list"
+      " Quick-win priority list",
     ],
-    endIcon: "/images/abouticon.png"
+    endIcon: "/images/abouticon.png",
   },
   {
     title: "Brand & UX Makeover",
@@ -28,9 +27,9 @@ const services = [
     features: [
       " Visual identity kit",
       " UX wireframes in Figma",
-      " Reusable design system"
+      " Reusable design system",
     ],
-    endIcon: "/images/abouticon.png"
+    endIcon: "/images/abouticon.png",
   },
   {
     title: "MVP Build + Automation",
@@ -41,9 +40,9 @@ const services = [
     features: [
       " Full-stack React / Laravel",
       " Zapier / Make automations",
-      " CI/CD & documentation"
+      " CI/CD & documentation",
     ],
-    endIcon: "/images/abouticon.png"
+    endIcon: "/images/abouticon.png",
   },
   {
     title: "Lead-Gen Engine",
@@ -54,9 +53,9 @@ const services = [
     features: [
       " High-converting funnel",
       " CRM & nurture emails",
-      " Paid-ads management"
+      " Paid-ads management",
     ],
-    endIcon: "/images/abouticon.png"
+    endIcon: "/images/abouticon.png",
   },
   {
     title: "Dedicated Remote Pod",
@@ -67,12 +66,24 @@ const services = [
     features: [
       " Cross-disciplinary talent",
       " EST time-zone overlap",
-      " Flat, transparent billing"
+      " Flat, transparent billing",
     ],
-    endIcon: "/images/abouticon.png"
-  }
+    endIcon: "/images/abouticon.png",
+  },
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.2,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
 
 const OurServices = () => {
   return (
@@ -92,17 +103,27 @@ const OurServices = () => {
           transition={{ duration: 1.2, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.5 }}
         >
-          Strategy, Design, Code, Growth & Scale.<br />
+          Strategy, Design, Code, Growth & Scale.
+          <br />
           <span>Covered by marQ Networks</span>
         </motion.h2>
 
         <p className="ourservices__description">
-         Feel free to break the line after the period (or keep it all on one line) to match your layout.
+          Feel free to break the line after the period (or keep it all on one
+          line) to match your layout.
         </p>
 
         <div className="ourservices__cards">
           {services.map((service, index) => (
-            <div className="service-card" key={index}>
+            <motion.div
+              className="service-card"
+              key={index}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.4 }}
+              custom={index}
+            >
               <div className="service-card__top">
                 <div className="service-card__icon">
                   <img src={service.icon} alt="icon" />
@@ -126,7 +147,7 @@ const OurServices = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

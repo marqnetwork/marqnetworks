@@ -1,14 +1,37 @@
 .slider-wrapper {
+  position: relative;
   overflow: hidden;
   width: 100%;
   background-color: #000;
   padding: 2rem 0;
 }
 
+.slider-wrapper::before,
+.slider-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.slider-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), transparent);
+}
+
+.slider-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 1), transparent);
+}
+
 .slider-track {
   display: flex;
   gap: 1.5rem;
-  animation: scroll 25s linear infinite;
+  width: max-content;
+  animation: scroll 45s linear infinite;
 }
 
 @keyframes scroll {
@@ -44,14 +67,13 @@
   display: block;
 }
 
-/* Floating content overlay */
 .card-content-overlay {
   position: absolute;
   bottom: 0;
   left: 5px;
   width: 98%;
-  height:50%;
-  margin:auto;
+  height: 50%;
+  margin: auto;
   padding: 1.2rem 1rem;
   background: black;
   backdrop-filter: blur(14px);

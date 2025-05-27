@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 const cards = [
   { id: 1, image: "/images/watch.png" },
@@ -29,23 +29,36 @@ export default function StackingCards() {
             const start = index / cards.length;
             const end = (index + 1) / cards.length;
 
-            const y = useTransform(
+            const rawY = useTransform(
               scrollYProgress,
               [start, end],
               [`${100 + index * 30}px`, "0px"]
             );
-
-            const opacity = useTransform(
+            const rawOpacity = useTransform(
               scrollYProgress,
               [start, start + 0.05],
               [0, 1]
             );
-
-            const scale = useTransform(
+            const rawScale = useTransform(
               scrollYProgress,
               [start, end],
               [0.95, 1]
             );
+
+            const y = useSpring(rawY, {
+              stiffness: 100,
+              damping: 20
+            });
+
+            const opacity = useSpring(rawOpacity, {
+              stiffness: 60,
+              damping: 15
+            });
+
+            // const scale = useSpring(rawScale, {
+            //   stiffness: 100,
+            //   damping: 20
+            // });
 
             const zIndex = cards.length + index;
 
@@ -53,7 +66,7 @@ export default function StackingCards() {
               <motion.div
                 key={card.id}
                 className="absolute w-full h-full bg-neutral-900 rounded-2xl p-6 flex flex-col justify-between shadow-2xl"
-                style={{ y, opacity, scale, zIndex }}
+                style={{ y, opacity, zIndex }}
               >
                 <img
                   src={card.image}

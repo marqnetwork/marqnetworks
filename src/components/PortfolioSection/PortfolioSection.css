@@ -8,7 +8,39 @@
   flex-wrap: wrap;
   position: relative;
   z-index: 1;
+ 
   
+}
+.feature__svg-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.feature__svg {
+  width: 400px;
+  
+}
+
+.feature__svg--left {
+  transform: translateX(-60px) translateY(-200px);
+}
+
+.feature__svg--right {
+  transform: translateX(60px) translateY(-200px);
+}
+
+
+
+/* Hide on small screens */
+@media (max-width: 768px) {
+  .feature__svg-wrapper {
+    display: none;
+  }
 }
 
 

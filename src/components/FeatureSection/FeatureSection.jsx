@@ -28,14 +28,12 @@ const FeatureSection = () => {
         <div className="feature__actions">
           <button className="feature__button">View About MarQ</button>
         </div>
+        </div>
 
-        <img src="/images/resultleft.svg" alt="Left Decoration" className="feature__svg feature__svg--left" />
-           <img src="/images/resultright.svg" alt="Right Decoration" className="feature__svg feature__svg--right" />
-
-         
-
-        
-      </div>
+          <div className="feature__svg-wrapper">
+    <img src="/images/resultleft.svg" alt="Left Decoration" className="feature__svg feature__svg--left" />
+    <img src="/images/resultright.svg" alt="Right Decoration" className="feature__svg feature__svg--right" />
+  </div>
      
     </section>
     

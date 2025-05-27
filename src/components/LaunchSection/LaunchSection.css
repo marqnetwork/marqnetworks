@@ -8,6 +8,36 @@
   flex-wrap: wrap;
 }
 
+.launch__svg-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.launch__svg {
+  width: 500px;
+}
+
+.launch__svg--left {
+  transform: translateX(-70px) translateY(-100px);
+}
+
+.launch__svg--right {
+  transform: translateX(70px) translateY(-100px);
+}
+
+/* Hide on small screens */
+@media (max-width: 768px) {
+  .launch__svg-wrapper {
+    display: none;
+  }
+}
+
+
 /* Right content */
 .launch__content {
   flex: 1;

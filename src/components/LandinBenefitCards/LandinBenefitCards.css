@@ -75,7 +75,7 @@ p {
 
 /* Pill */
 .pill {
-  background-color: #00ff88;
+  background-color: #39ff14;
   color: #000;
   font-size: 12px;
   padding: 2px 8px;
@@ -93,19 +93,21 @@ p {
 }
 
 .primary-btn {
-  background-color: #56B848;
-  color: #fff;
+  background-color: #39ff14;
+  color: black;
   padding: 12px 20px;
   border: none;
   border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
+    
+    box-shadow: 0 5px 15px #39ff14;
 }
 
-.primary-btn:hover {
+/* .primary-btn:hover {
   background-color: #00e676;
-}
+} */
 
 .secondary-btn3 {
   background-color: #FFFFFF26;

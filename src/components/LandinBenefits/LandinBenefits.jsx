@@ -18,12 +18,12 @@ const LandinBenefits = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.5 }}
       >
-        <span>We Just Don’t Design,</span> <span>We Build.</span>
+        <span>We Don’t Just Design</span> <span>We Engineer Momentum.</span>
       </motion.h1>
 
       {/* Subheading */}
       <h2 className="benefits__subheading">
-        If You Can Dream It, We Can Play It!
+       If you can dream it, we’ll make it move the needle.
       </h2>
 
       {/* Feature Tags */}

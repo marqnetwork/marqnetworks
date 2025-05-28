@@ -65,9 +65,12 @@
   cursor: pointer;
   background-color: #39ff14;
   color: black;
-  transition: transform 0.3s ease;
-     
+  transition: transform 0.3s ease;   
  box-shadow: 0 5px 15px #39ff14;
+ border-color: rgba(255, 255, 255, 0.15);
+ font-size: 14px;
+  border-style: solid;
+   backdrop-filter: none;
 }
 .secondary-btn2{
   padding: 0.75rem 1.5rem;

@@ -98,11 +98,13 @@ p {
   padding: 12px 20px;
   border: none;
   border-radius: 10px;
-  font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
-    
     box-shadow: 0 5px 15px #39ff14;
+     border-color: rgba(255, 255, 255, 0.15);
+ font-size: 14px;
+  border-style: solid;
+   backdrop-filter: none;
 }
 
 /* .primary-btn:hover {

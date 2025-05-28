@@ -49,6 +49,10 @@
   font-weight: 500;
   cursor: pointer;
   white-space: nowrap;
+   border-color: rgba(255, 255, 255, 0.15);
+ font-size: 14px;
+  border-style: solid;
+   backdrop-filter: none;
 }
 
 .footer__middle h4,

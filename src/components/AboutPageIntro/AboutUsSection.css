@@ -35,7 +35,7 @@
   }
   
   .year {
-    background-color: #22c55e;
+    background-color: #39ff14;
     color: #fff;
     font-size: 0.75rem;
     font-weight: 600;
@@ -78,9 +78,10 @@
   }
   
   .btn.primary {
-    background-color: #56b848;
+    background-color: #39ff14;
     color: #000;
     border: none;
+     box-shadow: 0 5px 15px #39ff14;
   }
   
   .btn.secondary {

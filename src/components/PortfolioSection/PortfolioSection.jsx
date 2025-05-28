@@ -19,7 +19,7 @@ const PortfolioSection = () => {
   transition={{ duration: 1.2, ease: "easeOut" }}
   viewport={{ once: true, amount: 0.5 }}>
           Our Selected Projects<br />
-          <span>That Propel Your Website.</span>
+          <span>That Accelerate Digital Growth.</span>
         </motion.h2>
 
         <p className="portfolio__description">
@@ -28,7 +28,7 @@ const PortfolioSection = () => {
         </p>
 
         <div className="portfolio__actions">
-          <button className="portfolio__button">View Portfolio</button>
+          <button className="portfolio__button">View Full Portfolio</button>
         </div>
 
          <div className="feature__svg-wrapper">

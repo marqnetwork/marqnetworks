@@ -31,7 +31,7 @@ const Hero = () => {
           </motion.p>
 
           <div className="hero__buttons">
-            <button className="primary-btn">Connect With Us</button>
+            <button className="primary-btn-hero">Connect With Us</button>
             <button className="secondary-btn2">Explore the Stack</button>
           </div>
           <LogoSlider />

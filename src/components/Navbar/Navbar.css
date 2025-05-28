@@ -55,8 +55,8 @@ body {
 
 /* CTA Button styling */
 .navbar__button {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #39ff14;
+  color: black;
   border: none;
   padding: 10px 16px;
   border-radius: 6px;
@@ -65,9 +65,9 @@ body {
   
 }
 
-.navbar__button:hover {
+/* .navbar__button:hover {
   background-color: #45a049;
-}
+} */
 
 /* Hamburger icon */
 .navbar__hamburger {

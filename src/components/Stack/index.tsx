@@ -76,7 +76,7 @@ export default function StackingCards() {
                 <div className="w-full bg-black text-white p-4 rounded-xl border border-neutral-800 shadow-inner">
                   <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                     <div className="text-sm md:text-base font-medium">
-                      Way Fields • <span className="text-neutral-400">2024</span>
+                       Ping – Home Marketplace <span className="text-neutral-400">2021 </span>
                     </div>
                     <div className="flex-1 w-full max-w-md h-3 bg-neutral-800 rounded-full overflow-hidden">
                       <div
@@ -86,10 +86,13 @@ export default function StackingCards() {
                     </div>
                     <div className="flex gap-2">
                       <button className="px-4 py-1 text-sm rounded-lg bg-neutral-800 border border-neutral-700 hover:bg-neutral-700 transition">
-                        E-Commerce
+                       PropTech
                       </button>
                       <button className="px-4 py-1 text-sm rounded-lg bg-neutral-800 border border-neutral-700 hover:bg-neutral-700 transition">
-                        Portfolio
+                        AI
+                      </button>
+                       <button className="px-4 py-1 text-sm rounded-lg bg-neutral-800 border border-neutral-700 hover:bg-neutral-700 transition">
+                        Marketplace
                       </button>
                     </div>
                   </div>

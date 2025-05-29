@@ -14,6 +14,7 @@
   max-width: 1200px;
   margin: 0 auto;
    max-width: 1200px;
+   gap: 70px;
   
 }
 
@@ -32,6 +33,14 @@
   max-width: 600px;
   text-align: left;
   /* margin-left: 80px; */
+}
+
+.classic-skill__content h4{
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .classic-skill__content h2 span {

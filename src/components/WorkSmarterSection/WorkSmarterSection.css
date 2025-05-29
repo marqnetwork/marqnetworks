@@ -65,14 +65,19 @@
   
   .work-smarter__button {
     padding: 0.75rem 1.5rem;
-    background: #39ff14;
-    color: black;
-    border: none;
-    border-radius: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-   box-shadow: 0 5px 15px #39ff14;
+  background: #39ff14;
+  color: black;
+  border: none;
+  border-radius: 12px;
+  
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 5px 15px #39ff14;
+
+   border-color: rgba(255, 255, 255, 0.15);
+ font-size: 14px;
+  border-style: solid;
+   backdrop-filter: none;
   }
   
   .work-smarter__rating {

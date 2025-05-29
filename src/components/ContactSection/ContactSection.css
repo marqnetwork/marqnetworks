@@ -55,20 +55,19 @@ textarea {
 }
 
 .submit-btn {
-  background:  #4CAF50;
-   /* Bottom-focused soft glow */
-    box-shadow:
-    0 10px 25px rgba(0, 0, 139, 0.6),  /* deeper shadow downward */
-    /* 0 15px 35px rgba(0, 0, 139, 0.4),  */
-    0 3px 6px rgba(0, 0, 139, 0.2); 
+  background:  #39ff14; 
   color: black;
   padding: 14px;
   border: none;
   border-radius: 8px;
-  font-weight: bold;
   font-size: 16px;
   cursor: pointer;
   width: 100%;
+  box-shadow: 0 5px 15px #39ff14;
+ border-color: rgba(255, 255, 255, 0.15);
+ font-size: 14px;
+  border-style: solid;
+   backdrop-filter: none;
 }
 
 /* Right Info Side */
@@ -119,7 +118,7 @@ textarea {
 }
 
 .pill.green {
-  background-color: #00ff88;
+  background-color: #39ff14;
   color: #000;
 }
 

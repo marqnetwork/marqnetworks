@@ -24,7 +24,7 @@ const AboutSection = () => {
 
         {/* Buttons */}
         <div className="deep-dive-buttons">
-          <button className="btn primary">Connect With Us</button>
+          <button className="btn primaryabout">Connect With Us</button>
           <button className="btn secondary">Our Story in 90 sec</button>
         </div>
         <div className="deep__image">

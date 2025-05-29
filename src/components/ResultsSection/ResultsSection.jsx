@@ -37,8 +37,8 @@ const ResultsSection = () => {
         </div>
 
          <div className="results__svg-wrapper">
-    <img src="/images/resultleft.svg" alt="Left Decoration" className="results__svg results__svg--left" />
-    <img src="/images/resultright.svg" alt="Right Decoration" className="results__svg results__svg--right" />
+    <img src="/images/resultleft.png" alt="Left Decoration" className="results__svg results__svg--left" />
+    <img src="/images/resultright.png" alt="Right Decoration" className="results__svg results__svg--right" />
   </div>
         <InfiniteCardsSlider />
       </div>

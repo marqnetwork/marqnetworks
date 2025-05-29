@@ -30,8 +30,8 @@ const LaunchSection = () => {
         </div>
 
          <div className="launch__svg-wrapper">
-          <img src="/images/resultleft.svg" alt="Left Decoration" className="launch__svg launch__svg--left" />
-          <img src="/images/resultright.svg" alt="Right Decoration" className="launch__svg launch__svg--right" />
+          <img src="/images/resultleft.png" alt="Left Decoration" className="launch__svg launch__svg--left" />
+          <img src="/images/resultright.png" alt="Right Decoration" className="launch__svg launch__svg--right" />
         </div>
 
         <ImageSlider/>

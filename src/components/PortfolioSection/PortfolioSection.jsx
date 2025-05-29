@@ -23,8 +23,8 @@ const PortfolioSection = () => {
         </motion.h2>
 
         <p className="portfolio__description">
-       From SaaS scale-ups and e-commerce launches to government-ready solutions,  <br />
-       each case study proves how our cross-disciplinary team turns complexity into measurable results.
+       From SaaS scale-ups and e-commerce launches to government-ready solutions, each case   <br />
+    study   proves how our cross-disciplinary team turns complexity into measurable results.
         </p>
 
         <div className="portfolio__actions">

@@ -58,9 +58,9 @@
   }
   
   .work-smarter__headline {
-    font-size: 45px;
+    font-size: 3.2rem;
     line-height: 1.2;
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
     margin: 1.5rem 0;
   }
   

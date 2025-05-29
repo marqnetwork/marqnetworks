@@ -1,8 +1,8 @@
 .explore-section {
-  padding: 1rem 2rem;
+  padding: 5rem 4rem;
   text-align: center;
  background-color: black;
-  /* background: #000; */
+
 }
 
 .explore-container {
@@ -49,8 +49,7 @@
 }
 
 .explore-heading {
-  font-size: 3rem;
-  font-weight: 600;
+  font-size: 3.4rem;
   line-height: 1.2;
   margin-bottom: 1.5rem;
 }

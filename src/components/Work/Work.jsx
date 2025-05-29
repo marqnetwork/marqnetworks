@@ -71,14 +71,14 @@ const Work = () => {
           <span>From Idea to Impact</span>
         </motion.h2>
 
-        <p className="work__description"
+        <motion.p className="work__description"
          initial={{ x: -20, opacity: 0.6, filter: "blur(4px)" }}
           whileInView={{ x: 0, opacity: 1, filter: "blur(0px)" }}
           transition={{ duration: 1.2, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.5 }}>
           We’ve battle-tested a three-stage framework that eliminates guesswork,
           keeps you in the loop, and gets your product in market faster.
-        </p>
+        </motion.p>
 
         <div className="work__steps">
           {steps.map((step, index) => {

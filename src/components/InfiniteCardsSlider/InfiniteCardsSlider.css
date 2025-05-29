@@ -53,6 +53,12 @@ text-align: left;
    min-height: 460px;
   box-shadow: 0 0 30px rgba(0, 255, 150, 0.05), 0 10px 30px rgba(0, 0, 0, 0.5);
   border: 8px solid #080808;
+
+   /* 👇 Green bottom glow */
+  box-shadow:
+    0 20px 40px rgba(57, 255, 20, 0.2), /* soft green glow */
+    0 10px 20px rgba(57, 255, 20, 0.3), /* tighter green glow */
+    0 0 10px rgba(57, 255, 20, 0.15);   /* neon border soft glow */
 }
 
 .card-image-wrapper {

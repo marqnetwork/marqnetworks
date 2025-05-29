@@ -31,10 +31,10 @@ const PortfolioSection = () => {
           <button className="portfolio__button">View Full Portfolio</button>
         </div>
 
-         <div className="feature__svg-wrapper">
+         {/* <div className="feature__svg-wrapper">
     <img src="/images/resultleft.svg" alt="Left Decoration" className="feature__svg feature__svg--left" />
     <img src="/images/resultright.svg" alt="Right Decoration" className="feature__svg feature__svg--right" />
-  </div>
+  </div> */}
   <br />
   <br />
  <StackingCards/>

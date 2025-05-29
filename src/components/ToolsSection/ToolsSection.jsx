@@ -21,6 +21,10 @@ const ToolsSection = () => {
           <button className="tools__button">Book an Appointment</button>
         </div>
       </div>
+       <div className="feature__svg-wrapper">
+    <img src="/images/resultleft.svg" alt="Left Decoration" className="feature__svg feature__svg--left" />
+    <img src="/images/resultright.svg" alt="Right Decoration" className="feature__svg feature__svg--right" />
+  </div>
     </section>
   );
 };

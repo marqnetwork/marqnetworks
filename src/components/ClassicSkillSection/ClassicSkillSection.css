@@ -53,10 +53,11 @@
 .classic-skill__tag {
   background-color: #111;
   color: #aaa;
-  /* padding: 6px 14px; */
+  padding: 6px 14px;
   border-radius: 12px;
   font-size: 0.85rem;
   font-weight: 400;
+  /* margin-bottom: 30px; */
 }
 
 .classic-skill__description {

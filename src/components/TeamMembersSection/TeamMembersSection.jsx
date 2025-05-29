@@ -20,6 +20,10 @@ const TeamMembersSection = () => {
         <div className="team-members__actions">
           <button className="team-members__button">Book a 15-min call</button>
         </div>
+          <div className="feature__svg-wrapper">
+    <img src="/images/resultleft.svg" alt="Left Decoration" className="feature__svg feature__svg--left" />
+    <img src="/images/resultright.svg" alt="Right Decoration" className="feature__svg feature__svg--right" />
+  </div>
       </div>
     </section>
   );

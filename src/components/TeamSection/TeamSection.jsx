@@ -71,6 +71,7 @@ const TeamSection = () => {
           </a>
         ))}
       </div>
+      
     </div>
   );
 };

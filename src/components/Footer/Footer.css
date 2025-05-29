@@ -46,13 +46,14 @@
   padding: 0.4rem 1rem;
   border: none;
   border-radius: 6px;
-  font-weight: 500;
+  
   cursor: pointer;
   white-space: nowrap;
    border-color: rgba(255, 255, 255, 0.15);
  font-size: 14px;
   border-style: solid;
    backdrop-filter: none;
+    box-shadow: 0 5px 15px #39ff14;
 }
 
 .footer__middle h4,

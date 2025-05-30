@@ -6,7 +6,7 @@ const LandinBenefitCards = () => {
     <div className="benefit-wrapper">
       {/* Large Card */}
       <div className="benefit-card large">
-        <img src="/images/card1.png" alt="Unlimited Requests" />
+        <img src="/images/submit.png" alt="Unlimited Requests" />
         <h3>Submit Unlimited Requests</h3>
         <p>
           Fire off as many tasks as you like—design, dev, or copy. Your dedicated pod works through them in your chosen priority, no tickets lost.
@@ -19,7 +19,7 @@ const LandinBenefitCards = () => {
 
       {/* Requests & Revisions */}
       <div className="benefit-card medium">
-        <img src="/images/card1.png" alt="Requests & Revisions" />
+        <img src="/images/request.png" alt="Requests & Revisions" />
         <div className="card-header">
           <h4>Requests & Revisions</h4>
           <span className="pill">NEW</span>
@@ -31,7 +31,7 @@ const LandinBenefitCards = () => {
 
       {/* Quick Turnaround */}
       <div className="benefit-card small">
-        <img src="/images/card2.png" alt="Quick Turnaround" />
+        <img src="/images/quick.png" alt="Quick Turnaround" />
         <div className="card-header">
           <h4> Lightning-Fast Turnaround</h4>
           <span className="pill">NEW</span>
@@ -43,7 +43,7 @@ const LandinBenefitCards = () => {
 
       {/* Publish in Seconds */}
       <div className="benefit-card small">
-        <img src="/images/card2.png" alt="Publish in Seconds" />
+        <img src="/images/publish.png" alt="Publish in Seconds" />
         <div className="card-header">
           <h4>  Worry-Free Pricing</h4>
         </div>
@@ -54,7 +54,7 @@ const LandinBenefitCards = () => {
 
       {/* Worry-Free Pricing */}
       <div className="benefit-card smallx">
-        <img src="/images/card1.png" alt="Worry-Free Pricing" />
+        <img src="/images/worry.png" alt="Worry-Free Pricing" />
         <div className="card-header">
           <h4> Off-Shore Excellence Hub</h4>
           <span className="pill">NEW</span>

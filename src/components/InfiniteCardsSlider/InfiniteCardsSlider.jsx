@@ -7,42 +7,42 @@ const cards = [
     subHeader: "Cyber-Security Overhaul",
     blurb: "Hardened infra, passed Federal audit with zero findings and doubled site speed.",
     stats: ["100 % Compliance Pass", "70 % Faster Load"],
-    image: "/images/resultbg1.png"
+    image: "/images/Gov-IT.png"
   },
   {
     header: "GA Tax Lien Boot Camp",
     subHeader: "Webinar-to-Boot-Camp Funnel",
     blurb: "Packed 250-400 attendees every 2 weeks and upsold a $3,999 boot-camp.",
     stats: ["37 % Webinar-→-Sale Rate", "$3.2 M Pipeline"],
-    image: "/images/resultbg2.png"
+    image: "/images/GA Tax.png"
   },
   {
     header: "JeCouturier",
     subHeader: "Custom E-Com for Tailoring",
     blurb: "Launched bespoke suit store— full funnel, CRM, and automation.",
     stats: ["4 × Online Sales", "65 % Repeat Orders"],
-    image: "/images/resultbg3.png"
+    image: "/images/JeCouturier.png"
   },
   {
     header: "Luna Health",
     subHeader: "MVP to Market in 90 Days",
     blurb: "Built & shipped tele-health app; rapid user uptake post-launch.",
     stats: ["45 k App Downloads"],
-    image: "/images/resultbg4.png"
+    image: "/images/LunaHealth.png"
   },
   {
     header: "Collaborative Creative",
     subHeader: "Done-For-You Funnel Ops",
     blurb: "Managed email + funnel; doubled rev while client slept.",
     stats: ["120 % Revenue Lift", "250 % Email CTR"],
-    image: "/images/resultbg5.png"
+    image: "/images/Collaborative.png"
   },
   {
     header: "Way Fields Studio",
     subHeader: "AI-Powered Lead Engine",
     blurb: "Deployed AI site + ads, slashed acquisition costs.",
     stats: ["52 % Lead-to-Call Rate", "40 % Lower CAC"],
-    image: "/images/resultbg6.png"
+    image: "/images/Fields.png"
   }
 ];
 

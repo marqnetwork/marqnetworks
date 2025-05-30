@@ -11,7 +11,7 @@
  
   
 }
-.feature__svg-wrapper {
+.portfolio__decoration-wrapper {
   position: relative;
   width: 100%;
   display: flex;
@@ -21,27 +21,25 @@
   pointer-events: none;
 }
 
-.feature__svg {
+.portfolio__decoration {
   width: 400px;
-  
 }
 
-.feature__svg--left {
+.portfolio__decoration--left {
   transform: translateX(-70px) translateY(-100px);
 }
 
-.feature__svg--right {
+.portfolio__decoration--right {
   transform: translateX(70px) translateY(-100px);
 }
 
-
-
 /* Hide on small screens */
 @media (max-width: 768px) {
-  .feature__svg-wrapper {
+  .portfolio__decoration-wrapper {
     display: none;
   }
 }
+
 
 
 

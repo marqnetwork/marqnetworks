@@ -26,15 +26,16 @@ const PortfolioSection = () => {
        From SaaS scale-ups and e-commerce launches to government-ready solutions, each case   <br />
     study   proves how our cross-disciplinary team turns complexity into measurable results.
         </p>
+         <div className="feature__svg-wrapper">
+    <img src="/images/resultleft.png" alt="Left Decoration" className="feature__svg feature__svg--left" />
+    <img src="/images/resultright.png" alt="Right Decoration" className="feature__svg feature__svg--right" />
+  </div>
 
         <div className="portfolio__actions">
           <button className="portfolio__button">View Full Portfolio</button>
         </div>
 
-         <div className="feature__svg-wrapper">
-    <img src="/images/resultleft.png" alt="Left Decoration" className="feature__svg feature__svg--left" />
-    <img src="/images/resultright.png" alt="Right Decoration" className="feature__svg feature__svg--right" />
-  </div>
+        
   <br />
   <br />
  <StackingCards/>

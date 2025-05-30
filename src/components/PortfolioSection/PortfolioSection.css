@@ -27,11 +27,11 @@
 }
 
 .feature__svg--left {
-  transform: translateX(-60px) translateY(-200px);
+  transform: translateX(-70px) translateY(-100px);
 }
 
 .feature__svg--right {
-  transform: translateX(60px) translateY(-200px);
+  transform: translateX(70px) translateY(-100px);
 }
 
 

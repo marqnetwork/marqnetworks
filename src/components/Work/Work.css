@@ -28,8 +28,9 @@
 }
 
 .work__right img {
-  width: 110%;
+ 
   /* max-width: 460px; */
+   width: 110%;
   height: 610px;
   /* border-radius: 20px; */
   object-fit: cover;

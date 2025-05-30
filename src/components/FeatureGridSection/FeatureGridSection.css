@@ -18,12 +18,15 @@
 
 /* Each card */
 .feature__card {
-  background: radial-gradient(
-    circle at bottom left,
-   rgba(45, 216, 15, 0.897),  /* Your desired green (#39ff14) with opacity */
-    #0a0a0a 60%,
-    #000 100%
-  );
+background: radial-gradient(
+  400px circle at 40px 40px, /* Positioning the glow */
+  #56B84826,   /* #56B84826: soft green */
+  #56B84826 40%,
+  #61616117 70%,
+  #61616117 100%
+);
+
+
   border-radius: 16px;
   padding: 1.5rem;
   position: relative;

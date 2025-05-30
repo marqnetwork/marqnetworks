@@ -72,8 +72,9 @@
 /* ========== CARD DESIGN MATCHING SCREENSHOT ========== */
 .service-card {
   /* background:linear-gradient(to bottom right, #0e1f16, #000); */
- background-image: url(https://framerusercontent.com/images/KfsUX7SjXWF8GYOil2kfkZ9e1PA.png?scale-down-to=512);
+
 background-size: cover;
+ background-image: url("/images/workcardbg.png");
   background-position: center;
   background-repeat: no-repeat;
 

@@ -1,65 +1,66 @@
-// src/components/InfiniteCardsSlider.js
 import React from "react";
 import "./InfiniteCardsSlider.css";
 
 const cards = [
   {
-    city: "Excelus (Gov-IT)",
-    company: "Cyber-Security Overhaul",
-    description: "Hardened infra, passed Federal audit with zero findings and doubled site speed.",
+    header: "Excelus (Gov-IT)",
+    subHeader: "Cyber-Security Overhaul",
+    blurb: "Hardened infra, passed Federal audit with zero findings and doubled site speed.",
     stats: ["100 % Compliance Pass", "70 % Faster Load"],
-    image: "/images/basel.png"
+    image: "/images/resultbg1.png"
   },
   {
-    city: "GA Tax Lien Boot Camp",
-    company: "Webinar-to-Boot-Camp Funnel",
-    description: "Packed 250-400 attendees every 2 weeks and upsold a $3,999 boot-camp.",
+    header: "GA Tax Lien Boot Camp",
+    subHeader: "Webinar-to-Boot-Camp Funnel",
+    blurb: "Packed 250-400 attendees every 2 weeks and upsold a $3,999 boot-camp.",
     stats: ["37 % Webinar-→-Sale Rate", "$3.2 M Pipeline"],
-    image: "/images/london.png"
+    image: "/images/resultbg2.png"
   },
   {
-    city: "JeCouturier",
-    company: "Custom E-Com for Tailoring",
-    description: "Launched bespoke suit store— full funnel, CRM, and automation.",
+    header: "JeCouturier",
+    subHeader: "Custom E-Com for Tailoring",
+    blurb: "Launched bespoke suit store— full funnel, CRM, and automation.",
     stats: ["4 × Online Sales", "65 % Repeat Orders"],
-    image: "/images/manila.png"
+    image: "/images/resultbg3.png"
   },
   {
-    city: "Luna Health",
-    company: "MVP to Market in 90 Days",
-    description: "Built & shipped tele-health app; rapid user uptake post-launch.",
+    header: "Luna Health",
+    subHeader: "MVP to Market in 90 Days",
+    blurb: "Built & shipped tele-health app; rapid user uptake post-launch.",
     stats: ["45 k App Downloads"],
-    image: "/images/basel.png"
+    image: "/images/resultbg4.png"
   },
   {
-    city: "Collaborative Creative",
-    company: "Done-For-You Funnel Ops",
-    description: "Managed email + funnel; doubled rev while client slept.",
+    header: "Collaborative Creative",
+    subHeader: "Done-For-You Funnel Ops",
+    blurb: "Managed email + funnel; doubled rev while client slept.",
     stats: ["120 % Revenue Lift", "250 % Email CTR"],
-    image: "/images/london.png"
+    image: "/images/resultbg5.png"
   },
   {
-    city: "Way Fields Studio",
-    company: "AI-Powered Lead Engine",
-    description: "Deployed AI site + ads, slashed acquisition costs.",
+    header: "Way Fields Studio",
+    subHeader: "AI-Powered Lead Engine",
+    blurb: "Deployed AI site + ads, slashed acquisition costs.",
     stats: ["52 % Lead-to-Call Rate", "40 % Lower CAC"],
-    image: "/images/manila.png"
+    image: "/images/resultbg6.png"
   }
 ];
 
 const InfiniteCardsSlider = () => {
-  const duplicated = [...cards, ...cards];
+  const duplicated = [...cards, ...cards]; // infinite loop
+
   return (
     <div className="slider-wrapper">
+      <div className="slider-glow"></div>
       <div className="slider-track">
         {duplicated.map((card, index) => (
           <div className="slider-card" key={index}>
             <div className="card-image-wrapper">
-              <img src={card.image} alt={card.city} />
+              <img src={card.image} alt={card.header} />
               <div className="card-content-overlay">
-                <h3 className="brand-title">{card.city}</h3>
-                <p className="company">{card.company}</p>
-                <p className="desc">{card.description}</p>
+                <h3 className="card-header">{card.header}</h3>
+                <p className="card-sub-header">{card.subHeader}</p>
+                <p className="card-blurb">{card.blurb}</p>
                 <div className="stats">
                   {card.stats.map((stat, i) => (
                     <span key={i} className="stat-badge">{stat}</span>

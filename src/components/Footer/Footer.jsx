@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import MarqButton from '../MarqButton/MarqButton'
 
 const Footer = () => {
   return (
@@ -12,7 +13,8 @@ const Footer = () => {
           
           <div className="footer__subscribe">
             <input type="email" placeholder="Your work e-mail…" />
-            <button>Keep Me in the Loop</button>
+            {/* <button>Keep Me in the Loop</button> */}
+            <MarqButton />
           </div>
         </div>
 

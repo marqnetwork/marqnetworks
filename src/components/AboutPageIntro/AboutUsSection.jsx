@@ -1,5 +1,6 @@
 import React from 'react';
 import './AboutUsSection.css';
+import MarqButton from '../MarqButton/MarqButton'
 
 const AboutSection = () => {
   return (
@@ -24,7 +25,8 @@ const AboutSection = () => {
 
         {/* Buttons */}
         <div className="deep-dive-buttons">
-          <button className="btn primaryabout">Connect With Us</button>
+          
+          <MarqButton  className="btn primaryabout"/>
           <button className="btn secondary">Our Story in 90 sec</button>
         </div>
         <div className="deep__image">

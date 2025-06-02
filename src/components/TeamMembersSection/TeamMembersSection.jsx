@@ -1,5 +1,6 @@
 import React from 'react';
 import './TeamMembersSection.css';
+import MarqButton from '../MarqButton/MarqButton'
 
 const TeamMembersSection = () => {
   return (
@@ -18,7 +19,8 @@ const TeamMembersSection = () => {
         </p>
 
         <div className="team-members__actions">
-          <button className="team-members__button">Book a 15-min call</button>
+          
+          <MarqButton className="team-members__button"/>
         </div>
           <div className="feature__svg-wrapper">
     <img src="/images/resultleft.png" alt="Left Decoration" className="feature__svg feature__svg--left" />

@@ -1,5 +1,6 @@
 import React from 'react';
 import './ToolsSection.css';
+import MarqButton from '../MarqButton/MarqButton'
 
 const ToolsSection = () => {
   return (
@@ -18,7 +19,8 @@ const ToolsSection = () => {
         </p>
 
         <div className="tools__actions">
-          <button className="tools__button">Book an Appointment</button>
+          
+          <MarqButton className="tools__button"/>
         </div>
       </div>
        <div className="feature__svg-wrapper">

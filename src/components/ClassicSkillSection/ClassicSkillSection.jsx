@@ -1,5 +1,6 @@
 import React from "react";
 import "./ClassicSkillSection.css";
+import MarqButton from '../MarqButton/MarqButton'
 
 const ClassicSkillSection = () => {
   return (
@@ -31,7 +32,8 @@ const ClassicSkillSection = () => {
         </p>
 
         <div className="classic-skill__actions">
-          <button className="classic-skill__button">Book an Appointment</button>
+          
+          <MarqButton className="classic-skill__button"/>
           <div className="classic-skill__rating">
             <span className="classic-skill__stars">★★★★★</span>
             <span className="classic-skill__reviews">

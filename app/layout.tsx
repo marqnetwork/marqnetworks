@@ -1,9 +1,16 @@
-"use client";
+// "use client";
 
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 
+export const metadata = {
+  title: "Marq Network",
+  description: "Welcome to Marq Network",
+  icons: {
+    icon: "/images/favicon.svg",
+  },
+};
 
 
 export default function RootLayout({

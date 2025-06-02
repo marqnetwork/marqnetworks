@@ -31,7 +31,14 @@ const Hero = () => {
           </motion.p>
 
           <div className="hero__buttons">
-            <button className="primary-btn-hero">Connect With Us</button>
+            <a
+  href="https://marqnetworks.zohobookings.com/#/business-consultation"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button className="primary-btn-hero">Meet MarQ Networks</button>
+</a>
+
             <button className="secondary-btn2">Explore the Stack</button>
           </div>
           <LogoSlider />

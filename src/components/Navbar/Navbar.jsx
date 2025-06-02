@@ -33,7 +33,14 @@ const Navbar = () => {
       </ul>
 
       {/* CTA Button */}
-      <button className="navbar__button">Get in Touch</button>
+     <a
+  href="https://marqnetworks.zohobookings.com/#/business-consultation"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button className="navbar__button">Meet MarQ Networks</button>
+</a>
+
     </nav>
     </div>
   );

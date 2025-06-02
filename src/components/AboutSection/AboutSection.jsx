@@ -41,7 +41,9 @@ const AboutSection = () => {
 
         <div className="about__actions">
 
-            <button  className="about__button">Meet MarQ Networks</button>
+            <a href="https://marqnetworks.zohobookings.com/#/business-consultation" target="_blank" rel="noopener noreferrer">
+  <button className="about__button">Meet MarQ Networks</button>
+</a>
 
             <div className="about__rating">
                 <span className="stars">★★★★★</span>

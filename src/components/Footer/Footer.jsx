@@ -56,15 +56,7 @@ const Footer = () => {
             <div className="footer__video-wrapper">
   <div className="footer__sales">Sales – 7,360,109</div>
   <div className="video__container">
-    {/* <video
-      className="footer__video"
-      src="/images/footer.mp4"
-      type="video/mp4"
-      autoPlay
-      loop
-      muted
-      playsInline
-    /> */}
+  
   </div>
 </div>
 

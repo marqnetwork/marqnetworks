@@ -144,13 +144,46 @@ p {
   }
 }
 
+/* Mobile-specific responsiveness */
 @media (max-width: 600px) {
   .benefit-wrapper {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column layout for narrow screens */
+    padding: 20px 16px;         /* Optional padding for better spacing on mobile */
   }
+
   .benefit-card.large,
   .benefit-card.medium,
-  .benefit-card.small {
-    grid-column: span 1;
+  .benefit-card.small,
+  .smallx {
+    grid-column: span 1; /* All cards span full width */
+  }
+
+  .benefit-card {
+    padding: 16px;
+    font-size: 0.95rem;
+  }
+
+  .benefit-card img {
+    height: 150px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .primary-btn,
+  .secondary-btn3 {
+    width: 100%; /* Make buttons full-width on mobile */
+    text-align: center;
+  }
+
+  h3, h4 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.9rem;
   }
 }
+

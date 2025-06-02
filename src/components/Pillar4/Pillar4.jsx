@@ -7,20 +7,20 @@ import MarqButton from '../MarqButton/MarqButton'
 
 const steps = [
   {
-    title: "User-Centered Design",
-    desc: "Craft delightful experiences with user flows, wireframes, and component libraries.",
+    title: "Hyper-Personalization at Scale",
+    desc: "Our AI analyzes user behavior, location, and intent to serve the perfect message—across channels, in real time.",
     icon: "/images/solutionlogo.png",
     image: "/images/Villa.png"
   },
   {
-    title: "Product-Led Growth Assets",
-    desc: "We turn insights into high-converting UIs, landing pages, and onboarding flows.",
+    title: "Predictive Lead Scoring & Funnel Control",
+    desc: "Know exactly who converts next. AI prioritizes your best leads and auto-optimizes funnel paths to reduce CAC.",
     icon: "/images/solutionlogo.png",
     image: "/images/Villa.png"
   },
     {
-    title: "Product-Led Growth Assets",
-    desc: "We turn insights into high-converting UIs, landing pages, and onboarding flows.",
+    title: "Revolution: Marketing Without Guessing",
+    desc: "Forget A/B testing fatigue. Your campaigns learn daily, adapt hourly, and outperform historically.",
     icon: "/images/solutionlogo.png",
     image: "/images/Villa.png"
   }

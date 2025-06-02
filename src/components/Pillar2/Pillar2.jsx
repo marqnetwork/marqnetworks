@@ -7,20 +7,20 @@ import MarqButton from '../MarqButton/MarqButton'
 
 const steps = [
   {
-    title: "Growth Marketing & GTM Strategy",
-    desc: "Launch, test, and scale your product with proven paid, organic, and partnership playbooks.",
+    title: "Designs That Self-Optimize",
+    desc: "Using AI heatmaps and behavioral data, we craft interfaces that adapt to users and evolve with usage—automatically.",
     icon: "/images/solutionlogo.png",
     image: "/images/Villa.png"
   },
   {
-    title: "Data-Driven Campaigns",
-    desc: "We build attribution-ready campaigns across search, social, and outbound channels.",
+    title: "Generative Branding & 3D Assets",
+    desc: "We lead the creative edge by combining human concept with AI co-pilots—outputting scalable, dynamic design systems",
     icon: "/images/solutionlogo.png",
     image: "/images/Villa.png"
   },
     {
-    title: "Data-Driven Campaigns",
-    desc: "We build attribution-ready campaigns across search, social, and outbound channels.",
+    title: "Revolution: From Fixed to Living Brands",
+    desc: "Creativity is no longer static. Your visual identity becomes intelligent, personalized, and self-improving.",
     icon: "/images/solutionlogo.png",
     image: "/images/Villa.png"
   }

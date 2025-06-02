@@ -13,14 +13,14 @@ const steps = [
     image: "/images/Villa.png"
   },
   {
-    title: "Strategy & Digital Transformation",
-    desc: "Align teams, de-risk spend, and launch initiatives with a proven 90-day execution map.",
+    title: "Faster, Sharper Diagnostics",
+    desc: "AI audits your funnels, operations, and cost centers to pinpoint leaks, missed revenue, and inefficiencies in days—not months.",
     icon: "/images/solutionlogo.png",
     image: "/images/Villa.png"
   },
    {
-    title: "Strategy & Digital Transformation",
-    desc: "Align teams, de-risk spend, and launch initiatives with a proven 90-day execution map.",
+    title: "Revolution: The End of Guesswork",
+    desc: "Strategy becomes science. With every project, we lead clients into a future where data writes the playbook.",
     icon: "/images/solutionlogo.png",
     image: "/images/Villa.png"
   }

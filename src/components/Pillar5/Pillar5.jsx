@@ -7,20 +7,20 @@ import MarqButton from '../MarqButton/MarqButton'
 
 const steps = [
   {
-    title: "AI Tools & Assistants",
-    desc: "We build internal and customer-facing AI agents that automate decisions, support, and creation.",
+    title: "Sprint Automation & Smart Resource Allocation",
+    desc: "AI dynamically adjusts sprint tasks, predicts blockers, and allocates global team members based on skill + velocity.",
     icon: "/images/solutionlogo.png",
     image: "/images/Villa.png"
   },
   {
-    title: "Automation Workflows",
-    desc: "Streamline ops with backend bots, Zapier/Make integrations, and custom APIs.",
+    title: "Real-Time Quality Assurance",
+    desc: "Every commit, test, and deployment is monitored by AI to catch issues before humans do.",
     icon: "/images/solutionlogo.png",
     image: "/images/Villa.png"
   },
    {
-    title: "Automation Workflows",
-    desc: "Streamline ops with backend bots, Zapier/Make integrations, and custom APIs.",
+    title: "Revolution: Global Teams. One Brain.",
+    desc: "We don't just operate around the clock—we operate ahead of the clock. AI makes our global delivery seamless, smart, and superior.",
     icon: "/images/solutionlogo.png",
     image: "/images/Villa.png"
   }

@@ -7,6 +7,7 @@ import StackingCards from '@/components/Stack/index';
 
 
 
+
 const ResultsSection = () => {
   return (
     <section className="results">

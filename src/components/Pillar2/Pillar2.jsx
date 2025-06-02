@@ -3,6 +3,7 @@
 import React from "react";
 import '../../components/SolutionPillars/SolutionPillars.css'
 import { motion } from "framer-motion";
+import MarqButton from '../MarqButton/MarqButton'
 
 const steps = [
   {
@@ -53,7 +54,7 @@ const Pillar2 = () => {
           <li>Brand identity & guidelines</li>
         </ul>
 
-        <button className="solution-pillars__cta-button">Book an Appointment</button>
+        <MarqButton className="solution-pillars__cta-button"/>
         <p className="solution-pillars__footer">MarQ Consultancy</p>
 
         <div className="solution-pillars__cards">

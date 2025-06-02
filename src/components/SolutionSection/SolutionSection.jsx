@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import './SolutionSection.css';
+import MarqButton from '../MarqButton/MarqButton'
 
 const SolutionSection = () => {
   return (
@@ -29,7 +30,8 @@ const SolutionSection = () => {
 
         {/* Buttons */}
         <div className="solution-buttons">
-          <button className="solution-btn primary">Get In Touch</button>
+          
+          <MarqButton  className="solution-btn primary"/>
           <button className="solution-btn secondary">See How We Solve</button>
         </div>
       </div>

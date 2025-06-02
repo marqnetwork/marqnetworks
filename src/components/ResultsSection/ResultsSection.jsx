@@ -4,6 +4,7 @@ import React from 'react';
 import './ResultsSection.css';
 import { motion } from "framer-motion";
 import InfiniteCardsSlider from '../InfiniteCardsSlider/InfiniteCardsSlider';
+import MarqButton from '../MarqButton/MarqButton'
 
 const ResultsSection = () => {
   return (
@@ -33,7 +34,8 @@ const ResultsSection = () => {
         </p>
 
         <div className="results__actions">
-          <button className="results__button">Book a 15-min call</button>
+    
+    <MarqButton className="results__button"/>
         </div>
 
          <div className="results__svg-wrapper">

@@ -4,6 +4,7 @@
 import React, { useRef } from "react";
 import "./Work.css";
 import { motion, useScroll, useTransform } from "framer-motion";
+import MarqButton from '../MarqButton/MarqButton'
 
 const steps = [
   {
@@ -115,9 +116,9 @@ const Work = () => {
                   ))}
 
                   {index === steps.length - 1 && (
-                    <button className="work__cta-button" style={{ marginTop: "20px" }}>
-                      Book an Appointment
-                    </button>
+    
+              <MarqButton className="work__cta-button" style={{ marginTop: "20px" }}/>
+
                   )}
                 </div>
               </motion.div>

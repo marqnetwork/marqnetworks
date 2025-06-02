@@ -2,6 +2,7 @@
 import React from "react";
 import './AboutSection.css'
 import { motion } from "framer-motion";
+import MarqButton from '../MarqButton/MarqButton'
 
 
 
@@ -41,9 +42,8 @@ const AboutSection = () => {
 
         <div className="about__actions">
 
-            <a href="https://marqnetworks.zohobookings.com/#/business-consultation" target="_blank" rel="noopener noreferrer">
-  <button className="about__button">Meet MarQ Networks</button>
-</a>
+   
+           <MarqButton className="about__button" />
 
             <div className="about__rating">
                 <span className="stars">★★★★★</span>

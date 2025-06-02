@@ -3,6 +3,7 @@
 import React from 'react';
 import './JoinUsNow.css'; // renamed CSS file
 import { motion } from "framer-motion";
+import MarqButton from '../MarqButton/MarqButton'
 
 const JoinUsNow = () => {
   return (
@@ -26,7 +27,8 @@ const JoinUsNow = () => {
         </p>
 
         <div className="join__actions">
-          <button className="join__button">Book an Appointment</button>
+          
+          <MarqButton className="join__button"/>
         </div>
       </div>
     </section>

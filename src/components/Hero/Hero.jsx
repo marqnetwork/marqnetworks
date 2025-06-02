@@ -3,6 +3,7 @@ import React from "react";
 import "./Hero.css";
 import LogoSlider from "../LogoSlider/LogoSlider";
 import { motion } from "framer-motion";
+import MarqButton from '../MarqButton/MarqButton'
 
 const Hero = () => {
   return (
@@ -31,13 +32,8 @@ const Hero = () => {
           </motion.p>
 
           <div className="hero__buttons">
-            <a
-  href="https://marqnetworks.zohobookings.com/#/business-consultation"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <button className="primary-btn-hero">Meet MarQ Networks</button>
-</a>
+     
+             <MarqButton  className="primary-btn-hero"/>
 
             <button className="secondary-btn2">Explore the Stack</button>
           </div>

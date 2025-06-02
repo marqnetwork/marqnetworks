@@ -2,6 +2,7 @@
 import React from 'react'; 
 import './FeatureSection.css';
 import { motion } from "framer-motion";
+import MarqButton from '../MarqButton/MarqButton'
 
 
 const FeatureSection = () => {
@@ -26,7 +27,10 @@ const FeatureSection = () => {
         </p>
 
         <div className="feature__actions">
-          <button className="feature__button">View About MarQ</button>
+  
+<MarqButton className="feature__button"/>
+
+
         </div>
         </div>
 

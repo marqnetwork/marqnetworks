@@ -1,5 +1,6 @@
 import React from 'react';
 import './LandinBenefitCards.css';
+import MarqButton from '../MarqButton/MarqButton'
 
 const LandinBenefitCards = () => {
   return (
@@ -12,7 +13,9 @@ const LandinBenefitCards = () => {
           Fire off as many tasks as you like—design, dev, or copy. Your dedicated pod works through them in your chosen priority, no tickets lost.
         </p>
         <div className="button-group">
-          <button className="primary-btn">Book an Appointment</button>
+   
+      <MarqButton className="primary-btn"/>
+
           {/* <button className="secondary-btn3">What is Landin?</button> */}
         </div>
       </div>

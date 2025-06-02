@@ -5,6 +5,7 @@ import './LaunchSection.css'; // new CSS file
 import { motion } from "framer-motion";
 
 import ImageSlider from '../ImageSlider/ImageSlider';
+import MarqButton from '../MarqButton/MarqButton'
 
 const LaunchSection = () => {
   return (
@@ -26,7 +27,8 @@ const LaunchSection = () => {
         </p>
 
         <div className="launch__actions">
-          <button className="launch__button">Book a 15-min Launch Call</button>
+          
+          <MarqButton  className="launch__button"/>
         </div>
 
          <div className="launch__svg-wrapper">

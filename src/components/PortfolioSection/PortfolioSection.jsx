@@ -4,6 +4,7 @@ import React from 'react';
 import './PortfolioSection.css'; 
 import { motion } from "framer-motion";
 import StackingCards from '../Stack';
+import MarqButton from '../MarqButton/MarqButton'
 
 const PortfolioSection = () => {
   return (
@@ -33,7 +34,8 @@ const PortfolioSection = () => {
 
 
         <div className="portfolio__actions">
-          <button className="portfolio__button">View Full Portfolio</button>
+          {/* <button className="portfolio__button">View Full Portfolio</button> */}
+          <MarqButton className="portfolio__button"/>
         </div>
 
         

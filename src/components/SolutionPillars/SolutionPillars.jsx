@@ -7,8 +7,8 @@ import MarqButton from '../MarqButton/MarqButton'
 
 const steps = [
   {
-    title: "AI-Powered Development",
-    desc: "We build AI-driven websites that adapt to users and automation.",
+    title: "Predictive Planning, Not Just Projections",
+    desc: "Our AI models simulate market shifts and customer behavior to build roadmaps that evolve in real-time—not static documents.",
     icon: "/images/solutionlogo.png",
     image: "/images/Villa.png"
   },

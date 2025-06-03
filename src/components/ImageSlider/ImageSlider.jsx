@@ -5,16 +5,16 @@ import { motion } from "framer-motion";
 import "./ImageSlider.css";
 
 const images = [
-  "/images/slider1.jpg",
+  "/images/slider1.png",
   "/images/slider2.png",
   "/images/slider3.png",
-  "/images/slider4.jpg",
+  "/images/slider4.png",
   "/images/slider5.png",
   "/images/slider6.png",
   "/images/slider7.png",
   "/images/slider8.png",
-  "/images/slider9.jpg",
-  "/images/slider10.jpg",
+  "/images/slider9.png",
+  "/images/slider10.png",
 ];
 
 // Split images into top and bottom rows

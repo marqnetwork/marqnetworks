@@ -10,19 +10,19 @@ const steps = [
     title: "Code That Thinks Ahead",
     desc: "AI assists in writing, reviewing, and optimizing code—detecting bugs and inefficiencies before they ship.",
     icon: "/images/solutionlogo.png",
-    image: "/images/Villa.png"
+    image: "/images/p7.png"
   },
   {
     title: "Smart Integrations & Automation",
     desc: "We build software with built-in learning loops: voice assistants, AI-powered APIs, and automated workflows.",
     icon: "/images/solutionlogo.png",
-    image: "/images/Villa.png"
+    image: "/images/p8.png"
   },
   {
     title: "Revolution: From Software to Self-Evolving Platforms",
     desc: "Your systems don’t just launch—they learn, adapt, and grow. This isn’t development. It’s evolution.",
     icon: "/images/solutionlogo.png",
-    image: "/images/Villa.png"
+    image: "/images/p9.png"
   }
 ];
 

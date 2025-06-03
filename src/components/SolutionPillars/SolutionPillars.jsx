@@ -10,19 +10,19 @@ const steps = [
     title: "Predictive Planning, Not Just Projections",
     desc: "Our AI models simulate market shifts and customer behavior to build roadmaps that evolve in real-time—not static documents.",
     icon: "/images/solutionlogo.png",
-    image: "/images/Villa.png"
+    image: "/images/p1.png"
   },
   {
     title: "Faster, Sharper Diagnostics",
     desc: "AI audits your funnels, operations, and cost centers to pinpoint leaks, missed revenue, and inefficiencies in days—not months.",
     icon: "/images/solutionlogo.png",
-    image: "/images/Villa.png"
+    image: "/images/p2.png"
   },
    {
     title: "Revolution: The End of Guesswork",
     desc: "Strategy becomes science. With every project, we lead clients into a future where data writes the playbook.",
     icon: "/images/solutionlogo.png",
-    image: "/images/Villa.png"
+    image: "/images/p3.png"
   }
 ];
 

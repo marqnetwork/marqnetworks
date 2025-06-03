@@ -7,7 +7,7 @@ const SolutionSection = () => {
   return (
     <section 
       className="solution-section" 
-      style={{ backgroundImage: `url(/images/solutionbg.png)` }}
+      // style={{ backgroundImage: `url(/images/solutionbg.png)` }}
     >
       <div className="solution-container">
         {/* Tag */}

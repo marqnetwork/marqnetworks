@@ -8,7 +8,7 @@ export const metadata = {
   title: "Marq Network",
   description: "Welcome to Marq Network",
   icons: {
-    icon: "/images/faviconblack.svg",
+    icon: "/images/MarQ.svg",
   },
 };
 

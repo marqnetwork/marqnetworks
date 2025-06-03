@@ -82,6 +82,8 @@
 }
 
 .solution-pillars__cta-button {
+  position: relative;      /* create positioning context   */
+  padding-right: 48px;
   background-color: #39ff14;
   color: black;
   padding: 12px 24px;

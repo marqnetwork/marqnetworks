@@ -54,9 +54,15 @@ const SolutionPillars = () => {
           <li>Brand identity & guidelines</li>
         </ul>
 
+    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+  <MarqButton className="solution-pillars__cta-button" />
+  {/* <img src="/images/strategylogo.png" alt="logo" className="cta-logo" /> */}
+</div>
+
+
+
         
-        <MarqButton className="solution-pillars__cta-button"/>
-        <p className="solution-pillars__footer">MarQ Consultancy</p>
+       
 
         <div className="solution-pillars__cards">
           {steps.map((step, index) => (

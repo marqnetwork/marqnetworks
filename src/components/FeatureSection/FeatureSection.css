@@ -9,7 +9,7 @@
   padding: 4rem 3rem;
   flex-wrap: wrap;
   overflow: hidden;             /* Prevents SVGs from overflowing and causing scroll */
-  max-width: 100vw;             /* Ensures it never exceeds viewport width */
+  max-width: 100vw;          
   box-sizing: border-box;
 }
 
@@ -32,25 +32,25 @@
 }
 
 .feature__svg {
-   position: absolute;
+ position: absolute;
   z-index: 0;
   pointer-events: none;
-  width: 400px;           /* Reduce width */
+  width: 30vw; /* Scales with screen */
+  max-width: 400px; 
   height: auto;
-  max-width: 100%;
 }
 
 
 .feature__svg--left {
-  top: 60%;
+  top: 50%;
   left: 0;
-  transform: translate(-30%, -50%) scale(1.2); /* Reduce scale */
+  transform: translate(-10%, -40%) scale(1.5);
 }
 
 .feature__svg--right {
-  top: 60%;
+  top: 50%;
   right: 0;
-  transform: translate(30%, -50%) scale(1.2);
+  transform: translate(10%, -40%) scale(1.5);
 }
 
 

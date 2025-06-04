@@ -12,7 +12,7 @@ const cards = [
     year: "2021",
     progress: 95,
     tags: ["PropTech", "AI", "Marketplace"],
-    bgImage: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop", 
+    bgImage: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop",
   },
   {
     id: 2,
@@ -42,12 +42,13 @@ const cards = [
 
 export default function StackingCards() {
   const containerRef = useRef(null);
-  const containerHeight = (cards.length + 1) * 1000 + "vh";
+  // Reduced container height significantly
+  const containerHeight = `${cards.length * 100}vh`;
 
   return (
     <div
       ref={containerRef}
-      className="relative w-full pt-[100vh]"
+      className="relative w-full pt-[10vh]"
       style={{ height: containerHeight }}
     >
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
@@ -67,36 +68,28 @@ export default function StackingCards() {
   );
 }
 
-function CardItem({ card, index, totalCards, containerRef }:any) {
+function CardItem({ card, index, totalCards, containerRef }: any) {
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   });
 
-  // Each card appears at different scroll points
-  // Card 1 at 0-25%, Card 2 at 25-50%, Card 3 at 50-75%, Card 4 at 75-100%
-  const cardStart = index * (0.5 / totalCards);
-  const cardEnd = (index + 1) * (1 / totalCards);
+  // Each card appears in quick succession
+  const cardStart = index * (0.25 / totalCards);
+  const cardEnd = (index + 1) * (0.5 / totalCards);
 
-  // Y position: cards come from bottom and stack
+  // Smoother and faster Y animation
   const y = useTransform(
     scrollYProgress,
-    [cardStart, cardStart + 0.1, cardEnd - 0.1, cardEnd],
-    [1200, 0, 0, 0]
+    [cardStart, cardEnd],
+    [1500, 0] // Reduced from 400 to 200
   );
 
-  // Scale animation
-  const scale = useTransform(
-    scrollYProgress,
-    [cardStart, cardStart + 1, cardEnd - 1, cardEnd],
-    [1, 1, 1, 1]
-  );
-
-  // Opacity animation
+  // Faster opacity animation
   const opacity = useTransform(
     scrollYProgress,
-    [cardStart, cardStart + 0.01, cardEnd - 0.05, cardEnd],
-    [0, 1, 1, 1]
+    [cardStart, cardStart + 0.05],
+    [0, 1]
   );
 
   const zIndex = index + 1;
@@ -109,21 +102,17 @@ function CardItem({ card, index, totalCards, containerRef }:any) {
         backgroundSize: "cover",
         backgroundPosition: "center",
         y,
-        scale,
         opacity,
         zIndex,
       }}
     >
-      {/* Bottom bar content */}
       <div className="bg-[#0f0f0f]/90 backdrop-blur-md w-full px-4 py-3 flex flex-col gap-3">
-        {/* Title + Year */}
         <div className="flex items-center gap-2 text-white font-medium">
           <span className="text-sm">{card.title}</span>
           <span className="text-white/50 text-xs">•</span>
           <span className="text-white/50 text-sm">{card.year}</span>
         </div>
 
-        {/* Progress bar */}
         <div className="w-full h-[12px] bg-[#1a1a1a] rounded-full overflow-hidden border border-[#1f1f1f]">
           <div
             className="h-full rounded-full"
@@ -135,9 +124,8 @@ function CardItem({ card, index, totalCards, containerRef }:any) {
           />
         </div>
 
-        {/* Tags */}
         <div className="flex gap-2 flex-wrap">
-          {card.tags.map((tag:any, i:any) => (
+          {card.tags.map((tag: any, i: any) => (
             <span
               key={i}
               className="bg-[#1a1a1a] px-3 py-[6px] text-sm text-white/80 rounded-md border border-[#2a2a2a]"

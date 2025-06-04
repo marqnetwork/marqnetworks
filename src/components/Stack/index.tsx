@@ -12,7 +12,7 @@ const cards = [
     year: "2021",
     progress: 95,
     tags: ["PropTech", "AI", "Marketplace"],
-    bgImage: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop",
+    bgImage: "/images/watch.png",
   },
   {
     id: 2,

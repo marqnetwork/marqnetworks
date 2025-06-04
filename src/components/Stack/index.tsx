@@ -10,7 +10,7 @@ const cards = [
     year: "2021",
     progress: 95,
     tags: ["PropTech", "AI", "Marketplace"],
-    bgImage: "/images/watch.png",
+    bgImage: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop",
   },
   {
     id: 2,
@@ -40,26 +40,28 @@ const cards = [
 
 export default function StackingCards() {
   const containerRef = useRef(null);
-  // Reduced container height significantly
-  const containerHeight = `${cards.length * 100}vh`;
+  // Increased container height for slower transitions
+  const containerHeight = "300vh";
 
   return (
-    <div
-      ref={containerRef}
-      className="relative w-full pt-[10vh]"
-      style={{ height: containerHeight }}
-    >
-      <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-        <div className="relative w-full h-[520px] flex justify-center items-end">
-          {cards.map((card, index) => (
-            <CardItem
-              key={card.id}
-              card={card}
-              index={index}
-              totalCards={cards.length}
-              containerRef={containerRef}
-            />
-          ))}
+    <div className="bg-black min-h-screen">
+      <div
+        ref={containerRef}
+        className="relative w-full"
+        style={{ height: containerHeight }}
+      >
+        <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+          <div className="relative w-full max-w-[920px] h-[520px] mx-auto">
+            {cards.map((card, index) => (
+              <CardItem
+                key={card.id}
+                card={card}
+                index={index}
+                totalCards={cards.length}
+                containerRef={containerRef}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -72,39 +74,46 @@ function CardItem({ card, index, totalCards, containerRef }: any) {
     offset: ["start start", "end end"],
   });
 
-  // Each card appears in quick succession
-  const cardStart = index * (0.25 / totalCards);
-  const cardEnd = (index + 1) * (0.5 / totalCards);
+  // Slower animation timing (75% of section)
+  const sectionStart = index / totalCards;
+  const sectionEnd = (index + 1) / totalCards;
+  const animateInEnd = sectionStart + 0.75 / totalCards;
 
-  // Smoother and faster Y animation
+  // Animation values with slower movement
   const y = useTransform(
     scrollYProgress,
-    [cardStart, cardEnd],
-    [200, 0] // Reduced from 400 to 200
+    [sectionStart, animateInEnd],
+    [index === 0 ? 0 : 1000, 0] // Reduced vertical distance
   );
 
-  // Faster opacity animation
   const opacity = useTransform(
     scrollYProgress,
-    [cardStart, cardStart + 0.05],
-    [0, 1]
+    [sectionStart, animateInEnd],
+    [index === 0 ? 1 : 1, 1] // Slower fade-in
+  );
+
+  const scale = useTransform(
+    scrollYProgress,
+    [sectionStart, animateInEnd],
+    [index === 0 ? 1 : 1, 1] // Subtle scale effect
   );
 
   const zIndex = index + 1;
 
   return (
     <motion.div
-      className="absolute rounded-[20px] w-[920px] h-[520px] overflow-hidden shadow-[0_0_24px_rgba(0,0,0,0.8)] flex flex-col justify-end border border-[#1a1a1a]"
+      className="absolute w-full max-w-[920px] h-[520px] rounded-[20px] overflow-hidden shadow-[0_0_24px_rgba(0,0,0,0.8)] border border-[#1a1a1a]"
       style={{
         backgroundImage: `url(${card.bgImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         y,
         opacity,
+        scale,
         zIndex,
       }}
     >
-      <div className="bg-[#0f0f0f]/90 backdrop-blur-md w-full px-4 py-3 flex flex-col gap-3">
+      <div className="bg-[#0f0f0f]/90 backdrop-blur-md w-full px-4 py-3 flex flex-col gap-3 absolute bottom-0">
         <div className="flex items-center gap-2 text-white font-medium">
           <span className="text-sm">{card.title}</span>
           <span className="text-white/50 text-xs">•</span>

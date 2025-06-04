@@ -1,5 +1,5 @@
 /* Import font */
-@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Poppins:wght@400;600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Poppins:wght@400;600&display=swap'); */
 
 /* Reset */
 * {
@@ -8,9 +8,7 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-}
+
 
 /* Navbar container styles */
 .navbar {
@@ -18,24 +16,30 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  height: 72px;
+  height: 150px;
   background-color: black;
   color: white;
   position: relative;
   z-index: 100;
   width: 1200px; 
   margin:0 auto;
+   padding: 20px 0;
 
 }
 
 
-/* Logo styling */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .navbar__logo img {
-  height: 60px;
-  
- 
+   width: 450px;      
+  height: 150px;        
+  object-fit: contain;  
 }
+
 
 /* Menu list */
 .navbar__menu {

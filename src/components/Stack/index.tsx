@@ -1,148 +1,5 @@
 
 
-// "use client";
-
-// import type React from "react";
-// import { useRef } from "react";
-// import { motion, useScroll, useTransform } from "framer-motion";
-
-// const cards = [
-//   {
-//     id: 1,
-//     title: "Ping – Home Marketplace",
-//     year: "2021",
-//     progress: 95,
-//     tags: ["PropTech", "AI", "Marketplace"],
-//     bgImage: "/images/watch.png", 
-//   },
-//   {
-//     id: 2,
-//     title: "GA Tax Lien Boot Camp",
-//     year: "2019",
-//     progress: 80,
-//     tags: ["EdTech", "Funnels", "Automation"],
-//     bgImage: "/images/cap.png",
-//   },
-//   {
-//     id: 3,
-//     title: "Commaa Clothing",
-//     year: "2021",
-//     progress: 70,
-//     tags: ["e-Commerce", "Mobile", "Fashion"],
-//     bgImage: "/images/spray.png",
-//   },
-// ];
-
-// export default function StackingCards() {
-//   const containerRef = useRef<HTMLDivElement>(null);
-//   const containerHeight = (cards.length + 2) * 1000 + "px";
-
-//   return (
-//     <div
-//       ref={containerRef}
-//       className="relative w-full pt-[100vh]"
-//       style={{ height: containerHeight }}
-//     >
-//       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-//         <div className="relative w-full h-[520px] flex justify-center items-end">
-//           {cards.map((card, index) => (
-//             <CardItem
-//               key={card.id}
-//               card={card}
-//               index={index}
-//               totalCards={cards.length}
-//               containerRef={containerRef}
-//             />
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// interface CardItemProps {
-//   card: {
-//     id: number;
-//     title: string;
-//     year: string;
-//     progress: number;
-//     tags: string[];
-//     bgImage: string;
-//   };
-//   index: number;
-//   totalCards: number;
-//   containerRef: React.RefObject<HTMLDivElement | null>;
-// }
-
-// function CardItem({ card, index, totalCards, containerRef }: CardItemProps) {
-//   const { scrollYProgress } = useScroll({
-//     target: containerRef,
-//     offset: ["start start", "end end"],
-//   });
-
-//   const start = index / totalCards;
-//   const end = start + 1 / totalCards;
-
-//   const y = useTransform(scrollYProgress, [start, end], [900, 0]);
-//   const scale = useTransform(scrollYProgress, [start, end], [0.8, 1]);
-//   const opacity = useTransform(
-//     scrollYProgress,
-//     [start, Math.min(start + 0.1, end)],
-//     [0, 1]
-//   );
-
-//   const zIndex = index + 1;
-
-//   return (
-//     <motion.div
-//       className="absolute rounded-[20px] w-[920px] h-[520px] overflow-hidden shadow-[0_0_24px_rgba(0,0,0,0.8)] flex flex-col justify-end border border-[#1a1a1a]"
-//       style={{
-//         backgroundImage: `url(${card.bgImage})`,
-//         backgroundSize: "cover",
-//         backgroundPosition: "center",
-//         y,
-//         scale,
-//         opacity,
-//         zIndex,
-//       }}
-//     >
-//       {/* Bottom bar content */}
-//       <div className="bg-[#0f0f0f]/90 backdrop-blur-md w-full px-4 py-3 flex flex-col gap-3">
-//         {/* Title + Year */}
-//         <div className="flex items-center gap-2 text-white font-medium">
-//           <span className="text-sm">{card.title}</span>
-//           <span className="text-white/50 text-xs">•</span>
-//           <span className="text-white/50 text-sm">{card.year}</span>
-//         </div>
-
-//         {/* Progress bar */}
-//         <div className="w-full h-[12px] bg-[#1a1a1a] rounded-full overflow-hidden border border-[#1f1f1f]">
-//           <div
-//             className="h-full rounded-full"
-//             style={{
-//               width: `${card.progress}%`,
-//               backgroundImage:
-//                 "repeating-linear-gradient(45deg, #23c55e, #23c55e 4px, #198c41 4px, #198c41 8px)",
-//             }}
-//           />
-//         </div>
-
-//         {/* Tags */}
-//         <div className="flex gap-2 flex-wrap">
-//           {card.tags.map((tag, i) => (
-//             <span
-//               key={i}
-//               className="bg-[#1a1a1a] px-3 py-[6px] text-sm text-white/80 rounded-md border border-[#2a2a2a]"
-//             >
-//               {tag}
-//             </span>
-//           ))}
-//         </div>
-//       </div>
-//     </motion.div>
-//   );
-// }
-
 "use client";
 
 import React, { useRef } from "react";
@@ -185,7 +42,7 @@ const cards = [
 
 export default function StackingCards() {
   const containerRef = useRef(null);
-  const containerHeight = (cards.length + 1) * 1000 + "px";
+  const containerHeight = (cards.length + 1) * 1000 + "vh";
 
   return (
     <div
@@ -225,7 +82,7 @@ function CardItem({ card, index, totalCards, containerRef }:any) {
   const y = useTransform(
     scrollYProgress,
     [cardStart, cardStart + 0.1, cardEnd - 0.1, cardEnd],
-    [500, 0, 0, 0]
+    [1200, 0, 0, 0]
   );
 
   // Scale animation
@@ -280,7 +137,7 @@ function CardItem({ card, index, totalCards, containerRef }:any) {
 
         {/* Tags */}
         <div className="flex gap-2 flex-wrap">
-          {card.tags.map((tag, i) => (
+          {card.tags.map((tag:any, i:any) => (
             <span
               key={i}
               className="bg-[#1a1a1a] px-3 py-[6px] text-sm text-white/80 rounded-md border border-[#2a2a2a]"

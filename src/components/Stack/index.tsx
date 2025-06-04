@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import React, { useRef } from "react";
@@ -82,7 +80,7 @@ function CardItem({ card, index, totalCards, containerRef }: any) {
   const y = useTransform(
     scrollYProgress,
     [cardStart, cardEnd],
-    [1500, 0] // Reduced from 400 to 200
+    [200, 0] // Reduced from 400 to 200
   );
 
   // Faster opacity animation

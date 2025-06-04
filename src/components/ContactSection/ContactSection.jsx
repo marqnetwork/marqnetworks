@@ -49,45 +49,9 @@ const ContactSection = () => {
         <button className="submit-btn">Submit Now</button>
       </div>
 
-      {/* Right Info Cards */}
-      <div className="contact-info">
-        <div className="info-card">
-            <div className="info-icon">
-    <img src='/images/email.png' alt="email icon" className="icon" />
-  </div>
-          <div>
-            <p className="info-label">
-              Email <span className="pill green">24/7</span>
-            </p>
-            <p className="info-value">help [at] Landin.com</p>
-          </div>
-        </div>
-
-        <div className="info-card">
-             <div className="info-icon">
-    <img src='/images/phone.png' alt="email icon" className="icon" />
-  </div>
-          <div>
-            <p className="info-label">Phone</p>
-            <p className="info-value">+1 (717) 550-1675</p>
-          </div>
-        </div>
-
-        <div className="info-card">
-             <div className="info-icon">
-    <img src='/images/address.png' alt="email icon" className="icon" />
-  </div>
-          <div>
-            <p className="info-label">
-              Address <span className="pill green">REMOTE</span>
-            </p>
-            <p className="info-value">
-              California [CA], 90011<br />
-              49th St. Los Angeles<br />
-              United States
-            </p>
-          </div>
-        </div>
+      {/* Right Image Side */}
+      <div className="contact-image">
+        <img src="/images/slider8.png" alt="Contact Visual" />
       </div>
     </div>
   );

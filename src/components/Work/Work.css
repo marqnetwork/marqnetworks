@@ -47,6 +47,8 @@
   font-weight: 400;
 }
 
+
+
 .work__headline {
   font-weight:500;
   font-size: 3rem;
@@ -82,7 +84,8 @@
 }
 
 .step-card {
-  background-image: url("/images/workcardbg.png");
+  background-image: url("/images/workcardbg.gif");
+  
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -93,7 +96,9 @@
   position: relative;
   backdrop-filter: blur(12px);
   height:370px;
+  opacity: 0.5;
 }
+
 
 .step-card__top {
   display: flex;

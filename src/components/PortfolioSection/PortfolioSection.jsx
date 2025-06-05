@@ -41,7 +41,7 @@ const PortfolioSection = () => {
         
   <br />
   <br />
- <StackingCards/>
+ {/* <StackingCards/> */}
         <StackingNewCard/>
       </div>
     </section>

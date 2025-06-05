@@ -83,7 +83,7 @@
   /* height:50vh; */
 }
 
-.step-card {
+/* .step-card {
   background-image: url("/images/workcardbg.gif");
   
   background-size: cover;
@@ -97,8 +97,39 @@
   backdrop-filter: blur(12px);
   height:370px;
   opacity: 0.5;
+} */
+
+.step-card {
+  background-image: url("/images/workcardbg.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 2rem;
+  color: #fff;
+  position: relative;
+  /* backdrop-filter: blur(1); */
+  height: 370px;
+  /* opacity: 0.5; */
+  overflow: hidden; 
 }
 
+/* Overlay */
+.step-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+  border-radius: 16px;
+}
+
+/* Content layering above overlay */
+.step-card > * {
+  position: relative;
+  z-index: 2;
+}
 
 .step-card__top {
   display: flex;
@@ -130,7 +161,7 @@
   padding: 0.3rem 0.8rem;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
-  color: #ccc;
+  color: #fff;
 }
 
 .step-card__title {
@@ -138,20 +169,23 @@
   /* font-weight: 600; */
   margin-bottom: 0.6rem;
   text-align: left;
+  color: #fff;
 }
 
 .step-card__desc {
   font-size: 1rem;
-  color: #ccc;
+  color: #fff;
   margin-bottom: 1rem;
   line-height: 1.7;
   text-align: left;
+  /* font-weight: 600; */
 }
 
 .step-card__actions {
   display: flex;
   gap: 0.6rem;
   flex-wrap: wrap;
+  color: #fff;
 }
 
 .step-card__action {

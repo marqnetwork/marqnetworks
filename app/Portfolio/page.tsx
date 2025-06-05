@@ -6,6 +6,7 @@ import JoinUsNow from '@/components/JoinUsNow/JoinUsNow'
 import Portfoliostack1 from '@/components/portfoliostack1/portfoliostack1'
 import Portfoliostack2 from'@/components/Portfoliostack2/Portfoliostack2'
 import Portfoliostack3 from '@/components/Portfoliostack3/Portfoliostack3'
+import StackingNewCard from '@/components/StackingCardsNew/stackingnewCard';
 
 
 const Portfolio = () => {
@@ -14,15 +15,21 @@ const Portfolio = () => {
 
         <ExplorePortfolio/>
         <div style={{ textAlign:'center' }}>
-        <Portfoliostack1/>
+        {/* <Portfoliostack1/> */}
+                <StackingNewCard/>
+        
         </div>
 
         <div style={{ textAlign:'center' }}>
-        <Portfoliostack2/>
+        {/* <Portfoliostack2/> */}
+        <StackingNewCard/>
+
         </div>
 
         <div style={{ textAlign:'center' }}>
-        <Portfoliostack3/>
+        {/* <Portfoliostack3/> */}
+        <StackingNewCard/>
+
         </div>
 
       

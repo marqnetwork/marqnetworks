@@ -3,7 +3,7 @@
 import React from 'react';
 import './PortfolioSection.css'; 
 import { motion } from "framer-motion";
-import StackingCards from '../Stack';
+// import StackingCards from '../Stack';
 import MarqButton from '../MarqButton/MarqButton'
 import StackingNewCard from "@/components/StackingCardsNew/stackingnewCard"
 const PortfolioSection = () => {
@@ -41,7 +41,7 @@ const PortfolioSection = () => {
         
   <br />
   <br />
- <StackingCards/>
+ {/* <StackingCards/> */}
         <StackingNewCard/>
       </div>
     </section>

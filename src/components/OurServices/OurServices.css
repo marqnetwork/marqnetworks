@@ -89,6 +89,20 @@ background-size: cover;
   backdrop-filter: blur(12px);
 }
 
+.service-card::before {
+   content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+  border-radius: 16px;
+}
+
+.service-card > * {
+   position: relative;
+  z-index: 2;
+}
+
 .service-card__top {
   display: flex;
   justify-content: space-between;
@@ -98,7 +112,6 @@ background-size: cover;
 .service-card__icon {
   width: 60px;
   height: 60px;
-  /* background: rgba(255, 255, 255, 0.05); */
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -128,9 +141,10 @@ background-size: cover;
 
 .service-card__desc {
   font-size: 0.9rem;
-  color: #bbb;
+  color: #fff;
   line-height: 1.6;
   text-align: left;
+  font-weight: 300;
 }
 
 .service-card__meta {

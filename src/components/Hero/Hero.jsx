@@ -35,7 +35,10 @@ const Hero = () => {
      
              <MarqButton  className="primary-btn-hero"/>
 
-            <button className="secondary-btn2">Explore the Stack</button>
+            {/* <button className="secondary-btn2">Explore the Stack</button> */}
+            <a href="/Solution" className="secondary-btn2">
+  Explore the Stack
+</a>
           </div>
           <LogoSlider />
         </div>

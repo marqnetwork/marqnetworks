@@ -168,7 +168,7 @@ background-size: cover;
   display: flex;
   margin-top:10px;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   text-align: left;
 }
 

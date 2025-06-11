@@ -2,8 +2,9 @@
 
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 135vh;
   display: flex;
+  margin-top: -200px;
   align-items: center;
   justify-content: center;
   background-size: cover;

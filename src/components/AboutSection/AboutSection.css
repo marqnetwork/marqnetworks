@@ -1,4 +1,3 @@
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -6,26 +5,24 @@
   /* align-items: center;
   justify-content: center;
   display: flex; */
-
 }
 
 .about {
   display: flex;
   align-items: center;
-  justify-content: center;
- gap: 50px;
+  justify-content: space-between;
+  /* gap: 50px; */
   flex-wrap: wrap;
   /* margin-top: 50px; */
 }
 
 .about__image img {
-  width: 100%;
+  width: 506px;
   max-width: 100%;
-  height: 500px;
+  height: 512px;
   border-radius: 30px;
   object-fit: cover;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  
 }
 
 .about__content {
@@ -33,7 +30,7 @@
   max-width: 600px;
   text-align: left;
   margin-left: 0;
-   padding-left: 20px;
+  padding-left: 20px;
 }
 
 .about__content h2 span {
@@ -54,24 +51,15 @@
   overflow: hidden;
   line-height: 26px;
 }
-/* .about__tag::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px; 
-  background: linear-gradient(to right, #39ff14, #00ff95);
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-} */
 
 .about__headline {
-  font-size: 3.2rem;
+  font-size: 48px;
   line-height: 1.3;
-  font-family: "DM Sans", "DM Sans Placeholder", sans-serif;
+  /* font-family: "DM Sans", "DM Sans Placeholder", sans-serif; */
+font-weight: 500;
   margin: 1.5rem 0;
   text-align: left;
+
 }
 
 .about__headline strong {
@@ -84,18 +72,17 @@
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.8;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   text-align: left;
 }
 
-.about__description-wrapper{
+.about__description-wrapper {
   display: flex;
   align-items: flex-start;
-  gap: 0.75rem;
- 
+  gap: 0.5rem;
 }
 
-.about__icon{
+.about__icon {
   width: 24px;
   height: 24px;
   object-fit: contain;
@@ -118,12 +105,12 @@
   /* font-weight: 600; */
   cursor: pointer;
   transition: transform 0.3s ease;
-   border-color: rgba(255, 255, 255, 0.15);
- font-size: 14px;
+  border-color: rgba(255, 255, 255, 0.15);
+  font-size: 14px;
   border-style: solid;
-   backdrop-filter: none;
-    
- box-shadow: 0 5px 15px #39ff14;
+  backdrop-filter: none;
+
+  box-shadow: 0 5px 15px #39ff14;
 }
 
 .about__button:hover {
@@ -219,6 +206,3 @@
     justify-content: center;
   }
 }
-
-
-

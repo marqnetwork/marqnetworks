@@ -6,8 +6,8 @@
 
 .work {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   gap: 4rem;
   text-align: left;
    max-width: 1200px;

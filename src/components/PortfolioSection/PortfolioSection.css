@@ -4,10 +4,12 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  padding: 4rem 3rem;
+  padding: 4rem 3rem 0;
   flex-wrap: wrap;
   position: relative;
   z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
  
   
 }
@@ -16,8 +18,9 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin: 2rem 0;
+  margin: -3rem 0;
   z-index: 1;
+
   pointer-events: none;
 }
 

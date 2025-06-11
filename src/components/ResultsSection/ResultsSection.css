@@ -8,7 +8,9 @@
   padding: 4rem 3rem;
   flex-wrap: wrap;
   overflow: hidden; 
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  max-width: 1200px;
+  margin: 0 auto;
 
 }
 
@@ -97,6 +99,7 @@ font-weight:400;
   align-items: center;
   gap: 2rem;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 /* Glowing Green Button */

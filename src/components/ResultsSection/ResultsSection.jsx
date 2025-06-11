@@ -33,7 +33,7 @@ const ResultsSection = () => {
           Here’s a snapshot of brands we’ve elevated—across strategy, design, and tech.
         </p>
 
-        <div className="results__actions">
+        <div className="results__actions ">
     
     <MarqButton className="results__button"/>
         </div>

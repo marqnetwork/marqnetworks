@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import CursorFollower from "@/components/CursorFollower/CursorFollower"
+// import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
 
 export const metadata = {
   title: "Marq Network",
@@ -22,10 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body >
+              {/* <SmoothScroll> */}
          <CursorFollower />
         <Navbar />
         {children}
         <Footer />
+        {/* </SmoothScroll> */}
       </body>
     </html>
   );

@@ -1,16 +1,12 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   height: 100vh;
-  align-items: center;
+  /* align-items: center;
   justify-content: center;
-  display: flex;
-  padding: 0 2rem; /* optional padding for breathing space */
+  display: flex; */
+
 }
 
 .about {
@@ -19,7 +15,7 @@
   justify-content: center;
  gap: 50px;
   flex-wrap: wrap;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 
 .about__image img {

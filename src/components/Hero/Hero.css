@@ -3,7 +3,7 @@
 
 .hero {
   position: relative;
-  min-height: 115vh;
+  min-height: 125vh;
   display: flex;
   margin-top: -200px;
   align-items: center;

@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap'); */
+
 
 
 .hero {
@@ -37,15 +37,15 @@
 }
 
 .hero__content {
-  max-width: 800px;
+  max-width: 1000px;
   
 }
 
 .hero__content h1 {
-  font-size: 4.2rem;
+  font-size: 86px;
   font-weight: 400;
-  line-height: 1.4;
-  font-family: "DM Sans", "DM Sans Placeholder", sans-serif ;
+  line-height: 90px;
+  
   text-align: left;
  
 }
@@ -61,9 +61,10 @@
   margin-top: 1.5rem;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.8;
+  line-height: 26px;
   color: rgba(255, 255, 255, 0.6);
   text-align: justify;
+  width: 800px;
 }
 
 .hero__buttons {

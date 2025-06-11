@@ -1,14 +1,6 @@
 @import "tailwindcss";
 
-body {
-    background-color: black;
 
-    
-}
-
-*{
-     font-family: "DM Sans", "DM Sans Placeholder", sans-serif;
-} */
 
 :root {
   --font-dm-sans: 'DM Sans', sans-serif;

@@ -3,6 +3,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import CursorFollower from "@/components/CursorFollower/CursorFollower"
 
 export const metadata = {
   title: "Marq Network",
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body >
+         <CursorFollower />
         <Navbar />
         {children}
         <Footer />

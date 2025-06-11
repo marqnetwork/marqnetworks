@@ -67,14 +67,14 @@
 .awards__list{
   list-style-type:disc;
 }
-.card__title h4 {
-  font-size: 1.1rem;
+.card__title>h4 {
+  font-size: 16px ;
   margin: 0;
 }
 
 .pro__badge {
   background: #36d576;
-  color: black;
+  color: rgb(107, 72, 72);
   padding: 2px 8px;
   font-size: 0.7rem;
   border-radius: 6px;

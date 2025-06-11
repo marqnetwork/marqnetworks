@@ -23,7 +23,7 @@ const LandinBenefits = () => {
 
       {/* Subheading */}
       <h2 className="benefits__subheading">
-       If you can dream it, we’ll make it move the needle.
+        If you can dream it, we’ll make it move the needle.
       </h2>
 
       {/* Feature Tags */}
@@ -44,7 +44,11 @@ const LandinBenefits = () => {
             {tag}
           </span>
         ))}
-        <button className="benefits__cta">Contact Now</button>
+        {/* <button className="benefits__cta" >Contact Now</button>
+         */}
+        <a href="/Contact">
+          <button className="benefits__cta">Contact Now</button>
+        </a>{" "}
       </div>
     </section>
   );

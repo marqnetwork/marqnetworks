@@ -12,7 +12,7 @@ const Footer = () => {
           <img src="/images/logo.png" alt="marqnetworks logo" className="footer__logo" />
           
           <div className="footer__subscribe">
-            <input type="email" placeholder="Your work e-mail…" />
+            <input type="email" placeholder="Your work e-mail…"    autoComplete="off"/>
             {/* <button>Keep Me in the Loop</button> */}
             <MarqButton />
           </div>

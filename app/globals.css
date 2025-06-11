@@ -8,6 +8,7 @@
 
 body {
   font-family: var(--font-dm-sans);
+  background-color: black;
 }
 
 /* h2 {

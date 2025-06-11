@@ -11,7 +11,7 @@ import JoinUsNow from '@/components/JoinUsNow/JoinUsNow'
 
 const Solution = () => {
   return (
-    <div className="Solution">
+    <div className="Solution1">
 
       <SolutionSection/>
       <SolutionPillars/>

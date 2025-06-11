@@ -29,11 +29,11 @@
 }
 
 .portfolio__decoration--left {
-  transform: translateX(-70px) translateY(-100px);
+  transform: translateX(-120px) translateY(-80px);
 }
 
 .portfolio__decoration--right {
-  transform: translateX(70px) translateY(-100px);
+  transform: translateX(120px) translateY(-80px);
 }
 
 /* Hide on small screens */

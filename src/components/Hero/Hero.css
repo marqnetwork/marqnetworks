@@ -68,10 +68,11 @@
 }
 
 .hero__buttons {
-  /* margin-top: 2rem; */
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   display: flex;
   gap: 1rem;
-  margin: 20px 0px;
+  /* margin: 20px 0px; */
 }
 .primary-btn-hero {
   padding: 0.75rem 1.5rem;

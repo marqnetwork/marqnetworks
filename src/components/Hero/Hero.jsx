@@ -3,9 +3,8 @@
 import "./Hero.css";
 import LogoSlider from "../LogoSlider/LogoSlider";
 import { motion } from "framer-motion";
-import MarqButton from '../MarqButton/MarqButton';
+import MarqButton from "../MarqButton/MarqButton";
 import React, { useEffect, useState } from "react";
-
 
 const Hero = () => {
   const [isClient, setIsClient] = useState(false);
@@ -15,14 +14,8 @@ const Hero = () => {
   }, []);
   return (
     <section className="hero">
-           {isClient && (
-        <video
-          className="hero__video"
-          autoPlay
-          loop
-          muted
-          playsInline
-        >
+      {isClient && (
+        <video className="hero__video" autoPlay loop muted playsInline>
           {/* <source src="/images/herobg.mp4" type="video/mp4" /> */}
           Your browser does not support the video tag.
         </video>
@@ -51,13 +44,12 @@ const Hero = () => {
           </motion.p>
 
           <div className="hero__buttons">
-     
-             <MarqButton  className="primary-btn-hero"/>
+            <MarqButton className="primary-btn-hero" />
 
             {/* <button className="secondary-btn2">Explore the Stack</button> */}
             <a href="/Solution" className="secondary-btn2">
-  Explore the Stack
-</a>
+              Explore the Stack
+            </a>
           </div>
           <LogoSlider />
         </div>

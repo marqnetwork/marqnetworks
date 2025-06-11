@@ -1,13 +1,32 @@
 "use client";
-import React from "react";
+// import React from "react";
 import "./Hero.css";
 import LogoSlider from "../LogoSlider/LogoSlider";
 import { motion } from "framer-motion";
-import MarqButton from '../MarqButton/MarqButton'
+import MarqButton from '../MarqButton/MarqButton';
+import React, { useEffect, useState } from "react";
+
 
 const Hero = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   return (
     <section className="hero">
+           {isClient && (
+        <video
+          className="hero__video"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/images/herobg.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      )}
       <div className="hero__container">
         <div className="hero__content">
           <motion.h1

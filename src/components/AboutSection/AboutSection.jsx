@@ -30,7 +30,7 @@ const AboutSection = () => {
             <br />
             without the agency bloat.”
           </p>
-
+<div className="about_icons">
           <div className="about__description-wrapper">
             <img
               src="/images/abouticon.png"
@@ -52,7 +52,7 @@ const AboutSection = () => {
               launches
             </p>
           </div>
-
+</div>
           <div className="about__actions">
             <MarqButton className="about__button" />
 

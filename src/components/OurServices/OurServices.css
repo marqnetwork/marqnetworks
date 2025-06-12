@@ -127,9 +127,10 @@ background-size: cover;
 .service-card__badge {
   background: rgba(255, 255, 255, 0.08);
   padding: 4px 12px;
-  font-size: 0.75rem;
-  color: #ccc;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
   border-radius: 8px;
+  font-weight: 400;
 }
 
 .service-card__title {
@@ -153,9 +154,9 @@ background-size: cover;
 }
 
 .service-card__pill {
-  font-size: 0.8rem;
+  font-size: 16px;
   padding: 0.5rem 1rem;
-  background: #111;
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 8px;
   color: white;
   font-weight: 500;

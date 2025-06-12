@@ -27,6 +27,15 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
+.about__divider {
+  width: 50%;
+  height: 1px;
+  background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.25), rgba(255,255,255,0));
+  /* margin: 2rem 0;  */
+  position: relative;
+  margin-bottom: 10px;
+}
+
 .about__content {
   flex: 1;
   max-width: 600px;

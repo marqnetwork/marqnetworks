@@ -3,27 +3,27 @@
 import React from "react";
 import "./SolutionPillars.css";
 import { motion } from "framer-motion";
-import MarqButton from '../MarqButton/MarqButton'
+import MarqButton from "../MarqButton/MarqButton";
 
 const steps = [
   {
     title: "Predictive Planning, Not Just Projections",
     desc: "Our AI models simulate market shifts and customer behavior to build roadmaps that evolve in real-time—not static documents.",
     icon: "/images/solutionlogo.png",
-    image: "/images/p1.png"
+    image: "/images/p1.png",
   },
   {
     title: "Faster, Sharper Diagnostics",
     desc: "AI audits your funnels, operations, and cost centers to pinpoint leaks, missed revenue, and inefficiencies in days—not months.",
     icon: "/images/solutionlogo.png",
-    image: "/images/p2.png"
+    image: "/images/p2.png",
   },
-   {
+  {
     title: "Revolution: The End of Guesswork",
     desc: "Strategy becomes science. With every project, we lead clients into a future where data writes the playbook.",
     icon: "/images/solutionlogo.png",
-    image: "/images/p3.png"
-  }
+    image: "/images/p3.png",
+  },
 ];
 
 const SolutionPillars = () => {
@@ -43,7 +43,8 @@ const SolutionPillars = () => {
         </motion.h2>
 
         <p className="solution-pillars__description">
-          Align teams, de-risk spend, and launch initiatives with a proven 90-day execution map.
+          Align teams, de-risk spend, and launch initiatives with a proven
+          90-day execution map.
         </p>
 
         <ul className="solution-pillars__list">
@@ -54,15 +55,10 @@ const SolutionPillars = () => {
           <li>Brand identity & guidelines</li>
         </ul>
 
-    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-  <MarqButton className="solution-pillars__cta-button" />
-  {/* <img src="/images/strategylogo.png" alt="logo" className="cta-logo" /> */}
-</div>
-
-
-
-        
-       
+        <div className="flex items-center justify-between">
+          <MarqButton className="solution-pillars__cta-button" />
+          <img src="/images/strategylogo.png" alt="logo" className="cta-logo" />
+        </div>
 
         <div className="solution-pillars__cards">
           {steps.map((step, index) => (

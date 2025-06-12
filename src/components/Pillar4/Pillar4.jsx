@@ -3,32 +3,35 @@
 import React from "react";
 import "../../components/SolutionPillars/SolutionPillars.css";
 import { motion } from "framer-motion";
-import MarqButton from '../MarqButton/MarqButton'
+import MarqButton from "../MarqButton/MarqButton";
 
 const steps = [
   {
     title: "Hyper-Personalization at Scale",
     desc: "Our AI analyzes user behavior, location, and intent to serve the perfect message—across channels, in real time.",
     icon: "/images/solutionlogo.png",
-    image: "/images/p10.png"
+    image: "/images/p10.png",
   },
   {
     title: "Predictive Lead Scoring & Funnel Control",
     desc: "Know exactly who converts next. AI prioritizes your best leads and auto-optimizes funnel paths to reduce CAC.",
     icon: "/images/solutionlogo.png",
-    image: "/images/p11.png"
+    image: "/images/p11.png",
   },
-    {
+  {
     title: "Revolution: Marketing Without Guessing",
     desc: "Forget A/B testing fatigue. Your campaigns learn daily, adapt hourly, and outperform historically.",
     icon: "/images/solutionlogo.png",
-    image: "/images/p12.png"
-  }
+    image: "/images/p12.png",
+  },
 ];
 
 const Pillar4 = () => {
   return (
     <section className="solution-pillars">
+      <div className="solution-pillars__right">
+        <img src="/images/pillar4img.png" alt="UX Design Strategy" />
+      </div>
       <div className="solution-pillars__left">
         <span className="solution-pillars__tag">• Pillar 04</span>
 
@@ -43,19 +46,18 @@ const Pillar4 = () => {
         </motion.h2>
 
         <p className="solution-pillars__description">
-         Align teams, de-risk spend, and launch initiatives with a proven 90-day execution map.
+          Align teams, de-risk spend, and launch initiatives with a proven
+          90-day execution map.
         </p>
 
         <ul className="solution-pillars__list">
-  <li>SEO, paid ads, social & email</li>
-  <li>CRM setup + nurture</li>
-  <li>A1 & workflow transformation automations</li>
-  <li>Data dashboards & analytics</li>
-</ul>
+          <li>SEO, paid ads, social & email</li>
+          <li>CRM setup + nurture</li>
+          <li>A1 & workflow transformation automations</li>
+          <li>Data dashboards & analytics</li>
+        </ul>
 
-
-   
-        <MarqButton className="solution-pillars__cta-button"/>
+        <MarqButton className="solution-pillars__cta-button" />
         <p className="solution-pillars__footer">MarQ Consultancy</p>
 
         <div className="solution-pillars__cards">
@@ -81,10 +83,6 @@ const Pillar4 = () => {
             </div>
           ))}
         </div>
-      </div>
-
-      <div className="solution-pillars__right">
-        <img src="/images/pillar4img.png" alt="UX Design Strategy" />
       </div>
     </section>
   );

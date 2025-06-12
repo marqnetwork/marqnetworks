@@ -46,7 +46,7 @@
   min-width: 250px; /* reduced from 300px */
   min-height: 360px; /* reduced from 460px */
   box-shadow: 0 0 20px rgba(0, 255, 150, 0.05), 0 8px 20px rgba(0, 0, 0, 0.5);
-  border: 6px solid #080808;
+  border: 6px solid rgba(255, 255, 255, .08);
 }
 
 .card-image-wrapper {
@@ -69,7 +69,7 @@
   left: 7px;
   width: 96%;
   
-  padding: 40px 20px;
+  padding: 40px 20px 20px;
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(12px);
 

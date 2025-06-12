@@ -68,7 +68,7 @@ const Work = () => {
           transition={{ duration: 1.2, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.5 }}
         >
-          We Streamline Every Step <br />
+          We Streamline <br /> Every Step  <br />
           <span>From Idea to Impact</span>
         </motion.h2>
 

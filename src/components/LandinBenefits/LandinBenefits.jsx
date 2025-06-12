@@ -8,7 +8,7 @@ const LandinBenefits = () => {
   return (
     <section className="benefits__section">
       {/* Label at top */}
-      <div className="benefits__label">• Landin MarQ</div>
+      <div className="benefits__label">• MarQ Benifits</div>
 
       {/* Main Heading */}
       <motion.h1

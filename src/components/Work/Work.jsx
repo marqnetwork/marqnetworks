@@ -106,6 +106,7 @@ const Work = () => {
                   <span className="step-card__badge">{step.subtitle}</span>
                 </div>
                 <h3 className="step-card__title">{step.title}</h3>
+                 <div className="about__divider" />
                 <p className="step-card__desc">{step.desc}</p>
 
                 <div className="step-card__actions">

@@ -9,6 +9,7 @@ const LandinBenefitCards = () => {
       <div className="benefit-card large">
         <img src="/images/submit.png" alt="Unlimited Requests" />
         <h3>Submit Unlimited Requests</h3>
+         <div className="about__divider" />
         <p>
           Fire off as many tasks as you like—design, dev, or copy. Your dedicated pod works through them in your chosen priority, no tickets lost.
         </p>
@@ -37,8 +38,11 @@ const LandinBenefitCards = () => {
         <img src="/images/quick.png" alt="Quick Turnaround" />
         <div className="card-header">
           <h4> Lightning-Fast Turnaround</h4>
+          
           <span className="pill">NEW</span>
+          
         </div>
+         <div className="about__divider" />
         <p>
          Our follow-the-sun workflow ships polished assets in a day or two, keeping your launches ahead of schedule.
         </p>
@@ -50,6 +54,7 @@ const LandinBenefitCards = () => {
         <div className="card-header">
           <h4>  Worry-Free Pricing</h4>
         </div>
+         <div className="about__divider" />
         <p>
           Flexible monthly plans cover strategy, design, and code. Cancel anytime, own every file—no hidden fees or hourly overages.
         </p>
@@ -62,6 +67,7 @@ const LandinBenefitCards = () => {
           <h4> Off-Shore Excellence Hub</h4>
           <span className="pill">NEW</span>
         </div>
+         <div className="about__divider" />
         <p>
          U.S.-friendly hours + global talent. Get senior expertise at 30-40 % savings, with an on-shore PM bridging every call.
         </p>

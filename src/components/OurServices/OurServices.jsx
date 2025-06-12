@@ -133,6 +133,7 @@ const OurServices = () => {
 
               <h3 className="service-card__title">{service.title}</h3>
               <p className="service-card__desc">{service.desc}</p>
+               <div className="about__divider" />
 
               <div className="service-card__meta">
                 <span className="service-card__pill">{service.price}</span>

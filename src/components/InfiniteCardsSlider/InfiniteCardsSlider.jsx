@@ -60,6 +60,7 @@ const InfiniteCardsSlider = () => {
               <div className="card-content-overlay">
                 <h3 className="card-header">{card.header}</h3>
                 <p className="card-sub-header">{card.subHeader}</p>
+                 <div className="about__divider" />
                 <p className="card-blurb">{card.blurb}</p>
                 <div className="stats">
                   {card.stats.map((stat, i) => (

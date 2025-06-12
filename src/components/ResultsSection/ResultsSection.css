@@ -36,7 +36,7 @@
 .results__svg--left {
   bottom:  60%;
   left: 0;
-  transform: translate(-50%, -50%) scale(1.5);
+  transform: translate(-20%, -20%) scale(1);
 }
 
 /* Right SVG */
@@ -45,7 +45,7 @@
   bottom:  60%;
   
   right: 0;
-  transform: translate(50%, -50%) scale(1.5);
+  transform: translate(20%, -20%) scale(1);
 }
 
 

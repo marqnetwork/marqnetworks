@@ -23,7 +23,7 @@ const LaunchSection = () => {
         </motion.h2>
 
         <p className="launch__description">
-       We fast-track your digital launch—from strategy and design to code and growth—so you’re live in weeks, not months.
+       We fast-track your digital launch—from strategy and design to code and <br /> growth—so you’re live in weeks, not months.
         </p>
 
         <div className="launch__actions">

@@ -51,6 +51,7 @@ const Hero = () => {
               Explore the Stack
             </a>
           </div>
+          <div className="hero__divider" />
           <LogoSlider />
         </div>
       </div>

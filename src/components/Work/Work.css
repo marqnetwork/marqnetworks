@@ -26,9 +26,9 @@
 }
 
 .work__right img {
-  width: 100%;
-  max-width: 100%;
-  height: 580px;
+  width: 102%;
+  max-width: 102%;
+  height: 615px;
   object-fit: cover;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }

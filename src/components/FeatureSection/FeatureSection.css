@@ -46,14 +46,14 @@
 .feature__svg--left {
   top: 50%;
   left: 0;
-  transform: translate(-30%, -10%) scale(1.5);
+  transform: translate(-10%, -10%) scale(1);
   
 }
 
 .feature__svg--right {
   top: 50%;
   right: 0;
-  transform: translate(30%, -10%) scale(1.5);
+  transform: translate(10%, -10%) scale(1);
 }
 
 

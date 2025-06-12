@@ -44,14 +44,14 @@
 
 .feature__svg--left {
   top: 50%;
-  left: -20;
+  left: -20px;
   transform: translate(-30%, -10%) scale(1.5);
   
 }
 
 .feature__svg--right {
   top: 50%;
-  right: 20;
+  right: 20px;
   transform: translate(30%, -10%) scale(1.5);
 }
 

@@ -39,7 +39,7 @@
 }
 
 .slider-card {
-  border-radius: 14px;
+  border-radius: 25px;
   overflow: hidden;
   position: relative;
   flex-shrink: 0;
@@ -66,7 +66,7 @@
 .card-content-overlay {
   position: absolute;
   bottom: 0;
-  left: 4px;
+  left: 7px;
   width: 96%;
   
   padding: 40px 20px;

@@ -15,7 +15,9 @@
   flex-wrap: wrap;
   /* margin-top: 50px; */
 }
-
+.about_icons{
+  padding: 20px 0px;
+}
 .about__image img {
   width: 506px;
   max-width: 100%;

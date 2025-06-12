@@ -76,6 +76,7 @@ const FeatureSection = () => {
             </div>
 
             <p className="card__label">{label}</p>
+             <div className="about__divider" />
             <p className="card__desc">{description}</p>
           </div>
         ))}

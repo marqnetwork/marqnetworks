@@ -24,6 +24,14 @@
   /* z-index: -1; */
   
 }
+.hero__divider {
+  width: 50%;
+  height: 1px;
+  background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.25), rgba(255,255,255,0));
+  /* margin: 2rem 0;  */
+  position: relative;
+}
+
 
 
 .hero__container {

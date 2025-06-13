@@ -6,7 +6,7 @@ import MarqButton from '../MarqButton/MarqButton'
 const SolutionSection = () => {
   return (
     <section 
-      className="solution-section" 
+      className="-sectionsolution" 
       // style={{ backgroundImage: `url(/images/solutionbg.png)` }}
     >
       <div className="solution-container">

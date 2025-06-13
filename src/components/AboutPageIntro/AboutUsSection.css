@@ -32,19 +32,20 @@
     border-radius: 999px;
     padding: 0.25rem 1rem;
     margin-bottom: 1.5rem;
+    
   }
   
   .year {
     background-color: #39ff14;
     color: black;
-    font-size: 0.75rem;
+    font-size: 16px;
     padding: 0.25rem 0.5rem;
     border-radius: 999px;
   }
   
   .tag-text {
-    color: #aaa;
-    font-size: 0.85rem;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
   }
   
   .deep-dive-heading {

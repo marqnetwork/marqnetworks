@@ -15,7 +15,7 @@
 
 /* Left Form Side */
 .contact-form {
-  flex: 0 1 650px; /* reduced size */
+  flex: 0 1 600px; /* reduced size */
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -79,8 +79,8 @@ textarea {
 }
 
 .contact-image img {
-  max-width: 100%;
-  height: auto;
+  max-width: 110%;
+  height: 95%;
   object-fit: cover;
   border-radius: 12px;
 }

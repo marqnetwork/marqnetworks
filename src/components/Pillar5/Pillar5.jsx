@@ -54,10 +54,10 @@ const Pillar5 = () => {
 </ul>
 
 
-        
+        <div className="flex items-center justify-between">
         <MarqButton className="solution-pillars__cta-button"/>
-        <p className="solution-pillars__footer">MarQ Consultancy</p>
-
+        <img src="/images/piller5logo.png" alt="logo" className="cta-logo" />
+</div>
         <div className="solution-pillars__cards">
           {steps.map((step, index) => (
             <div className="pillar-card" key={index}>

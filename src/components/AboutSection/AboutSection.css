@@ -61,8 +61,20 @@
   position: relative;
   overflow: hidden;
   line-height: 26px;
-}
 
+}
+.about__tag::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10px;    
+  right: 10px;    
+  height: 2px;
+  background: linear-gradient(to right, transparent, #39ff14, transparent);
+  filter: drop-shadow(0 0 6px #39ff14);
+  z-index: 2;
+  pointer-events: none;
+}
 .about__headline {
   font-size: 48px;
   line-height: 1.3;

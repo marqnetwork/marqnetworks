@@ -9,19 +9,19 @@ const steps = [
   {
     title: "Hyper-Personalization at Scale",
     desc: "Our AI analyzes user behavior, location, and intent to serve the perfect message—across channels, in real time.",
-    icon: "/images/solutionlogo.png",
+    icon: "/images/hyper.png",
     image: "/images/p10.png",
   },
   {
     title: "Predictive Lead Scoring & Funnel Control",
     desc: "Know exactly who converts next. AI prioritizes your best leads and auto-optimizes funnel paths to reduce CAC.",
-    icon: "/images/solutionlogo.png",
+    icon: "/images/lead.png",
     image: "/images/p11.png",
   },
   {
     title: "Revolution: Marketing Without Guessing",
     desc: "Forget A/B testing fatigue. Your campaigns learn daily, adapt hourly, and outperform historically.",
-    icon: "/images/solutionlogo.png",
+    icon: "/images/market.png",
     image: "/images/p12.png",
   },
 ];

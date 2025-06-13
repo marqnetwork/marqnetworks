@@ -9,19 +9,19 @@ const steps = [
   {
     title: "Sprint Automation & Smart Resource Allocation",
     desc: "AI dynamically adjusts sprint tasks, predicts blockers, and allocates global team members based on skill + velocity.",
-    icon: "/images/solutionlogo.png",
+    icon: "/images/sprintt.png",
     image: "/images/p13.png"
   },
   {
     title: "Real-Time Quality Assurance",
     desc: "Every commit, test, and deployment is monitored by AI to catch issues before humans do.",
-    icon: "/images/solutionlogo.png",
+    icon: "/images/real.png",
     image: "/images/p14.png"
   },
    {
     title: "Revolution: Global Teams. One Brain.",
     desc: "We don't just operate around the clock—we operate ahead of the clock. AI makes our global delivery seamless, smart, and superior.",
-    icon: "/images/solutionlogo.png",
+    icon: "/images/brain.png",
     image: "/images/Villa.png"
   }
 ];

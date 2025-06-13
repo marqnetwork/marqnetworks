@@ -19,8 +19,8 @@
 /* Each card */
 .feature__card {
 background: radial-gradient(
-  400px circle at 40px 40px, /* Positioning the glow */
-  #56B84826,   /* #56B84826: soft green */
+  400px circle at 40px 40px, 
+  #56B84826, 
   #56B84826 40%,
   #61616117 70%,
   #61616117 100%
@@ -35,24 +35,23 @@ background: radial-gradient(
   flex-direction: column;
   gap: 0.75rem;
   transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .feature__card::before {
   content: "";
   position: absolute;
-  top: -5;
-  left: 20%;
-  width: 60%;
-  height: 3px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(20, 230, 20, 0.8),
-    transparent
-  );
-  filter: blur(6px);
-  z-index: 1;
+  top: 0;
+  left: 50px;    
+  right: 50px;    
+  height: 1px;
+  background: linear-gradient(to right, transparent, #39ff14, transparent);
+  filter: drop-shadow(0 0 6px #39ff14);
+  z-index: 2;
+  pointer-events: none;
 }
+
 
 
 

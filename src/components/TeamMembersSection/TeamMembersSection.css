@@ -76,28 +76,36 @@
    backdrop-filter: none;
 }
 
-.feature__svg-wrapper {
-  position: relative;
+.team__svg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin: 2rem 0;
-  z-index: 1;
+  height: 100%;
+  z-index: 0;
   pointer-events: none;
 }
 
-.feature__svg {
+.team__svg {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
   width: 400px;
-  
+  height: auto;
 }
 
-.feature__svg--left {
-  transform: translateX(-60px) translateY(-200px);
+.team__svg--left {
+  top: 50%;
+  left: 0;
+  transform: translate(-10%, -10%) scale(1);
 }
 
-.feature__svg--right {
-  transform: translateX(60px) translateY(-200px);
+.team__svg--right {
+  top: 50%;
+  right: 0;
+  transform: translate(10%, -10%) scale(1);
 }
+
 
 
 /* Responsive Design */

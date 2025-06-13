@@ -23,10 +23,10 @@ const ToolsSection = () => {
           <MarqButton className="tools__button"/>
         </div>
       </div>
-       <div className="feature__svg-wrapper">
+       {/* <div className="feature__svg-wrapper">
     <img src="/images/resultleft.png" alt="Left Decoration" className="feature__svg feature__svg--left" />
     <img src="/images/resultright.png" alt="Right Decoration" className="feature__svg feature__svg--right" />
-  </div>
+  </div> */}
     </section>
   );
 };

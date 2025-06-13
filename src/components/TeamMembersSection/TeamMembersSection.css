@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap'); */
+
 
 .team-members {
   display: flex; 
@@ -10,13 +10,13 @@
   margin:0 auto;
 }
 
-/* Content */
+
 .team-members__content {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center; /* centers text inside */
+  text-align: center; 
 }
 
 .team-members__tag {
@@ -57,7 +57,7 @@
   flex-wrap: wrap;
 }
 
-/* Green Glow Button */
+
 .team-members__button {
   padding: 0.75rem 1.5rem;
   background: #39ff14;

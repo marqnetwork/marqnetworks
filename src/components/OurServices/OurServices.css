@@ -35,14 +35,29 @@
 
 .ourservices__tag {
   background-color: #111;
-  color: #aaa;
+  color: rgb(255, 255, 255);
   padding: 6px 14px;
   border-radius: 12px;
-  font-size: 0.85rem;
+  font-size: 16px;
   font-weight: 400;
   display: inline-block;
   margin-bottom: 1rem;
+   position: relative;
+  overflow: hidden;
 }
+.ourservices__tag::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10px;    
+  right: 10px;    
+  height: 2px;
+  background: linear-gradient(to right, transparent, #39ff14, transparent);
+  filter: drop-shadow(0 0 6px #39ff14);
+  z-index: 2;
+  pointer-events: none;
+}
+
 
 .ourservices__headline {
   font-size: 2.5rem;

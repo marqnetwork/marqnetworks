@@ -18,12 +18,27 @@
 
 .faq__tag {
   background-color: #0a0f1a;
-  color: #ccc;
+  color: rgb(255, 255, 255);
   padding: 6px 14px;
   border-radius: 10px;
-  font-size: 14px;
+  font-size: 16px;
   display: inline-block;
   margin-bottom: 20px;
+  font-weight: 400;
+    position: relative;
+  overflow: hidden;
+}
+.faq__tag::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10px;    
+  right: 10px;    
+  height: 2px;
+  background: linear-gradient(to right, transparent, #39ff14, transparent);
+  filter: drop-shadow(0 0 6px #39ff14);
+  z-index: 2;
+  pointer-events: none;
 }
 
 .faq__intro h2 {

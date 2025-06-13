@@ -13,14 +13,30 @@
 /* Label Styling */
 .benefits__label {
   display: inline-block;
-  background: #0a0f1a;
+  background: #111;
   padding: 8px 18px;
   border-radius: 8px;
   font-size: 16px;
   margin-bottom: 20px;
   color: rgb(255, 255, 255);
   font-weight: 400;
+  position: relative;
+  overflow: hidden;
+
 }
+.benefits__label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10px;    
+  right: 10px;    
+  height: 2px;
+  background: linear-gradient(to right, transparent, #39ff14, transparent);
+  filter: drop-shadow(0 0 6px #39ff14);
+  z-index: 2;
+  pointer-events: none;
+}
+
 
 /* Main Heading Styling */
 .benefits__heading {

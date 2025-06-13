@@ -24,7 +24,22 @@
   border-radius: 12px;
   font-size: 16px;
   font-weight: 400;
+   position: relative;
+  overflow: hidden;
 }
+.join__tag::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10px;    
+  right: 10px;    
+  height: 2px;
+  background: linear-gradient(to right, transparent, #39ff14, transparent);
+  filter: drop-shadow(0 0 6px #39ff14);
+  z-index: 2;
+  pointer-events: none;
+}
+
 
 .join__headline {
   font-size: 3.5rem;

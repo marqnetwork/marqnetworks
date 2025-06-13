@@ -18,12 +18,13 @@
 
 .faq__tag {
   background-color: #0a0f1a;
-  color: #ccc;
+  color: rgb(255, 255, 255);
   padding: 6px 14px;
   border-radius: 10px;
-  font-size: 14px;
+  font-size: 16px;
   display: inline-block;
   margin-bottom: 20px;
+  font-weight: 400;
 }
 
 .faq__intro h2 {

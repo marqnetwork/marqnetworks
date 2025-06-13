@@ -52,10 +52,10 @@
 
 .launch__tag {
   background-color: #111;
-  color: #aaa;
+  color: rgb(255, 255, 255);
   padding: 6px 14px;
   border-radius: 12px;
-  font-size: 0.85rem;
+  font-size: 16px;
   font-weight: 400;
 }
 

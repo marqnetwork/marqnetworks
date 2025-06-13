@@ -53,7 +53,7 @@
 
 .about__tag {
   background-color: #111;
-  color: #aaa;
+  color: rgb(255, 255, 255);
   padding: 10px 14px;
   border-radius: 12px;
   font-size: 16px;

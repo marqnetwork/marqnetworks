@@ -230,12 +230,18 @@
 /* } */
 
 @media (max-width: 768px) {
+  .work__headline{
+    font-size: 30px;
+  }
   .work {
+    padding: 0px 20px;
     flex-direction: column;
   }
 
   .work__right {
     position: static;
     margin-top: 2rem;
+  }.step-card{
+    height: 100%;
   }
 }

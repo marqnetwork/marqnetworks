@@ -7,7 +7,6 @@
   padding: 0;
   box-sizing: border-box;
   /* background-color: black; */
-
 }
 
 /* Navbar container styles */
@@ -81,8 +80,12 @@
 }
 
 @media (max-width: 768px) {
+  .navbar > a {
+    display: none;
+  }
   .navbar {
     width: 100%;
+    height: 100px;
     padding: 0 1rem;
   }
 
@@ -106,8 +109,12 @@
 
   .navbar__menu--active {
     display: flex;
+    background-color: white;
+    z-index: 100;
   }
-
+  .navbar__menu li a{
+    color: black;
+  }
   .navbar__button {
     display: none;
   }

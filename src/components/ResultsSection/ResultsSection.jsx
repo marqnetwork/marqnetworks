@@ -1,18 +1,14 @@
 "use client";
 
-import React from 'react';
-import './ResultsSection.css';
+import React from "react";
+import "./ResultsSection.css";
 import { motion } from "framer-motion";
-import InfiniteCardsSlider from '../InfiniteCardsSlider/InfiniteCardsSlider';
-import MarqButton from '../MarqButton/MarqButton'
+import InfiniteCardsSlider from "../InfiniteCardsSlider/InfiniteCardsSlider";
+import MarqButton from "../MarqButton/MarqButton";
 
 const ResultsSection = () => {
   return (
     <section className="results">
-
-    
-    
-
       {/* Content */}
       <div className="results__content">
         <span className="results__tag">• Results</span>
@@ -24,27 +20,35 @@ const ResultsSection = () => {
           transition={{ duration: 1.2, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.5 }}
         >
-          Delivering Tangible Results<br />
+          Delivering Tangible Results
+          <br />
           <span>That Propel Your Success</span>
         </motion.h2>
 
         <p className="results__description">
-          At MarQ Networks, every pixel and line of code is measured by the numbers it moves.
-          Here’s a snapshot of brands we’ve elevated—across strategy, design, and tech.
+          At MarQ Networks, every pixel and line of code is measured by the
+          numbers it moves. Here’s a snapshot of brands we’ve elevated—across
+          strategy, design, and tech.
         </p>
 
         <div className="results__actions ">
-    
-    <MarqButton className="results__button"/>
+          <MarqButton className="results__button" />
         </div>
 
-         <div className="results__svg-wrapper">
-    <img src="/images/resultleft.png" alt="Left Decoration" className="results__svg results__svg--left" />
-    <img src="/images/resultright.png" alt="Right Decoration" className="results__svg results__svg--right" />
-  </div>
+        <div className="results__svg-wrapper">
+          <img
+            src="/images/resultleft.png"
+            alt="Left Decoration"
+            className="results__svg results__svg--left"
+          />
+          <img
+            src="/images/resultright.png"
+            alt="Right Decoration"
+            className="results__svg results__svg--right"
+          />
+        </div>
         <InfiniteCardsSlider />
       </div>
-      
     </section>
   );
 };

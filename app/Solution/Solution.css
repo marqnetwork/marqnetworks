@@ -1,7 +1,12 @@
+.Solution1 {
+  background-color: black;
 
-.Solution1{
-    background-color: black;
-    
-    min-height: 100vh;
-    padding-top: 8px;
+  min-height: 100vh;
+  padding-top: 8px;
+}
+@media (max-width: 576px) {
+  .-sectionsolution {
+    padding: 20px;
+    text-align: center;
+  }
 }

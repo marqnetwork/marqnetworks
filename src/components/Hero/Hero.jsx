@@ -14,12 +14,12 @@ const Hero = () => {
   }, []);
   return (
     <section className="hero">
-      {isClient && (
+      {/* {isClient && (
         <video className="hero__video" autoPlay loop muted playsInline>
-          {/* <source src="/images/herobg.mp4" type="video/mp4" /> */}
+          <source src="/images/herobg.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      )}
+      )} */}
       <div className="hero__container">
         <div className="hero__content">
           <motion.h1

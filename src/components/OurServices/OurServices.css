@@ -204,6 +204,11 @@ background-size: cover;
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
+  .ourservices__headline {
+  font-size: 2rem;}
+.ourservices__left {
+   flex: none;
+  width: 100%;}
   .ourservices {
     flex-direction: column;
   }

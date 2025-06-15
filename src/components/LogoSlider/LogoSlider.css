@@ -31,3 +31,8 @@
 }
 
 
+@media (max-width: 576px) {
+  .logo-slider {
+    padding: 0px;
+  }
+}

@@ -18,6 +18,7 @@
   }
   
   .work-smarter__content {
+
     flex: 1;
     /* max-width: 600px; */
     text-align: left;
@@ -126,6 +127,9 @@
 }
   
  @media (max-width: 992px) {
+  .work-smarter__content{
+    padding: 0px 20px;
+  }
   .work-smarter {
     flex-direction: column;
     text-align: center;

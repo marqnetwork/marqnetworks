@@ -153,6 +153,9 @@
 }
 
 @media (max-width: 768px) {
+.feature__svg--left , .feature__svg--right{    top: 0;
+    width: 200px;
+  }
   .feature {
     padding: 3rem 1.5rem;
     gap: 2rem;

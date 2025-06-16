@@ -130,7 +130,7 @@
 
   .solution-buttons {
     flex-direction: column;
-    width: 100%;
+    width: 60%;
   }
 
   .solution-btn {

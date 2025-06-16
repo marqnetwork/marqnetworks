@@ -4,7 +4,7 @@ import './ContactSection.css';
 const ContactSection = () => {
   return (
     <div className="contact-wrapper">
-      {/* Left Form Section */}
+     
       <div className="contact-form">
         <div className="form-row">
           <div className="form-group">
@@ -51,7 +51,7 @@ const ContactSection = () => {
 
       {/* Right Image Side */}
       <div className="contact-image">
-        <img src="/images/slider8.png" alt="Contact Visual" />
+        <img src="/images/B3.jpg" alt="Contact Visual" className='rounded-3xl' />
       </div>
     </div>
   );

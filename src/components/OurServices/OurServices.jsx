@@ -108,11 +108,7 @@ const OurServices = () => {
           <span>Covered by marQ Networks</span>
         </motion.h2>
 
-        <p className="ourservices__description">
-          Feel free to break the line after the period (or keep it all on one
-          line) to match your layout.
-        </p>
-
+      
         <div className="ourservices__cards">
           {services.map((service, index) => (
             <motion.div

@@ -163,39 +163,31 @@
 }
 @media (max-width: 768px) {
   .classic-skill {
-    padding: 3rem 1.5rem;
-    gap: 2rem;
-  }
-
-  .classic-skill__image img {
-    max-width: 100%;
-    height: auto;
-    margin-left: 0;
+    padding: 3rem 1rem;
+    gap: 3rem;
+    flex-direction: column;
+    text-align: center;
   }
 
   .classic-skill__content {
-    margin-left: 0;
+    max-width: 100%;
     text-align: center;
   }
 
-  .classic-skill__headline,
-  .classic-skill__description {
-    text-align: center;
-    font-size: 40px;
-
-  }
-
-  .classic-skill__headline {
+  .classic-skill__content h2 {
     font-size: 40px;
   }
 
+  .classic-skill__content h4 {
+    font-size: 1.2rem;
+  }
+
   .classic-skill__description {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .classic-skill__button {
     width: 100%;
-    text-align: center;
   }
 
   .classic-skill__rating {
@@ -203,33 +195,37 @@
   }
 }
 
+
 @media (max-width: 480px) {
   .classic-skill {
     padding: 2rem 1rem;
     flex-direction: column;
     text-align: center;
+    gap: 2rem;
   }
 
   .classic-skill__image img {
-    height: 250px;
+    height: auto;
+    max-width: 100%;
     border-radius: 20px;
   }
 
   .classic-skill__content {
     max-width: 100%;
-    padding: 1rem 0;
+    padding: 0;
     text-align: center;
   }
 
   .classic-skill__tag {
-    display: inline-block;
     font-size: 0.75rem;
-    margin-bottom: 0.5rem;
+    padding: 4px 10px;
+    line-height: normal;
+    margin-bottom: 1rem;
   }
 
   .classic-skill__content h2 {
-    font-size: 32px;
-    line-height: 1.2;
+    font-size: 30px;
+    line-height: 1.3;
   }
 
   .classic-skill__content h4 {
@@ -239,9 +235,9 @@
 
   .classic-skill__description,
   .classic-skill__content p {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     line-height: 1.6;
-    padding: 0 0.5rem;
+    text-align: center;
   }
 
   .classic-skill__actions {

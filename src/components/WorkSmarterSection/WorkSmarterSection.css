@@ -183,6 +183,11 @@
   .work-smarter__description {
     font-size: 0.85rem;
   }
+   .work-smarter__description p{
+     font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: center;
+   }
 
   .work-smarter__button {
     padding: 0.6rem 1.2rem;

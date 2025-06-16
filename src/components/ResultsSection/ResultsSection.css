@@ -174,8 +174,17 @@
 }
 
 @media (max-width: 768px) {
+   .results__svg--left {
+        /* bottom: 0%; */
+    left: 0;
+   }
+   .results__svg
+{
+  width: 200px;
+  top:0
+}
   .results {
-    padding: 3rem 2rem;
+    padding: 10px ;
     gap: 1.5rem;
   }
 
@@ -204,7 +213,7 @@
 
 @media (max-width: 480px) {
   .results {
-    padding: 2rem 1rem;
+    padding: 10px ;
   }
 
   .results__headline {

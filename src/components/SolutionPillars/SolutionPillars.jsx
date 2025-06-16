@@ -55,7 +55,11 @@ const SolutionPillars = () => {
           <li>Brand identity & guidelines</li>
         </ul>
 
-        <div className="flex  justify-between  ">
+
+      
+
+        <div className="flex  justify-between items-center">
+
           <MarqButton className="solution-pillars__cta-button" />
           <img src="/images/strategylogo.png" alt="logo" className="cta-logo" />
         </div>

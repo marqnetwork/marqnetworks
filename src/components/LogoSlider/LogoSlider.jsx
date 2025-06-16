@@ -12,10 +12,10 @@ const LogoSlider = () => {
     <div className="logo-slider">
       <motion.div
         className="logo-track"
-        animate={{ x: "-100%" }}
+        animate={{ x: "-170%" }}
         transition={{
           repeat: Infinity,
-          duration: 60,
+          duration: 70,
           ease: "linear",
         }}
         style={{ x: 0 }}

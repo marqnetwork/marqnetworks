@@ -209,7 +209,7 @@ margin-right: 160px;
   .solution-pillars {
     flex-direction: column;
   }
-
+  
   .solution-pillars__right {
     position: static;
     margin-top: 2rem;

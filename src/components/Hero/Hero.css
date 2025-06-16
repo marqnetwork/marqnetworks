@@ -194,6 +194,7 @@
     padding: 2rem 1rem;
      margin-top: 00px !important;
      min-height: 600px !important;
+     
   }
 
   .hero__content h1 {
@@ -202,7 +203,9 @@
   }
 
   .hero__content p {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    
+    
   }
 
   .hero__buttons {

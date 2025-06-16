@@ -1,28 +1,25 @@
-// src/components/LogoSlider.js
 import React from "react";
 import { motion } from "framer-motion";
 import "./LogoSlider.css";
 
-const logos = [
-  "/images/logo1.png",
-  "/images/logo2.png",
-  "/images/logo3.png",
-];
+// Load 1.svg to 48.svg from /images/
+const logos = Array.from({ length: 48 }, (_, i) => `/images/${i + 1}.svg`);
 
 const LogoSlider = () => {
-  // Duplicate the logos to create infinite loop effect
-  const repeatedLogos = [...logos, ...logos, ...logos];
+  const repeatedLogos = [...logos, ...logos, ...logos]; // to create infinite loop effect
 
   return (
     <div className="logo-slider">
       <motion.div
         className="logo-track"
-        animate={{ x: ["0%", "-50%"] }}
+        animate={{ x: "-100%" }}
         transition={{
           repeat: Infinity,
-          duration: 20,
+          duration: 60,
           ease: "linear",
         }}
+        style={{ x: 0 }}
+        
       >
         {repeatedLogos.map((logo, index) => (
           <div className="logo-item" key={index}>

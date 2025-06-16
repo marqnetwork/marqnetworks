@@ -1,10 +1,10 @@
 export const projects = [
   {
-    title: "Matthias Leidinger",
-    description: "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
-    src: "/images/watch.png",
-    link: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop",
-    color: "#BBACAF"
+    // title: "Matthias Leidinger",
+    // description: "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
+    src: "/images/port1.png",
+    // link: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop",
+    // color: "#BBACAF"
   },
   {
     title: "Clément Chapillon",

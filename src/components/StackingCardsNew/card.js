@@ -86,8 +86,8 @@ const Card = ({ title, description, src, url, color, i }) => {
 
           <div className={styles.imageContainer}>
             <div className={styles.inner}>
-              <Image fill src="/logo.svg" alt="image" />
-              {/* Optional logo or icon over the background */}
+              {/* <Image fill src="/logo.svg" alt="image" /> */}
+              
             </div>
           </div>
         </div>

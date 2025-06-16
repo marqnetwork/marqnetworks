@@ -2,11 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./LogoSlider.css";
 
-// Load 1.svg to 48.svg from /images/
+
 const logos = Array.from({ length: 48 }, (_, i) => `/images/${i + 1}.svg`);
 
 const LogoSlider = () => {
-  const repeatedLogos = [...logos, ...logos, ...logos]; // to create infinite loop effect
+  const repeatedLogos = [...logos, ...logos, ...logos];
 
   return (
     <div className="logo-slider">

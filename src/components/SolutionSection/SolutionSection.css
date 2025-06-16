@@ -22,6 +22,7 @@
 }
 
 .solution-heading{
+  text-align: center;
     color: #FFFFFF;
 }
 
@@ -64,6 +65,7 @@
 }
 
 .solution-subtext {
+  text-align: center;
   font-size: 1.3rem;
   color: #ccc;
   margin-bottom: 2rem;

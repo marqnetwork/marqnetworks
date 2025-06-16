@@ -6,7 +6,7 @@ import "./LogoSlider.css";
 const logos = Array.from({ length: 48 }, (_, i) => `/images/${i + 1}.svg`);
 
 const LogoSlider = () => {
-  const repeatedLogos = [...logos, ...logos, ...logos];
+  const repeatedLogos = [...logos, ...logos];
 
   return (
     <div className="logo-slider">

@@ -139,6 +139,7 @@ body {
   .team-card__icon {
     width: 80px;
     height: 50px;
+    margin-top: 180px;
   }
 }
 

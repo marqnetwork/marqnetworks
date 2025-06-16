@@ -133,9 +133,7 @@
 }
 
 @media (max-width: 480px) {
-  .join {
-    padding: 2rem 1rem;
-  }
+ 
 
   .join__headline {
     font-size: 1.5rem;

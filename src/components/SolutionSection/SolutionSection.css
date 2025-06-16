@@ -110,6 +110,10 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  
+  .solution-btn.secondary,.solution-btn.primary{
+    padding: 10px;
+  }
   .solution-container {
     text-align: center;
     padding: 20px;
@@ -129,8 +133,9 @@
   }
 
   .solution-buttons {
-    flex-direction: column;
+    /* flex-direction: column; */
     width: 60%;
+    flex-wrap: nowrap;
   }
 
   .solution-btn {

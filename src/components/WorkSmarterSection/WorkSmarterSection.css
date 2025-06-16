@@ -131,6 +131,7 @@
     padding: 0px 20px;
   }
   .work-smarter {
+    padding: 10px;
     flex-direction: column;
     text-align: center;
   }
@@ -156,6 +157,9 @@
 
 /* For Small Screens (Mobile Devices) */
 @media (max-width: 576px) {
+  .work-smarter__description{
+    text-align: center;
+  }
   .work-smarter {
     flex-direction: column;
     text-align: center;
@@ -169,7 +173,7 @@
   .work-smarter__image img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
   }
 
   .work-smarter__headline {

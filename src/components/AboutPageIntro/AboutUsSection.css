@@ -118,6 +118,9 @@
   
   /* Responsive */
   @media (max-width: 768px) {
+    .deep-dive-section{
+      padding: 10px ;
+    }
     .deep-dive-heading {
       font-size: 2.25rem;
     }
@@ -133,8 +136,9 @@
     }
   
     .deep-dive-buttons {
-      flex-direction: column;
+      /* flex-direction: column; */
       width: 60%;
+      flex-wrap: nowrap;
     }
   
     .btn {

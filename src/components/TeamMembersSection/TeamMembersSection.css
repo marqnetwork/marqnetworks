@@ -126,7 +126,9 @@
 
 /* Responsive Design */
 @media (max-width: 992px) {
+ 
   .team-members {
+    padding: 0px;
     flex-direction: column;
   }
 
@@ -142,8 +144,9 @@
 }
 
 @media (max-width: 480px) {
+
   .team-members {
-    padding: 2rem 1rem;
+    padding:  0px;
     gap: 1.5rem;
   }
 

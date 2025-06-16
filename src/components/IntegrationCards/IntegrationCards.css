@@ -97,6 +97,9 @@
 }
 
 @media (max-width: 480px) {
+  .awards__list{
+    text-align: justify;
+  }
   .integration__section {
     padding: 2rem 1rem;
   }

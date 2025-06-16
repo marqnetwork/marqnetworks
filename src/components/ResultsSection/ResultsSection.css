@@ -184,7 +184,7 @@
   top:0
 }
   .results {
-    padding: 3rem 2rem;
+    padding: 10px ;
     gap: 1.5rem;
   }
 
@@ -213,7 +213,7 @@
 
 @media (max-width: 480px) {
   .results {
-    padding: 2rem 1rem;
+    padding: 10px ;
   }
 
   .results__headline {

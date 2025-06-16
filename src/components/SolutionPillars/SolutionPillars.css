@@ -206,6 +206,17 @@ margin-right: 160px;
 
 /* Responsive */
 @media (max-width: 768px) {
+  .solution-pillars__cta-button{
+    margin-top: 0;
+  }
+  .cta-logo{
+    max-width: 150px;
+    height: 100px;
+    width: 150px;
+    object-fit: contain;
+    margin: 0;
+   
+  }
   .solution-pillars {
     flex-direction: column;
   }

@@ -160,7 +160,7 @@ max-height: 100%;
   } */
   .about {
     flex-direction: column;
-    padding: 3rem 1.5rem;
+    padding: 0rem 10px;
     text-align: center;
   }
 
@@ -181,17 +181,21 @@ max-height: 100%;
   .about__rating {
     align-items: center;
   }
+   .about__image img {
+    height: auto;
+    width: 80%;
+    /* margin-bottom: 30px; */
+  }
 }
 
 /* Responsive for Small Devices */
 @media (max-width: 576px) {
-  /* .container{
-    height: 100vh;
-  } */
+  
   .about__image img {
-    height: auto;
-    width: 100%;
-    /* margin-bottom: 30px; */
+   
+    width: 80%;
+    margin: auto;
+    
   }
 
   .about__headline {

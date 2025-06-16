@@ -15,10 +15,10 @@ const LogoSlider = () => {
         animate={{ x: "-100%" }}
         transition={{
           repeat: Infinity,
-          duration: 60,
+          duration: 80,
           ease: "linear",
         }}
-        style={{ x: 0 }}
+        
         
       >
         {repeatedLogos.map((logo, index) => (

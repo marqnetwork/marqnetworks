@@ -16,8 +16,7 @@
 
 .work__left {
   flex: 1;
-    max-width: 100%;
-  overflow: hidden;
+    
 }
 
 .work__right {

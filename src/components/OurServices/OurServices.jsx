@@ -47,7 +47,7 @@ const services = [
   {
     title: "Lead-Gen Engine",
     desc: "Funnel, emails & ads done-for-you.",
-    icon: "/images/stack.png",
+    icon: "/images/Engine.png",
     price: " Growth Marketing & Lead Gen",
     duration: "Marketing",
     features: [
@@ -60,7 +60,7 @@ const services = [
   {
     title: "Dedicated Remote Pod",
     desc: "Scale with a plug-in team at 30% less cost.",
-    icon: "/images/stack.png",
+    icon: "/images/Remote.png",
     price: " Off-Shore Excellence Hub",
     duration: "Off-Shore",
     features: [

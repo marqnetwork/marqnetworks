@@ -40,3 +40,20 @@
     height: 130px;
   }
 }
+
+@media (max-width: 1024px) {
+  .slider-section {
+    padding: 3rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .slider-image {
+    width: 300px;
+    height: 220px;
+  }
+
+  .slider-row {
+    gap: 0.75rem;
+  }
+}
+

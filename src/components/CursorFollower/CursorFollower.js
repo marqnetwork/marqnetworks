@@ -4,17 +4,31 @@ import { useEffect, useState } from 'react';
 
 export default function CursorFollower() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
+    const checkScreenSize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  useEffect(() => {
+    if (!isDesktop) return;
+
     const moveCircle = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
-    window.addEventListener('mousemove', moveCircle);
 
-    return () => {
-      window.removeEventListener('mousemove', moveCircle);
-    };
-  }, []);
+    window.addEventListener('mousemove', moveCircle);
+    return () => window.removeEventListener('mousemove', moveCircle);
+  }, [isDesktop]);
+
+  if (!isDesktop) return null;
 
   return (
     <div

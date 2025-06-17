@@ -54,7 +54,7 @@ const steps = [
 ];
 
 const Work = () => {
-  const containerRef = useRef(null); // Wrap for global scroll tracking
+  const containerRef = useRef(null);
 
   return (
     <section className="work" ref={containerRef}>
@@ -116,12 +116,13 @@ const Work = () => {
                     </span>
                   ))}
 
-                  {index === steps.length - 1 && (
+                 
+                </div>
+                 {index === steps.length - 1 && (
     
-              <MarqButton className="work__cta-button" style={{ marginTop: "20px" }}/>
+              <MarqButton className="work__cta-button" style={{ marginTop: "10px" }}/>
 
                   )}
-                </div>
               </motion.div>
             );
           })}

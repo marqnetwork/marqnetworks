@@ -102,8 +102,8 @@
 }
 
 .award__card img {
-  height: 80px;
-  width: 300px;
+  width: 330px;
+    height: 115px;
   object-fit: contain;
   align-content: center;
 }

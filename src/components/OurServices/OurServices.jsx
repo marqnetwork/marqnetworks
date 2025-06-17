@@ -89,7 +89,9 @@ const OurServices = () => {
   return (
     <section className="ourservices">
       {/* Left side: Static Image */}
-      
+      <div className="ourservices__left">
+        <img src="/images/ourservices.png" alt="Our Services" />
+      </div>
 
       {/* Right side: Heading + Cards */}
       <div className="ourservices__right">
@@ -146,10 +148,9 @@ const OurServices = () => {
           ))}
         </div>
       </div>
-      <div className="ourservices__left">
-        <img src="/images/ourservices.png" alt="Our Services" />
-      </div>
+      
     </section>
+    
   );
 };
 

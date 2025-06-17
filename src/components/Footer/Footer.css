@@ -1,14 +1,13 @@
 .footer {
-  background-image: url(https://framerusercontent.com/images/Yup0Khoh6jiKcA1Ad9mojCjB7M.png?scale-down-to=2048);
+  background-image: url("/images/footer.png");
   background-size: cover;
-  background-position: top center;
+  background-position: center center;
   color: white;
   font-family: "Poppins", sans-serif;
 }
 
-
 .footer__top {
- max-width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -18,8 +17,6 @@
   padding-top: 7%;
   /* height:50vh; */
 }
-
-
 
 .footer__logo {
   width: 150px;
@@ -46,14 +43,14 @@
   padding: 0.4rem 1rem;
   border: none;
   border-radius: 6px;
-  
+
   cursor: pointer;
   white-space: nowrap;
-   border-color: rgba(255, 255, 255, 0.15);
- font-size: 14px;
+  border-color: rgba(255, 255, 255, 0.15);
+  font-size: 14px;
   border-style: solid;
-   backdrop-filter: none;
-    box-shadow: 0 5px 15px #39ff14;
+  backdrop-filter: none;
+  box-shadow: 0 5px 15px #39ff14;
 }
 
 .footer__middle h4,
@@ -136,7 +133,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .footer {
-  padding: 20px;
+    padding: 20px;
   }
   .footer__top {
     flex-direction: column;
@@ -169,4 +166,3 @@
     height: auto;
   }
 }
-

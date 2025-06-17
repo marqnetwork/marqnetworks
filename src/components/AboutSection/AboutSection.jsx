@@ -8,9 +8,7 @@ const AboutSection = () => {
   return (
     <div className="container">
       <section className="about">
-        <div className="about__image">
-          <img src="/images/about.png" alt="about" />
-        </div>
+     
 
         <div className="about__content">
           <span className="about__tag">• About MarQ</span>
@@ -67,6 +65,9 @@ const AboutSection = () => {
               </span>
             </div>
           </div>
+        </div>
+           <div className="about__image">
+          <img src="/images/about.png" alt="about" />
         </div>
       </section>
     </div>

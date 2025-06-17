@@ -3,27 +3,27 @@
 import React from "react";
 import "../../components/SolutionPillars/SolutionPillars.css";
 import { motion } from "framer-motion";
-import MarqButton from '../MarqButton/MarqButton'
+import MarqButton from "../MarqButton/MarqButton";
 
 const steps = [
   {
     title: "Sprint Automation & Smart Resource Allocation",
     desc: "AI dynamically adjusts sprint tasks, predicts blockers, and allocates global team members based on skill + velocity.",
     icon: "/images/sprintt.png",
-    image: "/images/p13.png"
+    image: "/images/p13.png",
   },
   {
     title: "Real-Time Quality Assurance",
     desc: "Every commit, test, and deployment is monitored by AI to catch issues before humans do.",
     icon: "/images/real.png",
-    image: "/images/p14.png"
+    image: "/images/p14.png",
   },
-   {
+  {
     title: "Revolution: Global Teams. One Brain.",
     desc: "We don't just operate around the clock—we operate ahead of the clock. AI makes our global delivery seamless, smart, and superior.",
     icon: "/images/brain.png",
-    image: "/images/Villa.png"
-  }
+    image: "/images/Villa.png",
+  },
 ];
 
 const Pillar5 = () => {
@@ -43,21 +43,21 @@ const Pillar5 = () => {
         </motion.h2>
 
         <p className="solution-pillars__description">
-          Align teams, de-risk spend, and launch initiatives with a proven 90-day execution map.
+          Align teams, de-risk spend, and launch initiatives with a proven
+          90-day execution map.
         </p>
 
-      <ul className="solution-pillars__list">
-  <li>EST-aligned project manager</li>
-  <li>24/7 design / dev velocity</li>
-  <li>Flat-rate or fixed-bid pods</li>
-  <li>45-day website guarantee</li>
-</ul>
-
+        <ul className="solution-pillars__list">
+          <li>EST-aligned project manager</li>
+          <li>24/7 design / dev velocity</li>
+          <li>Flat-rate or fixed-bid pods</li>
+          <li>45-day website guarantee</li>
+        </ul>
 
         <div className="flex items-center justify-between">
-        <MarqButton className="solution-pillars__cta-button"/>
-        <img src="/images/piller5logo.png" alt="logo" className="cta-logo" />
-</div>
+          <MarqButton className="solution-pillars__cta-button" />
+          <img src="/images/piller5logo.png" alt="logo" className="cta-logo" />
+        </div>
         <div className="solution-pillars__cards">
           {steps.map((step, index) => (
             <div className="pillar-card" key={index}>
@@ -84,7 +84,7 @@ const Pillar5 = () => {
       </div>
 
       <div className="solution-pillars__right">
-        <img src="/images/pillar5img.png" alt="AI & Automation" />
+        <img src="/images/5.png" alt="AI & Automation" />
       </div>
     </section>
   );

@@ -30,7 +30,7 @@ const Pillar2 = () => {
   return (
     <section className="solution-pillars">
       <div className="solution-pillars__right">
-        <img src="/images/pillar2img.png" alt="Growth Strategy" />
+        <img src="/images/2.png" alt="Growth Strategy" />
       </div>
       <div className="solution-pillars__left">
         <span className="solution-pillars__tag">• Pillar 02</span>

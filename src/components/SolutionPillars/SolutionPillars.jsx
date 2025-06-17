@@ -61,7 +61,7 @@ const SolutionPillars = () => {
         <div className="flex  justify-between items-center">
 
           <MarqButton className="solution-pillars__cta-button" />
-          <img src="/images/strategylogo.png" alt="logo" className="cta-logo" />
+          <img src="/images/1.png" alt="logo" className="cta-logo" />
         </div>
 
         <div className="solution-pillars__cards">

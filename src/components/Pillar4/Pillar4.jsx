@@ -30,7 +30,7 @@ const Pillar4 = () => {
   return (
     <section className="solution-pillars">
       <div className="solution-pillars__right">
-        <img src="/images/pillar4img.png" alt="UX Design Strategy" />
+        <img src="/images/4.png" alt="UX Design Strategy" />
       </div>
       <div className="solution-pillars__left">
         <span className="solution-pillars__tag">• Pillar 04</span>

@@ -85,7 +85,7 @@ const Pillar3 = () => {
       </div>
 
       <div className="solution-pillars__right">
-        <img src="/images/pillar3img.png" alt="Engineering Strategy" />
+        <img src="/images/3.png" alt="Engineering Strategy" />
       </div>
     </section>
   );

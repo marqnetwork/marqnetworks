@@ -1,77 +1,74 @@
-import React from 'react';
-import './Footer.css';
-import MarqButton from '../MarqButton/MarqButton'
+import React from "react";
+import "./Footer.css";
+import MarqButton from "../MarqButton/MarqButton";
 
 const Footer = () => {
   return (
-    <div className='footer'>
-    <footer className="footer_content">
-      <div className="footer__top">
-        {/* Left */}
-        <div className="footer__left">
-          <img src="/images/logo.png" alt="marqnetworks logo" className="footer__logo" />
-          
-          <div className="footer__subscribe">
-            <input type="email" placeholder="Your work e-mail…"    autoComplete="off"/>
-            {/* <button>Keep Me in the Loop</button> */}
-            <MarqButton />
-          </div>
-        </div>
+    <div className="footer">
+      <footer className="footer_content">
+        <div className="footer__top">
+          {/* Left */}
+          <div className="footer__left">
+            <img
+              src="/images/logo.png"
+              alt="marqnetworks logo"
+              className="footer__logo"
+            />
 
-        {/* Middle */}
-        <div className="footer__middle">
-          <h4>Template Pages</h4>
-          <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Solution</li>
-            <li>Portfolio</li>
-            <li>Blog</li>
-            <li>Contact</li>
-            <li>FAQ</li>
-          </ul>
-        </div>
-
-        {/* Right */}
-        <div className="footer__right">
-          <div className="footer__right-top">
-            <div className="footer__social-sales">
-              <h4>Social</h4>
-              <ul>
-                
-                <li>LinkedIn</li>
-                <li>X (Twitter)</li>
-                <li>Instagram</li>
-                <li>Youtube</li>
-                
-              </ul>
-
-              
-              
+            <div className="footer__subscribe">
+              <input
+                type="email"
+                placeholder="Your work e-mail…"
+                autoComplete="off"
+              />
+              {/* <button>Keep Me in the Loop</button> */}
+              <MarqButton />
             </div>
+          </div>
 
-            
-           
+          {/* Middle */}
+          <div className="footer__middle">
+            <h4>Quick Links</h4>
+            <ul>
+              <li>Home</li>
+              <li>About</li>
+              <li>Solution</li>
+              <li>Portfolio</li>
+              <li>Blog</li>
+              <li>Contact</li>
+              <li>FAQ</li>
+            </ul>
+          </div>
 
-            <div className="footer__video-wrapper">
-  <div className="footer__sales">Sales – 7,360,109</div>
-  <div className="video__container">
-  
-  </div>
-</div>
+          {/* Right */}
+          <div className="footer__right">
+            <div className="footer__right-top">
+              <div className="footer__social-sales">
+                <h4>Social</h4>
+                <ul>
+                  <li>LinkedIn</li>
+                  <li>X (Twitter)</li>
+                  <li>Instagram</li>
+                  <li>Youtube</li>
+                </ul>
+              </div>
 
+              <div className="footer__video-wrapper">
+                <div className="footer__sales">Sales – 7,360,109</div>
+                <div className="video__container"></div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="footer__bottom">
-        <p>© 2024 marQ Networks LLC. All rights reserved. </p>
-        <div className="footer__links">
-          <a href="#">Terms & Conditions</a>
-          <a href="#">Privacy Policy</a>
+        <div className="footer__bottom">
+          <p>© 2025 marQ Networks. All rights reserved. </p>
+          <div className="footer__links">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
     </div>
   );
 };

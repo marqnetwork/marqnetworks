@@ -104,23 +104,44 @@ rgba(255, 255, 255, 0.6);
   line-height: 1.6;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .faq__section {
-    margin: 0px auto;
     flex-direction: column;
+    padding: 2rem 1rem;
+    margin: 60px auto;
   }
 
   .faq__intro {
-    text-align: center;
+    width: 100%;
+    min-width: unset;
+    margin-bottom: 2rem;
   }
 
   .faq__intro h2 {
     font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  .faq__intro p {
+    max-width: 100%;
+    font-size: 0.95rem;
   }
 
   .faq__list {
-    padding: 20px;
     width: 100%;
+    min-width: unset;
+  }
+
+  .faq__item {
+    padding: 1rem;
+  }
+
+  .faq__question {
+    font-size: 0.95rem;
+  }
+
+  .faq__answer {
+    font-size: 0.85rem;
   }
 }

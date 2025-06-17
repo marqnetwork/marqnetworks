@@ -155,3 +155,37 @@ background: radial-gradient(
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+@media (max-width: 768px) {
+  .feature__section {
+    padding: 2rem 1.5rem;
+  }
+
+  .feature__grid {
+    grid-template-columns: repeat(1, 1fr); /* 2 columns on tablets */
+    gap: 1rem;
+  }
+
+  .feature__card {
+    padding: 0.75rem;
+  }
+
+  .feature__icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .feature__title h4 {
+    font-size: 1rem;
+  }
+
+  .feature__desc {
+    font-size: 0.8rem;
+  }
+
+  .feature__badge {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+  }
+}
+

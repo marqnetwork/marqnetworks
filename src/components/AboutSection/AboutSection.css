@@ -274,6 +274,7 @@ max-height: 100%;
     max-width: 100%;
     margin-top: 1rem;
     border-radius: 20px;
-     object-fit: contain;
+     /* object-fit: contain; */
+      max-height: 300px;
   }
 }

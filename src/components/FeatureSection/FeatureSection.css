@@ -201,3 +201,56 @@
     padding: 0.6rem 1.2rem;
   }
 }
+
+
+@media (max-width: 1024px) and (min-width: 781px) {
+  .feature {
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 2rem;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .feature__content {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .feature__headline {
+    font-size: 2.5rem;
+    line-height: 1.3;
+  }
+
+  .feature__description {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+  }
+
+  .feature__svg {
+    width: 250px;
+  }
+
+  .feature__svg--left,
+  .feature__svg--right {
+    top: 30%;
+    transform: translateY(-50%) scale(0.9);
+    opacity: 0.4;
+  }
+
+  .feature__actions {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .feature__button {
+    min-width: 180px;
+    padding: 0.75rem 1.5rem;
+    font-size: 14px;
+  }
+}

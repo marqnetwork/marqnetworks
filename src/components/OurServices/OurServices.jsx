@@ -4,74 +4,71 @@ import React from "react";
 import "./OurServices.css";
 import { motion } from "framer-motion";
 
+// Service Data
 const services = [
   {
     title: "Digital Strategy Sprint",
     desc: "Align vision, goals & tech in 2 weeks.",
     icon: "/images/sprint.png",
-    price: " Strategy & Digital Transformation",
+    price: "Strategy & Digital Transformation",
     duration: "Consultancy",
     features: [
-      " North-Star roadmap",
-      " Ops & tech stack blueprint",
-      " Quick-win priority list",
+      "North-Star roadmap",
+      "Ops & tech stack blueprint",
+      "Quick-win priority list",
     ],
-    endIcon: "/images/abouticon.png",
   },
   {
     title: "Brand & UX Makeover",
     desc: "From logo to clickable prototype.",
     icon: "/images/package.png",
-    price: " Brand + Experience Design",
+    price: "Brand + Experience Design",
     duration: "Design",
     features: [
-      " Visual identity kit",
-      " UX wireframes in Figma",
-      " Reusable design system",
+      "Visual identity kit",
+      "UX wireframes in Figma",
+      "Reusable design system",
     ],
-    endIcon: "/images/abouticon.png",
   },
   {
     title: "MVP Build + Automation",
     desc: "Code, test & deploy—fast.",
     icon: "/images/stack.png",
-    price: " Custom Software & Automation",
+    price: "Custom Software & Automation",
     duration: "Development",
     features: [
-      " Full-stack React / Laravel",
-      " Zapier / Make automations",
-      " CI/CD & documentation",
+      "Full-stack React / Laravel",
+      "Zapier / Make automations",
+      "CI/CD & documentation",
     ],
-    endIcon: "/images/abouticon.png",
   },
   {
     title: "Lead-Gen Engine",
     desc: "Funnel, emails & ads done-for-you.",
     icon: "/images/Engine.png",
-    price: " Growth Marketing & Lead Gen",
+    price: "Growth Marketing & Lead Gen",
     duration: "Marketing",
     features: [
-      " High-converting funnel",
-      " CRM & nurture emails",
-      " Paid-ads management",
+      "High-converting funnel",
+      "CRM & nurture emails",
+      "Paid-ads management",
     ],
-    endIcon: "/images/abouticon.png",
   },
   {
     title: "Dedicated Remote Pod",
     desc: "Scale with a plug-in team at 30% less cost.",
     icon: "/images/Remote.png",
-    price: " Off-Shore Excellence Hub",
+    price: "Off-Shore Excellence Hub",
     duration: "Off-Shore",
     features: [
-      " Cross-disciplinary talent",
-      " EST time-zone overlap",
-      " Flat, transparent billing",
+      "Cross-disciplinary talent",
+      "EST time-zone overlap",
+      "Flat, transparent billing",
     ],
-    endIcon: "/images/abouticon.png",
   },
 ];
 
+// Animation Variant
 const cardVariants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i) => ({
@@ -88,14 +85,15 @@ const cardVariants = {
 const OurServices = () => {
   return (
     <section className="ourservices">
-      {/* Left side: Static Image */}
+      {/* Static Image Side */}
       <div className="ourservices__left">
         <img src="/images/ourservices.png" alt="Our Services" />
       </div>
 
-      {/* Right side: Heading + Cards */}
+      {/* Content Side */}
       <div className="ourservices__right">
         <span className="ourservices__tag">• Our Services</span>
+
         <motion.h2
           className="ourservices__headline"
           initial={{ x: -20, opacity: 0.6, filter: "blur(4px)" }}
@@ -108,12 +106,12 @@ const OurServices = () => {
           <span>Covered by marQ Networks</span>
         </motion.h2>
 
-      
+        {/* Service Cards */}
         <div className="ourservices__cards">
           {services.map((service, index) => (
             <motion.div
-              className="service-card"
               key={index}
+              className="service-card"
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
@@ -122,14 +120,14 @@ const OurServices = () => {
             >
               <div className="service-card__top">
                 <div className="service-card__icon">
-                  <img src={service.icon} alt="icon" />
+                  <img src={service.icon} alt={`${service.title} icon`} />
                 </div>
                 <span className="service-card__badge">{service.duration}</span>
               </div>
 
               <h3 className="service-card__title">{service.title}</h3>
               <p className="service-card__desc">{service.desc}</p>
-               <div className="about__divider" />
+              <div className="about__divider" />
 
               <div className="service-card__meta">
                 <span className="service-card__pill">{service.price}</span>
@@ -139,7 +137,7 @@ const OurServices = () => {
               <ul className="service-card__features">
                 {service.features.map((feature, i) => (
                   <li key={i}>
-                    <img src="/images/abouticon.png" alt="check" />
+                    <img src="/images/abouticon.png" alt="feature icon" />
                     {feature}
                   </li>
                 ))}
@@ -148,9 +146,7 @@ const OurServices = () => {
           ))}
         </div>
       </div>
-      
     </section>
-    
   );
 };
 

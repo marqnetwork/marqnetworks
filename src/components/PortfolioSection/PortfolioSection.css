@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
 
 .portfolio {
   align-items: center;
@@ -10,8 +10,6 @@
   z-index: 1;
   max-width: 1200px;
   margin: 0 auto;
- 
-  
 }
 .portfolio__decoration-wrapper {
   position: relative;
@@ -43,14 +41,11 @@
   }
 }
 
-
-
-
 /* Right content */
 .portfolio__content {
   flex: 1;
-  max-width:1200px;
-  margin:0 auto;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .portfolio__tag {
@@ -60,15 +55,15 @@
   border-radius: 12px;
   font-size: 16px;
   font-weight: 400;
-    position: relative;
+  position: relative;
   overflow: hidden;
 }
 .portfolio__tag::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 10px;    
-  right: 10px;    
+  left: 10px;
+  right: 10px;
   height: 2px;
   background: linear-gradient(to right, transparent, #39ff14, transparent);
   filter: drop-shadow(0 0 6px #39ff14);
@@ -76,12 +71,11 @@
   pointer-events: none;
 }
 
-
 .portfolio__headline {
   font-size: 3.5rem;
   line-height: 1.2;
   margin: 1.5rem 0;
-  font-weight:500;
+  font-weight: 500;
 }
 
 .portfolio__headline span {
@@ -95,8 +89,9 @@
   color: #aaa;
   font-size: 1rem;
   font-weight: 300;
+  width: 50%;
+  margin: auto;
   line-height: 1.8;
-  margin-bottom: 2rem;
   text-align: center;
 }
 
@@ -116,10 +111,10 @@
   cursor: pointer;
   transition: transform 0.3s ease;
   box-shadow: 0 5px 15px #39ff14;
-   border-color: rgba(255, 255, 255, 0.15);
- font-size: 14px;
+  border-color: rgba(255, 255, 255, 0.15);
+  font-size: 14px;
   border-style: solid;
-   backdrop-filter: none;
+  backdrop-filter: none;
 }
 
 .glow-image {
@@ -223,4 +218,3 @@
     padding: 0.65rem 1.1rem;
   }
 }
-

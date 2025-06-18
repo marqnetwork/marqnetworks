@@ -435,7 +435,7 @@
   }
 }
 
-@media (max-width: 1024px) and (min-width: 781px) {
+/* @media (max-width: 1024px) and (min-width: 781px) {
   .hero {
     flex-direction: column;
     padding: 3rem 2rem;
@@ -487,4 +487,4 @@
     min-width: 180px;
     text-align: center;
   }
-}
+} */

@@ -244,7 +244,7 @@
   } 
 }
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .work {
     flex-direction: column;
     padding: 0 2rem;
@@ -315,5 +315,5 @@
     object-fit: cover;
     border-radius: 20px;
   }
-}
+} */
 

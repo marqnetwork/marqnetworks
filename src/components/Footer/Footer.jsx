@@ -14,10 +14,10 @@ const Footer = () => {
               alt="marqnetworks logo"
               className="footer__logo"
             />
-            <p>
+            <h2 className="text-[20px] pb-4">
               Made remotely, delivered globally Powered by relentless curiosity
-            </p>
-            <p>
+            </h2>
+            <p className="text-[10px]">
               Operating 24/7 from our EST-aligned off-shore hub and US/GCC
               leadership teams
             </p>
@@ -41,9 +41,6 @@ const Footer = () => {
               <li>About</li>
               <li>Solution</li>
               <li>Portfolio</li>
-              <li>Blog</li>
-              <li>Contact</li>
-              <li>FAQ</li>
             </ul>
           </div>
 
@@ -53,10 +50,19 @@ const Footer = () => {
               <div className="footer__social-sales">
                 <h4>Social</h4>
                 <ul>
-                  <li>LinkedIn</li>
-                  <li>X (Twitter)</li>
-                  <li>Instagram</li>
-                  <li>Youtube</li>
+                  <li>
+                    <a href="http://linkedin.com/company/marqnetwork"> LinkedIn</a>
+                  </li>
+                  <li>
+                    {" "}
+                    <a href="https://x.com/MarqNetworks">X (Twitter)</a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/marqnetworksofficial">Instagram</a>
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com/channel/UC1RxV5Vh7-4dF1AFHDJBxcQ">Youtube</a>
+                  </li>
                 </ul>
               </div>
 

@@ -6,15 +6,21 @@ const Footer = () => {
   return (
     <div className="footer">
       <footer className="footer_content">
-        <div className="footer__top">
+        <div className="flex justify-between w-full gap-10 footer__top">
           {/* Left */}
-          <div className="footer__left">
+          <div className="w-[40%] ">
             <img
               src="/images/logo.png"
               alt="marqnetworks logo"
               className="footer__logo"
             />
-
+            <p>
+              Made remotely, delivered globally Powered by relentless curiosity
+            </p>
+            <p>
+              Operating 24/7 from our EST-aligned off-shore hub and US/GCC
+              leadership teams
+            </p>
             <div className="footer__subscribe">
               <input
                 type="email"
@@ -25,6 +31,7 @@ const Footer = () => {
               <MarqButton />
             </div>
           </div>
+          {/* <div className="footer__left"></div> */}
 
           {/* Middle */}
           <div className="footer__middle">

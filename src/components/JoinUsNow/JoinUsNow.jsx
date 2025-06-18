@@ -1,10 +1,8 @@
 "use client";
 
 
-import React from 'react';
-import './JoinUsNow.css';
-import { motion } from "framer-motion";
-import MarqButton from '../MarqButton/MarqButton';
+
+
 import React from "react";
 import "./JoinUsNow.css";
 import { motion } from "framer-motion";

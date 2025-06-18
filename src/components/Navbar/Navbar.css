@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+/* Navbar container */
 .navbar {
   z-index: 999;
   display: flex;
@@ -19,6 +20,7 @@
   padding: 20px 0;
 }
 
+/* Logo */
 .navbar__logo img {
   width: 200px;
   object-fit: contain;
@@ -45,6 +47,7 @@
   color: #ccc;
 }
 
+/* Button styling */
 .navbar__button {
   background-color: #39ff14;
   color: black;
@@ -61,17 +64,21 @@
   margin-top: 10px;
 }
 
-/* Hamburger / Cross */
+/* Hamburger Icon (outside navbar) */
 .navbar__hamburger {
   display: none;
   font-size: 32px;
   cursor: pointer;
   color: white;
   z-index: 2001;
-  position: relative;
+  position: fixed; /* ✅ stays on screen */
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  padding: 10px;
 }
 
-/* Desktop-only / Mobile-only visibility */
+/* Visibility helpers */
 .desktop-only {
   display: block;
 }
@@ -88,11 +95,7 @@
   }
 
   .navbar__hamburger {
-    display: block;
-    position: fixed;
-    top: 30px;
-    right: 25px;
-    z-index: 2001;
+    display: block; /* ✅ make visible on mobile */
   }
 
   .navbar__menu {
@@ -103,7 +106,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: rgba(0, 0, 0, 0.95); /* Fully opaque dark */
+    background-color: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(20px);
     color: white;
     width: 100vw;
@@ -131,7 +134,7 @@
   }
 }
 
-/* Tablet Tweak */
+/* Tablet Styles */
 @media (max-width: 1024px) {
   .navbar {
     width: 100%;

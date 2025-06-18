@@ -1,9 +1,15 @@
 "use client";
 
+
 import React from 'react';
 import './JoinUsNow.css';
 import { motion } from "framer-motion";
 import MarqButton from '../MarqButton/MarqButton';
+import React from "react";
+import "./JoinUsNow.css";
+import { motion } from "framer-motion";
+import MarqButton from "../MarqButton/MarqButton";
+
 
 const JoinUsNow = () => {
   return (
@@ -23,7 +29,12 @@ const JoinUsNow = () => {
         </motion.h2>
 
         <p className="join__description">
+
           Ready to take the next step? Join us now and start transforming your<br />
+
+          Ready to take the next step? Join us now and start transforming your
+          <br />
+
           vision into reality with expert support.
         </p>
 

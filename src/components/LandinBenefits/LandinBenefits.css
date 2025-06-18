@@ -3,33 +3,33 @@
 .benefits__section {
   background: #000;
   color: #fff;
-  text-align: left;
-  padding: 60px 20px;
   font-family: 'Poppins', sans-serif;
-   max-width: 1200px;
-  margin: 100px auto 0px;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 100px auto 0;
+  text-align: left;
+  box-sizing: border-box;
 }
 
-/* Label Styling */
 .benefits__label {
   display: inline-block;
   background: #111;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
   padding: 8px 18px;
   border-radius: 8px;
-  font-size: 16px;
   margin-bottom: 20px;
-  color: rgb(255, 255, 255);
-  font-weight: 400;
   position: relative;
   overflow: hidden;
-
 }
+
 .benefits__label::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 10px;    
-  right: 10px;    
+  left: 10px;
+  right: 10px;
   height: 2px;
   background: linear-gradient(to right, transparent, #39ff14, transparent);
   filter: drop-shadow(0 0 6px #39ff14);
@@ -37,61 +37,56 @@
   pointer-events: none;
 }
 
-
-/* Main Heading Styling */
 .benefits__heading {
   font-size: 3.1rem;
   font-weight: 500;
-  color: white;
   line-height: 1.2;
+  color: #fff;
 }
 
-/* Subheading Styling */
 .benefits__subheading {
   font-size: 2.7rem;
   font-weight: 400;
   color: #aaa;
 }
 
-/* Tags Styling */
 .benefits__tags {
-  margin: 20px 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
   gap: 8px;
+  margin: 20px 0;
   max-width: 800px;
+  justify-content: flex-start;
 }
 
 .benefit__tag {
   background: #111;
   color: #ddd;
-  padding: 10px 10px;
-  border-radius: 10px;
   font-size: 0.8rem;
-  transition: all 0.3s ease;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.3s ease;
   box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
 }
 
-/* CTA Button Styling */
 .benefits__cta {
- 
-  padding: 10px 15px;
-  font-weight: 500;
-  font-size: 1rem;
   background: #fff;
   color: #000;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 15px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
   box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1);
+  transition: 0.3s ease;
 }
 
 .benefits__cta:hover {
   transform: translateY(-2px);
 }
 
+/* Responsive */
 @media (max-width: 992px) {
   .benefits__section {
     padding: 50px 20px;
@@ -106,8 +101,8 @@
   }
 
   .benefits__tags {
-    gap: 10px;
     padding: 0 5px;
+    gap: 10px;
   }
 }
 
@@ -128,7 +123,6 @@
   .benefits__tags {
     flex-direction: row;
     align-items: center;
-    gap: 10px;
   }
 
   .benefit__tag {
@@ -141,8 +135,8 @@
   .benefits__cta {
     width: 100%;
     max-width: 280px;
-    padding: 10px 20px;
     font-size: 0.95rem;
+    padding: 10px 20px;
   }
 }
 

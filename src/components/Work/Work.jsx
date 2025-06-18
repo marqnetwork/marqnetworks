@@ -1,11 +1,11 @@
-// src/components/Work.js
 "use client";
 
 import React, { useRef } from "react";
 import "./Work.css";
 import { motion, useScroll, useTransform } from "framer-motion";
-import MarqButton from '../MarqButton/MarqButton'
+import MarqButton from "../MarqButton/MarqButton";
 
+// Step Data
 const steps = [
   {
     title: "Kickoff",
@@ -44,7 +44,7 @@ const steps = [
     title: "Result",
     subtitle: "Stage 4",
     desc: "Most MarQ projects move from kickoff to live launch in ≤ 45 days—saving clients 40% in cost and months in opportunity loss.",
-    icon: "/images/resultt.png", 
+    icon: "/images/resultt.png",
     actions: [
       "✔ 45-day delivery",
       "✔ 40% cost saving",
@@ -53,30 +53,28 @@ const steps = [
   }
 ];
 
+// Animation Config
+const fadeInLeft = {
+  initial: { x: -20, opacity: 0.6, filter: "blur(4px)" },
+  whileInView: { x: 0, opacity: 1, filter: "blur(0px)" },
+  transition: { duration: 1.2, ease: "easeOut" },
+  viewport: { once: true, amount: 0.5 }
+};
+
 const Work = () => {
   const containerRef = useRef(null);
 
   return (
-    <section className="work" ref={containerRef}>
+    <section className="work" ref={containerRef} aria-labelledby="work-title">
       <div className="work__left">
         <span className="work__tag">• How We Work?</span>
 
-        <motion.h2
-          className="work__headline"
-          initial={{ x: -20, opacity: 0.6, filter: "blur(4px)" }}
-          whileInView={{ x: 0, opacity: 1, filter: "blur(0px)" }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.5 }}
-        >
-          We Streamline <br /> Every Step  <br />
+        <motion.h2 className="work__headline" id="work-title" {...fadeInLeft}>
+          We Streamline <br /> Every Step <br />
           <span>From Idea to Impact</span>
         </motion.h2>
 
-        <motion.p className="work__description"
-         initial={{ x: -20, opacity: 0.6, filter: "blur(4px)" }}
-          whileInView={{ x: 0, opacity: 1, filter: "blur(0px)" }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.5 }}>
+        <motion.p className="work__description" {...fadeInLeft}>
           We’ve battle-tested a three-stage framework that eliminates guesswork,
           keeps you in the loop, and gets your product in market faster.
         </motion.p>
@@ -86,7 +84,7 @@ const Work = () => {
             const cardRef = useRef(null);
             const { scrollYProgress } = useScroll({
               target: cardRef,
-              offset: ["start end", "end start"], 
+              offset: ["start end", "end start"]
             });
 
             const scale = useTransform(scrollYProgress, [0, 0.7, 0.6], [0.95, 1.05, 0.95]);
@@ -97,16 +95,16 @@ const Work = () => {
                 ref={cardRef}
                 className="step-card"
                 style={{ scale }}
-                
               >
                 <div className="step-card__top">
                   <div className="step-card__icon">
-                    <img src={step.icon} alt="icon" />
+                    <img src={step.icon} alt={`${step.title} Icon`} />
                   </div>
                   <span className="step-card__badge">{step.subtitle}</span>
                 </div>
+
                 <h3 className="step-card__title">{step.title}</h3>
-                 <div className="about__divider" />
+                <div className="about__divider" />
                 <p className="step-card__desc">{step.desc}</p>
 
                 <div className="step-card__actions">
@@ -115,24 +113,22 @@ const Work = () => {
                       {action}
                     </span>
                   ))}
-
-                 
                 </div>
-                 {index === steps.length - 1 && (
-    
-              <MarqButton className="work__cta-button" style={{ marginTop: "10px" }}/>
 
-                  )}
+                {index === steps.length - 1 && (
+                  <MarqButton
+                    className="work__cta-button"
+                    style={{ marginTop: "10px" }}
+                  />
+                )}
               </motion.div>
             );
           })}
-
-          
         </div>
       </div>
 
       <div className="work__right">
-        <img src="/images/work.png" alt="work" />
+        <img src="/images/work.png" alt="Work Process Illustration" />
       </div>
     </section>
   );

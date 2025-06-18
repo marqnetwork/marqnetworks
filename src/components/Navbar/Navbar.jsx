@@ -1,5 +1,5 @@
-'use client';
-import React, { useState, useEffect } from "react";
+"use client";
+import React, { useState } from "react";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -9,52 +9,54 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
-  }, [isMenuOpen]);
-
   return (
+    // <div className="bg-[#000]">
     <nav className="navbar">
       <div className="navbar__logo">
         <img src="/images/logo.svg" alt="Logo" />
-      </div>
-
-      {/* Hamburger / Cross Icon */}
-      <div
-        className={`navbar__hamburger ${isMenuOpen ? "is-open" : ""}`}
-        onClick={toggleMenu}
-      >
-        {isMenuOpen ? "✕" : "☰"}
-      </div>
-
-      {/* Mobile Navigation */}
-      <ul className={`navbar__menu ${isMenuOpen ? "navbar__menu--active" : ""}`}>
-        <li><a href="/">Home</a></li>
-        <li><a href="/About">About</a></li>
-        <li><a href="/Solution">Solutions</a></li>
-        <li><a href="/Portfolio">Portfolio</a></li>
-        <li><a href="/Contact">Contact</a></li>
-        <li className="navbar__button-wrapper mobile-only">
-          <a
-            href="https://marqnetworks.zohobookings.com/#/business-consultation"
-            target="_blank"
-            rel="noopener noreferrer"
+        <div>
+          <ul
+            className={`navbar__menu ${
+              isMenuOpen ? "navbar__menu--active" : ""
+            }`}
           >
-            <button className="navbar__button">Meet MarQ Networks</button>
-          </a>
-        </li>
-      </ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/About">About</a>
+            </li>
+            <li>
+              <a href="/Solution">Solutions</a>
+            </li>
+            <li>
+              <a href="/Portfolio">Portfolio</a>
+            </li>
+            <li>
+              <a href="/Contact">Contact</a>
+            </li>
+           
+          </ul>
+        </div>
+      </div>
 
-      {/* Desktop Button */}
+      {/* Hamburger Icon */}
+      <div className="navbar__hamburger" onClick={toggleMenu}>
+        &#9776;
+      </div>
+
+      {/* Navigation Links */}
+
+      {/* CTA Button */}
       <a
         href="https://marqnetworks.zohobookings.com/#/business-consultation"
         target="_blank"
         rel="noopener noreferrer"
-        className="navbar__button desktop-only"
       >
-        Meet MarQ Networks
+        <button className="navbar__button">Meet MarQ Networks</button>
       </a>
     </nav>
+    // </div>
   );
 };
 

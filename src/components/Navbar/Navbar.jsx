@@ -9,14 +9,17 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Lock body scroll when menu is open
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
   }, [isMenuOpen]);
 
   return (
-    <>
-      {/* ✅ Hamburger outside nav so it's fixed independently */}
+    <nav className="navbar">
+      <div className="navbar__logo">
+        <img src="/images/logo.svg" alt="Logo" />
+      </div>
+
+      {/* Hamburger / Cross Icon */}
       <div
         className={`navbar__hamburger ${isMenuOpen ? "is-open" : ""}`}
         onClick={toggleMenu}
@@ -24,39 +27,34 @@ const Navbar = () => {
         {isMenuOpen ? "✕" : "☰"}
       </div>
 
-      <nav className="navbar">
-        <div className="navbar__logo">
-          <img src="/images/logo.svg" alt="Logo" />
-        </div>
+      {/* Mobile Navigation */}
+      <ul className={`navbar__menu ${isMenuOpen ? "navbar__menu--active" : ""}`}>
+        <li><a href="/">Home</a></li>
+        <li><a href="/About">About</a></li>
+        <li><a href="/Solution">Solutions</a></li>
+        <li><a href="/Portfolio">Portfolio</a></li>
+        <li><a href="/Contact">Contact</a></li>
+        <li className="navbar__button-wrapper mobile-only">
+          <a
+            href="https://marqnetworks.zohobookings.com/#/business-consultation"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="navbar__button">Meet MarQ Networks</button>
+          </a>
+        </li>
+      </ul>
 
-        <ul className={`navbar__menu ${isMenuOpen ? "navbar__menu--active" : ""}`}>
-          <li><a href="/">Home</a></li>
-          <li><a href="/About">About</a></li>
-          <li><a href="/Solution">Solutions</a></li>
-          <li><a href="/Portfolio">Portfolio</a></li>
-          <li><a href="/Contact">Contact</a></li>
-
-          <li className="navbar__button-wrapper mobile-only">
-            <a
-              href="https://marqnetworks.zohobookings.com/#/business-consultation"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button className="navbar__button">Meet MarQ Networks</button>
-            </a>
-          </li>
-        </ul>
-
-        <a
-          href="https://marqnetworks.zohobookings.com/#/business-consultation"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="navbar__button desktop-only"
-        >
-          Meet MarQ Networks
-        </a>
-      </nav>
-    </>
+      {/* Desktop Button */}
+      <a
+        href="https://marqnetworks.zohobookings.com/#/business-consultation"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="navbar__button desktop-only"
+      >
+        Meet MarQ Networks
+      </a>
+    </nav>
   );
 };
 

@@ -3,13 +3,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
-  /* padding: 78px; */
   background-color: #000;
   color: #fff;
-  
   justify-content: space-between;
-  /* margin-top: 10px; */
-    max-width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   height: 100%;
 }
@@ -56,18 +53,17 @@ textarea {
   min-height: 100px;
 }
 
+/* Button */
 .submit-btn {
   background: #39ff14;
   color: black;
   padding: 14px;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 8px;
   font-size: 14px;
   cursor: pointer;
   width: 100%;
   box-shadow: 0 5px 15px #39ff14;
-  border-color: rgba(255, 255, 255, 0.15);
-  border-style: solid;
   backdrop-filter: none;
 }
 
@@ -82,8 +78,6 @@ textarea {
 .contact-image img {
   max-width: 100%;
   height: 100%;
-  /* object-fit: cover; */
-  /* border-radius: 12px; */
 }
 
 /* Responsive */

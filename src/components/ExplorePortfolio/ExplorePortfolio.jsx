@@ -1,5 +1,6 @@
 import React from 'react';
-import './ExplorePortfolio.css';
+// import './ExplorePortfolio.css';
+import'./ExplorePortfolio.css';
 
 const ExplorePortfolio = () => {
   return (

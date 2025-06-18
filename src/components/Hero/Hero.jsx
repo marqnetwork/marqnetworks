@@ -1,25 +1,21 @@
 "use client";
-// import React from "react";
-import "./Hero.css";
-import LogoSlider from "../LogoSlider/LogoSlider";
+
+import React, { memo } from "react";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import MarqButton from "../MarqButton/MarqButton";
-import React, { useEffect, useState } from "react";
+import "./Hero.css";
+
+// Lazy load LogoSlider and MarqButton
+const LogoSlider = dynamic(() => import("../LogoSlider/LogoSlider"), {
+  ssr: false,
+});
+const MarqButton = dynamic(() => import("../MarqButton/MarqButton"), {
+  ssr: false,
+});
 
 const Hero = () => {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
   return (
     <section className="hero">
-      {/* {isClient && (
-        <video className="hero__video" autoPlay loop muted playsInline>
-          <source src="/images/herobg.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      )} */}
       <div className="hero__container">
         <div className="hero__content">
           <motion.h1
@@ -45,12 +41,11 @@ const Hero = () => {
 
           <div className="hero__buttons">
             <MarqButton className="primary-btn-hero" />
-
-            {/* <button className="secondary-btn2">Explore the Stack</button> */}
             <a href="/Solution" className="secondary-btn2">
               Explore the Stack
             </a>
           </div>
+
           <div className="hero__divider" />
           <LogoSlider />
         </div>
@@ -59,4 +54,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default memo(Hero);

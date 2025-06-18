@@ -6,15 +6,21 @@ const Footer = () => {
   return (
     <div className="footer">
       <footer className="footer_content">
-        <div className="footer__top">
+        <div className="flex justify-between w-full gap-10 footer__top">
           {/* Left */}
-          <div className="footer__left">
+          <div className="w-[30%] ">
             <img
               src="/images/logo.png"
               alt="marqnetworks logo"
               className="footer__logo"
             />
-
+            <h2 className="text-[20px] ">
+              Made remotely, delivered globally Powered by relentless curiosity
+            </h2>
+            <p className="text_footer" >
+              Operating 24/7 from our EST-aligned off-shore hub and US/GCC
+              leadership teams
+            </p>
             <div className="footer__subscribe">
               <input
                 type="email"
@@ -25,6 +31,7 @@ const Footer = () => {
               <MarqButton />
             </div>
           </div>
+          {/* <div className="footer__left"></div> */}
 
           {/* Middle */}
           <div className="footer__middle">
@@ -34,9 +41,6 @@ const Footer = () => {
               <li>About</li>
               <li>Solution</li>
               <li>Portfolio</li>
-              <li>Blog</li>
-              <li>Contact</li>
-              <li>FAQ</li>
             </ul>
           </div>
 
@@ -46,10 +50,26 @@ const Footer = () => {
               <div className="footer__social-sales">
                 <h4>Social</h4>
                 <ul>
-                  <li>LinkedIn</li>
-                  <li>X (Twitter)</li>
-                  <li>Instagram</li>
-                  <li>Youtube</li>
+                  <li>
+                    <a href="http://linkedin.com/company/marqnetwork">
+                      {" "}
+                      LinkedIn
+                    </a>
+                  </li>
+                  <li>
+                    {" "}
+                    <a href="https://x.com/MarqNetworks">X (Twitter)</a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/marqnetworksofficial">
+                      Instagram
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com/channel/UC1RxV5Vh7-4dF1AFHDJBxcQ">
+                      Youtube
+                    </a>
+                  </li>
                 </ul>
               </div>
 

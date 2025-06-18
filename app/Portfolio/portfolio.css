@@ -8,3 +8,13 @@
     background-color: black;
 
 }
+
+.portfolio__stack-wrapper {
+  text-align: center;
+}
+
+.portfolio__join-wrapper {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}

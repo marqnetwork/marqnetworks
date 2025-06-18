@@ -2,8 +2,7 @@
 import React, { useState } from 'react';
 import '../FAQSection/FAQSection.css';
 
-
-const faqs = [ 
+const faqs = [
   {
     question: "How does marQ work faster and safer than a typical agency?",
     answer: "We run parallel design/dev sprints on a 45-day go-live pledge. Every commit passes an automated QA pipeline (OWASP, Lighthouse > 90, unit tests) and a peer review by a senior US or GCC lead. You get launch-speed and Fed-contractor security controls (SOC-2 aligned checklists, zero data incidents to date)."
@@ -38,47 +37,45 @@ const faqs = [
   }
 ];
 
-
-
 const FAQSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleFAQ = (index) => {
-    setActiveIndex(index === activeIndex ? null : index);
+    setActiveIndex(prev => (prev === index ? null : index));
   };
 
   return (
     <section className="faq__section">
-      {/* Left Content */}
       <div className="faq__intro">
         <span className="faq__tag">• How We Work?</span>
-        <h2>Frequently<br /><span>Asked Questions</span></h2>
+        <h2>
+          Frequently<br />
+          <span>Asked Questions</span>
+        </h2>
         <p>
           Have questions? Our FAQ section has you covered with quick answers
           to the most common inquiries.
         </p>
       </div>
 
-      {/* Right Content - Accordion */}
       <div className="faq__list">
-       {faqs.map(({ question, answer }, index) => (
-  <div
-    key={index}
-    className={`faq__item ${activeIndex === index ? 'open' : ''}`}
-    onClick={() => toggleFAQ(index)}
-  >
-    <div className="faq__question">
-      <span>{question}</span>
-      <span className="faq__icon">{activeIndex === index ? '−' : '+'}</span>
-    </div>
-    {activeIndex === index && (
-      <div className="faq__answer">
-        {answer}
-      </div>
-    )}
-  </div>
-))}
-
+        {faqs.map(({ question, answer }, index) => (
+          <div
+            key={index}
+            className={`faq__item ${activeIndex === index ? 'open' : ''}`}
+            onClick={() => toggleFAQ(index)}
+          >
+            <div className="faq__question">
+              <span>{question}</span>
+              <span className="faq__icon">{activeIndex === index ? '−' : '+'}</span>
+            </div>
+            {activeIndex === index && (
+              <div className="faq__answer">
+                {answer}
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </section>
   );

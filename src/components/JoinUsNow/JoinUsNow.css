@@ -1,16 +1,14 @@
-
-
 .join {
+  display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 2rem;
   padding: 4rem 3rem;
-  flex-wrap: wrap;
   max-width: 1200px;
-  margin: 100px auto 0px;
+  margin: 100px auto 0;
 }
 
-/* Content */
 .join__content {
   flex: 1;
   max-width: 1200px;
@@ -19,20 +17,21 @@
 
 .join__tag {
   background-color: #111;
-  color: rgb(255, 255, 255);
+  color: #fff;
   padding: 6px 14px;
   border-radius: 12px;
   font-size: 16px;
   font-weight: 400;
-   position: relative;
+  position: relative;
   overflow: hidden;
 }
+
 .join__tag::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 10px;    
-  right: 10px;    
+  left: 10px;
+  right: 10px;
   height: 2px;
   background: linear-gradient(to right, transparent, #39ff14, transparent);
   filter: drop-shadow(0 0 6px #39ff14);
@@ -40,18 +39,16 @@
   pointer-events: none;
 }
 
-
 .join__headline {
   font-size: 3.5rem;
   line-height: 1.2;
-  
   margin: 1.5rem 0;
   font-weight: 500;
-  color: #ffff;
+  color: #fff;
 }
 
 .join__headline span {
-  background: linear-gradient(90deg, #cccccc 0%, #999999 100%);
+  background: linear-gradient(90deg, #ccc 0%, #999 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -67,24 +64,19 @@
 }
 
 .join__actions {
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  text-align: center;
 }
 
-/* Green Glow Button */
 .join__button {
   padding: 0.75rem 1.5rem;
   background: #39ff14;
   color: black;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.3s ease;
-  box-shadow: 0 5px 15px #39ff14;
-  border-color: rgba(255, 255, 255, 0.15);
   font-size: 14px;
-  border-style: solid;
+  box-shadow: 0 5px 15px #39ff14;
+  transition: transform 0.3s ease;
   backdrop-filter: none;
 }
 
@@ -98,11 +90,6 @@
   .join__content {
     align-items: center;
     justify-content: center;
-  }
-
-  .join__actions {
-    flex-direction: column;
-    align-items: center;
   }
 }
 
@@ -119,7 +106,6 @@
 
   .join__description {
     font-size: 0.95rem;
-    text-align: center;
   }
 
   .join__tag {
@@ -133,8 +119,6 @@
 }
 
 @media (max-width: 480px) {
- 
-
   .join__headline {
     font-size: 1.5rem;
   }
@@ -144,7 +128,6 @@
   }
 
   .join__button {
-    /* width: 50%; */
     text-align: center;
   }
 }

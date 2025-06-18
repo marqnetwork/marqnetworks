@@ -1,5 +1,5 @@
 import React from 'react';
-import './ExplorePortfolio.css';
+import '../ExplorePortfolio/ExplorePortfolio.css';
 
 const ExplorePortfolio = () => (
   <section className="explore-section">

@@ -153,114 +153,7 @@ max-height: 100%;
   color: #888;
 }
 
-/* Responsive for Tablets */
-@media (max-width: 992px) {
-  /* .container{
-    height: 100vh;
-  } */
-  .about {
-    flex-direction: column;
-    padding: 0rem 10px;
-    text-align: center;
-  }
-
-  .about__content {
-    margin-left: 0;
-    text-align: center;
-  }
-
-  .about__headline,
-  .about__description {
-    text-align: center;
-  }
-
-  .about__actions {
-    justify-content: center;
-  }
-
-  .about__rating {
-    align-items: center;
-  }
-   .about__image img {
-    height: auto;
-    width: 80%;
-    /* margin-bottom: 30px; */
-  }
-}
-
-/* Responsive for Small Devices */
-@media (max-width: 576px) {
-  
-  .about__image img {
-   
-    width: 80%;
-    margin: auto;
-    
-  }
-
-  .about__headline {
-    font-size: 1.5rem;
-  }
-
-  .about__description {
-    font-size: 0.85rem;
-  }
-
-  .about__button {
-    width: 100%;
-    text-align: center;
-  }
-
-  .about__actions {
-    flex-direction: column;
-    gap: 1rem;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .about {
-    flex-direction: column;
-    align-items: flex-start; /* align content to left */
-    padding: 1rem;
-  }
-
-  .about__content {
-    text-align: left;
-    padding: 0;
-    margin-bottom: 2rem;
-  }
-
-  .about__headline,
-  .about__description {
-    text-align: left;
-  }
-
-  .about__actions {
-    justify-content: flex-start;
-  }
-
-  .about__rating {
-    align-items: flex-start;
-  }
-
-  .about__image {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  .about__image img {
-    width: 100%;
-   height: auto;
-    max-width: 100%;
-    margin-top: 1rem;
-    border-radius: 20px;
-     /* object-fit: contain; */
-      max-height: 300px;
-  }
-}
-/* @media (max-width: 1024px) {
+@media (max-width: 1024px) {
   .about {
     flex-direction: column;
     align-items: flex-start;
@@ -310,4 +203,180 @@ max-height: 100%;
     border-radius: 20px;
     margin-top: 1rem;
   }
-} */
+}
+
+/* Responsive for Tablets */
+@media (max-width: 992px) {
+  /* .container{
+    height: 100vh;
+  } */
+  .about {
+    flex-direction: column;
+    padding: 0rem 10px;
+    text-align: center;
+  }
+
+  .about__content {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .about__headline,
+  .about__description {
+    text-align: center;
+  }
+
+  .about__actions {
+    justify-content: center;
+  }
+
+  .about__rating {
+    align-items: center;
+  }
+   .about__image img {
+    height: auto;
+    width: 80%;
+    /* margin-bottom: 30px; */
+  }
+}
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    align-items: flex-start; /* align content to left */
+    padding: 1rem;
+  }
+
+  .about__content {
+    text-align: left;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+
+  .about__headline,
+  .about__description {
+    text-align: left;
+  }
+
+  .about__actions {
+    justify-content: flex-start;
+  }
+
+  .about__rating {
+    align-items: flex-start;
+  }
+
+  .about__image {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .about__image img {
+    width: 100%;
+   height: auto;
+    max-width: 100%;
+    margin-top: 1rem;
+    border-radius: 20px;
+     /* object-fit: contain; */
+      max-height: 300px;
+  }
+}
+
+/* Responsive for Small Devices */
+@media (max-width: 576px) {
+  
+  .about__image img {
+   
+    width: 80%;
+    margin: auto;
+    
+  }
+
+  .about__headline {
+    font-size: 1.5rem;
+  }
+
+  .about__description {
+    font-size: 0.85rem;
+  }
+
+  .about__button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about__actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 375px) {
+  .container {
+    padding: 0 10px;
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  .about {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .about__image img {
+    width: 90%;
+    height: auto;
+    max-height: 240px;
+    border-radius: 20px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .about__headline {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .about__description {
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .about__button {
+    font-size: 13px;
+    padding: 0.6rem 1.2rem;
+    width: 100%;
+  }
+
+  .about__actions {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .about__rating {
+    align-items: center;
+    text-align: center;
+  }
+
+  .about__tag {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+
+  .about__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .about__divider {
+    width: 70%;
+    margin: 1rem auto;
+  }
+}
+
+
+
+
+

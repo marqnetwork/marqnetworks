@@ -8,16 +8,16 @@ const Footer = () => {
       <footer className="footer_content">
         <div className="flex justify-between w-full gap-10 footer__top">
           {/* Left */}
-          <div className="w-[40%] ">
+          <div className="w-[30%] ">
             <img
               src="/images/logo.png"
               alt="marqnetworks logo"
               className="footer__logo"
             />
-            <h2 className="text-[20px] pb-4">
+            <h2 className="text-[20px] ">
               Made remotely, delivered globally Powered by relentless curiosity
             </h2>
-            <p className="text-[10px]">
+            <p className="text_footer" >
               Operating 24/7 from our EST-aligned off-shore hub and US/GCC
               leadership teams
             </p>
@@ -51,17 +51,24 @@ const Footer = () => {
                 <h4>Social</h4>
                 <ul>
                   <li>
-                    <a href="http://linkedin.com/company/marqnetwork"> LinkedIn</a>
+                    <a href="http://linkedin.com/company/marqnetwork">
+                      {" "}
+                      LinkedIn
+                    </a>
                   </li>
                   <li>
                     {" "}
                     <a href="https://x.com/MarqNetworks">X (Twitter)</a>
                   </li>
                   <li>
-                    <a href="https://www.instagram.com/marqnetworksofficial">Instagram</a>
+                    <a href="https://www.instagram.com/marqnetworksofficial">
+                      Instagram
+                    </a>
                   </li>
                   <li>
-                    <a href="https://www.youtube.com/channel/UC1RxV5Vh7-4dF1AFHDJBxcQ">Youtube</a>
+                    <a href="https://www.youtube.com/channel/UC1RxV5Vh7-4dF1AFHDJBxcQ">
+                      Youtube
+                    </a>
                   </li>
                 </ul>
               </div>

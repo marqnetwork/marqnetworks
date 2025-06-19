@@ -47,11 +47,11 @@ const FAQSection = () => {
       {/* Left Column - Intro */}
       <div className="faq__intro">
         <span className="faq__tag">• How We Work?</span>
-        <h2>
+        <h2 className="faq__headline">
           Frequently<br />
           <span>Asked Questions</span>
         </h2>
-        <p>
+        <p className="faq__description">
           Have questions? Our FAQ section has you covered with quick answers
           to the most common inquiries.
         </p>

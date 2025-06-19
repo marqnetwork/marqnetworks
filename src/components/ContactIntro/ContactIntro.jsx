@@ -19,9 +19,9 @@ const ExplorePortfolio = () => (
         the marQ Networks team is here—on EST hours, ready to dive in.
       </p>
 
-      <div className="explore-buttons">
+      {/* <div className="explore-buttons">
         <button className="about__button">Book a Discovery Call</button>
-      </div>
+      </div> */}
     </div>
   </section>
 );

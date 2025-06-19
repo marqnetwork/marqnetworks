@@ -1,35 +1,30 @@
 import React from 'react';
-// import './ExplorePortfolio.css';
-import'./ExplorePortfolio.css';
+import './ExplorePortfolio.css';
 
 const ExplorePortfolio = () => {
   return (
     <section className="explore-section">
       <div className="explore-container">
-        {/* Tag */}
+
         <div className="explore-tag">
           <span className="year">2025</span>
-          <span className="tag-text"> Signature Showcase</span>
+          <span className="tag-text">Signature Showcase</span>
         </div>
 
-        {/* Headings */}
         <h1 className="explore-heading">
-         See What Happens<br /> <span>When Idea × Craft × Code Collide.
-Support line</span>
+          See What Happens<br />
+          <span>When Idea × Craft × Code Collide. Support line</span>
         </h1>
 
-        {/* Subtext */}
         <p className="explore-subtext">
-        From pre-seed disruptors to Fortune-listed giants, our 360° studios turn bold concepts  <br className="break" />
-        into products that ship, scale & sell.
+          From pre-seed disruptors to Fortune-listed giants, our 360° studios turn bold concepts<br className="break" />
+          into products that ship, scale & sell.
         </p>
 
-        {/* Buttons */}
-        <div className="explore-buttons">
-         <button  className="about__button">Start Your Own Case Study</button>
-        </div>
+        {/* <div className="explore-buttons">
+          <button className="about__button">Start Your Own Case Study</button>
+        </div> */}
 
-        
       </div>
     </section>
   );

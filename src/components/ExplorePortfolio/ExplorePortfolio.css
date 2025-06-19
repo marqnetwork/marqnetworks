@@ -1,8 +1,6 @@
 .explore-section {
-  /* padding: 5rem 4rem; */
   text-align: center;
- background-color: black;
-
+  background-color: black;
 }
 
 .explore-container {
@@ -13,17 +11,7 @@
   align-items: center;
 }
 
-.explore-heading span {
-  background: linear-gradient(90deg, #cccccc 0%, #999999 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.explore-heading{
-  color: #fff;
-}
-
+/* Tag */
 .explore-tag {
   display: flex;
   align-items: center;
@@ -44,22 +32,33 @@
 }
 
 .tag-text {
-  color: rgb(255, 255, 255);
+  color: #fff;
   font-size: 16px;
 }
 
+/* Heading */
 .explore-heading {
+  color: #fff;
   font-size: 3.4rem;
   line-height: 1.2;
   margin-bottom: 1.5rem;
 }
 
+.explore-heading span {
+  background: linear-gradient(90deg, #ccc 0%, #999 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtext */
 .explore-subtext {
   font-size: 1rem;
   color: #aaa;
   margin-bottom: 2rem;
 }
 
+/* Button Area */
 .explore-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -67,32 +66,22 @@
   justify-content: center;
 }
 
-.btn {
+.about__button {
   padding: 0.75rem 1.5rem;
   font-weight: 500;
   border-radius: 0.5rem;
   font-size: 0.95rem;
   cursor: pointer;
   white-space: nowrap;
-}
-
-.btn.primary {
   background-color: #fff;
   color: #000;
   border: none;
+  transition: opacity 0.3s ease;
 }
 
-.btn.secondary {
-  background-color: #222;
-  color: #fff;
-  border: none;
-}
-
-.btn:hover {
+.about__button:hover {
   opacity: 0.9;
 }
-
-
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -110,18 +99,18 @@
     font-size: 1.75rem;
   }
 
+  .explore-subtext {
+    font-size: 0.9rem;
+  }
+
   .explore-buttons {
     flex-direction: column;
     width: 100%;
   }
 
-  .btn {
+  .about__button {
     width: 100%;
     text-align: center;
-  }
-
-  .explore-subtext {
-    font-size: 0.9rem;
   }
 
   .break {

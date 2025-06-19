@@ -39,29 +39,25 @@ const faqs = [
 const FAQSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const toggleFAQ = useCallback(
-    (index) => {
-      setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
-    },
-    []
-  );
+  const toggleFAQ = useCallback((index) => {
+    setActiveIndex((prev) => (prev === index ? null : index));
+  }, []);
 
   return (
     <section className="faq__section">
-      {/* Intro Text */}
-      <div className="faq__intro">
+      {/* Header */}
+      <header className="faq__intro">
         <span className="faq__tag">• How We Work?</span>
-        <h2>
+        <h2 className="faq__headline">
           Frequently <br />
           <span>Asked Questions</span>
         </h2>
-        <p>
-          Have questions? Our FAQ section has you covered with quick answers
-          to the most common inquiries.
+        <p className="faq__description">
+          Have questions? Our FAQ section has you covered with quick answers to the most common inquiries.
         </p>
-      </div>
+      </header>
 
-      {/* FAQ List */}
+      {/* FAQ Items */}
       <div className="faq__list">
         {faqs.map(({ question, answer }, index) => {
           const isOpen = activeIndex === index;
@@ -70,16 +66,21 @@ const FAQSection = () => {
               key={index}
               className={`faq__item ${isOpen ? "open" : ""}`}
               onClick={() => toggleFAQ(index)}
-              role="button"
-              aria-expanded={isOpen}
-              tabIndex={0}
               onKeyDown={(e) => e.key === "Enter" && toggleFAQ(index)}
+              role="button"
+              tabIndex={0}
+              aria-expanded={isOpen}
+              aria-controls={`faq-answer-${index}`}
             >
               <div className="faq__question">
                 <span>{question}</span>
                 <span className="faq__icon">{isOpen ? "−" : "+"}</span>
               </div>
-              {isOpen && <div className="faq__answer">{answer}</div>}
+              {isOpen && (
+                <div id={`faq-answer-${index}`} className="faq__answer">
+                  {answer}
+                </div>
+              )}
             </div>
           );
         })}

@@ -85,12 +85,12 @@ const cardVariants = {
 const OurServices = () => {
   return (
     <section className="ourservices">
-      {/* Static Image Side */}
+      {/* Left Side Image */}
       <div className="ourservices__left">
         <img src="/images/ourservices.png" alt="Our Services" />
       </div>
 
-      {/* Content Side */}
+      {/* Right Side Content */}
       <div className="ourservices__right">
         <span className="ourservices__tag">• Our Services</span>
 
@@ -118,6 +118,7 @@ const OurServices = () => {
               viewport={{ once: true, amount: 0.4 }}
               custom={index}
             >
+              {/* Card Top */}
               <div className="service-card__top">
                 <div className="service-card__icon">
                   <img src={service.icon} alt={`${service.title} icon`} />
@@ -125,15 +126,18 @@ const OurServices = () => {
                 <span className="service-card__badge">{service.duration}</span>
               </div>
 
+              {/* Title & Description */}
               <h3 className="service-card__title">{service.title}</h3>
               <p className="service-card__desc">{service.desc}</p>
               <div className="about__divider" />
 
+              {/* Meta Info */}
               <div className="service-card__meta">
                 <span className="service-card__pill">{service.price}</span>
                 <span className="service-card__pill">{service.duration}</span>
               </div>
 
+              {/* Features List */}
               <ul className="service-card__features">
                 {service.features.map((feature, i) => (
                   <li key={i}>

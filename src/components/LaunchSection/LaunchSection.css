@@ -1,90 +1,54 @@
-
-
 .launch {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 2rem;
   padding: 4rem 3rem;
   flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.launch__svg-wrapper {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin: 2rem 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.launch__svg {
-  width: 400px;
-   position: absolute;
-}
-
-.launch__svg--left {
-  bottom:  60%;
-  left: 0;
-  transform: translate(-20%, -20%) scale(1);
-}
-
-.launch__svg--right {
-   bottom: 60%;
-  right: 0;
-  transform: translate(18%, -15%) scale(1);
-}
-
-/* Hide on small screens */
-@media (max-width: 768px) {
-  .launch__svg-wrapper {
-    display: none;
-  }
-}
-
-
-/* Right content */
 .launch__content {
-  flex: 1;
-  max-width:1200px;
-  margin:0 auto;
+  width: 100%;
 }
 
 .launch__tag {
   background-color: #111;
-  color: rgb(255, 255, 255);
+  color: #fff;
   padding: 6px 14px;
   border-radius: 12px;
   font-size: 16px;
   font-weight: 400;
+  margin-bottom: 1rem;
   position: relative;
   overflow: hidden;
 }
+
 .launch__tag::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 10px;    
-  right: 10px;    
+  left: 10px;
+  right: 10px;
   height: 2px;
   background: linear-gradient(to right, transparent, #39ff14, transparent);
   filter: drop-shadow(0 0 6px #39ff14);
-  z-index: 2;
   pointer-events: none;
+  z-index: 1;
 }
 
 .launch__headline {
   font-size: 3.5rem;
   line-height: 1.3;
-  /* font-family: 'Poppins', sans-serif; */
   margin: 1.5rem 0;
 }
 
 .launch__headline span {
   background: linear-gradient(90deg, #cccccc 0%, #999999 100%);
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .launch__description {
@@ -97,93 +61,95 @@
 }
 
 .launch__actions {
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
 }
 
-/* Glowing Green Button */
 .launch__button {
   padding: 0.75rem 1.5rem;
   background: #39ff14;
-  color: black;
-  border: none;
+  color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 12px;
-  
+  font-size: 14px;
   cursor: pointer;
-  transition: transform 0.3s ease;
   box-shadow: 0 5px 15px #39ff14;
-   border-color: rgba(255, 255, 255, 0.15);
- font-size: 14px;
-  border-style: solid;
-   backdrop-filter: none;
+  transition: transform 0.3s ease;
+}
+
+.launch__svg-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.launch__svg {
+  width: 400px;
+  position: absolute;
+}
+
+.launch__svg--left {
+  bottom: 60%;
+  left: 0;
+  transform: translate(-20%, -20%) scale(1);
+}
+
+.launch__svg--right {
+  bottom: 60%;
+  right: 0;
+  transform: translate(18%, -15%) scale(1);
 }
 
 .launch-image {
-    position: relative;
-    display: inline-block;
-    border-radius: 20px;
-    overflow: visible;
-    margin-top: 2rem;
-  }
-  
-  .launch-image img {
-    width: 100%;
-    max-width: 800px;
-    border-radius: 20px;
-    display: block;
-    z-index: 1;
-    position: relative;
-  }
-
-
-/* Responsive Design */
-@media (max-width: 992px) {
-  .launch {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .launch__content {
-    align-items: center;
-    justify-content: center;
-  }
-
-  .launch__actions {
-    flex-direction: column;
-    align-items: center;
-  }
+  margin-top: 2rem;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
 }
 
+.launch-image img {
+  width: 100%;
+  max-width: 800px;
+  display: block;
+  border-radius: 20px;
+}
 
-@media (max-width: 768px) {
-  .launch {
-    padding: 3rem 1.5rem;
-    gap: 3rem;
-  }
-
+/* =================== Responsive =================== */
+@media (max-width: 992px) {
   .launch__headline {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     text-align: center;
   }
 
   .launch__description {
-    font-size: 0.95rem;
     text-align: center;
   }
 
-  .launch__tag {
-    display: inline-block;
-    margin-bottom: 10px;
+  .launch__actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .launch {
+    padding: 3rem 1.5rem;
   }
 
-  .launch-image img {
-    max-width: 100%;
-    height: auto;
+  .launch__svg-wrapper {
+    display: none;
   }
 
-  .launch__content {
-    max-width: 100%;
+  .launch__headline {
+    font-size: 1.8rem;
+  }
+
+  .launch__description {
+    font-size: 0.95rem;
   }
 }
 

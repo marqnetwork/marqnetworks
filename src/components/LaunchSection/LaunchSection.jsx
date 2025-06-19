@@ -17,27 +17,27 @@ const LaunchSection = () => {
   return (
     <section className="launch">
       <div className="launch__content">
-        {/* Tag */}
+        {/* Label */}
         <span className="launch__tag">• Launch Your Site</span>
 
-        {/* Animated Headline */}
+        {/* Heading */}
         <motion.h2 className="launch__headline" {...motionSettings}>
           Trusted Launch Partner <br />
           <span>For Startups And Agencies</span>
         </motion.h2>
 
-        {/* Description */}
+        {/* Subheading */}
         <p className="launch__description">
           We fast-track your digital launch—from strategy and design to code and <br />
           growth—so you’re live in weeks, not months.
         </p>
 
-        {/* CTA */}
+        {/* CTA Button */}
         <div className="launch__actions">
           <MarqButton className="launch__button" />
         </div>
 
-        {/* Decorative Images */}
+        {/* Decorative SVGs */}
         <div className="launch__svg-wrapper">
           <img
             src="/images/resultleft.png"
@@ -53,7 +53,7 @@ const LaunchSection = () => {
           />
         </div>
 
-        {/* Image Slider */}
+        {/* Slider Component */}
         <ImageSlider />
       </div>
     </section>

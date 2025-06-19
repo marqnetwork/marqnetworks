@@ -1,18 +1,20 @@
+/* === InfiniteCardsSlider.css === */
+
 .slider-wrapper {
   position: relative;
   overflow: hidden;
   width: 100%;
   text-align: left;
-  padding: 2rem 0; /* reduced from 4rem */
+  padding: 2rem 0;
 }
 
 .slider-glow {
   position: absolute;
-  bottom: 20px; /* slightly lowered */
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  width: 60%; /* narrower glow */
-  height: 60px; /* shorter glow */
+  width: 60%;
+  height: 60px;
   background: radial-gradient(ellipse at center, #39ff14 0%, transparent 70%);
   filter: blur(25px);
   z-index: 0;
@@ -22,7 +24,7 @@
 
 .slider-track {
   display: flex;
-  gap: 1rem; /* tighter spacing */
+  gap: 1rem;
   width: max-content;
   animation: scroll 45s linear infinite;
   position: relative;
@@ -43,10 +45,18 @@
   overflow: hidden;
   position: relative;
   flex-shrink: 0;
-  min-width: 250px; /* reduced from 300px */
-  min-height: 360px; /* reduced from 460px */
-  box-shadow: 0 0 20px rgba(0, 255, 150, 0.05), 0 8px 20px rgba(0, 0, 0, 0.5);
-  border: 6px solid rgba(255, 255, 255, .08);
+  min-width: 260px;
+  min-height: 380px;
+  box-shadow:
+    0 0 20px rgba(0, 255, 150, 0.05),
+    0 8px 20px rgba(0, 0, 0, 0.5);
+  border: 6px solid rgba(255, 255, 255, 0.08);
+  background: #111;
+  transition: transform 0.3s ease;
+}
+
+.slider-card:hover {
+  transform: scale(1.02);
 }
 
 .card-image-wrapper {
@@ -62,20 +72,16 @@
   display: block;
 }
 
-
 .card-content-overlay {
   position: absolute;
   bottom: 0;
   left: 7px;
   width: 96%;
-  
   padding: 40px 20px 20px;
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(12px);
-
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   gap: 0.5rem;
   margin-bottom: 5px;
   border-radius: 15px;
@@ -84,9 +90,9 @@
 /* Typography */
 
 .card-header {
-  font-size: 1rem; /* slightly smaller */
+  font-size: 1rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #fff;
   margin: 0;
 }
 
@@ -100,10 +106,12 @@
 .card-blurb {
   font-size: 0.75rem;
   color: #aaa;
-  margin: 0;
   line-height: 1.4;
   padding-top: 0.2rem;
+  margin: 0;
 }
+
+/* Stats */
 
 .stats {
   display: flex;
@@ -121,4 +129,33 @@
   font-weight: 500;
   backdrop-filter: blur(2px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Optional Responsive Enhancements */
+
+@media (max-width: 768px) {
+  .slider-card {
+    min-width: 220px;
+    min-height: 320px;
+  }
+
+  .card-content-overlay {
+    padding: 30px 16px 16px;
+  }
+
+  .card-header {
+    font-size: 0.95rem;
+  }
+
+  .card-sub-header {
+    font-size: 0.8rem;
+  }
+
+  .card-blurb {
+    font-size: 0.7rem;
+  }
+
+  .stat-badge {
+    font-size: 0.65rem;
+  }
 }

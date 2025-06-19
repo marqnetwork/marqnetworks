@@ -1,16 +1,12 @@
 .solution-section {
-  padding: 6rem 0rem;
+  padding: 6rem 0;
   text-align: center;
-  /* max-width: 1200px; */
   margin: 0 auto;
-  /* background-image: url('/images/solutionbg.png'); */
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   border-radius: 20px;
-  height:80vh;
-  
- 
+  height: 80vh;
 }
 
 .solution-container {
@@ -21,18 +17,7 @@
   align-items: center;
 }
 
-.solution-heading{
-  text-align: center;
-    color: #FFFFFF;
-}
-
-.solution-heading span {
-  background: linear-gradient(90deg, #cccccc 0%, #999999 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
+/* Tag */
 .solution-tag {
   display: flex;
   align-items: center;
@@ -53,24 +38,35 @@
 }
 
 .solution-tag-text {
-  color: rgb(255, 255, 255);
+  color: #fff;
   font-size: 16px;
 }
 
+/* Headline */
 .solution-heading {
   font-size: 4.2rem;
-  
   line-height: 1.2;
   margin-bottom: 1.5rem;
+  color: #fff;
+  text-align: center;
 }
 
+.solution-heading span {
+  background: linear-gradient(90deg, #ccc 0%, #999 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtext */
 .solution-subtext {
-  text-align: center;
   font-size: 1.3rem;
   color: #ccc;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
+/* Buttons */
 .solution-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -91,12 +87,10 @@
 .solution-btn.primary {
   background-color: #39ff14;
   color: #000;
-  border: none;
-   border-color: rgba(255, 255, 255, 0.15);
- font-size: 14px;
-  border-style: solid;
-   backdrop-filter: none;
-     box-shadow: 0 5px 15px #39ff14;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 14px;
+  backdrop-filter: none;
+  box-shadow: 0 5px 15px #39ff14;
 }
 
 .solution-btn.secondary {
@@ -112,20 +106,22 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  
-  .solution-btn.secondary,.solution-btn.primary{
-    padding: 10px;
-  }
   .solution-container {
-    text-align: center;
     padding: 20px;
+    text-align: center;
   }
+
   .solution-heading {
     font-size: 2.25rem;
   }
 
   .solution-subtext {
     font-size: 0.95rem;
+  }
+
+  .solution-btn.primary,
+  .solution-btn.secondary {
+    padding: 10px;
   }
 }
 
@@ -134,8 +130,11 @@
     font-size: 1.75rem;
   }
 
+  .solution-subtext {
+    font-size: 0.9rem;
+  }
+
   .solution-buttons {
-    /* flex-direction: column; */
     width: 60%;
     flex-wrap: nowrap;
   }
@@ -143,10 +142,6 @@
   .solution-btn {
     width: 100%;
     text-align: center;
-  }
-
-  .solution-subtext {
-    font-size: 0.9rem;
   }
 
   .solution-break {

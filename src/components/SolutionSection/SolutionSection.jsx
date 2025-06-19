@@ -1,12 +1,12 @@
 "use client";
 import React from 'react';
 import './SolutionSection.css';
-import MarqButton from '../MarqButton/MarqButton'
+import MarqButton from '../MarqButton/MarqButton';
 
 const SolutionSection = () => {
   return (
-    <section 
-      className="-sectionsolution" 
+    <section
+      className="sectionsolution"
       // style={{ backgroundImage: `url(/images/solutionbg.png)` }}
     >
       <div className="solution-container">
@@ -30,8 +30,7 @@ const SolutionSection = () => {
 
         {/* Buttons */}
         <div className="solution-buttons">
-          
-          <MarqButton  className="solution-btn primary"/>
+          <MarqButton className="solution-btn primary" />
           <button className="solution-btn secondary">See How We Solve</button>
         </div>
       </div>

@@ -14,7 +14,7 @@ const steps = [
   },
   {
     title: "Generative Branding & 3D Assets",
-    desc: "We lead the creative edge by combining human concept with AI co-pilots—outputting scalable, dynamic design systems",
+    desc: "We lead the creative edge by combining human concept with AI co-pilots—outputting scalable, dynamic design systems.",
     icon: "/images/Generative.png",
     image: "/images/p5.png",
   },
@@ -32,6 +32,7 @@ const Pillar2 = () => {
       <div className="solution-pillars__right">
         <img src="/images/2.png" alt="Growth Strategy" />
       </div>
+
       <div className="solution-pillars__left">
         <span className="solution-pillars__tag">• Pillar 02</span>
 
@@ -58,12 +59,10 @@ const Pillar2 = () => {
           <li>Brand identity & guidelines</li>
         </ul>
 
-         <div className="flex items-center justify-between">
-
-        <MarqButton className="solution-pillars__cta-button" />
-        <img src="/images/piller2logo.png" alt="logo" className="cta-logo" />
-</div>
-         
+        <div className="solution-pillars__cta-row">
+          <MarqButton className="solution-pillars__cta-button" />
+          <img src="/images/piller2logo.png" alt="logo" className="cta-logo" />
+        </div>
 
         <div className="solution-pillars__cards">
           {steps.map((step, index) => (

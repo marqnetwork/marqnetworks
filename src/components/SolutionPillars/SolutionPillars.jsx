@@ -55,20 +55,16 @@ const SolutionPillars = () => {
           <li>Brand identity & guidelines</li>
         </ul>
 
-
-      
-
-        <div className="flex  justify-between items-center">
-
+        <div className="solution-pillars__cta-row">
           <MarqButton className="solution-pillars__cta-button" />
-          <img src="/images/strategylogo.png" alt="logo" className="cta-logo" />
+          <img src="/images/strategylogo.png" alt="Strategy Logo" className="cta-logo" />
         </div>
 
         <div className="solution-pillars__cards">
           {steps.map((step, index) => (
             <div className="pillar-card" key={index}>
               <div className="pillar-card__header">
-                <img src={step.icon} alt="icon" className="pillar-card__icon" />
+                <img src={step.icon} alt="Icon" className="pillar-card__icon" />
                 <span className="pillar-card__arrow">↗</span>
               </div>
 
@@ -78,11 +74,7 @@ const SolutionPillars = () => {
               </div>
 
               <div className="pillar-card__image-container">
-                <img
-                  src={step.image}
-                  alt="Pillar Visual"
-                  className="pillar-card__image"
-                />
+                <img src={step.image} alt="Pillar Visual" className="pillar-card__image" />
               </div>
             </div>
           ))}

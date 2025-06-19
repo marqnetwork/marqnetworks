@@ -34,15 +34,15 @@ const PortfolioSection = () => {
         </p>
 
         {/* Decorative Images */}
-        <div className="portfolio__decoration-wrapper">
+        <div className="portfolio__decoration-wrapper" aria-hidden="true">
           <img
             src="/images/resultleft.png"
-            alt="Left Decoration"
+            alt=""
             className="portfolio__decoration portfolio__decoration--left"
           />
           <img
             src="/images/resultright.png"
-            alt="Right Decoration"
+            alt=""
             className="portfolio__decoration portfolio__decoration--right"
           />
         </div>

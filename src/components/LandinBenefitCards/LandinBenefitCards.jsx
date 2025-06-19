@@ -3,6 +3,28 @@ import './LandinBenefitCards.css';
 import MarqButton from '../MarqButton/MarqButton';
 
 const LandinBenefitCards = () => {
+  const smallCards = [
+    {
+      img: '/images/quick.png',
+      title: 'Lightning-Fast Turnaround',
+      badge: true,
+      desc: 'Our follow-the-sun workflow ships polished assets in a day or two, keeping your launches ahead of schedule.',
+    },
+    {
+      img: '/images/publish.png',
+      title: 'Worry-Free Pricing',
+      badge: false,
+      desc: 'Flexible monthly plans cover strategy, design, and code. Cancel anytime, own every file—no hidden fees or hourly overages.',
+    },
+    {
+      img: '/images/worry.png',
+      title: 'Off-Shore Excellence Hub',
+      badge: true,
+      desc: 'U.S.-friendly hours + global talent. Get senior expertise at 30–40% savings, with an on-shore PM bridging every call.',
+      size: 'smallx',
+    },
+  ];
+
   return (
     <div className="benefit-wrapper">
       {/* Large Card */}
@@ -31,35 +53,15 @@ const LandinBenefitCards = () => {
       </div>
 
       {/* Small Cards */}
-      {[
-        {
-          img: "/images/quick.png",
-          title: "Lightning-Fast Turnaround",
-          badge: true,
-          desc: "Our follow-the-sun workflow ships polished assets in a day or two, keeping your launches ahead of schedule.",
-        },
-        {
-          img: "/images/publish.png",
-          title: "Worry-Free Pricing",
-          badge: false,
-          desc: "Flexible monthly plans cover strategy, design, and code. Cancel anytime, own every file—no hidden fees or hourly overages.",
-        },
-        {
-          img: "/images/worry.png",
-          title: "Off-Shore Excellence Hub",
-          badge: true,
-          desc: "U.S.-friendly hours + global talent. Get senior expertise at 30–40% savings, with an on-shore PM bridging every call.",
-          size: "smallx",
-        },
-      ].map((card, index) => (
-        <div key={index} className={`benefit-card ${card.size || 'small'}`}>
-          <img src={card.img} alt={card.title} />
+      {smallCards.map(({ img, title, badge, desc, size }, index) => (
+        <div key={index} className={`benefit-card ${size || 'small'}`}>
+          <img src={img} alt={title} />
           <div className="card-header">
-            <h4>{card.title}</h4>
-            {card.badge && <span className="pill">NEW</span>}
+            <h4>{title}</h4>
+            {badge && <span className="pill">NEW</span>}
           </div>
           <div className="about__divider" />
-          <p>{card.desc}</p>
+          <p>{desc}</p>
         </div>
       ))}
     </div>

@@ -3,7 +3,7 @@
 import React from "react";
 import "./LandinBenefits.css";
 import { motion } from "framer-motion";
-import Link from "next/link"; // Optional: for internal routing
+import Link from "next/link";
 
 const benefitTags = [
   "Enhanced UX",
@@ -21,10 +21,8 @@ const benefitTags = [
 const LandinBenefits = () => {
   return (
     <section className="benefits__section">
-      {/* Label */}
       <div className="benefits__label">• MarQ Benefits</div>
 
-      {/* Heading */}
       <motion.h1
         className="benefits__heading"
         initial={{ x: -20, opacity: 0.6, filter: "blur(4px)" }}
@@ -35,12 +33,10 @@ const LandinBenefits = () => {
         <span>We Don’t Just Design</span> <span>We Engineer Momentum.</span>
       </motion.h1>
 
-      {/* Subheading */}
       <h2 className="benefits__subheading">
         If you can dream it, we’ll make it move the needle.
       </h2>
 
-      {/* Tags and CTA */}
       <div className="benefits__tags">
         {benefitTags.map((tag, index) => (
           <span key={index} className="benefit__tag">

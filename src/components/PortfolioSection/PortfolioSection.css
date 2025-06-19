@@ -1,16 +1,91 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
 
 .portfolio {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 3rem 0;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  padding: 4rem 3rem 0;
-  flex-wrap: wrap;
   position: relative;
   z-index: 1;
-  max-width: 1200px;
-  margin: 0 auto;
 }
+
+/* Tag */
+.portfolio__tag {
+  background-color: #111;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio__tag::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10px;
+  right: 10px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #39ff14, transparent);
+  filter: drop-shadow(0 0 6px #39ff14);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Headline */
+.portfolio__headline {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin: 1.5rem 0;
+  font-weight: 500;
+}
+
+.portfolio__headline span {
+  background: linear-gradient(90deg, #cccccc 0%, #999999 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Description */
+.portfolio__description {
+  color: #aaa;
+  font-size: 1rem;
+  font-weight: 300;
+  width: 50%;
+  margin: auto;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* Button */
+.portfolio__actions {
+  /* display: flex; */
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.portfolio__button {
+  background: #39ff14;
+  color: black;
+  font-size: 14px;
+  padding: 0.75rem 1.5rem;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px #39ff14;
+  backdrop-filter: none;
+  transition: transform 0.3s ease;
+}
+
+/* Decoration */
 .portfolio__decoration-wrapper {
   position: relative;
   width: 100%;
@@ -18,7 +93,6 @@
   justify-content: space-between;
   margin: -3rem 0;
   z-index: 1;
-
   pointer-events: none;
 }
 
@@ -34,89 +108,7 @@
   transform: translateX(120px) translateY(-80px);
 }
 
-/* Hide on small screens */
-@media (max-width: 768px) {
-  .portfolio__decoration-wrapper {
-    display: none;
-  }
-}
-
-/* Right content */
-.portfolio__content {
-  flex: 1;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.portfolio__tag {
-  background-color: #111;
-  color: rgb(255, 255, 255);
-  padding: 6px 14px;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 400;
-  position: relative;
-  overflow: hidden;
-}
-.portfolio__tag::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 10px;
-  right: 10px;
-  height: 2px;
-  background: linear-gradient(to right, transparent, #39ff14, transparent);
-  filter: drop-shadow(0 0 6px #39ff14);
-  z-index: 2;
-  pointer-events: none;
-}
-
-.portfolio__headline {
-  font-size: 3.5rem;
-  line-height: 1.2;
-  margin: 1.5rem 0;
-  font-weight: 500;
-}
-
-.portfolio__headline span {
-  background: linear-gradient(90deg, #cccccc 0%, #999999 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.portfolio__description {
-  color: #aaa;
-  font-size: 1rem;
-  font-weight: 300;
-  width: 50%;
-  margin: auto;
-  line-height: 1.8;
-  text-align: center;
-}
-
-.portfolio__actions {
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-/* Glowing Green Button */
-.portfolio__button {
-  padding: 0.75rem 1.5rem;
-  background: #39ff14;
-  color: black;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  box-shadow: 0 5px 15px #39ff14;
-  border-color: rgba(255, 255, 255, 0.15);
-  font-size: 14px;
-  border-style: solid;
-  backdrop-filter: none;
-}
-
+/* Glow Image */
 .glow-image {
   position: relative;
   display: inline-block;
@@ -148,7 +140,16 @@
   z-index: 0;
 }
 
-/* Responsive Design */
+/* Content Container */
+.portfolio__content {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Media Queries */
+
+/* Tablet */
 @media (max-width: 992px) {
   .portfolio {
     flex-direction: column;
@@ -166,6 +167,7 @@
   }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   .portfolio {
     padding: 3rem 1.5rem;
@@ -188,6 +190,10 @@
     padding: 0.75rem 1.2rem;
   }
 
+  .portfolio__decoration-wrapper {
+    display: none;
+  }
+
   .glow-image img {
     max-width: 100%;
     height: auto;
@@ -200,6 +206,7 @@
   }
 }
 
+/* Small Mobile */
 @media (max-width: 480px) {
   .portfolio {
     padding: 2rem 1rem;

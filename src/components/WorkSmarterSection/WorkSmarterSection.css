@@ -1,61 +1,64 @@
 .work-smarter {
-    display: flex;
-    align-items: center;
-    justify-content: space;
-  gap:20;
-    flex-wrap: wrap;
-     max-width: 1200px;
-  margin:0 auto;
-  }
-  
-  .work-smarter__image img {
-    width: 100%;
- 
-    border-radius: 30px;
-    object-fit: cover;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  
-  }
-  
-  .work-smarter__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
 
-    flex: 1;
-    /* max-width: 600px; */
-    text-align: left;
-    /* margin-right: 80px; */
-  }
+.work-smarter__image img {
+  width: 100%;
+  border-radius: 30px;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
 
-  .work-smarter__content h4{
-    font-size: 1.3rem;
+.work-smarter__content {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.work-smarter__content h4 {
+  font-size: 1.3rem;
   font-weight: 300;
   line-height: 1.8;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-  }
-  
-  .work-smarter__headline span {
-    background: linear-gradient(90deg, #cccccc 0%, #999999 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  .work-smarter__tag {
-    background-color: #111;
-    color: rgb(255, 255, 255);
-    padding: 6px 14px;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 400;
-      position: relative;
+  margin: 2rem 0 1rem;
+}
+
+.work-smarter__headline {
+  font-size: 3.2rem;
+  line-height: 1.2;
+  margin: 1.5rem 0;
+}
+
+.work-smarter__headline span {
+  background: linear-gradient(90deg, #cccccc 0%, #999999 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.work-smarter__tag {
+  background-color: #111;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
   overflow: hidden;
-  }
-  .work-smarter__tag::before {
+}
+
+.work-smarter__tag::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 10px;    
-  right: 10px;    
+  left: 10px;
+  right: 10px;
   height: 2px;
   background: linear-gradient(to right, transparent, #39ff14, transparent);
   filter: drop-shadow(0 0 6px #39ff14);
@@ -63,85 +66,71 @@
   pointer-events: none;
 }
 
-  
-  .work-smarter__description {
-    color: #aaa;
-    font-size: 1.1rem;
-    font-weight: 300;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-    text-align: left;
-  }
-  
-  .work-smarter__headline {
-    font-size: 3.2rem;
-    line-height: 1.2;
-    /* font-family: 'Poppins', sans-serif; */
-    margin: 1.5rem 0;
-  }
-  
-  .work-smarter__actions {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  
-  .work-smarter__button {
-    padding: 0.75rem 1.5rem;
+.work-smarter__description {
+  color: #aaa;
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.work-smarter__actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.work-smarter__button {
+  padding: 0.75rem 1.5rem;
   background: #39ff14;
   color: black;
   border: none;
   border-radius: 12px;
-  
   cursor: pointer;
-  transition: transform 0.3s ease;
   box-shadow: 0 5px 15px #39ff14;
-
-   border-color: rgba(255, 255, 255, 0.15);
- font-size: 14px;
+  font-size: 14px;
   border-style: solid;
-   backdrop-filter: none;
-  }
-  
-  .work-smarter__rating {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .work-smarter__stars {
-    font-size: 1.25rem;
-    color: white;
-  }
-  
-  .work-smarter__reviews {
-    font-size: 0.85rem;
-    color: #888;
-  }
-  .work-smarter h4 {
-  font-size: 1.2rem;
-  /* color: #aaa; */
-  font-weight: 500;
-  margin-top: 1.5rem;
+  border-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: none;
+  transition: transform 0.3s ease;
 }
-  
- @media (max-width: 992px) {
-  .work-smarter__content{
-    padding: 0px 20px;
-  }
+
+.work-smarter__rating {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.work-smarter__stars {
+  font-size: 1.25rem;
+  color: white;
+}
+
+.work-smarter__reviews {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
   .work-smarter {
-    padding: 10px;
     flex-direction: column;
     text-align: center;
+    padding: 3rem 1.5rem;
   }
 
   .work-smarter__content {
-    margin: 0;
+    text-align: center;
+  }
+
+  .work-smarter__description {
     text-align: center;
   }
 
   .work-smarter__actions {
+    justify-content: center;
     flex-direction: column;
     align-items: center;
   }
@@ -150,34 +139,15 @@
     align-items: center;
   }
 
-  .work-smarter__image img {
-    margin: 0;
+  .work-smarter__image {
+    width: 100%;
   }
 }
 
-/* For Small Screens (Mobile Devices) */
+/* Mobile */
 @media (max-width: 576px) {
-  .work-smarter__description{
-    text-align: center;
-  }
-  .work-smarter {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .work-smarter__content {
-    margin: 0;
-    text-align: center;
-  }
-
-  .work-smarter__image img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 0;
-  }
-
   .work-smarter__headline {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .work-smarter__tag {
@@ -185,21 +155,12 @@
   }
 
   .work-smarter__description {
-    font-size: 0.85rem;
-  }
-   .work-smarter__description p{
-     font-size: 0.9rem;
-    line-height: 1.6;
-    text-align: center;
-   }
-
-  .work-smarter__button {
-    padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
   }
 
-  .work-smarter__rating {
-    align-items: center;
+  .work-smarter__button {
+    width: 100%;
+    font-size: 1rem;
   }
 
   .work-smarter__stars {
@@ -208,49 +169,5 @@
 
   .work-smarter__reviews {
     font-size: 0.75rem;
-  }
-}
-
-/* For Medium Screens (Tablets) */
-@media (max-width: 768px) {
-  .work-smarter {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .work-smarter__image img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 2rem;
-  }
-
-  .work-smarter__content {
-    margin: 0;
-    text-align: center;
-  }
-
-  .work-smarter__headline {
-    font-size: 1.8rem;
-  }
-
-  .work-smarter__description {
-    font-size: 0.9rem;
-  }
-
-  .work-smarter__button {
-    padding: 0.7rem 1.3rem;
-    font-size: 1rem;
-  }
-
-  .work-smarter__rating {
-    align-items: center;
-  }
-
-  .work-smarter__stars {
-    font-size: 1.2rem;
-  }
-
-  .work-smarter__reviews {
-    font-size: 0.8rem;
   }
 }

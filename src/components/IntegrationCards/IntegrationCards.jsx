@@ -4,7 +4,6 @@ import "./IntegrationCards.css";
 const cards = [
   {
     id: 1,
-
     icon: "/images/Background+Shadow.png",
     name: "Full-Stack & AI Engineering",
     label: "Code",
@@ -65,22 +64,17 @@ const IntegrationCards = () => {
       <div className="integration__grid">
         {cards.map(({ id, icon, name, label, description, pro }) => (
           <div key={id} className="integration__card">
-            {/* Top row: icon and arrow */}
             <div className="card__top">
               <img src={icon} alt={name} className="card__icon" />
               <span className="card__arrow">↗</span>
             </div>
 
-            {/* Title + PRO tag */}
             <div className="card__title">
               <h4>{name}</h4>
               {pro && <span className="pro__badge">PRO</span>}
             </div>
 
-            {/* Subtitle */}
             <p className="card__label">{label}</p>
-
-            {/* Description */}
             <p className="card__desc">{description}</p>
           </div>
         ))}

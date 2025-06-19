@@ -1,5 +1,5 @@
 import React from "react";
-import "./TeamSection.css"; // Make sure this path is correct
+import "./TeamSection.css";
 
 const teamMembers = [
   {
@@ -42,7 +42,7 @@ const teamMembers = [
 
 const TeamSection = () => {
   return (
-    <div className="team-members">
+    <section className="team-members">
       <div className="team-members__grid">
         {teamMembers.map((member, index) => (
           <a
@@ -57,22 +57,24 @@ const TeamSection = () => {
               alt={member.name}
               className="team-card__img"
             />
+
             <div className="team-card__info">
-              <h3 className="team-card__name">{member.name}</h3>
-              <p className="team-card__role">{member.role}</p>
+              <div className="team-card__text">
+                <h3 className="team-card__name">{member.name}</h3>
+                <p className="team-card__role">{member.role}</p>
+              </div>
+              <button className="team-card__btn">
+                <img
+                  src="/images/icon.png"
+                  alt="LinkedIn Icon"
+                  className="team-card__icon"
+                />
+              </button>
             </div>
-            <button className="team-card__btn">
-              <img
-                src="/images/icon.png"
-                alt="icon"
-                className="team-card__icon"
-              />
-            </button>
           </a>
         ))}
       </div>
-      
-    </div>
+    </section>
   );
 };
 

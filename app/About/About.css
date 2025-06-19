@@ -5,3 +5,9 @@
     padding-top: 10px;
     /* text-align: center; */
 }
+
+.about__join-wrapper {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}

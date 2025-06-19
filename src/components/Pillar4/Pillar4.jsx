@@ -32,6 +32,7 @@ const Pillar4 = () => {
       <div className="solution-pillars__right">
         <img src="/images/4.png" alt="UX Design Strategy" />
       </div>
+
       <div className="solution-pillars__left">
         <span className="solution-pillars__tag">• Pillar 04</span>
 
@@ -53,13 +54,15 @@ const Pillar4 = () => {
         <ul className="solution-pillars__list">
           <li>SEO, paid ads, social & email</li>
           <li>CRM setup + nurture</li>
-          <li>A1 & workflow transformation automations</li>
+          <li>AI & workflow transformation automations</li>
           <li>Data dashboards & analytics</li>
         </ul>
-<div className="flex items-center justify-between">
-        <MarqButton className="solution-pillars__cta-button" />
-        <img src="/images/piller4logo.png" alt="logo" className="cta-logo" />
-</div>
+
+        <div className="solution-pillars__cta-row">
+          <MarqButton className="solution-pillars__cta-button" />
+          <img src="/images/piller4logo.png" alt="logo" className="cta-logo" />
+        </div>
+
         <div className="solution-pillars__cards">
           {steps.map((step, index) => (
             <div className="pillar-card" key={index}>

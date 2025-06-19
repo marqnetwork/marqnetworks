@@ -43,8 +43,7 @@ const Pillar5 = () => {
         </motion.h2>
 
         <p className="solution-pillars__description">
-          Align teams, de-risk spend, and launch initiatives with a proven
-          90-day execution map.
+          Align teams, de-risk spend, and launch initiatives with a proven 90-day execution map.
         </p>
 
         <ul className="solution-pillars__list">
@@ -54,10 +53,11 @@ const Pillar5 = () => {
           <li>45-day website guarantee</li>
         </ul>
 
-        <div className="flex items-center justify-between">
+        <div className="solution-pillars__cta-row">
           <MarqButton className="solution-pillars__cta-button" />
           <img src="/images/piller5logo.png" alt="logo" className="cta-logo" />
         </div>
+
         <div className="solution-pillars__cards">
           {steps.map((step, index) => (
             <div className="pillar-card" key={index}>

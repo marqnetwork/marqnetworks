@@ -3,7 +3,7 @@
 import React from "react";
 import "../../components/SolutionPillars/SolutionPillars.css";
 import { motion } from "framer-motion";
-import MarqButton from '../MarqButton/MarqButton'
+import MarqButton from '../MarqButton/MarqButton';
 
 const steps = [
   {
@@ -43,22 +43,22 @@ const Pillar3 = () => {
         </motion.h2>
 
         <p className="solution-pillars__description">
-         Align teams, de-risk spend, and launch initiatives with a proven 90-day execution map.
+          Align teams, de-risk spend, and launch initiatives with a proven 90-day execution map.
         </p>
 
-      <ul className="solution-pillars__list">
-  <li>API, ERP, CRM integrations</li>
-  <li>A1 & RPA process automation</li>
-  <li>Cloud migration & DevOps</li>
-  <li>Change-management playbooks</li>
-  <li>Funnel architecture & CRO</li>
-</ul>
+        <ul className="solution-pillars__list">
+          <li>API, ERP, CRM integrations</li>
+          <li>AI & RPA process automation</li>
+          <li>Cloud migration & DevOps</li>
+          <li>Change-management playbooks</li>
+          <li>Funnel architecture & CRO</li>
+        </ul>
 
+        <div className="solution-pillars__cta-row">
+          <MarqButton className="solution-pillars__cta-button" />
+          <img src="/images/piller3logo.png" alt="logo" className="cta-logo" />
+        </div>
 
-       <div className="flex items-center justify-between">
-        <MarqButton className="solution-pillars__cta-button"/>
-        <img src="/images/piller3logo.png" alt="logo" className="cta-logo" />
-</div>
         <div className="solution-pillars__cards">
           {steps.map((step, index) => (
             <div className="pillar-card" key={index}>

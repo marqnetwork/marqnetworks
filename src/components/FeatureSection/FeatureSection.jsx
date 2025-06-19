@@ -19,7 +19,14 @@ const FeatureSection = () => {
       <div className="feature__content">
         <span className="feature__tag">• Features</span>
 
-        <motion.h2 className="feature__headline" id="feature-heading" {...fadeInLeft}>
+        <motion.h2
+          className="feature__headline"
+          id="feature-heading"
+          initial={fadeInLeft.initial}
+          whileInView={fadeInLeft.whileInView}
+          transition={fadeInLeft.transition}
+          viewport={fadeInLeft.viewport}
+        >
           Unlimited Design Features<br />
           <span>Delivered In A Second!</span>
         </motion.h2>

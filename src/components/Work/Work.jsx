@@ -5,7 +5,6 @@ import "./Work.css";
 import { motion, useScroll, useTransform } from "framer-motion";
 import MarqButton from "../MarqButton/MarqButton";
 
-// Step Data
 const steps = [
   {
     title: "Kickoff",
@@ -53,8 +52,8 @@ const steps = [
   }
 ];
 
-// Animation Config
-const fadeInLeft = {
+// Reusable animation config
+const fadeIn = {
   initial: { x: -20, opacity: 0.6, filter: "blur(4px)" },
   whileInView: { x: 0, opacity: 1, filter: "blur(0px)" },
   transition: { duration: 1.2, ease: "easeOut" },
@@ -66,19 +65,21 @@ const Work = () => {
 
   return (
     <section className="work" ref={containerRef} aria-labelledby="work-title">
+      {/* Left Content */}
       <div className="work__left">
         <span className="work__tag">• How We Work?</span>
 
-        <motion.h2 className="work__headline" id="work-title" {...fadeInLeft}>
+        <motion.h2 className="work__headline" id="work-title" {...fadeIn}>
           We Streamline <br /> Every Step <br />
           <span>From Idea to Impact</span>
         </motion.h2>
 
-        <motion.p className="work__description" {...fadeInLeft}>
+        <motion.p className="work__description" {...fadeIn}>
           We’ve battle-tested a three-stage framework that eliminates guesswork,
           keeps you in the loop, and gets your product in market faster.
         </motion.p>
 
+        {/* Steps Section */}
         <div className="work__steps">
           {steps.map((step, index) => {
             const cardRef = useRef(null);
@@ -91,7 +92,7 @@ const Work = () => {
 
             return (
               <motion.div
-                key={index}
+                key={step.title}
                 ref={cardRef}
                 className="step-card"
                 style={{ scale }}
@@ -116,10 +117,7 @@ const Work = () => {
                 </div>
 
                 {index === steps.length - 1 && (
-                  <MarqButton
-                    className="work__cta-button"
-                    style={{ marginTop: "10px" }}
-                  />
+                  <MarqButton className="work__cta-button" style={{ marginTop: "10px" }} />
                 )}
               </motion.div>
             );
@@ -127,6 +125,7 @@ const Work = () => {
         </div>
       </div>
 
+      {/* Right Image */}
       <div className="work__right">
         <img src="/images/work.png" alt="Work Process Illustration" />
       </div>

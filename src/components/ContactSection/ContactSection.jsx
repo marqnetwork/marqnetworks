@@ -48,7 +48,7 @@ const ContactSection = () => (
     </div>
 
     <div className="contact-image">
-      <img src="/images/B3.jpg" alt="Contact section visual" className="rounded-3xl" />
+      <img src="/images/B3.jpg" alt="Customer growth chart showing exponential user scale from startup to millions—driven by smart systems" className="rounded-3xl" />
     </div>
   </div>
 );

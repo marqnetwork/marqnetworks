@@ -57,7 +57,7 @@ const SolutionPillars = () => {
 
         <div className="solution-pillars__cta-row">
           <MarqButton className="solution-pillars__cta-button" />
-          <img src="/images/strategylogo.png" alt="Strategy Logo" className="cta-logo" />
+          <img src="/images/strategylogo.png" alt="MarQ Consultancy logo—your growth strategy and digital transformation partner" className="cta-logo" />
         </div>
 
         <div className="solution-pillars__cards">
@@ -82,7 +82,7 @@ const SolutionPillars = () => {
       </div>
 
       <div className="solution-pillars__right">
-        <img src="/images/pimg.png" alt="Strategy Meeting" />
+        <img src="/images/pimg.png" alt="Strategic team aligning goals and roadmaps using live dashboards and execution metrics" />
       </div>
     </section>
   );

@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="w-[30%] ">
             <img
               src="/images/logo.png"
-              alt="marqnetworks logo"
+              alt="MarQ Networks logo—AI-driven digital growth partner for visionary brands"
               className="footer__logo"
             />
             <h2 className="text-[20px] ">

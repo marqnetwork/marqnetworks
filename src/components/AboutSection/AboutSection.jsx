@@ -68,7 +68,7 @@ const AboutSection = () => {
 
         {/* Right Image */}
         <div className="about__image">
-          <img src="/images/about.png" alt="MarQ Team at Work" />
+          <img src="/images/about.png" alt="Visualizing AI-powered growth strategy through a futuristic business dashboard" />
         </div>
       </section>
     </div>

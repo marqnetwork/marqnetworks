@@ -29,7 +29,7 @@ const LandinBenefitCards = () => {
     <div className="benefit-wrapper">
       {/* Large Card */}
       <div className="benefit-card large">
-        <img src="/images/submit.png" alt="Unlimited Requests" />
+        <img src="/images/submit.png" alt="Visualizing unlimited creative and dev requests—handled by MarQ’s agile pod system" />
         <h3>Submit Unlimited Requests</h3>
         <div className="about__divider" />
         <p>
@@ -42,7 +42,7 @@ const LandinBenefitCards = () => {
 
       {/* Medium Card */}
       <div className="benefit-card medium">
-        <img src="/images/request.png" alt="Requests & Revisions" />
+        <img src="/images/request.png" alt="Smart feedback system for fast revisions—layered UI showing real-time change tracking" />
         <div className="card-header">
           <h4>Requests & Revisions</h4>
           <span className="pill">NEW</span>

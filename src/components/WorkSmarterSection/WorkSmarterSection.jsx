@@ -39,7 +39,7 @@ const WorkSmarterSection = () => {
 
       {/* Image Block */}
       <div className="work-smarter__image">
-        <img src="/images/work smarter.png" alt="Work Smarter" />
+        <img src="/images/work smarter.png" alt="Global delivery team executing late-night milestones to help clients scale faster" />
       </div>
       
     </section>

@@ -127,7 +127,7 @@ const Work = () => {
 
       {/* Right Image */}
       <div className="work__right">
-        <img src="/images/work.png" alt="Work Process Illustration" />
+        <img src="/images/work.png" alt="Founder-focused execution path—every step mapped from idea to launch with clarity and speed" />
       </div>
     </section>
   );

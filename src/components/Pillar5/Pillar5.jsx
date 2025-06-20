@@ -55,7 +55,7 @@ const Pillar5 = () => {
 
         <div className="solution-pillars__cta-row">
           <MarqButton className="solution-pillars__cta-button" />
-          <img src="/images/piller5logo.png" alt="logo" className="cta-logo" />
+          <img src="/images/piller5logo.png" alt="Offshore Excellence Hub logo—MarQ’s global delivery model for rapid, cost-effective execution" className="cta-logo" />
         </div>
 
         <div className="solution-pillars__cards">
@@ -84,7 +84,7 @@ const Pillar5 = () => {
       </div>
 
       <div className="solution-pillars__right">
-        <img src="/images/5.png" alt="AI & Automation" />
+        <img src="/images/5.png" alt="Offshore delivery model optimized for speed, pricing, and 24/7 execution via global delivery pods" />
       </div>
     </section>
   );

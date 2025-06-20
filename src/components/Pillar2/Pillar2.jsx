@@ -30,7 +30,7 @@ const Pillar2 = () => {
   return (
     <section className="solution-pillars">
       <div className="solution-pillars__right">
-        <img src="/images/2.png" alt="Growth Strategy" />
+        <img src="/images/2.png" alt="Brand + UX team co-creating a high-conversion design system during a UI/UX strategy sprint" />
       </div>
 
       <div className="solution-pillars__left">
@@ -61,7 +61,7 @@ const Pillar2 = () => {
 
         <div className="solution-pillars__cta-row">
           <MarqButton className="solution-pillars__cta-button" />
-          <img src="/images/piller2logo.png" alt="logo" className="cta-logo" />
+          <img src="/images/piller2logo.png" alt="MarQ Creative Logics logo—your branding agency for tech and startup innovation" className="cta-logo" />
         </div>
 
         <div className="solution-pillars__cards">

@@ -8,6 +8,7 @@ const cards = [
     blurb: "Hardened infra, passed Federal audit with zero findings and doubled site speed.",
     stats: ["100% Compliance Pass", "70% Faster Load"],
     image: "/images/Gov-IT.png"
+    
   },
   {
     header: "GA Tax Lien Boot Camp",

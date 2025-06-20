@@ -6,7 +6,7 @@ const ClassicSkillSection = () => {
   return (
     <section className="classic-skill">
       <div className="classic-skill__image">
-        <img src="/images/classic skill.png" alt="Skill Illustration" />
+        <img src="/images/classic skill.png" alt="MarQ team in action—partnering closely with clients to deliver growth through embedded strategy and code" />
       </div>
 
       <div className="classic-skill__content">

@@ -30,7 +30,7 @@ const Pillar4 = () => {
   return (
     <section className="solution-pillars">
       <div className="solution-pillars__right">
-        <img src="/images/4.png" alt="UX Design Strategy" />
+        <img src="/images/4.png" alt="MarQ growth team reviewing organic traffic, sales metrics, and funnel data to optimize lead gen" />
       </div>
 
       <div className="solution-pillars__left">
@@ -60,7 +60,7 @@ const Pillar4 = () => {
 
         <div className="solution-pillars__cta-row">
           <MarqButton className="solution-pillars__cta-button" />
-          <img src="/images/piller4logo.png" alt="logo" className="cta-logo" />
+          <img src="/images/piller4logo.png" alt="MarQ Growth Pod logo—your partner for B2B lead generation and performance marketing" className="cta-logo" />
         </div>
 
         <div className="solution-pillars__cards">

@@ -13,7 +13,7 @@ const Navbar = () => {
     // <div className="bg-[#000]">
     <nav className="navbar">
       <div className="navbar__logo">
-        <img src="/images/logo.svg" alt="Logo" />
+        <img src="/images/logo.svg" alt="MarQ Networks logo—AI-driven digital growth partner for visionary brands" />
         <div>
           <ul
             className={`navbar__menu ${

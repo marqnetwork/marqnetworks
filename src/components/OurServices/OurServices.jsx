@@ -87,7 +87,7 @@ const OurServices = () => {
     <section className="ourservices">
       {/* Left Side Image */}
       <div className="ourservices__left">
-        <img src="/images/ourservices.png" alt="Our Services" />
+        <img src="/images/ourservices.png" alt="Team aligning growth strategy using data-driven insights during a client workshop" />
       </div>
 
       {/* Right Side Content */}

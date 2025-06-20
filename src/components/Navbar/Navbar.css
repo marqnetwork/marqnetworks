@@ -1,15 +1,12 @@
-/* Import font */
-/* @import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Poppins:wght@400;600&display=swap'); */
 
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* background-color: black; */
+
 }
 
-/* Navbar container styles */
+
 .navbar {
   z-index: 1;
   display: flex;
@@ -19,7 +16,6 @@
   background-color: transparent;
   color: white;
   position: relative;
-  /* z-index: 100; */
   width: 1200px;
   margin: 0 auto;
   padding: 20px 0;
@@ -109,11 +105,11 @@
 
   .navbar__menu--active {
     display: flex;
-    background-color: black;
+    background-color: white;
     z-index: 100;
   }
   .navbar__menu li a{
-    color: white;
+    color: black;
   }
   .navbar__button {
     display: none;

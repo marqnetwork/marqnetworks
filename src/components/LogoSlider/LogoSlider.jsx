@@ -2,19 +2,19 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./LogoSlider.css";
 
-// Create an array of logo objects with unique alt text
+
 const logos = [
-  { src: "/images/1.svg", alt: "Adobe logo" },
-  { src: "/images/2.svg", alt: "AWS logo" },
-  { src: "/images/3.svg", alt: "Slack logo" },
-  { src: "/images/4.svg", alt: "Netflix logo" },
-  { src: "/images/5.svg", alt: "Facebook logo" },
-  { src: "/images/6.svg", alt: "Google logo" },
-  { src: "/images/7.svg", alt: "Microsoft logo" },
-  { src: "/images/8.svg", alt: "LinkedIn logo" },
-  { src: "/images/9.svg", alt: "Twitter logo" },
-  { src: "/images/10.svg", alt: "Spotify logo" },
-  { src: "/images/11.svg", alt: "Dropbox logo" },
+  { src: "/images/1.svg", alt: "Academy of Jesus Christ logo featuring a cross over an open book within a chapel arch, representing faith and learning" },
+  { src: "/images/2.svg", alt: "Albaluce logo with minimalist geometric typography and a vertical dot pattern, symbolizing modern lighting and design" },
+  { src: "/images/3.svg", alt: "Bananworld logo with a curved smile-like icon and rising digital dots, representing digital access and global connectivity" },
+  { src: "/images/4.svg", alt: "Bond Interiors logo with an artistic handwritten 'B' merging into bold sans-serif text, symbolizing elegance in interior design" },
+  { src: "/images/5.svg", alt: "Stylized ‘BW’ logo for Bananworld, with circular tech-like dots and bold rounded letters, representing global digital access and innovation" },
+  { src: "/images/6.svg", alt: "Logo of Central Hospital Sialkot featuring a symbolic mother cradling a child within abstract leaves, representing care, protection, and family health" },
+  { src: "/images/7.svg", alt: "Logo of Charles-Williams Construction Corp. featuring stylized initials ‘C’ and ‘W’ forming an abstract geometric shape inside a circular frame, symbolizing structure, strength, and architectural precision" },
+  { src: "/images/8.svg", alt: "Logo of Christian Onyemem CPA Firm, PLLC featuring a bold monogram ‘C’ and ‘O’ within a shield-like geometric emblem, paired with the tagline ‘Commitment to Excellence" },
+  { src: "/images/9.svg", alt: "Civitas Consulting Group, Inc logo with a bold circular ‘C’ and upward arrow symbolizing growth, strategy, and leadership, accompanied by the tagline ‘Leadership & Funding Solutions" },
+  { src: "/images/10.svg", alt: "Collaborative Creative logo with bold dual ‘C’ circular emblem and futuristic typography, symbolizing innovation, design synergy, and forward-thinking" },
+  { src: "/images/11.svg", alt: "Customex logo with bold typography and distinctive checkmark symbolizing precision, customer insight, and performance evaluation" },
   { src: "/images/12.svg", alt: "Uber logo" },
   { src: "/images/13.svg", alt: "Airbnb logo" },
   { src: "/images/14.svg", alt: "Tesla logo" },
@@ -54,7 +54,7 @@ const logos = [
   { src: "/images/48.svg", alt: "ZoomInfo logo" },
 ];
 
-// Duplicate the list for infinite scroll effect
+
 const repeatedLogos = [...logos, ...logos, ...logos, ...logos , ...logos];
 
 

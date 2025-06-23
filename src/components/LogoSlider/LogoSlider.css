@@ -23,6 +23,7 @@
 .logo-item img {
   height: 90px; 
   width: auto;
+    display: block; 
 }
 
 .logo-item:hover {

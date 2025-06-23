@@ -10,20 +10,26 @@ const steps = [
     title: "Hyper-Personalization at Scale",
     desc: "Our AI analyzes user behavior, location, and intent to serve the perfect message—across channels, in real time.",
     icon: "/images/hyper.png",
+    iconAlt: "Green circle icon with a stylized arrow encircling a dot, symbolizing dynamic AI personalization.",
     image: "/images/p10.png",
+    imageAlt: "Futuristic human head with digital interface, charts, and a glowing dot—illustrating AI-driven hyper-personalization."
   },
   {
     title: "Predictive Lead Scoring & Funnel Control",
     desc: "Know exactly who converts next. AI prioritizes your best leads and auto-optimizes funnel paths to reduce CAC.",
     icon: "/images/lead.png",
+    iconAlt: "Green circle icon with vertical bar chart, symbolizing analytics and funnel performance tracking.",
     image: "/images/p11.png",
+    imageAlt: "AI chip connected to user icons and a glowing funnel diagram, visualizing automated lead scoring and conversion tracking."
   },
   {
     title: "Revolution: Marketing Without Guessing",
     desc: "Forget A/B testing fatigue. Your campaigns learn daily, adapt hourly, and outperform historically.",
     icon: "/images/market.png",
+    iconAlt: "Green circle icon with a white megaphone, representing AI-powered marketing and campaign messaging.",
     image: "/images/p12.png",
-  },
+    imageAlt: "Neon green AI symbol in front of a bar graph and pie chart, with data points and trend lines showing adaptive marketing insights."
+  }
 ];
 
 const Pillar4 = () => {
@@ -67,7 +73,7 @@ const Pillar4 = () => {
           {steps.map((step, index) => (
             <div className="pillar-card" key={index}>
               <div className="pillar-card__header">
-                <img src={step.icon} alt="icon" className="pillar-card__icon" />
+                <img src={step.icon} alt={step.iconAlt} className="pillar-card__icon" />
                 <span className="pillar-card__arrow">↗</span>
               </div>
 
@@ -77,11 +83,7 @@ const Pillar4 = () => {
               </div>
 
               <div className="pillar-card__image-container">
-                <img
-                  src={step.image}
-                  alt="Pillar Visual"
-                  className="pillar-card__image"
-                />
+               <img src={step.image} alt={step.imageAlt} className="pillar-card__image" />
               </div>
             </div>
           ))}

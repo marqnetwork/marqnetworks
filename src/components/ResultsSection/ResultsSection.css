@@ -155,7 +155,7 @@
 
 /* ----------------- Responsive ----------------- */
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .results {
     flex-direction: column;
     text-align: center;
@@ -199,7 +199,7 @@
     bottom: -20px;
     filter: blur(18px);
   }
-}
+} */
 
 @media (max-width: 768px) {
   .results {

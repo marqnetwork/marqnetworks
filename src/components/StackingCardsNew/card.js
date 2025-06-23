@@ -1,19 +1,18 @@
-// Card.jsx
 'use client';
 
 import styles from './style.module.scss';
 
-const Card = ({ src, i }) => {
+const Card = ({ src, alt, i }) => {
   return (
-    <div className={styles.cardContainer}>
-      <div
+    <div className={styles.cardContainer} style={{ top: `calc(-5vh + ${i * 25}px)` }}>
+      <img
+        src={src}
+        alt={alt}
         className={styles.card}
         style={{
-          backgroundImage: `url(${src})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          top: `calc(-5vh + ${i * 25}px)`,
+          objectFit: "cover",
+          width: "100%",
+          height: "100%",
         }}
       />
     </div>

@@ -10,21 +10,28 @@ const steps = [
     title: "Designs That Self-Optimize",
     desc: "Using AI heatmaps and behavioral data, we craft interfaces that adapt to users and evolve with usage—automatically.",
     icon: "/images/Design.png",
+    iconAlt: "Green circle icon with a white sparkle or magic wand symbol, representing smart, adaptive design powered by AI.",
     image: "/images/p4.png",
+    imageAlt: "Neon green wireframe of web UI components with dotted arrows and behavior flow patterns, symbolizing AI-driven adaptive interfaces."
   },
   {
     title: "Generative Branding & 3D Assets",
     desc: "We lead the creative edge by combining human concept with AI co-pilots—outputting scalable, dynamic design systems.",
     icon: "/images/Generative.png",
+    iconAlt: "Green circle icon with a white hexagon and intersecting lines, symbolizing structure and generative design systems.",
     image: "/images/p5.png",
+    imageAlt: "3D-rendered image featuring the text 'Generative Branding 3D' glowing in neon green, surrounded by abstract shapes and gradients."
   },
   {
     title: "Revolution: From Fixed to Living Brands",
     desc: "Creativity is no longer static. Your visual identity becomes intelligent, personalized, and self-improving.",
     icon: "/images/Revolution.png",
+    iconAlt: "Green circle icon with two merging shapes, symbolizing transformation and dynamic brand identity.",
     image: "/images/p6.png",
-  },
+    imageAlt: "3D illustration of glowing cubes with dynamic brand logos, showcasing the transformation of brand identity through intelligent design."
+  }
 ];
+
 
 const Pillar2 = () => {
   return (
@@ -68,7 +75,7 @@ const Pillar2 = () => {
           {steps.map((step, index) => (
             <div className="pillar-card" key={index}>
               <div className="pillar-card__header">
-                <img src={step.icon} alt="icon" className="pillar-card__icon" />
+                <img src={step.icon} alt={step.iconAlt} className="pillar-card__icon" />
                 <span className="pillar-card__arrow">↗</span>
               </div>
 
@@ -78,11 +85,7 @@ const Pillar2 = () => {
               </div>
 
               <div className="pillar-card__image-container">
-                <img
-                  src={step.image}
-                  alt="Pillar Visual"
-                  className="pillar-card__image"
-                />
+              <img src={step.image} alt={step.imageAlt} className="pillar-card__image" />
               </div>
             </div>
           ))}

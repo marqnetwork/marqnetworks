@@ -5,6 +5,7 @@ const proofCards = [
   {
     id: 1,
     logo: '/images/award1.png',
+    alt: 'Rain cloud icon above text committing to 45-day product launch timeline with automated QA and peer review support',
     title: '45-Day Launch Pledge',
     subtitle: 'Build Fast, Build Right',
     badge: '45 d',
@@ -14,6 +15,7 @@ const proofCards = [
   {
     id: 2,
     logo: '/images/award2.png',
+    alt: 'Abstract unified tech icon above text offering end-to-end consultancy, design, development, and offshore delivery through a single project manager',
     title: '360° Stack, One PM',
     subtitle: 'Strategy ➜ Scale',
     badge: '5 studios',
@@ -23,6 +25,7 @@ const proofCards = [
   {
     id: 3,
     logo: '/images/award3.png',
+    alt: 'Pictogram of a fast-moving figure representing global sprint teams working across time zones with senior US and GCC leads',
     title: 'Borderless Talent',
     subtitle: 'Off-shore hub, EST hours',
     badge: '24 / 7',
@@ -32,6 +35,7 @@ const proofCards = [
   {
     id: 4,
     logo: '/images/award4.png',
+    alt: 'Shield icon symbolizing SOC-2 aligned security, encrypted pipelines, and flawless audit controls',
     title: 'Security & Trust',
     subtitle: 'Fed-grade controls',
     badge: '0 incidents',
@@ -39,6 +43,7 @@ const proofCards = [
       'SOC-2 aligned checklists, encrypted pipelines, flawless audit record.',
   },
 ];
+
 
 const coreValues = [
   'Client-Obsessed Impact',
@@ -73,9 +78,9 @@ const AwardsSection = () => {
 
       {/* Right Column - Cards */}
       <div className="awards__grid">
-        {proofCards.map(({ id, logo, title, subtitle, description }) => (
+        {proofCards.map(({ id, logo,alt, title, subtitle, description }) => (
           <div key={id} className="award__card">
-            <img src={logo} alt={title} className="award__logo" />
+            <img src={logo} alt={alt} className="award__logo" />
             <div className="award__info">
               <h4>{title}</h4>
               <p>{subtitle}</p>

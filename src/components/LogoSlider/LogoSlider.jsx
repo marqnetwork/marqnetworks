@@ -62,14 +62,17 @@ const LogoSlider = () => {
   return (
     <div className="logo-slider">
       <motion.div
-        className="logo-track"
-        animate={{ x: "-100%" }}
-        transition={{
-          repeat: Infinity,
-          duration: 80,
-          ease: "linear",
-        }}
-      >
+  className="logo-track"
+  animate={{ x: ["0%", "-100%"] }}
+  transition={{
+    x: {
+      repeat: Infinity,
+      duration: 120, 
+      ease: "linear",
+    },
+  }}
+>
+
         {repeatedLogos.map((logo, index) => (
           <div className="logo-item" key={index}>
             <img

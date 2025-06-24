@@ -47,10 +47,10 @@ const Home = () => {
 
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
-        {/* Recommended SEO Meta */}
+      
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content="https://marqnetworks.com" />
@@ -59,7 +59,7 @@ const Home = () => {
           property="og:image"
           content="https://marqnetworks.com/og-image.jpg"
         />{" "}
-        {/* Replace with actual OG image */}
+        
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
@@ -68,7 +68,38 @@ const Home = () => {
           content="https://marqnetworks.com/og-image.jpg"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      </Head> */}
+
+      <Head>
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content="https://marqnetworks.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://marqnetworks.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content="https://marqnetworks.com/og-image.jpg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://marqnetworks.com" />
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MarQ Networks",
+        "url": "https://marqnetworks.com",
+        "logo": "https://marqnetworks.com/logo.png",
+        "sameAs": ["https://www.linkedin.com/company/marqnetworks"],
+        "description": description,
+      }),
+    }}
+  />
+</Head>
+
 
       <main className="bg-black text-white min-h-[70vh] pt-2 text-center">
         <Hero />

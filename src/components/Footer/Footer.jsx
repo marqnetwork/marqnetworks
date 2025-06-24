@@ -36,12 +36,14 @@ const Footer = () => {
           {/* Middle */}
           <div className="footer__middle">
             <h4>Quick Links</h4>
-            <ul>
-              <li>Home</li>
-              <li>About</li>
-              <li>Solution</li>
-              <li>Portfolio</li>
-            </ul>
+           <ul>
+  <li><a href="/">Home</a></li>
+  <li><a href="/About">About</a></li>
+  <li><a href="/Solution">Solution</a></li>
+  <li><a href="/Portfolio">Portfolio</a></li>
+  <li><a href="/Contact">Contact</a></li>
+</ul>
+
           </div>
 
           {/* Right */}

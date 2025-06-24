@@ -19,11 +19,16 @@ const dmSans = DM_Sans({
 
 export const metadata = {
   title: "Marq Network",
-  description: "Welcome to Marq Network",
+  description: "Marq Network is your strategic partner for digital transformation, branding, automation, and growth. We help ambitious brands scale smarter.",
   icons: {
     icon: "/images/favicon.png",
   },
+  metadataBase: new URL("https://www.marqnetworks.com"),
+  alternates: {
+    canonical: "/",
+  },
 };
+
 
 
 export default function RootLayout({
@@ -33,14 +38,14 @@ export default function RootLayout({
 }>) {
   return (
     <html  lang="en" className={dmSans.variable}>
-        <Head>
-        {/* ✅ Canonical Tag */}
+        {/* <Head>
+      
         <link rel="canonical" href="https://www.marqnetworks.com/" />
 
-        {/* ✅ Enhanced Meta Tags */}
+        
         <meta name="description" content="Marq Network is your strategic partner for digital transformation, branding, automation, and growth. We help ambitious brands scale smarter." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
+      </Head> */}
       <body >
               {/* <SmoothScroll> */}
          <CursorFollower />

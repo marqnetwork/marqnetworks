@@ -78,7 +78,8 @@ const LogoSlider = () => {
             <img
               src={logo.src}
               alt={logo.alt}
-              loading="eager"
+              // loading="eager"
+              loading="lazy"
             />
           </div>
         ))}

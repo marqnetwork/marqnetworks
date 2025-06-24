@@ -47,6 +47,8 @@ const Home = () => {
 
   return (
     <>
+
+    {/* old */}
       {/* <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -70,7 +72,7 @@ const Home = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head> */}
 
-    <Head>
+    {/* <Head>
   <title>{title}</title>
   <meta name="description" content={description} />
   <meta property="og:title" content={title} />
@@ -103,7 +105,7 @@ const Home = () => {
       }),
     }}
   />
-</Head>
+</Head> */}
 
 
 

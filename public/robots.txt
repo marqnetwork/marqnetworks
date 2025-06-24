@@ -1,3 +1,9 @@
+# *
 User-agent: *
 Allow: /
+
+# Host
+Host: https://www.marqnetworks.com
+
+# Sitemaps
 Sitemap: https://www.marqnetworks.com/sitemap.xml

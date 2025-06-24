@@ -18,14 +18,14 @@ const Hero = () => {
     <section className="hero">
       <div className="hero__container">
         <div className="hero__content">
-          <motion.h1
+          <motion.h2
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
             Premium Digital Partner <br />
             <span> for Visionary Brands</span>
-          </motion.h1>
+          </motion.h2>
 
           <motion.p
             initial={{ x: -20, opacity: 0.6, filter: "blur(4px)" }}

@@ -41,13 +41,13 @@ const LaunchSection = () => {
         <div className="launch__svg-wrapper">
           <img
             src="/images/resultleft.png"
-            alt="Decorative Left Graphic"
+            alt="Abstract dark green diagonal shape with curved top-left corner"
             className="launch__svg launch__svg--left"
             loading="lazy"
           />
           <img
             src="/images/resultright.png"
-            alt="Decorative Right Graphic"
+            alt="Abstract dark green diagonal shape with curved top-right corner"
             className="launch__svg launch__svg--right"
             loading="lazy"
           />

@@ -45,7 +45,7 @@ const FeatureSection = () => {
       <div className="feature__svg-wrapper" aria-hidden="true">
         <img
           src="/images/resultleft.png"
-          alt=""
+          alt="Abstract dark green diagonal shape with curved top-left corner"
           className="feature__svg feature__svg--left"
           loading="lazy"
           width="300"
@@ -53,7 +53,7 @@ const FeatureSection = () => {
         />
         <img
           src="/images/resultright.png"
-          alt=""
+          alt="Abstract dark green diagonal shape with curved top-right corner"
           className="feature__svg feature__svg--right"
           loading="lazy"
           width="300"

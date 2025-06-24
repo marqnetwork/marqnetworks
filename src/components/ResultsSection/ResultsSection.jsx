@@ -43,7 +43,7 @@ const ResultsSection = () => {
         <div className="results__svg-wrapper" aria-hidden="true">
           <img
             src="/images/resultleft.png"
-            alt=""
+            alt="Abstract dark green diagonal shape with curved top-left corner"
             className="results__svg results__svg--left"
             loading="lazy"
             width="240"
@@ -51,7 +51,7 @@ const ResultsSection = () => {
           />
           <img
             src="/images/resultright.png"
-            alt=""
+            alt="Abstract dark green diagonal shape with curved top-right corner"
             className="results__svg results__svg--right"
             loading="lazy"
             width="240"

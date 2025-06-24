@@ -37,12 +37,12 @@ const PortfolioSection = () => {
         <div className="portfolio__decoration-wrapper" aria-hidden="true">
           <img
             src="/images/resultleft.png"
-            alt=""
+            alt="Abstract dark green diagonal shape with curved top-left corner"
             className="portfolio__decoration portfolio__decoration--left"
           />
           <img
             src="/images/resultright.png"
-            alt=""
+            alt="Abstract dark green diagonal shape with curved top-right corner"
             className="portfolio__decoration portfolio__decoration--right"
           />
         </div>

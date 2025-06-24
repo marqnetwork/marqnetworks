@@ -1,3 +1,5 @@
+'use client';
+
 import React from "react";
 import "./Footer.css";
 import MarqButton from "../MarqButton/MarqButton";
@@ -27,7 +29,7 @@ const Footer = () => {
                 placeholder="Your work e-mail…"
                 autoComplete="off"
               />
-              {/* <button>Keep Me in the Loop</button> */}
+              
               <MarqButton />
             </div>
           </div>

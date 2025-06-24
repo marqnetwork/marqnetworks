@@ -40,10 +40,10 @@ const FAQSection = dynamic(() => import("@/components/FAQSection/FAQSection"));
 const JoinUsNow = dynamic(() => import("@/components/JoinUsNow/JoinUsNow"));
 
 const Home = () => {
-  const title =
-    "MarQ Networks | AI-Driven Digital Growth Partner | SEO, CRM & Web Solutions";
-  const description =
-    "Unlock scalable growth with MarQ Networks, your AI-driven partner for digital transformation. Specializing in advanced SEO audits, smart CRM automation, and custom website development—accelerate your business results today.";
+  // const title =
+  //   "MarQ Networks | AI-Driven Digital Growth Partner | SEO, CRM & Web Solutions";
+  // const description =
+  //   "Unlock scalable growth with MarQ Networks, your AI-driven partner for digital transformation. Specializing in advanced SEO audits, smart CRM automation, and custom website development—accelerate your business results today.";
 
   return (
     <>

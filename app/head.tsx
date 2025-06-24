@@ -1,6 +1,7 @@
+// app/head.tsx
 export default function Head() {
-  const title = "MarQ Networks | AI-Driven Digital Growth Partner | SEO, CRM & Web Solutions";
-  const description = "Unlock scalable growth with MarQ Networks, your AI-driven partner for digital transformation. Specializing in advanced SEO audits, smart CRM automation, and custom website development—accelerate your business results today.";
+  const title = "MarQ Networks | AI-Driven Digital Growth Partner";
+  const description = "Unlock scalable growth with MarQ Networks...";
 
   return (
     <>
@@ -10,8 +11,8 @@ export default function Head() {
       {/* ✅ OpenGraph Meta */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:url" content="https://marqnetworks.com" />
       <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://marqnetworks.com" />
       <meta property="og:image" content="https://marqnetworks.com/images/og-image.png" />
       <meta property="og:site_name" content="MarQ Networks" />
       <meta property="og:locale" content="en_US" />
@@ -23,10 +24,7 @@ export default function Head() {
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content="https://marqnetworks.com/images/og-image.png" />
 
-      {/* ✅ Canonical Link */}
-      <link rel="canonical" href="https://marqnetworks.com" />
-
-      {/* ✅ Schema Markup (Organization) */}
+      {/* ✅ Schema.org JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

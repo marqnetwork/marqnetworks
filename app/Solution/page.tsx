@@ -1,30 +1,14 @@
-"use client";
-import React from 'react'
+export const metadata = {
+  title: "Our Solutions | MarQ Networks",
+  description: "From digital transformation to CRM automation, explore how MarQ Networks delivers full-stack solutions for scalable, intelligent growth.",
+  alternates: {
+    canonical: "/Solution",
+  },
+};
 
-import SolutionSection from '@/components/SolutionSection/SolutionSection'
-import SolutionPillars from '@/components/SolutionPillars/SolutionPillars'
-import Piller2 from '@/components/Pillar2/Pillar2'
-import Piller3 from '@/components/Pillar3/Pillar3'
-import Piller4 from '@/components/Pillar4/Pillar4'
-import Piller5 from '@/components/Pillar5/Pillar5'
-import JoinUsNow from '@/components/JoinUsNow/JoinUsNow'
+import dynamic from "next/dynamic";
+const Solution = dynamic(() => import('./SolutionContent'));
 
-const Solution = () => {
-  return (
-    <div className="Solution1">
-
-      <SolutionSection/>
-      <SolutionPillars/>
-      <Piller2/>
-      <Piller3/>
-       <Piller4/>
-        <Piller5/>
-            <div style={{ display: 'flex', justifyContent: 'center' ,textAlign:'center' }}>
-  <JoinUsNow />
-</div>
-
-    </div>
-  )
+export default function SolutionPage() {
+  return <Solution />;
 }
-
-export default Solution;

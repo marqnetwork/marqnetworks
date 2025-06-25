@@ -1,37 +1,14 @@
-"use client";
-
-import React from 'react';
-import './About.css';
-
-import AboutPageIntro from '@/components/AboutPageIntro/AboutUsSection';
-import ClassicSkillSection from '@/components/ClassicSkillSection/ClassicSkillSection';
-import WorkSmarterSection from '@/components/WorkSmarterSection/WorkSmarterSection';
-import TeamMembersSection from '@/components/TeamMembersSection/TeamMembersSection';
-import TeamSection from '@/components/TeamSection/TeamSection';
-import AwardsSection from '@/components/AwardsSection/AwardsSection';
-import ToolsSection from '@/components/ToolsSection/ToolsSection';
-import IntegrationCards from '@/components/IntegrationCards/IntegrationCards';
-import JoinUsNow from '@/components/JoinUsNow/JoinUsNow';
-import AboutFAQ from '@/components/AboutFAQ/AboutFAQ';
-
-const About = () => {
-  return (
-    <div className="about-container">
-      <AboutPageIntro />
-      <ClassicSkillSection />
-      <WorkSmarterSection />
-      <TeamMembersSection />
-      <TeamSection />
-      <AwardsSection />
-      <ToolsSection />
-      <IntegrationCards />
-      <AboutFAQ />
-
-      <div className="about__join-wrapper">
-        <JoinUsNow />
-      </div>
-    </div>
-  );
+export const metadata = {
+  title: "About Us | MarQ Networks",
+  description: "Meet the team and vision behind MarQ Networks. We’re a global digital growth partner helping visionary brands scale with clarity and impact.",
+  alternates: {
+    canonical: "/About",
+  },
 };
 
-export default About;
+import dynamic from "next/dynamic";
+const About = dynamic(() => import('./AboutContent')); // 👈 move your About code here
+
+export default function AboutPage() {
+  return <About />;
+}

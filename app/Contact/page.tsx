@@ -1,25 +1,14 @@
-"use client";
-import React from 'react';
-import './Contact.css';
-
-import ContactIntro from '@/components/ContactIntro/ContactIntro';
-import ContactSection from '@/components/ContactSection/ContactSection';
-import ContactFAQ from '@/components/ContactFAQ/ContactFAQ';
-import JoinUsNow from '@/components/JoinUsNow/JoinUsNow';
-
-const Contact = () => {
-  return (
-    <div className="contact">
-      <ContactIntro />
-      <ContactSection />
-      <ContactFAQ />
-      
-      {/* Centered Join Section */}
-      <div className="contact__join-wrapper">
-        <JoinUsNow />
-      </div>
-    </div>
-  );
+export const metadata = {
+  title: "Contact Us | MarQ Networks",
+  description: "Have a question or want to collaborate? Reach out to MarQ Networks and connect with our strategy, design, and engineering teams.",
+  alternates: {
+    canonical: "/Contact",
+  },
 };
 
-export default Contact;
+import dynamic from "next/dynamic";
+const Contact = dynamic(() => import('./ContactContent'));
+
+export default function ContactPage() {
+  return <Contact />;
+}

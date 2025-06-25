@@ -1,37 +1,14 @@
-"use client";
-import React from 'react';
-import ExplorePortfolio from '@/components/ExplorePortfolio/ExplorePortfolio';
-import PortfolioFAQ from '@/components/PortfolioFAQ/PortfolioFAQ';
-import JoinUsNow from '@/components/JoinUsNow/JoinUsNow';
-import StackingNewCard from '@/components/StackingCardsNew/stackingnewCard';
-
-const Portfolio = () => {
-  return (
-    <div className="portfolio">
-      <ExplorePortfolio />
-
-      {/* Portfolio Stacks */}
-      <div className="portfolio__stack-wrapper">
-        <StackingNewCard />
-      </div>
-
-      <div className="portfolio__stack-wrapper">
-        <StackingNewCard />
-      </div>
-
-      <div className="portfolio__stack-wrapper">
-        <StackingNewCard />
-      </div>
-
-      <br /><br />
-
-      <PortfolioFAQ />
-
-        <div style={{ display: 'flex', justifyContent: 'center' ,textAlign:'center' }}>
-  <JoinUsNow />
-</div>
-    </div>
-  );
+export const metadata = {
+  title: "Our Work | MarQ Networks",
+  description: "Explore successful case studies and digital products delivered by MarQ Networks. See how we turn vision into scalable growth.",
+  alternates: {
+    canonical: "/Portfolio",
+  },
 };
 
-export default Portfolio;
+import dynamic from "next/dynamic";
+const Portfolio = dynamic(() => import('./PortfolioContent'));
+
+export default function PortfolioPage() {
+  return <Portfolio />;
+}

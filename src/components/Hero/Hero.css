@@ -43,6 +43,7 @@
 
 .hero__content {
   max-width: 1000px;
+  /* min-height: 1200px; */
 }
 
 .hero__content h2 {

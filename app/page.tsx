@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Home | AI-Driven Digital Growth Partner",
+  title: "Home | MarQ Networks",
   description:
     "We help visionary brands scale smarter through strategy, design, automation, and software. Based in the US, operating globally.",
   alternates: {

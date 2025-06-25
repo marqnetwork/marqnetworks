@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Our Solutions | MarQ Networks",
-  description: "From digital transformation to CRM automation, explore how MarQ Networks delivers full-stack solutions for scalable, intelligent growth.",
+  title: "AI-Driven Growth, Branding & Software Solutions | MarQ Networks",
+  description: "Discover MarQ Networks’ 5-Pillar stack—strategy consulting, branding & UX, AI website & software development, funnel marketing, and offshore excellence—for scalable growth.",
   alternates: {
     canonical: "/Solution",
   },

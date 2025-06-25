@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Contact Us | MarQ Networks",
-  description: "Have a question or want to collaborate? Reach out to MarQ Networks and connect with our strategy, design, and engineering teams.",
+  title: "Contact MarQ Networks | AI-Driven Digital Growth Partner",
+  description: "Reach our Dubai & EST teams for AI business roadmaps, branding, custom software, and funnel marketing. Book a 30-min consult—cut costs 30 % and scale faster.",
   alternates: {
     canonical: "/Contact",
   },

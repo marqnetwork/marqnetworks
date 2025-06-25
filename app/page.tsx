@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Home | MarQ Networks",
+  title: "AI Digital Growth Partner |  SEO & CRM Automation",
   description:
-    "We help visionary brands scale smarter through strategy, design, automation, and software. Based in the US, operating globally.",
+    "MarQ Networks is your AI-driven digital growth partner for design & development, SEO audits, and CRM automation—launch 40 % faster, cut costs 30 %, and scale smarter.",
   alternates: {
     canonical: "/",
   },

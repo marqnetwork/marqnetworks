@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Our Work | MarQ Networks",
-  description: "Explore successful case studies and digital products delivered by MarQ Networks. See how we turn vision into scalable growth.",
+  title: "Client Success Portfolio | AI Branding & Software | MarQ Networks",
+  description: "Explore MarQ Networks’ portfolio of AI-driven branding, custom software, and funnel marketing wins. See how startups & enterprises cut costs 30% and grew revenue 3×.",
   alternates: {
     canonical: "/Portfolio",
   },

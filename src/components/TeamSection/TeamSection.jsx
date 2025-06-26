@@ -3,39 +3,39 @@ import "./TeamSection.css";
 
 const teamMembers = [
   {
-    name: "Daniel Reed",
-    role: "Co-Founder, CEO",
-    image: "/images/boy1.png",
+    name: "Rameez Javed",
+    role: "CEO",
+    image: "/images/Rameez.png",
     linkedin: "https://www.linkedin.com/in/danielreed",
   },
   {
-    name: "James Turner",
-    role: "Developer, Tech Lead",
-    image: "/images/boy2.png",
+    name: "Fawad Khan",
+    role: "Co-Founder",
+    image: "/images/Fawad.png",
     linkedin: "https://www.linkedin.com/in/jamesturner",
   },
   {
-    name: "Michael Carter",
-    role: "Marketing Organizer",
-    image: "/images/boy3.png",
+    name: "Daniel Wimberly",
+    role: "Regional Partner",
+    image: "/images/Daniel.png",
     linkedin: "https://www.linkedin.com/in/michaelcarter",
   },
   {
-    name: "William Scott",
-    role: "Designer, Art Lead",
-    image: "/images/boy4.png",
+    name: "Shahzaib Bhatti",
+    role: "CEO MarQsoftware House",
+    image: "/images/Shahzaib.png",
     linkedin: "https://www.linkedin.com/in/williamscott",
   },
   {
-    name: "Ethan Mitchell",
-    role: "UX/UI Specialist",
-    image: "/images/boy5.png",
+    name: "Maheen Malik",
+    role: "Junior Partner",
+    image: "/images/Maheen.png",
     linkedin: "https://www.linkedin.com/in/ethanmitchell",
   },
   {
-    name: "Isabella Hughes",
-    role: "Content Creator, Writer",
-    image: "/images/girl6.png",
+    name: "Yasir Khan",
+    role: "Head of Media Department",
+    image: "/images/Yasir.png",
     linkedin: "https://www.linkedin.com/in/isabellahughes",
   },
 ];
@@ -63,13 +63,13 @@ const TeamSection = () => {
                 <h3 className="team-card__name">{member.name}</h3>
                 <p className="team-card__role">{member.role}</p>
               </div>
-              <button className="team-card__btn">
+              {/* <button className="team-card__btn">
                 <img
                   src="/images/icon.png"
                   alt="LinkedIn Icon"
                   className="team-card__icon"
                 />
-              </button>
+              </button> */}
             </div>
           </a>
         ))}

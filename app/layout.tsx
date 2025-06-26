@@ -27,6 +27,9 @@ export const metadata = {
   alternates: {
     canonical: "/",
   },
+   other: {
+    "google-site-verification": "aoRQn68XYkFeXk4wMJt8_h2D-8j5csxQs9YosL1UkTI",
+  },
 };
 
 

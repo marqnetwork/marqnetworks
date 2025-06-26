@@ -5,6 +5,9 @@ export default function Head() {
 
   return (
     <>
+     {/* ✅ Google Search Console Verification */}
+      <meta name="google-site-verification" content="aoRQn68XYkFeXk4wMJt8_h2D-8j5csxQs9YosL1UkTI" />
+      
       <title>{title}</title>
       <meta name="description" content={description} />
 

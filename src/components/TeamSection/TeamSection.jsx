@@ -4,31 +4,31 @@ import "./TeamSection.css";
 const teamMembers = [
   {
     name: "Rameez Javed",
-    role: "CEO",
+    role: "CEO & Founder",
     image: "/images/Rameez.png",
     linkedin: "https://www.linkedin.com/in/danielreed",
   },
   {
     name: "Fawad Khan",
-    role: "Co-Founder",
+    role: "COO & Co-Founder",
     image: "/images/Fawad.png",
     linkedin: "https://www.linkedin.com/in/jamesturner",
+  },
+  {
+    name: "Shahzaib Bhatti",
+    role: "CTO MarQsoftware House",
+    image: "/images/Shahzaib.png",
+    linkedin: "https://www.linkedin.com/in/michaelcarter",
   },
   {
     name: "Daniel Wimberly",
     role: "Regional Partner",
     image: "/images/Daniel.png",
-    linkedin: "https://www.linkedin.com/in/michaelcarter",
-  },
-  {
-    name: "Shahzaib Bhatti",
-    role: "CEO MarQsoftware House",
-    image: "/images/Shahzaib.png",
     linkedin: "https://www.linkedin.com/in/williamscott",
   },
   {
     name: "Maheen Malik",
-    role: "Junior Partner",
+    role: "CMO & Junior Partner",
     image: "/images/Maheen.png",
     linkedin: "https://www.linkedin.com/in/ethanmitchell",
   },

@@ -14,12 +14,14 @@ const MarqButton = dynamic(() => import("../MarqButton/MarqButton"), {
 const Hero = () => {
   const [animateHead, setAnimateHead] = useState(false);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setAnimateHead(true);
-    }, 500); // enough to not block LCP
-    return () => clearTimeout(timeout);
-  }, []);
+ useEffect(() => {
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => setAnimateHead(true));
+  } else {
+    setTimeout(() => setAnimateHead(true), 300); // fallback
+  }
+}, []);
+
 
   return (
     <section className="hero">

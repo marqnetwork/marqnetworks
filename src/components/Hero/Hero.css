@@ -20,6 +20,8 @@
   flex-direction: column;
   gap: 10px;
   text-align: left;
+   min-height: 200px;
+     height: auto;
 }
 .heading-line {
   opacity: 0;

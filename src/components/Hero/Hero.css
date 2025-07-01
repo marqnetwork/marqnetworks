@@ -23,6 +23,12 @@
    min-height: 200px;
      height: auto;
 }
+.hero__para {
+  content-visibility: auto;
+  contain: layout paint style;
+  min-height: 90px; 
+}
+
 .heading-line {
   opacity: 0;
   transform: translateY(30%);

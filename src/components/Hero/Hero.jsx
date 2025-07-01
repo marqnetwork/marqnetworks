@@ -14,18 +14,39 @@ const MarqButton = dynamic(() => import("../MarqButton/MarqButton"), {
 });
 
 const Hero = () => {
+  const headingVariant = {
+  initial: { y: "100%", opacity: 0 },
+  animate: {
+    y: "0%",
+    opacity: 1,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
   return (
     <section className="hero">
       <div className="hero__container">
         <div className="hero__content">
-          <motion.h2
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            Premium Digital Partner <br />
-            <span> for Visionary Brands</span>
-          </motion.h2>
+        <h2 className="hero-heading">
+  <motion.span
+    className="heading-line"
+    initial="initial"
+    animate="animate"
+    variants={headingVariant}
+  >
+    Premium Digital Partner
+  </motion.span>
+  <motion.span
+    className="heading-line"
+    initial="initial"
+    animate="animate"
+    variants={headingVariant}
+    transition={{ delay: 0.15, duration: 0.8, ease: "easeOut" }}
+  >
+    for Visionary Brands
+  </motion.span>
+</h2>
+
 
           <motion.p
             initial={{ x: -20, opacity: 0.6, filter: "blur(4px)" }}

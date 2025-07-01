@@ -10,6 +10,23 @@
   background-repeat: no-repeat;
   overflow: hidden;
 }
+.hero-heading {
+  font-size: 86px;
+  font-weight: 400;
+  line-height: 90px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.heading-line {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 .hero__video {
   position: absolute;
   top: 0;

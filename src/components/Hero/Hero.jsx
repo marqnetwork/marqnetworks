@@ -1,6 +1,6 @@
 "use client";
 
-import React, { memo } from "react";
+import React, { useEffect, useState, memo } from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import "./Hero.css";
@@ -14,39 +14,37 @@ const MarqButton = dynamic(() => import("../MarqButton/MarqButton"), {
 });
 
 const Hero = () => {
-  const headingVariant = {
-  initial: { y: "100%", opacity: 0 },
-  animate: {
-    y: "0%",
-    opacity: 1,
-    transition: { duration: 0.8, ease: "easeOut" },
-  },
-};
+  const [startAnimation, setStartAnimation] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setStartAnimation(true);
+    }, 500); // Delay to avoid LCP blocking
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <section className="hero">
       <div className="hero__container">
         <div className="hero__content">
-        <h2 className="hero-heading">
-  <motion.span
-    className="heading-line"
-    initial="initial"
-    animate="animate"
-    variants={headingVariant}
-  >
-    Premium Digital Partner
-  </motion.span>
-  <motion.span
-    className="heading-line"
-    initial="initial"
-    animate="animate"
-    variants={headingVariant}
-    transition={{ delay: 0.15, duration: 0.8, ease: "easeOut" }}
-  >
-    for Visionary Brands
-  </motion.span>
-</h2>
-
+          <h2 className="hero-heading">
+            <motion.span
+              className="heading-line"
+              initial={{ y: "100%", opacity: 0 }}
+              animate={startAnimation ? { y: "0%", opacity: 1 } : {}}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              Premium Digital Partner
+            </motion.span>
+            <motion.span
+              className="heading-line"
+              initial={{ y: "100%", opacity: 0 }}
+              animate={startAnimation ? { y: "0%", opacity: 1 } : {}}
+              transition={{ delay: 0.15, duration: 0.8, ease: "easeOut" }}
+            >
+              for Visionary Brands
+            </motion.span>
+          </h2>
 
           <motion.p
             initial={{ x: -20, opacity: 0.6, filter: "blur(4px)" }}
@@ -57,7 +55,7 @@ const Hero = () => {
             Transformation, Brand + Experience Design, Custom Software &
             Automation, Growth Marketing & Lead Gen, and our Off-Shore
             Excellence Hub—into one friction-free engine that helps ambitious
-            companies launch faster and scale 40 % smarter.”
+            companies launch faster and scale 40% smarter.”
           </motion.p>
 
           <div className="hero__buttons">

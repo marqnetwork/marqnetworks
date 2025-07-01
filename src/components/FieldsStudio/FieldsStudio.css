@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Poppins:wght@300;400;600&display=swap');
+
 
 .fieldsstudio {
     min-height: 80vh;
@@ -20,7 +20,7 @@
     font-size: 3.5rem;
     font-weight: 600;
     line-height: 1.2;
-    font-family: 'Poppins', sans-serif;
+ 
     text-align: left;
 }
 

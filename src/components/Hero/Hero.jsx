@@ -2,10 +2,8 @@
 
 import React, { useEffect, useState, memo } from "react";
 import dynamic from "next/dynamic";
-import { motion } from "framer-motion";
 import "./Hero.css";
 
-// Lazy load LogoSlider and MarqButton
 const LogoSlider = dynamic(() => import("../LogoSlider/LogoSlider"), {
   ssr: false,
 });
@@ -14,12 +12,12 @@ const MarqButton = dynamic(() => import("../MarqButton/MarqButton"), {
 });
 
 const Hero = () => {
-  const [startAnimation, setStartAnimation] = useState(false);
+  const [animateHead, setAnimateHead] = useState(false);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setStartAnimation(true);
-    }, 500); // Delay to avoid LCP blocking
+      setAnimateHead(true);
+    }, 500); // enough to not block LCP
     return () => clearTimeout(timeout);
   }, []);
 
@@ -27,36 +25,18 @@ const Hero = () => {
     <section className="hero">
       <div className="hero__container">
         <div className="hero__content">
-          <h2 className="hero-heading">
-            <motion.span
-              className="heading-line"
-              initial={{ y: "100%", opacity: 0 }}
-              animate={startAnimation ? { y: "0%", opacity: 1 } : {}}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              Premium Digital Partner
-            </motion.span>
-            <motion.span
-              className="heading-line"
-              initial={{ y: "100%", opacity: 0 }}
-              animate={startAnimation ? { y: "0%", opacity: 1 } : {}}
-              transition={{ delay: 0.15, duration: 0.8, ease: "easeOut" }}
-            >
-              for Visionary Brands
-            </motion.span>
+          <h2 className={`hero-heading ${animateHead ? "animate-heading" : ""}`}>
+            <span className="heading-line">Premium Digital Partner</span>
+            <span className="heading-line">for Visionary Brands</span>
           </h2>
 
-          <motion.p
-            initial={{ x: -20, opacity: 0.6, filter: "blur(4px)" }}
-            animate={{ x: 0, opacity: 1, filter: "blur(0px)" }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-          >
+          <p className="hero__para">
             “We weave our 5-Pillar Service Stack—Strategy & Digital
             Transformation, Brand + Experience Design, Custom Software &
             Automation, Growth Marketing & Lead Gen, and our Off-Shore
             Excellence Hub—into one friction-free engine that helps ambitious
             companies launch faster and scale 40% smarter.”
-          </motion.p>
+          </p>
 
           <div className="hero__buttons">
             <MarqButton className="primary-btn-hero" />

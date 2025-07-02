@@ -20,71 +20,71 @@ export const projects = [
   {
     src: "/images/web3.png",
     alt: "Customex customer satisfaction...",
-    bar: { label: "CustomeX", year: 2025, tags: ["Surveys", "Auto"] }
+    bar: { label: "Karen Swain", year: 2025, tags: ["Surveys", "Auto"] }
   },
   {
     src: "/images/web4.png",
     alt: "Small business promo...",
-    bar: { label: "IAmShan", year: 2025, tags: ["Growth", "Training"] }
+    bar: { label: "Mobileمیلا", year: 2025, tags: ["Growth", "Training"] }
   },
   {
     src: "/images/web5.png",
     alt: "IAMKaren platform...",
-    bar: { label: "IAMKaren", year: 2025, tags: ["Coaching", "SaaS"] }
+    bar: { label: "Jecourter", year: 2025, tags: ["Coaching", "SaaS"] }
   },
   {
     src: "/images/web6.png",
     alt: "Trient Trading...",
-    bar: { label: "Trient Trading", year: 2025, tags: ["Sustainability", "Materials"] }
+    bar: { label: "Ping", year: 2025, tags: ["Sustainability", "Materials"] }
   },
   {
     src: "/images/web7.png",
     alt: "Landing page UI...",
-    bar: { label: "Launchly", year: 2025, tags: ["Startups", "Landing Page"] }
+    bar: { label: "COC Firm", year: 2025, tags: ["Startups", "Landing Page"] }
   },
   {
     src: "/images/web8.png",
     alt: "Booking platform UX...",
-    bar: { label: "BookFlow", year: 2025, tags: ["Travel", "UX Design"] }
+    bar: { label: "Global Eng", year: 2025, tags: ["Travel", "UX Design"] }
   },
   {
     src: "/images/web9.png",
     alt: "Analytics dashboard...",
-    bar: { label: "DashPro", year: 2025, tags: ["Data", "Charts"] }
+    bar: { label: "ABC", year: 2025, tags: ["Data", "Charts"] }
   },
   {
     src: "/images/web10.png",
     alt: "Event site mockup...",
-    bar: { label: "EventGo", year: 2025, tags: ["Events", "Marketing"] }
+    bar: { label: "Cotax Firm", year: 2025, tags: ["Events", "Marketing"] }
   },
   {
     src: "/images/web11.png",
     alt: "Healthcare interface...",
-    bar: { label: "MediSoft", year: 2025, tags: ["Health", "UX"] }
+    bar: { label: "The Bazar", year: 2025, tags: ["Health", "UX"] }
   },
   {
     src: "/images/web12.png",
     alt: "Real estate showcase...",
-    bar: { label: "PrimeHomes", year: 2025, tags: ["Real Estate", "Listings"] }
+    bar: { label: "Albaluce", year: 2025, tags: ["Real Estate", "Listings"] }
   },
   {
     src: "/images/web13.png",
     alt: "Learning platform...",
-    bar: { label: "EduQuest", year: 2025, tags: ["Courses", "Platform"] }
+    bar: { label: "Outlet 404", year: 2025, tags: ["Courses", "Platform"] }
   },
   {
     src: "/images/web14.png",
     alt: "Fitness app UX...",
-    bar: { label: "FitPulse", year: 2025, tags: ["Fitness", "Mobile"] }
+    bar: { label: "Bond interior", year: 2025, tags: ["Fitness", "Mobile"] }
   },
   {
     src: "/images/web15.png",
     alt: "Crypto wallet site...",
-    bar: { label: "BlockSafe", year: 2025, tags: ["Crypto", "Security"] }
+    bar: { label: "SA", year: 2025, tags: ["Crypto", "Security"] }
   },
   {
     src: "/images/web16.png",
     alt: "Photography portfolio...",
-    bar: { label: "PhotoFrame", year: 2025, tags: ["Creative", "Photography"] }
+    bar: { label: "Bob Mills", year: 2025, tags: ["Creative", "Photography"] }
   },
 ];

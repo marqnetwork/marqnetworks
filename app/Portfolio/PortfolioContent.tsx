@@ -4,6 +4,7 @@ import ExplorePortfolio from '@/components/ExplorePortfolio/ExplorePortfolio';
 import PortfolioFAQ from '@/components/PortfolioFAQ/PortfolioFAQ';
 import JoinUsNow from '@/components/JoinUsNow/JoinUsNow';
 import StackingNewCard from '@/components/StackingCardsNew/stackingnewCard';
+import StackingCardApp from '@/components/StackingCardApp/stackingnewCard' 
 
 const Portfolio = () => {
   return (
@@ -12,7 +13,7 @@ const Portfolio = () => {
 
       {/* Portfolio Stacks */}
       <div className="portfolio__stack-wrapper">
-        <StackingNewCard />
+        <StackingCardApp  />
       </div>
 
       <div className="portfolio__stack-wrapper">

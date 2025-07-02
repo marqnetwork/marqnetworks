@@ -10,7 +10,7 @@ export const projects = [
   {
     src: "/images/web1.png",
     alt: "Exceloeus homepage...",
-    bar: { label: "Exceloeus", year: 2025, tags: ["Federal", "UI/UX"] }
+    bar: { label: "Exceloeus", year: 2025, tags: ["Business", "Contracts"] }
   },
   {
     src: "/images/web2.png",

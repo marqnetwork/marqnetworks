@@ -10,31 +10,31 @@ export const projects = [
   {
     src: "/images/app1.png",
     alt: "Exceloeus homepage...",
-    bar: { label: "Exceloeus", year: 2025, tags: ["Federal", "UI/UX"] }
+    bar: { label: "Ping", year: 2025, tags: ["Business", "Contracts"] }
   },
   {
     src: "/images/app2.png",
     alt: "Customex mystery shopping...",
-    bar: { label: "CustomeX", year: 2025, tags: ["Business", "Contracts"] }
+    bar: { label: "MarQFitness", year: 2025, tags: ["Business", "Contracts"] }
   },
   {
     src: "/images/app3.png",
     alt: "Customex customer satisfaction...",
-    bar: { label: "CustomeX", year: 2025, tags: ["Surveys", "Auto"] }
+    bar: { label: "GPS", year: 2025, tags: ["Business", "Contracts"] }
   },
   {
     src: "/images/app4.png",
     alt: "Small business promo...",
-    bar: { label: "IAmShan", year: 2025, tags: ["Growth", "Training"] }
+    bar: { label: "Jecourter", year: 2025, tags: ["Business", "Contracts"] }
   },
   {
     src: "/images/app5.png",
     alt: "IAMKaren platform...",
-    bar: { label: "IAMKaren", year: 2025, tags: ["Coaching", "SaaS"] }
+    bar: { label: "Comma Clothing", year: 2025, tags: ["Business", "Contracts"] }
   },
   {
     src: "/images/app6.png",
     alt: "Trient Trading...",
-    bar: { label: "Trient Trading", year: 2025, tags: ["Sustainability", "Materials"] }
+    bar: { label: "Bob Mills", year: 2025, tags: ["Business", "Contracts"] }
   },
 ];

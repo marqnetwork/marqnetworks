@@ -21,7 +21,7 @@
   width: 1000px;
   height: 500px;
   border-radius: 25px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .cardImage {
@@ -34,7 +34,7 @@
 
 .bottomOverlay {
   position: absolute;
-  bottom: 10;
+  bottom: 10px;
       left: 80px;
     right: 80px;
   
@@ -42,6 +42,7 @@
   background: rgba(13,13,13,255); 
   backdrop-filter: blur(6px);
   border-radius: 50px;
+   z-index: 5; 
 }
 
 /* Bottom Bar Styling */

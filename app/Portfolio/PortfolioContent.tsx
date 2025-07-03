@@ -3,9 +3,15 @@ import React from 'react';
 import ExplorePortfolio from '@/components/ExplorePortfolio/ExplorePortfolio';
 import PortfolioFAQ from '@/components/PortfolioFAQ/PortfolioFAQ';
 import JoinUsNow from '@/components/JoinUsNow/JoinUsNow';
-import StackingNewCard from '@/components/StackingCardsNew/stackingnewCard';
+// import StackingNewCard from '@/components/StackingCardsNew/stackingnewCard';
 import StackingCardApp from '@/components/StackingCardApp/stackingnewCard'; 
-import StackingCardWeb from '@/components/StackingCardWeb/stackingnewCard'
+import StackingCardWeb from '@/components/StackingCardWeb/stackingnewCard';
+import StackingCardSocial from '@/components/StackingCardSocial/stackingnewCard';
+import StackingCardGraphics from '@/components/StackingCardGraphics/stackingnewCard';
+import StackingCardMerchandise from '@/components/StackingCardMerchandise/stackingnewCard';
+import StackingCardLogos from '@/components/StackingCardLogos/stackingnewCard';
+
+
 
 const Portfolio = () => {
   return (
@@ -22,10 +28,19 @@ const Portfolio = () => {
       </div>
 
       <div className="portfolio__stack-wrapper">
-        <StackingNewCard />
+        <StackingCardSocial />
+      </div>
+      <div className="portfolio__stack-wrapper">
+        <StackingCardGraphics />
+      </div>
+      <div className="portfolio__stack-wrapper">
+        <StackingCardMerchandise />
+      </div>
+      <div className="portfolio__stack-wrapper">
+        <StackingCardLogos />
       </div>
 
-      <br /><br />
+      
 
       <PortfolioFAQ />
 

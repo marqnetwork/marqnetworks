@@ -1,12 +1,12 @@
 
 export const projects = [
   {
-    src: "/images/app1.png",
+    src: "/images/social1.png",
     alt: "Exceloeus homepage...",
     bar: { label: "CustomeX", year: 2025, tags: ["Business", "Contracts"] }
   },
   {
-    src: "/images/app2.png",
+    src: "/images/social2.png",
     alt: "Customex mystery shopping...",
     bar: { label: "Karen Swain", year: 2025, tags: ["Business", "Contracts"] }
   },

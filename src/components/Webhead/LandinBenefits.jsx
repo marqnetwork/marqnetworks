@@ -6,14 +6,15 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 const benefitTags = [
-  "Faster Time-to-App Store",
-  "AI-Driven Personalization",
-  "Conversion-Focused UX",
-  "Scalable Cloud Back-End",
-  "Secure & Compliant",
-  "SEO-Ready App Store",
-  "Listing Analytics + CRM Integration",
-  "Future-Proof Code (React Native / Flutter)"
+ "Built-In Wins",
+  "Conversion-Focused UI / UX",
+  "Lightning-Fast Core Web Vitals",
+  "AI-Ready Content Blocks",
+  "SEO & Schema Optimised",
+  "WordPress / Headless / Next.js",
+  "Secure, GDPR / CCPA Compliant",
+  "CRM + Funnel Integration",
+  "45-Day Launch Guarantee"
 ];
 
 
@@ -29,11 +30,11 @@ const LandinBenefits = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.5 }}
       >
-        <span>We Don’t Just Code—We Craft Revenue Engines.</span> <span>From first click to final checkout, your site works 24/7 so you don’t have to.</span>
+        <span>We Don’t Just Code</span> <span>We Craft Revenue Engines.</span>
       </motion.h1>
 
       <h2 className="benefits__subheading">
-        If you can dream it, we’ll make the app that moves the needle.
+       From first click to final checkout, your site works 24/7 so you don’t have to.
       </h2>
 
       <div className="benefits__tags">

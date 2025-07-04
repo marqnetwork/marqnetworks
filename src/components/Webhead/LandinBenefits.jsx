@@ -20,7 +20,7 @@ const benefitTags = [
 const LandinBenefits = () => {
   return (
     <section className="benefits__section">
-      <div className="benefits__label">• MarQ Mobile Apps</div>
+      <div className="benefits__label">• MarQ Websites</div>
 
       <motion.h1
         className="benefits__heading"
@@ -29,7 +29,7 @@ const LandinBenefits = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.5 }}
       >
-        <span>We Don’t Just Design</span> <span>We Engineer Momentum.</span>
+        <span>We Don’t Just Code—We Craft Revenue Engines.</span> <span>From first click to final checkout, your site works 24/7 so you don’t have to.</span>
       </motion.h1>
 
       <h2 className="benefits__subheading">

@@ -10,6 +10,10 @@ import StackingCardSocial from '@/components/StackingCardSocial/stackingnewCard'
 import StackingCardGraphics from '@/components/StackingCardGraphics/stackingnewCard';
 import StackingCardMerchandise from '@/components/StackingCardMerchandise/stackingnewCard';
 import StackingCardLogos from '@/components/StackingCardLogos/stackingnewCard';
+import Mobilehead from '@/components/Mobilehead/LandinBenefits';
+import Webhead from '@/components/Webhead/LandinBenefits';
+
+
 
 
 
@@ -18,10 +22,13 @@ const Portfolio = () => {
     <div className="portfolio">
       <ExplorePortfolio />
 
-      {/* Portfolio Stacks */}
+      <Mobilehead/>
+
       <div className="portfolio__stack-wrapper">
         <StackingCardApp  />
       </div>
+
+      <Webhead/>
 
       <div className="portfolio__stack-wrapper">
         <StackingCardWeb />

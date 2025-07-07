@@ -14,6 +14,8 @@ import Mobilehead from '@/components/Mobilehead/LandinBenefits';
 import Webhead from '@/components/Webhead/LandinBenefits';
 import Socialhead from '@/components/Socialhead/LandinBenefits';
 import Graphichead from '@/components/Graphichead/LandinBenefits';
+import Merchandisehead from '@/components/Merchandisehead/LandinBenefits';
+import Logohead from '@/components/Logohead/LandinBenefits';
 
 
 
@@ -46,9 +48,14 @@ const Portfolio = () => {
       <div className="portfolio__stack-wrapper">
         <StackingCardGraphics />
       </div>
+
+       <Merchandisehead/>
       <div className="portfolio__stack-wrapper">
         <StackingCardMerchandise />
       </div>
+
+      <Logohead/>
+      
       <div className="portfolio__stack-wrapper">
         <StackingCardLogos />
       </div>

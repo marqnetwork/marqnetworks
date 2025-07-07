@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import "./Navbar.css";
+import MarqButton from "../MarqButton/MarqButton";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,7 +54,8 @@ const Navbar = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <button className="navbar__button">Meet MarQ Networks</button>
+        
+        <MarqButton className="navbar__button"/>
       </a>
     </nav>
     // </div>

@@ -80,8 +80,8 @@ const LogoSlider = () => {
               alt={logo.alt}
               // loading="eager"
               loading="lazy"
-              width="120"
-  height="40"
+              width="100"
+  height="30"
             />
           </div>
         ))}

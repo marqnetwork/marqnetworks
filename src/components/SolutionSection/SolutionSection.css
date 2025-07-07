@@ -11,7 +11,7 @@
 
 .solution-container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 20 auto;
   display: flex;
   flex-direction: column;
   align-items: center;

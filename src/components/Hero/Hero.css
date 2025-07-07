@@ -1,7 +1,7 @@
 .hero {
   position: relative;
   min-height: 100vh;
-  margin-top: -85px;
+  /* margin-top: -85px; */
   display: flex;
   /* margin-top: -200px; */
   align-items: center;
@@ -12,16 +12,16 @@
   overflow: hidden;
 }
 .hero-heading {
-  font-size: 86px;
+  font-size: 80px;
   font-weight: 400;
-  line-height: 90px;
+  line-height: 50px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 10px;
   text-align: left;
-   min-height: 200px;
-     height: auto;
+  min-height: 100px;
+  height: auto;
 }
 .hero__para {
   content-visibility: auto;
@@ -52,7 +52,7 @@
 
 .heading-line {
   display: inline-block;
-  overflow: hidden;
+  /* overflow: hidden; */
   white-space: nowrap;
 }
 
@@ -120,8 +120,8 @@
 
 
 .hero__buttons {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  /* margin-top: 3rem; */
+  margin-bottom: 2rem;
   display: flex;
   gap: 1rem;
   /* margin: 20px 0px; */

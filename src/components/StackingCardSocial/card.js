@@ -5,7 +5,7 @@ import BottomBar from './BottomBar';
 
 const Card = ({ src, alt, i, bar }) => {
   return (
-    <div className={styles.cardContainer} style={{ top: `calc(-5vh + ${i * 25}px)` }}>
+    <div className={styles.cardContainer} >
       <div className={styles.cardOverlayContainer}>
         <img
           src={src}

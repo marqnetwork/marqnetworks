@@ -13,6 +13,7 @@ import StackingCardLogos from '@/components/StackingCardLogos/stackingnewCard';
 import Mobilehead from '@/components/Mobilehead/LandinBenefits';
 import Webhead from '@/components/Webhead/LandinBenefits';
 import Socialhead from '@/components/Socialhead/LandinBenefits';
+import Graphichead from '@/components/Graphichead/LandinBenefits';
 
 
 
@@ -40,6 +41,8 @@ const Portfolio = () => {
       <div className="portfolio__stack-wrapper">
         <StackingCardSocial />
       </div>
+
+         <Graphichead/>
       <div className="portfolio__stack-wrapper">
         <StackingCardGraphics />
       </div>

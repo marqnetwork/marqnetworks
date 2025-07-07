@@ -5,22 +5,23 @@ import "../Mobilehead/LandinBenefits.css";
 import { motion } from "framer-motion";
 
 const tags = [
-  "Built-In Wins",
-  "Conversion-Focused UI / UX",
-  "Lightning-Fast Core Web Vitals",
-  "AI-Ready Content Blocks",
-  "SEO & Schema Optimised",
-  "WordPress / Headless / Next.js",
-  "Secure, GDPR / CCPA Compliant",
-  "CRM + Funnel Integration",
-  "45-Day Launch Guarantee"
+  "Strategic Content Calendars",
+  "On-Brand Reels, Shorts & Carousels",
+  "AI-Driven Topic & Trend Mining",
+  "Paid-Ad Funnel Alignment",
+  "LinkedIn + IG + TikTok Specialists",
+  "Community Management & Support",
+  "CRM & Email List Sync",
+  "Real-Time Analytics Dashboards"
 ];
+
 
 
 const LandinBenefits = () => {
   return (
     <section className="mobile-benefits">
-      <div className="mobile-benefits__label">• MarQ Websites
+      <div className="mobile-benefits__label">• MarQ Social Media
+
 </div>
 
       <motion.h1
@@ -30,11 +31,11 @@ const LandinBenefits = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.5 }}
       >
-        <span>We Don’t Just Code</span> <span>We Craft Revenue Engines.</span>
+        <span>We Don’t Just Post</span> <span>We Ignite Conversations.</span>
       </motion.h1>
 
       <h2 className="mobile-benefits__subtitle">
-        From first click to final checkout, your site works 24/7 so you don’t have to.
+        Turn every scroll into a story, every like into lasting revenue.
       </h2>
 
       <div className="mobile-benefits__tags">

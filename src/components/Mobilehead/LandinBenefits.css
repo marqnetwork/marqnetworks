@@ -11,7 +11,7 @@
 .mobile-benefits__label {
   display: inline-block;
   background: #111;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 400;
   padding: 8px 18px;
   border-radius: 8px;
@@ -49,8 +49,8 @@
 .mobile-benefits__tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin: 5px 0;
+  gap: 5px;
+  margin: 2px 0;
   max-width: 800px;
   justify-content: flex-start;
 }
@@ -59,28 +59,12 @@
   background: #111;
   color: #ddd;
   font-size: 0.8rem;
-  padding: 2px;
+  padding: 5px;
   border-radius: 10px;
   transition: 0.3s ease;
   box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
 }
 
-.mobile-benefits__cta {
-  background: #fff;
-  color: #000;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1);
-  transition: 0.3s ease;
-}
-
-.mobile-benefits__cta:hover {
-  transform: translateY(-2px);
-}
 
 /* Tablet */
 @media (max-width: 992px) {

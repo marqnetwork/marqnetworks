@@ -4,9 +4,9 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
-  padding: 4rem 3rem;
+  /* padding: 4rem 3rem; */
   max-width: 1200px;
-  margin: 100px auto 0;
+  margin: 10px auto 0;
 }
 
 .join__content {

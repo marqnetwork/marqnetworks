@@ -1,64 +1,54 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import MarqButton from "../MarqButton/MarqButton";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
+  }, [isMenuOpen]);
 
   return (
-    // <div className="bg-[#000]">
     <nav className="navbar">
+      {/* Left: Logo */}
       <div className="navbar__logo">
-        <img src="/images/logo.svg" alt="MarQ Networks logo—AI-driven digital growth partner for visionary brands" />
-        <div>
-          <ul
-            className={`navbar__menu ${
-              isMenuOpen ? "navbar__menu--active" : ""
-            }`}
-          >
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/About">About</a>
-            </li>
-            <li>
-              <a href="/Solution">Solutions</a>
-            </li>
-            <li>
-              <a href="/Portfolio">Portfolio</a>
-            </li>
-            <li>
-              <a href="/Contact">Contact</a>
-            </li>
-           
-          </ul>
-        </div>
+        <img
+          src="/images/logo.svg"
+          alt="MarQ Networks logo—AI-driven digital growth partner for visionary brands"
+        />
       </div>
 
-      {/* Hamburger Icon */}
-      <div className="navbar__hamburger" onClick={toggleMenu}>
-        &#9776;
-      </div>
-
-      {/* Navigation Links */}
-
-      {/* CTA Button */}
-      <a
-        href="https://marqnetworks.zohobookings.com/#/business-consultation"
-        target="_blank"
-        rel="noopener noreferrer"
+      {/* Center: Menu */}
+      <ul
+        className={`navbar__menu ${
+          isMenuOpen ? "navbar__menu--active" : ""
+        }`}
       >
-        
-        <MarqButton className="navbar__button"/>
-      </a>
+        <li><a href="/">Home</a></li>
+        <li><a href="/About">About</a></li>
+        <li><a href="/Solution">Solutions</a></li>
+        <li><a href="/Portfolio">Portfolio</a></li>
+        <li><a href="/Contact">Contact</a></li>
+      </ul>
+
+      {/* Right: Hamburger & Button */}
+      <div className="navbar__right">
+        <div className="navbar__hamburger" onClick={toggleMenu}>
+          {isMenuOpen ? "×" : "☰"}
+        </div>
+        <a
+          href="https://marqnetworks.zohobookings.com/#/business-consultation"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <MarqButton className="navbar__button" />
+        </a>
+      </div>
     </nav>
-    // </div>
   );
 };
 

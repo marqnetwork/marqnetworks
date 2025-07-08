@@ -3,8 +3,7 @@
   background-size: cover;
   background-position: center center;
   color: white;
-  font-family: "Poppins", sans-serif;
-
+  padding: 0 2rem;
 }
 
 .footer__top {
@@ -12,11 +11,15 @@
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 2rem;
   margin-bottom: 2rem;
   padding-top: 7%;
-  /* height:50vh; */
+}
+
+.footer__column {
+  flex: 1 1 300px;
+  min-width: 280px;
 }
 
 .footer__logo {
@@ -24,10 +27,23 @@
   margin-bottom: 2rem;
 }
 
+.footer__headline {
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.text_footer {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #ccc;
+}
+
 .footer__subscribe {
   display: flex;
   gap: 0.5rem;
   margin-top: 40px;
+  flex-wrap: wrap;
 }
 
 .footer__subscribe input {
@@ -35,16 +51,16 @@
   border-radius: 6px;
   border: 1px solid #333;
   outline: none;
-  min-width: 100px;
+  /* flex: 1 1 200px; */
+  min-width: 200px;
 }
 
 .footer__subscribe button {
   background-color: #39ff14;
   color: black;
-  padding: 0.4rem 1rem;
+  padding: 0.6rem 1.2rem;
   border: none;
   border-radius: 6px;
-
   cursor: pointer;
   white-space: nowrap;
   border-color: rgba(255, 255, 255, 0.15);
@@ -64,13 +80,24 @@
 .footer__right ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer__middle li,
 .footer__right li {
   margin-bottom: 0.5rem;
   color: #ccc;
-  cursor: pointer;
+}
+
+.footer__middle li a,
+.footer__right li a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer__middle li a:hover,
+.footer__right li a:hover {
+  color: #fff;
 }
 
 .footer__sales {
@@ -87,6 +114,7 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .footer__social-sales {
@@ -102,71 +130,68 @@
   margin-top: 15px;
 }
 
-.footer__video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
 .footer__bottom {
   display: flex;
-  /* width: 1200px; */
-  margin: 0 auto;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
   border-top: 1px solid #222;
-
+  padding: 20px 0;
   font-size: 0.9rem;
   color: #888;
- padding: 20px 0px;
+  text-align: center;
 }
-.text_footer{
-  margin-top: 15px;
-  font-size: 12px;
-}
+
 .footer__links a {
-  margin-left: 1rem;
+  margin: 0 1rem;
   color: #888;
   text-decoration: none;
-  margin-right: 2rem;
 }
 
 .footer__links a:hover {
   color: #fff;
 }
 
-/* Responsive */
+/* -------------------- */
+/* 📱 Responsive Styles */
+/* -------------------- */
 @media (max-width: 768px) {
   .footer {
-    padding: 20px;
+    padding: 40px 1rem;
   }
+
   .footer__top {
     flex-direction: column;
+    gap: 2rem;
   }
 
-  .footer__bottom {
+  .footer__subscribe {
     flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    text-align: center;
-    
   }
 
-  
-
-  .footer__subscribe input,
+ 
   .footer__subscribe button {
     width: 100%;
+    
   }
 
   .footer__right-top {
     flex-direction: column;
-    align-items: flex-start;
   }
 
   .video__container {
     width: 100%;
-    height: auto;
+    height: 100px;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer__links a {
+    margin: 0 0.5rem;
   }
 }

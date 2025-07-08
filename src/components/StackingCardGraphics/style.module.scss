@@ -2,8 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  // gap: 80px;
-  // padding: 50px 0;
   position: relative;
 }
 
@@ -13,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 600px;
 }
 
 .cardOverlayContainer {
@@ -35,63 +33,63 @@
 .bottomOverlay {
   position: absolute;
   bottom: 1px;
-      left: 80px;
-    right: 80px;
-  
+  left: 80px;
+  right: 80px;
   padding: 12px 20px;
-  background: rgba(13,13,13,255); 
+  background: rgba(13, 13, 13, 255);
   backdrop-filter: blur(6px);
-   border-radius: 8px;
-   z-index: 5; 
+  border-radius: 8px;
+  z-index: 5;
 }
 
 /* Bottom Bar Styling */
 .bottomBar {
   width: 100%;
+}
 
-  .barContent {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    width: 100%;
-  }
+.bottomBar .barContent {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+}
 
-  .leftSection {
-    color: white;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.bottomBar .leftSection {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
-    .label {
-     font-size: 14px;
-      color: rgba(255,255,255,255);
-      background:  rgba(8,8,8,255);
-      border: 0.5px solid white;
-      padding: 6px 14px;
-      border-radius: 8px;
-    }
+.bottomBar .label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 255);
+  background: rgba(8, 8, 8, 255);
+  border: 0.5px solid white;
+  padding: 6px 14px;
+  border-radius: 8px;
+}
 
-    .year {
-      font-size: 14px;
-      color: #aaa;
-      background:  rgba(8,8,8,255);
-      border: 1px solid white;
-      padding: 6px 14px;
-      border-radius: 8px;
-    
-    }
-  }
+.bottomBar .year {
+  font-size: 14px;
+  color: #aaa;
+  background: rgba(8, 8, 8, 255);
+  border: 1px solid white;
+  padding: 6px 14px;
+  border-radius: 8px;
+}
 
-  .progressWrapper {
-    flex: 1;
-    height: 30px;
-    background: #1e1e1e;
-    border-radius: 10px;
-    overflow: hidden;
-    min-width: 200px;
+.bottomBar .progressWrapper {
+  flex: 1;
+  height: 30px;
+  background: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  min-width: 200px;
+}
 
-  .progressBar {
+.bottomBar .progressBar {
   height: 100%;
   width: 100%;
   background: repeating-linear-gradient(
@@ -103,32 +101,29 @@
   );
   background-size: 200% auto;
   animation: moveStripes 16s linear infinite;
-  border: 4px solid rgba(18,22,17,1);
+  border: 4px solid rgba(18, 22, 17, 1);
   border-radius: 10px;
 }
 
-  }
+.bottomBar .rightSection {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 
-  .rightSection {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+.bottomBar .tag {
+  background: #1e1e1e;
+  color: #ccc;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
 
-    .tag {
-      background: #1e1e1e;
-      color: #ccc;
-      border: none;
-      padding: 6px 14px;
-      border-radius: 8px;
-      font-size: 14px;
-      cursor: pointer;
-      transition: 0.3s ease;
-
-      &:hover {
-        background: #2c2c2c;
-      }
-    }
-  }
+.bottomBar .tag:hover {
+  background: #2c2c2c;
 }
 
 @keyframes moveStripes {
@@ -137,5 +132,58 @@
   }
   100% {
     background-position: 0% 0;
+  }
+}
+
+/* 🔽 Mobile Responsive CSS */
+@media (max-width: 768px) {
+  .main {
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .cardOverlayContainer {
+    width: 90%;
+    height: 320px; /* Increased height from auto to a taller value */
+  }
+
+  .cardContainer{
+    height: 55vh;
+  }
+
+  .cardImage {
+    height: 100%; /* Ensure image fills new height */
+  }
+
+  .bottomOverlay {
+    left: 10px;
+    right: 10px;
+    padding: 5px 20px;
+    margin-bottom: 20px;
+  }
+
+  .bottomBar .barContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+
+  .bottomBar .progressWrapper {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .bottomBar .rightSection {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+
+  .bottomBar .label,
+  .bottomBar .year,
+  .bottomBar .tag {
+    font-size: 10px;
+    padding: 2px 5px;
+    
   }
 }

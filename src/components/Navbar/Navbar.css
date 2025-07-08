@@ -1,75 +1,73 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 .navbar {
-  z-index: 999;
-  position: sticky;
-  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  background-color: rgba(0, 0, 0, 0.85); /* Add a background so it doesn't look broken when scrolling */
-  color: white;
   width: 100%;
-  padding: 0 3rem;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
 }
 
-
-.navbar__logo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-shrink: 0;
-}
-
+/* Left Logo */
 .navbar__logo img {
-  width: 200px;
-  height: fit-content;
-  object-fit: fill;
+  width: 180px;
+  height: auto;
+  object-fit: contain;
 }
 
+/* Center Menu */
 .navbar__menu {
   display: flex;
   list-style: none;
   gap: 40px;
-  margin-left: 40px;
 }
 
 .navbar__menu li a {
   text-decoration: none;
-  color: rgb(255, 255, 255);
-  opacity: 0.5;
+  color: white;
+  opacity: 0.6;
   font-weight: 400;
-  transition: color 0.3s;
-  size: 16px;
+  font-size: 16px;
+  transition: 0.3s ease;
 }
 
 .navbar__menu li a:hover {
+  opacity: 1;
   color: #ccc;
 }
 
+/* Right Buttons */
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Button */
 .navbar__button {
   background-color: #39ff14;
   color: black;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 10px 16px;
   border-radius: 6px;
-
-  border-color: rgba(255, 255, 255, 0.15);
   font-size: 14px;
-  border-style: solid;
-  backdrop-filter: none;
   box-shadow: 0 5px 15px #39ff14;
+  cursor: pointer;
 }
 
+/* Hamburger */
 .navbar__hamburger {
   display: none;
   font-size: 28px;
@@ -77,63 +75,64 @@
   color: white;
 }
 
-@media (max-width: 768px) {
-  .navbar > a {
-    display: none;
-  }
-  .navbar {
-    width: 100%;
-    height: 100px;
-    padding: 0 1rem;
-  }
+/* ------------------------------- */
+/* Responsive Styles               */
+/* ------------------------------- */
 
-  .navbar__hamburger {
-    display: block;
-  }
-
-  .navbar__menu {
-    display: none;
-    position: absolute;
-    top: 72px;
-    right: 0;
-    background: black;
-    flex-direction: column;
-    width: 100%;
-    padding: 1rem 2rem;
-    z-index: 99;
-    align-items: center;
-    text-align: center;
-  }
-
-  .navbar__menu--active {
-    display: flex;
-    background-color: white;
-    z-index: 100;
-  }
-  .navbar__menu li a{
-    color: black;
-  }
-  .navbar__button {
-    display: none;
-  }
-}
 @media (max-width: 1024px) {
   .navbar {
-    width: 100%;
     padding: 0 1.5rem;
-  }
-
-  .navbar__menu {
-    gap: 24px;
-    margin-left: 0;
   }
 
   .navbar__logo img {
     width: 160px;
   }
 
+  .navbar__menu {
+    gap: 24px;
+  }
+
   .navbar__button {
     padding: 8px 14px;
     font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 70px;
+    padding: 0 1rem;
+  }
+
+  .navbar__menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: #fff;
+    padding: 1rem 0;
+    gap: 1.2rem;
+    z-index: 1000;
+    text-align: center;
+  }
+
+  .navbar__menu--active {
+    display: flex;
+  }
+
+  .navbar__menu li a {
+    color: black;
+    font-size: 16px;
+    opacity: 1;
+  }
+
+  .navbar__hamburger {
+    display: block;
+  }
+
+  .navbar__button {
+    display: none;
   }
 }

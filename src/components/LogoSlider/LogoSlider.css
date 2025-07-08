@@ -32,8 +32,38 @@
 }
 
 
+/* 📱 Mobile responsiveness */
+@media (max-width: 768px) {
+  .logo-slider {
+    width: 100%;
+    padding: 1.5rem 0;
+  }
+
+  .logo-item img {
+    height: 70px;
+  }
+}
+
 @media (max-width: 576px) {
   .logo-slider {
-    padding: 0px;
+    padding: 1rem 0;
+  }
+
+  .logo-item {
+    padding: 0 0.75rem;
+  }
+
+  .logo-item img {
+    height: 60px;
+  }
+}
+
+@media (max-width: 375px) {
+  .logo-item img {
+    height: 50px;
+  }
+
+  .logo-item {
+    padding: 0 0.5rem;
   }
 }

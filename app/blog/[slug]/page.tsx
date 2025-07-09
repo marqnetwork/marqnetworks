@@ -1,4 +1,5 @@
-import { fetchPost } from '../../lib/fetchPost';
+// app/blog/[slug]/page.tsx
+import { fetchPost } from '@/app/lib/fetchPost';
 
 export async function generateStaticParams() {
   const res = await fetch('http://localhost/wordpress/wp-json/wp/v2/posts');
@@ -9,7 +10,6 @@ export async function generateStaticParams() {
   }));
 }
 
-
 export default async function Page({
   params,
 }: {
@@ -18,10 +18,10 @@ export default async function Page({
   const post = await fetchPost(params.slug);
 
   return (
-    <article style={{ padding: '2rem', color: 'white', backgroundColor: 'black' }}>
+    <article style={{ padding: "2rem", color: "white", backgroundColor: "black" }}>
       <h1
         dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-        style={{ color: 'white' }}
+        style={{ color: "white" }}
       />
       <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
     </article>

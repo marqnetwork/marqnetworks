@@ -1,3 +1,5 @@
+import { fetchPost } from '../../lib/fetchPost';
+
 export async function generateStaticParams() {
   const res = await fetch('http://localhost/wordpress/wp-json/wp/v2/posts');
   const posts = await res.json();
@@ -7,13 +9,12 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function fetchPost(slug: string) {
-  const res = await fetch(`http://localhost/wordpress/wp-json/wp/v2/posts?slug=${slug}&_embed`);
-  const post = await res.json();
-  return post[0];
-}
 
-export default async function BlogPost({ params }: { params: { slug: string } }) {
+export default async function Page({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const post = await fetchPost(params.slug);
 
   return (

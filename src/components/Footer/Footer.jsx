@@ -29,7 +29,7 @@ const Footer = () => {
                 placeholder="Your work e-mail…"
                 autoComplete="off"
               />
-              <MarqButton />
+              <MarqButton className="navbar__button"/>
             </div>
           </div>
 

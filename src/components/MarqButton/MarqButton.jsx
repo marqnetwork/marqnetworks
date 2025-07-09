@@ -1,7 +1,15 @@
 // src/components/MarqButton.jsx
+"use client";
 import React from "react";
 
-const MarqButton = ({ className = "", style = {} }) => {
+const MarqButton = ({
+  href = "https://marqnetworks.zohobookings.com/#/business-consultation",
+  target = "_blank",
+  rel = "noopener noreferrer",
+  className = "",
+  style = {},
+  children = "Meet MarQ Networks",
+}) => {
   const defaultStyle = {
     fontWeight: 500,
     ...style,
@@ -9,13 +17,13 @@ const MarqButton = ({ className = "", style = {} }) => {
 
   return (
     <a
-      href="https://marqnetworks.zohobookings.com/#/business-consultation"
-      target="_blank"
-      rel="noopener noreferrer"
+      href={href}
+      target={target}
+      rel={rel}
       className={className}
       style={defaultStyle}
     >
-      Meet MarQ Networks
+      {children}
     </a>
   );
 };

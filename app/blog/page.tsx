@@ -1,16 +1,11 @@
-export async function fetchPosts() {
-  const res = await fetch('http://localhost/wordpress/wp-json/wp/v2/posts?_embed');
-  return res.json();
-}
+import { fetchPosts } from "../lib/fetchPost";
 
 export default async function Blog() {
   const posts = await fetchPosts();
 
   return (
     <main style={{ padding: '2rem', color: 'white', backgroundColor: 'black' }}>
-     <h1 style={{ color: '#39ff14', fontSize: '3rem' }}>Latest Blog Posts</h1>
-
-
+      <h1 style={{ color: '#39ff14', fontSize: '3rem' }}>Latest Blog Posts</h1>
 
       <ul style={{ listStyle: 'none', padding: 0 }}>
         {posts.map((post: any) => (

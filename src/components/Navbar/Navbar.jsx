@@ -40,13 +40,9 @@ const Navbar = () => {
         <div className="navbar__hamburger" onClick={toggleMenu}>
           {isMenuOpen ? "×" : "☰"}
         </div>
-        <a
-          href="https://marqnetworks.zohobookings.com/#/business-consultation"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        
           <MarqButton className="navbar__button" />
-        </a>
+        
       </div>
     </nav>
   );

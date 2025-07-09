@@ -8,7 +8,10 @@ export default async function Blog() {
 
   return (
     <main style={{ padding: '2rem', color: 'white', backgroundColor: 'black' }}>
-      <h1 style={{ color: 'white' }}>Latest Blog Posts</h1>
+     <h1 style={{ color: '#39ff14', fontSize: '3rem' }}>Latest Blog Posts</h1>
+
+
+
       <ul style={{ listStyle: 'none', padding: 0 }}>
         {posts.map((post: any) => (
           <li key={post.id} style={{ marginBottom: '2rem' }}>

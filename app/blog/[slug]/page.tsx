@@ -1,5 +1,5 @@
 // app/blog/[slug]/page.tsx
-import { fetchPost } from '@/app/lib/fetchPost';
+import { fetchPost } from '../../lib/fetchPost';
 
 export async function generateStaticParams() {
   const res = await fetch('http://localhost/wordpress/wp-json/wp/v2/posts');

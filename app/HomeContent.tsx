@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <>
-      <main className="bg-black text-white min-h-[70vh] pt-2 text-center">
+      <main className="bg-red text-white min-h-[70vh] pt-2 text-center">
         <Hero />
         <AboutSection />
         <ResultsSection />

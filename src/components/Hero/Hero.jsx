@@ -28,7 +28,7 @@ const Hero = () => {
       <div className="hero__container">
         <div className="hero__content">
           <h2 className={`hero-heading ${animateHead ? "animate-heading" : ""}`}>
-            <span className="heading-line">Premium Digital Partner  </span>
+            <span className="heading-line">Premium Digital Partner Saad </span>
             <span className="heading-line">for Visionary Brands</span>
           </h2>
 

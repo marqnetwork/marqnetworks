@@ -140,8 +140,15 @@
 
 /* 🔽 Mobile View (≤768px) */
 @media (max-width: 768px) {
+ .cardContainer {
+    height: auto; /* ✅ removes extra space */
+    margin: 0;
+    padding: 0;
+  }
+
+  
   .cardOverlayContainer {
-    width: 90%;
+    width: 95%;
     height: auto;
     padding-bottom: 1rem;
   }

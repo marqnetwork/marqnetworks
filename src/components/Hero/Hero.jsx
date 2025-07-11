@@ -1,11 +1,10 @@
-// "use client";
-
-import React, { useEffect, useState, memo } from "react";
+import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import "./Hero.css";
 
-const LogoSlider = dynamic(() => import("../LogoSlider/LogoSlider"), { ssr: false });
-const MarqButton = dynamic(() => import("../MarqButton/MarqButton"), { ssr: false });
+// SSR now enabled
+const LogoSlider = dynamic(() => import("../LogoSlider/LogoSlider"));
+const MarqButton = dynamic(() => import("../MarqButton/MarqButton"));
 
 const Hero = () => {
   const [animateHead, setAnimateHead] = useState(false);
@@ -52,4 +51,4 @@ const Hero = () => {
   );
 };
 
-export default memo(Hero);
+export default Hero; // no need for memo now

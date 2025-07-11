@@ -18,7 +18,7 @@
 }
 
 .footer__column {
-  flex: 1 1 300px;
+  flex: 1 1 100px;
   min-width: 280px;
 }
 
@@ -74,7 +74,10 @@
 .footer__right h4 {
   margin-bottom: 1rem;
   font-size: 1.1rem;
+  
 }
+
+
 
 .footer__middle ul,
 .footer__right ul {

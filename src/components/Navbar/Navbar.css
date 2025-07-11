@@ -111,7 +111,7 @@
     left: 0;
     width: 100%;
     flex-direction: column;
-    background: #fff;
+    background:black;
     padding: 1rem 0;
     gap: 1.2rem;
     z-index: 1000;
@@ -123,7 +123,7 @@
   }
 
   .navbar__menu li a {
-    color: black;
+    color: white;
     font-size: 16px;
     opacity: 1;
   }

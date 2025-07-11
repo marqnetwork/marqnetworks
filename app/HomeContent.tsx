@@ -14,6 +14,7 @@ import PortfolioSection from "@/components/PortfolioSection/PortfolioSection";
 import LaunchSection from "@/components/LaunchSection/LaunchSection";
 import FAQSection from "@/components/FAQSection/FAQSection";
 import JoinUsNow from "@/components/JoinUsNow/JoinUsNow";
+import StackingNewCard from "@/components/StackingCardsNew/stackingnewCard";
 
 
 const Home = () => {
@@ -31,6 +32,10 @@ const Home = () => {
         <LandinBenefits />
         <LandinBenefitCards />
         <PortfolioSection />
+        {/* Project Cards */}
+        <div className="portfolio__stacking">
+          <StackingNewCard />
+        </div>
         <OurServices />
         <LaunchSection />
         <div className="text-left w-full">

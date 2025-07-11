@@ -4,7 +4,7 @@ import React from "react";
 import "./PortfolioSection.css";
 import { motion } from "framer-motion";
 import MarqButton from "../MarqButton/MarqButton";
-import StackingNewCard from "@/components/StackingCardsNew/stackingnewCard";
+
 
 const PortfolioSection = () => {
   return (
@@ -52,10 +52,7 @@ const PortfolioSection = () => {
           <MarqButton className="portfolio__button" />
         </div>
 
-        {/* Project Cards */}
-        <div className="portfolio__stacking">
-          <StackingNewCard />
-        </div>
+        
       </div>
     </section>
   );

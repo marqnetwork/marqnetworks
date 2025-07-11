@@ -7,17 +7,17 @@ const ContactSection = () => (
       <div className="form-row">
         <div className="form-group">
           <label htmlFor="first-name">First name*</label>
-          <input id="first-name" type="text" placeholder="Jane" />
+          <input id="first-name" type="text" placeholder="First name" />
         </div>
         <div className="form-group">
           <label htmlFor="last-name">Last Name*</label>
-          <input id="last-name" type="text" placeholder="Smith" />
+          <input id="last-name" type="text" placeholder="Last Name" />
         </div>
       </div>
 
       <div className="form-group">
         <label htmlFor="email">How can we reach you?*</label>
-        <input id="email" type="email" placeholder="jane@framer.com" />
+        <input id="email" type="email" placeholder="email" />
       </div>
 
       <div className="form-row">

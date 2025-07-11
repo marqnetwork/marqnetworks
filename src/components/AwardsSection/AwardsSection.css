@@ -130,11 +130,12 @@
   }
 
   .awards__left {
-    text-align: center;
+    text-align: left;
   }
 
   .awards__left h2 {
     font-size: 2rem;
+
   }
 
   .awards__grid {

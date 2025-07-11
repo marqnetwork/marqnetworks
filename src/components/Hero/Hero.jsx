@@ -4,23 +4,22 @@ import React, { useEffect, useState, memo } from "react";
 import dynamic from "next/dynamic";
 import "./Hero.css";
 
-// ✅ Dynamically import only non-critical components
-const LogoSlider = dynamic(() => import("../LogoSlider/LogoSlider"), {
-  ssr: false,
-});
-const MarqButton = dynamic(() => import("../MarqButton/MarqButton"), {
-  ssr: false,
-});
+const LogoSlider = dynamic(() => import("../LogoSlider/LogoSlider"), { ssr: false });
+const MarqButton = dynamic(() => import("../MarqButton/MarqButton"), { ssr: false });
 
 const Hero = () => {
   const [animateHead, setAnimateHead] = useState(false);
 
-  // ✅ Only animate heading after everything else is idle
   useEffect(() => {
-    if (typeof window !== "undefined" && "requestIdleCallback" in window) {
-      requestIdleCallback(() => setAnimateHead(true));
+    const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+    if (!isMobile) {
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(() => setAnimateHead(true));
+      } else {
+        setTimeout(() => setAnimateHead(true), 300);
+      }
     } else {
-      setTimeout(() => setAnimateHead(true), 300);
+      setAnimateHead(true); // render immediately on mobile
     }
   }, []);
 
@@ -28,13 +27,11 @@ const Hero = () => {
     <section className="hero">
       <div className="hero__container">
         <div className="hero__content">
-          {/* ✅ Delay only heading animation, not actual paint */}
           <h2 className={`hero-heading ${animateHead ? "animate-heading" : ""}`}>
             <span className="heading-line">Premium Digital Partner</span>
             <span className="heading-line">for Visionary Brands</span>
           </h2>
 
-          {/* ✅ Critical LCP text — paint immediately */}
           <p className="hero__para">
             “We weave our 5-Pillar Service Stack—Strategy & Digital
             Transformation, Brand + Experience Design, Custom Software & Automation, Growth Marketing & Lead Gen, and our Off-Shore
@@ -44,9 +41,7 @@ const Hero = () => {
 
           <div className="hero__buttons">
             <MarqButton className="primary-btn-hero" />
-            <a href="/Solution" className="secondary-btn2">
-              Explore the Stack
-            </a>
+            <a href="/Solution" className="secondary-btn2">Explore the Stack</a>
           </div>
 
           <div className="hero__divider" />

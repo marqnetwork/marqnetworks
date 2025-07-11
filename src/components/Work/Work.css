@@ -165,6 +165,7 @@
   gap: 0.6rem;
   flex-wrap: wrap;
   color: #fff;
+  margin-bottom: 30px;
 }
 
 .step-card__action {

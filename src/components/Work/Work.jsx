@@ -117,7 +117,7 @@ const Work = () => {
                 </div>
 
                 {index === steps.length - 1 && (
-                  <MarqButton className="work__cta-button" style={{ marginTop: "10px" }} />
+                  <MarqButton className="work__cta-button"  />
                 )}
               </motion.div>
             );

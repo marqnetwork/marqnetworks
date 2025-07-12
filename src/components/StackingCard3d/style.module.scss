@@ -1,0 +1,193 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.cardContainer {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 600px;
+}
+
+.cardOverlayContainer {
+  position: relative;
+  width: 1000px;
+  height: 500px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 25px;
+}
+
+/* 🔽 Bottom Overlay: Now inside image */
+.bottomOverlay {
+  position: absolute;
+  bottom: 2px;
+  left: 70px;
+  right: 70px;
+  padding: 12px 20px;
+  background: black;
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+/* Bottom Bar Styling */
+.bottomBar {
+  width: 100%;
+}
+
+.bottomBar .barContent {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.bottomBar .leftSection {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bottomBar .label {
+  font-size: 14px;
+  color: white;
+  background: rgba(8, 8, 8, 1);
+  border: 0.5px solid white;
+  padding: 6px 14px;
+  border-radius: 8px;
+}
+
+.bottomBar .year {
+  font-size: 14px;
+  color: #aaa;
+  background: rgba(8, 8, 8, 1);
+  border: 1px solid white;
+  padding: 6px 14px;
+  border-radius: 8px;
+}
+
+.bottomBar .progressWrapper {
+  flex: 1;
+  height: 30px;
+  background: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  min-width: 200px;
+}
+
+.bottomBar .progressBar {
+  height: 100%;
+  width: 100%;
+  background: repeating-linear-gradient(
+    135deg,
+    #39ff14 0px,
+    #39ff14 2px,
+    #1ec800 2px,
+    #1ec800 10px
+  );
+  background-size: 200% auto;
+  animation: moveStripes 16s linear infinite;
+  border: 4px solid rgba(18, 22, 17, 1);
+  border-radius: 10px;
+}
+
+.bottomBar .rightSection {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.bottomBar .tag {
+  background: #1e1e1e;
+  color: #ccc;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.bottomBar .tag:hover {
+  background: #2c2c2c;
+}
+
+@keyframes moveStripes {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: 0% 0;
+  }
+}
+
+
+/* 🔽 Mobile View (≤768px) */
+@media (max-width: 768px) {
+ .cardContainer {
+    height: auto; /* ✅ removes extra space */
+    margin: 0;
+    padding: 0;
+  }
+
+  
+  .cardOverlayContainer {
+    width: 95%;
+    height: auto;
+    padding-bottom: 1rem;
+  }
+
+ 
+  .bottomOverlay {
+    padding: 6px;
+    bottom: 29px;
+    left: 30px;
+    right: 30px;
+    background: rgba(13, 13, 13, 0.95);
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+
+  .bottomBar .barContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .bottomBar .topLine {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .bottomBar .label,
+  .bottomBar .year,
+  .bottomBar .tag {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .bottomBar .rightSection,
+  .bottomBar .progressWrapper {
+    display: none;
+  }
+  
+}

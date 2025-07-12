@@ -25,5 +25,10 @@ export const projects = [
     alt: "Comma Clothing accessories featuring bold text-based designs. Black fabric with repeating white phrase ‘Protect My Peace & My Edges & My Mess,’ along with minimalist black socks—one pair plain ribbed, the other featuring the statement ‘Don’t Kill the Messenger’ in clean white type.",
     bar: { label: "Comma Clothing", year: 2025, tags: ["Business", "Contracts"] }
   },
+  {
+    src: "/images/mer6.png",
+    alt: "Email promotion banner for CHAMP Boxers showcasing a bold offer: Buy 2 Get 2 for $89. Features premium men’s boxer briefs branding with black and gold color scheme and call-to-action button ‘Shop Now’.",
+    bar: { label: "Email Banner", year: 2025, tags: ["Business", "Contracts"] }
+  },
  
 ];

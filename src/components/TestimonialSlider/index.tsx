@@ -61,15 +61,15 @@ const TestimonialSlider = () => {
     }),
   };
 
-  const paginate = (newDirection: React.SetStateAction<number>) => {
-    setDirection(newDirection);
-    setCurrentSlide((prev) => {
-      const next = prev + newDirection;
-      if (next < 0) return testimonials.length - 1;
-      if (next >= testimonials.length) return 0;
-      return next;
-    });
-  };
+const paginate = (newDirection: number) => {
+  setDirection(newDirection);
+  setCurrentSlide((prev) => {
+    const next = prev + newDirection;
+    if (next < 0) return testimonials.length - 1;
+    if (next >= testimonials.length) return 0;
+    return next;
+  });
+};
 
   useEffect(() => {
     const timer = setInterval(() => paginate(1), 8000);

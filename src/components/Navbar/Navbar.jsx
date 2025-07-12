@@ -32,6 +32,9 @@ const Navbar = () => {
         <li><a href="/About">About</a></li>
         <li><a href="/Solution">Solutions</a></li>
         <li><a href="/Portfolio">Portfolio</a></li>
+            <li>
+              <a href="/story">Story</a>
+            </li>
         <li><a href="/Contact">Contact</a></li>
       </ul>
 
@@ -48,4 +51,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar;

@@ -15,6 +15,7 @@ import LaunchSection from "@/components/LaunchSection/LaunchSection";
 import FAQSection from "@/components/FAQSection/FAQSection";
 import JoinUsNow from "@/components/JoinUsNow/JoinUsNow";
 import StackingNewCard from "@/components/StackingCardsNew/stackingnewCard";
+import TestimonialSlider from "@/components/TestimonialSlider";
 
 
 const Home = () => {
@@ -24,6 +25,7 @@ const Home = () => {
     <>
       <main className="bg-red text-white min-h-[70vh] pt-2 text-center">
         <Hero />
+        <TestimonialSlider />
         <AboutSection />
         <ResultsSection />
         <Work />

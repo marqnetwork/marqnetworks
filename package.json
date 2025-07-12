@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-      "build": "set NODE_OPTIONS=--no-warnings&& next build --no-lint && tsc --project tsconfig.build.json",
-
+    "build": "set NODE_OPTIONS=--no-warnings&& next build --no-lint && tsc --project tsconfig.build.json",
     "start": "next start",
     "lint": "next lint",
     "export": "next export",

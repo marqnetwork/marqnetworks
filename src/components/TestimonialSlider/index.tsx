@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './style.css';
 
-
 const TestimonialSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
@@ -14,29 +13,54 @@ const TestimonialSlider = () => {
     {
       id: 1,
       quote:
-        "Framer gives us everything we need to move fast. We don’t wait on dev. We don’t compromise on design.",
-      author: 'Henry Mitchell',
-      role: 'Head of Design at Hospitality',
+        'Switching to Framer was incredibly smooth. It allowed us to move fast, publish instantly, and maintain our standards. Highly recommended.',
+      author: 'Chris Frantz',
+      role: 'CEO at Loops',
+      logo: '/images/t1.svg',
+      authorImage: '/images/author1.avif',
       bgColor: 'bg-[#0f0f0f]',
-      productImage: '/api/placeholder/400/300',
+      productImage: '/images/sample1.avif',
+      linkLabel: 'Loops',
+      linkUrl: 'https://loops.so/',
     },
     {
       id: 2,
       quote:
-        "Switching to Framer was incredibly smooth. It allowed us to move fast, publish instantly, and maintain our standards.",
-      author: 'Chris Frantz',
-      role: 'CEO at Loops',
-      bgColor: 'bg-[#111827]',
-      productImage: '/api/placeholder/400/300',
+        'Framer gives us everything we need to move fast. We don’t wait on dev. We don’t compromise on design.',
+      author: 'Henry Mitchell',
+      role: 'Head of Design at Hospitality',
+      logo: '/images/t1.svg',
+      authorImage: '/images/author1.avif',
+      bgColor: 'bg-[#0f0f0f]',
+      productImage: '/images/sample1.avif',
+      linkLabel: 'Perplexity',
+      linkUrl: 'https://www.perplexity.ai/',
     },
     {
       id: 3,
       quote:
-        "The design system capabilities are unmatched. We've been able to create consistent experiences across all our products.",
+        'The design system capabilities are unmatched. We’ve created consistent experiences across all our products.',
       author: 'Sarah Chen',
       role: 'Design Lead at TechCorp',
-      bgColor: 'bg-[#1f2937]',
-      productImage: '/api/placeholder/400/300',
+      logo: '/images/t1.svg',
+      authorImage: '/images/author1.avif',
+      bgColor: 'bg-[#0f0f0f]',
+      productImage: '/images/sample1.avif',
+      linkLabel: 'Visual Electric',
+      linkUrl: 'https://visualelectric.com/',
+    },
+    {
+      id: 4,
+      quote:
+        'From design to deployment, Framer lets us own our product workflow end-to-end.',
+      author: 'David Kim',
+      role: 'CTO at Lemni',
+      logo: '/images/t1.svg',
+      authorImage: '/images/author1.avif',
+      bgColor: 'bg-[#0f0f0f]',
+      productImage: '/images/sample1.avif',
+      linkLabel: 'Lemni',
+      linkUrl: 'https://lemni.com/',
     },
   ];
 
@@ -48,28 +72,24 @@ const TestimonialSlider = () => {
     center: {
       x: 0,
       opacity: 1,
-      transition: {
-        duration: 0.6,
-      },
+      transition: { duration: 0.6 },
     },
     exit: (direction: number) => ({
       x: direction < 0 ? 300 : -300,
       opacity: 0,
-      transition: {
-        duration: 0.6,
-      },
+      transition: { duration: 0.6 },
     }),
   };
 
-const paginate = (newDirection: number) => {
-  setDirection(newDirection);
-  setCurrentSlide((prev) => {
-    const next = prev + newDirection;
-    if (next < 0) return testimonials.length - 1;
-    if (next >= testimonials.length) return 0;
-    return next;
-  });
-};
+  const paginate = (newDirection: number) => {
+    setDirection(newDirection);
+    setCurrentSlide((prev) => {
+      const next = prev + newDirection;
+      if (next < 0) return testimonials.length - 1;
+      if (next >= testimonials.length) return 0;
+      return next;
+    });
+  };
 
   useEffect(() => {
     const timer = setInterval(() => paginate(1), 8000);
@@ -79,43 +99,45 @@ const paginate = (newDirection: number) => {
   const current = testimonials[currentSlide];
 
   return (
-    <div className=" h-screen w-[1200px] m-auto new  bg-black px-4 ">
-      <div className="w-full max-w-[1200px] h-[85vh] m-[autp] rounded-3xl overflow-hidden shadow-xl flex relative ">
+    <div className="w-full h-screen bg-black flex flex-col items-center justify-center px-4">
+      {/* Main Slider Container */}
+      <div className="w-full max-w-[1200px] h-[85vh] rounded-3xl overflow-hidden shadow-xl flex">
         {/* Left Side */}
-        <div className={`w-1/2  flex flex-row justify-around gap-6 bg-red-400 ${current.bgColor} transition-colors duration-500`}>
-          <AnimatePresence mode="wait" custom={direction}>
-            <motion.div
-              key={currentSlide}
-              custom={direction}
-              variants={slideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              className="text-white  flex justify-between flex-col h-[200px] p-[20px]"
-            >
-              <blockquote className="text-[16px] leading-snug font-semibold text-justify  w-[350px]">
-                “{current.quote}”
-              </blockquote>
-              <div className="flex items-center space-x-4 bg-y">
-                <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center text-white font-bold text-lg">
-                  {current.author
-                    .split(' ')
-                    .map((n) => n[0])
-                    .join('')}
-                </div>
-                <div>
-                  <div className="text-white font-medium text-lg">
-                    {current.author}
-                  </div>
-                  <div className="text-white/60 text-sm">{current.role}</div>
-                </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
+        <div
+          className={`w-1/2 flex flex-col justify-between px-10 py-12 ${current.bgColor} transition-colors duration-500`}
+        >
+          <div>
+            <img src={current.logo} alt="Logo" className="w-8 h-8 mb-10" />
+            <AnimatePresence mode="wait" custom={direction}>
+              <motion.div
+                key={currentSlide}
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+              >
+                <blockquote className="text-2xl font-medium text-white max-w-md mb-6 leading-relaxed">
+                  “{current.quote}”
+                </blockquote>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+          <div className="flex items-center gap-4">
+            <img
+              src={current.authorImage}
+              alt={current.author}
+              className="w-10 h-10 rounded-full object-cover"
+            />
+            <div>
+              <div className="text-white font-semibold">{current.author}</div>
+              <div className="text-white/60 text-sm">{current.role}</div>
+            </div>
+          </div>
         </div>
 
         {/* Right Side */}
-        <div className="w-1/2 bg-[#0f0f0f] flex items-center justify-center p-8">
+        <div className="w-1/2 bg-[#f15a29] flex items-center justify-center p-10">
           <AnimatePresence mode="wait">
             <motion.div
               key={`img-${currentSlide}`}
@@ -123,34 +145,51 @@ const paginate = (newDirection: number) => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.6 }}
-              className="w-full h-[90%]  rounded-2xl  p-6 shadow-2xl"
+              className="bg-white rounded-xl shadow-xl w-full h-full flex items-center justify-center overflow-hidden"
             >
-           
-          <img src="/images/cap.png"  className="card-image" />
-            
+              <img
+                src={current.productImage}
+                className="max-w-[85%] max-h-[85%] object-contain"
+                alt="Product"
+              />
             </motion.div>
           </AnimatePresence>
         </div>
-
-        {/* Navigation Arrows */}
-      
       </div>
-        <div className="    flex justify-end space-x-4">
-          <button
-            onClick={() => paginate(-1)}
-            className="bg-white/10 hover:bg-white/20 rounded-full p-3 backdrop-blur-md transition-all"
-          >
-            <ChevronLeft className="text-white w-5 h-5" />
-          </button>
-          <button
-            onClick={() => paginate(1)}
-            className="bg-white/10 hover:bg-white/20 rounded-full p-3 backdrop-blur-md transition-all"
-          >
-            <ChevronRight className="text-white w-5 h-5" />
-          </button>
+
+      {/* Bottom Nav */}
+      <div className="w-full max-w-[1200px] mt-6 flex flex-col items-center">
+        <div className="flex justify-center gap-x-8 text-white/60 text-sm mb-4">
+          {testimonials.map((item, idx) => (
+            <button
+              key={item.id}
+              onClick={() => setCurrentSlide(idx)}
+              className={`transition hover:text-white ${
+                currentSlide === idx ? 'text-white font-medium' : ''
+              }`}
+            >
+              {item.linkLabel}
+            </button>
+          ))}
         </div>
+        <div className="flex justify-end w-full">
+          <div className="flex space-x-3">
+            <button
+              onClick={() => paginate(-1)}
+              className="bg-white/10 hover:bg-white/20 rounded-full p-2 transition"
+            >
+              <ChevronLeft className="text-white w-4 h-4" />
+            </button>
+            <button
+              onClick={() => paginate(1)}
+              className="bg-white/10 hover:bg-white/20 rounded-full p-2 transition"
+            >
+              <ChevronRight className="text-white w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-    
   );
 };
 

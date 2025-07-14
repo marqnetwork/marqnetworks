@@ -17,29 +17,29 @@ export default function StoryListPage() {
   return (
     <main className="bg-black text-white min-h-screen flex flex-col items-center px-4 py-16">
       {/* Hero Section */}
-      <section className="w-full max-w-[1200px] text-center mb-20">
+      <section className="w-full max-w-[1200px] text-center mb-20 h-screen flex flex-col justify-center items-center gap-3">
         <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
           The web platform <br /> for design teams
         </h1>
-        <p className="text-lg text-gray-400 mb-8">
+        <p className="text-lg text-gray-400 mb-8 w-[500px]">
           From startups to enterprises, teams use Framer to ship standout websites—no developers needed.
         </p>
         <div className="flex justify-center gap-4">
-          <button className="bg-white text-black font-medium h-10 px-8 py-6 rounded-full hover:opacity-90 transition">
+          <button className="bg-white text-black font-medium  rounded-full hover:opacity-90 transition buttons">
             Contact sales
           </button>
-          <button className="bg-[#1a1a1a] text-white font-medium px-6 py-3 rounded-full hover:opacity-90 transition border border-white/10">
+          <button className="bg-[#1a1a1a] text-white font-medium  rounded-full hover:opacity-90 transition border border-white/10 buttons">
             Explore Enterprise
           </button>
         </div>
       </section>
 
       {/* Cards Grid */}
-      <section className="w-full max-w-[1200px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <section className="w-full max-w-[1200px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6 ">
         {stories.map((story) => (
           <div
             key={story.id}
-            className="bg-[#111] flex flex-col rounded-xl overflow-hidden border border-neutral-800 shadow-md hover:shadow-lg transition"
+            className="bg-[#111] flex flex-col rounded-xl overflow-hidden border border-neutral-800 shadow-md hover:shadow-lg transition p-[50px]"
           >
             {/* Top bar */}
             <div className="flex items-center justify-between h-[40px] px-8 py-8 border-b border-neutral-800 bg-[#1a1a1a]">

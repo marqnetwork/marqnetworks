@@ -10,14 +10,13 @@ import StackingCardSocial from '@/components/StackingCardSocial/stackingnewCard'
 import StackingCardGraphics from '@/components/StackingCardGraphics/stackingnewCard';
 import StackingCardMerchandise from '@/components/StackingCardMerchandise/stackingnewCard';
 import StackingCardLogos from '@/components/StackingCardLogos/stackingnewCard';
-import StackingCard3d from '@/components/StackingCard3d/stackingnewCard';
 import Mobilehead from '@/components/Mobilehead/LandinBenefits';
 import Webhead from '@/components/Webhead/LandinBenefits';
 import Socialhead from '@/components/Socialhead/LandinBenefits';
 import Graphichead from '@/components/Graphichead/LandinBenefits';
 import Merchandisehead from '@/components/Merchandisehead/LandinBenefits';
 import Logohead from '@/components/Logohead/LandinBenefits';
-import ThreeDhead from '@/components/ThreeDhead/LandinBenefits';
+
 
 
 
@@ -63,12 +62,7 @@ const Portfolio = () => {
         <StackingCardLogos />
       </div>
 
-      <ThreeDhead/>
-      
-      <div className="portfolio__stack-wrapper">
-        <StackingCard3d />
-      </div>
-
+    
       
 
       <PortfolioFAQ />

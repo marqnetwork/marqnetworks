@@ -1,109 +1,101 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
-import "./style.css"
-import { motion } from 'framer-motion'
+import './style.css'
 
 const stories = [
   {
     id: 1,
-    title: "Animated Dashboard",
-    image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg",
-    author: "Sarah Chen",
-    category: "UI/UX",
+    logo: '/images/bird.svg',
+    image: '/images/bir.png',
   },
   {
     id: 2,
-    title: "Interactive Portfolio",
-    image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg",
-    author: "Mike Johnson",
-    category: "Web Design",
+    logo: '/images/bird.svg',
+    image: '/images/bir.png',
   },
   {
     id: 3,
-    title: "Mobile App Prototype",
-    image: "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg",
-    author: "Lisa Wang",
-    category: "Mobile",
+    logo: '/images/bird.svg',
+    image: '/images/bir.png',
   },
   {
     id: 4,
-    title: "3D Product Showcase",
-    image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg",
-    author: "David Kim",
-    category: "3D Design",
+    logo: '/images/bird.svg',
+    image: '/images/bir.png',
   },
   {
     id: 5,
-    title: "Brand Animation",
-    image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg",
-    author: "Emma Davis",
-    category: "Animation",
+    logo: '/images/bird.svg',
+    image: '/images/bir.png',
   },
   {
     id: 6,
-    title: "E-commerce Experience",
-    image: "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg",
-    author: "Alex Rodriguez",
-    category: "E-commerce",
-  }
+    logo: '/images/bird.svg',
+    image: '/images/bir.png',
+  },
 ]
-const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.2,
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  }),
-};
+
 export default function StoryListPage() {
   return (
-    <main className="bg-black text-white min-h-screen py-20 px-6">
-        <div className='text-center h-[50vh] flex-col flex justify-center items-center'>
-          <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4">
-            The web platform <span className="gradient-text">for design teams</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-           From startups to enterprises, teams use Framer to ship standout websites—no developers needed.
-          </p>
-        </div>
-      <div className="w-[1200px] mx-auto new">
-        <h1 className="text-3xl font-bold text-center mb-[40px] ">
-          Featured Stories
+    <main className="bg-black text-white min-h-screen px-6 py-16">
+      {/* Hero Section */}
+      <section className="text-center max-w-3xl mx-auto mb-20">
+        <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+          The web platform <br /> for design teams
         </h1>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 newww">
-          {stories.map((story) => (
-            <Link
-              key={story.id}
-              href={`/story/${story.id}`}
-              className="group relative block rounded-xl overflow-hidden bg-neutral-900 border border-neutral-800 hover:shadow-xl transition"
-            >
-              <div className="aspect-video relative overflow-hidden">
-                <Image
-                  src={story.image}
-                  alt={story.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute top-4 left-4 bg-white/20 backdrop-blur-md text-white text-xs font-medium px-3 py-1 rounded-full">
-                  {story.category}
-                </div>
-              </div>
-
-              <div className="p-6">
-                <h2 className="text-xl font-semibold mb-2 group-hover:text-white transition-colors">
-                  {story.title}
-                </h2>
-                <p className="text-sm text-neutral-400">by {story.author}</p>
-              </div>
-            </Link>
-          ))}
+        <p className="text-lg text-gray-400 mb-8">
+          From startups to enterprises, teams use Framer to ship standout websites—no developers needed.
+        </p>
+        <div className="flex justify-center gap-4">
+          <button className="bg-white text-black font-medium px-5 py-2 rounded-full hover:opacity-90 transition">
+            Contact sales
+          </button>
+          <button className="bg-[#1a1a1a] text-white font-medium px-5 py-2 rounded-full hover:opacity-90 transition border border-white/10">
+            Explore Enterprise
+          </button>
         </div>
-      </div>
+      </section>
+
+      {/* Cards Grid */}
+      <section className="max-w-[1200px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {stories.map((story) => (
+          <div
+            key={story.id}
+            className="bg-[#111] rounded-xl overflow-hidden border border-neutral-800 shadow-md hover:shadow-lg transition"
+          >
+            {/* Top bar with logo + read story */}
+            <div className="flex items-center justify-between px-4 py-2 border-b border-neutral-800 bg-[#1a1a1a]">
+              <div className="flex items-center gap-2">
+                <Image
+                  src={story.logo}
+                  alt="Logo"
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                />
+              </div>
+              <Link
+                href={`/story/${story.id}`}
+                className="text-gray-400 hover:text-white transition text-xs font-medium"
+              >
+                Read story →
+              </Link>
+            </div>
+
+            {/* Image */}
+            <div className="relative w-full h-[240px] bg-black">
+              <Image
+                src={story.image}
+                alt="Story preview"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        ))}
+      </section>
     </main>
   )
 }

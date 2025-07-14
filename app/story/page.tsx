@@ -64,10 +64,10 @@ export default function StoryListPage() {
     <main className="bg-black text-white min-h-screen py-20 px-6">
         <div className='text-center h-[50vh] flex-col flex justify-center items-center'>
           <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4">
-            Latest <span className="gradient-text">Stories</span>
+            The web platform <span className="gradient-text">for design teams</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Explore the most recent interactive design stories from our community
+           From startups to enterprises, teams use Framer to ship standout websites—no developers needed.
           </p>
         </div>
       <div className="w-[1200px] mx-auto new">

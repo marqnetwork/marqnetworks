@@ -3,7 +3,6 @@ import React from 'react';
 import ExplorePortfolio from '@/components/ExplorePortfolio/ExplorePortfolio';
 import PortfolioFAQ from '@/components/PortfolioFAQ/PortfolioFAQ';
 import JoinUsNow from '@/components/JoinUsNow/JoinUsNow';
-// import StackingNewCard from '@/components/StackingCardsNew/stackingnewCard';
 import StackingCardApp from '@/components/StackingCardApp/stackingnewCard'; 
 import StackingCardWeb from '@/components/StackingCardWeb/stackingnewCard';
 import StackingCardSocial from '@/components/StackingCardSocial/stackingnewCard';
@@ -16,12 +15,6 @@ import Socialhead from '@/components/Socialhead/LandinBenefits';
 import Graphichead from '@/components/Graphichead/LandinBenefits';
 import Merchandisehead from '@/components/Merchandisehead/LandinBenefits';
 import Logohead from '@/components/Logohead/LandinBenefits';
-
-
-
-
-
-
 
 const Portfolio = () => {
   return (
@@ -61,9 +54,6 @@ const Portfolio = () => {
       <div className="portfolio__stack-wrapper">
         <StackingCardLogos />
       </div>
-
-    
-      
 
       <PortfolioFAQ />
 

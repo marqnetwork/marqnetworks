@@ -18,7 +18,6 @@ const TestimonialSlider = () => {
       role: 'CEO at Loops',
       logo: '/images/t1.svg',
       authorImage: '/images/author1.avif',
-      bgColor: 'bg-[#0f0f0f]',
       productImage: '/images/sample1.avif',
       linkLabel: 'Loops',
       linkUrl: 'https://loops.so/',
@@ -31,7 +30,6 @@ const TestimonialSlider = () => {
       role: 'Head of Design at Hospitality',
       logo: '/images/t1.svg',
       authorImage: '/images/author1.avif',
-      bgColor: 'bg-[#0f0f0f]',
       productImage: '/images/sample1.avif',
       linkLabel: 'Perplexity',
       linkUrl: 'https://www.perplexity.ai/',
@@ -44,7 +42,6 @@ const TestimonialSlider = () => {
       role: 'Design Lead at TechCorp',
       logo: '/images/t1.svg',
       authorImage: '/images/author1.avif',
-      bgColor: 'bg-[#0f0f0f]',
       productImage: '/images/sample1.avif',
       linkLabel: 'Visual Electric',
       linkUrl: 'https://visualelectric.com/',
@@ -57,7 +54,6 @@ const TestimonialSlider = () => {
       role: 'CTO at Lemni',
       logo: '/images/t1.svg',
       authorImage: '/images/author1.avif',
-      bgColor: 'bg-[#0f0f0f]',
       productImage: '/images/sample1.avif',
       linkLabel: 'Lemni',
       linkUrl: 'https://lemni.com/',
@@ -91,6 +87,7 @@ const TestimonialSlider = () => {
     });
   };
 
+  // ✅ Auto-slide every 8s
   useEffect(() => {
     const timer = setInterval(() => paginate(1), 8000);
     return () => clearInterval(timer);
@@ -101,42 +98,47 @@ const TestimonialSlider = () => {
   return (
     <div className="w-full h-screen bg-black flex flex-col items-center justify-center px-4">
       {/* Main Slider Container */}
-      <div className="w-full max-w-[1200px] h-[85vh] rounded-3xl overflow-hidden shadow-xl flex">
-        {/* Left Side */}
-        <div
-          className={`w-1/2 flex flex-col justify-between px-10 py-12 ${current.bgColor} transition-colors duration-500`}
-        >
+      <div className="w-full max-w-[1200px] h-[85vh] flex rounded-3xl overflow-hidden shadow-xl">
+        {/* LEFT SIDE */}
+        <div className="w-1/2 bg-[#0f0f0f] text-white px-12 py-12 flex flex-col justify-between h-full">
+          {/* Logo at Top */}
           <div>
-            <img src={current.logo} alt="Logo" className="w-8 h-8 mb-10" />
+            <img src={current.logo} alt="Logo" className="w-20 h-20 mt-9 mb-20" />
+          </div>
+
+          {/* Centered Quote */}
+          <div className="flex-1 flex items-center">
             <AnimatePresence mode="wait" custom={direction}>
-              <motion.div
+              <motion.blockquote
                 key={currentSlide}
                 custom={direction}
                 variants={slideVariants}
                 initial="enter"
                 animate="center"
                 exit="exit"
+                className="text-2xl font-medium leading-relaxed max-w-md"
               >
-                <blockquote className="text-2xl font-medium text-white max-w-md mb-6 leading-relaxed">
-                  “{current.quote}”
-                </blockquote>
-              </motion.div>
+                “{current.quote}”
+              </motion.blockquote>
             </AnimatePresence>
           </div>
-          <div className="flex items-center gap-4">
+
+          {/* Author at Bottom */}
+          
+          <div className="flex items-center gap-2 pl-4">
             <img
               src={current.authorImage}
               alt={current.author}
               className="w-10 h-10 rounded-full object-cover"
             />
             <div>
-              <div className="text-white font-semibold">{current.author}</div>
+              <div className="font-semibold">{current.author}</div>
               <div className="text-white/60 text-sm">{current.role}</div>
             </div>
           </div>
         </div>
 
-        {/* Right Side */}
+        {/* RIGHT SIDE */}
         <div className="w-1/2 bg-[#f15a29] flex items-center justify-center p-10">
           <AnimatePresence mode="wait">
             <motion.div
@@ -145,11 +147,11 @@ const TestimonialSlider = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.6 }}
-              className="bg-white rounded-xl shadow-xl w-full h-full flex items-center justify-center overflow-hidden"
+              className="rounded-xl shadow-xl w-full h-full flex items-center justify-center overflow-hidden"
             >
               <img
                 src={current.productImage}
-                className="max-w-[85%] max-h-[85%] object-contain"
+                className="max-w-[85%] max-h-[85%] object-contain rounded-xl"
                 alt="Product"
               />
             </motion.div>
@@ -158,7 +160,7 @@ const TestimonialSlider = () => {
       </div>
 
       {/* Bottom Nav */}
-      <div className="w-full max-w-[1200px] mt-6 flex flex-col items-center">
+      <div className="w-full max-w-[1200px] mt-6 mb-10 flex flex-col items-center">
         <div className="flex justify-center gap-x-8 text-white/60 text-sm mb-4">
           {testimonials.map((item, idx) => (
             <button

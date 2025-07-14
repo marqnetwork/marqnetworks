@@ -5,14 +5,14 @@ import StoryClient from './StoryClient'
 const stories = [
   {
     id: 1,
-    title: "Animated Dashboard",
+    title: "How Miro builds fast without losing design control with Framer",
     author: "Sarah Chen",
     authorAvatar: "SC",
     image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg",
     likes: 892,
     views: "12.5k",
-    category: "UI/UX",
-    description: "A comprehensive animated dashboard...",
+    category: "Stories/Miro",
+    description: "“Framer allowed us to ship high-performing, beautifully designed pages at record speed, all while keeping design control in-house.”",
     fullDescription: "This animated dashboard represents the pinnacle...",
     tags: ["Dashboard", "Animation", "Data Visualization", "React", "Framer Motion"],
     createdAt: "2024-01-15",

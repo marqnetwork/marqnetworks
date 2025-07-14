@@ -24,17 +24,16 @@ const Navbar = () => {
 
       {/* Center: Menu */}
       <ul
-        className={`navbar__menu ${
-          isMenuOpen ? "navbar__menu--active" : ""
-        }`}
+        className={`navbar__menu ${isMenuOpen ? "navbar__menu--active" : ""
+          }`}
       >
         <li><a href="/">Home</a></li>
         <li><a href="/About">About</a></li>
         <li><a href="/Solution">Solutions</a></li>
         <li><a href="/Portfolio">Portfolio</a></li>
-            <li>
-              <a href="/story">Story</a>
-            </li>
+        <li>
+          <a href="/story">Story</a>
+        </li>
         <li><a href="/Contact">Contact</a></li>
       </ul>
 
@@ -43,12 +42,12 @@ const Navbar = () => {
         <div className="navbar__hamburger" onClick={toggleMenu}>
           {isMenuOpen ? "×" : "☰"}
         </div>
-        
-          <MarqButton className="navbar__button" />
-        
+
+        <MarqButton className="navbar__button" />
+
       </div>
     </nav>
   );
 };
 
-export default Navbar;
+export default Navbar;

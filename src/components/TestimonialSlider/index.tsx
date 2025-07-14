@@ -87,7 +87,7 @@ const TestimonialSlider = () => {
     });
   };
 
-  // ✅ Auto-slide every 8s
+
   useEffect(() => {
     const timer = setInterval(() => paginate(1), 8000);
     return () => clearInterval(timer);
@@ -96,14 +96,13 @@ const TestimonialSlider = () => {
   const current = testimonials[currentSlide];
 
   return (
-    <div className="w-full h-screen bg-black flex flex-col items-center justify-center px-4">
+    <div className="w-full h-10/12 bg-black flex flex-col items-center justify-center px-4">
       {/* Main Slider Container */}
       <div className="w-full max-w-[1200px] h-[85vh] flex rounded-3xl overflow-hidden shadow-xl">
-        {/* LEFT SIDE */}
-        <div className="w-1/2 bg-[#0f0f0f] text-white px-12 py-12 flex flex-col justify-between h-full">
-          {/* Logo at Top */}
+
+        <div className="w-1/2 ] bg-[#0f0f0f] text-white bg-red-500 flex flex-col justify-between h-full p-6 left_side">
           <div>
-            <img src={current.logo} alt="Logo" className="w-20 h-20 mt-9 mb-20" />
+            <img src={current.logo} alt="Logo" className="w-20 h-20 " />
           </div>
 
           {/* Centered Quote */}
@@ -116,7 +115,7 @@ const TestimonialSlider = () => {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                className="text-2xl font-medium leading-relaxed max-w-md"
+                className="text-2xl font-medium leading-relaxed max-w-md text-justify"
               >
                 “{current.quote}”
               </motion.blockquote>
@@ -124,7 +123,6 @@ const TestimonialSlider = () => {
           </div>
 
           {/* Author at Bottom */}
-          
           <div className="flex items-center gap-2 pl-4">
             <img
               src={current.authorImage}
@@ -132,14 +130,15 @@ const TestimonialSlider = () => {
               className="w-10 h-10 rounded-full object-cover"
             />
             <div>
-              <div className="font-semibold">{current.author}</div>
+              <div className="font-semibold text-left">{current.author}</div>
               <div className="text-white/60 text-sm">{current.role}</div>
             </div>
           </div>
         </div>
 
+
         {/* RIGHT SIDE */}
-        <div className="w-1/2 bg-[#f15a29] flex items-center justify-center p-10">
+        <div className="w-1/2 bg-[#f15a29] flex items-center justify-center p-6">
           <AnimatePresence mode="wait">
             <motion.div
               key={`img-${currentSlide}`}
@@ -151,7 +150,7 @@ const TestimonialSlider = () => {
             >
               <img
                 src={current.productImage}
-                className="max-w-[85%] max-h-[85%] object-contain rounded-xl"
+                className="max-w-[90%] max-h-[90%] object-contain rounded-xl"
                 alt="Product"
               />
             </motion.div>
@@ -160,36 +159,37 @@ const TestimonialSlider = () => {
       </div>
 
       {/* Bottom Nav */}
-      <div className="w-full max-w-[1200px] mt-6 mb-10 flex flex-col items-center">
-        <div className="flex justify-center gap-x-8 text-white/60 text-sm mb-4">
+      <div className="w-full max-w-[1200px] mt-6 mb-10  items-center tabs flex flex-row justify-between">
+        <div className="flex l">
+
+        </div>
+        <div className="flex justify-center gap-x-8 text-white/60 text-[16px] mb-10">
           {testimonials.map((item, idx) => (
             <button
               key={item.id}
               onClick={() => setCurrentSlide(idx)}
-              className={`transition hover:text-white ${
-                currentSlide === idx ? 'text-white font-medium' : ''
-              }`}
+              className={`transition hover:text-white ${currentSlide === idx ? 'text-white font-medium' : ''
+                }`}
             >
               {item.linkLabel}
             </button>
           ))}
         </div>
-        <div className="flex justify-end w-full">
-          <div className="flex space-x-3">
-            <button
-              onClick={() => paginate(-1)}
-              className="bg-white/10 hover:bg-white/20 rounded-full p-2 transition"
-            >
-              <ChevronLeft className="text-white w-4 h-4" />
-            </button>
-            <button
-              onClick={() => paginate(1)}
-              className="bg-white/10 hover:bg-white/20 rounded-full p-2 transition"
-            >
-              <ChevronRight className="text-white w-4 h-4" />
-            </button>
-          </div>
+        <div className="flex ">
+          <button
+            onClick={() => paginate(-1)}
+            className="bg-white/10 hover:bg-white/20 rounded-full p-2 transition w-8 h-8"
+          >
+            <ChevronLeft className="text-white w-6 h-6" />
+          </button>
+          <button
+            onClick={() => paginate(1)}
+            className=" bg-white/10 hover:bg-white/20 rounded-full p-2 transition w-8 h-8"
+          >
+            <ChevronRight className="text-white w-6 h-6 " />
+          </button>
         </div>
+
       </div>
     </div>
   );

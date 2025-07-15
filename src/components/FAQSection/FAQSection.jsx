@@ -7,34 +7,35 @@ const faqs = [
   {
     question: "What will my investment be—and what’s included?",
     answer:
-      "Every build is quoted up-front, flat-fee. No hourly surprises. Packages start at $4.5K for Brand + UX and $7.5K for Full-Stack Dev, covering research, strategy, design, code, QA, launch, and 30-day support.",
+      "Every build is quoted up-front, flat-fee. Packages start at $4.5K for conversion-focused Brand + UX and $7.5K for full-stack dev with AI workflow transformation services—covering research, strategy, design, code, QA, launch, and 30-day support."
   },
   {
     question: "How fast can we launch?",
     answer:
-      "MVP websites: 15 business days. Full platforms: 4–8 weeks (depending on integrations). Weekly sprints, same-day feedback loops, and a dedicated PM keep momentum high.",
+      "MVP websites—built with headless e-commerce code and an AI code assistant—ship in 15 business days. Full platforms land in 4–8 weeks (integration-dependent). Weekly sprints, same-day feedback loops, and a dedicated PM keep momentum high."
   },
   {
     question: "What kind of ROI have past clients seen?",
     answer:
-      "GA Tax Lien Bootcamp → 400 registrants / webinar & $3.9 M in program sales. Customex e-commerce → 47% rise in new customers in 60 days. Bond Interiors → 30% lead-to-quote lift after site + funnel overhaul.",
+      "GA Tax Lien Boot Camp → AI-powered CRM automation workflows packed 400 registrants per webinar and drove $3.9 M in sales. Customex e-commerce → 47 % rise in new customers within 60 days. Bond Interiors → 30 % lead-to-quote lift after a conversion-focused site + funnel overhaul."
   },
   {
     question: "How will we communicate across time?",
     answer:
-      "Your core team works 9 AM–5 PM EST for real-time Slack & Zoom. A second offshore pod handles overnight production, so progress continues 24/7 without you staying up late.",
+      "Your core growth-strategy consultants work 9 AM–5 PM EST for real-time Slack & Zoom. A second offshore pod handles overnight production, so progress rolls 24/7 without you burning midnight oil."
   },
   {
     question: "Who owns the code, designs, and data?",
     answer:
-      "You do—100%. We transfer source files (Figma, Webflow, Git repo), admin credentials, and a plain-English license letter at hand-off. No lock-ins, ever.",
+      "You do—100 %. We transfer source files (Figma, Webflow, Git repo), admin credentials, and a plain-English license letter at hand-off. No lock-ins—ever."
   },
   {
     question: "What if I’m not happy with the final product?",
     answer:
-      "Our 14-day money-back guarantee covers scope alignment and quality benchmarks. Missed expectations? You get a full refund—no legal gymnastics. We’ve issued refunds on <3% of projects since 2016.",
-  },
+      "Our 14-day money-back guarantee covers scope alignment and quality benchmarks. Missed expectations? You get a full refund—no legal gymnastics. We’ve issued refunds on fewer than 3 % of projects since 2016."
+  }
 ];
+
 
 const FAQSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);

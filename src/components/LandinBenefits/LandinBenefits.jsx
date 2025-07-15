@@ -6,17 +6,18 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 const benefitTags = [
-  "Enhanced UX",
-  "Boosted Conversions",
-  "Fast Loading",
+  "AI-Powered UX",
+  "Conversion-Focused",
+  "Lightning-Fast Loading",
   "SEO-Ready",
-  "Customizable",
-  "Scalable",
-  "Increased Engagement",
-  "Expandable",
-  "Secure",
-  "User-Friendly",
+  "Headless Customizable",
+  "Scalable Architecture",
+  "High Engagement",
+  "Predictive Lead Scoring",
+  "Secure Compliance",
+  "User-Friendly"
 ];
+
 
 const LandinBenefits = () => {
   return (
@@ -30,11 +31,11 @@ const LandinBenefits = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.5 }}
       >
-        <span>We Don’t Just Design</span> <span>We Engineer Momentum.</span>
+        <span>We Don’t Just Design</span> <span>We Engineer Conversion-Focused Growth.</span>
       </motion.h1>
 
       <h2 className="benefits__subheading">
-        If you can dream it, we’ll make it move the needle.
+        If you can dream it, AI-powered UX will move the needle.
       </h2>
 
       <div className="benefits__tags">

@@ -27,13 +27,13 @@ const FeatureSection = () => {
           transition={fadeInLeft.transition}
           viewport={fadeInLeft.viewport}
         >
-          Unlimited Design Features<br />
-          <span>Delivered In A Second!</span>
+          Unlimited AI-Powered Design Features,<br />
+          <span>Delivered Instantly!</span>
         </motion.h2>
 
         <p className="feature__description">
-          Six power-ups that turn every MarQ Networks<br />
-          project into measurable growth
+          Six conversion-focused power-ups turn every MarQ Networks<br />
+          project into measurable growth.
         </p>
 
         <div className="feature__actions">

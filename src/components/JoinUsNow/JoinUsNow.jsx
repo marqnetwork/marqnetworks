@@ -22,18 +22,18 @@ const JoinUsNow = () => {
           transition={{ duration: 1.2, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.5 }}
         >
-          Each Project we Undertake<br />
-          <span>is a Unique Opportunity.</span>
+          Each Project We Undertake<br />
+          <span>is an AI-Powered Opportunity.</span>
         </motion.h2>
 
         <p className="join__description">
 
-          Ready to take the next step? Join us now and start transforming your<br />
+          
 
-          Ready to take the next step? Join us now and start transforming your
+           Ready to take the next step? Join us now and let our AI workflow transformation services turn your
           <br />
 
-          vision into reality with expert support.
+          vision into reality with conversion-focused design and headless e-commerce code.
         </p>
 
         <div className="join__actions">

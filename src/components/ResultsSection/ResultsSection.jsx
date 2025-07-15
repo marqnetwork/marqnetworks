@@ -31,9 +31,7 @@ const ResultsSection = () => {
         </motion.h2>
 
         <p className="results__description">
-          At MarQ Networks, every pixel and line of code is measured by the
-          numbers it moves. Here’s a snapshot of brands we’ve elevated—across
-          strategy, design, and tech.
+          At MarQ Networks, every pixel and line of code is measured by the numbers it moves.
         </p>
 
         <div className="results__actions">

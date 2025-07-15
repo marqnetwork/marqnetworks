@@ -25,9 +25,9 @@ const AboutSection = () => {
           </motion.h2>
 
           <p className="about__description">
-            “On-demand strategy, design, and tech—engineered to elevate
+            On-demand strategy, design, and tech—growth plans engineered to elevate 
             <br />
-            without the agency bloat.”
+            brands without agency bloat.
           </p>
 
           <div className="about__divider" />
@@ -41,7 +41,7 @@ const AboutSection = () => {
                 className="about__icon"
               />
               <p className="about__description">
-                Helped clients jump from $0 → $750K+ in revenue within 12 months
+                Helped clients leap from $0 → $750 K using go-to-market strategy within 12 months
               </p>
             </div>
             <div className="about__description-wrapper">
@@ -51,7 +51,7 @@ const AboutSection = () => {
                 className="about__icon"
               />
               <p className="about__description">
-                Delivered a 52% lift in new-customer growth across recent launches
+                Delivered 52 % lift in new-customer growth with AI-powered CRM workflows
               </p>
             </div>
           </div>
@@ -61,7 +61,7 @@ const AboutSection = () => {
             <MarqButton className="about__button" />
             <div className="about__rating">
               <span className="stars">★★★★★</span>
-              <span className="reviews">Rated by 200+ brands & agencies worldwide</span>
+              <span className="reviews">Rated 200+ USA & GCC brands worldwide</span>
             </div>
           </div>
         </div>

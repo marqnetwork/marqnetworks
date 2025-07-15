@@ -23,14 +23,13 @@ const PortfolioSection = () => {
         >
           Our Selected Projects
           <br />
-          <span>That Accelerate Digital Growth.</span>
+          <span>That Accelerate AI-Driven Digital Growth.</span>
         </motion.h2>
 
         {/* Description */}
         <p className="portfolio__description">
-          From SaaS scale-ups and e-commerce launches to government-ready solutions,
-          each case study proves how our cross-disciplinary team turns complexity
-          into measurable results.
+            From SaaS scale-ups and headless e-commerce launches to government-ready AI workflow transformations,
+  each case study proves how our cross-disciplinary team turns complexity into measurable results.
         </p>
 
         {/* Decorative Images */}

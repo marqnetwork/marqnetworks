@@ -9,7 +9,8 @@ const steps = [
   {
     title: "Kickoff",
     subtitle: "Stage 1",
-    desc: "Deep-dive workshop to unpack goals, users, budget, and KPIs. Includes competitive audit + quick-win matrix and a 90-day execution roadmap with timelines & owners.",
+    desc:
+      "Deep-dive workshop to unpack goals, users, budget, and KPIs—powered by AI workflow transformation services. Includes competitive audit, quick-win matrix, and a 90-day go-to-market roadmap with timelines & owners.",
     icon: "/images/Kickoff.png",
     actions: [
       "✔ Crystal-clear scope",
@@ -20,7 +21,8 @@ const steps = [
   {
     title: "Execution",
     subtitle: "Stage 2",
-    desc: "This is where the magic happens—design, build, and iterate using agile sprints. We collaborate closely with you to translate ideas into reality.",
+    desc:
+      "Design, build, and iterate in agile sprints—fuelled by an AI code assistant and AI performance optimization for web applications to deliver production-ready features fast.",
     icon: "/images/Execution.png",
     actions: [
       "✔ Agile sprints",
@@ -31,22 +33,24 @@ const steps = [
   {
     title: "Launch & Handoff",
     subtitle: "Stage 3",
-    desc: "We deploy to your preferred stack (AWS, Vercel, Shopify, HubSpot). Includes hand-over call, step-by-step playbooks, and 30-day post-launch support.",
+    desc:
+      "One-click deploy to your stack (AWS, Vercel, Shopify, HubSpot) plus lead generation services for B2B playbooks, hand-over call, and 30-day AI-powered CRM automation support.",
     icon: "/images/Handoff.png",
     actions: [
       "✔ Stress-free go-live",
-      "✔ You own 100% of IP & files",
+      "✔ You own 100 % of IP & files",
       "✔ Optional growth retainer"
     ]
   },
   {
     title: "Result",
     subtitle: "Stage 4",
-    desc: "Most MarQ projects move from kickoff to live launch in ≤ 45 days—saving clients 40% in cost and months in opportunity loss.",
+    desc:
+      "Most MarQ projects launch within 45 days—saving clients 40 % in cost and months in opportunity loss, all under the guidance of growth strategy consultants.",
     icon: "/images/resultt.png",
     actions: [
       "✔ 45-day delivery",
-      "✔ 40% cost saving",
+      "✔ 40 % cost saving",
       "✔ Faster time to market"
     ]
   }
@@ -75,8 +79,7 @@ const Work = () => {
         </motion.h2>
 
         <motion.p className="work__description" {...fadeIn}>
-          We’ve battle-tested a three-stage framework that eliminates guesswork,
-          keeps you in the loop, and gets your product in market faster.
+        We’ve battle-tested a three-stage AI workflow transformation framework that eliminates guesswork, keeps you in the loop, and gets your product to market faster.
         </motion.p>
 
         {/* Steps Section */}

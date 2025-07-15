@@ -22,14 +22,14 @@ const LaunchSection = () => {
 
         {/* Heading */}
         <motion.h2 className="launch__headline" {...motionSettings}>
-          Trusted Launch Partner <br />
-          <span>For Startups And Agencies</span>
+          Trusted AI Launch Partner <br />
+          <span>for Startups & Agencies</span>
         </motion.h2>
 
         {/* Subheading */}
         <p className="launch__description">
-          We fast-track your digital launch—from strategy and design to code and <br />
-          growth—so you’re live in weeks, not months.
+           We fast-track your digital launch—from AI workflow transformation strategy and <br />
+          conversion-focused design to headless e-commerce code and growth—so you’re live in weeks, not months.
         </p>
 
         {/* CTA Button */}

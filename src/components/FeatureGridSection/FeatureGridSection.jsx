@@ -6,10 +6,10 @@ const cards = [
     id: 1,
     icon: "/images/revenue.png",
     name: "Boost Your Revenue",
-    label: "Data-Driven Growth",
+    label: "Predictive AI Funnels",
     description:
-      "Proven funnels & CRO tweaks that add 20–40% new revenue without extra ad spend.",
-    pro: true,
+      "AI funnel optimization with predictive modeling adds 20–40% new revenue—no extra ad spend required.",
+    pro: true
   },
   {
     id: 2,
@@ -17,46 +17,47 @@ const cards = [
     name: "Customisable Assets",
     label: "Edit • Re-use • Scale",
     description:
-      "100% Figma + dev files—swap colors, copy, or layouts in minutes and stay on brand everywhere.",
-    pro: false,
+      "Built by headless ecommerce developers—100 % Figma + dev files so you can swap colors, copy, or layouts in minutes and stay on brand.",
+    pro: false
   },
   {
     id: 3,
     icon: "/images/bug.png",
     name: "Bug-Free Development",
-    label: "Optimised Code",
+    label: "AI Code Assistant QA",
     description:
-      "Rigorous QA + automated tests mean your site ships lightning-fast and crash-proof on Day 1.",
-    pro: false,
+      "Rigorous QA plus an AI code assistant keep your codebase lightning-fast and crash-proof from Day 1.",
+    pro: false
   },
   {
     id: 4,
     icon: "/images/award.png",
     name: "Award-Winning Design",
-    label: "Recognised Creativity",
+    label: "AI-Powered UX/UI",
     description:
-      "Visual systems praised by Awwwards & Behance that make your brand impossible to ignore.",
-    pro: false,
+      "Visual systems refined with AI heatmap user testing and AI-powered UX/UI design tools—making your brand impossible to ignore.",
+    pro: false
   },
   {
     id: 5,
     icon: "/images/fastdev.png",
     name: "Lightning-Fast Delivery",
-    label: "Quick Turnaround",
+    label: "AI Workflow Speed",
     description:
-      "Average task turnaround: 2–3 biz days—launch campaigns while others are still mocking up.",
-    pro: true,
+      "AI workflow transformation services compress task turnaround to 2–3 biz days—launch campaigns while others are still mocking up.",
+    pro: true
   },
   {
     id: 6,
     icon: "/images/mobile.png",
     name: "Mobile-First Builds",
-    label: "Responsive & Ready",
+    label: "Performance Optimised",
     description:
-      "Seamless performance on every device, boosting mobile conversions by up to 35%.",
-    pro: false,
-  },
+      "AI performance optimization for web applications boosts mobile conversions by up to 35 % across every device.",
+    pro: false
+  }
 ];
+
 
 const FeatureGridSection = () => {
   return (

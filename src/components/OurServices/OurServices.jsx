@@ -8,65 +8,66 @@ import { motion } from "framer-motion";
 const services = [
   {
     title: "Digital Strategy Sprint",
-    desc: "Align vision, goals & tech in 2 weeks.",
+    desc: "Align vision, goals & tech with AI workflow transformation in 2 weeks.",
     icon: "/images/sprint.png",
     price: "Strategy & Digital Transformation",
     duration: "Consultancy",
     features: [
       "North-Star roadmap",
-      "Ops & tech stack blueprint",
-      "Quick-win priority list",
-    ],
+      "AI workflow transformation blueprint",
+      "Quick-win priority list"
+    ]
   },
   {
     title: "Brand & UX Makeover",
-    desc: "From logo to clickable prototype.",
+    desc: "From logo to AI-powered clickable prototype.",
     icon: "/images/package.png",
     price: "Brand + Experience Design",
     duration: "Design",
     features: [
       "Visual identity kit",
       "UX wireframes in Figma",
-      "Reusable design system",
-    ],
+      "AI heatmap user testing"
+    ]
   },
   {
     title: "MVP Build + Automation",
-    desc: "Code, test & deploy—fast.",
+    desc: "Code, test & deploy—fast with an AI code assistant.",
     icon: "/images/stack.png",
     price: "Custom Software & Automation",
     duration: "Development",
     features: [
       "Full-stack React / Laravel",
-      "Zapier / Make automations",
-      "CI/CD & documentation",
-    ],
+      "AI performance optimization",
+      "CI/CD & documentation"
+    ]
   },
   {
     title: "Lead-Gen Engine",
-    desc: "Funnel, emails & ads done-for-you.",
+    desc: "Funnel, emails & ads done-for-you via AI-powered CRM automation.",
     icon: "/images/Engine.png",
     price: "Growth Marketing & Lead Gen",
     duration: "Marketing",
     features: [
       "High-converting funnel",
-      "CRM & nurture emails",
-      "Paid-ads management",
-    ],
+      "Predictive lead scoring",
+      "Paid-ads management"
+    ]
   },
   {
     title: "Dedicated Remote Pod",
-    desc: "Scale with a plug-in team at 30% less cost.",
+    desc: "Scale with growth-strategy consultants and a plug-in team at 30 % less cost.",
     icon: "/images/Remote.png",
     price: "Off-Shore Excellence Hub",
     duration: "Off-Shore",
     features: [
       "Cross-disciplinary talent",
       "EST time-zone overlap",
-      "Flat, transparent billing",
-    ],
-  },
+      "Flat, transparent billing"
+    ]
+  }
 ];
+
 
 // Animation Variant
 const cardVariants = {

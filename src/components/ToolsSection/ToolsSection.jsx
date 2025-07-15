@@ -10,12 +10,11 @@ const ToolsSection = () => {
 
         <h2 className="tools__headline">
           Our Proven Tech Arsenal<br />
-          <span>Tailored to Every Business Stage</span>
+          <span>Tailored to Every AI-Driven Growth Stage</span>
         </h2>
 
         <p className="tools__description">
-          From idea to enterprise rollout, MarQ Networks selects the perfect stack<br />
-          so your strategy, design, code, growth, and scale run on best-in-class tools.
+         From idea to enterprise rollout, MarQ Networks selects an AI workflow transformation stack—headless e-commerce code, AI-powered CRM automation, and more—so your strategy, design, code, growth, and scale run on best-in-class tools.
         </p>
 
         <div className="tools__actions">

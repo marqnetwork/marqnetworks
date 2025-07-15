@@ -10,13 +10,12 @@ const TeamMembersSection = () => {
         <span className="team-members__tag">• Team Members</span>
 
         <h2 className="team-members__headline">
-          Meet the Team Making<br />
-          <span>Things Happen Every Day</span>
+          Meet the Team Engineering <br />
+          <span>AI-Driven Momentum Every Day</span>
         </h2>
 
         <p className="team-members__description">
-          Our team is made up of passionate professionals who bring their <br />
-          expertise and creativity to every project.
+         Our growth-strategy consultants, AI-powered UX designers, and full-stack engineers <br /> bring passionate expertise and creativity to every project.
         </p>
 
         <div className="team-members__actions">

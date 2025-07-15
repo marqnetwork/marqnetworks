@@ -13,19 +13,18 @@ const WorkSmarterSection = () => {
         <h2 className="work-smarter__headline">
           Work Smarter <br />
           Scale Faster <br />
-          <span>Every Minute Counts.</span>
+          <span>Every AI Minute Counts.</span>
         </h2>
 
-        <h4>Guided From Vision to Launch</h4>
+        <h4>AI-Guided From Vision to Launch</h4>
         <p className="work-smarter__description">
-          We map every milestone—strategy, sprints, QA, and go-live—so <br />
-          you stay focused on growth, not guesswork.
+         We map every milestone—strategy, sprints, QA, and go-live—through an AI workflow transformation roadmap, so you stay focused on growth, not guesswork.
+
         </p>
 
         <h4>Support That Never Sleeps</h4>
         <p className="work-smarter__description">
-          Post-launch, our 24/5 offshore pods keep improvements shipping <br />
-          while you sleep, ensuring momentum never stalls.
+          Post-launch, our growth-strategy consultants and 24/5 offshore pods ship continuous improvements while you sleep, ensuring momentum never stalls.
         </p>
 
         <div className="work-smarter__actions">

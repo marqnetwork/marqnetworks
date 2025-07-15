@@ -5,15 +5,16 @@ import "../Mobilehead/LandinBenefits.css";
 import { motion } from "framer-motion";
 
 const tags = [
-  "Concept-to-Prototype",
-  "Photo-real Mockups",
+  "AI Concept-to-Prototype",
+  "Photo-Real Mockups",
   "AI-Accelerated CAD",
   "AR/VR Previews",
   "Manufacture-Ready Files",
-  "Packaging Design",
+  "Conversion-Focused Packaging",
   "Marketing Renders",
   "Faster Approvals"
 ];
+
 
 
 
@@ -32,11 +33,11 @@ const LandinBenefits = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.5 }}
       >
-        <span>We Don’t Just Model</span> <span>We Materialize Ideas.</span>
+        <span>We Don’t Just Model</span> <span>We Materialize AI Ideas.</span>
       </motion.h1>
 
       <h2 className="mobile-benefits__subtitle">
-       If you can picture it, we’ll turn it into a market-ready product.
+       If you can picture it, our AI concept-to-prototype pipeline turns it into a market-ready product.
       </h2>
 
       <div className="mobile-benefits__tags">

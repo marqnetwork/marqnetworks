@@ -5,16 +5,17 @@ import "../Mobilehead/LandinBenefits.css";
 import { motion } from "framer-motion";
 
 const tags = [
-  "Built-In Wins",
-  "Conversion-Focused UI / UX",
-  "Lightning-Fast Core Web Vitals",
+  "Built-In AI Wins",
+  "Conversion-Focused UX/UI",
+  "AI Performance Optimization",
   "AI-Ready Content Blocks",
-  "SEO & Schema Optimised",
-  "WordPress / Headless / Next.js",
-  "Secure, GDPR / CCPA Compliant",
-  "CRM + Funnel Integration",
+  "SEO & Schema Optimized",
+  "Headless Ecommerce Next.js",
+  "AI-Powered GDPR/SOC-2 Compliance",
+  "CRM + Predictive Lead Scoring",
   "45-Day Launch Guarantee"
 ];
+
 
 
 const LandinBenefits = () => {
@@ -30,11 +31,11 @@ const LandinBenefits = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.5 }}
       >
-        <span>We Don’t Just Code</span> <span>We Craft Revenue Engines.</span>
+        <span>We Don’t Just Code</span> <span>We Craft AI Revenue Engines.</span>
       </motion.h1>
 
       <h2 className="mobile-benefits__subtitle">
-        From first click to final checkout, your site works 24/7 so you don’t have to.
+        From first click to final checkout, our headless, conversion-focused stack sells 24/7 so you don’t have to.
       </h2>
 
       <div className="mobile-benefits__tags">

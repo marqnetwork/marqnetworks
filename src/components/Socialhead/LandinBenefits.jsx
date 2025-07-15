@@ -5,15 +5,16 @@ import "../Mobilehead/LandinBenefits.css";
 import { motion } from "framer-motion";
 
 const tags = [
-  "Strategic Content Calendars",
+  "Strategic AI Content Calendars",
   "On-Brand Reels, Shorts & Carousels",
-  "AI-Driven Topic & Trend Mining",
+  "AI Content Repurposing Tools",
   "Paid-Ad Funnel Alignment",
-  "LinkedIn + IG + TikTok Specialists",
-  "Community Management & Support",
-  "CRM & Email List Sync",
+  "LinkedIn • IG • TikTok Specialists",
+  "Community Engagement & Support",
+  "AI Email Subject-Line Generators",
   "Real-Time Analytics Dashboards"
 ];
+
 
 
 
@@ -35,7 +36,7 @@ const LandinBenefits = () => {
       </motion.h1>
 
       <h2 className="mobile-benefits__subtitle">
-        Turn every scroll into a story, every like into lasting revenue.
+         Turn every scroll into a conversion-focused story, every like into lasting revenue.
       </h2>
 
       <div className="mobile-benefits__tags">

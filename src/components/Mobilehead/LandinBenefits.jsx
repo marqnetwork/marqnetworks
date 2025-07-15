@@ -5,12 +5,12 @@ import "./LandinBenefits.css";
 import { motion } from "framer-motion";
 
 const tags = [
-  "Faster Time-to-App Store",
-  "AI-Driven Personalization",
-  "Conversion-Focused UX",
-  "Scalable Cloud Back-End",
-  "Secure & Compliant",
-  "SEO-Ready App Store",
+  "AI-Powered UX",
+  "Conversion-Focused UI",
+  "Predictive Lead Scoring",
+  "Headless E-Commerce Ready",
+  "AI Performance Optimization",
+  "SOC-2 Secure Compliance",
   "Listing Analytics + CRM Integration",
   "Future-Proof Code (React Native / Flutter)"
 ];
@@ -27,11 +27,11 @@ const LandinBenefits = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.5 }}
       >
-        <span>We Don’t Just Design</span> <span>We Engineer Momentum.</span>
+        <span>We Don’t Just Design</span> <span>We Engineer AI-Powered Momentum.</span>
       </motion.h1>
 
       <h2 className="mobile-benefits__subtitle">
-        If you can dream it, we’ll make the app that moves the needle.
+        If you can dream it, our AI-powered UX will make the app that moves the needle.
       </h2>
 
       <div className="mobile-benefits__tags">

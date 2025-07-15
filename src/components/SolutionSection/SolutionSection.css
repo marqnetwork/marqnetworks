@@ -7,10 +7,11 @@
   background-repeat: no-repeat;
   border-radius: 20px;
   height: 80vh;
+  max-width: 1200px;
 }
 
 .solution-container {
-  max-width: 1200px;
+  
   margin: 20 auto;
   display: flex;
   flex-direction: column;

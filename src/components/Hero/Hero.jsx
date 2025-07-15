@@ -9,12 +9,12 @@ const Hero = () => {
       <div className="hero__container">
         <div className="hero__content">
           <h2 className="hero-heading">
-            <span className="heading-line visible">Premium Digital Partner</span>
-            <span className="heading-line visible">for Visionary Brands</span>
+            <span className="heading-line visible">AI-Driven Digital Growth </span>
+            <span className="heading-line visible">Partner for Visionary Brands</span>
           </h2>
 
           <p className="hero__para">
-            “We weave our 5-Pillar Service Stack—Strategy & Digital Transformation, Brand + Experience Design, Custom Software & Automation, Growth Marketing & Lead Gen, and our Off-Shore Excellence Hub—into one friction-free engine that helps ambitious companies launch faster and scale 40% smarter.”
+            “Strategy, design, code, and growth—engineered as one seamless stack. From AI-driven digital transformation consultancy and branding to custom software development and funnel marketing with CRM automation, MarQ Networks turns clicks into revenue for scaling teams across the U.S. & GCC. Think of us as your all-in-one branding agency for startups, custom dev shop, and funnel marketing agency—powered by AI. Our 5-Pillar Service Stack (Strategy & Digital Transformation • Brand + Experience Design • Custom Software & Automation • Growth Marketing & Lead Gen • Off-Shore Excellence Hub) delivers launch-ready products in ≤45 days, trims costs up to 40 %, and compounds growth with AI-powered CRM workflow automation. Let’s build smarter, faster, together.”
           </p>
 
           <div className="hero__buttons">

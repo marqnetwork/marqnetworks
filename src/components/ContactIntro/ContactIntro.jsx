@@ -15,7 +15,7 @@ const ExplorePortfolio = () => (
       </h1>
 
       <p className="explore-subtext">
-        Whether you’re validating an idea, need a rescue squad for a live project, or just want a second opinion,<br className="break" />
+        Whether you're validating an idea, need growth-strategy consultants to rescue a live project, or want an AI workflow transformation second opinion,
         the marQ Networks team is here—on EST hours, ready to dive in.
       </p>
 

@@ -7,28 +7,37 @@ import MarqButton from '../MarqButton/MarqButton';
 
 const steps = [
   {
-    title: "Code That Thinks Ahead",
-    desc: "AI assists in writing, reviewing, and optimizing code—detecting bugs and inefficiencies before they ship.",
+    title: "AI Code That Thinks Ahead",
+    desc:
+      "An AI code assistant writes, reviews, and optimises code—detecting bugs and inefficiencies before they ship with AI performance optimisation for web applications.",
     icon: "/images/code.png",
-    iconAlt: "Green circle icon with double angle brackets, representing coding and forward-thinking development.",
+    iconAlt:
+      "Green circle icon with double angle brackets, representing coding and forward-thinking development.",
     image: "/images/p7.png",
-    imageAlt: "Futuristic hand interacting with glowing code on a digital screen, depicting AI-assisted coding and bug detection."
+    imageAlt:
+      "Futuristic hand interacting with glowing code on a digital screen, depicting AI-assisted coding and bug detection."
   },
   {
     title: "Smart Integrations & Automation",
-    desc: "We build software with built-in learning loops: voice assistants, AI-powered APIs, and automated workflows.",
+    desc:
+      "We wire headless e-commerce code, AI-powered CRM automation workflows, and voice assistants into learning loops—so every workflow adapts in real time.",
     icon: "/images/smart.png",
-    iconAlt: "Green circle icon with connected nodes symbolizing automation and smart system integrations.",
+    iconAlt:
+      "Green circle icon with connected nodes symbolizing automation and smart system integrations.",
     image: "/images/p8.png",
-    imageAlt: "Digital robot face beside glowing icons for AI, microphone, and cloud, representing smart integrations and automation."
+    imageAlt:
+      "Digital robot face beside glowing icons for AI, microphone, and cloud, representing smart integrations and automation."
   },
   {
-    title: "Revolution: From Software to Self-Evolving Platforms",
-    desc: "Your systems don’t just launch—they learn, adapt, and grow. This isn’t development. It’s evolution.",
+    title: "Self-Evolving Platforms",
+    desc:
+      "Guided by growth-strategy consultants, your systems launch with AI workflow transformation built-in—learning, adapting, and scaling without guesswork.",
     icon: "/images/soft.png",
-    iconAlt: "Green circle icon with a gear and circuit design, symbolizing intelligent platform evolution.",
+    iconAlt:
+      "Green circle icon with a gear and circuit design, symbolizing intelligent platform evolution.",
     image: "/images/p9.png",
-    imageAlt: "Digital tree growing from a circuit board beside a glowing cube, illustrating self-evolving AI platforms."
+    imageAlt:
+      "Digital tree growing from a circuit board beside a glowing cube, illustrating self-evolving AI platforms."
   }
 ];
 
@@ -50,15 +59,15 @@ const Pillar3 = () => {
         </motion.h2>
 
         <p className="solution-pillars__description">
-          Align teams, de-risk spend, and launch initiatives with a proven 90-day execution map.
+           Align teams, de-risk spend, and launch initiatives with an AI code-assistant-powered 90-day execution map.
         </p>
 
         <ul className="solution-pillars__list">
-          <li>API, ERP, CRM integrations</li>
-          <li>AI & RPA process automation</li>
-          <li>Cloud migration & DevOps</li>
-          <li>Change-management playbooks</li>
-          <li>Funnel architecture & CRO</li>
+            <li>API, ERP & CRM integrations</li>
+  <li>Headless e-commerce code</li>
+  <li>AI code assistant & RPA automation</li>
+  <li>Cloud migration + AI performance optimisation</li>
+  <li>Funnel architecture & predictive CRO</li>
         </ul>
 
         <div className="solution-pillars__cta-row">

@@ -7,29 +7,38 @@ import MarqButton from "../MarqButton/MarqButton";
 
 const steps = [
   {
-    title: "Predictive Planning, Not Just Projections",
-    desc: "Our AI models simulate market shifts and customer behavior to build roadmaps that evolve in real-time—not static documents.",
+    title: "Predictive AI Planning",
+    desc:
+      "Our AI workflow transformation roadmap simulates market shifts and customer behavior, creating real-time roadmaps that evolve continuously—not static PDFs.",
     icon: "/images/pl1.png",
-    iconAlt: "Green circular icon with white forward-moving arrow, symbolizing AI-driven strategy and momentum",
+    iconAlt:
+      "Green circular icon with white forward-moving arrow, symbolizing AI-driven strategy and momentum",
     image: "/images/p1.png",
-    imageAlt: "Futuristic 3D grid with AI data nodes representing real-time market simulations and predictive planning",
+    imageAlt:
+      "Futuristic 3D grid with AI data nodes representing real-time market simulations and predictive planning"
   },
   {
-    title: "Faster, Sharper Diagnostics",
-    desc: "AI audits your funnels, operations, and cost centers to pinpoint leaks, missed revenue, and inefficiencies in days—not months.",
+    title: "AI-Powered Diagnostics",
+    desc:
+      "AI performance optimization audits your funnels, ops, and cost centers—pinpointing leaks and missed revenue in days, not months.",
     icon: "/images/pl2.png",
-    iconAlt: "Green circle icon with a white figure running and speed lines, symbolizing fast diagnostics or performance acceleration.",
+    iconAlt:
+      "Green circle icon with a white figure running and speed lines, symbolizing fast diagnostics or performance acceleration.",
     image: "/images/p2.png",
-    imageAlt: "Glowing green digital brain labeled 'AI' floating over a circuit board, representing artificial intelligence performing diagnostic analysis.",
+    imageAlt:
+      "Glowing green digital brain labeled 'AI' floating over a circuit board, representing artificial intelligence performing diagnostic analysis."
   },
   {
-    title: "Revolution: The End of Guesswork",
-    desc: "Strategy becomes science. With every project, we lead clients into a future where data writes the playbook.",
+    title: "Data-Driven Revolution",
+    desc:
+      "Guided by growth-strategy consultants, strategy becomes science—leading you into a future where data writes every playbook.",
     icon: "/images/pl3.png",
-    iconAlt: "Green circle icon with a white light bulb containing a circuit design, symbolizing innovative, data-driven strategy.",
+    iconAlt:
+      "Green circle icon with a white light bulb containing a circuit design, symbolizing innovative, data-driven strategy.",
     image: "/images/p3.png",
-    imageAlt: "Futuristic neon green brain made of circuit patterns with digital bar and pie charts, symbolizing AI-led decision-making and analytics.",
-  },
+    imageAlt:
+      "Futuristic neon green brain made of circuit patterns with digital bar and pie charts, symbolizing AI-led decision-making and analytics."
+  }
 ];
 
 
@@ -50,14 +59,13 @@ const SolutionPillars = () => {
         </motion.h2>
 
         <p className="solution-pillars__description">
-          Align teams, de-risk spend, and launch initiatives with a proven
-          90-day execution map.
+          Align teams, de-risk spend, and launch initiatives with an AI workflow transformation roadmap in 90 days.
         </p>
 
         <ul className="solution-pillars__list">
-          <li>Vision & road-mapping</li>
-          <li>Tech / security audits</li>
-          <li>AI & workflow transformation</li>
+          <li>Vision & AI business road-mapping</li>
+          <li>Tech & SOC-2 security audits</li>
+          <li>AI workflow transformation services</li>
           <li>Change-management playbooks</li>
           <li>Brand identity & guidelines</li>
         </ul>

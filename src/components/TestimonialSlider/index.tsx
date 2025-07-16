@@ -13,7 +13,7 @@ const TestimonialSlider = () => {
     {
       id: 1,
       quote:
-        'Switching to Framer was incredibly smooth. It allowed us to move fast, publish instantly, and maintain our standards. Highly recommended.',
+        'marQ Networks didn’t just build our platform—they became our first users, transforming paper concepts into a seamless digital experience. Their deep business insight, flawless delivery, and standout post-launch support make them the partner we’ll choose again—and you should, too.',
       author: 'Chris Frantz',
       role: 'CEO at Loops',
       logo: '/images/t1.svg',
@@ -25,7 +25,7 @@ const TestimonialSlider = () => {
     {
       id: 2,
       quote:
-        'Framer gives us everything we need to move fast. We don’t wait on dev. We don’t compromise on design.',
+        'Danielle Winfield Wimberly calls marQ Networks and Rameez’s team the ultimate all-in-one partner—combining smart strategy with hands-on execution of sales funnels, email sequences, and CRM automations so she can focus on her clients. Their unique blend of planning and doing will take your business to the next level—highly recommended.',
       author: 'Henry Mitchell',
       role: 'Head of Design at Hospitality',
       logo: '/images/t1.svg',
@@ -37,7 +37,7 @@ const TestimonialSlider = () => {
     {
       id: 3,
       quote:
-        'The design system capabilities are unmatched. We’ve created consistent experiences across all our products.',
+        'Julia Standard, COO of Tax Lien Boot Camp, says marQ Networks became part of her family—translating complex IT into clear, strategic solutions while proactively safeguarding operations. Their punctual, personalized support and tailored automations give her peace of mind and position the company for long-term growth.',
       author: 'Sarah Chen',
       role: 'Design Lead at TechCorp',
       logo: '/images/t1.svg',
@@ -49,7 +49,20 @@ const TestimonialSlider = () => {
     {
       id: 4,
       quote:
-        'From design to deployment, Framer lets us own our product workflow end-to-end.',
+        'Karen Swain, President & CEO of Excelus, says marQ Networks turned their unsecured site into a rock-solid, fully rebranded platform—backed by stellar communication and an unwavering partnership that’s become part of their organization’s very fabric.',
+      author: 'David Kim',
+      role: 'CTO at Lemni',
+      logo: '/images/t1.svg',
+      authorImage: '/images/author1.avif',
+      productImage: '/images/sample1.avif',
+      linkLabel: 'Lemni',
+      linkUrl: 'https://lemni.com/',
+    },
+  
+    {
+      id: 5,
+      quote:
+        'Maurice Hodges, Chief Training Officer at Georgia Tax Lien Boot Camp, calls marQ Networks an indispensable partner—delivering top-quality work with lightning-fast turnarounds, seamless flexibility, and unmatched reliability every time.',
       author: 'David Kim',
       role: 'CTO at Lemni',
       logo: '/images/t1.svg',
@@ -100,7 +113,7 @@ const TestimonialSlider = () => {
       {/* Main Slider Container */}
       <div className="w-full max-w-[1200px] h-[85vh] flex rounded-3xl overflow-hidden shadow-xl">
 
-        <div className="w-1/2 ] bg-[#0f0f0f] text-white bg-red-500 flex flex-col justify-between h-full p-6 left_side">
+        <div className="w-1/2 ]  text-white bg-red-500 flex flex-col justify-between h-full p-6 left_side">
           <div>
             <img src={current.logo} alt="Logo" className="w-20 h-20 " />
           </div>

@@ -8,6 +8,7 @@ import Piller3 from '@/components/Pillar3/Pillar3'
 import Piller4 from '@/components/Pillar4/Pillar4'
 import Piller5 from '@/components/Pillar5/Pillar5'
 import JoinUsNow from '@/components/JoinUsNow/JoinUsNow'
+import SolutionFAQ from "@/components/SolutionFAQ/ContactFAQ";
 
 const Solution = () => {
   return (
@@ -19,6 +20,7 @@ const Solution = () => {
       <Piller3/>
        <Piller4/>
         <Piller5/>
+        <SolutionFAQ/>
             <div style={{ display: 'flex', justifyContent: 'center' ,textAlign:'center' }}>
   <JoinUsNow />
 </div>

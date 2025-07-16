@@ -38,10 +38,11 @@ const Footer = () => {
             <h4>Quick Links</h4>
             <ul>
               <li><a href="/">Home</a></li>
-              <li><a href="/About">About</a></li>
-              <li><a href="/Solution">Solution</a></li>
-              <li><a href="/Portfolio">Portfolio</a></li>
-              <li><a href="/Contact">Contact</a></li>
+               <li><a href="/about-digital-growth-agency">About</a></li>
+  <li><a href="/digital-growth-solutions">Solution</a></li>
+  <li><a href="/project-case-studies">Portfolio</a></li>
+  <li><a href="/story">Story</a></li>
+  <li><a href="/contact-marq-networks">Contact</a></li>
             </ul>
           </div>
 

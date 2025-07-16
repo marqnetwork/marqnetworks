@@ -5,15 +5,15 @@ import "../Mobilehead/LandinBenefits.css";
 import { motion } from "framer-motion";
 
 const tags = [
-  "High-Impact Flyers",
-  "Full Brand Kits",
-  "Print-Ready (CMYK)",
-  "AI-Tested Layouts",
-  "Cross-Channel Assets",
+  "Conversion-Focused Flyers",
+  "Full Brand & UX Kits",
+  "Print-Ready CMYK Proofs",
+  "AI Heatmap-Tested Layouts",
+  "Cross-Channel Headless Assets",
   "Color-True Proofs",
   "White-Label Friendly",
   "DAM Asset Handoff",
-  "E-books"
+  "AI-Ready E-Books"
 ];
 
 
@@ -33,11 +33,11 @@ const LandinBenefits = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
         viewport={{ once: true, amount: 0.5 }}
       >
-        <span>From Pixels to Paper</span> <span>We Build Brands You Can Hold.</span>
+        <span>From Pixels to Paper</span> <span>We Build AI-Ready Brands You Can Hold.</span>
       </motion.h1>
 
       <h2 className="mobile-benefits__subtitle">
-        Business cards to billboards, every touch-point stays unmistakably you.
+         Business cards to billboards, every AI heatmap-tested touchpoint stays unmistakably you.
       </h2>
 
       <div className="mobile-benefits__tags">

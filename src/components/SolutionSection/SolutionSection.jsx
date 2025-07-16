@@ -19,13 +19,13 @@ const SolutionSection = () => {
         {/* Headings */}
         <h1 className="solution-heading">
           Discover <span>marQ Solutions</span><br />
-          Where Challenges <span>Meet Clarity.</span>
+          Where AI Challenges <span>Meet Clarity.</span>
         </h1>
 
         {/* Subtext */}
         <p className="solution-subtext">
-          Dive deep into our approach to transforming growth challenges into clear, effective solutions—<br className="solution-break" />
-          guided by innovation, strategy, and speed.
+         Dive deep into our AI workflow transformation approach to turning growth challenges into<br className="solution-break" />
+          conversion-focused solutions—guided by innovation, strategy, and speed.
         </p>
 
         {/* Buttons */}

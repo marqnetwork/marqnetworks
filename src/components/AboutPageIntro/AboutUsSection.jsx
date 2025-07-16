@@ -15,14 +15,14 @@ const AboutSection = () => {
 
         {/* Headings */}
         <h1 className="deep-dive-heading">
-          Meet <span>marQ Networks</span><br />
-          Where Vision <span>Turns Into Velocity.</span>
+           Meet <span>marQ Networks Where</span><br />
+   <span>AI-Driven Vision</span> Turns Into <span>Velocity.</span>
         </h1>
 
         {/* Subtext */}
         <p className="deep-dive-subtext">
-          Pull back the curtain on the strategists, engineers, and creatives turning complex <br className="break" />
-          growth puzzles into elegant, revenue-boosting solutions—one launch at a time.
+          Pull back the curtain on the strategists, engineers, and creatives turning complex growth puzzles into <br className="break" />
+            elegant,conversion-focused solutions through AI workflow transformation—one launch at a time.
         </p>
 
         {/* Buttons */}

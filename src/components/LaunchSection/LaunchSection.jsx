@@ -28,8 +28,8 @@ const LaunchSection = () => {
 
         {/* Subheading */}
         <p className="launch__description">
-           We fast-track your digital launch—from AI workflow transformation strategy and <br />
-          conversion-focused design to headless e-commerce code and growth—so you’re live in weeks, not months.
+           We fast-track your digital launch—from AI workflow  transformation strategy and 
+          conversion-focused <br /> design to headless e-commerce code and growth—so you’re live in weeks, not months.
         </p>
 
         {/* CTA Button */}

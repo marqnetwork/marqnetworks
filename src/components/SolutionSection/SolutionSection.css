@@ -1,17 +1,18 @@
 .solution-section {
   padding: 6rem 0;
   text-align: center;
-  margin: 0 auto;
+  margin: 20 auto;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   border-radius: 20px;
   height: 80vh;
+  max-width: 1200px;
 }
 
 .solution-container {
-  max-width: 1200px;
-  margin: 20 auto;
+  
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;

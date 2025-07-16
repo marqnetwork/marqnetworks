@@ -6,30 +6,40 @@ import { motion } from "framer-motion";
 import MarqButton from "../MarqButton/MarqButton";
 const steps = [
   {
-    title: "Sprint Automation & Smart Resource Allocation",
-    desc: "AI dynamically adjusts sprint tasks, predicts blockers, and allocates global team members based on skill + velocity.",
+    title: "AI Sprint Automation & Smart Allocation",
+    desc:
+      "An AI workflow transformation roadmap dynamically adjusts sprint tasks, predicts blockers, and allocates global team members by skill and velocity.",
     icon: "/images/sprintt.png",
-    iconAlt: "Green circle icon with a white branching node symbol, representing agile sprint management and intelligent team coordination.",
+    iconAlt:
+      "Green circle icon with a white branching node symbol, representing agile sprint management and intelligent team coordination.",
     image: "/images/p13.png",
-    imageAlt: "Glowing green digital interface showing calendar, location, and AI brain icons—representing smart sprint planning and team task allocation."
+    imageAlt:
+      "Glowing green digital interface showing calendar, location, and AI brain icons—representing smart sprint planning and team task allocation."
   },
   {
-    title: "Real-Time Quality Assurance",
-    desc: "Every commit, test, and deployment is monitored by AI to catch issues before humans do.",
+    title: "AI-Driven Quality Assurance",
+    desc:
+      "Every commit, test, and deployment is watched by an AI code assistant with AI performance optimization—catching issues long before humans do.",
     icon: "/images/real.png",
-    iconAlt: "Green circle icon with branching node symbol representing automated AI workflows and quality monitoring systems.",
+    iconAlt:
+      "Green circle icon with branching node symbol representing automated AI workflows and quality monitoring systems.",
     image: "/images/p14.png",
-    imageAlt: "Green glowing shield icon with the text 'QUALITY ASSURANCE' displayed below, symbolizing AI-driven real-time testing and deployment monitoring."
+    imageAlt:
+      "Green glowing shield icon with the text 'QUALITY ASSURANCE' displayed below, symbolizing AI-driven real-time testing and deployment monitoring."
   },
   {
-    title: "Revolution: Global Teams. One Brain.",
-    desc: "We don't just operate around the clock—we operate ahead of the clock. AI makes our global delivery seamless, smart, and superior.",
+    title: "Borderless Delivery, One AI Brain",
+    desc:
+      "Guided by growth-strategy consultants, our global pods use AI workflow transformation services to work ahead of the clock—seamless, smart, and superior.",
     icon: "/images/brain.png",
-    iconAlt: "Green circular icon with a stylized brain and circuit pattern symbolizing unified AI intelligence for global teamwork.",
+    iconAlt:
+      "Green circular icon with a stylized brain and circuit pattern symbolizing unified AI intelligence for global teamwork.",
     image: "/images/Villa.png",
-    imageAlt: "Green glowing AI symbol beside a highlighted code command 'generateUserResponse', suggesting smart global automation through code."
+    imageAlt:
+      "Green glowing AI symbol beside a highlighted code command 'generateUserResponse', suggesting smart global automation through code."
   }
 ];
+
 
 
 const Pillar5 = () => {
@@ -49,14 +59,14 @@ const Pillar5 = () => {
         </motion.h2>
 
         <p className="solution-pillars__description">
-          Align teams, de-risk spend, and launch initiatives with a proven 90-day execution map.
+          Align teams, de-risk spend, and launch initiatives with a growth-strategy-consultant-led AI workflow transformation roadmap—live in 90 days.
         </p>
 
         <ul className="solution-pillars__list">
-          <li>EST-aligned project manager</li>
-          <li>24/7 design / dev velocity</li>
-          <li>Flat-rate or fixed-bid pods</li>
-          <li>45-day website guarantee</li>
+           <li>EST-aligned growth-strategy PM</li>
+  <li>24/7 design / dev velocity via AI workflow transformation</li>
+  <li>Flat-rate or fixed-bid pods with 30–40 % cost savings</li>
+  <li>45-day website guarantee backed by an AI code assistant</li>
         </ul>
 
         <div className="solution-pillars__cta-row">

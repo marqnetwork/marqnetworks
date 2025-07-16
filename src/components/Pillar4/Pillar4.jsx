@@ -7,30 +7,40 @@ import MarqButton from "../MarqButton/MarqButton";
 
 const steps = [
   {
-    title: "Hyper-Personalization at Scale",
-    desc: "Our AI analyzes user behavior, location, and intent to serve the perfect message—across channels, in real time.",
+    title: "AI-Powered Hyper-Personalization",
+    desc:
+      "AI-powered CRM automation workflows analyze behavior, location, and intent—serving the perfect message across channels in real time.",
     icon: "/images/hyper.png",
-    iconAlt: "Green circle icon with a stylized arrow encircling a dot, symbolizing dynamic AI personalization.",
+    iconAlt:
+      "Green circle icon with a stylized arrow encircling a dot, symbolizing dynamic AI personalization.",
     image: "/images/p10.png",
-    imageAlt: "Futuristic human head with digital interface, charts, and a glowing dot—illustrating AI-driven hyper-personalization."
+    imageAlt:
+      "Futuristic human head with digital interface, charts, and a glowing dot—illustrating AI-driven hyper-personalization."
   },
   {
     title: "Predictive Lead Scoring & Funnel Control",
-    desc: "Know exactly who converts next. AI prioritizes your best leads and auto-optimizes funnel paths to reduce CAC.",
+    desc:
+      "AI predictive lead scoring via CRM pinpoints your best prospects, while AI funnel optimization with predictive modeling slashes CAC.",
     icon: "/images/lead.png",
-    iconAlt: "Green circle icon with vertical bar chart, symbolizing analytics and funnel performance tracking.",
+    iconAlt:
+      "Green circle icon with vertical bar chart, symbolizing analytics and funnel performance tracking.",
     image: "/images/p11.png",
-    imageAlt: "AI chip connected to user icons and a glowing funnel diagram, visualizing automated lead scoring and conversion tracking."
+    imageAlt:
+      "AI chip connected to user icons and a glowing funnel diagram, visualizing automated lead scoring and conversion tracking."
   },
   {
-    title: "Revolution: Marketing Without Guessing",
-    desc: "Forget A/B testing fatigue. Your campaigns learn daily, adapt hourly, and outperform historically.",
+    title: "Marketing Without Guesswork",
+    desc:
+      "Lead generation services for B2B learn daily—using AI email subject-line generators and adaptive content to outperform yesterday’s results.",
     icon: "/images/market.png",
-    iconAlt: "Green circle icon with a white megaphone, representing AI-powered marketing and campaign messaging.",
+    iconAlt:
+      "Green circle icon with a white megaphone, representing AI-powered marketing and campaign messaging.",
     image: "/images/p12.png",
-    imageAlt: "Neon green AI symbol in front of a bar graph and pie chart, with data points and trend lines showing adaptive marketing insights."
+    imageAlt:
+      "Neon green AI symbol in front of a bar graph and pie chart, with data points and trend lines showing adaptive marketing insights."
   }
 ];
+
 
 const Pillar4 = () => {
   return (
@@ -53,15 +63,14 @@ const Pillar4 = () => {
         </motion.h2>
 
         <p className="solution-pillars__description">
-          Align teams, de-risk spend, and launch initiatives with a proven
-          90-day execution map.
+           Align teams, de-risk spend, and launch initiatives with an AI-powered CRM automation roadmap—live in 90 days.
         </p>
 
         <ul className="solution-pillars__list">
-          <li>SEO, paid ads, social & email</li>
-          <li>CRM setup + nurture</li>
-          <li>AI & workflow transformation automations</li>
-          <li>Data dashboards & analytics</li>
+           <li>SEO, paid ads, social & AI email subject-line generators</li>
+  <li>AI-powered CRM automation & nurture flows</li>
+  <li>AI predictive lead scoring & workflow-transformation automations</li>
+  <li>Data dashboards, funnel optimisation & predictive analytics</li>
         </ul>
 
         <div className="solution-pillars__cta-row">

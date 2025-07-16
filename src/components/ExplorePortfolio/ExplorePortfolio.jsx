@@ -13,12 +13,12 @@ const ExplorePortfolio = () => {
 
         <h1 className="explore-heading">
           See What Happens<br />
-          <span>When Idea × Craft × Code Collide. Support line</span>
+          <span>When AI × Craft × Code Collide.</span>
         </h1>
 
         <p className="explore-subtext">
-          From pre-seed disruptors to Fortune-listed giants, our 360° studios turn bold concepts<br className="break" />
-          into products that ship, scale & sell.
+         From pre-seed disruptors to Fortune-listed giants, our 360° AI workflow transformation studios turn bold concepts<br className="break" />
+           into conversion-focused products that ship, scale & sell.
         </p>
 
         {/* <div className="explore-buttons">

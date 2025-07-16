@@ -11,3 +11,20 @@
 .buttons{
     padding:8px 10px;
 }
+.cards{
+    padding:20px;
+    background:#1a1a1a;
+    height:500px
+}
+.card_inner{
+    padding: 0px 0px 20px;
+   
+
+}
+.second{
+    margin-top:50px
+}
+.filter_css{
+    padding:5px 20px;
+    margin:20px 0px
+}

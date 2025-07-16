@@ -30,34 +30,7 @@ interface Props {
 export default function StoryClient({ story, allStories }: Props) {
   return (
     <div className="min-h-screen bg-black sss w-[1200px]" >
-      
-      <motion.header 
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6 }}
-        className=" z-50 glass-effect"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <Link href="/" className="flex items-center space-x-2">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-2 text-white hover:text-white transition-colors"
-              >
-                <ArrowLeft size={20} />
-                <span className="font-medium">Back to Stories</span>
-              </motion.button>
-            </Link>
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">F</span>
-              </div>
-              <span className="text-xl font-bold gradient-text">Framer Stories</span>
-            </div>
-          </div>
-        </div>
-      </motion.header>
+
 
       {/* Hero Section */}
       <section className="pt-24 pb-12 h-screen">
@@ -68,11 +41,11 @@ export default function StoryClient({ story, allStories }: Props) {
             transition={{ duration: 0.8 }}
             className="text-center mb-12 h-screen flex justify-center items-center flex-col gap-5"
           >
-            <div className="inline-block px-4 py-2 bg-primary/10 text-white rounded-full text-sm font-medium mb-4">
+            <div className="inline-block px-4 py-2 bg-primary/10 text-white rounded-full text-lg font-medium mb-4">
               {story.category}
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">{story.title}</h1>
-            <p className="text-xl   mx-auto mb-8 text-center">{story.description}</p>
+            <h1 className="text-4xl md:text-4xl font-bold text-white mb-6 w-[600px]">{story.title}</h1>
+            <p className="text-lg   mx-auto mb-8 text-center w-[500px]">{story.description}</p>
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center">
                 <span className="text-white font-bold">{story.authorAvatar}</span>
@@ -91,7 +64,7 @@ export default function StoryClient({ story, allStories }: Props) {
               </motion.button>
             </div>
           </motion.div>
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative max-w-5xl mx-auto mb-16">
+          {/* <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative max-w-5xl mx-auto mb-16">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
               <div className="aspect-video relative">
                 <Image src={story.image} alt={story.title} fill className="object-cover" />
@@ -102,13 +75,22 @@ export default function StoryClient({ story, allStories }: Props) {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
+      <section>
+        <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative  mx-auto bg-amber-300">
+          <div className=" rounded-3xl overflow-hidden shadow-2xl group cursor-pointer m-auto ">
+            <div className="aspect-video ">
+              <Image src={story.image} alt={story.title} fill className="object-cover text-center m-auto w-1/12" />
 
+            </div>
+          </div>
+        </motion.div>
+      </section>
       {/* Description and Sidebar */}
-      <section className="py-16 ">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className=" ">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center Sidebar">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
               <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
@@ -120,39 +102,72 @@ export default function StoryClient({ story, allStories }: Props) {
                 </div>
               </motion.div>
             </div>
-            <div className="lg:col-span-1">
-              <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.6 }} className=" rounded-2xl p-6 shadow-lg">
-                <h3 className="text-lg font-bold text-dark mb-4">Project Details</h3>
-                <div className="space-y-4">
-                  <div><p className="text-sm font-medium  mb-1">Duration</p><p className="text-dark">{story.duration}</p></div>
-                  <div><p className="text-sm font-medium  mb-1">Category</p><p className="text-dark">{story.category}</p></div>
-                  <div>
-                    <p className="text-sm font-medium mb-2">Tools Used</p>
-                    <div className="flex flex-wrap gap-2">{story.tools.map((tool, i) => (
-                      <span key={i} className="px-3 py-1 bg-black-100 text-white rounded-full text-sm">{tool}</span>
-                    ))}</div>
+            <div className="lg:col-span-1 description m-4">
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="sticky top-20 space-y-8"
+              >
+                {/* Info Card */}
+                <div className="bg-[#111] text-white rounded-2xl p-6 shadow-md space-y-4 badge">
+                  {/* Header */}
+                  <div className="flex items-center gap-4">
+                    <div className=" rounded-md py-2">
+                      <Image
+                        src="/images/calcom-logo.svg"
+                        alt="Cal.com"
+                        width={36}
+                        height={36}
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-semibold">Cal.com</h3>
+                      <p className="text-sm text-gray-400">cal.com</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm font-medium  mb-2">Tags</p>
-                    <div className="flex flex-wrap gap-2">{story.tags.map((tag, i) => (
-                      <span key={i} className="px-3 py-1 bg-primary/10 text-white rounded-full text-sm">{tag}</span>
-                    ))}</div>
+
+                  {/* Description */}
+                  <p className="text-sm text-gray-300 leading-relaxed">
+                    Cal.com is a fully customizable scheduling platform used by individuals, teams, and developers. It helps users book meetings, manage availability, and integrate with popular apps. All while staying on-brand and privacy-first.
+                  </p>
+
+                  {/* Badges */}
+                  <div className="flex flex-wrap gap-2 text-xs font-medium text-white ">
+                    <span className="px-3 py-1 rounded-full border border-white/10 bg-black/10 flex items-center gap-1">
+                      <span>10–50</span>
+                    </span>
+                    <span className="px-3 py-1 rounded-full border border-white/10 bg-black/10 flex items-center gap-1">
+                      <span>2021</span>
+                    </span>
+                    <span className="px-3 py-1 rounded-full border border-white/10 bg-black/10 flex items-center gap-1">
+                      <span>Series A</span>
+                    </span>
+                    <span className="px-3 py-1 rounded-full border border-white/10 bg-black/10 flex items-center gap-1">
+                      <span>$32.5M</span>
+                    </span>
                   </div>
                 </div>
-                <div className="mt-6 pt-6 border-t border-gray-200">
-                  <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full bg-primary text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors">
-                    View Live Demo
-                  </motion.button>
+
+                {/* Results Card */}
+                <div className="bg-[#111] text-white rounded-2xl p-6 shadow-md mt-4 result">
+                  <h4 className="font-semibold text-sm mb-3">Results</h4>
+                  <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+                    <li>Site updates happen instantly</li>
+                    <li>Everyone can build, not just designers</li>
+                    <li>No more handoffs to engineering</li>
+                  </ul>
                 </div>
               </motion.div>
             </div>
+
           </div>
         </div>
       </section>
 
       {/* Related Stories */}
-      <section className="py-16 ">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="">
+        <div className=" mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.8 }} className="text-center mb-12">
             <h2 className="text-3xl font-bold text-dark mb-4">More <span className="gradient-text">Stories</span></h2>
             <p className="">Discover other amazing interactive design stories</p>

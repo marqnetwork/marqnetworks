@@ -2,3 +2,14 @@
     margin:auto;
     color:#fff
 }
+.Sidebar{
+    margin:auto;
+    padding:50px 0px;
+}
+.result{
+    margin-top:20px;
+    padding: 0px 10px
+}
+.badge{
+    padding:0px 10px
+}

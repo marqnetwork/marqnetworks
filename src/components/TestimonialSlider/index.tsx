@@ -8,6 +8,7 @@ import './style.css';
 const TestimonialSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [isHovered, setIsHovered] = useState(false); // Pause slider on hover
 
   const testimonials = [
     {
@@ -18,7 +19,7 @@ const TestimonialSlider = () => {
       role: 'CEO at Loops',
       logo: '/images/t1.svg',
       authorImage: '/images/author1.avif',
-      productImage: '/images/sample1.avif',
+      videoUrl: '/images/test1.mp4',
       linkLabel: 'Loops',
       linkUrl: 'https://loops.so/',
     },
@@ -26,50 +27,49 @@ const TestimonialSlider = () => {
       id: 2,
       quote:
         'Danielle Winfield Wimberly calls marQ Networks and Rameez’s team the ultimate all-in-one partner—combining smart strategy with hands-on execution of sales funnels, email sequences, and CRM automations so she can focus on her clients. Their unique blend of planning and doing will take your business to the next level—highly recommended.',
-      author: 'Henry Mitchell',
-      role: 'Head of Design at Hospitality',
+      author: 'Danielle Winfield Wimberly',
+      role: 'Founder, DWW',
       logo: '/images/t1.svg',
       authorImage: '/images/author1.avif',
-      productImage: '/images/sample1.avif',
-      linkLabel: 'Perplexity',
-      linkUrl: 'https://www.perplexity.ai/',
+      videoUrl: '/images/test2.mp4',
+      linkLabel: 'DWW',
+      linkUrl: '#',
     },
     {
       id: 3,
       quote:
         'Julia Standard, COO of Tax Lien Boot Camp, says marQ Networks became part of her family—translating complex IT into clear, strategic solutions while proactively safeguarding operations. Their punctual, personalized support and tailored automations give her peace of mind and position the company for long-term growth.',
-      author: 'Sarah Chen',
-      role: 'Design Lead at TechCorp',
+      author: 'Julia Standard',
+      role: 'COO, Tax Lien Boot Camp',
       logo: '/images/t1.svg',
       authorImage: '/images/author1.avif',
-      productImage: '/images/sample1.avif',
-      linkLabel: 'Visual Electric',
-      linkUrl: 'https://visualelectric.com/',
+      videoUrl: '/images/test3.mp4',
+      linkLabel: 'Tax Lien Boot Camp',
+      linkUrl: '#',
     },
     {
       id: 4,
       quote:
         'Karen Swain, President & CEO of Excelus, says marQ Networks turned their unsecured site into a rock-solid, fully rebranded platform—backed by stellar communication and an unwavering partnership that’s become part of their organization’s very fabric.',
-      author: 'David Kim',
-      role: 'CTO at Lemni',
+      author: 'Karen Swain',
+      role: 'CEO, Excelus',
       logo: '/images/t1.svg',
       authorImage: '/images/author1.avif',
-      productImage: '/images/sample1.avif',
-      linkLabel: 'Lemni',
-      linkUrl: 'https://lemni.com/',
+      videoUrl: '/images/test4.mp4',
+      linkLabel: 'Excelus',
+      linkUrl: '#',
     },
-  
     {
       id: 5,
       quote:
         'Maurice Hodges, Chief Training Officer at Georgia Tax Lien Boot Camp, calls marQ Networks an indispensable partner—delivering top-quality work with lightning-fast turnarounds, seamless flexibility, and unmatched reliability every time.',
-      author: 'David Kim',
-      role: 'CTO at Lemni',
+      author: 'Maurice Hodges',
+      role: 'Chief Training Officer, Georgia Tax Lien Boot Camp',
       logo: '/images/t1.svg',
       authorImage: '/images/author1.avif',
-      productImage: '/images/sample1.avif',
-      linkLabel: 'Lemni',
-      linkUrl: 'https://lemni.com/',
+      videoUrl: '/images/test5.mp4',
+      linkLabel: 'Georgia TL Boot Camp',
+      linkUrl: '#',
     },
   ];
 
@@ -100,22 +100,26 @@ const TestimonialSlider = () => {
     });
   };
 
-
   useEffect(() => {
+    if (isHovered) return;
     const timer = setInterval(() => paginate(1), 8000);
     return () => clearInterval(timer);
-  }, []);
+  }, [isHovered]);
 
   const current = testimonials[currentSlide];
 
   return (
     <div className="w-full h-10/12 bg-black flex flex-col items-center justify-center px-4">
       {/* Main Slider Container */}
-      <div className="w-full max-w-[1200px] h-[85vh] flex rounded-3xl overflow-hidden shadow-xl">
-
-        <div className="w-1/2 ]  text-white bg-red-500 flex flex-col justify-between h-full p-6 left_side">
+      <div
+        className="w-full max-w-[1200px] h-[85vh] flex rounded-3xl overflow-hidden shadow-xl"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        {/* LEFT SIDE */}
+        <div className="w-1/2 text-white bg-red-500 flex flex-col justify-between h-full p-6 left_side">
           <div>
-            <img src={current.logo} alt="Logo" className="w-20 h-20 " />
+            <img src={current.logo} alt="Logo" className="w-20 h-20" />
           </div>
 
           {/* Centered Quote */}
@@ -149,22 +153,22 @@ const TestimonialSlider = () => {
           </div>
         </div>
 
-
         {/* RIGHT SIDE */}
         <div className="w-1/2 bg-[#f15a29] flex items-center justify-center p-6">
           <AnimatePresence mode="wait">
             <motion.div
-              key={`img-${currentSlide}`}
+              key={`video-${currentSlide}`}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.6 }}
               className="rounded-xl shadow-xl w-full h-full flex items-center justify-center overflow-hidden"
             >
-              <img
-                src={current.productImage}
-                className="max-w-[90%] max-h-[90%] object-contain rounded-xl"
-                alt="Product"
+              <video
+                src={current.videoUrl}
+                controls
+                className="w-full h-full rounded-xl object-contain"
+                preload="auto"
               />
             </motion.div>
           </AnimatePresence>
@@ -172,23 +176,22 @@ const TestimonialSlider = () => {
       </div>
 
       {/* Bottom Nav */}
-      <div className="w-full max-w-[1200px] mt-6 mb-10  items-center tabs flex flex-row justify-between">
-        <div className="flex l">
-
-        </div>
+      <div className="w-full max-w-[1200px] mt-6 mb-10 items-center tabs flex flex-row justify-between">
+        <div className="flex l"></div>
         <div className="flex justify-center gap-x-8 text-white/60 text-[16px] mb-10">
           {testimonials.map((item, idx) => (
             <button
               key={item.id}
               onClick={() => setCurrentSlide(idx)}
-              className={`transition hover:text-white ${currentSlide === idx ? 'text-white font-medium' : ''
-                }`}
+              className={`transition hover:text-white ${
+                currentSlide === idx ? 'text-white font-medium' : ''
+              }`}
             >
               {item.linkLabel}
             </button>
           ))}
         </div>
-        <div className="flex ">
+        <div className="flex">
           <button
             onClick={() => paginate(-1)}
             className="bg-white/10 hover:bg-white/20 rounded-full p-2 transition w-8 h-8"
@@ -197,12 +200,11 @@ const TestimonialSlider = () => {
           </button>
           <button
             onClick={() => paginate(1)}
-            className=" bg-white/10 hover:bg-white/20 rounded-full p-2 transition w-8 h-8"
+            className="bg-white/10 hover:bg-white/20 rounded-full p-2 transition w-8 h-8"
           >
-            <ChevronRight className="text-white w-6 h-6 " />
+            <ChevronRight className="text-white w-6 h-6" />
           </button>
         </div>
-
       </div>
     </div>
   );

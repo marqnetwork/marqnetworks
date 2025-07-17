@@ -119,7 +119,7 @@ const TestimonialSlider = () => {
   const current = testimonials[currentSlide];
 
   return (
-    <div className="w-full bg-black flex flex-col items-center justify-center px-4">
+    <div className="w-full bg-black flex flex-col items-center justify-center px-4 testimo">
       {/* Main Slider Container */}
       <div
         className="w-full max-w-[1200px] h-auto md:h-[85vh] flex flex-col-reverse md:flex-row rounded-3xl overflow-hidden shadow-xl"
@@ -128,7 +128,7 @@ const TestimonialSlider = () => {
       >
         {/* LEFT SIDE */}
         <div
-          className="w-full md:w-1/2 text-white flex flex-col justify-between p-4 md:p-6"
+          className="w-full md:w-1/2 text-white flex flex-col justify-between p-4 md:p-6 left"
           style={{ backgroundColor: current.leftBg }}
         >
           <div>

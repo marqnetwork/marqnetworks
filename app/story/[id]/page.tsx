@@ -68,7 +68,7 @@ interface StoryPageProps {
 }
 
 export default async function StoryPage({ params }: StoryPageProps) {
-  const storyId = parseInt(params.id)
+  const storyId = parseInt(params?.id)
   const story = stories.find(s => s.id === storyId)
 
   if (!story) {

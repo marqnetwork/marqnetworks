@@ -25,3 +25,81 @@
 .head{
     margin:20px 0px
 }
+
+
+@media (max-width: 768px) {
+  .sss {
+    width: 100% !important;
+    padding: 0 1rem;
+  }
+
+  .Description {
+    width: 100% !important;
+    flex-direction: column !important;
+  }
+
+  .Description .w-\[70\%\] {
+    width: 100% !important;
+  }
+
+  .Description .w-\[30\%\] {
+    width: 100% !important;
+    margin-top: 2rem;
+  }
+
+  .text-4xl {
+    font-size: 1.75rem !important;
+    width: 100% !important;
+  }
+
+  .text-2xl {
+    font-size: 1.125rem !important;
+    width: 100% !important;
+  }
+
+  .w-\[550px\] {
+    width: 100% !important;
+  }
+
+  .w-\[650px\] {
+    width: 100% !important;
+  }
+
+  .mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .gap-5, .gap-4, .gap-8 {
+    gap: 1rem !important;
+  }
+
+  .h-screen {
+    height: auto !important;
+    padding: 2rem 0 !important;
+  }
+
+  .relative.aspect-video {
+    height: 200px;
+  }
+
+  .w-\[90\%\] {
+    width: 100% !important;
+  }
+
+  .grid-cols-1,
+  .md\:grid-cols-2,
+  .lg\:grid-cols-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .new {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    margin-top: 2rem;
+  }
+
+  .cards {
+    width: 100% !important;
+  }
+}

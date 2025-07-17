@@ -134,6 +134,47 @@ useEffect(() => {
 
   return (
     <div className="w-full bg-black flex flex-col items-center justify-center px-4 testimo">
+         {/* Bottom Nav */}
+     <div className="hidden md:flex w-full max-w-[1200px] mt-6 items-center tabs flex-col md:flex-row justify-end gap-4 mbb">
+
+  {/* Hidden placeholder (optional) */}
+  {/* <div className="hidden md:flex" /> */}
+
+  {/* Commenting out the label navigation buttons */}
+  {/*
+  <div className="flex flex-wrap justify-center gap-4 text-white/60 text-sm md:text-base">
+    {testimonials.map((item, idx) => (
+      <button
+        key={item.id}
+        onClick={() => setCurrentSlide(idx)}
+        className={`transition hover:text-white ${
+          currentSlide === idx ? 'text-white font-medium' : ''
+        }`}
+      >
+        {item.linkLabel}
+      </button>
+    ))}
+  </div>
+  */}
+
+  {/* Only keep this arrow control section */}
+  <div className="flex gap-2 mx-auto md:mx-0">
+   <button
+  onClick={() => paginate(-1)}
+  className="bg-white/10 hover:bg-white/20 rounded-full w-12 h-12 flex items-center justify-center transition"
+>
+  <ChevronLeft className="text-white w-8 h-8" />
+</button>
+
+<button
+  onClick={() => paginate(1)}
+  className="bg-white/10 hover:bg-white/20 rounded-full w-12 h-12 flex items-center justify-center transition"
+>
+  <ChevronRight className="text-white w-8 h-8" />
+</button>
+
+  </div>
+</div>
       {/* Main Slider Container */}
       <div
         className="w-full max-w-[1200px] h-auto md:h-[85vh] flex flex-col-reverse md:flex-row rounded-3xl overflow-hidden shadow-xl"
@@ -205,36 +246,8 @@ useEffect(() => {
         </div>
       </div>
 
-      {/* Bottom Nav */}
-      <div className="w-full max-w-[1200px] mt-6 mb-10 items-center tabs flex flex-col md:flex-row justify-between gap-4">
-        <div className="hidden md:flex" />
-        <div className="flex flex-wrap justify-center gap-4 text-white/60 text-sm md:text-base">
-          {testimonials.map((item, idx) => (
-            <button
-              key={item.id}
-              onClick={() => setCurrentSlide(idx)}
-              className={`transition hover:text-white ${currentSlide === idx ? 'text-white font-medium' : ''
-                }`}
-            >
-              {item.linkLabel}
-            </button>
-          ))}
-        </div>
-        <div className="flex gap-2">
-          <button
-            onClick={() => paginate(-1)}
-            className="bg-white/10 hover:bg-white/20 rounded-full p-2 transition w-8 h-8"
-          >
-            <ChevronLeft className="text-white w-6 h-6" />
-          </button>
-          <button
-            onClick={() => paginate(1)}
-            className="bg-white/10 hover:bg-white/20 rounded-full p-2 transition w-8 h-8"
-          >
-            <ChevronRight className="text-white w-6 h-6" />
-          </button>
-        </div>
-      </div>
+   
+
     </div>
   );
 };

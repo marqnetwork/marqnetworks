@@ -144,7 +144,7 @@ const TestimonialSlider = () => {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                className="text-lg md:text-1xl font-medium leading-relaxed max-w-md text-justify"
+                className="text-lg md:text-1xl font-medium leading-relaxed max-w-md text-justify "
               >
                 “{current.quote}”
               </motion.blockquote>

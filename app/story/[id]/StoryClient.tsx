@@ -88,7 +88,11 @@ export default function StoryClient({ story, allStories }: Props) {
         <div className=" gap-8 justify-between flex flex-row" >
           <div className=" text w-[70%]">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
-              <h2 className="text-2xl font-bold text-dark mb-6">About This Story</h2>
+              <br />
+              <h1 className="text-2xl font-bold text-dark mb-6">Seeking a faster, simpler way to manage their website, Loops moved from Webflow to Framer. Their key goals were to easily make updates, seamlessly integrate with their existing tools, and speed up their overall workflow.</h1>
+              <br />
+              <h2 className="text-2xl font-bold text-dark mb-6">Effortless design, smoother updates</h2>
+              <br />
               <div className=" text-white leading-relaxed">
                 {story.fullDescription.split('\n\n').map((paragraph, index) => (
                   <p key={index} className="mb-6">{paragraph}</p>

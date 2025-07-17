@@ -41,7 +41,8 @@ export default function StoryListPage() {
         <h1 className="text-4xl md:text-7xl font-bold leading-tight mb-6">
           The web platform <br /> for design teams
         </h1>
-        <p className="text-lg text-gray-400 mb-8 w-[650px] md:text-3xl">
+        <p className="text-lg text-gray-400 mb-8 w-full max-w-[90%] sm:max-w-[500px] md:max-w-[650px] text-center md:text-3xl">
+
           From startups to enterprises, teams use Framer to ship standout websites—no developers
           needed.
         </p>
@@ -75,7 +76,7 @@ export default function StoryListPage() {
       </div>
 
       {/* Cards Grid */}
-      <section className="w-full max-w-[1200px] mx-auto space-y-10">
+      <section className="w-full max-w-[1200px] mx-auto space-y-10 padding">
         {/* First Row - 2 Items */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {posts.slice(0, 2).map((post) => (

@@ -67,7 +67,7 @@ export default function StoryClient({ story, allStories }: Props) {
       {/* Story Image */}
       <section>
         <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative mx-auto">
-          <div className="overflow-hidden shadow-2xl group cursor-pointer m-auto p-4">
+          <div className="overflow-hidden shadow-2xl group cursor-pointer m-auto p-4  marginbt">
             <div className="relative aspect-video rounded-xl overflow-hidden w-[90%]">
               <Image
                 src={story.image}
@@ -82,7 +82,8 @@ export default function StoryClient({ story, allStories }: Props) {
 
       {/* Description */}
       <section className="Description w-[950px]">
-        <div className="gap-4 justify-between flex flex-row">
+        <div className="flex flex-col sm:flex-col md:flex-row justify-between gap-4">
+
           <div className="w-[70%]">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
               <div className="text-white leading-relaxed">

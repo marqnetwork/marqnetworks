@@ -27,11 +27,11 @@ export default function StoryListPage() {
   return (
     <main className="bg-black text-white min-h-screen flex flex-col items-center px-4 py-16">
       {/* Hero Section */}
-      <section className="w-full max-w-[1200px] text-center mb-20 h-screen flex flex-col justify-center items-center gap-3">
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+      <section className="w-full max-w-[1200px] text-center mb-20 h-[80vh] flex flex-col justify-center items-center gap-3">
+        <h1 className="text-4xl md:text-7xl font-bold leading-tight mb-6">
           The web platform <br /> for design teams
         </h1>
-        <p className="text-lg text-gray-400 mb-8 w-[500px]">
+        <p className="text-lg text-gray-400 mb-8 w-[650px] md:text-3xl">
           From startups to enterprises, teams use Framer to ship standout websites—no developers needed.
         </p>
         <div className="flex justify-center gap-4">
@@ -100,9 +100,10 @@ export default function StoryListPage() {
         {/* Remaining Rows - 3 Items Per Row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 second">
           {filteredStories.slice(2).map((story) => (
+            
             <div
               key={story.id}
-              className="cards flex flex-col rounded-xl overflow-hidden border border-neutral-800 shadow-md hover:shadow-lg transition"
+              className="cards flex flex-col rounded-xl overflow-hidden border border-neutral-800 shadow-md hover:shadow-lg transition right"
             >
               <div className="flex items-center justify-between border-b border-neutral-800 bg-[#1a1a1a] card_inner">
                 <div className="flex items-center gap-2">
@@ -121,7 +122,8 @@ export default function StoryListPage() {
                   Read story →
                 </Link>
               </div>
-              <div className="relative w-full h-[400px] bg-black">
+
+              <div className="relative w-full h-[300px] bg-black">
                 <Image
                   src={story.image}
                   alt="Story preview"
@@ -129,6 +131,7 @@ export default function StoryListPage() {
                   className="object-cover"
                 />
               </div>
+          
             </div>
           ))}
         </div>

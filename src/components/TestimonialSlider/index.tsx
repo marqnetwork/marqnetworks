@@ -178,12 +178,12 @@ const TestimonialSlider = () => {
               transition={{ duration: 0.6 }}
               className="rounded-xl shadow-xl w-full h-56 md:h-full flex items-center justify-center overflow-hidden"
             >
-             <video
-  src={current.videoUrl}
-  controls
-  className="w-full h-full rounded-xl object-contain"
-  preload="auto"
-/>
+              <video
+                src={current.videoUrl}
+                controls
+                className="w-full h-full rounded-xl object-contain"
+                preload="auto"
+              />
             </motion.div>
           </AnimatePresence>
         </div>
@@ -197,9 +197,8 @@ const TestimonialSlider = () => {
             <button
               key={item.id}
               onClick={() => setCurrentSlide(idx)}
-              className={`transition hover:text-white ${
-                currentSlide === idx ? 'text-white font-medium' : ''
-              }`}
+              className={`transition hover:text-white ${currentSlide === idx ? 'text-white font-medium' : ''
+                }`}
             >
               {item.linkLabel}
             </button>

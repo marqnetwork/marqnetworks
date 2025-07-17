@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect ,useRef} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './style.css';
@@ -118,6 +118,20 @@ const TestimonialSlider = () => {
 
   const current = testimonials[currentSlide];
 
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+useEffect(() => {
+  const handleScroll = () => {
+    if (window.scrollY > 200 && videoRef.current) {
+      videoRef.current.muted = true;
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
+
+
   return (
     <div className="w-full bg-black flex flex-col items-center justify-center px-4 testimo">
       {/* Main Slider Container */}
@@ -159,7 +173,7 @@ const TestimonialSlider = () => {
             />
             <div>
               <div className="font-semibold text-left">{current.author}</div>
-              <div className="text-white/60 text-sm">{current.role}</div>
+              <div className="text-white/60 text-sm text-left">{current.role}</div>
             </div>
           </div>
         </div>
@@ -178,12 +192,14 @@ const TestimonialSlider = () => {
               transition={{ duration: 0.6 }}
               className="rounded-xl shadow-xl w-full h-56 md:h-full flex items-center justify-center overflow-hidden"
             >
-              <video
-                src={current.videoUrl}
-                controls
-                className="w-full h-full rounded-xl object-contain"
-                preload="auto"
-              />
+             <video
+             ref={videoRef}
+  src={current.videoUrl}
+  autoPlay
+  muted={false}
+  playsInline
+  className="w-full h-full rounded-xl object-contain"
+/>
             </motion.div>
           </AnimatePresence>
         </div>

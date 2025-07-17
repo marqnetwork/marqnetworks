@@ -8,8 +8,20 @@
 }
 .result{
     margin-top:20px;
-    padding: 0px 10px
+    padding: 10px 20px
 }
 .badge{
-    padding:0px 10px
+    padding:10px 20px
+}
+.Description{
+    margin:auto
+}
+.cards{
+    height:350px
+}
+.new{
+    margin:20px 0px
+}
+.head{
+    margin:20px 0px
 }

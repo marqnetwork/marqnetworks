@@ -33,7 +33,7 @@ export default function StoryClient({ story, allStories }: Props) {
 
 
       {/* Hero Section */}
-      <section className="pt-24 pb-12 h-screen">
+      <section className="pt-24 pb-12 h-[screen]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ]">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -44,8 +44,8 @@ export default function StoryClient({ story, allStories }: Props) {
             <div className="inline-block px-4 py-2 bg-primary/10 text-white rounded-full text-lg font-medium mb-4">
               {story.category}
             </div>
-            <h1 className="text-4xl md:text-4xl font-bold text-white mb-6 w-[600px]">{story.title}</h1>
-            <p className="text-1xl font-extrabold   mx-auto mb-8 text-center w-[550px] text-[#aaa]">{story.description}</p>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 w-[650px]">{story.title}</h1>
+            <p className="text-2xl font-extrabold   mx-auto mb-8 text-center w-[550px] text-[#aaa]">{story.description}</p>
             <div className="flex items-center justify-center gap-4 mb-8">
               <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center">
                 <span className="text-white font-bold">{story.authorAvatar}</span>
@@ -83,10 +83,10 @@ export default function StoryClient({ story, allStories }: Props) {
         </motion.div>
       </section>
       {/* Description and Sidebar */}
-      <section className="Description ">
+      <section className="Description w-[950px] ">
 
-        <div className=" gap-8 justify-between flex flex-row" >
-          <div className=" text w-[70%]">
+        <div className=" gap-4 justify-between flex flex-row" >
+          <div className="  w-[70%]">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
               <br />
               <h1 className="text-2xl font-bold text-dark mb-6">Seeking a faster, simpler way to manage their website, Loops moved from Webflow to Framer. Their key goals were to easily make updates, seamlessly integrate with their existing tools, and speed up their overall workflow.</h1>
@@ -100,7 +100,7 @@ export default function StoryClient({ story, allStories }: Props) {
               </div>
             </motion.div>
           </div>
-          <div className=" description w-[30%] ">
+          <div className=" description w-[30%]  result">
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -186,13 +186,17 @@ export default function StoryClient({ story, allStories }: Props) {
                     src={story.image}
                     alt="Story preview"
                     fill
-                    className="object-cover t duration-300 group-hover:scale-105"
+                    className="object-cover  duration-300 group-hover:scale-105"
                   />
 
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                <div className="flex items-center justify-start gap-4 mb-8">
+              
+              </div>
+            ))}
+          </div>
+  <div className="flex items-center justify-start gap-4 new">
                   <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center">
                     <span className="text-white font-bold">{story.authorAvatar}</span>
                   </div>
@@ -201,10 +205,6 @@ export default function StoryClient({ story, allStories }: Props) {
                     <p className="text-sm ">{story.createdAt} • {story.duration}</p>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-
 
         </div>
       </section>

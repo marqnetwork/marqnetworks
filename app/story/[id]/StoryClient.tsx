@@ -40,10 +40,10 @@ export default function StoryClient({ story, allStories }: Props) {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 flex justify-center items-center flex-col gap-5"
         >
-          <div className="inline-block px-4 py-2 bg-primary/10 text-white rounded-full text-lg font-medium mb-4">
+          {/* <div className="inline-block px-4 py-2 bg-primary/10 text-white rounded-full text-lg font-medium mb-4">
             {story.category}
-          </div>
-           <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 w-full max-w-[900px]">{story.title}</h1>
+          </div> */}
+           <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-white mb-6 w-full max-w-[700px] mt2" >{story.title}</h1>
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center">
               <span className="text-white font-bold">{story.authorAvatar}</span>

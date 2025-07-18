@@ -29,6 +29,36 @@
 .mt{
   margin-top: 30px;
 }
+/* style.css */
+
+.custom-html h1,
+.custom-html h2,
+.custom-html h3 {
+  font-size: 2rem; /* Increase as needed */
+  font-weight: 800;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  color: white;
+}
+
+.custom-html strong {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.custom-html p {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  text-align: justify;
+}
+.custom-html img {
+   height: 400px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
 
 
 @media (max-width: 768px) {

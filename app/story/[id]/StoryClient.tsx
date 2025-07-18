@@ -30,7 +30,7 @@ interface Props {
 
 export default function StoryClient({ story, allStories }: Props) {
   return (
-    <div className="min-h-screen bg-black sss w-[1200px]">
+    <div className="min-h-screen bg-black sss w-full max-w-[1200px] mx-auto px-4">
 
       {/* Hero Section */}
       <section className="pt-24 pb-12">
@@ -43,7 +43,7 @@ export default function StoryClient({ story, allStories }: Props) {
           <div className="inline-block px-4 py-2 bg-primary/10 text-white rounded-full text-lg font-medium mb-4">
             {story.category}
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 max-w-[900px]">{story.title}</h1>
+           <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 w-full max-w-[900px]">{story.title}</h1>
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center">
               <span className="text-white font-bold">{story.authorAvatar}</span>
@@ -68,7 +68,7 @@ export default function StoryClient({ story, allStories }: Props) {
       <section>
         <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative mx-auto">
           <div className="overflow-hidden shadow-2xl group cursor-pointer m-auto p-4  marginbt mt">
-             <div className="relative aspect-video rounded-xl overflow-hidden w-full max-w-[1200px] m-auto">
+             <div className="relative aspect-video rounded-xl overflow-hidden w-full max-w-[1200px] mx-auto">
               <Image
                 src={story.image}
                 alt={story.title}
@@ -81,19 +81,19 @@ export default function StoryClient({ story, allStories }: Props) {
       </section>
 
       {/* Description */}
-      <section className="Description w-[950px]">
+      <section className="Description w-full max-w-[950px] mx-auto px-4">
         <div className="flex flex-col sm:flex-col md:flex-row justify-between gap-4">
 
-          <div className="w-[70%]">
+          <div className="w-full md:w-[60%]">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}>
               <div className="text-white leading-relaxed">
-                <div dangerouslySetInnerHTML={{ __html: story.fullDescription }} />
+                <div className="custom-html" dangerouslySetInnerHTML={{ __html: story.fullDescription }} />
               </div>
             </motion.div>
           </div>
 
           {/* Sidebar (optional, kept as-is) */}
-          <div className="w-[30%] result">
+          <div className="w-full md:w-[30%] result mt-8 md:mt-0">
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}

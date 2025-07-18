@@ -17,10 +17,10 @@ const teamMembers = [
     linkedin: "https://www.linkedin.com/in/jamesturner",
   },
   {
-    name: "Shahzaib Bhatti",
-    role: "CTO MarQsoftware House",
+    name: "Shahzeb Bhatti",
+    role: "CTO marQ Software House",
     image: "/images/Shahzaib.png",
-    alt: "Shahzaib Bhatti, CTO of MarQ Software House — leading custom software development, headless ecommerce solutions, and Next.js web application architecture.",
+    alt: "Shahzeb Bhatti, CTO of MarQ Software House — leading custom software development, headless ecommerce solutions, and Next.js web application architecture.",
     linkedin: "https://www.linkedin.com/in/michaelcarter",
   },
   {

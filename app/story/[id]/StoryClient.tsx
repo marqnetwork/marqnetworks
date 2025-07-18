@@ -43,37 +43,37 @@ export default function StoryClient({ story, allStories }: Props) {
           <div className="inline-block px-4 py-2 bg-primary/10 text-white rounded-full text-lg font-medium mb-4">
             {story.category}
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 w-[650px]">{story.title}</h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 max-w-[900px]">{story.title}</h1>
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center">
               <span className="text-white font-bold">{story.authorAvatar}</span>
             </div>
-            <div className="text-left">
-              <p className="font-semibold text-dark">{story.author}</p>
-              <p className="text-sm">{story.createdAt} • {story.duration}</p>
+            <div className="text-left ">
+              <p className="font-semibold text-dark ">{story.author}</p>
+              {/* <p className="text-sm ">{story.createdAt} • {story.duration}</p> */}
             </div>
           </div>
-          <div className="flex items-center justify-center gap-8">
+          {/* <div className="flex items-center justify-center gap-8">
             <div className="flex items-center gap-2"><Heart size={20} /><span>{story.likes}</span></div>
             <div className="flex items-center gap-2"><Eye size={20} /><span>{story.views}</span></div>
             <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="flex items-center gap-2 text-white hover:text-white/80 transition-colors">
               <Share2 size={20} />
               <span>Share</span>
             </motion.button>
-          </div>
+          </div> */}
         </motion.div>
       </section>
 
       {/* Story Image */}
       <section>
         <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.2 }} className="relative mx-auto">
-          <div className="overflow-hidden shadow-2xl group cursor-pointer m-auto p-4  marginbt">
-            <div className="relative aspect-video rounded-xl overflow-hidden w-[90%]">
+          <div className="overflow-hidden shadow-2xl group cursor-pointer m-auto p-4  marginbt mt">
+             <div className="relative aspect-video rounded-xl overflow-hidden w-full max-w-[1200px] m-auto">
               <Image
                 src={story.image}
                 alt={story.title}
                 fill
-                className="object-contain w-[90%]"
+                className="object-cover"
               />
             </div>
           </div>

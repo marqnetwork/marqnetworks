@@ -161,14 +161,14 @@ useEffect(() => {
   <div className="flex gap-2 mx-auto md:mx-0">
    <button
   onClick={() => paginate(-1)}
-  className="bg-white/10 hover:bg-white/20 rounded-full w-12 h-12 flex items-center justify-center transition"
+  className="bg-white/10 hover:bg-white/20 rounded-full w-10 h-10 flex items-center justify-center transition"
 >
   <ChevronLeft className="text-white w-8 h-8" />
 </button>
 
 <button
   onClick={() => paginate(1)}
-  className="bg-white/10 hover:bg-white/20 rounded-full w-12 h-12 flex items-center justify-center transition"
+  className="bg-white/10 hover:bg-white/20 rounded-full w-10 h-10 flex items-center justify-center transition"
 >
   <ChevronRight className="text-white w-8 h-8" />
 </button>

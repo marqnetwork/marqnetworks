@@ -31,7 +31,7 @@ const TestimonialSlider = () => {
         'Danielle Winfield Wimberly calls marQ Networks and Rameez’s team the ultimate all-in-one partner—combining smart strategy with hands-on execution of sales funnels, email sequences, and CRM automations so she can focus on her clients. Their unique blend of planning and doing will take your business to the next level—highly recommended.',
       author: 'Danielle Winfield Wimberly',
       role: 'Founder, DWW',
-      logo: '/images/t1.svg',
+      logo: '/images/dw.png',
       authorImage: '/images/author1.avif',
       videoUrl: '/images/test2.mp4',
       linkLabel: 'DWW',
@@ -45,7 +45,7 @@ const TestimonialSlider = () => {
         'Julia Standard, COO of Tax Lien Boot Camp, says marQ Networks became part of her family—translating complex IT into clear, strategic solutions while proactively safeguarding operations. Their punctual, personalized support and tailored automations give her peace of mind and position the company for long-term growth.',
       author: 'Julia Standard',
       role: 'COO, Tax Lien Boot Camp',
-      logo: '/images/t1.svg',
+      logo: '/images/tga.png',
       authorImage: '/images/author1.avif',
       videoUrl: '/images/test3.mp4',
       linkLabel: 'Tax Lien Boot Camp',
@@ -187,7 +187,7 @@ useEffect(() => {
           style={{ backgroundColor: current.leftBg }}
         >
           <div>
-            <img src={current.logo} alt="Logo" className="w-30 h-20" />
+            <img src={current.logo} alt="Logo" className="w-40 h-25" />
           </div>
 
           <div className="flex-1 flex items-center mt-4 md:mt-0">

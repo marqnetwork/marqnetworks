@@ -3,12 +3,16 @@
 import React, { useState, useEffect ,useRef} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Volume2, VolumeX } from 'lucide-react';
+
 import './style.css';
 
 const TestimonialSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+
 
   const testimonials = [
     {
@@ -16,7 +20,7 @@ const TestimonialSlider = () => {
       quote:
         'marQ Networks didn’t just build our platform—they became our first users, transforming paper concepts into a seamless digital experience. Their deep business insight, flawless delivery, and standout post-launch support make them the partner we’ll choose again—and you should, too.',
       author: 'Chris Frantz',
-      role: 'CEO at Loops',
+      role: 'CEO at Luna',
       logo: '/images/t1.svg',
       authorImage: '/images/author1.avif',
       videoUrl: '/images/test1.mp4',
@@ -120,16 +124,16 @@ const TestimonialSlider = () => {
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-useEffect(() => {
-  const handleScroll = () => {
-    if (window.scrollY > 200 && videoRef.current) {
-      videoRef.current.muted = true;
-    }
-  };
+// useEffect(() => {
+//   const handleScroll = () => {
+//     if (window.scrollY > 200 && videoRef.current) {
+//       videoRef.current.muted = true;
+//     }
+//   };
 
-  window.addEventListener('scroll', handleScroll);
-  return () => window.removeEventListener('scroll', handleScroll);
-}, []);
+//   window.addEventListener('scroll', handleScroll);
+//   return () => window.removeEventListener('scroll', handleScroll);
+// }, []);
 
 
   return (
@@ -231,16 +235,36 @@ useEffect(() => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.6 }}
-              className="rounded-xl shadow-xl w-full h-56 md:h-full flex items-center justify-center overflow-hidden"
+              className="relative rounded-xl shadow-xl w-full h-56 md:h-full flex items-center justify-center overflow-hidden"
             >
              <video
              ref={videoRef}
   src={current.videoUrl}
   autoPlay
-  muted={false}
+  muted={isMuted}
   playsInline
   className="w-full h-full rounded-xl object-contain"
 />
+<button
+  onClick={() => {
+    setIsMuted((prev) => {
+      const newState = !prev;
+      if (videoRef.current) {
+        videoRef.current.muted = newState;
+      }
+      return newState;
+    });
+  }}
+  className="absolute bottom-4 right-4  text-white p-2 rounded-full z-10"
+>
+  {isMuted ? (
+    <VolumeX className="w-5 h-5 text-white" />
+  ) : (
+    <Volume2 className="w-5 h-5 text-white" />
+  )}
+</button>
+
+
             </motion.div>
           </AnimatePresence>
         </div>

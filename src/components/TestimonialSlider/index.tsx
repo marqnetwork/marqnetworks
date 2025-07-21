@@ -59,7 +59,7 @@ const TestimonialSlider = () => {
         'Karen Swain, President & CEO of Excelus, says marQ Networks turned their unsecured site into a rock-solid, fully rebranded platform—backed by stellar communication and an unwavering partnership that’s become part of their organization’s very fabric.',
       author: 'Karen Swain',
       role: 'CEO, Excelus',
-      logo: '/images/t1.svg',
+      logo: '/images/texe.png',
       authorImage: '/images/author1.avif',
       videoUrl: '/images/test4.mp4',
       linkLabel: 'Excelus',
@@ -73,7 +73,7 @@ const TestimonialSlider = () => {
         'Maurice Hodges, Chief Training Officer at Georgia Tax Lien Boot Camp, calls marQ Networks an indispensable partner—delivering top-quality work with lightning-fast turnarounds, seamless flexibility, and unmatched reliability every time.',
       author: 'Maurice Hodges',
       role: 'Chief Training Officer, Georgia TL Boot Camp',
-      logo: '/images/t1.svg',
+      logo: '/images/tga.png',
       authorImage: '/images/author1.avif',
       videoUrl: '/images/test5.mp4',
       linkLabel: 'Georgia TL Boot Camp',
@@ -187,7 +187,7 @@ useEffect(() => {
           style={{ backgroundColor: current.leftBg }}
         >
           <div>
-            <img src={current.logo} alt="Logo" className="w-20 h-20" />
+            <img src={current.logo} alt="Logo" className="w-30 h-20" />
           </div>
 
           <div className="flex-1 flex items-center mt-4 md:mt-0">

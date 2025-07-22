@@ -19,7 +19,8 @@
 
 .footer__column {
   flex: 1 1 100px;
-  min-width: 280px;
+  width:50%;
+  
 }
 
 .footer__logo {
@@ -156,11 +157,25 @@
 .footer__links a:hover {
   color: #fff;
 }
-
+ .new_div{
+    display:flex;
+    justify-content:space-between;
+    flex-direction:row;
+  width:35%
+  }
 /* -------------------- */
 /* 📱 Responsive Styles */
 /* -------------------- */
 @media (max-width: 768px) {
+   .s {
+    margin-top:10px;
+    display: block !important;
+  }
+  .new_div{
+    display:flex;
+    justify-content:space-between;
+    flex-direction:row;
+  }
   .footer {
     padding: 40px 1rem;
   }

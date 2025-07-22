@@ -66,6 +66,12 @@
 
 
 @media (max-width: 768px) {
+  .result{
+    order:-1
+  }
+  .marqblog{
+    order:1;
+  }
   .sss {
     width: 100% !important;
     padding: 0 1rem;

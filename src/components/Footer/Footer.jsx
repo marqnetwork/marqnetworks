@@ -29,20 +29,21 @@ const Footer = () => {
                 placeholder="Your work e-mail…"
                 autoComplete="off"
               />
-              <MarqButton className="navbar__button"/>
+              <MarqButton className="navbar__button s" />
             </div>
           </div>
 
           {/* Middle */}
+          <div className="new_div">
           <div className="footer__column footer__middle">
             <h4>Quick Links</h4>
             <ul>
               <li><a href="/">Home</a></li>
-               <li><a href="/about-digital-growth-agency">About</a></li>
-  <li><a href="/digital-growth-solutions">Solution</a></li>
-  <li><a href="/project-case-studies">Portfolio</a></li>
-  <li><a href="/story">Story</a></li>
-  <li><a href="/contact-marq-networks">Contact</a></li>
+              <li><a href="/about-digital-growth-agency">About</a></li>
+              <li><a href="/digital-growth-solutions">Solution</a></li>
+              <li><a href="/project-case-studies">Portfolio</a></li>
+              <li><a href="/story">Story</a></li>
+              <li><a href="/contact-marq-networks">Contact</a></li>
             </ul>
           </div>
 
@@ -59,11 +60,12 @@ const Footer = () => {
                 </ul>
               </div>
 
-              <div className="footer__video-wrapper">
+              {/* <div className="footer__video-wrapper">
                 <div className="footer__sales">Sales – 7,360,109</div>
                 <div className="video__container"></div>
-              </div>
+              </div> */}
             </div>
+          </div>
           </div>
         </div>
 

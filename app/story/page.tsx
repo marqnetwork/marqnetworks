@@ -119,7 +119,7 @@ export default function StoryListPage() {
               <div className="flex items-center justify-between border-b border-neutral-800 bg-[#1a1a1a] card_inner">
                 <div className="flex items-center gap-2">
                   <Image
-                    src="/images/bird.svg"
+                    src="/images/logo.svg"
                     alt="Logo"
                     width={70}
                     height={70}

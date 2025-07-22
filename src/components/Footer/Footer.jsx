@@ -29,7 +29,8 @@ const Footer = () => {
                 placeholder="Your work e-mail…"
                 autoComplete="off"
               />
-              <MarqButton className="navbar__button s" />
+              
+              <button className="submit">Submit</button>
             </div>
           </div>
 

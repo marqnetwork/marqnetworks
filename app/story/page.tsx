@@ -22,6 +22,7 @@ export default function StoryListPage() {
 
         return {
           id: post.id,
+          slug: post.slug, // ✅ ADDED SLUG
           title: post.title.rendered,
           excerpt: post.excerpt.rendered,
           featuredImage,
@@ -42,7 +43,6 @@ export default function StoryListPage() {
           The web platform <br /> for design teams
         </h1>
         <p className="text-lg text-gray-400 mb-8 w-full max-w-[90%] sm:max-w-[500px] md:max-w-[650px] text-center md:text-3xl">
-
           From startups to enterprises, teams use Framer to ship standout websites—no developers
           needed.
         </p>
@@ -80,7 +80,7 @@ export default function StoryListPage() {
         {/* First Row - 2 Items */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {posts.slice(0, 2).map((post) => (
-            <Link href={`/story/${post.id}`} key={post.id}>
+            <Link href={`/story/${post.slug}`} key={post.id}>
               <div className="cards flex flex-col rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
                 <div className="flex items-center justify-between border-b border-neutral-800 bg-[#1a1a1a] card_inner">
                   <div className="flex items-center gap-2">
@@ -127,7 +127,7 @@ export default function StoryListPage() {
                   />
                 </div>
                 <Link
-                  href={`/story/${post.id}`}
+                  href={`/story/${post.slug}`} // ✅ UPDATED
                   className="text-gray-300 hover:text-white transition text-base font-medium"
                 >
                   Read story →

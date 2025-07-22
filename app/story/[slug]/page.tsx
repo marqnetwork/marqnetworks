@@ -6,24 +6,25 @@ export async function generateStaticParams() {
   const posts = await res.json()
 
   return posts.map((post: any) => ({
-    id: post.id.toString()
+    slug: post.slug
   }))
 }
 
 interface StoryPageProps {
   params: {
-    id: string
+    slug: string
   }
 }
 
 export default async function StoryPage({ params }: StoryPageProps) {
-  const res = await fetch(`https://marqnetworks.co/wp-json/wp/v2/posts/${params.id}?_embed`)
+  const res = await fetch(`https://marqnetworks.co/wp-json/wp/v2/posts?slug=${params.slug}&_embed`)
+  const data = await res.json()
 
-  if (!res.ok) {
+  if (!res.ok || !data.length) {
     notFound()
   }
 
-  const post = await res.json()
+  const post = data[0]
 
   const story = {
     id: post.id,
@@ -31,14 +32,14 @@ export default async function StoryPage({ params }: StoryPageProps) {
     author: post._embedded?.author?.[0]?.name || 'Admin',
     authorAvatar: post._embedded?.author?.[0]?.name?.slice(0, 2).toUpperCase() || 'AD',
     image: post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/images/bir.png',
-    likes: Math.floor(Math.random() * 500), // Since WP doesn't return likes
-    views: Math.floor(Math.random() * 10000) + ' views', // Fake views
+    likes: Math.floor(Math.random() * 500),
+    views: Math.floor(Math.random() * 10000) + ' views',
     category: post.categories?.[0] || 'General',
     description: post.excerpt.rendered,
     fullDescription: post.content.rendered,
-    tags: [], // Optional: Fetch WP tags if needed
+    tags: [],
     createdAt: post.date.split('T')[0],
-    duration: '1 week', // Placeholder, WP doesn’t provide this
+    duration: '1 week',
     tools: []
   }
 
@@ -46,7 +47,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
   const allPosts = await allRes.json()
 
   const allStories = allPosts.map((p: any) => ({
-    id: p.id,
+    slug: p.slug,
     title: p.title.rendered,
     image: p._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/images/bir.png'
   }))

@@ -47,10 +47,10 @@ export default function StoryListPage() {
         </p>
         <div className="flex justify-center gap-4">
           <button className="bg-white text-black font-medium rounded-full hover:opacity-90 transition buttons">
-            Contact sales
+            Explore AI Growth Insights 
           </button>
           <button className="bg-[#1a1a1a] text-white font-medium rounded-full hover:opacity-90 transition border border-white/10 buttons">
-            Explore Enterprise
+            Talk to an Expert
           </button>
         </div>
       </section>

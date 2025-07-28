@@ -42,7 +42,7 @@ export default function StoryListPage() {
         <h1 className="text-6xl md:text-5xl font-bold leading-tight mb-4 fontt  widthh">
           Real-World Growth Insights <br /> Powered by AI 
         </h1>
-        <p className="text-lg text-gray-400 mb-8 w-full max-w-[100%] sm:max-w-[500px] md:max-w-[1000px] text-center md:text-2xl">
+        <p className="text-lg text-gray-400 mb-8 w-full max-w-[100%] sm:max-w-[500px] md:max-w-[1000px] text-center md:text-2xl mbb ">
           Get strategic advice on AI automation, funnel marketing, conversion-focused branding, and scalable software development from experts who've actually delivered growth.
         </p>
         <div className="flex justify-center gap-4">

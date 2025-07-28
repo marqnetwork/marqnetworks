@@ -40,11 +40,10 @@ export default function StoryListPage() {
       {/* Hero Section */}
       <section className="w-full max-w-[1200px] text-center mb-20 h-[80vh] flex flex-col justify-center items-center gap-3">
         <h1 className="text-4xl md:text-7xl font-bold leading-tight mb-6">
-          The web platform <br /> for design teams
+          Real-World Growth Insights <br /> Powered by AI
         </h1>
         <p className="text-lg text-gray-400 mb-8 w-full max-w-[90%] sm:max-w-[500px] md:max-w-[650px] text-center md:text-3xl">
-          From startups to enterprises, teams use Framer to ship standout websites—no developers
-          needed.
+          Get strategic advice on AI automation, funnel marketing, conversion-focused branding, and scalable software development from experts who've actually delivered growth.
         </p>
         <div className="flex justify-center gap-4">
           <button className="bg-white text-black font-medium rounded-full hover:opacity-90 transition buttons">

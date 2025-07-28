@@ -56,13 +56,13 @@ export default function StoryListPage() {
       </section>
 
       {/* Filter Tabs */}
-      <div className="w-full max-w-[1200px] mb-3">
+      <div className="w-full max-w-[1200px]  marginn">
         <div className="flex justify-center gap-4 flex-wrap">
           {filterOptions.map((option) => (
             <button
               key={option}
               onClick={() => setActiveFilter(option)}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition filter_css ${
+              className={`px-3 py-2 rounded-full text-sm font-medium transition filter_css ${
                 activeFilter === option
                   ? 'bg-white text-black'
                   : 'bg-[#1a1a1a] text-white border border-white/10'

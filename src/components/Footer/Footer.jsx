@@ -2,7 +2,8 @@
 
 import React from "react";
 import "./Footer.css";
-import MarqButton from "../MarqButton/MarqButton";
+// import MarqButton from "../MarqButton/MarqButton";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -31,6 +32,9 @@ const Footer = () => {
               />
               
               <button className="submit">Submit</button>
+              <Link href="/digital-growth-solutions#consultancy" className="footer__link-pillars">
+    Explore MarQ Consultancy
+  </Link>
             </div>
           </div>
 

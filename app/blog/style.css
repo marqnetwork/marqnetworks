@@ -7,9 +7,16 @@
     font-size: 60px;
     
 }
-.marginn{
-    margin-top: -120px;
+.marginn {
+  margin-top: 0;
 }
+
+@media (min-width: 1024px) {
+  .marginn {
+    margin-top: -120px;
+  }
+}
+
 .mbb{
     margin-bottom: 12px;
 }

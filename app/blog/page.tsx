@@ -39,7 +39,8 @@ export default function BlogListPage() {
     <main className="bg-black text-white min-h-screen flex flex-col items-center px-4 py-16">
       {/* Hero Section */}
       <section className="w-full max-w-[1200px] text-center mb-20 h-[80vh] flex flex-col justify-center items-center gap-3">
-        <h1 className="text-6xl md:text-5xl font-bold leading-tight mb-4 fontt widthh">
+       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 text-center">
+
           Real-World Growth Insights <br /> Powered by AI
         </h1>
         <p className="text-lg text-gray-400 mb-8 w-full max-w-[100%] sm:max-w-[500px] md:max-w-[1000px] text-center md:text-2xl mbb">
@@ -56,7 +57,10 @@ export default function BlogListPage() {
       </section>
 
       {/* Filter Tabs */}
-      <div className="w-full max-w-[1200px] marginn">
+     <div className="w-full max-w-[1200px] marginn">
+
+
+
         <div className="flex justify-center gap-4 flex-wrap">
           {filterOptions.map((option) => (
             <button

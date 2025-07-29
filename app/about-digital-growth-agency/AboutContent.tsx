@@ -3,6 +3,7 @@
 import React from 'react';
 import './About.css';
 
+
 import AboutPageIntro from '@/components/AboutPageIntro/AboutUsSection';
 import ClassicSkillSection from '@/components/ClassicSkillSection/ClassicSkillSection';
 import WorkSmarterSection from '@/components/WorkSmarterSection/WorkSmarterSection';

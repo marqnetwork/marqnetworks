@@ -1,6 +1,8 @@
 import React from 'react';
 import './AboutUsSection.css';
 import MarqButton from '../MarqButton/MarqButton';
+import Link from "next/link";
+
 
 const AboutSection = () => {
   return (
@@ -28,7 +30,10 @@ const AboutSection = () => {
         {/* Buttons */}
         <div className="deep-dive-buttons">
           <MarqButton className="btn primaryabout" />
-          <button className="btn secondary">Our Story in 90 sec</button>
+          <Link href="/digital-growth-solutions#software-house">
+  <button className="btn secondary">Explore Our Services</button>
+</Link>
+
         </div>
 
         {/* Image */}

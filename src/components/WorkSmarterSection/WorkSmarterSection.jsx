@@ -1,6 +1,8 @@
 import React from "react";
 import './WorkSmarterSection.css';
 import MarqButton from '../MarqButton/MarqButton';
+import Link from "next/link";
+
 
 const WorkSmarterSection = () => {
   return (
@@ -29,10 +31,12 @@ const WorkSmarterSection = () => {
 
         <div className="work-smarter__actions">
           <MarqButton className="work-smarter__button" />
-          <div className="work-smarter__rating">
-            <span className="work-smarter__stars">★★★★★</span>
-            <span className="work-smarter__reviews">900+ client ratings</span>
-          </div>
+         <div className="work-smarter__rating">
+  <Link href="/digital-growth-solutions#growth-pod">
+    <button className="btn secondary">Explore Growth Funnels</button>
+  </Link>
+</div>
+
         </div>
       </div>
 

@@ -43,7 +43,7 @@ const steps = [
 
 const Pillar2 = () => {
   return (
-    <section className="solution-pillars">
+    <section className="solution-pillars" id="creative-logics">
       <div className="solution-pillars__right">
         <img src="/images/2.png" alt="Brand + UX team co-creating a high-conversion design system during a UI/UX strategy sprint" />
       </div>

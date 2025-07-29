@@ -12,6 +12,18 @@
   margin: 100px auto 0;
 }
 
+.service-link {
+  color: #39ff14; /* neon green */
+  font-weight: 600;
+  text-decoration: underline;
+  transition: opacity 0.3s ease;
+}
+
+.service-link:hover {
+  opacity: 0.8;
+}
+
+
 /* ===== Left Section ===== */
 .ourservices__left {
   flex: none;

@@ -44,7 +44,7 @@ const steps = [
 
 const Pillar3 = () => {
   return (
-    <section className="solution-pillars">
+    <section className="solution-pillars" id="software-house">
       <div className="solution-pillars__left">
         <span className="solution-pillars__tag">• Pillar 03</span>
 

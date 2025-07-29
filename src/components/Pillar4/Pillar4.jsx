@@ -44,7 +44,7 @@ const steps = [
 
 const Pillar4 = () => {
   return (
-    <section className="solution-pillars">
+    <section className="solution-pillars"  id="growth-pod">
       <div className="solution-pillars__right">
         <img src="/images/4.png" alt="MarQ growth team reviewing organic traffic, sales metrics, and funnel data to optimize lead gen" />
       </div>

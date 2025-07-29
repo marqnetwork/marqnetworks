@@ -3,6 +3,8 @@
 import React from "react";
 import "./OurServices.css";
 import { motion } from "framer-motion";
+import Link from "next/link";
+
 
 // Service Data
 const services = [
@@ -10,7 +12,7 @@ const services = [
     title: "Digital Strategy Sprint",
     desc: "Align vision, goals & tech with AI workflow transformation in 2 weeks.",
     icon: "/images/sprint.png",
-    price: "Strategy & Digital Transformation",
+    price: <Link href="/digital-growth-solutions#consultancy" className="service-link">Strategy & Digital Transformation</Link>,
     duration: "Consultancy",
     features: [
       "North-Star roadmap",
@@ -22,7 +24,7 @@ const services = [
     title: "Brand & UX Makeover",
     desc: "From logo to AI-powered clickable prototype.",
     icon: "/images/package.png",
-    price: "Brand + Experience Design",
+     price: <Link href="/digital-growth-solutions#creative-logics" className="service-link">Brand + Experience Design</Link>,
     duration: "Design",
     features: [
       "Visual identity kit",
@@ -34,7 +36,7 @@ const services = [
     title: "MVP Build + Automation",
     desc: "Code, test & deploy—fast with an AI code assistant.",
     icon: "/images/stack.png",
-    price: "Custom Software & Automation",
+     price: <Link href="/digital-growth-solutions#software-house" className="service-link">Custom Software & Automation</Link>,
     duration: "Development",
     features: [
       "Full-stack React / Laravel",
@@ -46,7 +48,7 @@ const services = [
     title: "Lead-Gen Engine",
     desc: "Funnel, emails & ads done-for-you via AI-powered CRM automation.",
     icon: "/images/Engine.png",
-    price: "Growth Marketing & Lead Gen",
+     price: <Link href="/digital-growth-solutions#growth-pod" className="service-link">Growth Marketing & Lead Gen</Link>,
     duration: "Marketing",
     features: [
       "High-converting funnel",
@@ -58,7 +60,7 @@ const services = [
     title: "Dedicated Remote Pod",
     desc: "Scale with growth-strategy consultants and a plug-in team at 30 % less cost.",
     icon: "/images/Remote.png",
-    price: "Off-Shore Excellence Hub",
+    price: <Link href="/digital-growth-solutions#offshore-excellence" className="service-link">Off-Shore Excellence Hub</Link>,
     duration: "Off-Shore",
     features: [
       "Cross-disciplinary talent",

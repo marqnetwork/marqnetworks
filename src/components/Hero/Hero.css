@@ -27,6 +27,26 @@
   min-height: 90px;
 }
 
+.hero__links {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+  max-width: 800px;
+  /* margin-left: auto; */
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.link-pillars {
+  color: #39ff14; /* Neon green */
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.link-pillars:hover {
+  opacity: 0.8;
+}
+
+
 /* .heading-line {
   opacity: 0;
   transform: translateY(30%);

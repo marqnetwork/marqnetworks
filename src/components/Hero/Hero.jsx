@@ -3,6 +3,8 @@ import MarqButton from "../MarqButton/MarqButton";
 import LogoSlider from "../LogoSlider/LogoSlider";
 import "./Hero.css";
 
+
+
 const Hero = () => {
   return (
     <section className="hero">
@@ -19,6 +21,10 @@ const Hero = () => {
             <br />
              Think of us as your all-in-one branding agency for startups, custom dev shop, and funnel marketing agency—powered by AI. Our 5-Pillar Service Stack (Strategy & Digital Transformation Brand + Experience Design Custom Software & Automation Growth Marketing & Lead Gen Off-Shore Excellence Hub) delivers launch-ready products in ≤45 days, trims costs up to 40 %, and compounds growth with AI-powered CRM workflow automation. Let’s build smarter, faster, together.”
           </p>
+
+
+
+
 
           <div className="hero__buttons">
             <MarqButton className="primary-btn-hero" />

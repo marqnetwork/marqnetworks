@@ -43,7 +43,7 @@ const Footer = () => {
               <li><a href="/about-digital-growth-agency">About</a></li>
               <li><a href="/digital-growth-solutions">Solution</a></li>
               <li><a href="/project-case-studies">Portfolio</a></li>
-              <li><a href="/Blogs">Blogs</a></li>
+              <li><a href="/blog">Blogs</a></li>
               <li><a href="/contact-marq-networks">Contact</a></li>
             </ul>
           </div>

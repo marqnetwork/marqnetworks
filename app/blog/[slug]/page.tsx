@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import StoryClient from './StoryClient'
+import BlogClient from './BlogClient'
 
 export async function generateStaticParams() {
   const res = await fetch('https://marqnetworks.co/wp-json/wp/v2/posts?_embed')
@@ -10,13 +10,13 @@ export async function generateStaticParams() {
   }))
 }
 
-interface StoryPageProps {
+interface BlogPageProps {
   params: {
     slug: string
   }
 }
 
-export default async function StoryPage({ params }: StoryPageProps) {
+export default async function BlogPage({ params }: BlogPageProps) {
   const res = await fetch(`https://marqnetworks.co/wp-json/wp/v2/posts?slug=${params.slug}&_embed`)
   const data = await res.json()
 
@@ -26,7 +26,7 @@ export default async function StoryPage({ params }: StoryPageProps) {
 
   const post = data[0]
 
-  const story = {
+  const blog = {
     id: post.id,
     title: post.title.rendered,
     author: post._embedded?.author?.[0]?.name || 'Admin',
@@ -46,11 +46,11 @@ export default async function StoryPage({ params }: StoryPageProps) {
   const allRes = await fetch('https://marqnetworks.co/wp-json/wp/v2/posts?_embed')
   const allPosts = await allRes.json()
 
-  const allStories = allPosts.map((p: any) => ({
+  const allBlogs = allPosts.map((p: any) => ({
     slug: p.slug,
     title: p.title.rendered,
     image: p._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/images/bir.png'
   }))
 
-  return <StoryClient story={story} allStories={allStories} />
+  return <BlogClient blog={blog} allBlogs={allBlogs} />
 }

@@ -182,7 +182,7 @@ const TestimonialSlider = () => {
 </div>
       {/* Main Slider Container */}
       <div
-        className="w-full max-w-[1200px] h-auto md:h-[85vh] flex flex-col-reverse md:flex-row rounded-3xl overflow-hidden shadow-xl"
+        className="w-full max-w-[1200px] h-auto md:h-[65vh] flex flex-col-reverse md:flex-row rounded-3xl overflow-hidden shadow-xl"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >

@@ -58,11 +58,20 @@ const Footer = () => {
               <div className="footer__social-sales">
                 <h4>Social</h4>
                 <ul>
-                  <li><a href="http://linkedin.com/company/marqnetwork">LinkedIn</a></li>
-                  <li><a href="https://x.com/MarqNetworks">X (Twitter)</a></li>
-                  <li><a href="https://www.instagram.com/marqnetworksofficial">Instagram</a></li>
-                  <li><a href="https://www.youtube.com/channel/UC1RxV5Vh7-4dF1AFHDJBxcQ">Youtube</a></li>
-                </ul>
+  <li>
+    <a href="http://linkedin.com/company/marqnetwork" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </li>
+  <li>
+    <a href="https://x.com/MarqNetworks" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+  </li>
+  <li>
+    <a href="https://www.instagram.com/marqnetworksofficial" target="_blank" rel="noopener noreferrer">Instagram</a>
+  </li>
+  <li>
+    <a href="https://www.youtube.com/channel/UC1RxV5Vh7-4dF1AFHDJBxcQ" target="_blank" rel="noopener noreferrer">Youtube</a>
+  </li>
+</ul>
+
               </div>
 
               {/* <div className="footer__video-wrapper">

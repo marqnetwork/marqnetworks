@@ -19,7 +19,7 @@
 
 .footer__column {
   flex: 1 1 100px;
-  width:50%;
+  width:100%;
   
 }
 
@@ -55,6 +55,7 @@
   white-space: nowrap;
   font-size: 0.95rem;
   transition: opacity 0.3s ease;
+  margin-top: 10px;
 }
 
 .footer__link-pillars:hover {
@@ -68,6 +69,7 @@
   outline: none;
   /* flex: 1 1 200px; */
   min-width: 200px;
+  width: 50%;
 }
 
 .footer__subscribe button {
@@ -213,6 +215,10 @@
   .footer__subscribe {
     flex-direction: column;
   }
+   .footer__subscribe input {
+    width: 100%;
+  }
+  
 
  
   .footer__subscribe button {

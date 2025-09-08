@@ -12,27 +12,26 @@ const Navbar = () => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
   }, [isMenuOpen]);
 
-  // Inject chat widget and React scripts
+  // Inject chat widget + React scripts
   useEffect(() => {
-    // React
     const reactScript = document.createElement("script");
-    reactScript.src = "https://unpkg.com/react@18/umd/react.production.min.js";
+    reactScript.src =
+      "https://unpkg.com/react@18/umd/react.production.min.js";
     reactScript.crossOrigin = "anonymous";
     document.head.appendChild(reactScript);
 
     const reactDOMScript = document.createElement("script");
-    reactDOMScript.src = "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js";
+    reactDOMScript.src =
+      "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js";
     reactDOMScript.crossOrigin = "anonymous";
     document.head.appendChild(reactDOMScript);
 
-    // Widget
     const widgetScript = document.createElement("script");
     widgetScript.id = "24-7-agent";
     widgetScript.src = "https://widget.aiteamforce.com/widget.js";
     widgetScript.setAttribute("data-user-id", "688a37fd02ce2ed1a2f131ac");
     document.head.appendChild(widgetScript);
 
-    // Initialization after load
     const initScript = () => {
       if (typeof window.initializeChatWidget === "function") {
         window.initializeChatWidget();
@@ -42,6 +41,74 @@ const Navbar = () => {
 
     return () => {
       window.removeEventListener("load", initScript);
+    };
+  }, []);
+
+  // Inject JSON-LD Structured Data
+  useEffect(() => {
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.marqnetworks.com/#organization",
+          "name": "MarQ Networks",
+          "alternateName": "marQ Networks",
+          "url": "https://www.marqnetworks.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.marqnetworks.com/images/logo.svg"
+          },
+          "description":
+            "AI-driven digital growth partner for branding, custom software, SEO audits, and CRM automation.",
+          "email": "info@marqnetworks.com",
+          "telephone": "+923338683688",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "14/B Civil Line Ali Park",
+            "addressLocality": "Sialkot",
+            "addressCountry": "PK"
+          },
+          "sameAs": [
+            "https://x.com/MarqNetworks",
+            "https://www.instagram.com/marqnetworksofficial",
+            "https://www.youtube.com/channel/UC1RxV5Vh7-4dF1AFHDJBxcQ"
+          ],
+          "founder": {
+            "@type": "Person",
+            "name": "Rameez Javed"
+          },
+          "areaServed": ["US", "AE", "PK", "Global"],
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "email": "info@marqnetworks.com",
+              "telephone": "+923338683688",
+              "availableLanguage": ["en"]
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.marqnetworks.com/#website",
+          "url": "https://www.marqnetworks.com/",
+          "name": "MarQ Networks",
+          "publisher": {
+            "@id": "https://www.marqnetworks.com/#organization"
+          },
+          "inLanguage": "en"
+        }
+      ]
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.innerHTML = JSON.stringify(jsonLd);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
     };
   }, []);
 

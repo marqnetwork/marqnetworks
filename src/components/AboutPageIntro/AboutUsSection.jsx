@@ -24,7 +24,7 @@ const AboutSection = () => {
         {/* Subtext */}
         <p className="deep-dive-subtext">
           Pull back the curtain on the strategists, engineers, and creatives turning complex growth puzzles into <br className="break" />
-            elegant,conversion-focused solutions through AI workflow transformation—one launch at a time.
+            elegant,conversion-focused solutions through AI workflow transformation—one launch at  time.
         </p>
 
         {/* Buttons */}

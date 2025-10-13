@@ -1,6 +1,7 @@
 
 "use client";
 import React, { useState, useRef, useEffect } from 'react';
+import QRCode from 'qrcode';
 import './QRGeneratorContent.css';
 
 const QRGeneratorContent = () => {
@@ -24,9 +25,6 @@ const QRGeneratorContent = () => {
     setError('');
 
     try {
-      // Using a dynamic import for the QR code library
-      const QRCode = (await import('qrcode')).default;
-      
       // Generate QR code as data URL
       const dataUrl = await QRCode.toDataURL(qrData, {
         width: qrSize,
@@ -34,7 +32,8 @@ const QRGeneratorContent = () => {
         color: {
           dark: qrColor,
           light: bgColor
-        }
+        },
+        errorCorrectionLevel: 'M'
       });
       
       setQrImage(dataUrl);

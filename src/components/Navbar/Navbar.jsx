@@ -153,6 +153,7 @@ const Navbar = () => {
             <li><a href="/qr-code-scanner">QR Scanner</a></li>
             <li><a href="/qr-generator">QR Generator</a></li>
             <li><a href="/link-shortener">Link Shortener</a></li>
+            <li><a href="/percentage-calculator">Percentage Calculator</a></li>
           </ul>
         </li>
         <li><a href="/contact-marq-networks">Contact</a></li>

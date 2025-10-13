@@ -1,103 +1,52 @@
 "use client";
 import React, { useState, useRef, useEffect } from 'react';
+import QrScanner from 'qr-scanner';
 import './QRScannerContent.css';
 
-// We'll use a browser-compatible QR scanner
 const QRScannerContent = () => {
   const [isScanning, setIsScanning] = useState(false);
   const [scannedResult, setScannedResult] = useState('');
   const [error, setError] = useState('');
   const videoRef = useRef<HTMLVideoElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const streamRef = useRef<MediaStream | null>(null);
-  const scanIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const qrScannerRef = useRef<QrScanner | null>(null);
 
-  // QR Code detection using canvas and imageData
-  const detectQRCode = async () => {
-    if (!videoRef.current || !canvasRef.current) return;
-
-    const video = videoRef.current;
-    const canvas = canvasRef.current;
-    const context = canvas.getContext('2d');
-
-    if (!context) return;
-
-    // Set canvas dimensions to match video
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-
-    // Draw current video frame to canvas
-    context.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-    try {
-      // Get image data from canvas
-      const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-      
-      // Use a simple QR detection method (this is a basic implementation)
-      // In a real app, you'd use a proper QR library like jsQR
-      const result = await scanImageData(imageData);
-      
-      if (result) {
-        setScannedResult(result);
-        stopScanning();
+  // Initialize QR Scanner
+  useEffect(() => {
+    return () => {
+      // Cleanup on unmount
+      if (qrScannerRef.current) {
+        qrScannerRef.current.destroy();
       }
-    } catch (err) {
-      console.error('QR detection error:', err);
-    }
-  };
-
-  // Simple QR code pattern detection (basic implementation)
-  const scanImageData = async (imageData: ImageData): Promise<string | null> => {
-    // This is a simplified QR detection
-    // In production, you'd use a library like jsQR or qr-scanner
-    
-    // For demo purposes, we'll simulate QR detection after a few seconds
-    return new Promise((resolve) => {
-      // Simulate processing time
-      setTimeout(() => {
-        // Check if there's enough contrast and patterns that might be a QR code
-        const data = imageData.data;
-        let darkPixels = 0;
-        let lightPixels = 0;
-        
-        // Sample every 10th pixel to check contrast
-        for (let i = 0; i < data.length; i += 40) {
-          const brightness = (data[i] + data[i + 1] + data[i + 2]) / 3;
-          if (brightness < 128) darkPixels++;
-          else lightPixels++;
-        }
-        
-        // If there's good contrast, simulate finding a QR code
-        if (darkPixels > 100 && lightPixels > 100) {
-          resolve(`https://example.com/qr-demo-${Date.now()}`);
-        } else {
-          resolve(null);
-        }
-      }, 100);
-    });
-  };
+    };
+  }, []);
 
   const startScanning = async () => {
     try {
       setError('');
       setScannedResult('');
       
-      const stream = await navigator.mediaDevices.getUserMedia({
-        video: { 
-          facingMode: 'environment',
-          width: { ideal: 1280 },
-          height: { ideal: 720 }
+      if (!videoRef.current) return;
+
+      // Create QR Scanner instance
+      qrScannerRef.current = new QrScanner(
+        videoRef.current,
+        (result) => {
+          setScannedResult(result.data);
+          stopScanning();
+        },
+        {
+          onDecodeError: (err) => {
+            // Silently handle decode errors - they're normal when no QR code is visible
+            console.debug('QR decode error:', err);
+          },
+          highlightScanRegion: true,
+          highlightCodeOutline: true,
+          preferredCamera: 'environment'
         }
-      });
-      
-      if (videoRef.current) {
-        videoRef.current.srcObject = stream;
-        streamRef.current = stream;
-        setIsScanning(true);
-        
-        // Start scanning for QR codes every 500ms
-        scanIntervalRef.current = setInterval(detectQRCode, 500);
-      }
+      );
+
+      await qrScannerRef.current.start();
+      setIsScanning(true);
     } catch (err) {
       setError('Camera access denied or not available. Please allow camera access and try again.');
       console.error('Error accessing camera:', err);
@@ -105,14 +54,10 @@ const QRScannerContent = () => {
   };
 
   const stopScanning = () => {
-    if (streamRef.current) {
-      streamRef.current.getTracks().forEach(track => track.stop());
-      streamRef.current = null;
-    }
-    
-    if (scanIntervalRef.current) {
-      clearInterval(scanIntervalRef.current);
-      scanIntervalRef.current = null;
+    if (qrScannerRef.current) {
+      qrScannerRef.current.stop();
+      qrScannerRef.current.destroy();
+      qrScannerRef.current = null;
     }
     
     setIsScanning(false);
@@ -121,34 +66,14 @@ const QRScannerContent = () => {
   const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const img = new Image();
-        img.onload = () => {
-          // Create canvas to process the uploaded image
-          const canvas = document.createElement('canvas');
-          const context = canvas.getContext('2d');
-          
-          if (context) {
-            canvas.width = img.width;
-            canvas.height = img.height;
-            context.drawImage(img, 0, 0);
-            
-            const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-            
-            // Process the uploaded image for QR codes
-            scanImageData(imageData).then(result => {
-              if (result) {
-                setScannedResult(result);
-              } else {
-                setError('No QR code found in the uploaded image');
-              }
-            });
-          }
-        };
-        img.src = e.target?.result as string;
-      };
-      reader.readAsDataURL(file);
+      try {
+        setError('');
+        const result = await QrScanner.scanImage(file);
+        setScannedResult(result);
+      } catch (err) {
+        setError('No QR code found in the uploaded image');
+        console.error('QR scan error:', err);
+      }
     }
   };
 
@@ -215,11 +140,7 @@ const QRScannerContent = () => {
                   className="qr-video"
                   style={{ display: isScanning ? 'block' : 'none' }}
                 />
-                <canvas 
-                  ref={canvasRef}
-                  className="qr-canvas"
-                  style={{ display: 'none' }}
-                />
+
                 
                 {!isScanning && (
                   <div className="qr-placeholder">

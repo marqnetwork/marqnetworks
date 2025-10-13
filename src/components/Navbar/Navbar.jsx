@@ -5,12 +5,26 @@ import MarqButton from "../MarqButton/MarqButton";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [resourcesOpen, setResourcesOpen] = useState(false);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
+  const toggleResources = () => setResourcesOpen(!resourcesOpen);
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
   }, [isMenuOpen]);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (resourcesOpen && !event.target.closest('.navbar__dropdown')) {
+        setResourcesOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [resourcesOpen]);
 
   // Inject chat widget + React scripts
   useEffect(() => {
@@ -131,6 +145,16 @@ const Navbar = () => {
         <li><a href="/digital-growth-solutions">Solutions</a></li>
         <li><a href="/project-case-studies">Portfolio</a></li>
         <li><a href="/blog">Blogs</a></li>
+            <li className="navbar__dropdown">
+          <a href="#" onClick={(e) => {e.preventDefault(); toggleResources();}}>
+            Resources {resourcesOpen ? '▲' : '▼'}
+          </a>
+          <ul className={`navbar__dropdown-menu ${resourcesOpen ? 'navbar__dropdown-menu--active' : ''}`}>
+            <li><a href="/qr-code-scanner">QR Scanner</a></li>
+            <li><a href="/qr-generator">QR Generator</a></li>
+            <li><a href="/link-shortener">Link Shortener</a></li>
+          </ul>
+        </li>
         <li><a href="/contact-marq-networks">Contact</a></li>
       </ul>
 

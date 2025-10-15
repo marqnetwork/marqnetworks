@@ -72,7 +72,7 @@ const QR_FRAMES = {
 const QRGeneratorContent = () => {
   // Basic QR settings
   const [qrType, setQrType] = useState(QR_TYPES.URL);
-  const [qrData, setQrData] = useState();
+  const [qrData, setQrData] = useState('');
   const [qrSize, setQrSize] = useState(300);
   const [qrColor, setQrColor] = useState('#000000');
   const [bgColor, setBgColor] = useState('#ffffff');
@@ -470,7 +470,7 @@ END:VEVENT`;
       } else if (exportFormat === 'SVG') {
         // For SVG, generate a basic version since canvas can't export to SVG
         const data = generateQRData();
-        const svgString = QRCode.toString<any>(data, {
+        const svgString = await QRCode.toString(data, {
           type: 'svg',
           width: qrSize,
           margin: margin,
@@ -478,7 +478,7 @@ END:VEVENT`;
             dark: qrColor,
             light: bgColor
           },
-          errorCorrectionLevel: errorLevel
+          errorCorrectionLevel: errorLevel as QRCodeErrorCorrectionLevel
         });
         dataUrl = 'data:image/svg+xml;base64,' + btoa(svgString);
         console.log('SVG dataUrl length:', dataUrl.length);
@@ -559,14 +559,14 @@ END:VEVENT`;
       if (!line) continue;
 
       try {
-        const dataUrl = QRCode.toDataURL(line, {
+        const dataUrl = await QRCode.toDataURL(line, {
           width: qrSize,
           margin: margin,
           color: {
             dark: qrColor,
             light: bgColor
           },
-          errorCorrectionLevel: errorLevel
+          errorCorrectionLevel: errorLevel as QRCodeErrorCorrectionLevel
         });
 
         // Convert data URL to blob
@@ -674,13 +674,13 @@ END:VEVENT`;
       
       // Add recommendations
       if (data.length > 1000) {
-        result.recommendations.push('Consider reducing data length for better scanning');
+        (result.recommendations as string[]).push('Consider reducing data length for better scanning');
       }
       if (qrSize < 200) {
-        result.recommendations.push('Increase size for better readability');
+        (result.recommendations as string[]).push('Increase size for better readability');
       }
       if (errorLevel === 'L' && logoFile) {
-        result.recommendations.push('Use higher error correction with logo');
+        (result.recommendations as string[]).push('Use higher error correction with logo');
       }
       
       setValidationResult(result);
@@ -1787,7 +1787,7 @@ const applyFrame = (canvas: HTMLCanvasElement) => {
                             <div className="qr-recommendations">
                               <strong>Recommendations:</strong>
                               <ul>
-                                {validationResult.recommendations.map((rec, index) => (
+                                {validationResult.recommendations.map((rec: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined, index: React.Key | null | undefined) => (
                                   <li key={index}>{rec}</li>
                                 ))}
                               </ul>
@@ -1866,7 +1866,6 @@ const applyFrame = (canvas: HTMLCanvasElement) => {
             <h2 className="qr-history-heading">
               Your Recent <span>QR Codes</span>
             </h2>
-            
             <div className="qr-history-grid">
               {qrHistory.map((item) => (
                 <div key={item.id} className="qr-history-item">

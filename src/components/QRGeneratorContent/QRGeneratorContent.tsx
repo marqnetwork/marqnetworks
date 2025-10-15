@@ -60,13 +60,19 @@ const QR_FRAMES = {
   ROUNDED: 'rounded',
   SQUARE: 'square',
   CIRCLE: 'circle',
-  MODERN: 'modern'
+  MODERN: 'modern',
+  SCAN_ME: 'scan_me',
+  BANNER_BOTTOM: 'banner_bottom',
+  BANNER_TOP: 'banner_top',
+  RIBBON_BOTTOM: 'ribbon_bottom',
+  BADGE: 'badge',
+  TAG_RIGHT: 'tag_right'
 };
 
 const QRGeneratorContent = () => {
   // Basic QR settings
   const [qrType, setQrType] = useState(QR_TYPES.URL);
-  const [qrData, setQrData] = useState('https://marqnetworks.com');
+  const [qrData, setQrData] = useState();
   const [qrSize, setQrSize] = useState(300);
   const [qrColor, setQrColor] = useState('#000000');
   const [bgColor, setBgColor] = useState('#ffffff');
@@ -99,7 +105,7 @@ const QRGeneratorContent = () => {
   const [qrImage, setQrImage] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
   const [error, setError] = useState('');
-  const [exportFormat, setExportFormat] = useState('png');
+  const [exportFormat, setExportFormat] = useState('PNG');
   const [qrHistory, setQrHistory] = useState<any[]>([]);
   const [showBatchGenerator, setShowBatchGenerator] = useState(false);
   const [batchData, setBatchData] = useState('');
@@ -120,6 +126,10 @@ const QRGeneratorContent = () => {
   
   // Advanced Design
   const [qrFrame, setQrFrame] = useState(QR_FRAMES.NONE);
+  const [frameText, setFrameText] = useState('SCAN ME');
+  const [frameTextColor, setFrameTextColor] = useState('#ffffff');
+  const [frameBgColor, setFrameBgColor] = useState('#000000');
+  const [frameAccentColor, setFrameAccentColor] = useState('#000000');
   const [gradientEnabled, setGradientEnabled] = useState(false);
   const [gradientStart, setGradientStart] = useState('#000000');
   const [gradientEnd, setGradientEnd] = useState('#333333');
@@ -132,7 +142,7 @@ const QRGeneratorContent = () => {
   
   // Campaign Management
   const [campaignName, setCampaignName] = useState('');
-  const [campaignTags, setCampaignTags] = useState<string[]>([]);
+  const [campaignTagsInput, setCampaignTagsInput] = useState('');
   const [showCampaigns, setShowCampaigns] = useState(false);
   const [campaigns, setCampaigns] = useState<any[]>([]);
   
@@ -142,6 +152,28 @@ const QRGeneratorContent = () => {
   
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const logoRef = useRef<HTMLImageElement>(null);
+
+  // Frame selection helper: select by thumbnail and optionally regenerate
+  const handleSelectFrame = (frame: string) => {
+    setQrFrame(frame);
+    const labelFrames = [
+      QR_FRAMES.SCAN_ME,
+      QR_FRAMES.BANNER_BOTTOM,
+      QR_FRAMES.BANNER_TOP,
+      QR_FRAMES.RIBBON_BOTTOM,
+      QR_FRAMES.BADGE,
+      QR_FRAMES.TAG_RIGHT
+    ];
+    if (labelFrames.includes(frame) && !frameText) {
+      setFrameText('SCAN ME');
+    }
+    // If form has data, regenerate to reflect the change immediately
+    const dataPreview = generateQRData();
+    if (dataPreview && dataPreview.trim()) {
+      // Fire and forget; existing button state handles loading
+      generateQRCode();
+    }
+  };
 
   // Generate QR data based on type
   const generateQRData = () => {
@@ -217,7 +249,7 @@ END:VEVENT`;
         break;
       
       default:
-        originalData = qrData;
+        originalData:any = qrData;
         break;
     }
 
@@ -308,9 +340,20 @@ END:VEVENT`;
       const canvas = canvasRef.current;
       if (!canvas) return;
 
-      await QRCode.toCanvas(canvas, data, {
+      // Ensure enough margin when using label-based frames
+      const needsExtraSpace = [
+        QR_FRAMES.SCAN_ME,
+        QR_FRAMES.BANNER_BOTTOM,
+        QR_FRAMES.BANNER_TOP,
+        QR_FRAMES.RIBBON_BOTTOM,
+        QR_FRAMES.BADGE,
+        QR_FRAMES.TAG_RIGHT
+      ].includes(qrFrame);
+      const effectiveMargin = needsExtraSpace ? Math.max(margin, 20) : margin;
+
+      QRCode.toCanvas(canvas, data, {
         width: qrSize,
-        margin: margin,
+        margin: effectiveMargin,
         color: {
           dark: gradientEnabled ? '#000000' : qrColor,
           light: bgColor
@@ -427,7 +470,7 @@ END:VEVENT`;
       } else if (exportFormat === 'SVG') {
         // For SVG, generate a basic version since canvas can't export to SVG
         const data = generateQRData();
-        const svgString = await QRCode.toString(data, {
+        const svgString = QRCode.toString(data, {
           type: 'svg',
           width: qrSize,
           margin: margin,
@@ -516,7 +559,7 @@ END:VEVENT`;
       if (!line) continue;
 
       try {
-        const dataUrl = await QRCode.toDataURL(line, {
+        const dataUrl = QRCode.toDataURL(line, {
           width: qrSize,
           margin: margin,
           color: {
@@ -678,7 +721,7 @@ END:VEVENT`;
     const campaign = {
       id: generateQRId(),
       name: campaignName,
-      tags: campaignTags,
+      tags: campaignTagsInput.split(',').map(t => t.trim()).filter(Boolean),
       qrCodes: [],
       createdAt: new Date().toISOString(),
       stats: { generated: 0, downloaded: 0, scanned: 0 }
@@ -686,7 +729,7 @@ END:VEVENT`;
     
     setCampaigns(prev => [...prev, campaign]);
     setCampaignName('');
-    setCampaignTags([]);
+    setCampaignTagsInput('');
     trackEvent('campaign_created', { campaignId: campaign.id });
   };
 
@@ -733,75 +776,177 @@ END:VEVENT`;
     ctx.putImageData(imageData, 0, 0);
   };
 
-  const applyFrame = (canvas: HTMLCanvasElement) => {
-    if (qrFrame === QR_FRAMES.NONE) return;
-    
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-    
-    const frameSize = 20;
-    ctx.strokeStyle = qrColor;
-    ctx.lineWidth = 4;
-    
-    switch (qrFrame) {
-      case QR_FRAMES.ROUNDED:
-        // Create rounded rectangle manually for better browser compatibility
-        const x = frameSize;
-        const y = frameSize;
-        const width = canvas.width - frameSize * 2;
-        const height = canvas.height - frameSize * 2;
-        const radius = 10;
-        
-        ctx.beginPath();
-        ctx.moveTo(x + radius, y);
-        ctx.lineTo(x + width - radius, y);
-        ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
-        ctx.lineTo(x + width, y + height - radius);
-        ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
-        ctx.lineTo(x + radius, y + height);
-        ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
-        ctx.lineTo(x, y + radius);
-        ctx.quadraticCurveTo(x, y, x + radius, y);
-        ctx.closePath();
-        ctx.stroke();
-        break;
-      case QR_FRAMES.SQUARE:
-        ctx.strokeRect(frameSize, frameSize, canvas.width - frameSize * 2, canvas.height - frameSize * 2);
-        break;
-      case QR_FRAMES.CIRCLE:
-        ctx.beginPath();
-        ctx.arc(canvas.width / 2, canvas.height / 2, (canvas.width - frameSize * 2) / 2, 0, 2 * Math.PI);
-        ctx.stroke();
-        break;
-      case QR_FRAMES.MODERN:
-        // Modern frame with corner accents
-        const cornerSize = 30;
-        ctx.beginPath();
-        // Top-left corner
-        ctx.moveTo(frameSize, frameSize + cornerSize);
-        ctx.lineTo(frameSize, frameSize);
-        ctx.lineTo(frameSize + cornerSize, frameSize);
-        // Top-right corner
-        ctx.moveTo(canvas.width - frameSize - cornerSize, frameSize);
-        ctx.lineTo(canvas.width - frameSize, frameSize);
-        ctx.lineTo(canvas.width - frameSize, frameSize + cornerSize);
-        // Bottom-right corner
-        ctx.moveTo(canvas.width - frameSize, canvas.height - frameSize - cornerSize);
-        ctx.lineTo(canvas.width - frameSize, canvas.height - frameSize);
-        ctx.lineTo(canvas.width - frameSize - cornerSize, canvas.height - frameSize);
-        // Bottom-left corner
-        ctx.moveTo(frameSize + cornerSize, canvas.height - frameSize);
-        ctx.lineTo(frameSize, canvas.height - frameSize);
-        ctx.lineTo(frameSize, canvas.height - frameSize - cornerSize);
-        ctx.stroke();
-        break;
+const applyFrame = (canvas: HTMLCanvasElement) => {
+  if (qrFrame === QR_FRAMES.NONE) return;
+  
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+  
+  const frameSize = 20;
+  ctx.strokeStyle = qrColor;
+  ctx.lineWidth = 4;
+  ctx.save();
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  
+  // Helper metrics
+  const quietZone = frameSize; // visual offset for simple frames
+  const panelHeight = Math.max(28, Math.floor(canvas.height * 0.14));
+  const labelFrames = [
+    QR_FRAMES.SCAN_ME,
+    QR_FRAMES.BANNER_BOTTOM,
+    QR_FRAMES.BANNER_TOP,
+    QR_FRAMES.RIBBON_BOTTOM,
+    QR_FRAMES.BADGE,
+    QR_FRAMES.TAG_RIGHT
+  ];
+  const effectiveMarginLocal = labelFrames.includes(qrFrame) ? Math.max(margin, 20) : margin;
+  const qrAreaStart = effectiveMarginLocal; // quiet zone used by generator
+  const qrAreaEnd = canvas.height - effectiveMarginLocal;
+  const qrAreaWidth = canvas.width - effectiveMarginLocal * 2;
+  
+  switch (qrFrame) {
+    case QR_FRAMES.ROUNDED:
+      // Create rounded rectangle manually for better browser compatibility
+      const x = frameSize;
+      const y = frameSize;
+      const width = canvas.width - frameSize * 2;
+      const height = canvas.height - frameSize * 2;
+      const radius = 10;
+      
+      ctx.beginPath();
+      ctx.moveTo(x + radius, y);
+      ctx.lineTo(x + width - radius, y);
+      ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+      ctx.lineTo(x + width, y + height - radius);
+      ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+      ctx.lineTo(x + radius, y + height);
+      ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+      ctx.lineTo(x, y + radius);
+      ctx.quadraticCurveTo(x, y, x + radius, y);
+      ctx.closePath();
+      ctx.stroke();
+      break;
+    case QR_FRAMES.SQUARE:
+      ctx.strokeRect(frameSize, frameSize, canvas.width - frameSize * 2, canvas.height - frameSize * 2);
+      break;
+    case QR_FRAMES.CIRCLE:
+      ctx.beginPath();
+      ctx.arc(canvas.width / 2, canvas.height / 2, (canvas.width - frameSize * 2) / 2, 0, 2 * Math.PI);
+      ctx.stroke();
+      break;
+    case QR_FRAMES.MODERN:
+      // Modern frame with corner accents
+      const cornerSize = 30;
+      ctx.beginPath();
+      // Top-left corner
+      ctx.moveTo(frameSize, frameSize + cornerSize);
+      ctx.lineTo(frameSize, frameSize);
+      ctx.lineTo(frameSize + cornerSize, frameSize);
+      // Top-right corner
+      ctx.moveTo(canvas.width - frameSize - cornerSize, frameSize);
+      ctx.lineTo(canvas.width - frameSize, frameSize);
+      ctx.lineTo(canvas.width - frameSize, frameSize + cornerSize);
+      // Bottom-right corner
+      ctx.moveTo(canvas.width - frameSize, canvas.height - frameSize - cornerSize);
+      ctx.lineTo(canvas.width - frameSize, canvas.height - frameSize);
+      ctx.lineTo(canvas.width - frameSize - cornerSize, canvas.height - frameSize);
+      // Bottom-left corner
+      ctx.moveTo(frameSize + cornerSize, canvas.height - frameSize);
+      ctx.lineTo(frameSize, canvas.height - frameSize);
+      ctx.lineTo(frameSize, canvas.height - frameSize - cornerSize);
+      ctx.stroke();
+      break;
+    case QR_FRAMES.BANNER_BOTTOM:
+    case QR_FRAMES.SCAN_ME: {
+      // Draw a full-width banner in the bottom quiet zone
+      const bannerY = qrAreaEnd - panelHeight;
+      ctx.fillStyle = frameBgColor || '#000000';
+      ctx.fillRect(margin, bannerY, qrAreaWidth, panelHeight);
+
+      // Banner text
+      ctx.fillStyle = frameTextColor || '#ffffff';
+      ctx.font = `bold ${Math.floor(panelHeight * 0.45)}px Arial`;
+      ctx.fillText(frameText || 'SCAN ME', canvas.width / 2, bannerY + panelHeight / 2);
+      break;
     }
-  };
+    case QR_FRAMES.BANNER_TOP: {
+      const bannerY = margin;
+      ctx.fillStyle = frameBgColor || '#000000';
+      ctx.fillRect(margin, bannerY, qrAreaWidth, panelHeight);
+      ctx.fillStyle = frameTextColor || '#ffffff';
+      ctx.font = `bold ${Math.floor(panelHeight * 0.45)}px Arial`;
+      ctx.fillText(frameText || 'SCAN ME', canvas.width / 2, bannerY + panelHeight / 2);
+      break;
+    }
+    case QR_FRAMES.RIBBON_BOTTOM: {
+      const ribbonHeight = Math.max(18, Math.floor(canvas.height * 0.1));
+      const y = qrAreaEnd - ribbonHeight - 4;
+      const xPad = margin + 12;
+      const w = qrAreaWidth - 24;
+      ctx.fillStyle = frameBgColor || '#000000';
+      ctx.beginPath();
+      ctx.moveTo(xPad, y);
+      ctx.lineTo(xPad + w, y);
+      ctx.lineTo(xPad + w - 18, y + ribbonHeight);
+      ctx.lineTo(xPad + 18, y + ribbonHeight);
+      ctx.closePath();
+      ctx.fill();
+      // Text
+      ctx.fillStyle = frameTextColor || '#ffffff';
+      ctx.font = `bold ${Math.floor(ribbonHeight * 0.5)}px Arial`;
+      ctx.fillText(frameText || 'SCAN ME', canvas.width / 2, y + ribbonHeight * 0.55);
+      break;
+    }
+    case QR_FRAMES.BADGE: {
+      const badgeRadius = Math.max(24, Math.floor(canvas.width * 0.12));
+      const cx = canvas.width / 2;
+      const cy = qrAreaEnd - badgeRadius - 6;
+      ctx.fillStyle = frameBgColor || '#000000';
+      ctx.beginPath();
+      ctx.arc(cx, cy, badgeRadius, 0, Math.PI * 2);
+      ctx.fill();
+      // Text
+      ctx.fillStyle = frameTextColor || '#ffffff';
+      ctx.font = `bold ${Math.floor(badgeRadius * 0.5)}px Arial`;
+      ctx.fillText(frameText || 'SCAN', cx, cy);
+      break;
+    }
+    case QR_FRAMES.TAG_RIGHT: {
+      const tagWidth = Math.max(60, Math.floor(canvas.width * 0.22));
+      const tagHeight = Math.max(26, Math.floor(canvas.height * 0.12));
+      const x = canvas.width - margin - tagWidth;
+      const y = qrAreaEnd - tagHeight - 6;
+      ctx.fillStyle = frameBgColor || '#000000';
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.lineTo(x + tagWidth, y);
+      ctx.lineTo(x + tagWidth, y + tagHeight);
+      ctx.lineTo(x + 18, y + tagHeight);
+      ctx.lineTo(x, y + tagHeight - 12);
+      ctx.closePath();
+      ctx.fill();
+      // Hole
+      ctx.fillStyle = bgColor;
+      ctx.beginPath();
+      ctx.arc(x + tagWidth - 10, y + tagHeight / 2, 4, 0, Math.PI * 2);
+      ctx.fill();
+      // Text
+      ctx.fillStyle = frameTextColor || '#ffffff';
+      ctx.font = `bold ${Math.floor(tagHeight * 0.45)}px Arial`;
+      ctx.fillText(frameText || 'SCAN', x + tagWidth / 2 - 8, y + tagHeight / 2);
+      break;
+    }
+  }
+  ctx.restore();
+};
 
   // Generate QR code on initial load
   useEffect(() => {
     generateQRCode();
   }, []);
+
+  const stats = getAnalyticsStats();
 
   return (
     <div className="qr-generator-container">
@@ -1205,7 +1350,57 @@ END:VEVENT`;
                           <option value={QR_FRAMES.SQUARE}>Square</option>
                           <option value={QR_FRAMES.CIRCLE}>Circle</option>
                           <option value={QR_FRAMES.MODERN}>Modern</option>
+                          <option value={QR_FRAMES.SCAN_ME}>Scan Me Banner</option>
+                          <option value={QR_FRAMES.BANNER_BOTTOM}>Banner Bottom</option>
+                          <option value={QR_FRAMES.BANNER_TOP}>Banner Top</option>
+                          <option value={QR_FRAMES.RIBBON_BOTTOM}>Ribbon Bottom</option>
+                          <option value={QR_FRAMES.BADGE}>Badge</option>
+                          <option value={QR_FRAMES.TAG_RIGHT}>Tag Right</option>
                         </select>
+                      </div>
+
+                      {/* Frame Gallery */}
+                      <div className="qr-frame-gallery">
+                        {/* None */}
+                        <button type="button" className={`qr-frame-option ${qrFrame===QR_FRAMES.NONE?'selected':''}`} onClick={() => handleSelectFrame(QR_FRAMES.NONE)}>
+                          <div className="thumb thumb-none"></div>
+                        </button>
+                        {/* Rounded */}
+                        <button type="button" className={`qr-frame-option ${qrFrame===QR_FRAMES.ROUNDED?'selected':''}`} onClick={() => handleSelectFrame(QR_FRAMES.ROUNDED)}>
+                          <div className="thumb thumb-rounded"></div>
+                        </button>
+                        {/* Square */}
+                        <button type="button" className={`qr-frame-option ${qrFrame===QR_FRAMES.SQUARE?'selected':''}`} onClick={() => handleSelectFrame(QR_FRAMES.SQUARE)}>
+                          <div className="thumb thumb-square"></div>
+                        </button>
+                        {/* Circle */}
+                        <button type="button" className={`qr-frame-option ${qrFrame===QR_FRAMES.CIRCLE?'selected':''}`} onClick={() => handleSelectFrame(QR_FRAMES.CIRCLE)}>
+                          <div className="thumb thumb-circle"></div>
+                        </button>
+                        {/* Modern */}
+                        <button type="button" className={`qr-frame-option ${qrFrame===QR_FRAMES.MODERN?'selected':''}`} onClick={() => handleSelectFrame(QR_FRAMES.MODERN)}>
+                          <div className="thumb thumb-modern"></div>
+                        </button>
+                        {/* Scan Me / Banner Bottom */}
+                        <button type="button" className={`qr-frame-option ${qrFrame===QR_FRAMES.SCAN_ME?'selected':''}`} onClick={() => handleSelectFrame(QR_FRAMES.SCAN_ME)}>
+                          <div className="thumb thumb-banner-bottom"><span>SCAN ME</span></div>
+                        </button>
+                        {/* Banner Top */}
+                        <button type="button" className={`qr-frame-option ${qrFrame===QR_FRAMES.BANNER_TOP?'selected':''}`} onClick={() => handleSelectFrame(QR_FRAMES.BANNER_TOP)}>
+                          <div className="thumb thumb-banner-top"><span>SCAN ME</span></div>
+                        </button>
+                        {/* Ribbon Bottom */}
+                        <button type="button" className={`qr-frame-option ${qrFrame===QR_FRAMES.RIBBON_BOTTOM?'selected':''}`} onClick={() => handleSelectFrame(QR_FRAMES.RIBBON_BOTTOM)}>
+                          <div className="thumb thumb-ribbon-bottom"><span>SCAN ME</span></div>
+                        </button>
+                        {/* Badge */}
+                        <button type="button" className={`qr-frame-option ${qrFrame===QR_FRAMES.BADGE?'selected':''}`} onClick={() => handleSelectFrame(QR_FRAMES.BADGE)}>
+                          <div className="thumb thumb-badge"><span>SCAN</span></div>
+                        </button>
+                        {/* Tag Right */}
+                        <button type="button" className={`qr-frame-option ${qrFrame===QR_FRAMES.TAG_RIGHT?'selected':''}`} onClick={() => handleSelectFrame(QR_FRAMES.TAG_RIGHT)}>
+                          <div className="thumb thumb-tag-right"><span>SCAN</span></div>
+                        </button>
                       </div>
 
                       <div className="qr-form-group">
@@ -1217,6 +1412,41 @@ END:VEVENT`;
                           max="50"
                           value={borderRadius}
                           onChange={(e) => setBorderRadius(Number(e.target.value))}
+                          className="qr-input"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Frame Customization */}
+                    <div className="qr-form-row">
+                      <div className="qr-form-group">
+                        <label htmlFor="frame-text">Frame Text</label>
+                        <input
+                          id="frame-text"
+                          type="text"
+                          value={frameText}
+                          onChange={(e) => setFrameText(e.target.value)}
+                          placeholder="e.g., SCAN ME"
+                          className="qr-input"
+                        />
+                      </div>
+                      <div className="qr-form-group">
+                        <label htmlFor="frame-bg">Frame Background</label>
+                        <input
+                          id="frame-bg"
+                          type="color"
+                          value={frameBgColor}
+                          onChange={(e) => setFrameBgColor(e.target.value)}
+                          className="qr-input"
+                        />
+                      </div>
+                      <div className="qr-form-group">
+                        <label htmlFor="frame-text-color">Frame Text Color</label>
+                        <input
+                          id="frame-text-color"
+                          type="color"
+                          value={frameTextColor}
+                          onChange={(e) => setFrameTextColor(e.target.value)}
                           className="qr-input"
                         />
                       </div>
@@ -1353,8 +1583,8 @@ END:VEVENT`;
                         <input
                           id="campaign-tags"
                           type="text"
-                          value={campaignTags}
-                          onChange={(e) => setCampaignTags(e.target.value)}
+                          value={campaignTagsInput}
+                          onChange={(e) => setCampaignTagsInput(e.target.value)}
                           placeholder="marketing, sale, social"
                           className="qr-input"
                         />
@@ -1397,17 +1627,21 @@ END:VEVENT`;
                         <h4>Analytics Preview</h4>
                         <div className="qr-analytics-stats">
                           <div className="qr-stat">
+                            <span className="qr-stat-label">Total Generated:</span>
+                            <span className="qr-stat-value">{stats.totalGenerated}</span>
+                          </div>
+                          <div className="qr-stat">
+                            <span className="qr-stat-label">Total Downloads:</span>
+                            <span className="qr-stat-value">{stats.totalDownloads}</span>
+                          </div>
+                          <div className="qr-stat">
                             <span className="qr-stat-label">Total Scans:</span>
-                            <span className="qr-stat-value">{qrAnalytics.totalScans}</span>
+                            <span className="qr-stat-value">{stats.totalScans}</span>
                           </div>
                           <div className="qr-stat">
-                            <span className="qr-stat-label">Unique Scans:</span>
-                            <span className="qr-stat-value">{qrAnalytics.uniqueScans}</span>
-                          </div>
-                          <div className="qr-stat">
-                            <span className="qr-stat-label">Last Scan:</span>
+                            <span className="qr-stat-label">Last Activity:</span>
                             <span className="qr-stat-value">
-                              {qrAnalytics.lastScan ? new Date(qrAnalytics.lastScan).toLocaleDateString() : 'Never'}
+                              {stats.recentActivity.length > 0 ? new Date(stats.recentActivity[stats.recentActivity.length - 1].timestamp).toLocaleDateString() : 'Never'}
                             </span>
                           </div>
                         </div>
@@ -1533,9 +1767,9 @@ END:VEVENT`;
                         )}
                         
                         {expirationDate && (
-                          <div className={`qr-feature-indicator expiration ${isExpired(expirationDate) ? 'expired' : 'active'}`}>
+                          <div className={`qr-feature-indicator expiration ${isExpired() ? 'expired' : 'active'}`}>
                             <span className="feature-icon">⏰</span>
-                            <span>{isExpired(expirationDate) ? 'Expired' : 'Expires'}: {new Date(expirationDate).toLocaleDateString()}</span>
+                            <span>{isExpired() ? 'Expired' : 'Expires'}: {new Date(expirationDate).toLocaleDateString()}</span>
                           </div>
                         )}
                       </div>
@@ -1548,8 +1782,7 @@ END:VEVENT`;
                         <div className="qr-validation-details">
                           <p><strong>Status:</strong> {validationResult.isValid ? 'Valid' : 'Invalid'}</p>
                           <p><strong>Data Length:</strong> {validationResult.dataLength} characters</p>
-                          <p><strong>Estimated Scan Time:</strong> {validationResult.scanTime}ms</p>
-                          <p><strong>Readability Score:</strong> {validationResult.readabilityScore}/100</p>
+                          <p><strong>Estimated Scan Speed:</strong> {validationResult.estimatedScanTime}</p>
                           {validationResult.recommendations.length > 0 && (
                             <div className="qr-recommendations">
                               <strong>Recommendations:</strong>

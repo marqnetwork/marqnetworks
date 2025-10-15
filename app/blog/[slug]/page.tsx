@@ -1,8 +1,12 @@
 import { notFound } from 'next/navigation'
 import BlogClient from './BlogClient'
 
+// Ensure this route handles slugs not pre-generated and fetches fresh data
+export const dynamic = 'force-dynamic'
+export const dynamicParams = true
+
 export async function generateStaticParams() {
-  const res = await fetch('https://marqnetworks.co/wp-json/wp/v2/posts?_embed')
+  const res = await fetch('https://marqnetworks.co/wp-json/wp/v2/posts?_embed', { cache: 'no-store' })
   const posts = await res.json()
 
   return posts.map((post: any) => ({
@@ -17,7 +21,7 @@ interface BlogPageProps {
 }
 
 export default async function BlogPage({ params }: BlogPageProps) {
-  const res = await fetch(`https://marqnetworks.co/wp-json/wp/v2/posts?slug=${params.slug}&_embed`)
+  const res = await fetch(`https://marqnetworks.co/wp-json/wp/v2/posts?slug=${params.slug}&_embed`, { cache: 'no-store' })
   const data = await res.json()
 
   if (!res.ok || !data.length) {
@@ -43,7 +47,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
     tools: []
   }
 
-  const allRes = await fetch('https://marqnetworks.co/wp-json/wp/v2/posts?_embed')
+  const allRes = await fetch('https://marqnetworks.co/wp-json/wp/v2/posts?_embed', { cache: 'no-store' })
   const allPosts = await allRes.json()
 
   const allBlogs = allPosts.map((p: any) => ({

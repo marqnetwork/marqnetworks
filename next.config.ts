@@ -10,7 +10,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "export",
+  // Use default server output to support dynamic routes
   images: { unoptimized: true },
 
   // ✅ This disables Next.js internal type checking during build

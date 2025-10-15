@@ -1,7 +1,7 @@
 
 "use client";
 import React, { useState, useRef, useEffect } from 'react';
-import QRCode from 'qrcode';
+import QRCode, { QRCodeErrorCorrectionLevel } from 'qrcode';
 import JSZip from 'jszip';
 import './QRGeneratorContent.css';
 
@@ -249,7 +249,7 @@ END:VEVENT`;
         break;
       
       default:
-        originalData:any = qrData;
+        originalData = qrData ?? '';
         break;
     }
 
@@ -358,7 +358,7 @@ END:VEVENT`;
           dark: gradientEnabled ? '#000000' : qrColor,
           light: bgColor
         },
-        errorCorrectionLevel: errorLevel
+        errorCorrectionLevel: errorLevel as QRCodeErrorCorrectionLevel
       });
 
       // Apply advanced design features
@@ -470,7 +470,7 @@ END:VEVENT`;
       } else if (exportFormat === 'SVG') {
         // For SVG, generate a basic version since canvas can't export to SVG
         const data = generateQRData();
-        const svgString = QRCode.toString(data, {
+        const svgString = QRCode.toString<any>(data, {
           type: 'svg',
           width: qrSize,
           margin: margin,

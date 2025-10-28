@@ -1284,3 +1284,54 @@
     padding: 0.75rem 1rem;
   }
 }
+/* --- UI Enhancements: gradients, glassmorphism, and improved preview --- */
+.qr-generator-container {
+  background: radial-gradient(1200px 600px at 20% 10%, rgba(57, 255, 20, 0.06), transparent 60%),
+              radial-gradient(800px 400px at 80% 20%, rgba(59, 130, 246, 0.06), transparent 60%),
+              linear-gradient(180deg, #0a0a0a 0%, #000 100%);
+}
+
+.qr-generator-interface {
+  background: rgba(17, 17, 17, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.qr-generator-heading span {
+  background: linear-gradient(90deg, #39ff14 0%, #2ecc71 50%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.qr-preview-container {
+  background-image:
+    linear-gradient(0deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 16px 16px;
+  box-shadow: 0 10px 30px rgba(57, 255, 20, 0.08);
+}
+
+.qr-preview-container::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(45deg, rgba(57, 255, 20, 0.4), rgba(94, 234, 212, 0.4));
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.qr-btn.primary {
+  background: linear-gradient(135deg, #39ff14 0%, #2ecc71 100%);
+  box-shadow: 0 6px 18px rgba(57, 255, 20, 0.3);
+}
+
+.qr-btn.secondary {
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+}

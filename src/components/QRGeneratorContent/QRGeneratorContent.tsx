@@ -995,6 +995,165 @@ const applyFrame = (canvas: HTMLCanvasElement) => {
             </h2>
             
             <div className="qr-generator-interface">
+              {/* Move preview to the left column for a more visual-first layout */}
+              <div className="qr-preview">
+                <div className="qr-preview-container">
+                  {qrImage ? (
+                    <img 
+                      src={qrImage} 
+                      alt="Generated QR Code" 
+                      className="qr-preview-image"
+                    />
+                  ) : (
+                    <div className="qr-placeholder">
+                      <div className="qr-placeholder-icon">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                          <rect x="7" y="7" width="3" height="3"/>
+                          <rect x="14" y="7" width="3" height="3"/>
+                          <rect x="7" y="14" width="3" height="3"/>
+                          <rect x="14" y="14" width="3" height="3"/>
+                        </svg>
+                      </div>
+                      <p>QR Code will appear here</p>
+                    </div>
+                  )}
+                  {/* Hidden canvas for QR generation with advanced features */}
+                  <canvas 
+                    ref={canvasRef}
+                    style={{ display: 'none' }}
+                    width={qrSize}
+                    height={qrSize}
+                  />
+                </div>
+                {qrImage && (
+                  <div className="qr-preview-actions">
+                    <button 
+                      className="qr-btn primary"
+                      onClick={downloadQRCode}
+                    >
+                      Download as {exportFormat}
+                    </button>
+
+                    {/* QR Code Validation */}
+                    <button 
+                      className="qr-btn secondary"
+                      onClick={validateQRCode}
+                      disabled={isValidating}
+                    >
+                      {isValidating ? 'Validating...' : 'Validate QR Code'}
+                    </button>
+
+                    {/* Social Sharing */}
+                    <button 
+                      className="qr-btn secondary"
+                      onClick={() => setShowSocialShare(!showSocialShare)}
+                    >
+                      Share QR Code
+                    </button>
+
+                    <div className="qr-preview-info">
+                      <p>Type: {qrType.toUpperCase()}</p>
+                      <p>Size: {qrSize}px</p>
+                      <p>Error Level: {errorLevel}</p>
+                      {qrId && <p>QR ID: {qrId}</p>}
+                      <div className="qr-features-status">
+                        {isDynamic && (
+                          <div className="qr-feature-indicator dynamic">
+                            <span className="feature-icon">🔄</span>
+                            <span>Dynamic QR</span>
+                          </div>
+                        )}
+                        {passwordProtected && (
+                          <div className="qr-feature-indicator secure">
+                            <span className="feature-icon">🔒</span>
+                            <span>Password Protected</span>
+                          </div>
+                        )}
+                        {expirationDate && (
+                          <div className={`qr-feature-indicator expiration ${isExpired() ? 'expired' : 'active'}`}>
+                            <span className="feature-icon">⏰</span>
+                            <span>{isExpired() ? 'Expired' : 'Expires'}: {new Date(expirationDate).toLocaleDateString()}</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Validation Results */}
+                    {validationResult && (
+                      <div className={`qr-validation-result ${validationResult.isValid ? 'valid' : 'invalid'}`}>
+                        <h4>Validation Results</h4>
+                        <div className="qr-validation-details">
+                          <p><strong>Status:</strong> {validationResult.isValid ? 'Valid' : 'Invalid'}</p>
+                          <p><strong>Data Length:</strong> {validationResult.dataLength} characters</p>
+                          <p><strong>Estimated Scan Speed:</strong> {validationResult.estimatedScanTime}</p>
+                          {validationResult.recommendations.length > 0 && (
+                            <div className="qr-recommendations">
+                              <strong>Recommendations:</strong>
+                              <ul>
+                                {validationResult.recommendations.map((rec, index) => (
+                                  <li key={index}>{rec}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Social Sharing Panel */}
+                    {showSocialShare && (
+                      <div className="qr-social-share">
+                        <h4>Share QR Code</h4>
+                        <div className="qr-share-message">
+                          <label htmlFor="share-message">Custom Message</label>
+                          <textarea
+                            id="share-message"
+                            value={shareMessage}
+                            onChange={(e) => setShareMessage(e.target.value)}
+                            placeholder="Check out this QR code!"
+                            className="qr-textarea"
+                            rows={2}
+                          />
+                        </div>
+                        <div className="qr-social-buttons">
+                          <button 
+                            className="qr-social-btn facebook"
+                            onClick={() => shareToSocial(SOCIAL_PLATFORMS.FACEBOOK)}
+                          >
+                            Facebook
+                          </button>
+                          <button 
+                            className="qr-social-btn twitter"
+                            onClick={() => shareToSocial(SOCIAL_PLATFORMS.TWITTER)}
+                          >
+                            Twitter
+                          </button>
+                          <button 
+                            className="qr-social-btn linkedin"
+                            onClick={() => shareToSocial(SOCIAL_PLATFORMS.LINKEDIN)}
+                          >
+                            LinkedIn
+                          </button>
+                          <button 
+                            className="qr-social-btn whatsapp"
+                            onClick={() => shareToSocial(SOCIAL_PLATFORMS.WHATSAPP)}
+                          >
+                            WhatsApp
+                          </button>
+                          <button 
+                            className="qr-social-btn telegram"
+                            onClick={() => shareToSocial(SOCIAL_PLATFORMS.TELEGRAM)}
+                          >
+                            Telegram
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+
               <div className="qr-generator-form">
                 {/* QR Type Selection */}
                 <div className="qr-form-group">
@@ -1687,168 +1846,7 @@ const applyFrame = (canvas: HTMLCanvasElement) => {
                 )}
               </div>
               
-              <div className="qr-preview">
-                <div className="qr-preview-container">
-                  {qrImage ? (
-                    <img 
-                      src={qrImage} 
-                      alt="Generated QR Code" 
-                      className="qr-preview-image"
-                    />
-                  ) : (
-                    <div className="qr-placeholder">
-                      <div className="qr-placeholder-icon">
-                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                          <rect x="7" y="7" width="3" height="3"/>
-                          <rect x="14" y="7" width="3" height="3"/>
-                          <rect x="7" y="14" width="3" height="3"/>
-                          <rect x="14" y="14" width="3" height="3"/>
-                        </svg>
-                      </div>
-                      <p>QR Code will appear here</p>
-                    </div>
-                  )}
-                  {/* Hidden canvas for QR generation with advanced features */}
-                  <canvas 
-                    ref={canvasRef}
-                    style={{ display: 'none' }}
-                    width={qrSize}
-                    height={qrSize}
-                  />
-                </div>
-                
-                {qrImage && (
-                  <div className="qr-preview-actions">
-                    <button 
-                      className="qr-btn primary"
-                      onClick={downloadQRCode}
-                    >
-                      Download as {exportFormat}
-                    </button>
-                    
-                    {/* QR Code Validation */}
-                    <button 
-                      className="qr-btn secondary"
-                      onClick={validateQRCode}
-                      disabled={isValidating}
-                    >
-                      {isValidating ? 'Validating...' : 'Validate QR Code'}
-                    </button>
-
-                    {/* Social Sharing */}
-                    <button 
-                      className="qr-btn secondary"
-                      onClick={() => setShowSocialShare(!showSocialShare)}
-                    >
-                      Share QR Code
-                    </button>
-
-                    <div className="qr-preview-info">
-                      <p>Type: {qrType.toUpperCase()}</p>
-                      <p>Size: {qrSize}px</p>
-                      <p>Error Level: {errorLevel}</p>
-                      {qrId && <p>QR ID: {qrId}</p>}
-                      
-                      {/* Security and Dynamic Features Status */}
-                      <div className="qr-features-status">
-                        {isDynamic && (
-                          <div className="qr-feature-indicator dynamic">
-                            <span className="feature-icon">🔄</span>
-                            <span>Dynamic QR</span>
-                          </div>
-                        )}
-                        
-                        {passwordProtected && (
-                          <div className="qr-feature-indicator secure">
-                            <span className="feature-icon">🔒</span>
-                            <span>Password Protected</span>
-                          </div>
-                        )}
-                        
-                        {expirationDate && (
-                          <div className={`qr-feature-indicator expiration ${isExpired() ? 'expired' : 'active'}`}>
-                            <span className="feature-icon">⏰</span>
-                            <span>{isExpired() ? 'Expired' : 'Expires'}: {new Date(expirationDate).toLocaleDateString()}</span>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Validation Results */}
-                    {validationResult && (
-                      <div className={`qr-validation-result ${validationResult.isValid ? 'valid' : 'invalid'}`}>
-                        <h4>Validation Results</h4>
-                        <div className="qr-validation-details">
-                          <p><strong>Status:</strong> {validationResult.isValid ? 'Valid' : 'Invalid'}</p>
-                          <p><strong>Data Length:</strong> {validationResult.dataLength} characters</p>
-                          <p><strong>Estimated Scan Speed:</strong> {validationResult.estimatedScanTime}</p>
-                          {validationResult.recommendations.length > 0 && (
-                            <div className="qr-recommendations">
-                              <strong>Recommendations:</strong>
-                              <ul>
-                                {validationResult.recommendations.map((rec: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined, index: React.Key | null | undefined) => (
-                                  <li key={index}>{rec}</li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Social Sharing Panel */}
-                    {showSocialShare && (
-                      <div className="qr-social-share">
-                        <h4>Share QR Code</h4>
-                        <div className="qr-share-message">
-                          <label htmlFor="share-message">Custom Message</label>
-                          <textarea
-                            id="share-message"
-                            value={shareMessage}
-                            onChange={(e) => setShareMessage(e.target.value)}
-                            placeholder="Check out this QR code!"
-                            className="qr-textarea"
-                            rows={2}
-                          />
-                        </div>
-                        <div className="qr-social-buttons">
-                          <button 
-                            className="qr-social-btn facebook"
-                            onClick={() => shareToSocial(SOCIAL_PLATFORMS.FACEBOOK)}
-                          >
-                            Facebook
-                          </button>
-                          <button 
-                            className="qr-social-btn twitter"
-                            onClick={() => shareToSocial(SOCIAL_PLATFORMS.TWITTER)}
-                          >
-                            Twitter
-                          </button>
-                          <button 
-                            className="qr-social-btn linkedin"
-                            onClick={() => shareToSocial(SOCIAL_PLATFORMS.LINKEDIN)}
-                          >
-                            LinkedIn
-                          </button>
-                          <button 
-                            className="qr-social-btn whatsapp"
-                            onClick={() => shareToSocial(SOCIAL_PLATFORMS.WHATSAPP)}
-                          >
-                            WhatsApp
-                          </button>
-                          <button 
-                            className="qr-social-btn telegram"
-                            onClick={() => shareToSocial(SOCIAL_PLATFORMS.TELEGRAM)}
-                          >
-                            Telegram
-                          </button>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
+              
             </div>
           </div>
         </div>

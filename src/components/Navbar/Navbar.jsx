@@ -154,6 +154,7 @@ const Navbar = () => {
             <li><a href="/qr-generator">QR Generator</a></li>
             <li><a href="/link-shortener">Link Shortener</a></li>
             <li><a href="/percentage-calculator">Percentage Calculator</a></li>
+            <li><a href="/resources/facebook-video-downloader">Facebook Video Downloader</a></li>
           </ul>
         </li>
         <li><a href="/contact-marq-networks">Contact</a></li>

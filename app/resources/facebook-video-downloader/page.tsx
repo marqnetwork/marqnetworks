@@ -1,5 +1,33 @@
 "use client";
 import React, { useState } from "react";
+import "../../../src/components/QRGeneratorContent/QRGeneratorContent.css";
+
+function trackEvent(event: string, params?: Record<string, any>) {
+  try {
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", event, params || {});
+    }
+    if (typeof window !== "undefined" && (window as any).dataLayer) {
+      (window as any).dataLayer.push({ event, ...(params || {}) });
+    }
+    console.log("trackEvent", event, params || {});
+  } catch {}
+}
+
+function isFacebookVideoUrl(raw: string) {
+  const u = raw.trim();
+  if (!u) return false;
+  try {
+    const parsed = new URL(u);
+    const hostOk = /facebook\.com$/i.test(parsed.hostname) || /fb\.watch$/i.test(parsed.hostname);
+    const path = parsed.pathname.toLowerCase();
+    const query = parsed.search.toLowerCase();
+    const looksLikeVideo = path.includes("/videos/") || path.includes("/watch/") || query.includes("v=");
+    return hostOk && looksLikeVideo;
+  } catch {
+    return false;
+  }
+}
 
 export default function FacebookVideoDownloaderPage() {
   const [url, setUrl] = useState("");
@@ -20,14 +48,15 @@ export default function FacebookVideoDownloaderPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setMessage(null);
-    if (!url.trim()) {
-      setMessage("Please paste a valid Facebook video URL.");
+    if (!isFacebookVideoUrl(url)) {
+      setMessage("Please paste a valid public Facebook video URL (watch or video link).");
       return;
     }
     setProcessing(true);
     try {
       // Redirect to selected external downloader (pre-filled when supported)
       const external = buildExternalUrl(url);
+      trackEvent("fb_downloader_open", { provider, urlLength: url.length });
       window.open(external, "_blank");
       setMessage("Opening downloader in a new tab. If blocked, use the link below.");
     } catch (err) {
@@ -54,10 +83,15 @@ export default function FacebookVideoDownloaderPage() {
             videos, region-restricted content, or login-required links, use the external
             helper we open for you.
           </p>
+          <div className="qr-hero-buttons">
+            <a href="#downloader" className="qr-btn primary" onClick={() => trackEvent("fb_downloader_cta_click")}>
+              Start Downloading
+            </a>
+          </div>
         </div>
       </section>
 
-      <section className="qr-generator-section" style={{paddingTop: 0}}>
+      <section id="downloader" className="qr-generator-section" style={{paddingTop: 0}}>
         <div className="qr-generator-wrapper">
           <div className="qr-generator-content" style={{maxWidth: 800}}>
             <div className="qr-generator-interface" style={{gridTemplateColumns: "1fr"}}>
@@ -70,6 +104,7 @@ export default function FacebookVideoDownloaderPage() {
                     required
                     placeholder="https://www.facebook.com/..."
                     className="qr-input"
+                    aria-label="Facebook video URL"
                     value={url}
                     onChange={(e) => setUrl(e.target.value)}
                   />
@@ -119,9 +154,10 @@ export default function FacebookVideoDownloaderPage() {
                       <a
                         href={buildExternalUrl(url)}
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="nofollow noopener noreferrer"
                         className="qr-btn secondary"
                         style={{display: 'inline-block', marginLeft: '0.5rem'}}
+                        onClick={() => trackEvent("fb_downloader_open_link", { provider })}
                       >
                         Open Link
                       </a>

@@ -1,0 +1,582 @@
+/* ROI Calculator Styles - Matching MarQ Networks Design System */
+
+.roi-calculator-container {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.roi-hero-section {
+  padding: 6rem 2rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.roi-hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.roi-hero-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #111;
+  border-radius: 999px;
+  padding: 0.25rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.roi-year {
+  background-color: #39ff14;
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+}
+
+.roi-tag-text {
+  color: #fff;
+  font-size: 16px;
+}
+
+.roi-hero-heading {
+  font-size: 4.2rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 400;
+}
+
+.roi-hero-heading span {
+  background: linear-gradient(90deg, #ccc 0%, #999 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.roi-hero-subtext {
+  font-size: 1.3rem;
+  color: #ccc;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 800px;
+}
+
+.roi-hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Calculator Section */
+.roi-calculator-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #111;
+  border-radius: 16px;
+  margin-top: 2rem;
+}
+
+.roi-calculator-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.roi-input-panel,
+.roi-output-panel {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.roi-input-panel h2,
+.roi-output-panel h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Form Inputs */
+.roi-input-group {
+  margin-bottom: 1.5rem;
+}
+
+.roi-input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ccc;
+  font-weight: 500;
+}
+
+.roi-input-group input,
+.roi-input-group select {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #222;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.roi-input-group input:focus,
+.roi-input-group select:focus {
+  outline: none;
+  border-color: #39ff14;
+  box-shadow: 0 0 0 2px rgba(57, 255, 20, 0.2);
+}
+
+.roi-input-tip {
+  font-size: 12px;
+  color: #888;
+  margin-top: 0.25rem;
+}
+
+/* Action Buttons */
+.roi-action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+/* Button Styles */
+.roi-btn {
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.roi-btn.primary {
+  background-color: #39ff14;
+  color: black;
+  box-shadow: 0 4px 15px rgba(57, 255, 20, 0.3);
+}
+
+.roi-btn.primary:hover {
+  background-color: #2ee00f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(57, 255, 20, 0.4);
+}
+
+.roi-btn.secondary {
+  background-color: #1a1a1a;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.roi-btn.secondary:hover {
+  background-color: #2a2a2a;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.roi-btn.success {
+  background-color: #22c55e;
+  color: white;
+}
+
+.roi-btn.success:hover {
+  background-color: #16a34a;
+}
+
+.roi-btn.info {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.roi-btn.info:hover {
+  background-color: #2563eb;
+}
+
+/* ROI Gauge */
+.roi-gauge-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.roi-gauge {
+  width: 200px;
+  height: 100px;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.roi-gauge-arc {
+  stroke: #333;
+  stroke-width: 8;
+  fill: none;
+}
+
+.roi-gauge-needle {
+  stroke: #39ff14;
+  stroke-width: 3;
+  fill: none;
+  transition: transform 0.5s ease;
+}
+
+.roi-percentage {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #39ff14;
+  text-align: center;
+}
+
+.roi-classification {
+  font-size: 1rem;
+  color: #ccc;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Benchmarks & Insights Section */
+.roi-benchmarks-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #111;
+  border-radius: 16px;
+  margin-top: 2rem;
+}
+
+.roi-benchmarks-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.roi-benchmark-card {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.roi-benchmark-card h3 {
+  color: #fff;
+}
+
+/* Features Section */
+.roi-features-section {
+  padding: 6rem 2rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.roi-features-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.roi-features-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #111;
+  border-radius: 999px;
+  padding: 0.25rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.roi-features-heading {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 3rem;
+  color: #fff;
+  font-weight: 400;
+}
+
+.roi-features-heading span {
+  background: linear-gradient(90deg, #ccc 0%, #999 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.roi-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.roi-feature-card {
+  background: #111;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.roi-feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.roi-feature-icon {
+  color: #39ff14;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.roi-feature-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.roi-feature-card p {
+  color: #aaa;
+  line-height: 1.6;
+}
+
+/* FAQ Section */
+.roi-faq-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #111;
+  border-radius: 16px;
+  margin-top: 2rem;
+}
+
+.roi-faq-container {
+  text-align: center;
+}
+
+.roi-faq-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #222;
+  border-radius: 999px;
+  padding: 0.25rem 1rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.roi-faq-heading {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  color: #fff;
+  font-weight: 400;
+}
+
+.roi-faq-heading span {
+  background: linear-gradient(90deg, #ccc 0%, #999 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.roi-faq-list {
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.roi-faq-list details {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.roi-faq-list summary {
+  cursor: pointer;
+  font-weight: 500;
+  color: #fff;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+}
+
+.roi-faq-list summary:hover {
+  color: #39ff14;
+}
+
+.roi-faq-list details p {
+  margin-top: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.roi-cta-section {
+  padding: 6rem 2rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.roi-cta-container {
+  display: flex;
+  justify-content: center;
+}
+
+.roi-cta-content {
+  max-width: 800px;
+}
+
+.roi-cta-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #111;
+  border-radius: 999px;
+  padding: 0.25rem 1rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.roi-cta-heading {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  font-weight: 400;
+}
+
+.roi-cta-heading span {
+  background: linear-gradient(90deg, #ccc 0%, #999 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.roi-cta-description {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.roi-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .roi-calculator-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .roi-benchmarks-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .roi-hero-heading,
+  .roi-features-heading,
+  .roi-cta-heading {
+    font-size: 3rem;
+  }
+  
+  .roi-faq-heading {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .roi-hero-section,
+  .roi-features-section,
+  .roi-cta-section {
+    padding: 4rem 1rem;
+  }
+  
+  .roi-calculator-section,
+  .roi-faq-section {
+    padding: 3rem 1rem;
+    margin-top: 1rem;
+  }
+  
+  .roi-input-panel,
+  .roi-output-panel {
+    padding: 1.5rem;
+  }
+  
+  .roi-hero-heading,
+  .roi-features-heading,
+  .roi-cta-heading {
+    font-size: 2.5rem;
+  }
+  
+  .roi-faq-heading {
+    font-size: 2rem;
+  }
+  
+  .roi-hero-subtext,
+  .roi-cta-description {
+    font-size: 1.1rem;
+  }
+  
+  .roi-action-buttons {
+    flex-direction: column;
+  }
+  
+  .roi-btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .roi-features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .roi-hero-heading,
+  .roi-features-heading,
+  .roi-cta-heading {
+    font-size: 2rem;
+  }
+  
+  .roi-faq-heading {
+    font-size: 1.8rem;
+  }
+  
+  .roi-hero-subtext,
+  .roi-cta-description {
+    font-size: 1rem;
+  }
+  
+  .roi-gauge {
+    width: 150px;
+    height: 75px;
+  }
+  
+  .roi-percentage {
+    font-size: 1.5rem;
+  }
+}

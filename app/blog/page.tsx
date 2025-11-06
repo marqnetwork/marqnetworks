@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import './style.css'
 
-const filterOptions = ['All'] // You can later add categories here
+// const filterOptions = ['All'] // You can later add categories here
 
 export default function BlogListPage() {
   const [posts, setPosts] = useState<any[]>([])
@@ -60,7 +60,7 @@ export default function BlogListPage() {
      <div className="w-full max-w-[1200px] marginn">
 
 
-
+{/* 
         <div className="flex justify-center gap-4 flex-wrap">
           {filterOptions.map((option) => (
             <button
@@ -75,7 +75,7 @@ export default function BlogListPage() {
               {option}
             </button>
           ))}
-        </div>
+        </div> */}
       </div>
 
       {/* Cards Grid */}
@@ -88,7 +88,7 @@ export default function BlogListPage() {
                 <div className="flex items-center justify-between border-b border-neutral-800 bg-[#1a1a1a] card_inner">
                   <div className="flex items-center gap-2">
                     <Image
-                      src="/images/bird.svg"
+                      src="/images/logo.svg"
                       alt="Logo"
                       width={70}
                       height={70}

@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": "hea848j240hmhmcnmjr",
+      "userName": "Saif Ali",
+      "email": "saif@marqnetworks.com",
+      "passwordHash": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+      "createdAt": 1762368423400
+    },
+    {
+      "id": "uwlr2j0vbtimhmh5tei",
+      "userName": "Shahzaib Khan",
+      "email": "shahzaib@marqnetworks.com",
+      "passwordHash": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+      "createdAt": 1762375990555
+    }
+  ]
+}

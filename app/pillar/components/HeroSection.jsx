@@ -1,0 +1,61 @@
+"use client";
+
+import { motion } from "framer-motion";
+import MarqButton from "@/components/MarqButton/MarqButton";
+
+export default function HeroSection() {
+  return (
+    <section className="z-10 flex flex-col items-center justify-center text-center w-full max-w-[1200px] mx-auto pt-40 pb-24 px-4 gap-6 h-[100vh]">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2, duration: 0.6 }}
+        className="inline-flex items-center gap-3"
+      >
+        <span className="inline-flex items-center justify-center bg-[#56b848] text-white rounded-md px-2.5 py-1 text-[12px] font-bold shadow-[0px_6px_24px_rgba(86,184,72,0.35)]">2025</span>
+        <span className="inline-flex items-center rounded-md px-3 py-1.5 text-sm text-white/80 backdrop-blur-md bg-white/10 border border-white/10">Our solutions</span>
+      </motion.div>
+
+      <motion.h1
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.7 }}
+        className="mt-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/30 font-['DM_Sans:9pt_Regular',sans-serif] text-[48px] leading-tight md:text-[96px] md:leading-[101px] tracking-[-4.2686px]"
+        style={{ fontVariationSettings: "'opsz' 9" }}
+      >
+        Discover marQ Solutions
+        <br />
+        Where AI Challenges Meet Clarity.
+      </motion.h1>
+
+      <motion.p
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.6 }}
+        className="mt-6 font-['DM_Sans:9pt_Regular',sans-serif] text-[17.973px] leading-[29.206px] text-white/60 max-w-[900px]"
+        style={{ fontVariationSettings: "'opsz' 9" }}
+      >
+        Dive deep into our AI workflow transformation approach to turning growth challenges into conversion-focused solutions—guided by innovation, strategy, and speed.
+      </motion.p>
+
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 0.6 }}
+        className="mt-8 flex gap-4 items-center"
+      >
+        <MarqButton
+          className="bg-[#56b848] rounded-[11.233px] h-[51px] px-6 inline-flex items-center text-white font-medium shadow-[0px_9.771px_48.857px_0px_rgba(86,184,72,0.5),0px_0px_0px_1.221px_rgba(0,85,255,0.12)] hover:scale-105 transition-transform"
+        >
+          Meet MarQ Networks
+        </MarqButton>
+        <MarqButton
+          href="/Solution"
+          className="rounded-[11.233px] h-[51px] px-6 inline-flex items-center text-white backdrop-blur-md bg-white/15 hover:bg-white/20 transition"
+        >
+          See How We Solve
+        </MarqButton>
+      </motion.div>
+    </section>
+  );
+}

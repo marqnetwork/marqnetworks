@@ -1,0 +1,189 @@
+/* Employee Portal Styles - aligned with site hero/button patterns */
+
+.employee-container {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.emp-hero-section {
+  padding: 6rem 2rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emp-hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.emp-hero-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #111;
+  border-radius: 999px;
+  padding: 0.25rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.emp-year {
+  background-color: #39ff14;
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+}
+
+.emp-tag-text {
+  color: #fff;
+  font-size: 16px;
+}
+
+.emp-hero-heading {
+  font-size: 3.8rem;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 400;
+}
+
+.emp-hero-heading span {
+  background: linear-gradient(90deg, #ccc 0%, #999 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.emp-hero-subtext {
+  font-size: 1.15rem;
+  color: #ccc;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 900px;
+}
+
+.emp-hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Buttons, aligned with ROI/Link btns */
+.emp-btn {
+  padding: 0.9rem 1.5rem;
+  font-weight: 500;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.emp-btn.primary {
+  background-color: #39ff14;
+  color: black;
+  box-shadow: 0 5px 15px #39ff14;
+}
+
+.emp-btn.secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.emp-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Controls Section */
+.employee-controls {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.emp-panel {
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.25rem;
+}
+
+.emp-input-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.emp-input {
+  flex: 1;
+  padding: 0.75rem 0.9rem;
+  background-color: #222;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+}
+
+.emp-status {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.emp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.emp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.emp-card {
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.emp-card-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.emp-note {
+  margin-top: 1rem;
+  font-size: 12px;
+  color: #888;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .emp-hero-heading { font-size: 3rem; }
+}
+@media (max-width: 768px) {
+  .emp-hero-section { padding: 4rem 1rem; }
+  .emp-hero-heading { font-size: 2.5rem; }
+  .emp-hero-subtext { font-size: 1.05rem; }
+  .emp-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .emp-hero-heading { font-size: 2rem; }
+  .emp-hero-subtext { font-size: 1rem; }
+}

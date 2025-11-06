@@ -12,7 +12,7 @@ const LinkShortenerContent = () => {
   const [copied, setCopied] = useState(false);
   const [shortenedLinks, setShortenedLinks] = useState<{original: string, shortened: string, timestamp: number}[]>([]);
 
-  // Simulate link shortening
+  // Create short link via API
   const shortenLink = async () => {
     if (!longUrl.trim()) {
       setError('Please enter a URL to shorten');
@@ -32,27 +32,28 @@ const LinkShortenerContent = () => {
     setCopied(false);
 
     try {
-      // Simulate API call with a delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Generate a random short code or use custom alias
-      const shortCode = customAlias || generateRandomCode(6);
-      const baseUrl = 'https://mrq.net/';
-      const newShortUrl = baseUrl + shortCode;
-      
+      const res = await fetch('/api/shortlinks', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url: longUrl, alias: customAlias || undefined }),
+      });
+      const json = await res.json();
+      if (!res.ok) {
+        throw new Error(json?.error || 'Failed to create short link');
+      }
+      const code = json?.code as string;
+      const newShortUrl = `/s/${code}`;
       setShortUrl(newShortUrl);
-      
-      // Add to history
+
       const newLink = {
         original: longUrl,
         shortened: newShortUrl,
         timestamp: Date.now()
       };
-      
       setShortenedLinks(prev => [newLink, ...prev].slice(0, 10));
-    } catch (err) {
+    } catch (err: any) {
       console.error('Error shortening URL:', err);
-      setError('Failed to shorten URL. Please try again.');
+      setError(err?.message || 'Failed to shorten URL. Please try again.');
     } finally {
       setIsShortening(false);
     }
@@ -143,7 +144,7 @@ const LinkShortenerContent = () => {
                 <div className="link-form-group">
                   <label htmlFor="custom-alias">Custom Alias (Optional)</label>
                   <div className="link-input-group">
-                    <span className="link-input-prefix">mrq.net/</span>
+                    <span className="link-input-prefix">/s/</span>
                     <input
                       id="custom-alias"
                       type="text"

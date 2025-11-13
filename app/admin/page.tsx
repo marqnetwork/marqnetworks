@@ -1,10 +1,16 @@
 import { AttendanceEvent, readAttendance } from "../lib/attendanceStore";
 import { getSupabaseServerClient, AttendanceEventRow } from "../lib/supabase";
+import type { SupabaseClient } from "@supabase/supabase-js";
 import './style.css';
 
 // Load attendance from Supabase if configured, otherwise fallback to local JSON
 async function getAttendance(): Promise<{ events: AttendanceEvent[]; usingSupabase: boolean }> {
-  const client = getSupabaseServerClient();
+  let client: SupabaseClient | null = null;
+  try {
+    client = getSupabaseServerClient();
+  } catch {
+    client = null;
+  }
   if (client) {
     const { data, error } = await client
       .from('attendance_events')
@@ -132,6 +138,15 @@ export default async function AdminPage() {
         <div className="metric-card">
           <div className="metric-label">Snapshots Today</div>
           <div className="metric-value blue">{snapshotsToday}</div>
+        </div>
+      </section>
+
+      <section className="admin-actions">
+        <div className="adm-actions-bar">
+          <a href="/admin/payroll" className="adm-action-link">Payroll</a>
+          <a href="/admin/settings" className="adm-action-link">Settings</a>
+          <a href="/admin/agents" className="adm-action-link">Agents</a>
+          <a href="/employee/reports" className="adm-action-link">Employee Reports</a>
         </div>
       </section>
 

@@ -69,7 +69,7 @@ export default function BlogClient({ blog, allBlogs }: Props) {
       </section>
 
       <section className="Description w-full max-w-[950px] mx-auto px-4">
-        <div className="flex flex-col sm:flex-col md:flex-row justify-between gap-4">
+        <div className="flex flex-col sm:flex-col md:flex-row justify-between gap-2">
           <div className="w-full md:w-[60%]">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -88,9 +88,24 @@ export default function BlogClient({ blog, allBlogs }: Props) {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="sticky top-20 space-y-8"
             >
-              <div className="bg-[#111] text-white rounded-2xl p-6 shadow-md space-y-4 badge">
+              <div className="bg-[#111] text-white rounded-2xl p-6 shadow-md space-y-5 badge">
                 <h3 className="text-base font-semibold">Quick Info</h3>
                 <p className="text-sm text-gray-300 leading-relaxed">Blog post fetched from WordPress via REST API.</p>
+                <div className="space-y-3 overflow-x-auto mt-[20px]">
+                  <h4 className="text-sm font-medium text-white">Latest blogs</h4>
+                  <ul className="space-y-2">
+                    {allBlogs.slice(0, 6).map((b) => (
+                      <li key={b.slug}>
+                        <Link
+                          href={`/blog/${b.slug}`}
+                          className="block text-sm text-gray-300 hover:text-white truncate py-1.5"
+                        >
+                          {b.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </motion.div>
           </div>

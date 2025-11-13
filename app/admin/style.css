@@ -138,3 +138,62 @@
   font-size: 12px;
   color: #8a93a3;
 }
+
+/* Actions Bar */
+.admin-actions {
+  margin-top: 18px;
+}
+.adm-actions-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 10px;
+  background: rgba(255,255,255,0.03);
+}
+.adm-action-link {
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #9ad0ff;
+  background: rgba(59,130,246,0.08);
+  text-decoration: none;
+}
+.adm-action-link:hover {
+  border-color: rgba(59,130,246,0.35);
+}
+
+/* Tables */
+.adm-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.adm-table thead th {
+  background: rgba(255,255,255,0.04);
+  text-align: left;
+  color: #b5c1d3;
+}
+.adm-table th, .adm-table td {
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 10px;
+}
+.adm-table .badge {
+  display: inline-block;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.badge.approved { color: #2f6b3b; background: #75f59a22; border-color: #75f59a44; }
+.badge.paid { color: #1b4f7a; background: #7abaff22; border-color: #7abaff44; }
+.badge.pending { color: #7b8494; background: #c8cfdb22; border-color: #c8cfdb44; }
+
+/* Inputs */
+.adm-input { border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.02); color: #e5f3ff; border-radius: 8px; padding: 8px 10px; }
+.adm-btn { border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06); color: #e5f3ff; border-radius: 8px; padding: 8px 12px; }
+.adm-btn.primary { background: rgba(59,130,246,0.25); border-color: rgba(59,130,246,0.35); }
+.adm-btn.warn { background: rgba(246, 173, 59, 0.25); border-color: rgba(246, 173, 59, 0.35); }
+.adm-btn:disabled { opacity: 0.5; cursor: not-allowed; }

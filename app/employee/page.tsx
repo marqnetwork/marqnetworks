@@ -62,6 +62,10 @@ export default function EmployeePage() {
   const [mouseMoves, setMouseMoves] = useState<number>(0);
   const [tick, setTick] = useState<number>(0); // force re-render every second during sessions
   const OFFICE_MS = 8 * 60 * 60 * 1000; // 8 hours standard office time
+  // Idle detection state
+  const [lastActivityTs, setLastActivityTs] = useState<number>(Date.now());
+  const [idleVisible, setIdleVisible] = useState<boolean>(false);
+  const [idleSecondsLeft, setIdleSecondsLeft] = useState<number>(60); // warn for 60s before auto-stop
 
   useEffect(() => {
     setEvents(readEvents());
@@ -95,6 +99,54 @@ export default function EmployeePage() {
       } catch {}
     })();
   }, []);
+
+  // Track user activity to reset idle timers
+  useEffect(() => {
+    const resetActivity = () => {
+      setLastActivityTs(Date.now());
+      if (idleVisible) {
+        setIdleVisible(false);
+        setIdleSecondsLeft(60);
+      }
+    };
+    const events: Array<[keyof WindowEventMap, (e: any) => void]> = [
+      ['mousemove', resetActivity],
+      ['mousedown', resetActivity],
+      ['keydown', resetActivity],
+      ['scroll', resetActivity],
+      ['touchstart', resetActivity],
+    ];
+    events.forEach(([name, handler]) => window.addEventListener(name, handler as any, { passive: true }));
+    return () => {
+      events.forEach(([name, handler]) => window.removeEventListener(name, handler as any));
+    };
+  }, [idleVisible]);
+
+  // Idle detection: after 7 minutes show popup, auto-stop after 8 minutes
+  useEffect(() => {
+    const warnMs = 7 * 60 * 1000;
+    const stopMs = 8 * 60 * 1000;
+    const id = window.setInterval(() => {
+      if (status === 'idle') return; // only when in a session
+      const now = Date.now();
+      const idleMs = now - lastActivityTs;
+      if (!idleVisible && idleMs >= warnMs) {
+        setIdleVisible(true);
+        setIdleSecondsLeft(Math.max(Math.floor((stopMs - idleMs) / 1000), 1));
+        return;
+      }
+      if (idleVisible) {
+        setIdleSecondsLeft((sec) => Math.max(sec - 1, 0));
+        if (idleMs >= stopMs || idleSecondsLeft <= 0) {
+          // Auto-stop: perform check-out
+          handleCheckOut();
+          setIdleVisible(false);
+          setIdleSecondsLeft(60);
+        }
+      }
+    }, 1000);
+    return () => window.clearInterval(id);
+  }, [status, lastActivityTs, idleVisible, idleSecondsLeft]);
 
   const todayStats = useMemo(() => {
     const startOfDay = new Date();
@@ -468,6 +520,34 @@ export default function EmployeePage() {
           </div>
 
           <div className="emp-note">Note: Clear local storage to reset saved events.</div>
+          {idleVisible && (
+            <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000 }}>
+              <div style={{ background: '#111', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12, padding: '1rem 1.25rem', width: 'min(480px, 90vw)' }}>
+                <div style={{ fontSize: 18, fontWeight: 600, marginBottom: 8 }}>Are you still there?</div>
+                <div className="text-sm" style={{ color: '#aaa', marginBottom: 12 }}>
+                  No activity detected. Auto-stopping in {idleSecondsLeft}s.
+                </div>
+                <div style={{ display: 'flex', gap: 8 }}>
+                  <button
+                    className="emp-btn primary"
+                    onClick={() => {
+                      setLastActivityTs(Date.now());
+                      setIdleVisible(false);
+                      setIdleSecondsLeft(60);
+                    }}
+                  >I'm here</button>
+                  <button
+                    className="emp-btn secondary"
+                    onClick={() => {
+                      handleCheckOut();
+                      setIdleVisible(false);
+                      setIdleSecondsLeft(60);
+                    }}
+                  >Stop Now</button>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </div>

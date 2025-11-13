@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import type { SupabaseClient } from "@supabase/supabase-js";
 import {
   appendEvent,
   readAttendance,
@@ -19,21 +20,27 @@ const allowedTypes: AttendanceEventType[] = [
 
 export async function GET() {
   try {
-    const client = getSupabaseServerClient();
+    let client: SupabaseClient | null = null;
+    try {
+      client = getSupabaseServerClient();
+    } catch {
+      client = null;
+    }
     if (client) {
       const { data, error } = await client
         .from("attendance_events")
         .select("*")
         .order("timestamp", { ascending: true });
-      if (error) throw error;
-      const events: AttendanceEvent[] = (data || []).map((r) => ({
-        id: r.id,
-        userName: r.user_name,
-        type: r.type,
-        timestamp: r.timestamp,
-        metadata: r.metadata || {},
-      }));
-      return NextResponse.json({ events }, { status: 200 });
+      if (!error && data) {
+        const events: AttendanceEvent[] = (data || []).map((r) => ({
+          id: r.id,
+          userName: r.user_name,
+          type: r.type,
+          timestamp: r.timestamp,
+          metadata: r.metadata || {},
+        }));
+        return NextResponse.json({ events }, { status: 200 });
+      }
     }
     // Fallback to local JSON
     const local = readAttendance();

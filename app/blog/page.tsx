@@ -84,7 +84,7 @@ export default function BlogListPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {posts.slice(0, 2).map((post) => (
             <Link href={`/blog/${post.slug}`} key={post.id}>
-              <div className="cards flex flex-col rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
+              <div className="cards gap-2 flex flex-col rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
                 <div className="flex items-center justify-between border-b border-neutral-800 bg-[#1a1a1a] card_inner">
                   <div className="flex items-center gap-2">
                     <Image
@@ -107,6 +107,9 @@ export default function BlogListPage() {
                     className="object-cover"
                   />
                 </div>
+                <div className="py-4 mt-2">
+                  <h3 className="text-sm font-semibold mt-2">{post.title}</h3>
+                </div>
               </div>
             </Link>
           ))}
@@ -117,7 +120,7 @@ export default function BlogListPage() {
           {posts.slice(2).map((post) => (
             <div
               key={post.id}
-              className="cards flex flex-col rounded-xl overflow-hidden border border-neutral-800 shadow-md hover:shadow-lg transition right"
+              className="cards gap-2 flex flex-col rounded-xl overflow-hidden border border-neutral-800 shadow-md hover:shadow-lg transition right"
             >
               <div className="flex items-center justify-between border-b border-neutral-800 bg-[#1a1a1a] card_inner">
                 <div className="flex items-center gap-2">
@@ -144,6 +147,9 @@ export default function BlogListPage() {
                   fill
                   className="object-cover"
                 />
+              </div>
+              <div className="mt-4 py-2">
+                <h3 className="text-sm mt-4 font-semibold">{post.title}</h3>
               </div>
             </div>
           ))}

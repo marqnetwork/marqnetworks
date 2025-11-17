@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { verifyLogin, createSession } from '../../../lib/authStore';
+import { verifyLogin, createSession, updateLastLogin } from '../../../lib/authStore';
 
 export async function POST(req: Request) {
   try {
@@ -13,6 +13,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: false, error: 'Invalid credentials' }, { status: 401 });
     }
     const session = createSession(user.id);
+    updateLastLogin(user.id);
     const res = NextResponse.json({ ok: true, user: { id: user.id, userName: user.userName, email: user.email } });
     // Set cookie to expire in 10 hours (aligns with session lifetime)
     res.cookies.set('session_id', session.id, { httpOnly: true, sameSite: 'lax', path: '/', maxAge: 10 * 60 * 60 });

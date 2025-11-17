@@ -1,30 +1,29 @@
-import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
-import { ensureDataDirs } from "../../lib/attendanceStore";
+import { NextResponse } from 'next/server';
+import fs from 'fs';
+import path from 'path';
+
+function ensureUploads() {
+  const dir = path.join(process.cwd(), 'public', 'uploads');
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+  return dir;
+}
 
 export async function POST(req: Request) {
   try {
-    ensureDataDirs();
     const form = await req.formData();
-    const userName = (form.get('userName') as string) || '';
-    const file = form.get('snapshot') as File | null;
-    if (!userName.trim()) {
-      return NextResponse.json({ error: 'userName is required' }, { status: 400 });
-    }
-    if (!file) {
-      return NextResponse.json({ error: 'snapshot file is required' }, { status: 400 });
-    }
-    const arrayBuffer = await file.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
-    const uploadsDir = path.join(process.cwd(), 'public', 'uploads');
-    if (!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir, { recursive: true });
-    const safeName = userName.replace(/[^a-z0-9\-_]/gi, '_');
-    const filename = `${Date.now()}-${safeName}.png`;
-    const dest = path.join(uploadsDir, filename);
-    fs.writeFileSync(dest, buffer);
-    return NextResponse.json({ ok: true, url: `/uploads/${filename}` }, { status: 201 });
+    const file = form.get('file') as File | null;
+    if (!file) return NextResponse.json({ ok: false, error: 'file_required' }, { status: 400 });
+    const dir = ensureUploads();
+    const name = (file.name || 'upload').replace(/[^a-zA-Z0-9._-]/g, '_');
+    const ext = name.includes('.') ? name.split('.').pop() as string : (file.type.split('/').pop() || 'bin');
+    const id = Math.random().toString(36).slice(2) + Date.now().toString(36);
+    const filename = `${id}.${ext}`;
+    const abs = path.join(dir, filename);
+    const buf = Buffer.from(await file.arrayBuffer());
+    fs.writeFileSync(abs, buf);
+    const url = `/uploads/${filename}`;
+    return NextResponse.json({ ok: true, url });
   } catch (e: any) {
-    return NextResponse.json({ error: e?.message || 'Upload failed' }, { status: 500 });
+    return NextResponse.json({ ok: false, error: e?.message || 'upload_failed' }, { status: 500 });
   }
 }

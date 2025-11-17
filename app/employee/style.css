@@ -203,6 +203,12 @@
   color: #aaa;
 }
 
+.emp-checkin-line {
+  font-size: 0.95rem;
+  color: #9ad0ff;
+  margin-bottom: 0.25rem;
+}
+
 .emp-note {
   margin-top: 1rem;
   font-size: 12px;

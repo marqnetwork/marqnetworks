@@ -324,6 +324,8 @@ export function resetPasswordByToken(token: string, newPassword: string): boolea
   u.passwordSalt = hp.salt;
   u.resetToken = null;
   u.resetTokenExpires = null;
+  // Ensure the user can sign in after a successful reset
+  u.status = 'active';
   writeUsers(data);
   return true;
 }

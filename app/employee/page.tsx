@@ -3,7 +3,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import MarqButton from '@/components/MarqButton/MarqButton';
 import './style.css';
-import html2canvas from 'html2canvas';
 
 type EventType = 'check_in' | 'check_out' | 'break_start' | 'break_end' | 'snapshot';
 
@@ -54,10 +53,12 @@ export default function EmployeePage() {
   const [totalBreakMs, setTotalBreakMs] = useState<number>(0);
   const [clickRecording, setClickRecording] = useState<boolean>(true);
   const [clicks, setClicks] = useState<ClickEvent[]>([]);
-  const [snapshots, setSnapshots] = useState<string[]>([]); // URLs returned from upload
+  const [snapshots, setSnapshots] = useState<string[]>([]);
   const [monitoring, setMonitoring] = useState<boolean>(true);
   const [snapshotIntervalMin, setSnapshotIntervalMin] = useState<number>(5);
   const monitorIntervalRef = useRef<number | null>(null);
+  const [screenStream, setScreenStream] = useState<MediaStream | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   // Removed screen stream/video capture in favor of DOM snapshot to avoid permissions
   const [mouseMoves, setMouseMoves] = useState<number>(0);
   const [tick, setTick] = useState<number>(0); // force re-render every second during sessions
@@ -66,6 +67,7 @@ export default function EmployeePage() {
   const [lastActivityTs, setLastActivityTs] = useState<number>(Date.now());
   const [idleVisible, setIdleVisible] = useState<boolean>(false);
   const [idleSecondsLeft, setIdleSecondsLeft] = useState<number>(60); // warn for 60s before auto-stop
+  const [sessionMessage, setSessionMessage] = useState<string | null>(null);
 
   useEffect(() => {
     setEvents(readEvents());
@@ -189,6 +191,7 @@ export default function EmployeePage() {
     setCheckInTs(Date.now());
     setTotalBreakMs(0);
     setBreakStartTs(null);
+    try { await startScreenCapture(); } catch {}
   };
 
   const handleCheckOut = async () => {
@@ -200,7 +203,7 @@ export default function EmployeePage() {
       const s = Math.floor((ms % 60000) / 1000);
       return `${m}m ${s}s`;
     };
-    alert(`Session summary\nWork: ${fmt(workMs)}\nBreaks: ${fmt(totalBreakMs)}`);
+    setSessionMessage(`Work: ${fmt(workMs)} | Breaks: ${fmt(totalBreakMs)}`);
     setStatus('idle');
     setCheckInTs(null);
     setBreakStartTs(null);
@@ -254,6 +257,10 @@ export default function EmployeePage() {
     const s = totalSec % 60;
     const pad = (n: number) => String(n).padStart(2, '0');
     return `${pad(h)}:${pad(m)}:${pad(s)}`;
+  };
+
+  const fmtDateTime = (ts: number) => {
+    try { return new Date(ts).toLocaleString(); } catch { return ''; }
   };
 
   const liveBreakMs = breakStartTs ? Date.now() - breakStartTs : 0;
@@ -310,15 +317,27 @@ export default function EmployeePage() {
 
   async function captureSnapshot() {
     try {
-      // Capture the current page DOM without screen-capture permissions
-      const canvas = await html2canvas(document.body, { useCORS: true, logging: false });
-      const blob: Blob | null = await new Promise<Blob | null>((resolve) => canvas.toBlob((b) => resolve(b), 'image/png'));
+      let blob: Blob | null = null;
+      if (screenStream && videoRef.current) {
+        const v = videoRef.current;
+        const w = v.videoWidth || 1280;
+        const h = v.videoHeight || 720;
+        const canvas = document.createElement('canvas');
+        canvas.width = w;
+        canvas.height = h;
+        const ctx = canvas.getContext('2d');
+        if (ctx) {
+          ctx.drawImage(v, 0, 0, w, h);
+          blob = await new Promise<Blob | null>((resolve) => canvas.toBlob((b) => resolve(b), 'image/png'));
+        }
+      } else {
+        return;
+      }
       if (!blob) throw new Error('Unable to capture snapshot');
 
-      // Upload to server
       const form = new FormData();
       form.append('userName', userName || 'Unknown');
-      form.append('snapshot', blob, 'snapshot.png');
+      form.append('file', blob, 'snapshot.png');
       const res = await fetch('/api/upload', { method: 'POST', body: form });
       const json = await res.json();
       if (!res.ok) throw new Error(json?.error || 'Upload failed');
@@ -343,25 +362,52 @@ export default function EmployeePage() {
         await fetch('/api/attendance', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ userName: userName || 'Unknown', type: 'snapshot', metadata: { url, source: 'dom' } }),
+          body: JSON.stringify({ userName: userName || 'Unknown', type: 'snapshot', metadata: { url, source: 'screen' } }),
         });
       } catch {}
-    } catch (err: any) {
-      alert(err?.message || 'Snapshot capture failed.');
+    } catch {}
+  }
+  async function startScreenCapture() {
+    const s = await (navigator.mediaDevices as any).getDisplayMedia({ video: { displaySurface: 'monitor' } as any, audio: false });
+    setScreenStream(s);
+    if (!videoRef.current) videoRef.current = document.createElement('video');
+    videoRef.current.srcObject = s as any;
+    videoRef.current.muted = true;
+    await videoRef.current.play();
+    try {
+      const track = s.getVideoTracks()[0];
+      if (track) {
+        track.addEventListener('ended', () => {
+          stopScreenCapture();
+        });
+      }
+    } catch {}
+    await delay(200);
+    await captureSnapshot();
+  }
+  function stopScreenCapture() {
+    try { screenStream?.getTracks().forEach((t) => t.stop()); } catch {}
+    setScreenStream(null);
+    if (videoRef.current) {
+      try { videoRef.current.pause(); } catch {}
+      videoRef.current.srcObject = null;
     }
   }
 
+  const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
+
+  // 10-second interval single capture per cycle
+
   // Auto snapshot scheduler
   useEffect(() => {
-    if (!monitoring) {
+    if (!monitoring || status === 'idle' || !screenStream) {
       if (monitorIntervalRef.current) {
         window.clearInterval(monitorIntervalRef.current);
         monitorIntervalRef.current = null;
       }
       return;
     }
-    const ms = Math.max(1, snapshotIntervalMin) * 60 * 1000;
-    // Capture immediately, then schedule periodic captures
+    const ms = 10 * 1000;
     captureSnapshot();
     monitorIntervalRef.current = window.setInterval(() => {
       captureSnapshot();
@@ -372,7 +418,20 @@ export default function EmployeePage() {
         monitorIntervalRef.current = null;
       }
     };
-  }, [monitoring, snapshotIntervalMin]);
+  }, [monitoring, snapshotIntervalMin, status, screenStream]);
+
+  useEffect(() => {
+    if (status === 'idle' || screenStream) return;
+    const handler = async () => {
+      try { await startScreenCapture(); } catch {}
+    };
+    window.addEventListener('pointerdown', handler, { once: true });
+    window.addEventListener('keydown', handler, { once: true });
+    return () => {
+      window.removeEventListener('pointerdown', handler);
+      window.removeEventListener('keydown', handler);
+    };
+  }, [status, screenStream]);
 
   // Periodic activity ping based on clicks/mouse moves
   useEffect(() => {
@@ -468,6 +527,9 @@ export default function EmployeePage() {
             <div className="emp-card">
               <div className="emp-card-title">Main Clock</div>
               <div className="emp-timer-main">{fmtHMS(Math.max(liveWorkMs, 0))}</div>
+              {checkInTs && (
+                <div className="emp-checkin-line">Checked in at {fmtDateTime(checkInTs)}</div>
+              )}
               <div className="emp-timer-sub">
                 <span className="emp-pill red">Remaining {fmtHMS(remainingWorkMs)}</span>
                 <span className="emp-pill gray">Break {fmtHMS(Math.max(breakMsTotal, 0))}</span>
@@ -475,6 +537,9 @@ export default function EmployeePage() {
               <div className="emp-timer-end">
                 {targetEndTs ? `Estimated end ${new Date(targetEndTs).toLocaleTimeString()}` : 'Not checked in'}
               </div>
+              {sessionMessage && (
+                <div className="emp-checkin-line">{sessionMessage}</div>
+              )}
             </div>
             <div className="emp-card">
               <div className="emp-card-title">Today (local)</div>
@@ -514,20 +579,30 @@ export default function EmployeePage() {
                 )}
               </div>
             </div>
-            <div className="emp-card">
-              <div className="emp-card-title">Snapshots</div>
-              <div className="emp-status" style={{ marginBottom: '0.5rem' }}>Latest captures (local + uploaded)</div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: '0.5rem' }}>
-                {snapshots.slice(0, 6).map((url, i) => (
-                  <a key={i} href={url} target="_blank" rel="noreferrer">
-                    <img src={url} alt="snapshot" style={{ width: '100%', borderRadius: 8, border: '1px solid rgba(255,255,255,0.1)' }} />
-                  </a>
-                ))}
-                {snapshots.length === 0 && (
-                  <div className="text-sm" style={{ color: '#aaa' }}>No snapshots yet.</div>
-                )}
-              </div>
+          <div className="emp-card">
+            <div className="emp-card-title">Snapshots</div>
+            <div className="emp-status" style={{ marginBottom: '0.5rem' }}>
+              Latest captures (local + uploaded){' '}
+              <span className="emp-pill gray" style={{ marginLeft: 8 }}>Auto: {monitoring ? '10s' : 'off'}</span>
+              <span className="emp-pill gray" style={{ marginLeft: 8 }}>Screen: {screenStream ? 'on' : 'off'}</span>
             </div>
+            {status !== 'idle' && !screenStream && (
+              <div className="text-sm" style={{ color: '#aaa', marginBottom: '0.5rem' }}>
+                Waiting for screen capture permission. When prompted, choose Entire Screen.
+              </div>
+            )}
+            {/* Screen capture runs automatically after Check In; controls removed */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: '0.5rem' }}>
+              {snapshots.slice(0, 6).map((url, i) => (
+                <a key={i} href={url} target="_blank" rel="noreferrer">
+                  <img src={url} alt="snapshot" style={{ width: '100%', borderRadius: 8, border: '1px solid rgba(255,255,255,0.1)' }} />
+                </a>
+              ))}
+              {snapshots.length === 0 && (
+                <div className="text-sm" style={{ color: '#aaa' }}>No snapshots yet.</div>
+              )}
+            </div>
+          </div>
           </div>
 
           <div className="emp-note">Note: Clear local storage to reset saved events.</div>

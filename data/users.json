@@ -62,15 +62,15 @@
       "userName": "Saif Ali",
       "email": "saifali87154@gmail.com",
       "role": "member",
-      "status": "inactive",
+      "status": "active",
       "inviteToken": "1cawho472dpmi3fldd1",
       "inviteTokenExpires": 1764006082021,
-      "resetToken": "h0jkaayabdmmi3f9hzv",
-      "resetTokenExpires": 1763404328155,
+      "resetToken": null,
+      "resetTokenExpires": null,
       "firstName": "saif",
       "lastName": "ali",
       "createdAt": 1763388416878,
-      "lastLoginAt": 1763400459833,
+      "lastLoginAt": 1763406373476,
       "onboarding": {
         "fullLegalName": "Saif ALi",
         "preferredName": "",
@@ -109,8 +109,24 @@
         "availabilityToStart": "",
         "expectedGrowthPath": ""
       },
-      "passwordHash": "c86c503364f1299e95517b96497b48c2eb56ed9f840fe0b2c0f22e3ecf9b869b",
-      "passwordSalt": "061438a7c1969bfb6c97afc9e36439ed"
+      "passwordHash": "daf31e331f7db03420ed424e7949ae0eaeb1d15b2058f7cff5690bbf1d6b0df1",
+      "passwordSalt": "fe13d69cc13ec8742ba4a4262501fc2a"
+    },
+    {
+      "id": "vls1egpxz99mi3ge4z2",
+      "userName": "rameez@marqnetworks.com",
+      "email": "rameez@marqnetworks.com",
+      "role": "member",
+      "status": "inactive",
+      "inviteToken": "kphiih9dl6mi3ge4z2",
+      "inviteTokenExpires": 1764007424174,
+      "resetToken": null,
+      "resetTokenExpires": null,
+      "firstName": "",
+      "lastName": "",
+      "createdAt": 1763402624174,
+      "lastLoginAt": null,
+      "onboarding": null
     }
   ]
 }

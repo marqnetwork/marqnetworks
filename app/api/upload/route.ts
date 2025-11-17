@@ -11,7 +11,7 @@ function ensureUploads() {
 export async function POST(req: Request) {
   try {
     const form = await req.formData();
-    const file = form.get('file') as File | null;
+    const file = (form.get('file') || form.get('snapshot')) as File | null;
     if (!file) return NextResponse.json({ ok: false, error: 'file_required' }, { status: 400 });
     const dir = ensureUploads();
     const name = (file.name || 'upload').replace(/[^a-zA-Z0-9._-]/g, '_');

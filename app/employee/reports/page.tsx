@@ -20,12 +20,12 @@ export default async function EmployeeReportsPage() {
   } catch {
     client = null;
   }
-  if (client && userName) {
-    const { data, error } = await client
+  if (client) {
+    const query = client
       .from('attendance_events')
       .select('*')
-      .eq('user_name', userName)
       .order('timestamp', { ascending: false });
+    const { data, error } = await (userName ? query.eq('user_name', userName) : query);
     if (!error && data) {
       events = data.map((r: any) => ({
         id: r.id,
@@ -39,7 +39,7 @@ export default async function EmployeeReportsPage() {
   }
   if (!usingSupabase) {
     const local = readAttendance();
-    events = local.events.filter((e) => e.userName === userName);
+    events = userName ? local.events.filter((e) => e.userName === userName) : local.events;
   }
 
   const totalSnapshots = events.filter(e => e.type === 'snapshot').length;
@@ -75,8 +75,8 @@ export default async function EmployeeReportsPage() {
     <div className="admin-wrap">
       <section className="admin-hero">
         <div className="tag-pill">Employee · Reports</div>
-        <h1 className="admin-title">My Activity Summary</h1>
-        <p className="admin-sub">User: {userName || 'Unknown'} — Source: {usingSupabase ? 'Supabase' : 'Local JSON'}</p>
+        <h1 className="admin-title">Activity Summary</h1>
+        <p className="admin-sub">User: {userName || 'All Users'} — Source: {usingSupabase ? 'Supabase' : 'Local JSON'}</p>
       </section>
       <section className="admin-metrics">
         <div className="metric-card"><div className="metric-label">Sessions</div><div className="metric-value">{totalSessions}</div></div>

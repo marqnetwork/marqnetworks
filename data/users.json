@@ -62,15 +62,15 @@
       "userName": "Saif Ali",
       "email": "saifali87154@gmail.com",
       "role": "member",
-      "status": "active",
-      "inviteToken": null,
-      "inviteTokenExpires": null,
-      "resetToken": null,
-      "resetTokenExpires": null,
-      "firstName": "",
-      "lastName": "",
+      "status": "inactive",
+      "inviteToken": "1cawho472dpmi3fldd1",
+      "inviteTokenExpires": 1764006082021,
+      "resetToken": "h0jkaayabdmmi3f9hzv",
+      "resetTokenExpires": 1763404328155,
+      "firstName": "saif",
+      "lastName": "ali",
       "createdAt": 1763388416878,
-      "lastLoginAt": 1763399666079,
+      "lastLoginAt": 1763400459833,
       "onboarding": {
         "fullLegalName": "Saif ALi",
         "preferredName": "",
@@ -109,8 +109,8 @@
         "availabilityToStart": "",
         "expectedGrowthPath": ""
       },
-      "passwordHash": "cd6680e5960682ba04cdd632750ce8c4bbeb47473afe6e3f6ef09bb54374ad0f",
-      "passwordSalt": "09ae65f8130b098fe6b911e76068aa66"
+      "passwordHash": "c86c503364f1299e95517b96497b48c2eb56ed9f840fe0b2c0f22e3ecf9b869b",
+      "passwordSalt": "061438a7c1969bfb6c97afc9e36439ed"
     }
   ]
 }

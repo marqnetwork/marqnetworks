@@ -247,6 +247,15 @@ export default function EmployeePage() {
     return `${m}m ${s}s`;
   };
 
+  const fmtHMS = (ms: number) => {
+    const totalSec = Math.floor(ms / 1000);
+    const h = Math.floor(totalSec / 3600);
+    const m = Math.floor((totalSec % 3600) / 60);
+    const s = totalSec % 60;
+    const pad = (n: number) => String(n).padStart(2, '0');
+    return `${pad(h)}:${pad(m)}:${pad(s)}`;
+  };
+
   const liveBreakMs = breakStartTs ? Date.now() - breakStartTs : 0;
   const breakMsTotal = totalBreakMs + liveBreakMs;
   const liveWorkMs = checkInTs ? Date.now() - checkInTs - breakMsTotal : 0;
@@ -458,11 +467,13 @@ export default function EmployeePage() {
           <div className="emp-grid">
             <div className="emp-card">
               <div className="emp-card-title">Main Clock</div>
-              <div className="text-sm">Elapsed work: {fmtTime(Math.max(liveWorkMs, 0))}</div>
-              <div className="text-sm">Remaining to 8h: {fmtTime(remainingWorkMs)}</div>
-              <div className="text-sm">Break time: {fmtTime(Math.max(breakMsTotal, 0))}</div>
-              <div className="text-xs" style={{ color: '#aaa' }}>
-                {targetEndTs ? `Estimated end: ${new Date(targetEndTs).toLocaleTimeString()}` : 'Not checked in'}
+              <div className="emp-timer-main">{fmtHMS(Math.max(liveWorkMs, 0))}</div>
+              <div className="emp-timer-sub">
+                <span className="emp-pill red">Remaining {fmtHMS(remainingWorkMs)}</span>
+                <span className="emp-pill gray">Break {fmtHMS(Math.max(breakMsTotal, 0))}</span>
+              </div>
+              <div className="emp-timer-end">
+                {targetEndTs ? `Estimated end ${new Date(targetEndTs).toLocaleTimeString()}` : 'Not checked in'}
               </div>
             </div>
             <div className="emp-card">

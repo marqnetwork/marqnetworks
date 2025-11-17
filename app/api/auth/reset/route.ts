@@ -11,10 +11,12 @@ export async function POST(req: Request) {
       if (!email) return NextResponse.json({ ok: false, error: 'email required' }, { status: 400 });
       const { token } = requestPasswordReset(email);
       if (!token) return NextResponse.json({ ok: false, error: 'not_found' }, { status: 404 });
+      const baseUrl = process.env.NEXT_PUBLIC_APP_URL || process.env.APP_URL || 'http://localhost:3000';
+      const link = `${baseUrl}/reset/${encodeURIComponent(token)}`;
       const subject = `Password reset`;
-      const html = `<p>Your reset token: <b>${token}</b></p>`;
-      const result = await sendEmail(email, subject, html, `Reset token: ${token}`);
-      return NextResponse.json({ ok: true, reset_token: token, email_sent: !!result.ok, email_error: result.ok ? undefined : result.error });
+      const html = `<p>Click the link below to reset your password:</p><p><a href="${link}">${link}</a></p>`;
+      const result = await sendEmail(email, subject, html, `Reset link: ${link}`);
+      return NextResponse.json({ ok: true, email_sent: !!result.ok, email_error: result.ok ? undefined : result.error });
     }
     const token = (body?.token || '').trim();
     const newPassword = (body?.new_password || '').trim();

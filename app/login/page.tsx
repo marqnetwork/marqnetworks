@@ -8,10 +8,14 @@ function LoginContent() {
   const next = search.get('next') || '/employee';
   const router = useRouter();
 
-  const [mode, setMode] = useState<'login' | 'register'>('login');
+  const [mode, setMode] = useState<'login' | 'register' | 'reset'>('login');
   const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const [resetEmail, setResetEmail] = useState('');
+  // reset flow now email-only; confirmation happens on /reset/[token]
+  const [failCount, setFailCount] = useState(0);
+  const [allowReset, setAllowReset] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [message, setMessage] = useState<string | null>(null);
@@ -26,6 +30,15 @@ function LoginContent() {
     }
   }, [next, router]);
 
+  useEffect(() => {
+    try {
+      const key = `login_fail_count:${identifier.trim().toLowerCase()}`;
+      const n = Number(localStorage.getItem(key) || '0');
+      setFailCount(isNaN(n) ? 0 : n);
+      setAllowReset((isNaN(n) ? 0 : n) >= 5);
+    } catch {}
+  }, [identifier]);
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
@@ -39,7 +52,13 @@ function LoginContent() {
         });
         const json = await res.json();
         if (!res.ok || !json.ok) throw new Error(json.error || 'Login failed');
-      } else {
+        try {
+          const key = `login_fail_count:${identifier.trim().toLowerCase()}`;
+          localStorage.setItem(key, '0');
+          setFailCount(0);
+          setAllowReset(false);
+        } catch {}
+      } else if (mode === 'register') {
         const res = await fetch('/api/auth/request-access', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -58,14 +77,44 @@ function LoginContent() {
         setMessage(link ? 'Access granted for demo. Open the onboarding form below.' : 'Thanks! We will email you an onboarding link soon.');
         setEmail('');
         return;
+      } else {
+        return;
       }
       router.replace(next);
     } catch (err: any) {
       setError(err?.message || 'Something went wrong');
+      if (mode === 'login') {
+        try {
+          const key = `login_fail_count:${identifier.trim().toLowerCase()}`;
+          const n = Number(localStorage.getItem(key) || '0');
+          const nextN = (isNaN(n) ? 0 : n) + 1;
+          localStorage.setItem(key, String(nextN));
+          setFailCount(nextN);
+          setAllowReset(nextN >= 5);
+        } catch {}
+      }
     } finally {
       setLoading(false);
     }
   }
+
+  async function sendReset() {
+    setLoading(true);
+    setError(null);
+    setMessage(null);
+    try {
+      const res = await fetch('/api/auth/reset', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mode: 'request', email: resetEmail }) });
+      const json = await res.json();
+      if (!res.ok || !json.ok) throw new Error(json.error || 'Reset failed');
+      setMessage('Reset link sent to email');
+    } catch (e: any) {
+      setError(e?.message || 'Reset failed');
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  // confirmation handled on /reset/[token]
 
   return (
     <div style={{ maxWidth: 420, margin: '60px auto', padding: 16 }}>
@@ -78,6 +127,9 @@ function LoginContent() {
       <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
         <button onClick={() => setMode('login')} style={{ padding: '8px 12px', borderRadius: 999, border: '1px solid rgba(255,255,255,0.12)', background: mode === 'login' ? 'rgba(255,255,255,0.08)' : 'transparent', color: '#e5f3ff' }}>Login</button>
         <button onClick={() => setMode('register')} style={{ padding: '8px 12px', borderRadius: 999, border: '1px solid rgba(255,255,255,0.12)', background: mode === 'register' ? 'rgba(255,255,255,0.08)' : 'transparent', color: '#e5f3ff' }}>Create Account</button>
+        {allowReset && (
+          <button onClick={() => setMode('reset')} style={{ padding: '8px 12px', borderRadius: 999, border: '1px solid rgba(255,255,255,0.12)', background: mode === 'reset' ? 'rgba(255,255,255,0.08)' : 'transparent', color: '#e5f3ff' }}>Reset Password</button>
+        )}
       </div>
 
       <form onSubmit={handleSubmit} style={{ border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: 14, background: 'rgba(255,255,255,0.03)' }}>
@@ -87,8 +139,11 @@ function LoginContent() {
             <input value={identifier} onChange={(e) => setIdentifier(e.target.value)} required style={{ width: '100%', padding: 10, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'transparent', color: '#e5f3ff', marginBottom: 10 }} />
             <label style={{ display: 'block', fontSize: 12, color: '#9aa3b2', marginBottom: 4 }}>Password</label>
             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required minLength={6} style={{ width: '100%', padding: 10, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'transparent', color: '#e5f3ff' }} />
+            {!allowReset && failCount > 0 && (
+              <div style={{ marginTop: 8, fontSize: 12, color: '#9aa3b2' }}>Attempts: {failCount}/5</div>
+            )}
           </>
-        ) : (
+        ) : mode === 'register' ? (
           <>
             <label style={{ display: 'block', fontSize: 12, color: '#9aa3b2', marginBottom: 4 }}>Email</label>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required style={{ width: '100%', padding: 10, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'transparent', color: '#e5f3ff', marginBottom: 10 }} />
@@ -109,13 +164,25 @@ function LoginContent() {
               </div>
             )}
           </>
+        ) : (
+          <>
+            <div style={{ display: 'grid', gap: 10 }}>
+              <div>
+                <label style={{ display: 'block', fontSize: 12, color: '#9aa3b2', marginBottom: 4 }}>Email</label>
+                <input type="email" value={resetEmail} onChange={(e) => setResetEmail(e.target.value)} required style={{ width: '100%', padding: 10, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'transparent', color: '#e5f3ff' }} />
+                <button type="button" onClick={sendReset} disabled={loading || !resetEmail} style={{ marginTop: 8, width: '100%', padding: '8px 10px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(59,130,246,0.25)', color: '#e5f3ff' }}>Send Reset Email</button>
+                {message && <div style={{ marginTop: 6, color: '#9ad0ff' }}>{message}</div>}
+              </div>
+            </div>
+          </>
         )}
 
         {error && <div style={{ marginTop: 10, color: '#ffd27a' }}>{error}</div>}
-
-        <button type="submit" disabled={loading} style={{ marginTop: 12, width: '100%', padding: '10px 12px', borderRadius: 10, border: '1px solid rgba(255,255,255,0.12)', background: 'linear-gradient(90deg, #4f46e5, #06b6d4)', color: '#fff', fontWeight: 600 }}>
-          {loading ? (mode === 'login' ? 'Signing in…' : 'Requesting access…') : (mode === 'login' ? 'Sign In' : 'Request Access')}
-        </button>
+        {mode !== 'reset' && (
+          <button type="submit" disabled={loading} style={{ marginTop: 12, width: '100%', padding: '10px 12px', borderRadius: 10, border: '1px solid rgba(255,255,255,0.12)', background: 'linear-gradient(90deg, #4f46e5, #06b6d4)', color: '#fff', fontWeight: 600 }}>
+            {loading ? (mode === 'login' ? 'Signing in…' : 'Requesting access…') : (mode === 'login' ? 'Sign In' : 'Request Access')}
+          </button>
+        )}
       </form>
     </div>
   );

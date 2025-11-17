@@ -45,7 +45,7 @@ export default function AdminUserInfoPage() {
       <div className="admin-hero">
         <div className="tag-pill">Admin</div>
         <h1 className="admin-title">User Info</h1>
-        <p className="admin-sub">Onboarding details for each user. Only super admin can access.</p>
+        <p className="admin-sub">Onboarding details for each user.</p>
       </div>
 
       {error && <div style={{ marginTop: 12, color: '#ffd27a' }}>{error}</div>}
@@ -73,7 +73,6 @@ export default function AdminUserInfoPage() {
                 </div>
                 <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
                   <span className={`adm-badge ${u.status === 'active' ? 'green' : 'gray'}`}>{u.status}</span>
-                  <span className="adm-badge blue">{u.role}</span>
                 </div>
               </div>
 

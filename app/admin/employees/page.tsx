@@ -87,6 +87,7 @@ export default function AdminEmployeesPage() {
                   <th>Email</th>
                   <th>Status</th>
                   <th>Last Login</th>
+                  <th>Profile</th>
                   <th>Actions</th>
                 </tr>
               </thead>
@@ -102,6 +103,9 @@ export default function AdminEmployeesPage() {
                       <span className={`adm-badge ${u.status === 'active' ? 'green' : 'gray'}`}>{u.status}</span>
                     </td>
                     <td>{u.last_login_at ? new Date(u.last_login_at).toLocaleString() : '-'}</td>
+                    <td>
+                      <a className="adm-btn" href={`/admin/employees/${u.id}`}>Open</a>
+                    </td>
                     <td>
                       <div style={{ display: 'flex', gap: 8 }}>
                         <button className="adm-btn" onClick={() => update(u.id, { status: u.status === 'active' ? 'inactive' : 'active' })} disabled={loading}>{u.status === 'active' ? 'Deactivate' : 'Activate'}</button>

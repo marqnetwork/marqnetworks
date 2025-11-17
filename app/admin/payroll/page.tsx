@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useRef } from "react";
 import "../style.css";
 
 type PayPeriod = {
@@ -23,6 +23,8 @@ export default function AdminPayrollPage() {
   const [rows, setRows] = useState<PayPeriod[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const startRef = useRef<HTMLInputElement | null>(null);
+  const endRef = useRef<HTMLInputElement | null>(null);
 
   async function load() {
     setLoading(true);
@@ -124,12 +126,18 @@ export default function AdminPayrollPage() {
       <section className="admin-actions">
         <div className="adm-actions-bar">
           <div>
-            <div className="metric-label">Start (YYYY-MM-DD)</div>
-            <input className="adm-input" value={start} onChange={e => setStart(e.target.value)} placeholder="2025-01-01" />
+            <div className="metric-label">Start</div>
+            <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+              <input type="date" ref={startRef} className="adm-input" value={start} onChange={e => setStart(e.target.value)} onClick={e => (e.target as any).showPicker?.()} />
+              <button className="adm-btn" onClick={() => startRef.current && (startRef.current as any).showPicker?.()}>📅</button>
+            </div>
           </div>
           <div>
-            <div className="metric-label">End (YYYY-MM-DD)</div>
-            <input className="adm-input" value={end} onChange={e => setEnd(e.target.value)} placeholder="2025-01-31" />
+            <div className="metric-label">End</div>
+            <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+              <input type="date" ref={endRef} className="adm-input" value={end} onChange={e => setEnd(e.target.value)} onClick={e => (e.target as any).showPicker?.()} />
+              <button className="adm-btn" onClick={() => endRef.current && (endRef.current as any).showPicker?.()}>📅</button>
+            </div>
           </div>
           <div>
             <div className="metric-label">User ID (optional)</div>

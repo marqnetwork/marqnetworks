@@ -14,7 +14,9 @@ export default function AdminSettingsPage() {
     setError(null);
     try {
       const res = await fetch("/api/v1/settings");
-      const json = await res.json();
+      const ct = res.headers.get('content-type') || '';
+      const text = await res.text();
+      const json = ct.includes('application/json') && text ? JSON.parse(text) : {};
       if (!res.ok) throw new Error(json.error || "Failed to load settings");
       setSettings(json.settings || []);
     } catch (e: any) {
@@ -32,7 +34,9 @@ export default function AdminSettingsPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ key: k, value: v }),
       });
-      const json = await res.json();
+      const ct = res.headers.get('content-type') || '';
+      const text = await res.text();
+      const json = ct.includes('application/json') && text ? JSON.parse(text) : {};
       if (!res.ok) throw new Error(json.error || "Failed to save");
       setK("");
       setV("");

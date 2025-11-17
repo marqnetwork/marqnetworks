@@ -21,13 +21,11 @@ export default function AdminUsersPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [query, setQuery] = useState('');
-  const [roleFilter, setRoleFilter] = useState<Role | 'all'>('all');
   const [statusFilter, setStatusFilter] = useState<Status | 'all'>('all');
   const [invOpen, setInvOpen] = useState(false);
   const [invFirst, setInvFirst] = useState('');
   const [invLast, setInvLast] = useState('');
   const [invEmail, setInvEmail] = useState('');
-  const [invRole, setInvRole] = useState<Role>('member');
   const [invResult, setInvResult] = useState<string | null>(null);
 
   async function load() {
@@ -77,12 +75,6 @@ export default function AdminUsersPage() {
       <div className="admin-actions" style={{ marginTop: 16 }}>
         <div className="adm-actions-bar">
           <input className="adm-input" placeholder="Search name or email" value={query} onChange={e => setQuery(e.target.value)} style={{ minWidth: 220 }} />
-          <select className="adm-input" value={roleFilter} onChange={e => setRoleFilter(e.target.value as any)}>
-            <option value="all">All roles</option>
-            <option value="member">member</option>
-            <option value="manager">manager</option>
-            <option value="super_admin">super_admin</option>
-          </select>
           <select className="adm-input" value={statusFilter} onChange={e => setStatusFilter(e.target.value as any)}>
             <option value="all">All status</option>
             <option value="active">active</option>
@@ -98,11 +90,6 @@ export default function AdminUsersPage() {
             <input className="adm-input" placeholder="First name" value={invFirst} onChange={e => setInvFirst(e.target.value)} />
             <input className="adm-input" placeholder="Last name" value={invLast} onChange={e => setInvLast(e.target.value)} />
             <input className="adm-input" placeholder="Email" value={invEmail} onChange={e => setInvEmail(e.target.value)} />
-            <select className="adm-input" value={invRole} onChange={e => setInvRole(e.target.value as Role)}>
-              <option value="member">member</option>
-              <option value="manager">manager</option>
-              <option value="super_admin">super_admin</option>
-            </select>
           </div>
           <div style={{ display: 'flex', gap: 8, marginTop: 10 }}>
             <button className="adm-btn primary" disabled={loading || !invEmail} onClick={async () => {
@@ -110,11 +97,11 @@ export default function AdminUsersPage() {
               setInvResult(null);
               setLoading(true);
               try {
-                const res = await fetch('/api/auth/invite', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ first_name: invFirst, last_name: invLast, email: invEmail, role: invRole }) });
+                const res = await fetch('/api/auth/invite', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ first_name: invFirst, last_name: invLast, email: invEmail }) });
                 const json = await res.json();
                 if (!res.ok || !json.ok) throw new Error(json.error || 'Invite failed');
                 setInvResult(`Invite created. Token: ${json.invite_token}`);
-                setInvFirst(''); setInvLast(''); setInvEmail(''); setInvRole('member');
+                setInvFirst(''); setInvLast(''); setInvEmail('');
                 await load();
               } catch (e: any) {
                 setError(e?.message || 'Invite failed');
@@ -136,7 +123,6 @@ export default function AdminUsersPage() {
                 <tr>
                   <th>Name</th>
                   <th>Email</th>
-                  <th>Role</th>
                   <th>Status</th>
                   <th>Last Login</th>
                   <th>Actions</th>
@@ -146,32 +132,20 @@ export default function AdminUsersPage() {
                 {users.filter(u => {
                   const q = query.trim().toLowerCase();
                   const matches = !q || u.userName.toLowerCase().includes(q) || u.email.toLowerCase().includes(q);
-                  const roleOk = roleFilter === 'all' || u.role === roleFilter;
                   const statOk = statusFilter === 'all' || u.status === statusFilter;
-                  return matches && roleOk && statOk;
+                  return matches && statOk;
                 }).length === 0 && (
                   <tr><td colSpan={6}><div className="adm-empty">No users</div></td></tr>
                 )}
                 {users.filter(u => {
                   const q = query.trim().toLowerCase();
                   const matches = !q || u.userName.toLowerCase().includes(q) || u.email.toLowerCase().includes(q);
-                  const roleOk = roleFilter === 'all' || u.role === roleFilter;
                   const statOk = statusFilter === 'all' || u.status === statusFilter;
-                  return matches && roleOk && statOk;
+                  return matches && statOk;
                 }).map(u => (
                   <tr key={u.id}>
                     <td>{u.userName}</td>
                     <td>{u.email}</td>
-                    <td>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                        <span className={`adm-badge ${u.role === 'super_admin' ? 'green' : u.role === 'manager' ? 'amber' : 'gray'}`}>{u.role}</span>
-                        <select className="adm-input" value={u.role} onChange={e => update(u.id, { role: e.target.value as Role })} disabled={loading}>
-                          <option value="member">member</option>
-                          <option value="manager">manager</option>
-                          <option value="super_admin">super_admin</option>
-                        </select>
-                      </div>
-                    </td>
                     <td>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                         <span className={`adm-badge ${u.status === 'active' ? 'green' : 'gray'}`}>{u.status}</span>

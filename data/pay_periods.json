@@ -13,5 +13,19 @@
       "final_payable": null,
       "status": "paid"
     }
+    ,
+    {
+      "id": "k0xulh7skfmi37xmjy_2025-11-01_2025-11-30",
+      "user_id": "k0xulh7skfmi37xmjy",
+      "period_start": "2025-11-01",
+      "period_end": "2025-11-30",
+      "scheduled_hours": 240,
+      "actual_hours": 0,
+      "hourly_rate": 240.3846,
+      "eligible_amount": 0,
+      "override_amount": null,
+      "final_payable": 0,
+      "status": "pending"
+    }
   ]
 }

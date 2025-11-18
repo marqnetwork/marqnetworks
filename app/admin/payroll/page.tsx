@@ -32,6 +32,14 @@ export default function AdminPayrollPage() {
   const [todayHours, setTodayHours] = useState<number>(0);
   const [weekHours, setWeekHours] = useState<number>(0);
   const [monthHours, setMonthHours] = useState<number>(0);
+  const perMinuteRate = useMemo(() => {
+    const ms = Number(monthlySalary || 0);
+    const hpd = Number(hoursPerDay || 0);
+    const wpm = Number(workdaysPerMonth || 0);
+    const denom = hpd * wpm;
+    const hourly = denom > 0 ? ms / denom : 0;
+    return Number((hourly / 60).toFixed(6));
+  }, [monthlySalary, hoursPerDay, workdaysPerMonth]);
 
   async function load() {
     setLoading(true);
@@ -227,6 +235,10 @@ export default function AdminPayrollPage() {
         <div className="metric-card"><div className="metric-label">Hours Today</div><div className="metric-value">{todayHours.toFixed(2)}</div></div>
         <div className="metric-card"><div className="metric-label">Hours This Week</div><div className="metric-value">{weekHours.toFixed(2)}</div></div>
         <div className="metric-card"><div className="metric-label">Hours This Month</div><div className="metric-value">{monthHours.toFixed(2)}</div></div>
+        <div className="metric-card"><div className="metric-label">Minutes Today</div><div className="metric-value">{Math.round(todayHours * 60)}</div></div>
+        <div className="metric-card"><div className="metric-label">Pay Today</div><div className="metric-value">{Number(((todayHours * 60) * perMinuteRate).toFixed(2))}</div></div>
+        <div className="metric-card"><div className="metric-label">Pay This Week</div><div className="metric-value">{Number(((weekHours * 60) * perMinuteRate).toFixed(2))}</div></div>
+        <div className="metric-card"><div className="metric-label">Pay This Month</div><div className="metric-value">{Number(((monthHours * 60) * perMinuteRate).toFixed(2))}</div></div>
       </section>
 
       <section className="admin-actions">
@@ -263,7 +275,9 @@ export default function AdminPayrollPage() {
               <tr>
                 <th>Period</th>
                 <th>Hours (sched/actual)</th>
+                <th>Minutes Worked</th>
                 <th>Rate</th>
+                <th>Rate/min</th>
                 <th>Eligible</th>
                 <th>Override</th>
                 <th>Final</th>
@@ -276,7 +290,9 @@ export default function AdminPayrollPage() {
                 <tr key={r.id}>
                   <td>{r.period_start} → {r.period_end}</td>
                   <td>{r.scheduled_hours ?? 0} / {r.actual_hours ?? 0}</td>
+                  <td>{Math.round((r.actual_hours ?? 0) * 60)}</td>
                   <td>{r.hourly_rate ?? 0}</td>
+                  <td>{r.hourly_rate ? Number(((r.hourly_rate || 0) / 60).toFixed(6)) : 0}</td>
                   <td>{r.eligible_amount ?? 0}</td>
                   <td>{r.override_amount ?? 0}</td>
                   <td style={{ fontWeight: 600 }}>{r.final_payable ?? 0}</td>

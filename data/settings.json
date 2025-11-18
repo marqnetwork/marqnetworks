@@ -1,7 +1,3 @@
 {
-  "settings": [
-    { "key": "payroll_k0xulh7skfmi37xmjy_monthly_salary", "value": 50000 },
-    { "key": "payroll_k0xulh7skfmi37xmjy_hours_per_day", "value": 8 },
-    { "key": "payroll_k0xulh7skfmi37xmjy_workdays_per_month", "value": 26 }
-  ]
+  "settings": []
 }

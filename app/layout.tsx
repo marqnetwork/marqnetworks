@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import CursorFollower from "@/components/CursorFollower/CursorFollower"
+import GlobalCaptureManager from "@/components/GlobalCaptureManager/GlobalCaptureManager";
 // import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
 import { DM_Sans } from "next/font/google";
 import Head from "next/head";
@@ -51,7 +52,8 @@ export default function RootLayout({
       </Head> */}
       <body >
               {/* <SmoothScroll> */}
-         <CursorFollower />
+        <CursorFollower />
+        <GlobalCaptureManager />
         <Navbar />
         {children}
         <Footer />

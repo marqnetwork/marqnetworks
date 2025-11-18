@@ -21,10 +21,12 @@ export interface PayPeriodRow {
 
 const dataDir = path.join(process.cwd(), "data");
 const filePath = path.join(dataDir, "pay_periods.json");
+const settingsPath = path.join(dataDir, "settings.json");
 
 function ensure() {
   if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
   if (!fs.existsSync(filePath)) fs.writeFileSync(filePath, JSON.stringify({ pay_periods: [] }, null, 2), "utf-8");
+  if (!fs.existsSync(settingsPath)) fs.writeFileSync(settingsPath, JSON.stringify({ settings: [] }, null, 2), "utf-8");
 }
 
 function readAll(): { pay_periods: PayPeriodRow[] } {
@@ -43,6 +45,22 @@ export function makeId(): string {
 
 function msToHours(ms: number): number {
   return Number((ms / 3600000).toFixed(2));
+}
+
+function readSettings(): { settings: { key: string; value: any }[] } {
+  ensure();
+  const raw = fs.readFileSync(settingsPath, "utf-8");
+  return JSON.parse(raw);
+}
+
+function getUserPayrollConfig(user_id: string) {
+  const data = readSettings();
+  const map = new Map<string, any>();
+  for (const s of data.settings || []) map.set(s.key, s.value);
+  const ms = Number(map.get(`payroll_${user_id}_monthly_salary`) || 50000);
+  const hpd = Number(map.get(`payroll_${user_id}_hours_per_day`) || 8);
+  const wpm = Number(map.get(`payroll_${user_id}_workdays_per_month`) || 26);
+  return { monthly_salary: ms, hours_per_day: hpd, workdays_per_month: wpm };
 }
 
 function computeActualHours(user_id: string, start: Date, end: Date): number {
@@ -87,10 +105,12 @@ export function upsertPeriod(user_id: string, period_start: string, period_end: 
   const start = new Date(period_start);
   const end = new Date(period_end);
   const actual = computeActualHours(user_id, start, end);
-  const scheduled = countDays(start, end) * 8;
-  const hourly = null;
-  const eligible = hourly ? Number((actual * hourly).toFixed(2)) : null;
-  const final = eligible ?? null;
+  const cfg = getUserPayrollConfig(user_id);
+  const scheduled = countDays(start, end) * cfg.hours_per_day;
+  const denom = cfg.hours_per_day * cfg.workdays_per_month;
+  const hourly = denom > 0 ? Number((cfg.monthly_salary / denom).toFixed(4)) : 0;
+  const eligible = Number((actual * hourly).toFixed(2));
+  const final = eligible;
   const data = readAll();
   const key = `${user_id}_${period_start}_${period_end}`;
   let row = data.pay_periods.find(x => x.id === key);

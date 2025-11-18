@@ -379,8 +379,13 @@ export default function EmployeePage() {
       if (track) {
         track.addEventListener('ended', () => {
           stopScreenCapture();
+          try { (window as any).__globalCapture?.stop(); } catch {}
         });
       }
+    } catch {}
+    try {
+      (window as any).__globalCapture?.adopt(s, videoRef.current);
+      (window as any).__globalCapture?.schedule(10 * 1000);
     } catch {}
     await delay(200);
     await captureSnapshot();
@@ -400,6 +405,7 @@ export default function EmployeePage() {
 
   // Auto snapshot scheduler
   useEffect(() => {
+    if ((window as any).__globalCapture?.isScheduled?.()) return;
     if (!monitoring || status === 'idle' || !screenStream) {
       if (monitorIntervalRef.current) {
         window.clearInterval(monitorIntervalRef.current);

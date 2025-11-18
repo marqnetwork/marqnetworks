@@ -25,6 +25,13 @@ export default function AdminPayrollPage() {
   const [error, setError] = useState<string | null>(null);
   const startRef = useRef<HTMLInputElement | null>(null);
   const endRef = useRef<HTMLInputElement | null>(null);
+  const [monthlySalary, setMonthlySalary] = useState<string>("");
+  const [hoursPerDay, setHoursPerDay] = useState<string>("8");
+  const [workdaysPerMonth, setWorkdaysPerMonth] = useState<string>("26");
+  const [userName, setUserName] = useState<string>("");
+  const [todayHours, setTodayHours] = useState<number>(0);
+  const [weekHours, setWeekHours] = useState<number>(0);
+  const [monthHours, setMonthHours] = useState<number>(0);
 
   async function load() {
     setLoading(true);
@@ -38,6 +45,8 @@ export default function AdminPayrollPage() {
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || "Failed to load");
       setRows(json.pay_periods || []);
+      await loadSettings();
+      await loadAggregates();
     } catch (e: any) {
       setError(e.message);
     } finally {
@@ -95,6 +104,82 @@ export default function AdminPayrollPage() {
     }
   }
 
+  async function loadSettings() {
+    try {
+      const res = await fetch("/api/v1/settings");
+      const json = await res.json();
+      const list: Array<{ key: string; value: any }> = json.settings || [];
+      const ms = list.find(s => s.key === `payroll_${userId}_monthly_salary`);
+      const hpd = list.find(s => s.key === `payroll_${userId}_hours_per_day`);
+      const wpm = list.find(s => s.key === `payroll_${userId}_workdays_per_month`);
+      setMonthlySalary(ms ? String(ms.value) : monthlySalary || "50000");
+      setHoursPerDay(hpd ? String(hpd.value) : hoursPerDay || "8");
+      setWorkdaysPerMonth(wpm ? String(wpm.value) : workdaysPerMonth || "26");
+    } catch {}
+  }
+
+  async function saveSettings() {
+    setError(null);
+    try {
+      if (!userId) throw new Error("Enter User ID");
+      const entries = [
+        { key: `payroll_${userId}_monthly_salary`, value: Number(monthlySalary || 0) },
+        { key: `payroll_${userId}_hours_per_day`, value: Number(hoursPerDay || 0) },
+        { key: `payroll_${userId}_workdays_per_month`, value: Number(workdaysPerMonth || 0) },
+      ];
+      for (const e of entries) {
+        await fetch("/api/v1/settings", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(e) });
+      }
+      await load();
+    } catch (e: any) {
+      setError(e.message);
+    }
+  }
+
+  function computeHours(events: Array<{ id: string; userName: string; type: string; timestamp: number }>, from: Date, to: Date): number {
+    const list = events.filter(e => e.timestamp >= from.getTime() && e.timestamp <= to.getTime()).sort((a,b) => a.timestamp - b.timestamp);
+    let h = 0;
+    let ci: any = null;
+    let brk: any = null;
+    let breakMs = 0;
+    for (const ev of list) {
+      if (ev.type === "check_in") { ci = ev; breakMs = 0; brk = null; }
+      else if (ev.type === "break_start") { if (ci && !brk) brk = ev; }
+      else if (ev.type === "break_end") { if (ci && brk) { breakMs += Math.max(0, ev.timestamp - brk.timestamp); brk = null; } }
+      else if (ev.type === "check_out") { if (ci) { const span = Math.max(0, ev.timestamp - ci.timestamp); const work = Math.max(0, span - breakMs); h += Number((work / 3600000).toFixed(2)); ci = null; brk = null; breakMs = 0; } }
+    }
+    return Number(h.toFixed(2));
+  }
+
+  async function loadAggregates() {
+    try {
+      let name = userName;
+      if (!name) {
+        if (userId) {
+          const resUsers = await fetch('/api/admin/users');
+          const jsonUsers = await resUsers.json();
+          const u = (jsonUsers.users || []).find((x: any) => x.id === userId);
+          name = u?.userName || '';
+        } else {
+          const resSes = await fetch('/api/auth/session');
+          const jsonSes = await resSes.json();
+          name = jsonSes?.user?.userName || '';
+        }
+        setUserName(name);
+      }
+      const res = await fetch('/api/attendance');
+      const json = await res.json();
+      const events: Array<{ id: string; userName: string; type: string; timestamp: number }> = (json.events || []).filter((e: any) => e.userName === name);
+      const now = new Date();
+      const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const startOfWeek = new Date(now); startOfWeek.setDate(now.getDate() - ((now.getDay()+6)%7)); startOfWeek.setHours(0,0,0,0);
+      const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+      setTodayHours(computeHours(events, startOfDay, now));
+      setWeekHours(computeHours(events, startOfWeek, now));
+      setMonthHours(computeHours(events, startOfMonth, now));
+    } catch {}
+  }
+
   const totals = useMemo(() => {
     const count = rows.length;
     const approved = rows.filter(r => r.status === 'approved').length;
@@ -116,11 +201,32 @@ export default function AdminPayrollPage() {
         <p className="admin-sub">Filter, approve, mark paid, and export CSV.</p>
       </section>
 
+      <section className="admin-actions" style={{ marginTop: 12 }}>
+        <div className="adm-actions-bar">
+          <div>
+            <div className="metric-label">Monthly Salary</div>
+            <input className="adm-input" value={monthlySalary} onChange={e => setMonthlySalary(e.target.value)} placeholder="50000" />
+          </div>
+          <div>
+            <div className="metric-label">Hours per Day</div>
+            <input className="adm-input" value={hoursPerDay} onChange={e => setHoursPerDay(e.target.value)} placeholder="8" />
+          </div>
+          <div>
+            <div className="metric-label">Workdays per Month</div>
+            <input className="adm-input" value={workdaysPerMonth} onChange={e => setWorkdaysPerMonth(e.target.value)} placeholder="26" />
+          </div>
+          <button className="adm-btn primary" onClick={saveSettings} disabled={!userId}>Save Settings</button>
+        </div>
+      </section>
+
       <section className="admin-metrics">
         <div className="metric-card"><div className="metric-label">Loaded Periods</div><div className="metric-value">{totals.count}</div></div>
         <div className="metric-card"><div className="metric-label">Approved</div><div className="metric-value green">{totals.approved}</div></div>
         <div className="metric-card"><div className="metric-label">Paid</div><div className="metric-value blue">{totals.paid}</div></div>
         <div className="metric-card"><div className="metric-label">Total Final</div><div className="metric-value">{totals.sum.toFixed(2)}</div></div>
+        <div className="metric-card"><div className="metric-label">Hours Today</div><div className="metric-value">{todayHours.toFixed(2)}</div></div>
+        <div className="metric-card"><div className="metric-label">Hours This Week</div><div className="metric-value">{weekHours.toFixed(2)}</div></div>
+        <div className="metric-card"><div className="metric-label">Hours This Month</div><div className="metric-value">{monthHours.toFixed(2)}</div></div>
       </section>
 
       <section className="admin-actions">

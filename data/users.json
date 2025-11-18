@@ -70,7 +70,7 @@
       "firstName": "saif",
       "lastName": "ali",
       "createdAt": 1763388416878,
-      "lastLoginAt": 1763406373476,
+      "lastLoginAt": 1763484625723,
       "onboarding": {
         "fullLegalName": "Saif ALi",
         "preferredName": "",
@@ -109,8 +109,8 @@
         "availabilityToStart": "",
         "expectedGrowthPath": ""
       },
-      "passwordHash": "daf31e331f7db03420ed424e7949ae0eaeb1d15b2058f7cff5690bbf1d6b0df1",
-      "passwordSalt": "fe13d69cc13ec8742ba4a4262501fc2a"
+      "passwordHash": "ba6f6a70823275c224a9a6550c0604e93a11647ad0d24cdba69c5ecd712e54cb",
+      "passwordSalt": "7a0e355985be1a1e68b97e47e0f362ef"
     },
     {
       "id": "vls1egpxz99mi3ge4z2",

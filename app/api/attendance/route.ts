@@ -16,6 +16,8 @@ const allowedTypes: AttendanceEventType[] = [
   "break_end",
   "activity_ping",
   "snapshot",
+  "idle_start",
+  "idle_end",
 ];
 
 export async function GET() {
@@ -72,8 +74,17 @@ export async function POST(req: Request) {
       metadata,
     };
 
-    const client = getSupabaseServerClient();
+    let client: SupabaseClient | null = null;
+    try {
+      client = getSupabaseServerClient();
+    } catch {
+      client = null;
+    }
     if (client) {
+      if (event.type === "idle_start" || event.type === "idle_end") {
+        const updated = appendEvent(event);
+        return NextResponse.json({ ok: true, event, count: updated.events.length }, { status: 201 });
+      }
       const row: AttendanceEventRow = {
         id: event.id,
         user_name: event.userName,

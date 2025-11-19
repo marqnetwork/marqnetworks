@@ -75,19 +75,26 @@ function computeActualHours(user_id: string, start: Date, end: Date): number {
   let ci: AttendanceEvent | null = null;
   let brk: AttendanceEvent | null = null;
   let breakMs = 0;
+  let idleStart: AttendanceEvent | null = null;
+  let idleMs = 0;
   for (const ev of all) {
     if (ev.type === "check_in") {
-      ci = ev; breakMs = 0; brk = null;
+      ci = ev; breakMs = 0; brk = null; idleStart = null; idleMs = 0;
     } else if (ev.type === "break_start") {
       if (ci && !brk) brk = ev;
     } else if (ev.type === "break_end") {
       if (ci && brk) { breakMs += Math.max(0, ev.timestamp - brk.timestamp); brk = null; }
+    } else if (ev.type === "idle_start") {
+      if (ci && !idleStart) idleStart = ev;
+    } else if (ev.type === "idle_end") {
+      if (ci && idleStart) { idleMs += Math.max(0, ev.timestamp - idleStart.timestamp); idleStart = null; }
     } else if (ev.type === "check_out") {
       if (ci) {
         const span = Math.max(0, ev.timestamp - ci.timestamp);
-        const work = Math.max(0, span - breakMs);
+        if (idleStart) { idleMs += Math.max(0, ev.timestamp - idleStart.timestamp); idleStart = null; }
+        const work = Math.max(0, span - breakMs - idleMs);
         hours += msToHours(work);
-        ci = null; brk = null; breakMs = 0;
+        ci = null; brk = null; breakMs = 0; idleMs = 0;
       }
     }
   }

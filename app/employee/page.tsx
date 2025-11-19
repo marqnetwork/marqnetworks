@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import MarqButton from '@/components/MarqButton/MarqButton';
 import './style.css';
 
-type EventType = 'check_in' | 'check_out' | 'break_start' | 'break_end' | 'snapshot';
+type EventType = 'check_in' | 'check_out' | 'break_start' | 'break_end' | 'snapshot' | 'idle_start' | 'idle_end';
 
 type AttendanceEvent = {
   id: string;
@@ -51,6 +51,9 @@ export default function EmployeePage() {
   const [checkInTs, setCheckInTs] = useState<number | null>(null);
   const [breakStartTs, setBreakStartTs] = useState<number | null>(null);
   const [totalBreakMs, setTotalBreakMs] = useState<number>(0);
+  const [idling, setIdling] = useState<boolean>(false);
+  const [idleStartTs, setIdleStartTs] = useState<number | null>(null);
+  const [totalIdleMs, setTotalIdleMs] = useState<number>(0);
   const [clickRecording, setClickRecording] = useState<boolean>(true);
   const [clicks, setClicks] = useState<ClickEvent[]>([]);
   const [snapshots, setSnapshots] = useState<string[]>([]);
@@ -78,13 +81,7 @@ export default function EmployeePage() {
       if (rawSnaps) setSnapshots(JSON.parse(rawSnaps));
       const rawState = localStorage.getItem('employee_session_state');
       if (rawState) {
-        const s = JSON.parse(rawState);
-        if (s && typeof s === 'object') {
-          if (s.status) setStatus(s.status);
-          if (s.checkInTs) setCheckInTs(s.checkInTs);
-          if (s.breakStartTs) setBreakStartTs(s.breakStartTs);
-          if (typeof s.totalBreakMs === 'number') setTotalBreakMs(s.totalBreakMs);
-        }
+        try { localStorage.removeItem('employee_session_state'); } catch {}
       }
     } catch {}
   }, []);
@@ -105,7 +102,15 @@ export default function EmployeePage() {
   // Track user activity to reset idle timers
   useEffect(() => {
     const resetActivity = () => {
-      setLastActivityTs(Date.now());
+      const now = Date.now();
+      setLastActivityTs(now);
+      if (idling && status !== 'idle') {
+        const dur = idleStartTs ? Math.max(0, now - idleStartTs) : 0;
+        setIdling(false);
+        setIdleStartTs(null);
+        setTotalIdleMs((x) => x + dur);
+        append('idle_end', { duration_ms: dur }).catch(() => {});
+      }
       if (idleVisible) {
         setIdleVisible(false);
         setIdleSecondsLeft(60);
@@ -122,33 +127,49 @@ export default function EmployeePage() {
     return () => {
       events.forEach(([name, handler]) => window.removeEventListener(name, handler as any));
     };
-  }, [idleVisible]);
+  }, [idleVisible, idling, status, idleStartTs]);
 
-  // Idle detection: after 7 minutes show popup, auto-stop after 8 minutes
   useEffect(() => {
-    const warnMs = 7 * 60 * 1000;
-    const stopMs = 8 * 60 * 1000;
+    const thresholdMs = 5 * 60 * 1000;
     const id = window.setInterval(() => {
-      if (status === 'idle') return; // only when in a session
+      if (status === 'idle') return;
       const now = Date.now();
       const idleMs = now - lastActivityTs;
-      if (!idleVisible && idleMs >= warnMs) {
-        setIdleVisible(true);
-        setIdleSecondsLeft(Math.max(Math.floor((stopMs - idleMs) / 1000), 1));
-        return;
-      }
-      if (idleVisible) {
-        setIdleSecondsLeft((sec) => Math.max(sec - 1, 0));
-        if (idleMs >= stopMs || idleSecondsLeft <= 0) {
-          // Auto-stop: perform check-out
-          handleCheckOut();
-          setIdleVisible(false);
-          setIdleSecondsLeft(60);
-        }
+      if (!idling && idleMs >= thresholdMs) {
+        setIdling(true);
+        const startTs = lastActivityTs + thresholdMs;
+        setIdleStartTs(startTs);
+        append('idle_start', { started_at: startTs }).catch(() => {});
       }
     }, 1000);
     return () => window.clearInterval(id);
-  }, [status, lastActivityTs, idleVisible, idleSecondsLeft]);
+  }, [status, lastActivityTs, idling]);
+
+  useEffect(() => {
+    const onVis = () => {
+      if (document.visibilityState === 'hidden') stopSession();
+    };
+    const onUnload = () => {
+      stopSession();
+    };
+    document.addEventListener('visibilitychange', onVis);
+    window.addEventListener('beforeunload', onUnload);
+    return () => {
+      document.removeEventListener('visibilitychange', onVis);
+      window.removeEventListener('beforeunload', onUnload);
+    };
+  }, [status, idling, idleStartTs, userName]);
+
+  useEffect(() => {
+    if (status === 'idle') return;
+    const limitMs = 12 * 60 * 60 * 1000;
+    const id = window.setInterval(() => {
+      if (checkInTs && Date.now() - checkInTs >= limitMs) {
+        handleCheckOut();
+      }
+    }, 10000);
+    return () => window.clearInterval(id);
+  }, [status, checkInTs]);
 
   const todayStats = useMemo(() => {
     const startOfDay = new Date();
@@ -185,6 +206,38 @@ export default function EmployeePage() {
     }
   }
 
+  function postAttendanceQuick(payload: any) {
+    try {
+      const url = '/api/attendance';
+      const data = JSON.stringify(payload);
+      if (navigator.sendBeacon) {
+        const blob = new Blob([data], { type: 'application/json' });
+        navigator.sendBeacon(url, blob);
+      } else {
+        fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: data }).catch(() => {});
+      }
+    } catch {}
+  }
+
+  function stopSession() {
+    if (status !== 'idle') {
+      if (idling) {
+        const now = Date.now();
+        const dur = idleStartTs ? Math.max(0, now - idleStartTs) : 0;
+        postAttendanceQuick({ userName: userName || 'Unknown', type: 'idle_end', metadata: { duration_ms: dur } });
+      }
+      postAttendanceQuick({ userName: userName || 'Unknown', type: 'check_out', metadata: { reason: 'page_close' } });
+    }
+    setStatus('idle');
+    setCheckInTs(null);
+    setBreakStartTs(null);
+    setTotalBreakMs(0);
+    setIdling(false);
+    setIdleStartTs(null);
+    setTotalIdleMs(0);
+    try { localStorage.removeItem('employee_session_state'); } catch {}
+  }
+
   const handleCheckIn = async () => {
     await append('check_in');
     setStatus('working');
@@ -195,19 +248,29 @@ export default function EmployeePage() {
   };
 
   const handleCheckOut = async () => {
+    if (idling) {
+      const now = Date.now();
+      const dur = idleStartTs ? Math.max(0, now - idleStartTs) : 0;
+      setIdling(false);
+      setIdleStartTs(null);
+      setTotalIdleMs((x) => x + dur);
+      try { await append('idle_end', { duration_ms: dur }); } catch {}
+    }
     await append('check_out');
     const end = Date.now();
-    const workMs = checkInTs ? end - checkInTs - totalBreakMs : 0;
+    const workMs = checkInTs ? end - checkInTs - totalBreakMs - totalIdleMs : 0;
     const fmt = (ms: number) => {
       const m = Math.floor(ms / 60000);
       const s = Math.floor((ms % 60000) / 1000);
       return `${m}m ${s}s`;
     };
-    setSessionMessage(`Work: ${fmt(workMs)} | Breaks: ${fmt(totalBreakMs)}`);
+    setSessionMessage(`Work: ${fmt(workMs)} | Breaks: ${fmt(totalBreakMs)} | Idle: ${fmt(totalIdleMs)}`);
     setStatus('idle');
     setCheckInTs(null);
     setBreakStartTs(null);
     setTotalBreakMs(0);
+    setIdleStartTs(null);
+    setTotalIdleMs(0);
   };
 
   const handleBreakStart = async () => {
@@ -265,9 +328,11 @@ export default function EmployeePage() {
 
   const liveBreakMs = breakStartTs ? Date.now() - breakStartTs : 0;
   const breakMsTotal = totalBreakMs + liveBreakMs;
-  const liveWorkMs = checkInTs ? Date.now() - checkInTs - breakMsTotal : 0;
+  const liveIdleMs = idling && idleStartTs ? Date.now() - idleStartTs : 0;
+  const idleMsTotal = totalIdleMs + liveIdleMs;
+  const liveWorkMs = checkInTs ? Date.now() - checkInTs - breakMsTotal - idleMsTotal : 0;
   const remainingWorkMs = Math.max(OFFICE_MS - Math.max(liveWorkMs, 0), 0);
-  const targetEndTs = checkInTs ? checkInTs + OFFICE_MS + breakMsTotal : null;
+  const targetEndTs = checkInTs ? checkInTs + OFFICE_MS + breakMsTotal + idleMsTotal : null;
 
   // Live ticking to update timers every second while working or on break
   useEffect(() => {
@@ -282,10 +347,10 @@ export default function EmployeePage() {
       if (status === 'idle') {
         localStorage.removeItem('employee_session_state');
       } else {
-        localStorage.setItem('employee_session_state', JSON.stringify({ status, checkInTs, breakStartTs, totalBreakMs }));
+        localStorage.setItem('employee_session_state', JSON.stringify({ status, checkInTs, breakStartTs, totalBreakMs, idling, idleStartTs, totalIdleMs, savedAt: Date.now() }));
       }
     } catch {}
-  }, [status, checkInTs, breakStartTs, totalBreakMs]);
+  }, [status, checkInTs, breakStartTs, totalBreakMs, idling, idleStartTs, totalIdleMs]);
 
   // Click recording
   useEffect(() => {
@@ -539,6 +604,7 @@ export default function EmployeePage() {
               <div className="emp-timer-sub">
                 <span className="emp-pill red">Remaining {fmtHMS(remainingWorkMs)}</span>
                 <span className="emp-pill gray">Break {fmtHMS(Math.max(breakMsTotal, 0))}</span>
+                <span className="emp-pill gray">Idle {fmtHMS(Math.max(idleMsTotal, 0))}</span>
               </div>
               <div className="emp-timer-end">
                 {targetEndTs ? `Estimated end ${new Date(targetEndTs).toLocaleTimeString()}` : 'Not checked in'}

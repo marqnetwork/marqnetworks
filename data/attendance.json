@@ -1,3 +1,3359 @@
 {
-  "events": []
+  "events": [
+    {
+      "id": "dxxozr0z08omi4vqqnj",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763488872559,
+      "metadata": {
+        "url": "/uploads/mfqna5j32smi4vqqmi.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "e8p9iy0g6ymi4vqygn",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763488882679,
+      "metadata": {
+        "url": "/uploads/hhhmfysnx8vmi4vqyfa.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "9qver36heami4vr3n2",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763488889390,
+      "metadata": {
+        "clicks": 31,
+        "mouseMoves": 1296
+      }
+    },
+    {
+      "id": "7bdiy7c9j1jmi4vr637",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763488892563,
+      "metadata": {
+        "url": "/uploads/naq8hxigaumi4vr62b.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "4gm3cseqkr7mi4vrduk",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763488902620,
+      "metadata": {
+        "url": "/uploads/rgep8yubpximi4vrdtk.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "ximar4t88vmi4vrljw",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763488912604,
+      "metadata": {
+        "url": "/uploads/ygn1iemcc6tmi4vrlix.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "560jxz0ib64mi4vrtbl",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763488922673,
+      "metadata": {
+        "url": "/uploads/ywkaxl5q0zmi4vrtam.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "w1w518kv8e9mi4vs116",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763488932666,
+      "metadata": {
+        "url": "/uploads/24ys2hdphgami4vs108.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "7u482cnl1s8mi4vs8oc",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763488942573,
+      "metadata": {
+        "url": "/uploads/q9qi9yuvf1kmi4vs8nb.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "oihddkwyhh9mi4vsdy9",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763488949409,
+      "metadata": {
+        "clicks": 31,
+        "mouseMoves": 1296
+      }
+    },
+    {
+      "id": "o6hr3dxulaqmi4vsho0",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763488954224,
+      "metadata": {
+        "url": "/uploads/d13ruvwwap9mi4vshii.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "t66r9su62rqmi4vso51",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763488962613,
+      "metadata": {
+        "url": "/uploads/k2xr8enj8nmi4vso3p.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "t67v1n4s0hhmi4vst9o",
+      "userName": "saifali87154@gmail.com",
+      "type": "check_out",
+      "timestamp": 1763488969260,
+      "metadata": {}
+    },
+    {
+      "id": "hmo1jvcr7lpmi4vswq6",
+      "userName": "saifali87154@gmail.com",
+      "type": "check_in",
+      "timestamp": 1763488973742,
+      "metadata": {}
+    },
+    {
+      "id": "qpnwjji8qzmi4vszld",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763488977457,
+      "metadata": {
+        "url": "/uploads/i631e7ig3glmi4vswoy.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "k8sslldusqsmi4vt2li",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763488981350,
+      "metadata": {
+        "url": "/uploads/d0xxl6th026mi4vt01w.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "aikopf47atmi4vyt3z",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763489248991,
+      "metadata": {
+        "clicks": 34,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "wtca9610apmi4w027q",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763489307447,
+      "metadata": {
+        "clicks": 34,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "ueu8ut0y5lmi4w1ciw",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763489367464,
+      "metadata": {
+        "clicks": 34,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "fw6x8mu1oqcmi4w2msx",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763489427441,
+      "metadata": {
+        "clicks": 34,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "85m0pp1gz2imi4w3hhb",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489467199,
+      "metadata": {
+        "url": "/uploads/bujilhzuid7mi4w3h86.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "pbingnmdvilmi4w3tz8",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489483396,
+      "metadata": {
+        "url": "/uploads/4retw5n21xmi4w3t7a.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "kdo22agh1fmi4w3u5r",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489483631,
+      "metadata": {
+        "url": "/uploads/eyug9rfedc6mi4w3t8b.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "uskqidgu4xmi4w3udu",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489483925,
+      "metadata": {
+        "url": "/uploads/m9kq94a9l8jmi4w3ts0.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "bncqsu46yzqmi4w3wfc",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489486568,
+      "metadata": {
+        "url": "/uploads/3d6mvxfjvohmi4w3u2g.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "kvhj4h2xlrmi4w418x",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489492817,
+      "metadata": {
+        "url": "/uploads/munxjnd61rsmi4w415t.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "vr6wuatctnkmi4w41b7",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489492899,
+      "metadata": {
+        "url": "/uploads/g80mdkl00mjmi4w417f.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "jevnhfuo6gmi4w49nt",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489503721,
+      "metadata": {
+        "url": "/uploads/z2zz5pvqmzmi4w49hn.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "bnrittvcdjfmi4w49pf",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489503779,
+      "metadata": {
+        "url": "/uploads/vxp6si01nmi4w49kg.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "xe12vw8yv1mi4w4hdl",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489513721,
+      "metadata": {
+        "url": "/uploads/iwyp22yg25ami4w4hal.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "19nfyj95fnami4w4i22",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489514602,
+      "metadata": {
+        "url": "/uploads/r7olkb1pufmi4w4hen.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "7qnis9xrn9cmi4w4p40",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489523744,
+      "metadata": {
+        "url": "/uploads/qmnldw3zjimi4w4ozz.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "ci821vw1m2pmi4w4p5a",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489523790,
+      "metadata": {
+        "url": "/uploads/tox2js8uemmi4w4p2w.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "v9edjznchlmi4w4wrl",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489533665,
+      "metadata": {
+        "url": "/uploads/52mv0sr1jutmi4w4wnb.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "1256fkxrec8mi4w4x9r",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489534319,
+      "metadata": {
+        "url": "/uploads/qdvipm9fc4pmi4w4wsn.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "jz51eh56pzmi4w54jw",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489543756,
+      "metadata": {
+        "url": "/uploads/oxr5vtgcfcmi4w54gl.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "7sg495zs2xlmi4w54l8",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489543804,
+      "metadata": {
+        "url": "/uploads/6f6xnucmavmmi4w54j5.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "ybegokaqr0dmi4w55u3",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763489545419,
+      "metadata": {
+        "clicks": 34,
+        "mouseMoves": 130
+      }
+    },
+    {
+      "id": "66r2au2e0u8mi4w5cae",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489553782,
+      "metadata": {
+        "url": "/uploads/jg88sv5qykmi4w5c84.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "u9qoxjmgemmi4w5cce",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489553854,
+      "metadata": {
+        "url": "/uploads/uwf8sgkloqfmi4w5c8x.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "kv087ciurhkmi4w5jxg",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489563684,
+      "metadata": {
+        "url": "/uploads/f7yh30b22qmi4w5jun.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "kd7mcd2ntxmi4w5kih",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489564441,
+      "metadata": {
+        "url": "/uploads/x6ni9uhj59mi4w5jzb.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "ynsr8i67esbmi4w5rp4",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489573752,
+      "metadata": {
+        "url": "/uploads/0ngbdqxxi97mi4w5rle.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "84421plogcmmi4w5rqe",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489573798,
+      "metadata": {
+        "url": "/uploads/isovjvy8ol9mi4w5roe.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "e3vsh6ie1omi4w5zdp",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489583709,
+      "metadata": {
+        "url": "/uploads/zo6jkbciudbmi4w5za6.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "i27ynowfottmi4w5zf1",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489583757,
+      "metadata": {
+        "url": "/uploads/wzu3bvnh7jmi4w5zct.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "icaxz3kc68mi4w675f",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489593779,
+      "metadata": {
+        "url": "/uploads/ofsuadc5048mi4w671p.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "ee5e8l8gw8mi4w677b",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489593847,
+      "metadata": {
+        "url": "/uploads/v16czwfc8xmi4w674q.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "2exrcu0ea02mi4w6eup",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489603761,
+      "metadata": {
+        "url": "/uploads/32p1lgfdubmi4w6ers.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "2sp3j63iywami4w6fbr",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489604375,
+      "metadata": {
+        "url": "/uploads/owtdudlhr5lmi4w6evx.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "zojw53huo9ami4w6g5j",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763489605447,
+      "metadata": {
+        "clicks": 34,
+        "mouseMoves": 130
+      }
+    },
+    {
+      "id": "wwmc3bcqd8smi4w6mnt",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489613881,
+      "metadata": {
+        "url": "/uploads/a07mnx3iakkmi4w6mgm.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "tywnb8ai9kmmi4w6mtd",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489614081,
+      "metadata": {
+        "url": "/uploads/1ny02vptukvmi4w6mjt.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "30d2vur1qq4mi4w6u76",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489623650,
+      "metadata": {
+        "url": "/uploads/pxktcabodwmi4w6u3k.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "1uhccjzk3m2mi4w6u8g",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489623696,
+      "metadata": {
+        "url": "/uploads/rclpcwynvrrmi4w6u6n.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "l2ss821iurbmi4w71wr",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489633643,
+      "metadata": {
+        "url": "/uploads/lz3mvlrlsymi4w71t5.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "c8ahi857q2fmi4w71yb",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489633699,
+      "metadata": {
+        "url": "/uploads/cqakuz5fe8tmi4w71vr.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "a4ijyrs2enmi4w79mc",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489643636,
+      "metadata": {
+        "url": "/uploads/msubbo2txqemi4w79ik.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "9escheh0a2nmi4w79nr",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489643687,
+      "metadata": {
+        "url": "/uploads/d62ihrv4mbnmi4w79le.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "mpbf9k1odpsmi4w7hay",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489653594,
+      "metadata": {
+        "url": "/uploads/8cl70n35iz8mi4w7h8i.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "0qpklyj3jgimi4w7i0x",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489654529,
+      "metadata": {
+        "url": "/uploads/fxr293wtlami4w7hbp.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "ivloi3pv78rmi4w7p6g",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489663800,
+      "metadata": {
+        "url": "/uploads/csr4qekltgmi4w7p29.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "72fevqk6j9mi4w7p8q",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489663882,
+      "metadata": {
+        "url": "/uploads/c4ng9sm8cw7mi4w7p5p.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "80o3gsuke7jmi4w7qku",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763489665614,
+      "metadata": {
+        "clicks": 34,
+        "mouseMoves": 130
+      }
+    },
+    {
+      "id": "lsn2cvvrhkmi4w7wsl",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489673669,
+      "metadata": {
+        "url": "/uploads/05rnftlfdl3mi4w7wov.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "nhbixltvrelmi4w7wus",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489673748,
+      "metadata": {
+        "url": "/uploads/q7q7kqdnromi4w7wru.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "9mxpu2cc8tmi4w84i9",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489683665,
+      "metadata": {
+        "url": "/uploads/cruonqti1k9mi4w84ey.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "ypnhoklknlpmi4w84jq",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489683718,
+      "metadata": {
+        "url": "/uploads/ktbg6idgiepmi4w84hj.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "ovijyjodremi4w8c92",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489693702,
+      "metadata": {
+        "url": "/uploads/yfaa5jq33cjmi4w8c5t.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "o7wczskdhmami4w8cbe",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489693786,
+      "metadata": {
+        "url": "/uploads/k8a5glsfsbjmi4w8c8l.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "98btgvpi1i7mi4w8jxx",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489703669,
+      "metadata": {
+        "url": "/uploads/kuk80vah1e8mi4w8jvb.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "g0rssz30agqmi4w8kgm",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489704342,
+      "metadata": {
+        "url": "/uploads/nwul880ofaami4w8jyk.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "flhvsys4h5smi4w8rnl",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489713665,
+      "metadata": {
+        "url": "/uploads/g3ln5h0tv2bmi4w8rk0.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "ou2lhk8ncqpmi4w8rpu",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489713746,
+      "metadata": {
+        "url": "/uploads/4sovgbou14mmi4w8rmr.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "uzmy5zkybqmi4w8zce",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489723630,
+      "metadata": {
+        "url": "/uploads/eaorhaw813vmi4w8za2.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "6wzr7w1l6zcmi4w8zsa",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489724202,
+      "metadata": {
+        "url": "/uploads/ne0yfss8lknmi4w8zd2.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "gtgs03eazqcmi4w90s9",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763489725497,
+      "metadata": {
+        "clicks": 34,
+        "mouseMoves": 130
+      }
+    },
+    {
+      "id": "koj8lsljbpmi4w974i",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489733714,
+      "metadata": {
+        "url": "/uploads/lkdmtvdyeubmi4w9721.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "qsygca1mkkmi4w97ph",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489734469,
+      "metadata": {
+        "url": "/uploads/0hza380z8mbrmi4w9759.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "2xmzidqf8tdmi4w9etl",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489743689,
+      "metadata": {
+        "url": "/uploads/bxll52ajjxnmi4w9eqd.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "uvoacwl9l2dmi4w9euy",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489743738,
+      "metadata": {
+        "url": "/uploads/88qdazwi1m5mi4w9esp.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "qaqi6e6fzpimi4w9ml8",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489753756,
+      "metadata": {
+        "url": "/uploads/wq3ahba7bkmi4w9mif.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "7tyd721qbfomi4w9n26",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489754366,
+      "metadata": {
+        "url": "/uploads/sj2c7jy6oymi4w9mlp.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "48kl592vkgsmi4w9u6w",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489763608,
+      "metadata": {
+        "url": "/uploads/ar5j1v4sdhpmi4w9u3e.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "t1t7lzobf8mi4w9uos",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489764252,
+      "metadata": {
+        "url": "/uploads/xunsnrsgaemi4w9u68.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "k3xjkr7xxmi4wa1y3",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489773659,
+      "metadata": {
+        "url": "/uploads/ob4q9ecak5bmi4wa1ur.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "i8gpajmepn7mi4wa2r9",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489774709,
+      "metadata": {
+        "url": "/uploads/l16ry3dpijmi4wa1ze.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "jzugkk0yf7nmi4wa9r9",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489783781,
+      "metadata": {
+        "url": "/uploads/6t0jz2spavmi4wa9my.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "ozakz1v7ck8mi4wa9ue",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489783894,
+      "metadata": {
+        "url": "/uploads/hyog13efy4imi4wa9qc.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "y0ugjxfk3g9mi4wabxl",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763489786601,
+      "metadata": {
+        "clicks": 34,
+        "mouseMoves": 130
+      }
+    },
+    {
+      "id": "ga90c6yfmbgmi4wak64",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489797276,
+      "metadata": {
+        "url": "/uploads/mrvxejtlfogmi4wajyv.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "ya5f99g1g29mi4wak9u",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489797410,
+      "metadata": {
+        "url": "/uploads/tk3jhcmi81dmi4wajzf.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "gth6zg785rrmi4warmb",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489806931,
+      "metadata": {
+        "url": "/uploads/p1c5gdjf67mmi4warfd.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "s65j6exgtohmi4warnt",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489806985,
+      "metadata": {
+        "url": "/uploads/g014jm1q6nmi4warfr.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "6u535ut9shfmi4wawu3",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489813691,
+      "metadata": {
+        "url": "/uploads/pmmctuiwb1emi4wawqd.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "lpui1hgvylami4wawyd",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489813845,
+      "metadata": {
+        "url": "/uploads/cyd3bntvrg6mi4wawt2.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "g8wyv3pro6mmi4wb4jp",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489823685,
+      "metadata": {
+        "url": "/uploads/nhh6o3848lmi4wb4f3.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "rvbpzmgsojmi4wb4l2",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489823734,
+      "metadata": {
+        "url": "/uploads/pjtr8rjihymi4wb4hx.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "2yfrycjhzummi4wbca6",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489833710,
+      "metadata": {
+        "url": "/uploads/boqjdt88r0kmi4wbc6r.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "fj6g5cuk0aemi4wbcc1",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489833777,
+      "metadata": {
+        "url": "/uploads/ly8f44e014pmi4wbc9i.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "svn9ynfad4mi4wbjzq",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489843702,
+      "metadata": {
+        "url": "/uploads/86c2aejn50tmi4wbjvs.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "xc1ca0bdcmsmi4wbk0x",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489843745,
+      "metadata": {
+        "url": "/uploads/md71qidzcwmi4wbjyu.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "v88apuwaj1mi4wblau",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763489845398,
+      "metadata": {
+        "clicks": 34,
+        "mouseMoves": 130
+      }
+    },
+    {
+      "id": "1sohsv0vqodmi4wbrmh",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489853593,
+      "metadata": {
+        "url": "/uploads/lz0kl58mghmi4wbrjy.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "db7wdp9grami4wbs6p",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489854321,
+      "metadata": {
+        "url": "/uploads/5ls3njmg36gmi4wbrnc.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "p9dbxaznxzjmi4wc45k",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489869832,
+      "metadata": {
+        "url": "/uploads/uur70suergbmi4wc40p.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "ux1t90muwrfmi4wc45p",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763489869837,
+      "metadata": {
+        "url": "/uploads/7khpnj5m2jhmi4wc413.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "q1q1k8nervkmi4wc72s",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489873620,
+      "metadata": {
+        "url": "/uploads/6y7zmjeuqmymi4wc70x.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "al82r7d28o8mi4wcequ",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489883558,
+      "metadata": {
+        "url": "/uploads/h47himx6khvmi4wcepf.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "d4qal3lptohmi4wcmjz",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489893679,
+      "metadata": {
+        "url": "/uploads/zzv1k4dq5wmi4wcmiq.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "vljg5x0zhrmi4wcuc9",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489903769,
+      "metadata": {
+        "url": "/uploads/b5on50opow4mi4wcub6.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "xltlblt8kqpmi4wd250",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489913876,
+      "metadata": {
+        "url": "/uploads/hags1jj935dmi4wd20v.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "qxb2ftmk559mi4wd9o2",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489923634,
+      "metadata": {
+        "url": "/uploads/p0kyu45ku6cmi4wd9mm.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "bibhhv9zz9kmi4wdfh4",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763489931160,
+      "metadata": {
+        "clicks": 34,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "2n892mdwlxami4wdjdx",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489936229,
+      "metadata": {
+        "url": "/uploads/43u4accqj1dmi4wdijd.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "fij14qse4scmi4wdp4y",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763489943682,
+      "metadata": {
+        "url": "/uploads/xhuyte6n5khmi4wdp2y.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "j2bt8gpquami4xeqaz",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763491671467,
+      "metadata": {
+        "clicks": 43,
+        "mouseMoves": 15
+      }
+    },
+    {
+      "id": "y3x7rczjop8mi4xfaye",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763491698230,
+      "metadata": {
+        "url": "/uploads/sax0hy11ijlmi4xfa2e.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "vrlc40k3srmi4xfbcb",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763491698731,
+      "metadata": {
+        "url": "/uploads/4z6jnkl93wsmi4xfa1b.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "3cnek7lf487mi4xfbcj",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763491698739,
+      "metadata": {
+        "url": "/uploads/dqeesd7ayhmi4xfa31.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "9fod7clbtmimi4xflcu",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763491711710,
+      "metadata": {
+        "url": "/uploads/ua1r6iy7mmsmi4xfc50.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "mtu4b0rfrpdmi4xflxy",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763491712470,
+      "metadata": {
+        "url": "/uploads/w2dam2xwdwlmi4xfkuh.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "epdwu650xihmi4xfot2",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763491716182,
+      "metadata": {
+        "url": "/uploads/gks5hxhfftmi4xflki.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "a5dszrtrqomi4xfppp",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763491717357,
+      "metadata": {
+        "url": "/uploads/tnkvhn18t2cmi4xflpm.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "sq2s0q8q6wsmi4xfw10",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763491725540,
+      "metadata": {
+        "url": "/uploads/l439swsk95fmi4xfv2s.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "o8zfqkxa26mi4xfw7y",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763491725790,
+      "metadata": {
+        "url": "/uploads/8j1861g0tnrmi4xfv3h.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "i00fkvy564mi4xj5m1",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763491877929,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "ioenr2r3oafmi4ysags",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763493983740,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "zmiqomt01ufmi4yti6v",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763494040407,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "9uz3xdij3ami4yusib",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763494100435,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "0tblt60ljggemi4yw2sa",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763494160410,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "82za89qxeetmi4yxd2u",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763494220406,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "oss9pwpif3pmi4yynec",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763494280436,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "613x2yfkgp7mi4z0d4c",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763494360428,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "pejpnmf4g1bmi4z1nfs",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763494420456,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "mny1c8wyr2mi4z2xq6",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763494480446,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "gzq3v0kady4mi4z4813",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763494540455,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "l24pn2qq3pjmi4z5ibw",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763494600460,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "dtlir5iihemi4z863p",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763494724581,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "xsy9o5qoxudmi4z9d8m",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763494780486,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "uiq4aoxbsp8mi4zanib",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763494840451,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "r1qfptpfyymi4zbxsu",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763494900446,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "a5x031c8yumi4zdd4o",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763494966968,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "xi0yjgr4fbami4zeif3",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495020479,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "twchgduc3aqmi4zfp6l",
+      "userName": "saifali87154@gmail.com",
+      "type": "check_in",
+      "timestamp": 1763495075901,
+      "metadata": {}
+    },
+    {
+      "id": "17nbveumvidjmi4zft8l",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495081157,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "ywe980aqnwrmi4zfupd",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495083057,
+      "metadata": {
+        "url": "/uploads/dn23quux9l9mi4zft1u.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "uodqb9bjrwmi4zfzrh",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495089613,
+      "metadata": {
+        "url": "/uploads/61sdpvxr29ymi4zfzpp.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "phzo1sw813mi4zg2lb",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495093279,
+      "metadata": {
+        "url": "/uploads/kqfkrb88iymi4zg1lc.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "s6eprfqfmcmi4zg7fh",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495099549,
+      "metadata": {
+        "url": "/uploads/mn47zheljrdmi4zg7dy.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "3ps8nh434rsmi4zg8q8",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495101232,
+      "metadata": {
+        "url": "/uploads/nocdn9h5k9mmi4zg8l8.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "vr3uwnq7mvhmi4zgf4j",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495109523,
+      "metadata": {
+        "url": "/uploads/0b3zktofte8mi4zgf3a.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "d03syisy8ami4zggb8",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495111060,
+      "metadata": {
+        "url": "/uploads/6ifku5nzrjumi4zgg6y.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "w46muyxutwpmi4zgmvn",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495119571,
+      "metadata": {
+        "url": "/uploads/kj94d288n6mi4zgmu8.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "fhqzl5r92j9mi4zgojl",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495121729,
+      "metadata": {
+        "url": "/uploads/07mz9bf9soeumi4zgofm.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "8mwycyqxzejmi4zgupv",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495129731,
+      "metadata": {
+        "url": "/uploads/sy5d2d3i7q8mi4zguly.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "rr9vjq8kj2kmi4zgut0",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495129844,
+      "metadata": {
+        "url": "/uploads/mcaqwwaahvbmi4zguo2.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "78ykaof9xmpmi4zh2a7",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495139535,
+      "metadata": {
+        "url": "/uploads/t3qyd7p4xzmi4zh28s.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "tapt5kjezcmi4zh4hd",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495142385,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "557k5vjrjimi4zh4ko",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495142504,
+      "metadata": {
+        "url": "/uploads/uq4xpagldhmi4zh4g6.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "hsqknn70t54mi4zha2e",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495149622,
+      "metadata": {
+        "url": "/uploads/08e22104yr0mmi4zha12.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "6aemroaxremi4zhbps",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495151760,
+      "metadata": {
+        "clicks": 2,
+        "mouseMoves": 70
+      }
+    },
+    {
+      "id": "1qqi6rmgz7sjmi4zhbrh",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495151821,
+      "metadata": {
+        "url": "/uploads/arn19ivdwmkmi4zhbli.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "9iar8yrhtrmi4zhhr6",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495159586,
+      "metadata": {
+        "url": "/uploads/t1hztmny9rjmi4zhhpn.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "blrpss1xru6mi4zhj96",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495161530,
+      "metadata": {
+        "url": "/uploads/qdb4h32y5kgmi4zhj5f.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "l9brm7sg6khmi4zhpgz",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495169587,
+      "metadata": {
+        "url": "/uploads/bajv7o9to4tmi4zhpf6.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "tcuzgmwzdusmi4zhqvk",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495171408,
+      "metadata": {
+        "url": "/uploads/dhqsqu9u3bgmi4zhqqv.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "7ddfsbxtm6mmi4zhx6l",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495179581,
+      "metadata": {
+        "url": "/uploads/jz4brc4lnbfmi4zhx3n.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "skmkk09qw1gmi4zhzcs",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495182396,
+      "metadata": {
+        "url": "/uploads/37oe0v4ypnvmi4zhz81.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "qqnzsxqj5mi4zi4v9",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495189541,
+      "metadata": {
+        "url": "/uploads/b3rhns9a1ugmi4zi4tx.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "od0lwljnjdmi4zi62s",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495191108,
+      "metadata": {
+        "url": "/uploads/nzgzfjlao4lmi4zi616.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "0zr23k4od1yemi4zicop",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495199673,
+      "metadata": {
+        "url": "/uploads/yli1kn12r4mi4zicky.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "nad2qh0jo4mi4zicr9",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495199765,
+      "metadata": {
+        "url": "/uploads/rjhymdknl7bmi4zicmo.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "bkkiwf58otgmi4zidu1",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495201161,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "9i3ada8zzkkmi4zikdr",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495209647,
+      "metadata": {
+        "url": "/uploads/k3gkeahpzw8mi4zikc9.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "k2w6lzpzc7rmi4zim2k",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495211836,
+      "metadata": {
+        "clicks": 2,
+        "mouseMoves": 70
+      }
+    },
+    {
+      "id": "qbovftz3y5ami4zim65",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495211965,
+      "metadata": {
+        "url": "/uploads/wozdv44yclnmi4zildx.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "h1spy366w84mi4zis5f",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495219715,
+      "metadata": {
+        "url": "/uploads/gphhv0qmp6mi4zis34.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "e5luywsnb19mi4ziszf",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495220795,
+      "metadata": {
+        "url": "/uploads/bkm0uh0zbuomi4zis6b.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "p3q7qun9h4mi4zizq1",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495229529,
+      "metadata": {
+        "url": "/uploads/dt4847fgslmi4zizoq.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "e3rmqwllq9bmi4zj1ct",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495231645,
+      "metadata": {
+        "url": "/uploads/g8vi980xds6mi4zj18k.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "17q4opx8r95mi4zj7gf",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495239551,
+      "metadata": {
+        "url": "/uploads/pu13dkuzndtmi4zj7ew.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "ibt9v5qw2xmi4zj8ke",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495240990,
+      "metadata": {
+        "url": "/uploads/gtqhdlkql0imi4zj8in.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "2p00edkzu5pmi4zjfdi",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495249814,
+      "metadata": {
+        "url": "/uploads/fyn4h2y8avpmi4zjf9n.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "pjkoixxewq9mi4zjg7x",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495250909,
+      "metadata": {
+        "url": "/uploads/fajtoh33j0fmi4zjfcw.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "fefrut4sv5mi4zjnak",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495260076,
+      "metadata": {
+        "url": "/uploads/h5tqnzicb2mi4zjmvn.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "0kkqyiss7tumi4zjndd",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495260177,
+      "metadata": {
+        "url": "/uploads/06dx3hz6x4uqmi4zjn21.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "rmkoxmjpnzkmi4zjox7",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495262187,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "i88vww03pzdmi4zjupa",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495269678,
+      "metadata": {
+        "url": "/uploads/y6kgsp3ofphmi4zjuln.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "opf5wsh2wami4zjurh",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495269757,
+      "metadata": {
+        "url": "/uploads/84xesjgtnagmi4zjunh.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "lejlgvmn5abmi4zjvvf",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495271195,
+      "metadata": {
+        "clicks": 2,
+        "mouseMoves": 70
+      }
+    },
+    {
+      "id": "g4j2pk1ej0cmi4zk2dp",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495279629,
+      "metadata": {
+        "url": "/uploads/93o320xj1okmi4zk2bn.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "q1hb26u3elmi4zk3my",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495281258,
+      "metadata": {
+        "url": "/uploads/cz6pl39xynnmi4zk2es.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "tv6yt1343dmi4zka2h",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495289593,
+      "metadata": {
+        "url": "/uploads/qt18afgp3spmi4zka0o.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "hx9cdn3rxfgmi4zkay4",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495290732,
+      "metadata": {
+        "url": "/uploads/a1edwj82g4qmi4zka3f.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "nhunxrfy12jmi4zkhrv",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495299579,
+      "metadata": {
+        "url": "/uploads/fwsa43x4dfgmi4zkhq6.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "2ecb8bck5rpmi4zkjf6",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495301714,
+      "metadata": {
+        "url": "/uploads/o02jc0hb1lpmi4zkhv3.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "fcz6xgtht78mi4zkpix",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495309625,
+      "metadata": {
+        "url": "/uploads/4taxn5bt8qxmi4zkpfo.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "bhat72o9klbmi4zkpno",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495309796,
+      "metadata": {
+        "url": "/uploads/fc9tjo3nxqmi4zkpht.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "zqi2moly26mi4zkx7e",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495319578,
+      "metadata": {
+        "url": "/uploads/8uekmfrun0bmi4zkx5s.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "6e5wvhg0s1vmi4zkyul",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495321709,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "3ms1pxcgwl7mi4zkyzg",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495321884,
+      "metadata": {
+        "url": "/uploads/zgg69pj3vnmi4zkyrg.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "9mezamxw3pmi4zl4x2",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495329574,
+      "metadata": {
+        "url": "/uploads/z01v0gs4dgmi4zl4vc.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "xzev38zrx0rmi4zl6ti",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495332038,
+      "metadata": {
+        "url": "/uploads/9gad0akhlvkmi4zl5vb.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "9q6qgzmee04mi4zl709",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495332281,
+      "metadata": {
+        "clicks": 2,
+        "mouseMoves": 70
+      }
+    },
+    {
+      "id": "slx066bcwqdmi4zlcnc",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495339592,
+      "metadata": {
+        "url": "/uploads/4c7d9fg1b88mi4zlcm3.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "qi96lc5i3ogmi4zleta",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495342398,
+      "metadata": {
+        "url": "/uploads/tbv6zseo958mi4zlenc.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "2lyb2corbzwmi4zlkc2",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495349554,
+      "metadata": {
+        "url": "/uploads/0wy8uk8r2shomi4zlkam.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "qlqtvnnnfqfmi4zlmc3",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495352147,
+      "metadata": {
+        "url": "/uploads/8fm8uedbllpmi4zlm8j.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "kwwz1trw03smi4zls2g",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495359576,
+      "metadata": {
+        "url": "/uploads/wu6o4ci76nmi4zls0t.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "eipa4etpta5mi4zlto9",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495361657,
+      "metadata": {
+        "url": "/uploads/ogq61jvroksmi4zltk8.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "dokqeqkx9ykmi4zlzsd",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495369581,
+      "metadata": {
+        "url": "/uploads/z60lerxrvumi4zlzq7.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "b59u0n2r51mi4zm1pb",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495372063,
+      "metadata": {
+        "url": "/uploads/howxryqa1dumi4zm1im.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "2kh9wzhg7njmi4zm7i2",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495379578,
+      "metadata": {
+        "url": "/uploads/xv580e0k28mi4zm7gl.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "mu9wggw8xmomi4zm94p",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495381689,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "atrgvy1r7ljmi4zm9ad",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495381893,
+      "metadata": {
+        "url": "/uploads/4x1vyayg2twmi4zm8fq.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "fzossdtj55hmi4zmf73",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495389551,
+      "metadata": {
+        "url": "/uploads/awaykjjgn9mi4zmf56.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "zd7q7t7n0epmi4zmgx4",
+      "userName": "saifali87154@gmail.com",
+      "type": "idle_start",
+      "timestamp": 1763495391784,
+      "metadata": {
+        "started_at": 1763495390837
+      }
+    },
+    {
+      "id": "jtcsemzvqfhmi4zmgz7",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495391859,
+      "metadata": {
+        "clicks": 2,
+        "mouseMoves": 70
+      }
+    },
+    {
+      "id": "jscfg94ltfmi4zmgzd",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495391865,
+      "metadata": {
+        "url": "/uploads/3bewzgud9imi4zmgtq.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "mnvmt1xl4qgmi4zmmvq",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495399510,
+      "metadata": {
+        "url": "/uploads/8i9ab9kexwvmi4zmmu9.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "3nph099u6zami4zmom6",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495401758,
+      "metadata": {
+        "url": "/uploads/u0vs7ph6cymi4zmoil.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "lcu2q5rfpfmi4zmum3",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495409531,
+      "metadata": {
+        "url": "/uploads/xsl7kmdb3jomi4zmuku.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "hdzwtcx1ujmi4zmwbu",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495411754,
+      "metadata": {
+        "url": "/uploads/22r9k26cxgwmi4zmw7d.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "ih8jfsn7kifmi4zn2cp",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495419561,
+      "metadata": {
+        "url": "/uploads/t0i9bydh15imi4zn2b8.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "8ct2ibljg8mi4zn43x",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495421837,
+      "metadata": {
+        "url": "/uploads/pfonh709gjsmi4zn3za.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "ddjwdbbm89jmi4zna5g",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495429668,
+      "metadata": {
+        "url": "/uploads/w7f8ufr320qmi4zna1i.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "y872snxdr2mi4zna7m",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495429746,
+      "metadata": {
+        "url": "/uploads/vjsvol4eh3mi4zna3t.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "eg6l45mnv0imi4znhtg",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495439604,
+      "metadata": {
+        "url": "/uploads/602oy4mletimi4znhri.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "339t7w88ztkmi4zniw3",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495440995,
+      "metadata": {
+        "url": "/uploads/o3cit2orecmi4znhu0.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "wig9coqy8ubmi4znjm6",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495441934,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "vw4bzexhcdpmi4znpk1",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495449633,
+      "metadata": {
+        "url": "/uploads/p1z0w1krdvmi4znpik.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "wqw4hm7xhrmi4znr7x",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495451789,
+      "metadata": {
+        "clicks": 2,
+        "mouseMoves": 70
+      }
+    },
+    {
+      "id": "7vls97qxnqmi4znr9x",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495451861,
+      "metadata": {
+        "url": "/uploads/bjyhtitx4w4mi4znr48.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "3v3rf32c9rhmi4znx7j",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495459551,
+      "metadata": {
+        "url": "/uploads/avm55op3kiimi4znx63.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "ehc7dwhg27cmi4znyv6",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495461698,
+      "metadata": {
+        "url": "/uploads/uswx1ic7o6qmi4znyqy.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "k2p6ttv14cdmi4zo581",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495469937,
+      "metadata": {
+        "url": "/uploads/uh9mziknfj7mi4zo514.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "9n064i6bdaemi4zo656",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495471130,
+      "metadata": {
+        "url": "/uploads/pcjva2m5dfmi4zo59p.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "rd4lgo5o69mi4zocqo",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495479680,
+      "metadata": {
+        "url": "/uploads/8pghcm7fhk6mi4zocmw.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "h70j1u2e6gumi4zocte",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495479778,
+      "metadata": {
+        "url": "/uploads/mr30g3huatbmi4zocox.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "wh8txskfkmfmi4zokef",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495489607,
+      "metadata": {
+        "url": "/uploads/isqouyrsnximi4zokd2.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "g0jovaar5iimi4zom8h",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495491985,
+      "metadata": {
+        "url": "/uploads/0z61oobuamvmi4zom30.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "1pke96wttc1mi4zosc9",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495499897,
+      "metadata": {
+        "url": "/uploads/x0xw8dtb0anmi4zos5a.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "s93om211h4imi4zoseg",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495499976,
+      "metadata": {
+        "url": "/uploads/nwi69i5847emi4zos84.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "nyq32ejrunlmi4zotww",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495501936,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "7bh5k0qdvhwmi4zozr9",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495509509,
+      "metadata": {
+        "url": "/uploads/qryd8x010emi4zozpq.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "svk73tyqi6smi4zp1e1",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495511625,
+      "metadata": {
+        "clicks": 2,
+        "mouseMoves": 70
+      }
+    },
+    {
+      "id": "mmcj7zfjefmi4zp1fk",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495511680,
+      "metadata": {
+        "url": "/uploads/8573ij9pobmmi4zp1ap.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "jeb82819tfmi4zp7ik",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495519564,
+      "metadata": {
+        "url": "/uploads/os6sb6fp64mi4zp7h1.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "rdbv5ta5kmmi4zp973",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495521743,
+      "metadata": {
+        "url": "/uploads/5u99jv8drcpmi4zp92l.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "4ydyajqydemmi4zpf7z",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495529551,
+      "metadata": {
+        "url": "/uploads/b9t5xhnt7jdmi4zpf68.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "5ysduke8tw9mi4zph9i",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495532198,
+      "metadata": {
+        "url": "/uploads/ekm0uti7fpgmi4zph4k.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "jn48cjuhqejmi4zpmxy",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495539558,
+      "metadata": {
+        "url": "/uploads/1vkj7x4mrw1mi4zpmwd.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "1vt1lt864twmi4zpokm",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495541670,
+      "metadata": {
+        "url": "/uploads/y5p76errlmami4zpogp.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "1r7otph5y05jmi4zpuom",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495549590,
+      "metadata": {
+        "url": "/uploads/4gre5wkfkxjmi4zpumw.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "4y2ecqi2c0mmi4zpwhi",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495551926,
+      "metadata": {
+        "url": "/uploads/gyufkng8qrcmi4zpwfb.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "jpf12bgjk9smi4zq2d1",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495559541,
+      "metadata": {
+        "url": "/uploads/vaf5tq4tnimi4zq2bo.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "87qm6odz2tymi4zq44c",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495561820,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "xo6cw5ut74lmi4zq49q",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495562014,
+      "metadata": {
+        "url": "/uploads/t55kpajyymmmi4zq41p.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "gnadxeazm6qmi4zqa5d",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495569633,
+      "metadata": {
+        "url": "/uploads/qp0g0r51vw8mi4zqa1s.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "bq5hq9w9pnmmi4zqa7d",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495569705,
+      "metadata": {
+        "url": "/uploads/f9kwsbb85qimi4zqa3n.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "ns575rg6c7omi4zqbl5",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495571497,
+      "metadata": {
+        "clicks": 2,
+        "mouseMoves": 70
+      }
+    },
+    {
+      "id": "x870n2bd3jgmi4zqhsi",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495579538,
+      "metadata": {
+        "url": "/uploads/vqypxb4mxodmi4zqhr4.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "xez10hx9hemi4zqjfg",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495581660,
+      "metadata": {
+        "url": "/uploads/z3b304pleunmi4zqjc2.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "l95dzlr8jgmi4zqpop",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495589769,
+      "metadata": {
+        "url": "/uploads/s3o8ygu3xbmi4zqpjx.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "hdzs26p9j7nmi4zqr67",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495591695,
+      "metadata": {
+        "url": "/uploads/t8sntqv8ilimi4zqqgd.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "s36zlundxtomi4zqx8z",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495599571,
+      "metadata": {
+        "url": "/uploads/5neiucb3lqhmi4zqx7k.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "4nd4iaom0rxmi4zqywc",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495601708,
+      "metadata": {
+        "url": "/uploads/pap5gscskxcmi4zqysu.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "ag4xdvrl1psmi4zr4y3",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495609547,
+      "metadata": {
+        "url": "/uploads/jmts7jgh0xmi4zr4w9.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "8a0ecfbp06dmi4zr6kq",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495611658,
+      "metadata": {
+        "url": "/uploads/uxlezrvmhcmi4zr6hf.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "ssacgqejkxemi4zrcul",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495619789,
+      "metadata": {
+        "url": "/uploads/sxfnxhfxo4cmi4zrcpz.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "svs5z1vxz7mi4zrcw2",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495619842,
+      "metadata": {
+        "url": "/uploads/h2svdudrxjemi4zrcr8.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "ww41tyopkfemi4zrecm",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495621734,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "mnxhmm3qg7smi4zrkef",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495629575,
+      "metadata": {
+        "url": "/uploads/io1i9n5knwrmi4zrkd2.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "1czs18px6ubmi4zrm2i",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495631738,
+      "metadata": {
+        "clicks": 2,
+        "mouseMoves": 70
+      }
+    },
+    {
+      "id": "8867859wgmwmi4zrm4d",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495631805,
+      "metadata": {
+        "url": "/uploads/otz2nwjjlddmi4zrlz1.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "wvgd2019s9mmi4zrs43",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495639571,
+      "metadata": {
+        "url": "/uploads/0we0dw0vozshmi4zrs28.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "kyuzt1c03oimi4zrty0",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495641944,
+      "metadata": {
+        "url": "/uploads/ha2o7xdbaj5mi4zrttz.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "ggn4kmsfgymi4zrzts",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495649568,
+      "metadata": {
+        "url": "/uploads/kv3ulzt495pmi4zrzsi.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "rpchwa9426imi4zs1hh",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495651717,
+      "metadata": {
+        "url": "/uploads/9kht7vi5jgmi4zs1dt.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "f9e6emcw1y7mi4zs7ji",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495659566,
+      "metadata": {
+        "url": "/uploads/41awbdz3ll5mi4zs7hz.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "gthllxawgsqmi4zs94j",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495661619,
+      "metadata": {
+        "url": "/uploads/n8nz5875k0qmi4zs90l.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "hua8yrgpd6smi4zsfe7",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495669743,
+      "metadata": {
+        "url": "/uploads/0hpvv3pu2gqmi4zsfb1.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "73wbl1r3wqmi4zsffj",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495669791,
+      "metadata": {
+        "url": "/uploads/w3b9gs9qoaemi4zsfd1.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "ck1yq0aftdjmi4zsn0i",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495679618,
+      "metadata": {
+        "url": "/uploads/vbwot5en6hsmi4zsmyy.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "nqrjk0o48lmi4zsp1u",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495682258,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "9yi4qkqaykimi4zsp7v",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495682475,
+      "metadata": {
+        "url": "/uploads/ex9cihafhkmi4zsoyp.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "wmgky7h612mi4zst5d",
+      "userName": "saifali87154@gmail.com",
+      "type": "idle_end",
+      "timestamp": 1763495687569,
+      "metadata": {
+        "duration_ms": 296198
+      }
+    },
+    {
+      "id": "8qbbrm20z89mi4zst84",
+      "userName": "saifali87154@gmail.com",
+      "type": "idle_end",
+      "timestamp": 1763495687668,
+      "metadata": {
+        "duration_ms": 296284
+      }
+    },
+    {
+      "id": "sakg0iicw6emi4zsxyo",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495693808,
+      "metadata": {
+        "url": "/uploads/m9nmuypvr5mi4zsvuz.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "7dii4gzazlnmi4zsy40",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495694000,
+      "metadata": {
+        "url": "/uploads/xidygzup85mi4zsxh4.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "rsprdgu9kxtmi4zt3q4",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763495701276,
+      "metadata": {
+        "url": "/uploads/fbxg2zps3wvmi4zt3c9.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "gln8z2xjq0pmi4zt3xn",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763495701547,
+      "metadata": {
+        "url": "/uploads/c8jdcwdkerfmi4zt3hd.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "umodzym4qqemi4zt91j",
+      "userName": "saifali87154@gmail.com",
+      "type": "check_out",
+      "timestamp": 1763495708167,
+      "metadata": {
+        "reason": "page_close"
+      }
+    },
+    {
+      "id": "ids7yr1c74imi4zty16",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495740554,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "micanz9meumi4zv8d8",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495800604,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "k7rnfcptadbmi4zwimc",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495860548,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "j45e0v5jwwdmi4zxsu2",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495920442,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "s3awe6pqohcmi4zz35d",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763495980465,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "mqrinriy91mi500dg8",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763496040472,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "62hyn9wmo7rmi501nol",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763496100389,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "z6fcuy9qb1mi502xzd",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763496160393,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "f6dheas42nmi50489m",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763496220378,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "eehdn2w8vn7mi505ik7",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763496280375,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "0i2v93z1i7lmi506sv9",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763496340389,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "5lveals39ehmi508376",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763496400435,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "jv1gdonqckmi509dnk",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763496460640,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "v8k7gfaw0eimi50ejoe",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763496701726,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "j0wz5gt7epimi50fsxy",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763496760390,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "fjgvw8v7fkdmi50gmjz",
+      "userName": "saifali87154@gmail.com",
+      "type": "check_in",
+      "timestamp": 1763496798767,
+      "metadata": {}
+    },
+    {
+      "id": "x8xhbemuq9mmi50gzcy",
+      "userName": "saifali87154@gmail.com",
+      "type": "check_out",
+      "timestamp": 1763496815362,
+      "metadata": {
+        "reason": "page_close"
+      }
+    },
+    {
+      "id": "jg1gwhaz3lmi50h0kb",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763496816923,
+      "metadata": {
+        "url": "/uploads/b8r7rw93nekmi50gzek.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "681y1m81vlcmi50hd7v",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763496833323,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "hbqi8hd36ikmi50hiai",
+      "userName": "saifali87154@gmail.com",
+      "type": "check_in",
+      "timestamp": 1763496839898,
+      "metadata": {}
+    },
+    {
+      "id": "lkmd58kt3opmi50hiam",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763496839902,
+      "metadata": {
+        "url": "/uploads/lhzp4fcvp5omi50hd99.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "3vg68ctrzcbmi50hjw9",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763496841977,
+      "metadata": {
+        "url": "/uploads/ap73rixit3wmi50hi2q.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "4uvky54h3qgmi50hm2g",
+      "userName": "saifali87154@gmail.com",
+      "type": "check_out",
+      "timestamp": 1763496844792,
+      "metadata": {
+        "reason": "page_close"
+      }
+    },
+    {
+      "id": "1fn2a6yhlyzmi50ho1r",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763496847359,
+      "metadata": {
+        "url": "/uploads/mb2l7cd3y7mi50hm9f.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "uluurdho31mi50ho88",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763496847592,
+      "metadata": {
+        "url": "/uploads/f0472kidwq5mi50hnsx.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "qoijengkalmi50hriz",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763496851867,
+      "metadata": {
+        "url": "/uploads/m5n4zxhwurlmi50hrgu.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "tdoie5utxbemi50i6dc",
+      "userName": "saifali87154@gmail.com",
+      "type": "check_in",
+      "timestamp": 1763496871104,
+      "metadata": {}
+    },
+    {
+      "id": "hpfohzm1n0vmi50i91u",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763496874578,
+      "metadata": {
+        "url": "/uploads/3hkxam4s7qmi50i67b.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "u802pf8v6nmi50i9vj",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763496875647,
+      "metadata": {
+        "url": "/uploads/0k86awynvumqmi50i9am.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "cvkfzw656ejmi50ibxz",
+      "userName": "saifali87154@gmail.com",
+      "type": "snapshot",
+      "timestamp": 1763496878327,
+      "metadata": {
+        "url": "/uploads/dzyy3akdb6ami50i9q5.png",
+        "source": "screen"
+      }
+    },
+    {
+      "id": "62h9brj3o2kmi50if73",
+      "userName": "saifali87154@gmail.com",
+      "type": "check_out",
+      "timestamp": 1763496882543,
+      "metadata": {
+        "reason": "page_close"
+      }
+    },
+    {
+      "id": "866wru7ygfomi50ifb0",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763496882684,
+      "metadata": {
+        "url": "/uploads/nn8npm9phsmi50if58.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "ov4x5yeztiomi50imr2",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763496892334,
+      "metadata": {
+        "url": "/uploads/441tmaia5ifmi50imlc.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "vqrkh0t6czdmi50ip0e",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763496895262,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "9xh03324x1ami50iw32",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763496904430,
+      "metadata": {
+        "url": "/uploads/klazmkzapdmi50iv1b.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "big23lxtowfmi50j1un",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763496911903,
+      "metadata": {
+        "url": "/uploads/3ixfornhaodmi50j1r6.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "xxq9jq7cesmi50j9zn",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763496922451,
+      "metadata": {
+        "url": "/uploads/6kqkiyb04shmi50j9yx.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "8c0wv6tmzjrmi50jhp8",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763496932444,
+      "metadata": {
+        "url": "/uploads/a3pzs59vw8mi50jhoj.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "jnqeb1xapqimi50jntg",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763496940372,
+      "metadata": {
+        "clicks": 45,
+        "mouseMoves": 0
+      }
+    },
+    {
+      "id": "px7tlat3llmi50jq7b",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763496943463,
+      "metadata": {
+        "url": "/uploads/cwtt8iaf5sami50jq6j.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "6tww6zszjfbmi50jx6t",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763496952517,
+      "metadata": {
+        "url": "/uploads/osh6yqaz69mi50jx4s.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "d7lnbj7s1e5mi50k4va",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763496962470,
+      "metadata": {
+        "url": "/uploads/yrrq8p22uuomi50k4u5.png",
+        "source": "global"
+      }
+    },
+    {
+      "id": "n991n9mmwami50k7vh",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763496966365,
+      "metadata": {
+        "clicks": 13,
+        "mouseMoves": 609
+      }
+    },
+    {
+      "id": "f33pzcby29qmi50kcmr",
+      "userName": "Unknown",
+      "type": "snapshot",
+      "timestamp": 1763496972531,
+      "metadata": {
+        "url": "/uploads/96vhzswsxwjmi50kcll.png",
+        "source": "global"
+      }
+    }
+  ]
 }

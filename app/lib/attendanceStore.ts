@@ -7,7 +7,9 @@ export type AttendanceEventType =
   | "break_start"
   | "break_end"
   | "activity_ping"
-  | "snapshot";
+  | "snapshot"
+  | "idle_start"
+  | "idle_end";
 
 export interface AttendanceEvent {
   id: string;

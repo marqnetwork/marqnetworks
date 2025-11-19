@@ -3,9 +3,16 @@ import { getSupabaseAdminClient } from "../../../../lib/supabase";
 import { resolveSupabaseUserBySession } from "../../../../lib/supabaseAuthBridge";
 
 export async function GET(request: Request) {
-  const supabase = getSupabaseAdminClient();
+  let supabase: ReturnType<typeof getSupabaseAdminClient> | null = null;
+  try {
+    supabase = getSupabaseAdminClient();
+  } catch {
+    supabase = null;
+  }
+  if (!supabase) {
+    return NextResponse.json({ latest_version: null, download_url: null });
+  }
   await resolveSupabaseUserBySession(request, supabase); // ensure logged in
-  // Fetch latest agent version and download URL from settings
   const { data, error } = await supabase.from("settings").select("key, value").in("key", ["agent_latest_version", "agent_download_url"]);
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
   const map = new Map<string, any>();

@@ -3,7 +3,15 @@ import { getSupabaseAdminClient } from "../../../../lib/supabase";
 import { resolveSupabaseUserBySession } from "../../../../lib/supabaseAuthBridge";
 
 export async function GET(request: Request) {
-  const supabase = getSupabaseAdminClient();
+  let supabase: ReturnType<typeof getSupabaseAdminClient> | null = null;
+  try {
+    supabase = getSupabaseAdminClient();
+  } catch {
+    supabase = null;
+  }
+  if (!supabase) {
+    return NextResponse.json({ devices: [], user_id: null });
+  }
   try {
     const { user, role } = await resolveSupabaseUserBySession(request, supabase);
     const url = new URL(request.url);
@@ -20,6 +28,6 @@ export async function GET(request: Request) {
     return NextResponse.json({ devices: data || [], user_id: targetUserId });
   } catch (e: any) {
     console.error("agent devices list error", e);
-    return NextResponse.json({ error: e.message || "Failed to fetch devices" }, { status: 500 });
+    return NextResponse.json({ devices: [], user_id: null });
   }
 }

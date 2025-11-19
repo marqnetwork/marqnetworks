@@ -3410,6 +3410,15 @@
       "metadata": {
         "started_at": 1763574966539
       }
+    },
+    {
+      "id": "ywx44bp6lfmi6b78iw",
+      "userName": "saifali87154@gmail.com",
+      "type": "idle_end",
+      "timestamp": 1763575302632,
+      "metadata": {
+        "duration_ms": 336039
+      }
     }
   ]
 }

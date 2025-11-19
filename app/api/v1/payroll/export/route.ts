@@ -15,7 +15,7 @@ export async function GET(request: Request) {
   }
   try {
     const supabase = getSupabaseAdminClient();
-    const { role } = await resolveSupabaseUserBySession(request, supabase);
+    const { role } = await resolveSupabaseUserBySession();
     if (!(role === "super_admin" || role === "team_manager")) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }

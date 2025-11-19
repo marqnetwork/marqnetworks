@@ -3419,6 +3419,15 @@
       "metadata": {
         "duration_ms": 336039
       }
+    },
+    {
+      "id": "nvpd66k6z9mi6bqyzb",
+      "userName": "saifali87154@gmail.com",
+      "type": "idle_start",
+      "timestamp": 1763576223383,
+      "metadata": {
+        "started_at": 1763576223091
+      }
     }
   ]
 }

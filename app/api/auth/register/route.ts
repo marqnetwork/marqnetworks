@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { createUser, createSession } from '../../../lib/authStore';
+import { getSupabaseAdminClient } from '../../../lib/supabase';
 
 export async function POST(req: Request) {
   try {
@@ -8,11 +8,12 @@ export async function POST(req: Request) {
     if (!userName || !email || !password) {
       return NextResponse.json({ ok: false, error: 'Missing fields' }, { status: 400 });
     }
-    const user = createUser(userName, email, password);
-    const session = createSession(user.id);
-    const res = NextResponse.json({ ok: true, user: { id: user.id, userName: user.userName, email: user.email } });
-    // Set cookie to expire in 10 hours (aligns with session lifetime)
-    res.cookies.set('session_id', session.id, { httpOnly: true, sameSite: 'lax', path: '/', maxAge: 10 * 60 * 60 });
+    const admin = getSupabaseAdminClient();
+    const { data, error } = await admin.auth.admin.createUser({ email, password, email_confirm: true, user_metadata: { userName } } as any);
+    if (error || !data?.user) return NextResponse.json({ ok: false, error: error?.message || 'Registration failed' }, { status: 400 });
+    const res = NextResponse.json({ ok: true, user: { id: data.user.id, userName, email } });
+    res.cookies.set('supabase_user_id', data.user.id, { httpOnly: true, sameSite: 'lax', path: '/', maxAge: 10 * 60 * 60 });
+    res.cookies.set('supabase_user_email', email, { httpOnly: true, sameSite: 'lax', path: '/', maxAge: 10 * 60 * 60 });
     return res;
   } catch (err: any) {
     return NextResponse.json({ ok: false, error: err?.message || 'Registration failed' }, { status: 400 });

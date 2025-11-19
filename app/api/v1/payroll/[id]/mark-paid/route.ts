@@ -2,14 +2,14 @@ import { NextResponse } from "next/server";
 import { getSupabaseAdminClient } from "../../../../../lib/supabase";
 import { resolveSupabaseUserBySession } from "../../../../../lib/supabaseAuthBridge";
 import { auditLog } from "../../../../../lib/audit";
-import { cookies } from "next/headers";
+    import { cookies } from "next/headers";
 import { getSession } from "../../../../../lib/authStore";
 import { updateStatus } from "../../../../../lib/payrollStore";
 
 export async function POST(request: Request, { params }: { params: { id: string } }) {
   try {
     const supabase = getSupabaseAdminClient();
-    const { role } = await resolveSupabaseUserBySession(request, supabase);
+    const { role } = await resolveSupabaseUserBySession();
     if (!(role === "super_admin")) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }

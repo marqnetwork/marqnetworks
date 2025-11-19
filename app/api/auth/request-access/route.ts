@@ -3,52 +3,29 @@ import fs from 'fs';
 import path from 'path';
 import { makeId, inviteUser } from '../../../lib/authStore';
 import { sendEmail } from '../../../lib/mailer';
+import { getSupabaseAdminClient } from '../../../lib/supabase';
 
-function resolveWritablePath(rel: string) {
-  const preferred = path.join(process.cwd(), 'data', rel);
-  try {
-    const dir = path.dirname(preferred);
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    const test = path.join(dir, '.write-test');
-    fs.writeFileSync(test, 'ok');
-    fs.unlinkSync(test);
-    return preferred;
-  } catch {
-    const altDir = path.join('/tmp', 'marq-data');
-    try {
-      if (!fs.existsSync(altDir)) fs.mkdirSync(altDir, { recursive: true });
-      return path.join(altDir, rel);
-    } catch {
-      return preferred;
-    }
-  }
-}
-
-function ensureFile(p: string) {
-  try {
-    const dir = path.dirname(p);
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    if (!fs.existsSync(p)) fs.writeFileSync(p, JSON.stringify({ requests: [] }, null, 2), 'utf-8');
-  } catch {}
-}
 
 export async function POST(req: Request) {
   try {
     const body = await req.json().catch(() => ({}));
     const email = (body?.email || '').trim();
     if (!email) return NextResponse.json({ ok: false, error: 'email required' }, { status: 400 });
-    const dataPath = resolveWritablePath('access_requests.json');
-    ensureFile(dataPath);
-    const raw = fs.readFileSync(dataPath, 'utf-8');
-    const data = JSON.parse(raw);
-    const exists = (data.requests || []).find((r: any) => (r.email || '').toLowerCase() === email.toLowerCase() && r.status === 'pending');
-    const rec = exists || { id: makeId(), email, status: 'pending', createdAt: Date.now() };
-    data.requests = Array.isArray(data.requests) ? data.requests : [];
-    if (!exists) data.requests.push(rec);
-    try { fs.writeFileSync(dataPath, JSON.stringify(data, null, 2), 'utf-8'); } catch {}
-
-    // Create a dummy invite immediately so the user can open the onboarding form without email
+    // Ensure Supabase user exists and tag metadata
     const { token } = inviteUser(email, '', '', 'member');
+
+    try {
+      const supa = getSupabaseAdminClient();
+      const { data: list } = await supa.auth.admin.listUsers({ perPage: 200, page: 1 });
+      const found = (list?.users || []).find((u: any) => (u.email || '').toLowerCase() === email.toLowerCase());
+      const metadata = { requested_access_at: Date.now(), invite_token: token, invite_expires: Date.now() + 7 * 24 * 60 * 60 * 1000 };
+      if (!found) {
+        await supa.auth.admin.createUser({ email, user_metadata: metadata } as any);
+      } else {
+        await supa.auth.admin.updateUserById(found.id, { user_metadata: metadata } as any);
+      }
+    } catch {}
+
     const origin = new URL((req as any).url).origin;
     const link = `${origin}/onboarding/${token}`;
     const adminEmail = process.env.ADMIN_NOTIFY_EMAIL || process.env.SMTP_FROM || process.env.SENDGRID_FROM_EMAIL || process.env.RESEND_FROM_EMAIL || '';
@@ -92,8 +69,7 @@ export async function POST(req: Request) {
     if (process.env.SMTP_HOST && process.env.SMTP_USER) provider = 'smtp';
     else if (process.env.SENDGRID_API_KEY && (process.env.SENDGRID_FROM_EMAIL || process.env.RESEND_FROM_EMAIL)) provider = 'sendgrid';
     else if (process.env.RESEND_API_KEY && process.env.RESEND_FROM_EMAIL) provider = 'resend';
-    return NextResponse.json({ ok: true, provider, onboarding_link: link, invite_token: token, admin_email_sent: !!(notifyResult && notifyResult.ok), admin_email_error: notifyResult && !notifyResult.ok ? notifyResult.error : undefined, user_ack_sent: !!(ackResult && ackResult.ok), user_ack_error: ackResult && !ackResult.ok ? ackResult.error : undefined });
-  } catch (err: any) {
+    return NextResponse.json({ ok: true, provider, onboarding_link: link, invite_token: token, admin_email_sent: !!(notifyResult && notifyResult.ok), admin_email_error: notifyResult && !notifyResult.ok ? notifyResult.error : undefined, user_ack_sent: !!(ackResult && ackResult.ok), user_ack_error: ackResult && !ackResult.ok ? ackResult.error : undefined });  } catch (err: any) {
     return NextResponse.json({ ok: false, error: err?.message || 'request_failed' }, { status: 400 });
   }
 }

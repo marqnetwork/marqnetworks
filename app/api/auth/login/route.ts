@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { verifyLogin, createSession, updateLastLogin } from '../../../lib/authStore';
+import { getSupabaseServerClient, getSupabaseAdminClient } from '../../../lib/supabase';
 
 export async function POST(req: Request) {
   try {
@@ -8,15 +8,16 @@ export async function POST(req: Request) {
     if (!identifier || !password) {
       return NextResponse.json({ ok: false, error: 'Missing fields' }, { status: 400 });
     }
-    const user = verifyLogin(identifier, password);
-    if (!user) {
+    const supa = getSupabaseServerClient();
+    const { data, error } = await supa.auth.signInWithPassword({ email: identifier, password });
+    if (error || !data?.user) {
       return NextResponse.json({ ok: false, error: 'Invalid credentials' }, { status: 401 });
     }
-    const session = createSession(user.id);
-    updateLastLogin(user.id);
-    const res = NextResponse.json({ ok: true, user: { id: user.id, userName: user.userName, email: user.email } });
-    // Set cookie to expire in 10 hours (aligns with session lifetime)
-    res.cookies.set('session_id', session.id, { httpOnly: true, sameSite: 'lax', path: '/', maxAge: 10 * 60 * 60 });
+    const admin = getSupabaseAdminClient();
+    const { data: profile } = await admin.from('profiles').select('role').eq('id', data.user.id).maybeSingle();
+    const res = NextResponse.json({ ok: true, user: { id: data.user.id, userName: data.user.user_metadata?.userName || '', email: data.user.email || '', role: (profile?.role || 'member') } });
+    res.cookies.set('supabase_user_id', data.user.id, { httpOnly: true, sameSite: 'lax', path: '/', maxAge: 10 * 60 * 60 });
+    res.cookies.set('supabase_user_email', data.user.email || '', { httpOnly: true, sameSite: 'lax', path: '/', maxAge: 10 * 60 * 60 });
     return res;
   } catch (err: any) {
     return NextResponse.json({ ok: false, error: err?.message || 'Login failed' }, { status: 400 });

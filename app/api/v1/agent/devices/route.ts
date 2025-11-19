@@ -13,7 +13,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ devices: [], user_id: null });
   }
   try {
-    const { user, role } = await resolveSupabaseUserBySession(request, supabase);
+    const { user, role } = await resolveSupabaseUserBySession();
     const url = new URL(request.url);
     const targetUserId = url.searchParams.get("user_id") || user.id;
     if (targetUserId !== user.id && !(role === "super_admin" || role === "team_manager")) {

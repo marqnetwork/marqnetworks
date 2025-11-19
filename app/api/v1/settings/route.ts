@@ -8,12 +8,31 @@ import { getSession } from "../../../lib/authStore";
 
 type Setting = { key: string; value: any };
 
-const dataDir = path.join(process.cwd(), "data");
+function resolveWritableDir(preferred: string) {
+  try {
+    if (!fs.existsSync(preferred)) fs.mkdirSync(preferred, { recursive: true });
+    const test = path.join(preferred, ".write-test");
+    fs.writeFileSync(test, "ok");
+    fs.unlinkSync(test);
+    return preferred;
+  } catch {
+    const alt = path.join("/tmp", "marq-data");
+    try {
+      if (!fs.existsSync(alt)) fs.mkdirSync(alt, { recursive: true });
+      return alt;
+    } catch {
+      return preferred;
+    }
+  }
+}
+const dataDir = resolveWritableDir(path.join(process.cwd(), "data"));
 const settingsPath = path.join(dataDir, "settings.json");
 
 function ensureLocal() {
-  if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
-  if (!fs.existsSync(settingsPath)) fs.writeFileSync(settingsPath, JSON.stringify({ settings: [] as Setting[] }, null, 2), "utf-8");
+  try {
+    if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
+    if (!fs.existsSync(settingsPath)) fs.writeFileSync(settingsPath, JSON.stringify({ settings: [] as Setting[] }, null, 2), "utf-8");
+  } catch {}
 }
 function readLocal(): { settings: Setting[] } {
   ensureLocal();
@@ -21,13 +40,13 @@ function readLocal(): { settings: Setting[] } {
   return JSON.parse(raw);
 }
 function writeLocal(data: { settings: Setting[] }) {
-  fs.writeFileSync(settingsPath, JSON.stringify(data, null, 2), "utf-8");
+  try { fs.writeFileSync(settingsPath, JSON.stringify(data, null, 2), "utf-8"); } catch {}
 }
 
 export async function GET(request: Request) {
   try {
     const supabase = getSupabaseAdminClient();
-    await resolveSupabaseUserBySession(request, supabase);
+    await resolveSupabaseUserBySession();
     const { data, error } = await supabase.from("settings").select("key, value");
     if (error) throw error;
     const rows: Setting[] = (data || []).map((r: any) => ({ key: r.key, value: r.value }));
@@ -45,7 +64,7 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   try {
     const supabase = getSupabaseAdminClient();
-    await resolveSupabaseUserBySession(request, supabase);
+    await resolveSupabaseUserBySession();
     const body = await request.json().catch(() => ({}));
     const key = (body?.key || '').trim();
     const value = body?.value ?? null;

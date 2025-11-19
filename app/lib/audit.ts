@@ -4,7 +4,7 @@ import { resolveSupabaseUserBySession } from "./supabaseAuthBridge";
 export async function auditLog(request: Request, action: string, entity: string, payload: any = null) {
   try {
     const supabase = getSupabaseAdminClient();
-    const { user } = await resolveSupabaseUserBySession(request, supabase);
+    const { user } = await resolveSupabaseUserBySession();
     await supabase.from("audit_logs").insert({
       actor_id: user.id,
       action,

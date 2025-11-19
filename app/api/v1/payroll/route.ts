@@ -8,7 +8,7 @@ import { upsertPeriod, listPeriods } from "../../../lib/payrollStore";
 export async function GET(request: Request) {
   try {
     const supabase = getSupabaseAdminClient();
-    const { user, role } = await resolveSupabaseUserBySession(request, supabase);
+    const { user, role } = await resolveSupabaseUserBySession();
     const url = new URL(request.url);
     const start = url.searchParams.get("start");
     const end = url.searchParams.get("end");

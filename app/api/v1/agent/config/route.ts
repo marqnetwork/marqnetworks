@@ -4,7 +4,7 @@ import { resolveSupabaseUserBySession } from "../../../../lib/supabaseAuthBridge
 
 export async function GET(request: Request) {
   const supabase = getSupabaseAdminClient();
-  await resolveSupabaseUserBySession(request, supabase); // ensure logged in
+  await resolveSupabaseUserBySession(); 
   const { data, error } = await supabase.from("settings").select("key, value");
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
   const settings: Record<string, any> = {};

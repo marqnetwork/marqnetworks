@@ -9,7 +9,7 @@ import { updateStatus } from "../../../../../lib/payrollStore";
 export async function POST(request: Request, { params }: { params: { id: string } }) {
   try {
     const supabase = getSupabaseAdminClient();
-    const { role } = await resolveSupabaseUserBySession(request, supabase);
+    const { role } = await resolveSupabaseUserBySession();
     if (!(role === "super_admin" || role === "team_manager")) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }

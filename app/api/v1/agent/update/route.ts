@@ -12,7 +12,7 @@ export async function GET(request: Request) {
   if (!supabase) {
     return NextResponse.json({ latest_version: null, download_url: null });
   }
-  await resolveSupabaseUserBySession(request, supabase); // ensure logged in
+  await resolveSupabaseUserBySession(); // ensure logged in
   const { data, error } = await supabase.from("settings").select("key, value").in("key", ["agent_latest_version", "agent_download_url"]);
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
   const map = new Map<string, any>();

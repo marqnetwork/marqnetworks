@@ -12,7 +12,7 @@ import {
 
 export async function POST(request: Request) {
   const supabase = getSupabaseAdminClient();
-  const { user, role } = await resolveSupabaseUserBySession(request, supabase);
+  const { user, role } = await resolveSupabaseUserBySession();
   const body = await request.json().catch(() => ({}));
   const { period_start, period_end, user_id } = body;
 

@@ -4,10 +4,32 @@ import path from 'path';
 import { makeId, inviteUser } from '../../../lib/authStore';
 import { sendEmail } from '../../../lib/mailer';
 
+function resolveWritablePath(rel: string) {
+  const preferred = path.join(process.cwd(), 'data', rel);
+  try {
+    const dir = path.dirname(preferred);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    const test = path.join(dir, '.write-test');
+    fs.writeFileSync(test, 'ok');
+    fs.unlinkSync(test);
+    return preferred;
+  } catch {
+    const altDir = path.join('/tmp', 'marq-data');
+    try {
+      if (!fs.existsSync(altDir)) fs.mkdirSync(altDir, { recursive: true });
+      return path.join(altDir, rel);
+    } catch {
+      return preferred;
+    }
+  }
+}
+
 function ensureFile(p: string) {
-  const dir = path.dirname(p);
-  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-  if (!fs.existsSync(p)) fs.writeFileSync(p, JSON.stringify({ requests: [] }, null, 2), 'utf-8');
+  try {
+    const dir = path.dirname(p);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    if (!fs.existsSync(p)) fs.writeFileSync(p, JSON.stringify({ requests: [] }, null, 2), 'utf-8');
+  } catch {}
 }
 
 export async function POST(req: Request) {
@@ -15,7 +37,7 @@ export async function POST(req: Request) {
     const body = await req.json().catch(() => ({}));
     const email = (body?.email || '').trim();
     if (!email) return NextResponse.json({ ok: false, error: 'email required' }, { status: 400 });
-    const dataPath = path.join(process.cwd(), 'data', 'access_requests.json');
+    const dataPath = resolveWritablePath('access_requests.json');
     ensureFile(dataPath);
     const raw = fs.readFileSync(dataPath, 'utf-8');
     const data = JSON.parse(raw);
@@ -23,7 +45,7 @@ export async function POST(req: Request) {
     const rec = exists || { id: makeId(), email, status: 'pending', createdAt: Date.now() };
     data.requests = Array.isArray(data.requests) ? data.requests : [];
     if (!exists) data.requests.push(rec);
-    fs.writeFileSync(dataPath, JSON.stringify(data, null, 2), 'utf-8');
+    try { fs.writeFileSync(dataPath, JSON.stringify(data, null, 2), 'utf-8'); } catch {}
 
     // Create a dummy invite immediately so the user can open the onboarding form without email
     const { token } = inviteUser(email, '', '', 'member');

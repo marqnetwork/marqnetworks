@@ -64,6 +64,13 @@ export default function GlobalCaptureManager() {
           body: JSON.stringify({ userName: userName || "Unknown", type: "snapshot", metadata: { url, source: "global" } }),
         });
       } catch {}
+      try {
+        const raw = localStorage.getItem("employee_snapshots");
+        const arr = raw ? JSON.parse(raw) : [];
+        const next = [url, ...arr].slice(0, 12);
+        localStorage.setItem("employee_snapshots", JSON.stringify(next));
+        window.postMessage({ type: "snapshot_added", url }, "*");
+      } catch {}
     } catch {}
   }
 

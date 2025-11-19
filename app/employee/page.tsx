@@ -58,7 +58,7 @@ export default function EmployeePage() {
   const [clicks, setClicks] = useState<ClickEvent[]>([]);
   const [snapshots, setSnapshots] = useState<string[]>([]);
   const [monitoring, setMonitoring] = useState<boolean>(true);
-  const [snapshotIntervalMin, setSnapshotIntervalMin] = useState<number>(5);
+  const [snapshotIntervalMin, setSnapshotIntervalMin] = useState<number>(1);
   const monitorIntervalRef = useRef<number | null>(null);
   const [screenStream, setScreenStream] = useState<MediaStream | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -85,6 +85,20 @@ export default function EmployeePage() {
         try { localStorage.removeItem('employee_session_state'); } catch {}
       }
     } catch {}
+  }, []);
+
+  useEffect(() => {
+    const onMsg = (e: MessageEvent) => {
+      if (e?.data?.type === 'snapshot_added' && typeof e?.data?.url === 'string') {
+        setSnapshots((prev) => {
+          const next = [e.data.url, ...prev].slice(0, 12);
+          try { localStorage.setItem('employee_snapshots', JSON.stringify(next)); } catch {}
+          return next;
+        });
+      }
+    };
+    window.addEventListener('message', onMsg);
+    return () => window.removeEventListener('message', onMsg);
   }, []);
 
   // Load current user from session
@@ -155,23 +169,18 @@ export default function EmployeePage() {
   }, [status, lastActivityTs, idling]);
 
   useEffect(() => {
-    const onVis = () => {
-      if (document.visibilityState === 'hidden') stopSession();
-    };
     const onUnload = () => {
       stopSession();
     };
-    document.addEventListener('visibilitychange', onVis);
     window.addEventListener('beforeunload', onUnload);
     return () => {
-      document.removeEventListener('visibilitychange', onVis);
       window.removeEventListener('beforeunload', onUnload);
     };
   }, [status, idling, idleStartTs, userName]);
 
   useEffect(() => {
     if (status === 'idle') return;
-    const limitMs = 12 * 60 * 60 * 1000;
+    const limitMs = 10 * 60 * 60 * 1000;
     const id = window.setInterval(() => {
       if (checkInTs && Date.now() - checkInTs >= limitMs) {
         handleCheckOut();
@@ -459,7 +468,7 @@ export default function EmployeePage() {
     } catch {}
     try {
       (window as any).__globalCapture?.adopt(s, videoRef.current);
-      (window as any).__globalCapture?.schedule(10 * 1000);
+      (window as any).__globalCapture?.schedule(snapshotIntervalMin * 60 * 1000);
     } catch {}
     await delay(200);
     await captureSnapshot();
@@ -487,7 +496,7 @@ export default function EmployeePage() {
       }
       return;
     }
-    const ms = 10 * 1000;
+    const ms = snapshotIntervalMin * 60 * 1000;
     captureSnapshot();
     monitorIntervalRef.current = window.setInterval(() => {
       captureSnapshot();
@@ -664,7 +673,7 @@ export default function EmployeePage() {
             <div className="emp-card-title">Snapshots</div>
             <div className="emp-status" style={{ marginBottom: '0.5rem' }}>
               Latest captures (local + uploaded){' '}
-              <span className="emp-pill gray" style={{ marginLeft: 8 }}>Auto: {monitoring ? '10s' : 'off'}</span>
+              <span className="emp-pill gray" style={{ marginLeft: 8 }}>Auto: {monitoring ? `${snapshotIntervalMin}m` : 'off'}</span>
               <span className="emp-pill gray" style={{ marginLeft: 8 }}>Screen: {screenStream ? 'on' : 'off'}</span>
             </div>
             {status !== 'idle' && !screenStream && (

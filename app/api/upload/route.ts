@@ -21,16 +21,18 @@ export async function POST(req: Request) {
     try { supabase = getSupabaseAdminClient(); } catch { supabase = null; }
 
     if (supabase) {
-      const bucket = 'screenshots';
-      try { await (supabase as any).storage.createBucket(bucket, { public: true }); } catch {}
-      const id = Math.random().toString(36).slice(2) + Date.now().toString(36);
-      const ext = (file.type.split('/').pop() || 'png');
-      const ymd = new Date().toISOString().slice(0, 10).replace(/-/g, '');
-      const key = `${userName}/${ymd}/${id}.${ext}`;
-      const { error } = await (supabase as any).storage.from(bucket).upload(key, buf, { contentType: file.type, upsert: true });
-      if (error) throw error;
-      const { data } = (supabase as any).storage.from(bucket).getPublicUrl(key);
-      return NextResponse.json({ ok: true, url: data.publicUrl });
+      try {
+        const bucket = 'screenshots';
+        try { await (supabase as any).storage.createBucket(bucket, { public: true }); } catch {}
+        const id = Math.random().toString(36).slice(2) + Date.now().toString(36);
+        const ext = (file.type.split('/').pop() || 'png');
+        const ymd = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+        const key = `${userName}/${ymd}/${id}.${ext}`;
+        const { error } = await (supabase as any).storage.from(bucket).upload(key, buf, { contentType: file.type, upsert: true });
+        if (error) throw error;
+        const { data } = (supabase as any).storage.from(bucket).getPublicUrl(key);
+        return NextResponse.json({ ok: true, url: data.publicUrl });
+      } catch {}
     }
 
     const dir = ensureUploads();

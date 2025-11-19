@@ -3374,6 +3374,33 @@
         "clicks": 33,
         "mouseMoves": 60
       }
+    },
+    {
+      "id": "ecltf2u7ngmi6ag8rb",
+      "userName": "saifali87154@gmail.com",
+      "type": "idle_start",
+      "timestamp": 1763574043223,
+      "metadata": {
+        "started_at": 1763573943435
+      }
+    },
+    {
+      "id": "vp9vjyir1ejmi6aiir3",
+      "userName": "saifali87154@gmail.com",
+      "type": "idle_end",
+      "timestamp": 1763574149487,
+      "metadata": {
+        "duration_ms": 206029
+      }
+    },
+    {
+      "id": "j02ja70llqkmi6aij8i",
+      "userName": "saifali87154@gmail.com",
+      "type": "idle_end",
+      "timestamp": 1763574150114,
+      "metadata": {
+        "duration_ms": 206051
+      }
     }
   ]
 }

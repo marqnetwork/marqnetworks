@@ -70,14 +70,33 @@ export interface SessionRecord {
   expiresAt: number;
 }
 
-const dataDir = path.join(process.cwd(), "data");
+function resolveWritableDir(preferred: string) {
+  try {
+    if (!fs.existsSync(preferred)) fs.mkdirSync(preferred, { recursive: true });
+    const test = path.join(preferred, ".write-test");
+    fs.writeFileSync(test, "ok");
+    fs.unlinkSync(test);
+    return preferred;
+  } catch {
+    const alt = path.join("/tmp", "marq-data");
+    try {
+      if (!fs.existsSync(alt)) fs.mkdirSync(alt, { recursive: true });
+      return alt;
+    } catch {
+      return preferred;
+    }
+  }
+}
+const dataDir = resolveWritableDir(path.join(process.cwd(), "data"));
 const usersPath = path.join(dataDir, "users.json");
 const sessionsPath = path.join(dataDir, "sessions.json");
 
 function ensureFiles() {
-  if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
-  if (!fs.existsSync(usersPath)) fs.writeFileSync(usersPath, JSON.stringify({ users: [] }, null, 2));
-  if (!fs.existsSync(sessionsPath)) fs.writeFileSync(sessionsPath, JSON.stringify({ sessions: [] }, null, 2));
+  try {
+    if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
+    if (!fs.existsSync(usersPath)) fs.writeFileSync(usersPath, JSON.stringify({ users: [] }, null, 2));
+    if (!fs.existsSync(sessionsPath)) fs.writeFileSync(sessionsPath, JSON.stringify({ sessions: [] }, null, 2));
+  } catch {}
 }
 
 function readUsers(): { users: UserRecord[] } {
@@ -87,7 +106,7 @@ function readUsers(): { users: UserRecord[] } {
 }
 
 function writeUsers(data: { users: UserRecord[] }) {
-  fs.writeFileSync(usersPath, JSON.stringify(data, null, 2), "utf-8");
+  try { fs.writeFileSync(usersPath, JSON.stringify(data, null, 2), "utf-8"); } catch {}
 }
 
 function readSessions(): { sessions: SessionRecord[] } {
@@ -97,7 +116,7 @@ function readSessions(): { sessions: SessionRecord[] } {
 }
 
 function writeSessions(data: { sessions: SessionRecord[] }) {
-  fs.writeFileSync(sessionsPath, JSON.stringify(data, null, 2), "utf-8");
+  try { fs.writeFileSync(sessionsPath, JSON.stringify(data, null, 2), "utf-8"); } catch {}
 }
 
 export function makeId(): string {

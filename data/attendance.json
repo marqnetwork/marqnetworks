@@ -3428,6 +3428,60 @@
       "metadata": {
         "started_at": 1763576223091
       }
+    },
+    {
+      "id": "jn00e9m5vami6c5731",
+      "userName": "saifali87154@gmail.com",
+      "type": "idle_end",
+      "timestamp": 1763576887069,
+      "metadata": {
+        "duration_ms": 663939
+      }
+    },
+    {
+      "id": "o61x4sbm3kcmi6ch4az",
+      "userName": "saifali87154@gmail.com",
+      "type": "idle_start",
+      "timestamp": 1763577443339,
+      "metadata": {
+        "started_at": 1763577442682
+      }
+    },
+    {
+      "id": "r5c9ed1q9rjmi6cht2f",
+      "userName": "saifali87154@gmail.com",
+      "type": "idle_end",
+      "timestamp": 1763577475431,
+      "metadata": {
+        "duration_ms": 32658
+      }
+    },
+    {
+      "id": "07dtm1m3r4tdmi6chw6q",
+      "userName": "saifali87154@gmail.com",
+      "type": "idle_end",
+      "timestamp": 1763577479474,
+      "metadata": {
+        "duration_ms": 32775
+      }
+    },
+    {
+      "id": "dnljr0qawemi6cufjh",
+      "userName": "saifali87154@gmail.com",
+      "type": "idle_start",
+      "timestamp": 1763578064429,
+      "metadata": {
+        "started_at": 1763578061997
+      }
+    },
+    {
+      "id": "gygnvgbw6smmi6cvzzn",
+      "userName": "saifali87154@gmail.com",
+      "type": "idle_end",
+      "timestamp": 1763578137587,
+      "metadata": {
+        "duration_ms": 75516
+      }
     }
   ]
 }

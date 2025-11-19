@@ -41,12 +41,12 @@ export async function GET() {
           timestamp: r.timestamp,
           metadata: r.metadata || {},
         }));
-        return NextResponse.json({ events }, { status: 200 });
+        return NextResponse.json({ events, source: "supabase" }, { status: 200 });
       }
     }
     // Fallback to local JSON
     const local = readAttendance();
-    return NextResponse.json(local, { status: 200 });
+    return NextResponse.json({ events: local.events, source: "local" }, { status: 200 });
   } catch (e: any) {
     return NextResponse.json({ error: e?.message || "Failed to read" }, { status: 500 });
   }

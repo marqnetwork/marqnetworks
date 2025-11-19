@@ -71,6 +71,7 @@ export default function EmployeePage() {
   const [idleVisible, setIdleVisible] = useState<boolean>(false);
   const [idleSecondsLeft, setIdleSecondsLeft] = useState<number>(60); // warn for 60s before auto-stop
   const [sessionMessage, setSessionMessage] = useState<string | null>(null);
+  const [backendSource, setBackendSource] = useState<'supabase' | 'local' | 'unknown'>('unknown');
 
   useEffect(() => {
     setEvents(readEvents());
@@ -96,6 +97,14 @@ export default function EmployeePage() {
           setUserName(json?.user?.userName || '');
         }
       } catch {}
+      try {
+        const res2 = await fetch('/api/attendance');
+        const json2 = await res2.json();
+        const src = json2?.source;
+        setBackendSource(src === 'supabase' || src === 'local' ? src : 'unknown');
+      } catch {
+        setBackendSource('unknown');
+      }
     })();
   }, []);
 
@@ -549,7 +558,7 @@ export default function EmployeePage() {
       {/* Controls & Stats */}
       <section className="employee-controls">
         <div className="emp-panel">
-          <p className="emp-status">Events are stored locally for responsiveness and also persisted to the server.</p>
+          <p className="emp-status">{backendSource === 'supabase' ? 'Events are persisted to Supabase.' : 'Events are stored locally for responsiveness and also persisted to the server.'}</p>
 
           <div className="emp-input-row" style={{ marginTop: '0.75rem' }}>
             <span className="emp-status">User: {userName || 'Unknown'}</span>

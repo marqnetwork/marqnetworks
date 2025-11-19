@@ -3354,6 +3354,26 @@
         "url": "/uploads/96vhzswsxwjmi50kcll.png",
         "source": "global"
       }
+    },
+    {
+      "id": "a3s1fz3d0m6mi68id60",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763570783016,
+      "metadata": {
+        "clicks": 27,
+        "mouseMoves": 6
+      }
+    },
+    {
+      "id": "ib2gr0rcxlmi68lha8",
+      "userName": "saifali87154@gmail.com",
+      "type": "activity_ping",
+      "timestamp": 1763570928320,
+      "metadata": {
+        "clicks": 33,
+        "mouseMoves": 60
+      }
     }
   ]
 }

@@ -12,6 +12,9 @@ export async function POST() {
     const res = NextResponse.json({ ok: true });
     // Clear the cookie
     res.cookies.delete('session_id');
+    // Clear Supabase bridge cookies used for server-side session resolution
+    res.cookies.delete('supabase_user_id');
+    res.cookies.delete('supabase_user_email');
     return res;
   } catch (err: any) {
     return NextResponse.json({ ok: false, error: err?.message || 'Logout failed' }, { status: 500 });

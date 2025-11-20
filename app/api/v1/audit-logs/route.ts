@@ -4,7 +4,7 @@ import { resolveSupabaseUserBySession } from "../../../lib/supabaseAuthBridge";
 
 export async function GET(request: Request) {
   const supabase = getSupabaseAdminClient();
-  const { role } = await resolveSupabaseUserBySession(request, supabase);
+  const { role } = await resolveSupabaseUserBySession();
   if (!(role === "super_admin")) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }

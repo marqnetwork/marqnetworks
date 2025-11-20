@@ -5,7 +5,7 @@ import { resolveSupabaseUserBySession } from '../../../../../../lib/supabaseAuth
 export async function DELETE(request: Request, { params }: { params: { id: string; user_id: string } }) {
   try {
     const admin = getSupabaseAdminClient();
-    const { user, role } = await resolveSupabaseUserBySession(request, admin);
+    const { user, role } = await resolveSupabaseUserBySession();
 
     const teamId = params.id;
     const targetUserId = params.user_id;

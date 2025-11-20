@@ -5,7 +5,7 @@ import { signHS256 } from "../../../../lib/jwt";
 
 export async function POST(request: Request) {
   const supabase = getSupabaseAdminClient();
-  const { user } = await resolveSupabaseUserBySession(request, supabase);
+  const { user } = await resolveSupabaseUserBySession();
   const body = await request.json().catch(() => ({}));
   const { device_id, os, version } = body;
   if (!device_id) return NextResponse.json({ error: "device_id required" }, { status: 400 });

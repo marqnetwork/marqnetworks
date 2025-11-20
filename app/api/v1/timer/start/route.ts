@@ -5,7 +5,7 @@ import { resolveSupabaseUserBySession } from '../../../../lib/supabaseAuthBridge
 export async function POST(request: Request) {
   try {
     const admin = getSupabaseAdminClient();
-    const { user } = await resolveSupabaseUserBySession(request, admin);
+    const { user } = await resolveSupabaseUserBySession();
 
     const now = new Date().toISOString();
     const { data, error } = await admin

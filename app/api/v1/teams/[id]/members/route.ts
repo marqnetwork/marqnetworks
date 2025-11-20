@@ -20,7 +20,7 @@ export async function GET(_req: Request, { params }: { params: { id: string } })
 export async function POST(request: Request, { params }: { params: { id: string } }) {
   try {
     const admin = getSupabaseAdminClient();
-    const { user, role } = await resolveSupabaseUserBySession(request, admin);
+    const { user, role } = await resolveSupabaseUserBySession();
     const teamId = params.id;
 
     // Check if actor is a manager of this team or super_admin

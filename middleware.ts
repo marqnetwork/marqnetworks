@@ -7,8 +7,12 @@ export function middleware(req: Request) {
   if (!needsAuth) return NextResponse.next();
 
   const cookiesHeader = (req as any).headers.get('cookie') || '';
-  const hasSession = cookiesHeader.split(';').some((c: string) => c.trim().startsWith('session_id='));
-  if (hasSession) return NextResponse.next();
+  const hasLegacy = cookiesHeader.split(';').some((c: string) => c.trim().startsWith('session_id='));
+  const hasSupabase = cookiesHeader.split(';').some((c: string) => {
+    const t = c.trim();
+    return t.startsWith('supabase_user_email=') || t.startsWith('supabase_user_id=');
+  });
+  if (hasLegacy || hasSupabase) return NextResponse.next();
 
   const loginUrl = new URL('/login', url.origin);
   loginUrl.searchParams.set('next', path);

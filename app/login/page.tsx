@@ -25,10 +25,18 @@ function LoginContent() {
   const [toast, setToast] = useState<string | null>(null);
 
   useEffect(() => {
-    // If already has a session cookie, just go to next
-    if (document.cookie.split(';').some(c => c.trim().startsWith('session_id='))) {
-      router.replace(next);
-    }
+    (async () => {
+      try {
+        const res = await fetch('/api/auth/session', { credentials: 'include' });
+        const json = await res.json();
+        if (res.ok && json?.user?.id) {
+          const nextParam = (typeof window !== 'undefined') ? new URL(window.location.href).searchParams.get('next') : null;
+          const target = nextParam || '/employee';
+          router.replace(target);
+          setTimeout(() => { try { window.location.assign(target); } catch {} }, 100);
+        }
+      } catch {}
+    })();
   }, [next, router]);
 
   useEffect(() => {
@@ -49,6 +57,7 @@ function LoginContent() {
         const res = await fetch('/api/auth/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
           body: JSON.stringify({ identifier, password }),
         });
         const json = await res.json();
@@ -83,7 +92,12 @@ function LoginContent() {
       } else {
         return;
       }
-      router.replace(next);
+      {
+        const nextParam = (typeof window !== 'undefined') ? new URL(window.location.href).searchParams.get('next') : null;
+        const target = nextParam || '/employee';
+        try { window.location.href = target; } catch {}
+        router.replace(target);
+      }
     } catch (err: any) {
       setError(err?.message || 'Something went wrong');
       if (mode === 'login') {

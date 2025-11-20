@@ -54,6 +54,22 @@
       },
       "passwordHash": "6b1e889b001b778811a2b0f3fe136016af7a86be903644d9d9a521e994194dc7",
       "passwordSalt": "16c0c9c28b99d0d2858302fa4071c77c"
+    },
+    {
+      "id": "i2zctitlcr9mi7fsqv2",
+      "userName": "saif@marqnetworks.com",
+      "email": "saif@marqnetworks.com",
+      "role": "member",
+      "status": "inactive",
+      "inviteToken": "xji4u3cwwcdmi7fsqv1",
+      "inviteTokenExpires": 1764248290813,
+      "resetToken": null,
+      "resetTokenExpires": null,
+      "firstName": "",
+      "lastName": "",
+      "createdAt": 1763643490814,
+      "lastLoginAt": null,
+      "onboarding": null
     }
   ]
 }

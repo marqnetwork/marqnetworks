@@ -16,10 +16,18 @@ import FAQSection from "@/components/FAQSection/FAQSection";
 import JoinUsNow from "@/components/JoinUsNow/JoinUsNow";
 import StackingNewCard from "@/components/StackingCardsNew/stackingnewCard";
 import TestimonialSlider from "@/components/TestimonialSlider";
+import { useEffect } from "react";
 
 
 const Home = () => {
-  
+  useEffect(() => {
+    try {
+      const hash = typeof window !== "undefined" ? window.location.hash || "" : "";
+      if (hash && /type=recovery/.test(hash)) {
+        window.location.assign("/reset");
+      }
+    } catch {}
+  }, []);
 
   return (
     <>

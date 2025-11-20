@@ -145,11 +145,14 @@ function LoginContent() {
           <>
             <label style={{ display: 'block', fontSize: 12, color: '#9aa3b2', marginBottom: 4 }}>Username or Email</label>
             <input value={identifier} onChange={(e) => setIdentifier(e.target.value)} required style={{ width: '100%', padding: 10, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'transparent', color: '#e5f3ff', marginBottom: 10 }} />
-            <label style={{ display: 'block', fontSize: 12, color: '#9aa3b2', marginBottom: 4 }}>Password</label>
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required minLength={6} style={{ width: '100%', padding: 10, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'transparent', color: '#e5f3ff' }} />
-            {!allowReset && failCount > 0 && (
-              <div style={{ marginTop: 8, fontSize: 12, color: '#9aa3b2' }}>Attempts: {failCount}/5</div>
-            )}
+          <label style={{ display: 'block', fontSize: 12, color: '#9aa3b2', marginBottom: 4 }}>Password</label>
+          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required minLength={6} style={{ width: '100%', padding: 10, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'transparent', color: '#e5f3ff' }} />
+          <div style={{ marginTop: 8 }}>
+            <button type="button" onClick={() => setMode('reset')} style={{ fontSize: 12, color: '#9ad0ff', textDecoration: 'underline', background: 'transparent', border: 'none', cursor: 'pointer' }}>Forgot password?</button>
+          </div>
+          {!allowReset && failCount > 0 && (
+            <div style={{ marginTop: 8, fontSize: 12, color: '#9aa3b2' }}>Attempts: {failCount}/5</div>
+          )}
           </>
         ) : mode === 'register' ? (
           <>

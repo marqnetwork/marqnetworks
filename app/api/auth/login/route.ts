@@ -9,13 +9,23 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: false, error: 'Missing fields' }, { status: 400 });
     }
     const supa = getSupabaseServerClient();
-    const { data, error } = await supa.auth.signInWithPassword({ email: identifier, password });
+    let email = String(identifier || '').trim();
+    if (!email.includes('@')) {
+      try {
+        const admin = getSupabaseAdminClient();
+        const { data: list } = await admin.auth.admin.listUsers({ perPage: 500, page: 1 });
+        const matched = (list?.users || []).find((u: any) => (u.user_metadata?.userName || '').toLowerCase() === email.toLowerCase());
+        if (matched?.email) email = matched.email;
+      } catch {}
+    }
+    const { data, error } = await supa.auth.signInWithPassword({ email, password });
     if (error || !data?.user) {
       return NextResponse.json({ ok: false, error: 'Invalid credentials' }, { status: 401 });
     }
     const admin = getSupabaseAdminClient();
-    const { data: profile } = await admin.from('profiles').select('role').eq('id', data.user.id).maybeSingle();
-    const res = NextResponse.json({ ok: true, user: { id: data.user.id, userName: data.user.user_metadata?.userName || '', email: data.user.email || '', role: (profile?.role || 'member') } });
+    const { data: emp } = await admin.from('employees').select('role, role_title').eq('user_id', data.user.id).maybeSingle();
+    const role = (emp?.role as any) || ((emp?.role_title || '').toLowerCase() === 'admin' ? 'super_admin' : (emp?.role_title || '').toLowerCase() === 'manager' ? 'team_manager' : 'member');
+    const res = NextResponse.json({ ok: true, user: { id: data.user.id, userName: data.user.user_metadata?.userName || '', email: data.user.email || '', role } });
     res.cookies.set('supabase_user_id', data.user.id, { httpOnly: true, sameSite: 'lax', path: '/', maxAge: 10 * 60 * 60 });
     res.cookies.set('supabase_user_email', data.user.email || '', { httpOnly: true, sameSite: 'lax', path: '/', maxAge: 10 * 60 * 60 });
     return res;

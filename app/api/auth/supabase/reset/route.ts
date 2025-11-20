@@ -6,7 +6,7 @@ export async function POST(req: Request) {
     const body = await req.json();
     const email: string = (body?.email || '').trim();
     const origin = new URL(req.url).origin;
-    const redirectTo: string = body?.redirectTo || `${origin}/login`;
+    const redirectTo: string = body?.redirectTo || `${origin}/reset`;
 
     if (!email) {
       return NextResponse.json({ ok: false, error: 'Email is required' }, { status: 400 });

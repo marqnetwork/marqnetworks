@@ -41,7 +41,7 @@ export function getSupabaseAdminClient(): SupabaseClient {
 export type AttendanceEventRow = {
   id: string;
   user_name: string;
-  type: 'check_in' | 'check_out' | 'break_start' | 'break_end' | 'activity_ping' | 'snapshot';
+  type: 'check_in' | 'check_out' | 'break_start' | 'break_end' | 'activity_ping' | 'snapshot' | 'idle_start' | 'idle_end';
   timestamp: number; // ms epoch
   metadata?: Record<string, any> | null;
 };

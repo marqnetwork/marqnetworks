@@ -44,9 +44,7 @@ export async function GET() {
         return NextResponse.json({ events, source: "supabase" }, { status: 200 });
       }
     }
-    // Fallback to local JSON
-    const local = readAttendance();
-    return NextResponse.json({ events: local.events, source: "local" }, { status: 200 });
+    return NextResponse.json({ events: [], source: "supabase_unavailable" }, { status: 503 });
   } catch (e: any) {
     return NextResponse.json({ error: e?.message || "Failed to read" }, { status: 500 });
   }
@@ -81,10 +79,6 @@ export async function POST(req: Request) {
       client = null;
     }
     if (client) {
-      if (event.type === "idle_start" || event.type === "idle_end") {
-        const updated = appendEvent(event);
-        return NextResponse.json({ ok: true, event, count: updated.events.length }, { status: 201 });
-      }
       const row: AttendanceEventRow = {
         id: event.id,
         user_name: event.userName,
@@ -96,9 +90,7 @@ export async function POST(req: Request) {
       if (error) throw error;
       return NextResponse.json({ ok: true, event }, { status: 201 });
     }
-    // Fallback to local JSON
-    const updated = appendEvent(event);
-    return NextResponse.json({ ok: true, event, count: updated.events.length }, { status: 201 });
+    return NextResponse.json({ ok: false, error: "supabase_unavailable" }, { status: 503 });
   } catch (e: any) {
     return NextResponse.json({ error: e?.message || "Failed to append" }, { status: 500 });
   }

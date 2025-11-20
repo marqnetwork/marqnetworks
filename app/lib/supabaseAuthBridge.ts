@@ -21,16 +21,18 @@ export async function resolveSupabaseUserBySession(): Promise<{
     ensuredId = created?.user?.id || '';
   }
 
-  const { data: profile } = await admin.from('profiles').select('role').eq('id', ensuredId).maybeSingle();
-  const role: Role = (profile?.role as Role) || 'member';
+  const { data: emp } = await admin.from('employees').select('role_title, details').eq('user_id', ensuredId).maybeSingle();
+  const roleText = (emp?.role_title || (emp?.details as any)?.role || '').toLowerCase();
+  const role: Role = roleText === 'admin' ? 'super_admin' : roleText === 'manager' ? 'team_manager' : 'member';
   return { user: { id: ensuredId, email: supaEmail }, role };
 }
 
 export async function getUserRole(userId: string): Promise<Role | null> {
   const admin = getSupabaseAdminClient();
   if (!admin) return null;
-  const { data, error } = await admin.from('profiles').select('role').eq('id', userId).maybeSingle();
+  const { data, error } = await admin.from('employees').select('role_title, details').eq('user_id', userId).maybeSingle();
   if (error) return null;
-  const role = (data?.role as Role) || null;
+  const roleText = (data?.role_title || (data?.details as any)?.role || '').toLowerCase();
+  const role: Role | null = roleText === 'admin' ? 'super_admin' : roleText === 'manager' ? 'team_manager' : 'member';
   return role;
 }

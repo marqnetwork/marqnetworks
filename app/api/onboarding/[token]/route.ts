@@ -31,14 +31,9 @@ export async function POST(req: Request, ctx: { params?: { token?: string } }) {
         } as any);
         const fullName = (payload?.preferredName || payload?.fullName || user.userName || '').trim();
         const department = (payload?.department || '').trim();
-        try { await supa.from('profiles').update({ full_name: fullName || null, department: department || null }).eq('id', found.id); } catch {}
+        try { await supa.from('employees').upsert({ user_id: found.id, full_name: fullName || null, email: user.email, department: department || null, details: payload || {} }, { onConflict: 'user_id' }); } catch {}
       }
-      const defaultTeamId = process.env.DEFAULT_TEAM_ID || '';
-      if (defaultTeamId && found?.id) {
-        try {
-          await supa.from('team_members').upsert({ team_id: defaultTeamId, user_id: found.id, is_manager: false }, { onConflict: 'team_id,user_id' });
-        } catch {}
-      }
+
     } catch {}
 
     return NextResponse.json({ ok: true, user: { id: user.id, email: user.email, userName: user.userName } });

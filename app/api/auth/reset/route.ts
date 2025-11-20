@@ -15,7 +15,7 @@ export async function POST(req: Request) {
       try {
         const supa = getSupabaseServerClient();
         const origin = process.env.NEXT_PUBLIC_APP_URL || process.env.APP_URL || new URL(req.url).origin;
-        const redirectTo = `${origin}/login`;
+        const redirectTo = `${origin}/reset`;
         const { error } = await supa.auth.resetPasswordForEmail(email, { redirectTo });
         if (!error) supabaseOk = true;
       } catch {}

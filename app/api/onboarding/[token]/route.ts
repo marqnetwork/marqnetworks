@@ -55,12 +55,13 @@ export async function POST(req: Request, ctx: { params?: { token?: string } }) {
           pageE++;
         }
         if (!foundByEmail) {
-          const { data: created } = await supa.auth.admin.createUser({ email: localFirst.email } as any);
+          const { data: created } = await supa.auth.admin.createUser({ email: localFirst.email, email_confirm: true } as any);
           foundByEmail = created?.user || null;
         }
         if (foundByEmail?.id) {
           await supa.auth.admin.updateUserById(foundByEmail.id, {
             password,
+            email_confirm: true,
             user_metadata: { userName: payload?.preferredName || payload?.fullName || (foundByEmail.email || ''), onboarding: payload || {}, invite_token: null, invite_expires: null },
           } as any);
           const fullName = (payload?.preferredName || payload?.fullName || (foundByEmail.email || '')).trim();
@@ -98,6 +99,7 @@ export async function POST(req: Request, ctx: { params?: { token?: string } }) {
       }
       await supa.auth.admin.updateUserById(found.id, {
         password,
+        email_confirm: true,
         user_metadata: { userName: payload?.preferredName || payload?.fullName || (found.email || ''), onboarding: payload || {}, invite_token: null, invite_expires: null },
       } as any);
       const fullName = (payload?.preferredName || payload?.fullName || (found.email || '')).trim();

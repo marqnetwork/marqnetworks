@@ -212,6 +212,22 @@
       "createdAt": 1763758921414,
       "lastLoginAt": null,
       "onboarding": null
+    },
+    {
+      "id": "malinadm0u1mi9cxyz",
+      "userName": "saif@malinatore.com",
+      "email": "saif@malinatore.com",
+      "role": "super_admin",
+      "status": "inactive",
+      "inviteToken": null,
+      "inviteTokenExpires": null,
+      "resetToken": null,
+      "resetTokenExpires": null,
+      "firstName": "",
+      "lastName": "",
+      "createdAt": 1763759200000,
+      "lastLoginAt": null,
+      "onboarding": null
     }
   ]
 }

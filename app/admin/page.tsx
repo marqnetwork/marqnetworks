@@ -1,5 +1,5 @@
 import { AttendanceEvent, readAttendance } from "../lib/attendanceStore";
-import { getSupabaseServerClient, AttendanceEventRow } from "../lib/supabase";
+import { getSupabaseServerClient, getSupabaseAdminClient, AttendanceEventRow } from "../lib/supabase";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import './style.css';
 
@@ -7,7 +7,11 @@ import './style.css';
 async function getAttendance(): Promise<{ events: AttendanceEvent[]; usingSupabase: boolean }> {
   let client: SupabaseClient | null = null;
   try {
-    client = getSupabaseServerClient();
+    try {
+      client = getSupabaseAdminClient();
+    } catch {
+      client = getSupabaseServerClient();
+    }
   } catch {
     client = null;
   }
@@ -16,7 +20,7 @@ async function getAttendance(): Promise<{ events: AttendanceEvent[]; usingSupaba
       .from('attendance_events')
       .select('*')
       .order('timestamp', { ascending: true });
-    if (!error && data) {
+    if (!error && data && data.length > 0) {
       const events: AttendanceEvent[] = data.map((r) => ({
         id: r.id,
         userName: r.user_name,

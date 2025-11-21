@@ -14,13 +14,13 @@ function Text({ name, label, value, onChange, type = 'text' }: any) {
   );
 }
 
-function Select({ name, label, value, onChange, options }: any) {
+function Select({ name, label, value, onChange, options, disabled }: any) {
   const reqNames = (globalThis as any).__REQ__ as string[] | undefined;
   const req = Array.isArray(reqNames) ? reqNames.includes(name) : false;
   return (
     <div style={{ display: 'grid', gap: 6 }}>
       <label style={{ fontSize: 12, color: '#9aa3b2' }}>{label}{req ? ' *' : ''}</label>
-      <select className="adm-input" value={value} onChange={e => onChange(e.target.value)} required={req}>
+      <select className="adm-input" value={value} onChange={e => onChange(e.target.value)} required={req} disabled={disabled}>
         {options.map((o: any) => (<option key={o} value={o}>{o}</option>))}
       </select>
     </div>
@@ -85,6 +85,7 @@ export default function OnboardingPage() {
   const [ok, setOk] = useState(false);
 
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [data, setData] = useState<any>({
     fullLegalName: '', preferredName: '', personalEmail: '', phoneNumber: '',
     idNumber: '', dateOfBirth: '', homeAddress: '', emergencyContactName: '', emergencyContactRelation: '', emergencyContactPhone: '',
@@ -97,7 +98,7 @@ export default function OnboardingPage() {
 
   const REQUIRED: string[] = [
     'fullLegalName', 'personalEmail', 'phoneNumber', 'idNumber', 'dateOfBirth', 'homeAddress',
-    'emergencyContactName', 'emergencyContactPhone', 'bankName', 'bankAccountTitle', 'bankAccountNumberOrIban',
+    'emergencyContactName', 'emergencyContactPhone', 'bankName', 'bankAccountTitle', 'bankAccountNumberOrIban', 'bankBranchCode',
     'roleJoining', 'workMode'
   ];
   (globalThis as any).__REQ__ = REQUIRED;
@@ -126,9 +127,8 @@ export default function OnboardingPage() {
     setLoading(true);
     setError(null);
     try {
-      if (missingRequired.length > 0 || !password) {
-        throw new Error(`Please fill required fields: ${missingRequired.join(', ')}`);
-      }
+      if (!password) throw new Error('Password required');
+      if (password !== confirmPassword) throw new Error('Passwords do not match');
       const payload = { password, onboarding: { ...data, salaryMonthly: data.salaryMonthly ? Number(data.salaryMonthly) : undefined } };
       const res = await fetch(`/api/onboarding/${token}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
       const json = await res.json();
@@ -236,7 +236,7 @@ export default function OnboardingPage() {
         <Section title="Access & Tools">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 12 }}>
             <Text name={'preferredCompanyEmailUsername'} label={'Preferred MarQ email username'} value={data.preferredCompanyEmailUsername} onChange={(v: any) => setData({ ...data, preferredCompanyEmailUsername: v })} />
-            <Select name={'accessLevel'} label={'Access level'} value={data.accessLevel} onChange={(v: any) => setData({ ...data, accessLevel: v })} options={['staff', 'team_lead', 'admin']} />
+            <Select name={'accessLevel'} label={'Access level'} value={data.accessLevel} onChange={(v: any) => setData({ ...data, accessLevel: v })} options={['staff', 'team_lead', 'admin']} disabled />
             <Text name={'toolsRequired'} label={'Tools required (comma-separated)'} value={(data.toolsRequired || []).join(', ')} onChange={(v: any) => setData({ ...data, toolsRequired: v.split(',').map((s: string) => s.trim()).filter(Boolean) })} />
           </div>
         </Section>
@@ -252,15 +252,13 @@ export default function OnboardingPage() {
         <Section title="Password">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 12 }}>
             <Text name={'password'} label={'Set your password'} value={password} onChange={setPassword} type={'password'} />
+            <Text name={'confirmPassword'} label={'Confirm password'} value={confirmPassword} onChange={setConfirmPassword} type={'password'} />
           </div>
         </Section>
 
         <div className="adm-card" style={{ gridColumn: '1/-1' }}>
           <div className="adm-card-body" style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
-            <button className="adm-btn primary" disabled={loading || !password || missingRequired.length > 0} onClick={submit}>Submit and activate</button>
-            {missingRequired.length > 0 && (
-              <div style={{ fontSize: 12, color: '#ffd27a' }}>Required: {missingRequired.join(', ')}</div>
-            )}
+            <button className="adm-btn primary" disabled={loading || !password || password !== confirmPassword} onClick={submit}>Submit and activate</button>
           </div>
         </div>
       </div>

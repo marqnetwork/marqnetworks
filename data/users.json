@@ -59,7 +59,7 @@
       "id": "i2zctitlcr9mi7fsqv2",
       "userName": "saif@marqnetworks.com",
       "email": "saif@marqnetworks.com",
-      "role": "member",
+      "role": "super_admin",
       "status": "inactive",
       "inviteToken": "xji4u3cwwcdmi7fsqv1",
       "inviteTokenExpires": 1764248290813,
@@ -196,6 +196,22 @@
       },
       "passwordHash": "1973a6120711d5e06c14d95d7bc87fee60d87a03813084df3f70cfd8920a7be6",
       "passwordSalt": "624c6f6309f6c968364f0382d62ff1a7"
+    },
+    {
+      "id": "88ufmodbkcomi9citom",
+      "userName": "new@maildrop.cc",
+      "email": "new@maildrop.cc",
+      "role": "member",
+      "status": "inactive",
+      "inviteToken": "uilv38fubiimi9citom",
+      "inviteTokenExpires": 1764363721414,
+      "resetToken": null,
+      "resetTokenExpires": null,
+      "firstName": "",
+      "lastName": "",
+      "createdAt": 1763758921414,
+      "lastLoginAt": null,
+      "onboarding": null
     }
   ]
 }

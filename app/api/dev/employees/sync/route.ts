@@ -6,6 +6,7 @@ export async function POST(req: Request) {
   try {
     const body = await req.json().catch(() => ({}));
     const email = String(body?.email || '').trim();
+    const role = String(body?.role || '').trim() as 'super_admin' | 'manager' | 'member';
     if (!email) return NextResponse.json({ ok: false, error: 'email required' }, { status: 400 });
 
     const localUser = listUsers().find(u => (u.email || '').toLowerCase() === email.toLowerCase()) || null;
@@ -33,7 +34,8 @@ export async function POST(req: Request) {
 
     const fullName = String(localUser.onboarding?.preferredName || localUser.onboarding?.fullLegalName || localUser.email || '').trim();
     const department = String(localUser.onboarding?.department || '').trim();
-    const roleTitle = String(localUser.onboarding?.accessLevel || '').trim();
+    const roleTitleFromOnboarding = String(localUser.onboarding?.accessLevel || '').trim();
+    const roleTitleOverride = role === 'super_admin' ? 'admin' : role === 'manager' ? 'manager' : role ? 'staff' : '';
 
     const { error: metaErr } = await admin.auth.admin.updateUserById(supaUser.id, {
       user_metadata: { userName: fullName || localUser.email, onboarding: localUser.onboarding || {} },
@@ -43,13 +45,20 @@ export async function POST(req: Request) {
     const { error: upErr } = await admin
       .from('employees')
       .upsert(
-        { user_id: supaUser.id, full_name: fullName || null, email: email, department: department || null, role_title: roleTitle || null, details: localUser.onboarding || {} },
+        { user_id: supaUser.id, full_name: fullName || null, email: email, department: department || null, role_title: (roleTitleOverride || roleTitleFromOnboarding || null), details: localUser.onboarding || {} },
         { onConflict: 'user_id' }
       );
     if (upErr) return NextResponse.json({ ok: false, error: upErr.message || 'upsert_failed' }, { status: 500 });
 
     try {
-      await admin.from('profiles').upsert({ id: supaUser.id }, { onConflict: 'id' });
+      if (role) {
+        const { error: updErr } = await admin.from('profiles').update({ role }).eq('id', supaUser.id);
+        if (updErr) {
+          await admin.from('profiles').upsert({ id: supaUser.id, role }, { onConflict: 'id' });
+        }
+      } else {
+        await admin.from('profiles').upsert({ id: supaUser.id }, { onConflict: 'id' });
+      }
     } catch {}
 
     return NextResponse.json({ ok: true, supabase_user_id: supaUser.id });

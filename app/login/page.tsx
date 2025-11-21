@@ -12,8 +12,7 @@ function LoginContent() {
   const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
-  const [registerName, setRegisterName] = useState('');
-  const [registerPassword, setRegisterPassword] = useState('');
+  
   const [resetEmail, setResetEmail] = useState('');
   // reset flow now email-only; confirmation happens on /reset/[token]
   const [failCount, setFailCount] = useState(0);
@@ -87,14 +86,20 @@ function LoginContent() {
           }
         } catch {}
       } else if (mode === 'register') {
-        const res = await fetch('/api/auth/register', {
+        const res = await fetch('/api/auth/request-access', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ userName: registerName, email, password: registerPassword }),
+          body: JSON.stringify({ email }),
           credentials: 'include',
         });
         const json = await res.json();
-        if (!res.ok || !json.ok) throw new Error(json.error || 'Registration failed');
+        if (!res.ok || !json.ok) throw new Error(json.error || 'Request failed');
+        setToast('Onboarding link sent to your email');
+        setTimeout(() => setToast(null), 4000);
+        setOnboardingLink(json.onboarding_link || null);
+        setEmailProvider(json.provider || null);
+        if (!json.user_ack_sent) setEmailErrors(json.user_ack_error || 'Email sending failed');
+        return;
       } else {
         return;
       }
@@ -179,12 +184,8 @@ function LoginContent() {
           </>
         ) : mode === 'register' ? (
           <>
-            <label style={{ display: 'block', fontSize: 12, color: '#9aa3b2', marginBottom: 4 }}>Full name</label>
-            <input value={registerName} onChange={(e) => setRegisterName(e.target.value)} required style={{ width: '100%', padding: 10, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'transparent', color: '#e5f3ff', marginBottom: 10 }} />
             <label style={{ display: 'block', fontSize: 12, color: '#9aa3b2', marginBottom: 4 }}>Email</label>
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required style={{ width: '100%', padding: 10, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'transparent', color: '#e5f3ff', marginBottom: 10 }} />
-            <label style={{ display: 'block', fontSize: 12, color: '#9aa3b2', marginBottom: 4 }}>Password</label>
-            <input type="password" value={registerPassword} onChange={(e) => setRegisterPassword(e.target.value)} required minLength={6} style={{ width: '100%', padding: 10, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'transparent', color: '#e5f3ff' }} />
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required style={{ width: '100%', padding: 10, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'transparent', color: '#e5f3ff' }} />
           </>
         ) : (
           <>

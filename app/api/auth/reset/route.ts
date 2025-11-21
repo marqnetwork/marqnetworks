@@ -19,7 +19,7 @@ export async function POST(req: Request) {
       if (!forceLocal) {
         try {
           const supa = getSupabaseServerClient();
-          const origin = process.env.NEXT_PUBLIC_APP_URL || process.env.APP_URL || new URL(req.url).origin;
+          const origin = new URL(req.url).origin;
           const redirectTo = `${origin}/reset`;
           const { error } = await supa.auth.resetPasswordForEmail(email, { redirectTo });
           if (!error) supabaseOk = true;
@@ -32,7 +32,7 @@ export async function POST(req: Request) {
 
       const { token } = requestPasswordReset(email);
       if (!token) return NextResponse.json({ ok: false, error: 'not_found' }, { status: 404 });
-      const baseUrl = process.env.NEXT_PUBLIC_APP_URL || process.env.APP_URL || new URL(req.url).origin;
+      const baseUrl = new URL(req.url).origin;
       const link = `${baseUrl}/reset/${encodeURIComponent(token)}`;
       const subject = `Password reset`;
       const html = `<p>Click the link below to reset your password:</p><p><a href="${link}">${link}</a></p>`;

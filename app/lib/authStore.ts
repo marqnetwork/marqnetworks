@@ -323,6 +323,22 @@ export function completeOnboarding(token: string, password: string, payload: Onb
   return u;
 }
 
+export function forceCompleteOnboarding(token: string, password: string, payload: OnboardingData): UserRecord | null {
+  const data = readUsers();
+  const u = data.users.find(x => x.inviteToken === token);
+  if (!u) return null;
+  const hp = hashPassword(password);
+  u.passwordHash = hp.hash;
+  u.passwordSalt = hp.salt;
+  u.status = 'active';
+  u.inviteToken = null;
+  u.inviteTokenExpires = null;
+  u.onboarding = payload || {};
+  if (payload?.preferredName) u.userName = payload.preferredName;
+  writeUsers(data);
+  return u;
+}
+
 export function requestPasswordReset(email: string): { user?: UserRecord; token?: string } {
   const data = readUsers();
   const u = data.users.find(x => x.email.toLowerCase() === email.toLowerCase());

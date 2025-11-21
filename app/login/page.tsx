@@ -30,10 +30,16 @@ function LoginContent() {
         const res = await fetch('/api/auth/session', { credentials: 'include' });
         const json = await res.json();
         if (res.ok && json?.user?.id) {
-          const nextParam = (typeof window !== 'undefined') ? new URL(window.location.href).searchParams.get('next') : null;
-          const target = nextParam || '/employee';
-          router.replace(target);
-          setTimeout(() => { try { window.location.assign(target); } catch {} }, 100);
+          if (json?.has_account === false) {
+            setMode('register');
+            setToast('Account required. Please create your account to continue.');
+            setTimeout(() => setToast(null), 4000);
+          } else {
+            const nextParam = (typeof window !== 'undefined') ? new URL(window.location.href).searchParams.get('next') : null;
+            const target = nextParam || '/employee';
+            router.replace(target);
+            setTimeout(() => { try { window.location.assign(target); } catch {} }, 100);
+          }
         }
       } catch {}
     })();
@@ -67,6 +73,16 @@ function LoginContent() {
           localStorage.setItem(key, '0');
           setFailCount(0);
           setAllowReset(false);
+        } catch {}
+        try {
+          const sesRes = await fetch('/api/auth/session', { credentials: 'include' });
+          const sesJson = await sesRes.json();
+          if (sesRes.ok && sesJson?.user?.id && sesJson?.has_account === false) {
+            setMode('register');
+            setToast('Account required. Please create your account to continue.');
+            setTimeout(() => setToast(null), 4000);
+            return;
+          }
         } catch {}
       } else if (mode === 'register') {
         const res = await fetch('/api/auth/request-access', {
@@ -120,7 +136,10 @@ function LoginContent() {
     setError(null);
     setMessage(null);
     try {
-      const res = await fetch('/api/auth/reset', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mode: 'request', email: resetEmail }) });
+      const preferLocal = (process.env.NODE_ENV !== 'production') || (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'));
+      const payload: any = { mode: 'request', email: resetEmail };
+      if (preferLocal) payload.prefer = 'local';
+      const res = await fetch('/api/auth/reset', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
       const json = await res.json();
       if (!res.ok || !json.ok) throw new Error(json.error || 'Reset failed');
       setMessage('Reset link sent to email');

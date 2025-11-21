@@ -7,7 +7,7 @@ import {
   AttendanceEventType,
   AttendanceEvent,
 } from "../../lib/attendanceStore";
-import { getSupabaseServerClient, AttendanceEventRow } from "../../lib/supabase";
+import { getSupabaseServerClient, AttendanceEventRow, getSupabaseAdminClient } from "../../lib/supabase";
 
 const allowedTypes: AttendanceEventType[] = [
   "check_in",
@@ -74,7 +74,7 @@ export async function POST(req: Request) {
 
     let client: SupabaseClient | null = null;
     try {
-      client = getSupabaseServerClient();
+      client = getSupabaseAdminClient();
     } catch {
       client = null;
     }

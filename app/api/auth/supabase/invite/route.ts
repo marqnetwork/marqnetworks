@@ -6,7 +6,10 @@ export async function POST(req: Request) {
     const body = await req.json();
     const email: string = (body?.email || '').trim();
     const role: 'super_admin' | 'team_manager' | 'member' = body?.role || 'member';
-    const origin = new URL(req.url).origin;
+    const h = (req as any).headers as Headers;
+    const host = h?.get('x-forwarded-host') || h?.get('host') || new URL(req.url).host;
+    const proto = h?.get('x-forwarded-proto') || (req.url.startsWith('https') ? 'https' : 'http');
+    const origin = `${proto}://${host}`;
     const redirectTo: string = body?.redirectTo || `${origin}/login`;
 
     if (!email) {

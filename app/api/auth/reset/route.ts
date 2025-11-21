@@ -14,25 +14,24 @@ export async function POST(req: Request) {
       const providerParam = String(body?.provider || '').trim().toLowerCase();
       const forceLocal = prefer === 'local' || providerParam === 'local';
       if (!email) return NextResponse.json({ ok: false, error: 'email required' }, { status: 400 });
-
-      let supabaseOk = false;
       if (!forceLocal) {
-        try {
-          const supa = getSupabaseServerClient();
-          const origin = new URL(req.url).origin;
-          const redirectTo = `${origin}/reset`;
-          const { error } = await supa.auth.resetPasswordForEmail(email, { redirectTo });
-          if (!error) supabaseOk = true;
-        } catch {}
-      }
-
-      if (supabaseOk) {
+        const supa = getSupabaseServerClient();
+        const h = (req as any).headers as Headers;
+        const host = h?.get('x-forwarded-host') || h?.get('host') || new URL(req.url).host;
+        const proto = h?.get('x-forwarded-proto') || (req.url.startsWith('https') ? 'https' : 'http');
+        const origin = `${proto}://${host}`;
+        const redirectTo = `${origin}/reset`;
+        const { error } = await supa.auth.resetPasswordForEmail(email, { redirectTo });
+        if (error) return NextResponse.json({ ok: false, error: error.message, via: 'supabase' }, { status: 400 });
         return NextResponse.json({ ok: true, via: 'supabase' }, { status: 200 });
       }
 
       const { token } = requestPasswordReset(email);
       if (!token) return NextResponse.json({ ok: false, error: 'not_found' }, { status: 404 });
-      const baseUrl = new URL(req.url).origin;
+      const h = (req as any).headers as Headers;
+      const host = h?.get('x-forwarded-host') || h?.get('host') || new URL(req.url).host;
+      const proto = h?.get('x-forwarded-proto') || (req.url.startsWith('https') ? 'https' : 'http');
+      const baseUrl = `${proto}://${host}`;
       const link = `${baseUrl}/reset/${encodeURIComponent(token)}`;
       const subject = `Password reset`;
       const html = `<p>Click the link below to reset your password:</p><p><a href="${link}">${link}</a></p>`;

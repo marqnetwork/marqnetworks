@@ -12,6 +12,8 @@ function LoginContent() {
   const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const [registerName, setRegisterName] = useState('');
+  const [registerPassword, setRegisterPassword] = useState('');
   const [resetEmail, setResetEmail] = useState('');
   // reset flow now email-only; confirmation happens on /reset/[token]
   const [failCount, setFailCount] = useState(0);
@@ -85,26 +87,14 @@ function LoginContent() {
           }
         } catch {}
       } else if (mode === 'register') {
-        const res = await fetch('/api/auth/request-access', {
+        const res = await fetch('/api/auth/register', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email }),
+          body: JSON.stringify({ userName: registerName, email, password: registerPassword }),
+          credentials: 'include',
         });
         const json = await res.json();
-        if (!res.ok || !json.ok) throw new Error(json.error || 'Request failed');
-        let link = json.onboarding_link || null;
-        if (!link && json.invite_token && typeof window !== 'undefined') {
-          try { link = `${window.location.origin}/onboarding/${json.invite_token}`; } catch {}
-        }
-        setEmailProvider(json.provider || null);
-        const errs = [json.admin_email_error, json.user_ack_error].filter(Boolean).join(' | ');
-        setEmailErrors(errs || null);
-        setOnboardingLink(null);
-        setMessage(null);
-        setToast('Request received. Check your email for the onboarding link.');
-        setTimeout(() => setToast(null), 4000);
-        setEmail('');
-        return;
+        if (!res.ok || !json.ok) throw new Error(json.error || 'Registration failed');
       } else {
         return;
       }
@@ -189,11 +179,12 @@ function LoginContent() {
           </>
         ) : mode === 'register' ? (
           <>
+            <label style={{ display: 'block', fontSize: 12, color: '#9aa3b2', marginBottom: 4 }}>Full name</label>
+            <input value={registerName} onChange={(e) => setRegisterName(e.target.value)} required style={{ width: '100%', padding: 10, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'transparent', color: '#e5f3ff', marginBottom: 10 }} />
             <label style={{ display: 'block', fontSize: 12, color: '#9aa3b2', marginBottom: 4 }}>Email</label>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required style={{ width: '100%', padding: 10, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'transparent', color: '#e5f3ff', marginBottom: 10 }} />
-            {emailErrors && (
-              <div style={{ marginTop: 6, color: '#ff8a8a' }}>Email error: {emailErrors}</div>
-            )}
+            <label style={{ display: 'block', fontSize: 12, color: '#9aa3b2', marginBottom: 4 }}>Password</label>
+            <input type="password" value={registerPassword} onChange={(e) => setRegisterPassword(e.target.value)} required minLength={6} style={{ width: '100%', padding: 10, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'transparent', color: '#e5f3ff' }} />
           </>
         ) : (
           <>

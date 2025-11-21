@@ -44,12 +44,12 @@ export default function ResetPasswordPage() {
       {status && <div style={{ color: "#9ad0ff", marginBottom: 12 }}>{status}</div>}
       <form onSubmit={submit}>
         <div style={{ marginBottom: 10 }}>
-          <label style={{ display: "block", fontSize: 12, color: "#9aa3b2", marginBottom: 6 }}>New password</label>
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} minLength={6} style={{ width: "100%", padding: 10, borderRadius: 8 }} />
+          <label style={{ display: "block", fontSize: 12, color: "#fff", marginBottom: 6 }}>New password</label>
+          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} minLength={6} style={{ width: "100%", padding: 10, borderRadius: 8 ,color:"#fff" }} />
         </div>
         <div style={{ marginBottom: 14 }}>
-          <label style={{ display: "block", fontSize: 12, color: "#9aa3b2", marginBottom: 6 }}>Confirm password</label>
-          <input type="password" value={confirm} onChange={(e) => setConfirm(e.target.value)} minLength={6} style={{ width: "100%", padding: 10, borderRadius: 8 }} />
+          <label style={{ display: "block", fontSize: 12, color: "#fff", marginBottom: 6 }}>Confirm password</label>
+          <input type="password" value={confirm} onChange={(e) => setConfirm(e.target.value)} minLength={6} style={{ width: "100%", padding: 10, borderRadius: 8 ,color:"#fff" }} />
         </div>
         <button type="submit" disabled={busy} style={{ padding: "10px 14px", borderRadius: 8, background: "rgba(59,130,246,0.35)", color: "#e5f3ff" }}>
           Update Password

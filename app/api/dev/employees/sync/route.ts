@@ -5,8 +5,19 @@ import { listUsers } from '../../../../lib/authStore';
 export async function POST(req: Request) {
   try {
     const body = await req.json().catch(() => ({}));
+    const action = String(body?.action || '').trim();
     const email = String(body?.email || '').trim();
     const role = String(body?.role || '').trim() as 'super_admin' | 'manager' | 'member';
+    if (action === 'remove_admins') {
+      const admin = getSupabaseAdminClient();
+      const { data, error } = await admin
+        .from('employees')
+        .update({ role_title: null })
+        .eq('role_title', 'admin')
+        .select('user_id');
+      if (error) return NextResponse.json({ ok: false, error: error.message || 'remove_admins_failed' }, { status: 500 });
+      return NextResponse.json({ ok: true, removed: (data || []).length });
+    }
     if (!email) return NextResponse.json({ ok: false, error: 'email required' }, { status: 400 });
 
     const localUser = listUsers().find(u => (u.email || '').toLowerCase() === email.toLowerCase()) || null;

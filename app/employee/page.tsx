@@ -257,9 +257,10 @@ export default function EmployeePage() {
   }
 
   const handleCheckIn = async () => {
-    await append('check_in');
+    const now = Date.now();
+    await append('check_in', { started_at: now });
     setStatus('working');
-    setCheckInTs(Date.now());
+    setCheckInTs(now);
     setTotalBreakMs(0);
     setBreakStartTs(null);
     try { await startScreenCapture(); } catch {}
@@ -274,9 +275,9 @@ export default function EmployeePage() {
       setTotalIdleMs((x) => x + dur);
       try { await append('idle_end', { duration_ms: dur }); } catch {}
     }
-    await append('check_out');
     const end = Date.now();
     const workMs = checkInTs ? end - checkInTs - totalBreakMs - totalIdleMs : 0;
+    await append('check_out', { work_ms: workMs, break_ms: totalBreakMs, idle_ms: totalIdleMs });
     const fmt = (ms: number) => {
       const m = Math.floor(ms / 60000);
       const s = Math.floor((ms % 60000) / 1000);
@@ -298,10 +299,12 @@ export default function EmployeePage() {
   };
 
   const handleBreakEnd = async () => {
-    await append('break_end');
+    const now = Date.now();
+    const dur = breakStartTs ? Math.max(0, now - breakStartTs) : 0;
+    await append('break_end', { duration_ms: dur });
     setStatus('working');
     if (breakStartTs) {
-      setTotalBreakMs((b) => b + (Date.now() - breakStartTs));
+      setTotalBreakMs((b) => b + (now - breakStartTs));
     }
     setBreakStartTs(null);
   };

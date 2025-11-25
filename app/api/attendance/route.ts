@@ -8,6 +8,7 @@ import {
   AttendanceEvent,
 } from "../../lib/attendanceStore";
 import { getSupabaseServerClient, AttendanceEventRow, getSupabaseAdminClient } from "../../lib/supabase";
+import { resolveSupabaseUserBySession } from "../../lib/supabaseAuthBridge";
 
 const allowedTypes: AttendanceEventType[] = [
   "check_in",
@@ -79,8 +80,16 @@ export async function POST(req: Request) {
       client = null;
     }
     if (client) {
+      let supaUserId: string | null = null;
+      try {
+        const { user } = await resolveSupabaseUserBySession();
+        supaUserId = user.id;
+      } catch {
+        return NextResponse.json({ error: "user_id_unavailable" }, { status: 401 });
+      }
       const row: AttendanceEventRow = {
         id: event.id,
+        user_id: supaUserId || undefined,
         user_name: event.userName,
         type: event.type,
         timestamp: event.timestamp,

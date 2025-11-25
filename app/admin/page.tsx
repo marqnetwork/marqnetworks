@@ -1,4 +1,5 @@
 import { AttendanceEvent, readAttendance } from "../lib/attendanceStore";
+import { listUsers } from "../lib/authStore";
 import { getSupabaseServerClient, getSupabaseAdminClient, AttendanceEventRow } from "../lib/supabase";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import './style.css';
@@ -48,13 +49,27 @@ function computeStatus(events: AttendanceEvent[]) {
     status: UserStatus;
     lastActive: string;
     breaksTodayMinutes: number;
+    idleTodayMinutes: number;
     pingsToday: number;
     snapshotsToday: number;
+    dailyRate: number;
+    perMinuteRate: number;
+    deductionToday: number;
+    payableToday: number;
   }> = [];
 
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const startOfDay = today.getTime();
+
+  const allUsers = listUsers();
+  const salaryByName = new Map<string, number>();
+  for (const u of allUsers) {
+    const m = typeof u.onboarding?.salaryMonthly === "number"
+      ? u.onboarding!.salaryMonthly!
+      : Number(u.onboarding?.salaryMonthly || 0);
+    if (m && u.userName) salaryByName.set(u.userName, m);
+  }
 
   for (const [userName, list] of Object.entries(byUser)) {
     list.sort((a, b) => a.timestamp - b.timestamp);
@@ -63,7 +78,9 @@ function computeStatus(events: AttendanceEvent[]) {
     let pingsToday = 0;
     let snapshotsToday = 0;
     let breaksTodayMinutes = 0;
+    let idleTodayMinutes = 0;
     let lastBreakStart: number | null = null;
+    let lastIdleStart: number | null = null;
 
     for (const e of list) {
       if (e.timestamp > lastActiveTs) lastActiveTs = e.timestamp;
@@ -79,15 +96,35 @@ function computeStatus(events: AttendanceEvent[]) {
       if (e.type === 'check_out') status = 'idle';
       if (e.type === 'activity_ping' && e.timestamp >= startOfDay) pingsToday += 1;
       if (e.type === 'snapshot' && e.timestamp >= startOfDay) snapshotsToday += 1;
+      if (e.type === 'idle_start') {
+        lastIdleStart = e.timestamp;
+      }
+      if (e.type === 'idle_end') {
+        const durMs = typeof e.metadata?.duration_ms === 'number' ? e.metadata!.duration_ms! : (lastIdleStart ? (e.timestamp - lastIdleStart) : 0);
+        if (e.timestamp >= startOfDay) idleTodayMinutes += Math.round(Math.max(0, durMs) / 60000);
+        lastIdleStart = null;
+      }
     }
+
+    const monthly = salaryByName.get(userName) || 50000; // default if missing
+    const perDay = monthly / 30;
+    const perMinute = perDay / (8 * 60); // 8 hours/day
+    const idleExcess = Math.max(0, idleTodayMinutes - 2);
+    const deduction = idleExcess * perMinute;
+    const payable = Math.max(0, perDay - deduction);
 
     users.push({
       userName,
       status,
       lastActive: new Date(lastActiveTs).toLocaleString(),
       breaksTodayMinutes,
+      idleTodayMinutes,
       pingsToday,
       snapshotsToday,
+      dailyRate: Number(perDay.toFixed(2)),
+      perMinuteRate: Number(perMinute.toFixed(4)),
+      deductionToday: Number(deduction.toFixed(2)),
+      payableToday: Number(payable.toFixed(2)),
     });
   }
   users.sort((a, b) => a.userName.localeCompare(b.userName));
@@ -171,12 +208,32 @@ export default async function AdminPage() {
                 <span className="adm-value">{u.breaksTodayMinutes} min</span>
               </div>
               <div className="adm-row">
+                <span className="adm-label">Idle Today</span>
+                <span className="adm-value">{u.idleTodayMinutes} min</span>
+              </div>
+              <div className="adm-row">
                 <span className="adm-label">Activity Pings</span>
                 <span className="adm-value">{u.pingsToday}</span>
               </div>
               <div className="adm-row">
                 <span className="adm-label">Snapshots</span>
                 <span className="adm-value">{u.snapshotsToday}</span>
+              </div>
+              <div className="adm-row">
+                <span className="adm-label">Salary / Day</span>
+                <span className="adm-value">{u.dailyRate}</span>
+              </div>
+              <div className="adm-row">
+                <span className="adm-label">Salary / Minute</span>
+                <span className="adm-value">{u.perMinuteRate}</span>
+              </div>
+              <div className="adm-row">
+                <span className="adm-label">Deduction (Idle &gt;2m)</span>
+                <span className="adm-value">{u.deductionToday}</span>
+              </div>
+              <div className="adm-row">
+                <span className="adm-label">Payable Today</span>
+                <span className="adm-value">{u.payableToday}</span>
               </div>
             </div>
           </div>

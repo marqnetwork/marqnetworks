@@ -8,10 +8,10 @@ function LoginContent() {
   const next = search.get('next') || '/employee';
   const router = useRouter();
 
-  const [mode, setMode] = useState<'login' | 'register' | 'reset'>('login');
+  const [mode, setMode] = useState<'login' | 'reset'>('login');
   const [identifier, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
+  const [email] = useState('');
   
   const [resetEmail, setResetEmail] = useState('');
   // reset flow now email-only; confirmation happens on /reset/[token]
@@ -31,15 +31,14 @@ function LoginContent() {
         const res = await fetch('/api/auth/session', { credentials: 'include' });
         const json = await res.json();
         if (res.ok && json?.user?.id) {
-          if (json?.has_account === false) {
-            setMode('register');
-            setToast('Account required. Please create your account to continue.');
-            setTimeout(() => setToast(null), 4000);
-          } else {
+          if (json?.has_account !== false) {
             const nextParam = (typeof window !== 'undefined') ? new URL(window.location.href).searchParams.get('next') : null;
             const target = nextParam || '/employee';
             router.replace(target);
             setTimeout(() => { try { window.location.assign(target); } catch {} }, 100);
+          } else {
+            setToast('Contact admin to be invited.');
+            setTimeout(() => setToast(null), 4000);
           }
         }
       } catch {}
@@ -79,27 +78,11 @@ function LoginContent() {
           const sesRes = await fetch('/api/auth/session', { credentials: 'include' });
           const sesJson = await sesRes.json();
           if (sesRes.ok && sesJson?.user?.id && sesJson?.has_account === false) {
-            setMode('register');
-            setToast('Account required. Please create your account to continue.');
+            setToast('Account not set up. Ask admin to invite you.');
             setTimeout(() => setToast(null), 4000);
             return;
           }
         } catch {}
-      } else if (mode === 'register') {
-        const res = await fetch('/api/auth/request-access', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email }),
-          credentials: 'include',
-        });
-        const json = await res.json();
-        if (!res.ok || !json.ok) throw new Error(json.error || 'Request failed');
-        setToast('Onboarding link sent to your email');
-        setTimeout(() => setToast(null), 4000);
-        setOnboardingLink(json.onboarding_link || null);
-        setEmailProvider(json.provider || null);
-        if (!json.user_ack_sent) setEmailErrors(json.user_ack_error || 'Email sending failed');
-        return;
       } else {
         return;
       }
@@ -152,7 +135,7 @@ function LoginContent() {
       <div style={{ marginBottom: 16 }}>
         <div style={{ display: 'inline-block', padding: '4px 10px', borderRadius: 999, fontSize: 12, color: '#9ad0ff', background: 'rgba(59,130,246,0.12)', border: '1px solid rgba(59,130,246,0.25)' }}>Access</div>
         <h1 style={{ marginTop: 10, fontSize: 28, fontWeight: 700, letterSpacing: 0.2, background: 'linear-gradient(90deg, #e5f3ff, #a8d8ff 50%, #e5f3ff)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>Sign in to continue</h1>
-        <p style={{ color: '#aab2c0' }}>Log in or request access to the employee tools.</p>
+        <p style={{ color: '#aab2c0' }}>Log in to the employee tools. New employees are invited by admin.</p>
       </div>
       {toast && (
         <div style={{ position: 'fixed', top: 16, right: 16, background: 'rgba(17,17,17,0.95)', border: '1px solid rgba(255,255,255,0.12)', color: '#e5f3ff', padding: '10px 12px', borderRadius: 8, zIndex: 1000 }}>
@@ -162,7 +145,6 @@ function LoginContent() {
 
       <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
         <button onClick={() => setMode('login')} style={{ padding: '8px 12px', borderRadius: 999, border: '1px solid rgba(255,255,255,0.12)', background: mode === 'login' ? 'rgba(255,255,255,0.08)' : 'transparent', color: '#e5f3ff' }}>Login</button>
-        <button onClick={() => setMode('register')} style={{ padding: '8px 12px', borderRadius: 999, border: '1px solid rgba(255,255,255,0.12)', background: mode === 'register' ? 'rgba(255,255,255,0.08)' : 'transparent', color: '#e5f3ff' }}>Create Account</button>
         {allowReset && (
           <button onClick={() => setMode('reset')} style={{ padding: '8px 12px', borderRadius: 999, border: '1px solid rgba(255,255,255,0.12)', background: mode === 'reset' ? 'rgba(255,255,255,0.08)' : 'transparent', color: '#e5f3ff' }}>Reset Password</button>
         )}
@@ -182,11 +164,6 @@ function LoginContent() {
             <div style={{ marginTop: 8, fontSize: 12, color: '#9aa3b2' }}>Attempts: {failCount}/5</div>
           )}
           </>
-        ) : mode === 'register' ? (
-          <>
-            <label style={{ display: 'block', fontSize: 12, color: '#9aa3b2', marginBottom: 4 }}>Email</label>
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required style={{ width: '100%', padding: 10, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'transparent', color: '#e5f3ff' }} />
-          </>
         ) : (
           <>
             <div style={{ display: 'grid', gap: 10 }}>
@@ -203,7 +180,7 @@ function LoginContent() {
         {error && <div style={{ marginTop: 10, color: '#ffd27a' }}>{error}</div>}
         {mode !== 'reset' && (
           <button type="submit" disabled={loading} style={{ marginTop: 12, width: '100%', padding: '10px 12px', borderRadius: 10, border: '1px solid rgba(255,255,255,0.12)', background: 'linear-gradient(90deg, #4f46e5, #06b6d4)', color: '#fff', fontWeight: 600 }}>
-            {loading ? (mode === 'login' ? 'Signing in…' : 'Requesting access…') : (mode === 'login' ? 'Sign In' : 'Request Access')}
+            {loading ? 'Signing in…' : 'Sign In'}
           </button>
         )}
       </form>

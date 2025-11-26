@@ -23,9 +23,9 @@ export async function POST(request: Request, { params }: { params: { id: string 
     const { user, role } = await resolveSupabaseUserBySession();
     const teamId = params.id;
 
-    // Check if actor is a manager of this team or super_admin
+    // Check if actor is a manager of this team or admin
     let isManager = false;
-    if (role === 'super_admin') {
+    if (role === 'admin') {
       isManager = true;
     } else {
       const { data: tm } = await admin

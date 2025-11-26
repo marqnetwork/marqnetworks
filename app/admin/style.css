@@ -75,11 +75,15 @@
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 16px;
 }
+.admin-grid.grid-2 { grid-template-columns: repeat(2, minmax(260px, 1fr)); }
+@media (max-width: 840px) { .admin-grid.grid-2 { grid-template-columns: 1fr; } }
 .adm-card {
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 14px;
   padding: 14px;
   background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  position: relative;
+  overflow: hidden;
 }
 .adm-card-head {
   display: flex;
@@ -116,15 +120,17 @@
   margin-top: 10px;
   display: grid;
   gap: 6px;
+  overflow: hidden;
 }
 .adm-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 14px;
+  flex-wrap: wrap;
 }
 .adm-label { color: #9aa3b2; }
-.adm-value { color: #e5f3ff; }
+.adm-value { color: #e5f3ff; word-break: break-word; overflow-wrap: anywhere; }
 .adm-empty {
   grid-column: 1/-1;
   text-align: center;
@@ -171,6 +177,8 @@
   border-collapse: collapse;
   font-size: 14px;
 }
+.adm-table-wrap { width: 100%; max-width: 100%; overflow-x: auto; }
+.adm-table { min-width: 560px; }
 .adm-table thead th {
   background: rgba(255,255,255,0.04);
   text-align: left;
@@ -198,6 +206,7 @@
 .adm-btn.primary { background: rgba(59,130,246,0.25); border-color: rgba(59,130,246,0.35); }
 .adm-btn.warn { background: rgba(246, 173, 59, 0.25); border-color: rgba(246, 173, 59, 0.35); }
 .adm-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.adm-btn { white-space: nowrap; position: relative; z-index: 1; }
 select.adm-input { background: #ffffff; color: #111111; }
 select.adm-input option { background: #ffffff; color: #111111; }
 
@@ -209,3 +218,17 @@ select.adm-input option { background: #ffffff; color: #111111; }
 .admin-nav-link { display: block; padding: 8px 10px; border-radius: 8px; color: #9ad0ff; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.03); text-decoration: none; }
 .admin-nav-link.active { border-color: rgba(59,130,246,0.35); background: rgba(59,130,246,0.12); color: #e5f3ff; }
 .admin-content { padding: 16px; margin-left: 220px; }
+
+@media (max-width: 840px) {
+  .admin-content { margin-left: 0; }
+  .admin-nav { position: static; width: auto; border-right: none; }
+}
+
+@media (max-width: 640px) {
+  .admin-wrap { margin: 20px auto; padding: 12px; }
+  .admin-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .adm-row { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .adm-table { font-size: 13px; min-width: 480px; }
+  .metric-card { padding: 12px; }
+  .adm-card { padding: 12px; }
+}

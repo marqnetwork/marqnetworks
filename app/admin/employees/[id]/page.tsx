@@ -32,6 +32,7 @@ export default function EmployeeProfilePage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [events, setEvents] = useState<AttendanceEvent[]>([]);
+  const [onboarding, setOnboarding] = useState<Record<string, any> | null>(null);
 
   async function loadUser() {
     setLoading(true);
@@ -58,8 +59,19 @@ export default function EmployeeProfilePage() {
     } catch {}
   }
 
+  async function loadOnboarding() {
+    try {
+      const res = await fetch("/api/admin/user-info");
+      const json = await res.json();
+      if (!res.ok || !json?.users) throw new Error(json.error || "Failed to load onboarding");
+      const found = (json.users || []).find((u: any) => u.id === id) || null;
+      setOnboarding(found?.onboarding || null);
+    } catch {}
+  }
+
   useEffect(() => { loadUser(); }, [id]);
   useEffect(() => { loadEvents(); }, []);
+  useEffect(() => { loadOnboarding(); }, [id]);
 
   const userEvents = useMemo(() => {
     if (!user) return [] as AttendanceEvent[];
@@ -98,6 +110,36 @@ export default function EmployeeProfilePage() {
               <div className="adm-row"><span className="adm-label">Activity Pings</span><span className="adm-value">{pings.length}</span></div>
               <div className="adm-row"><span className="adm-label">Check-ins</span><span className="adm-value">{checkins.length}</span></div>
               <div className="adm-row"><span className="adm-label">Check-outs</span><span className="adm-value">{checkouts.length}</span></div>
+            </div>
+          </div>
+
+          <div className="adm-card" style={{ gridColumn: "1/-1" }}>
+            <div className="adm-card-head"><div className="adm-user">Onboarding Details</div></div>
+            <div className="adm-card-body">
+              {onboarding ? (
+                <table className="adm-table">
+                  <thead>
+                    <tr>
+                      <th>Field</th>
+                      <th>Value</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {Object.entries(onboarding).map(([k, v]) => (
+                      <tr key={k}>
+                        <td style={{ width: 220 }}>{k}</td>
+                        <td>
+                          {typeof v === "string" && v.startsWith("/uploads/") ? (
+                            <img src={v} alt={k} style={{ maxWidth: "100%", borderRadius: 8, border: "1px solid rgba(255,255,255,0.12)" }} />
+                          ) : Array.isArray(v) ? v.join(", ") : String(v ?? "")}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              ) : (
+                <div className="adm-empty">No onboarding info</div>
+              )}
             </div>
           </div>
 

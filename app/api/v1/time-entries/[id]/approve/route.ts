@@ -6,7 +6,7 @@ export async function POST(request: Request, { params }: { params: { id: string 
   try {
     const admin = getSupabaseAdminClient();
     const { role } = await resolveSupabaseUserBySession();
-    if (role !== 'super_admin' && role !== 'team_manager') {
+    if (role !== 'admin') {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
 

@@ -1,7 +1,7 @@
 import { getSupabaseAdminClient } from './supabase';
 import { cookies } from 'next/headers';
 
-type Role = 'super_admin' | 'team_manager' | 'member';
+type Role = 'admin' | 'employee';
 
 export async function resolveSupabaseUserBySession(): Promise<{
   user: { id: string; email: string };
@@ -23,7 +23,7 @@ export async function resolveSupabaseUserBySession(): Promise<{
 
   const { data: emp } = await admin.from('employees').select('role_title, details').eq('user_id', ensuredId).maybeSingle();
   const roleText = (emp?.role_title || (emp?.details as any)?.role || '').toLowerCase();
-  const role: Role = roleText === 'admin' ? 'super_admin' : roleText === 'manager' ? 'team_manager' : 'member';
+  const role: Role = roleText === 'admin' ? 'admin' : 'employee';
   return { user: { id: ensuredId, email: supaEmail }, role };
 }
 
@@ -33,6 +33,6 @@ export async function getUserRole(userId: string): Promise<Role | null> {
   const { data, error } = await admin.from('employees').select('role_title, details').eq('user_id', userId).maybeSingle();
   if (error) return null;
   const roleText = (data?.role_title || (data?.details as any)?.role || '').toLowerCase();
-  const role: Role | null = roleText === 'admin' ? 'super_admin' : roleText === 'manager' ? 'team_manager' : 'member';
+  const role: Role | null = roleText === 'admin' ? 'admin' : 'employee';
   return role;
 }

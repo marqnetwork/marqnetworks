@@ -12,7 +12,7 @@ export async function GET(request: Request) {
   if (!start || !end) {
     return NextResponse.json({ error: "start and end query params required (YYYY-MM-DD)" }, { status: 400 });
   }
-  if (targetUserId !== user.id && !(role === "super_admin" || role === "team_manager")) {
+  if (targetUserId !== user.id && role !== "admin") {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
   try {

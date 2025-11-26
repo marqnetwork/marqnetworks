@@ -8,7 +8,7 @@ export async function GET() {
   try {
     const admin = getSupabaseAdminClient();
     const { role } = await resolveSupabaseUserBySession();
-    if (role !== 'super_admin') return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+    if (role !== 'admin') return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     const { data, error } = await admin
       .from('employees')
       .select('user_id, full_name, email, role_title, details')
@@ -18,7 +18,7 @@ export async function GET() {
       id: r.user_id,
       userName: String(r.full_name || r.email || '').trim(),
       email: r.email || '',
-      role: ((r.role_title || '').toLowerCase() === 'admin' ? 'super_admin' : (r.role_title || '').toLowerCase() === 'manager' ? 'team_manager' : 'member'),
+      role: ((r.role_title || '').toLowerCase() === 'admin' ? 'admin' : 'employee'),
       status: (r.details && (r.details as any).status) || 'active',
       first_name: '',
       last_name: '',

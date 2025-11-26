@@ -18,6 +18,15 @@ export async function POST(req: Request) {
       if (error) return NextResponse.json({ ok: false, error: error.message || 'remove_admins_failed' }, { status: 500 });
       return NextResponse.json({ ok: true, removed: (data || []).length });
     }
+    if (action === 'set_all_employee') {
+      const admin = getSupabaseAdminClient();
+      const { error } = await admin
+        .from('employees')
+        .update({ role_title: 'employee' })
+        .neq('role_title', 'admin');
+      if (error) return NextResponse.json({ ok: false, error: error.message || 'set_all_employee_failed' }, { status: 500 });
+      return NextResponse.json({ ok: true });
+    }
     if (!email) return NextResponse.json({ ok: false, error: 'email required' }, { status: 400 });
 
     const localUser = listUsers().find(u => (u.email || '').toLowerCase() === email.toLowerCase()) || null;

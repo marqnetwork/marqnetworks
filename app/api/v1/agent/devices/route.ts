@@ -16,7 +16,7 @@ export async function GET(request: Request) {
     const { user, role } = await resolveSupabaseUserBySession();
     const url = new URL(request.url);
     const targetUserId = url.searchParams.get("user_id") || user.id;
-    if (targetUserId !== user.id && !(role === "super_admin" || role === "team_manager")) {
+    if (targetUserId !== user.id && role !== "admin") {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
     const { data, error } = await supabase

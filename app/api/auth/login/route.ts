@@ -24,7 +24,7 @@ export async function POST(req: Request) {
     }
     const admin = getSupabaseAdminClient();
     const { data: emp } = await admin.from('employees').select('role, role_title').eq('user_id', data.user.id).maybeSingle();
-    const role = (emp?.role as any) || ((emp?.role_title || '').toLowerCase() === 'admin' ? 'super_admin' : (emp?.role_title || '').toLowerCase() === 'manager' ? 'team_manager' : 'member');
+    const role = ((emp?.role_title || '').toLowerCase() === 'admin') ? 'admin' : 'employee';
     const res = NextResponse.json({ ok: true, user: { id: data.user.id, userName: data.user.user_metadata?.userName || '', email: data.user.email || '', role } });
     res.cookies.set('supabase_user_id', data.user.id, { httpOnly: true, sameSite: 'lax', path: '/', maxAge: 10 * 60 * 60 });
     res.cookies.set('supabase_user_email', data.user.email || '', { httpOnly: true, sameSite: 'lax', path: '/', maxAge: 10 * 60 * 60 });

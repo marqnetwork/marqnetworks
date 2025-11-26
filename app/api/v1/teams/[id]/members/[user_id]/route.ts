@@ -11,7 +11,7 @@ export async function DELETE(request: Request, { params }: { params: { id: strin
     const targetUserId = params.user_id;
 
     let canRemove = false;
-    if (role === 'super_admin') {
+    if (role === 'admin') {
       canRemove = true;
     } else {
       const { data: tm } = await admin

@@ -6,7 +6,7 @@ import { auditLog } from "../../../../../lib/audit";
 export async function POST(request: Request, { params }: { params: { id: string } }) {
   const supabase = getSupabaseAdminClient();
   const { user, role } = await resolveSupabaseUserBySession();
-  if (!(role === "super_admin" || role === "team_manager")) {
+  if (role !== "admin") {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 

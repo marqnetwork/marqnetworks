@@ -246,6 +246,8 @@ export default function EmployeePage() {
       }
       postAttendanceQuick({ userName: userName || 'Unknown', type: 'check_out', metadata: { reason: 'page_close' } });
     }
+    try { stopScreenCapture(); } catch {}
+    try { (window as any).__globalCapture?.stop?.(); } catch {}
     setStatus('idle');
     setCheckInTs(null);
     setBreakStartTs(null);
@@ -284,6 +286,8 @@ export default function EmployeePage() {
       return `${m}m ${s}s`;
     };
     setSessionMessage(`Work: ${fmt(workMs)} | Breaks: ${fmt(totalBreakMs)} | Idle: ${fmt(totalIdleMs)}`);
+    try { stopScreenCapture(); } catch {}
+    try { (window as any).__globalCapture?.stop?.(); } catch {}
     setStatus('idle');
     setCheckInTs(null);
     setBreakStartTs(null);

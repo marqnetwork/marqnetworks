@@ -8,11 +8,11 @@ export async function PATCH(req: Request, { params }: { params: { id: string } }
   try {
     const admin = getSupabaseAdminClient();
     const { role: actorRole } = await resolveSupabaseUserBySession();
-    if (!(actorRole === 'super_admin' || actorRole === 'team_manager')) {
+    if (actorRole !== 'admin') {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
     }
     const body = await req.json().catch(() => ({}));
-    const role = body?.role as 'super_admin' | 'manager' | 'member' | undefined;
+    const role = body?.role as 'admin' | 'employee' | undefined;
     const status = body?.status as 'active' | 'inactive' | undefined;
     const id = params.id;
     let updated: any = null;
@@ -29,7 +29,7 @@ export async function PATCH(req: Request, { params }: { params: { id: string } }
       updated = data;
     }
     if (role) {
-      if (actorRole !== 'super_admin' && role === 'super_admin') return NextResponse.json({ error: 'Only super_admin can assign super_admin' }, { status: 403 });
+      if (actorRole !== 'admin' && role === 'admin') return NextResponse.json({ error: 'Only admin can assign admin' }, { status: 403 });
       const { error: upErr } = await admin.from('profiles').update({ role }).eq('id', id);
       if (upErr) return NextResponse.json({ error: upErr.message || 'Role update failed' }, { status: 500 });
       const { data } = await admin.from('employees').select('user_id, full_name, email, role_title, details').eq('user_id', id).maybeSingle();
@@ -39,7 +39,7 @@ export async function PATCH(req: Request, { params }: { params: { id: string } }
     const mapped = {
       id: updated.user_id,
       email: updated.email,
-      role: role || (((updated.role_title || '').toLowerCase() === 'admin') ? 'super_admin' : ((updated.role_title || '').toLowerCase() === 'manager') ? 'team_manager' : 'member'),
+      role: role || (((updated.role_title || '').toLowerCase() === 'admin') ? 'admin' : 'employee'),
       status: (updated.details && (updated.details as any).status) || 'active',
     };
     return NextResponse.json({ ok: true, user: mapped });
@@ -50,15 +50,19 @@ export async function PATCH(req: Request, { params }: { params: { id: string } }
       const ses = sid ? getSession(sid) : null;
       if (!ses) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
       const actor = getUserById(ses.userId);
-      if (!actor || !(actor.role === 'super_admin' || actor.role === 'manager')) return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+      const ar = String(actor?.role || '');
+      const actorIsAdmin = !!actor && (ar === 'admin' || ar === 'super_admin' || ar === 'manager');
+      if (!actorIsAdmin) return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
       const body = await req.json().catch(() => ({}));
-      const role = body?.role as 'super_admin' | 'manager' | 'member' | undefined;
+      const role = body?.role as 'admin' | 'employee' | undefined;
       const status = body?.status as 'active' | 'inactive' | undefined;
       const id = params.id;
       let updated: any = null;
       if (role) {
-        if (actor.role !== 'super_admin' && role === 'super_admin') return NextResponse.json({ error: 'Only super_admin can assign super_admin' }, { status: 403 });
-        updated = setUserRole(id, role);
+        const ar2 = String(actor.role || '');
+        const actorIsAdmin2 = (ar2 === 'admin' || ar2 === 'super_admin' || ar2 === 'manager');
+        if (!actorIsAdmin2 && role === 'admin') return NextResponse.json({ error: 'Only admin can assign admin' }, { status: 403 });
+        updated = setUserRole(id, role as any);
       }
       if (status) {
         updated = setUserStatus(id, status);

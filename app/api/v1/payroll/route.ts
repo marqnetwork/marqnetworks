@@ -13,7 +13,7 @@ export async function GET(request: Request) {
     const start = url.searchParams.get("start");
     const end = url.searchParams.get("end");
     const targetUserId = url.searchParams.get("user_id") || user.id;
-    if (targetUserId !== user.id && !(role === "super_admin" || role === "team_manager")) {
+    if (targetUserId !== user.id && role !== "admin") {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
     let query = supabase

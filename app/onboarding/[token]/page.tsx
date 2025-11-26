@@ -198,23 +198,7 @@ export default function OnboardingPage() {
           </div>
         </Section>
 
-        <Section title="Employment">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 12 }}>
-            <Text name={'roleJoining'} label={'Role'} value={data.roleJoining} onChange={(v: any) => setData({ ...data, roleJoining: v })} />
-            <Text name={'department'} label={'Department'} value={data.department} onChange={(v: any) => setData({ ...data, department: v })} />
-            <Text name={'salaryMonthly'} label={'Salary (monthly)'} value={data.salaryMonthly} type={'number'} onChange={(v: any) => setData({ ...data, salaryMonthly: v })} />
-            <Text name={'workingDays'} label={'Working days'} value={data.workingDays} onChange={(v: any) => setData({ ...data, workingDays: v })} />
-            <Text name={'workingHours'} label={'Working hours'} value={data.workingHours} onChange={(v: any) => setData({ ...data, workingHours: v })} />
-            <Select name={'workMode'} label={'Work mode'} value={data.workMode} onChange={(v: any) => setData({ ...data, workMode: v })} options={['remote', 'hybrid', 'office']} />
-          </div>
-        </Section>
-
-        <Section title="Work Setup">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 12 }}>
-            <Text name={'laptopSpecs'} label={'Laptop specs'} value={data.laptopSpecs} onChange={(v: any) => setData({ ...data, laptopSpecs: v })} />
-            <Text name={'companyAssetsChecklist'} label={'Company assets checklist'} value={data.companyAssetsChecklist} onChange={(v: any) => setData({ ...data, companyAssetsChecklist: v })} />
-          </div>
-        </Section>
+        
 
         <Section title="Links">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 12 }}>

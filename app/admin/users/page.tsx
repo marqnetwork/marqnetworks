@@ -27,6 +27,9 @@ export default function AdminUsersPage() {
   const [invLast, setInvLast] = useState('');
   const [invEmail, setInvEmail] = useState('');
   const [invResult, setInvResult] = useState<string | null>(null);
+  const [invSalary, setInvSalary] = useState('');
+  const [invDept, setInvDept] = useState('');
+  const [invDays, setInvDays] = useState('');
 
   async function load() {
     setLoading(true);
@@ -90,6 +93,9 @@ export default function AdminUsersPage() {
             <input className="adm-input" placeholder="First name" value={invFirst} onChange={e => setInvFirst(e.target.value)} />
             <input className="adm-input" placeholder="Last name" value={invLast} onChange={e => setInvLast(e.target.value)} />
             <input className="adm-input" placeholder="Email" value={invEmail} onChange={e => setInvEmail(e.target.value)} />
+            <input className="adm-input" placeholder="Salary (monthly)" type="number" value={invSalary} onChange={e => setInvSalary(e.target.value)} />
+            <input className="adm-input" placeholder="Department" value={invDept} onChange={e => setInvDept(e.target.value)} />
+            <input className="adm-input" placeholder="Total Days" type="number" value={invDays} onChange={e => setInvDays(e.target.value)} />
           </div>
           <div style={{ display: 'flex', gap: 8, marginTop: 10 }}>
             <button className="adm-btn primary" disabled={loading || !invEmail} onClick={async () => {
@@ -97,11 +103,11 @@ export default function AdminUsersPage() {
               setInvResult(null);
               setLoading(true);
               try {
-                const res = await fetch('/api/auth/invite', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ first_name: invFirst, last_name: invLast, email: invEmail }) });
+                const res = await fetch('/api/auth/invite', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ first_name: invFirst, last_name: invLast, email: invEmail, salary_monthly: invSalary ? Number(invSalary) : undefined, department: invDept, total_days: invDays ? Number(invDays) : undefined }) });
                 const json = await res.json();
                 if (!res.ok || !json.ok) throw new Error(json.error || 'Invite failed');
                 setInvResult(`Invite created. Token: ${json.invite_token}`);
-                setInvFirst(''); setInvLast(''); setInvEmail('');
+                setInvFirst(''); setInvLast(''); setInvEmail(''); setInvSalary(''); setInvDept(''); setInvDays('');
                 await load();
               } catch (e: any) {
                 setError(e?.message || 'Invite failed');

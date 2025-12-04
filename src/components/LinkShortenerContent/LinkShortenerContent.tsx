@@ -12,7 +12,6 @@ const LinkShortenerContent = () => {
   const [copied, setCopied] = useState(false);
   const [shortenedLinks, setShortenedLinks] = useState<{original: string, shortened: string, timestamp: number}[]>([]);
 
-  // Simulate link shortening
   const shortenLink = async () => {
     if (!longUrl.trim()) {
       setError('Please enter a URL to shorten');
@@ -32,27 +31,30 @@ const LinkShortenerContent = () => {
     setCopied(false);
 
     try {
-      // Simulate API call with a delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Generate a random short code or use custom alias
-      const shortCode = customAlias || generateRandomCode(6);
-      const baseUrl = 'https://mrq.net/';
-      const newShortUrl = baseUrl + shortCode;
-      
+      const res = await fetch('/api/shorten', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url: longUrl, alias: customAlias || undefined })
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        const msg = (data && data.error) ? String(data.error) : 'Failed to shorten URL';
+        setError(msg);
+        setShortUrl('');
+        return;
+      }
+      const newShortUrl = String(data.shortUrl || '');
+      if (!newShortUrl) {
+        setError('Failed to shorten URL. Please try again.');
+        setShortUrl('');
+        return;
+      }
       setShortUrl(newShortUrl);
-      
-      // Add to history
-      const newLink = {
-        original: longUrl,
-        shortened: newShortUrl,
-        timestamp: Date.now()
-      };
-      
+      const newLink = { original: longUrl, shortened: newShortUrl, timestamp: Date.now() };
       setShortenedLinks(prev => [newLink, ...prev].slice(0, 10));
     } catch (err) {
-      console.error('Error shortening URL:', err);
       setError('Failed to shorten URL. Please try again.');
+      setShortUrl('');
     } finally {
       setIsShortening(false);
     }
@@ -143,7 +145,7 @@ const LinkShortenerContent = () => {
                 <div className="link-form-group">
                   <label htmlFor="custom-alias">Custom Alias (Optional)</label>
                   <div className="link-input-group">
-                    <span className="link-input-prefix">mrq.net/</span>
+                    <span className="link-input-prefix">is.gd/</span>
                     <input
                       id="custom-alias"
                       type="text"
@@ -153,7 +155,7 @@ const LinkShortenerContent = () => {
                       className="link-input with-prefix"
                     />
                   </div>
-                  <small className="link-input-help">Only letters, numbers, hyphens and underscores allowed</small>
+                  <small className="link-input-help">Alias works with is.gd; leave blank for auto</small>
                 </div>
                 
                 <div className="link-form-actions">

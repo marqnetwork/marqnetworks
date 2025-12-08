@@ -1,5 +1,6 @@
 "use client";
 import MarqButton from "@/components/MarqButton/MarqButton";
+import "@/components/Hero/Hero.css";
 
 function NumberBadge({ value }) {
   const lineSrc = `/images/VerticalLine${value}.png`;
@@ -34,7 +35,7 @@ export default function ServicesCards() {
               </li>
             ))}
           </ul>
-          <MarqButton className="inline-flex h-[44px] px-5 rounded-[10px] bg-[#56b848] text-white items-center justify-center shadow-[0px_7px_36px_rgba(86,184,72,0.5)] hover:scale-[1.03] transition-transform mt-2 md:mt-4">Read More About This</MarqButton>
+          <MarqButton className="primary-btn-hero" />
         </div>
         <NumberBadge value={1} />
         <div>
@@ -65,7 +66,7 @@ export default function ServicesCards() {
               </li>
             ))}
           </ul>
-          <MarqButton className="inline-flex h-[44px] px-5 rounded-[10px] bg-[#56b848] text-white items-center justify-center shadow-[0px_7px_36px_rgba(86,184,72,0.5)] hover:scale-[1.03] transition-transform mt-2 md:mt-4">Read More About This</MarqButton>
+          <MarqButton className="primary-btn-hero" />
         </div>
       </div>
 
@@ -88,7 +89,7 @@ export default function ServicesCards() {
               </li>
             ))}
           </ul>
-          <MarqButton className="inline-flex h-[44px] px-5 rounded-[10px] bg-[#56b848] text-white items-center justify-center shadow-[0px_7px_36px_rgba(86,184,72,0.5)] hover:scale-[1.03] transition-transform mt-2 md:mt-4">Read More About This</MarqButton>
+          <MarqButton className="primary-btn-hero" />
         </div>
         <NumberBadge value={3} />
         <div>
@@ -119,7 +120,7 @@ export default function ServicesCards() {
               </li>
             ))}
           </ul>
-          <MarqButton className="inline-flex h-[44px] px-5 rounded-[10px] bg-[#56b848] text-white items-center justify-center shadow-[0px_7px_36px_rgba(86,184,72,0.5)] hover:scale-[1.03] transition-transform mt-2 md:mt-4">Read More About This</MarqButton>
+          <MarqButton className="primary-btn-hero" />
         </div>
       </div>
 
@@ -142,7 +143,7 @@ export default function ServicesCards() {
               </li>
             ))}
           </ul>
-          <MarqButton className="inline-flex h-[44px] px-5 rounded-[10px] bg-[#56b848] text-white items-center justify-center shadow-[0px_7px_36px_rgba(86,184,72,0.5)] hover:scale-[1.03] transition-transform mt-2 md:mt-4">Read More About This</MarqButton>
+          <MarqButton className="primary-btn-hero" />
         </div>
         <NumberBadge value={5} />
         <div>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import MarqButton from "@/components/MarqButton/MarqButton";
+import "@/components/Hero/Hero.css";
 
 export default function HeroSection() {
   return (
@@ -44,17 +45,8 @@ export default function HeroSection() {
         transition={{ delay: 0.8, duration: 0.6 }}
         className="mt-8 flex gap-4 items-center"
       >
-        <MarqButton
-          className="bg-[#56b848] rounded-[11.233px] h-[51px] px-6 inline-flex items-center text-white font-medium shadow-[0px_9.771px_48.857px_0px_rgba(86,184,72,0.5),0px_0px_0px_1.221px_rgba(0,85,255,0.12)] hover:scale-105 transition-transform"
-        >
-          Meet MarQ Networks
-        </MarqButton>
-        <MarqButton
-          href="/Solution"
-          className="rounded-[11.233px] h-[51px] px-6 inline-flex items-center text-white backdrop-blur-md bg-white/15 hover:bg-white/20 transition"
-        >
-          See How We Solve
-        </MarqButton>
+       <MarqButton className="primary-btn-hero" />
+       <MarqButton className="primary-btn-hero" />
       </motion.div>
     </section>
   );

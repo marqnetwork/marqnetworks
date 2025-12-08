@@ -35,18 +35,18 @@ export default function ServicesCards() {
               </li>
             ))}
           </ul>
-          <MarqButton className="primary-btn-hero" />
+          <MarqButton className="primary-btn-hero mt-5" />
         </div>
         <NumberBadge value={1} />
         <div>
-          <img src="/images/p1.png" alt="Strategy & Digital Transformation" className="w-full max-w-[430px] h-[280px] rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
+          <img src="/images/pillar1.png" alt="Strategy & Digital Transformation" className="w-full max-w-[430px] h-[280px] rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
         </div>
       </div>
 
       {/* Card 2 (reverse layout) */}
       <div className="grid h-[90vh]  grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
         <div>
-          <img src="/images/work.png" alt="Brand + Experience Design" className="w-full max-w-[430px] h-[280px] rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
+          <img src="/images/pillar2.png" alt="Brand + Experience Design" className="w-full max-w-[430px] h-[280px] rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
         </div>
         <NumberBadge value={2} />
         <div className="space-y-6">
@@ -93,14 +93,14 @@ export default function ServicesCards() {
         </div>
         <NumberBadge value={3} />
         <div>
-          <img src="/images/heroobg.png" alt="Custom Software & Automation" className="w-full max-w-[430px] h-[280px] rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
+          <img src="/images/pillar3.png" alt="Custom Software & Automation" className="w-full max-w-[430px] h-[280px] rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
         </div>
       </div>
 
       {/* Card 4 (reverse layout) */}
       <div className="grid h-[90vh]  grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
         <div>
-          <img src="/images/Villa.png" alt="Data & Analytics Engineering" className="w-full max-w-[430px] h-[280px] rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
+          <img src="/images/pillar4.png" alt="Data & Analytics Engineering" className="w-full max-w-[430px] h-[280px] rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
         </div>
         <NumberBadge value={4} />
         <div className="space-y-6">
@@ -147,7 +147,7 @@ export default function ServicesCards() {
         </div>
         <NumberBadge value={5} />
         <div>
-          <img src="/images/pimg.png" alt="DevOps, Cloud & Security" className="w-full max-w-[430px] h-[280px] rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
+          <img src="/images/pillar5.png" alt="DevOps, Cloud & Security" className="w-full max-w-[430px] h-[280px] rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
         </div>
       </div>
     </section>

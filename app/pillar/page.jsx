@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import HeroSection from "./components/HeroSection";
 import PillarsSection from "./components/PillarsSection";
 import ServicesCards from "./components/ServicesCards";
+import FAQSection from "@/components/FAQSection/FAQSection";
 import svgPaths from "../../svg-7ndmzqf2y9";
 // Replace missing SVG and Figma asset imports with inline constants/local assets
 const PATH_DASHED = "M3 18H140";
@@ -31,6 +32,8 @@ export default function PillarPage() {
       <div className="mt-40 md:mt-56">
         <ServicesCards />
       </div>
+
+      <FAQSection />
 
 
 

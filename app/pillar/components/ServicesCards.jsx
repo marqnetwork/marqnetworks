@@ -6,7 +6,6 @@ function NumberBadge({ value }) {
   const lineSrc = `/images/VerticalLine${value}.png`;
   return (
     <div className="flex flex-col items-center py-20">
-    
       {/* Use per-card vertical line image */}
       <img src={lineSrc} alt={`Vertical connector ${value}`} className="mt-8 h-[400px] w-auto" />
     </div>
@@ -15,9 +14,10 @@ function NumberBadge({ value }) {
 
 export default function ServicesCards() {
   return (
-    <section className="w-full max-w-[1200px] mx-auto px-6 py-16 mt-40 md:mt-56 space-y-24 md:space-y-32">
+    <section className="w-full max-w-[1200px] mx-auto px-6 py-16 mt-40 md:mt-56">
+      <div className="grid grid-cols-1 gap-y-18 md:gap-y-20">
       {/* Card 1 */}
-      <div className="grid h-auto grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
+      <div className="grid h-auto grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center mb-24 md:mb-32">
         <div className="space-y-6">
           <p className="font-['Neue_Montreal:Medium',sans-serif] text-[28px] md:text-[32px] text-white">MarQ Consultancy</p>
           <p className="text-white/70 text-sm md:text-base">Growth strategy consultant for startups and enterprises delivering AI business roadmaps, generative search optimization, and go-to-market execution.</p>
@@ -44,7 +44,7 @@ export default function ServicesCards() {
       </div>
 
       {/* Card 2 (reverse layout) */}
-      <div className="grid h-auto grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
+      <div className="grid h-auto grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center mb-24 md:mb-32">
         <div>
           <img src="/images/pillar2.png" alt="Brand + Experience Design" className="w-full h-full rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
         </div>
@@ -71,7 +71,7 @@ export default function ServicesCards() {
       </div>
 
       {/* Card 3 */}
-      <div className="grid h-auto  grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
+      <div className="grid h-auto grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center mb-24 md:mb-32">
         <div className="space-y-6">
           <p className="font-['Neue_Montreal:Medium',sans-serif] text-[28px] md:text-[32px] text-white">MarQ Software House</p>
           <p className="text-white/70 text-sm md:text-base">Custom software development company specializing in scalable AI websites, MVP builds, and headless eCommerce.</p>
@@ -98,7 +98,7 @@ export default function ServicesCards() {
       </div>
 
       {/* Card 4 (reverse layout) */}
-      <div className="grid h-auto grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
+      <div className="grid h-auto grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center mb-24 md:mb-32">
         <div>
           <img src="/images/pillar4.png" alt="Data & Analytics Engineering" className="w-full h-full rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
         </div>
@@ -125,7 +125,7 @@ export default function ServicesCards() {
       </div>
 
       {/* Card 5 */}
-      <div className="grid h-auto  grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
+      <div className="grid h-auto grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
         <div className="space-y-6">
           <p className="font-['Neue_Montreal:Medium',sans-serif] text-[28px] md:text-[32px] text-white">Offshore Excellence Hub</p>
           <p className="text-white/70 text-sm md:text-base">A globally distributed delivery hub with expert remote teams operating round-the-clock for efficiency and scale.  </p>
@@ -149,6 +149,7 @@ export default function ServicesCards() {
         <div>
           <img src="/images/pillar5.png" alt="DevOps, Cloud & Security" className="w-full w-full h-full rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
         </div>
+      </div>
       </div>
     </section>
   );

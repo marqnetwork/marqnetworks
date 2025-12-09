@@ -36,12 +36,12 @@ const pillars = [
 
 export default function PillarsSection() {
   return (
-    <section className="relative w-full min-h-[100vh] flex items-center justify-center  py-20">
+    <section className="relative w-full min-h-[100vh] flex items-center justify-center py-20 pb-24 md:pb-40 mb-40 md:mb-64">
       {/* Central image only (no dashed lines) */}
       <img
         src="/images/pillar.png"
         alt="Pillars"
-        className="max-w-[520px] h-auto object-contain"
+        className="max-w-[500px] h-auto object-contain"
       />
 
       {/* Text blocks positioned around the image */}

@@ -6,7 +6,7 @@ import "@/components/Hero/Hero.css";
 
 export default function HeroSection() {
   return (
-    <section className="z-10 flex flex-col items-center justify-center text-center w-full max-w-[1200px] mx-auto pt-40 pb-24 px-4 gap-6 h-[100vh]">
+    <section className="z-10 flex flex-col items-center justify-center text-center w-full max-w-[1200px] mx-auto  px-4 gap-6 " style={{marginTop:"100px"} }>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -21,7 +21,7 @@ export default function HeroSection() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.7 }}
-        className="mt-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/30 font-['DM_Sans:9pt_Regular',sans-serif] text-[48px] leading-tight md:text-[96px] md:leading-[101px] tracking-[-4.2686px]"
+        className="mt-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/30 font-['DM_Sans:9pt_Regular',sans-serif] text-[48px] leading-tight md:text-[76px] md:leading-[101px] tracking-[-4.2686px]"
         style={{ fontVariationSettings: "'opsz' 9" }}
       >
         Discover marQ Solutions

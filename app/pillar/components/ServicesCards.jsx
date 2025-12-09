@@ -15,7 +15,7 @@ function NumberBadge({ value }) {
 
 export default function ServicesCards() {
   return (
-    <section className="w-full max-w-[1200px] mx-auto px-6 py-16">
+    <section className="w-full max-w-[1200px] mx-auto  py-16">
       {/* Card 1 */}
       <div className="grid h-full grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
         <div className="space-y-6">

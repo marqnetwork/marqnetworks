@@ -74,9 +74,11 @@
   align-items: center;
   height: 80px;
   width: 100%;
-  padding: 0 2rem;
+  max-width: 1200px;
+  
   position: sticky;
   top: 0;
+  margin: auto;
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(6px);

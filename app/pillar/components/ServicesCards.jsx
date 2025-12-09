@@ -17,17 +17,17 @@ export default function ServicesCards() {
   return (
     <section className="w-full max-w-[1200px] mx-auto px-6 py-16">
       {/* Card 1 */}
-      <div className="grid h-[90vh] grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
+      <div className="grid h-full grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
         <div className="space-y-6">
-          <p className="font-['Neue_Montreal:Medium',sans-serif] text-[28px] md:text-[32px] text-white">Strategy & Digital Transformation</p>
-          <p className="text-white/70 text-sm md:text-base">Align teams, de-risk spend, and launch initiatives with an AI workflow transformation roadmap in 90 days.</p>
-          <ul className="space-y-4 mb-20" style={{paddingTop:"20px" , paddingBottom:"20px"}}>
+          <p className="font-['Neue_Montreal:Medium',sans-serif] text-[28px] md:text-[32px] text-white">MarQ Consultancy</p>
+          <p className="text-white/70 text-sm md:text-base">Growth strategy consultant for startups and enterprises delivering AI business roadmaps, generative search optimization, and go-to-market execution.</p>
+          <ul className="space-y-4 mb-20" style={{paddingTop:"20px" , paddingBottom:"20px",marginBottom:"20px"}}>
             {[
-              "Vision & AI business road-mapping",
-              "Tech & SOC-2 security audits",
-              "AI workflow transformation services",
-              "Change-management playbooks",
-              "Brand identity & guidelines",
+              "AI-Driven Business Strategy",
+              "Go-To-Market Planning",
+              "CX & Sales Optimization",
+              "Brand Positioning & Messaging",
+              "Pricing & Revenue Strategy",
             ].map((item, i) => (
               <li key={i} className="flex items-center gap-4">
                 <span className="size-2 rounded-full bg-white/90" />
@@ -50,17 +50,17 @@ export default function ServicesCards() {
         </div>
         <NumberBadge value={2} />
         <div className="space-y-6">
-          <p className="font-['Neue_Montreal:Medium',sans-serif] text-[28px] md:text-[32px] text-white">Brand + Experience Design</p>
-          <p className="text-white/70 text-sm md:text-base">Align teams, de-risk spend, and launch initiatives with an AI workflow transformation roadmap in 90 days.</p>
-          <ul className="space-y-4" style={{paddingTop:"20px" , paddingBottom:"20px"}}>
+          <p className="font-['Neue_Montreal:Medium',sans-serif] text-[28px] md:text-[32px] text-white">MarQ Creative Logics</p>
+          <p className="text-white/70 text-sm md:text-base">Branding agency for startups and tech companies focused on emotional branding, UI/UX design, and conversion-driven creative.</p>
+          <ul className="space-y-4" style={{paddingTop:"20px" , paddingBottom:"20px",marginBottom:"20px"}}>
             {[
-              "AI-powered UX/UI for web, SaaS & mobile",
-              "Conversion-focused websites & headless e-commerce",
-              "Motion, 3D & interactive content with AI heatmap insights",
-              "Web / mobile / SaaS builds optimized by AI code assistant",
-              "Brand identity & guidelines validated by AI heatmap user testing",
+              "Brand Identity + Visual Systems",
+              "Conversion-Focused Websites",
+              "High-End UI/UX Design",
+              "Social & Content Design",
+              "Video, Motion & Product Creative",
             ].map((item, i) => (
-              <li key={i} className="flex items-center gap-4">
+              <li key={i} className="flex items-center gap-4 py-4">
                 <span className="size-2 rounded-full bg-white/90" />
                 <span className="text-white/70 text-sm md:text-base">{item}</span>
               </li>
@@ -73,17 +73,17 @@ export default function ServicesCards() {
       {/* Card 3 */}
       <div className="grid h-[90vh]  grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
         <div className="space-y-6">
-          <p className="font-['Neue_Montreal:Medium',sans-serif] text-[28px] md:text-[32px] text-white">Custom Software & Automation</p>
-          <p className="text-white/70 text-sm md:text-base">Align teams, de-risk spend, and launch initiatives with an AI workflow transformation roadmap in 90 days.</p>
-          <ul className="space-y-4" style={{paddingTop:"20px" , paddingBottom:"20px"}}>
+          <p className="font-['Neue_Montreal:Medium',sans-serif] text-[28px] md:text-[32px] text-white">MarQ Software House</p>
+          <p className="text-white/70 text-sm md:text-base">Custom software development company specializing in scalable AI websites, MVP builds, and headless eCommerce.</p>
+          <ul className="space-y-4" style={{paddingTop:"20px" , paddingBottom:"20px",marginBottom:"20px"}}>
             {[
-              "Full-stack web & SaaS engineering",
-              "AI assistants, automations & orchestration",
-              "Data pipelines, ETL & analytics",
-              "DevOps, CI/CD & cloud infrastructure",
-              "Security audits & SOC-2 readiness",
+              "Full-Stack Web & Mobile Apps",
+              "AI Website Development",
+              "Headless eCommerce Platforms",
+              "Cybersecurity & Compliance",
+              "API Integrations & DevOps",
             ].map((item, i) => (
-              <li key={i} className="flex items-center gap-4">
+              <li key={i} className="flex items-center gap-4 py-4">
                 <span className="size-2 rounded-full bg-white/90" />
                 <span className="text-white/70 text-sm md:text-base">{item}</span>
               </li>
@@ -104,15 +104,15 @@ export default function ServicesCards() {
         </div>
         <NumberBadge value={4} />
         <div className="space-y-6">
-          <p className="font-['Neue_Montreal:Medium',sans-serif] text-[28px] md:text-[32px] text-white">Data & Analytics Engineering</p>
-          <p className="text-white/70 text-sm md:text-base">Align teams, de-risk spend, and launch initiatives with an AI workflow transformation roadmap in 90 days.</p>
-          <ul className="space-y-4" style={{paddingTop:"20px" , paddingBottom:"20px"}}>
+          <p className="font-['Neue_Montreal:Medium',sans-serif] text-[28px] md:text-[32px] text-white">MarQ Growth Pod</p>
+          <p className="text-white/70 text-sm md:text-base">Performance-driven funnel marketing agency delivering automation-powered revenue systems.</p>
+          <ul className="space-y-4" style={{paddingTop:"20px" , paddingBottom:"20px",marginBottom:"20px"}}>
             {[
-              "Warehousing & lakehouse architectures",
-              "ETL/ELT pipelines and orchestration",
-              "BI dashboards and reporting",
-              "Data quality, governance & lineage",
-              "Customer data platforms (CDP)",
+              "CRM Setup & Automations",
+              "Lead-Gen Funnels (B2B & DTC)",
+              "Paid Media & Retargeting",
+              "Email & SMS Automations",
+              "SEO for High-Intent Traffic",
             ].map((item, i) => (
               <li key={i} className="flex items-center gap-4">
                 <span className="size-2 rounded-full bg-white/90" />
@@ -127,15 +127,15 @@ export default function ServicesCards() {
       {/* Card 5 */}
       <div className="grid h-[90vh]  grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
         <div className="space-y-6">
-          <p className="font-['Neue_Montreal:Medium',sans-serif] text-[28px] md:text-[32px] text-white">DevOps, Cloud & Security</p>
-          <p className="text-white/70 text-sm md:text-base">Align teams, de-risk spend, and launch initiatives with an AI workflow transformation roadmap in 90 days.</p>
-          <ul className="space-y-4" style={{paddingTop:"20px" , paddingBottom:"20px"}}>
+          <p className="font-['Neue_Montreal:Medium',sans-serif] text-[28px] md:text-[32px] text-white">Offshore Excellence Hub</p>
+          <p className="text-white/70 text-sm md:text-base">A globally distributed delivery hub with expert remote teams operating round-the-clock for efficiency and scale.  </p>
+          <ul className="mt-5 mb-5" style={{paddingTop:"20px" , paddingBottom:"20px" ,marginBottom:"20px"}}>
             {[
-              "CI/CD pipelines & automation",
-              "Infrastructure as Code (IaC)",
-              "Observability & monitoring",
-              "Cost optimization & scaling",
-              "Security audits & compliance",
+              "Dedicated Remote Teams",
+              "Production Outsourcing",
+              "24/7 Support & SLA Monitoring",
+              "Scalable Resourcing Models",
+              "PM & Quality Assurance",
             ].map((item, i) => (
               <li key={i} className="flex items-center gap-4">
                 <span className="size-2 rounded-full bg-white/90" />

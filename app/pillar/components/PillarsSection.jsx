@@ -3,33 +3,33 @@ import { motion } from "framer-motion";
 
 const pillars = [
   {
-    title: "Strategy & Digital Transformation",
-    desc: "Align teams, de-risk spend, and launch initiatives with an AI workflow transformation roadmap in 90 days.",
-    pos: "top-[8%] left-[10%]",
+    title: "MarQ Consultancy",
+    desc: "Growth strategy consultant for startups and enterprises delivering AI business roadmaps, generative search optimization, and go-to-market execution.",
+    pos: "top-[20%] left-[2%]",
     dir: "left",
   },
   {
-    title: "Custom Software & Automation",
-    desc: "AI assistants, automations and secure engineering to accelerate digital execution.",
-    pos: "top-[46%] left-[4%]",
+    title: "MarQ Creative Logics",
+    desc: "Branding agency for startups and tech companies focused on emotional branding, UI/UX design, and conversion-driven creative.",
+    pos: "top-[46%] left-[2%]",
     dir: "left",
   },
   {
-    title: "Off-Shore Excellence Hub (operating model)",
-    desc: "Align teams, de-risk spend, and launch initiatives with an AI-powered CRM automation roadmap—live in 90 days.",
-    pos: "bottom-[-8%] left-[50%] -translate-x-1/2 text-center",
+    title: "MarQ Software House",
+    desc: "Custom software development company specializing in scalable AI websites, MVP builds, and headless eCommerce.",
+    pos: "bottom-[1%] left-[50%] -translate-x-1/2 text-center",
     dir: "bottom",
   },
   {
-    title: "Growth Marketing & Lead Gen",
-    desc: "AI-powered CRM automation and performance playbooks—live in 90 days.",
-    pos: "top-[46%] right-[4%]",
+    title: "MarQ Growth Pod",
+    desc: "Performance-driven funnel marketing agency delivering automation-powered revenue systems.",
+    pos: "top-[46%] right-[2%]",
     dir: "right",
   },
   {
-    title: "Brand + Experience Design",
-    desc: "Align teams, de-risk spend, and launch initiatives with a 100-day, conversion-focused, AI-powered UX roadmap.",
-    pos: "top-[10%] right-[10%]",
+    title: "Offshore Excellence Hub",
+    desc: "A globally distributed delivery hub with expert remote teams operating round-the-clock for efficiency and scale.",
+    pos: "top-[20%] right-[2%]",
     dir: "right",
   },
 ];
@@ -41,7 +41,7 @@ export default function PillarsSection() {
       <img
         src="/images/pillar.png"
         alt="Pillars"
-        className="max-w-[500px] h-auto object-contain"
+        className="max-w-[520px] h-auto object-contain"
       />
 
       {/* Text blocks positioned around the image */}
@@ -49,7 +49,7 @@ export default function PillarsSection() {
         const initial = {
           opacity: 0,
           x: p.dir === "left" ? -80 : p.dir === "right" ? 80 : 0,
-          y: p.dir === "bottom" ? 80 : p.dir === "top" ? -80 : 0,
+          y: p.dir === "bottom" ? 20 : p.dir === "top" ? 80 : 0,
         };
         return (
           <motion.div

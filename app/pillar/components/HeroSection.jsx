@@ -11,10 +11,10 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.6 }}
-        className="inline-flex items-center gap-3"
+        className="flex justify-center items-center gap-3 w-[100%]"
       >
-        <span className="inline-flex items-center justify-center bg-[#56b848] text-white rounded-md px-2.5 py-1 text-[12px] font-bold shadow-[0px_6px_24px_rgba(86,184,72,0.35)]">2025</span>
-        <span className="inline-flex items-center rounded-md px-3 py-1.5 text-sm text-white/80 backdrop-blur-md bg-white/10 border border-white/10">Our solutions</span>
+        <div className=" bg-[#56b848] text-white rounded-md px-10  w-[5%] text-[12px] font-bold shadow-[0px_6px_24px_rgba(86,184,72,0.35)]">2025</div>
+        <div className="  rounded-md  text-sm text-white/80 w-[10%]  backdrop-blur-md bg-white/10 border border-white/10">Our solutions</div>
       </motion.div>
 
       <motion.h1

@@ -5,10 +5,10 @@ import "@/components/Hero/Hero.css";
 function NumberBadge({ value }) {
   const lineSrc = `/images/VerticalLine${value}.png`;
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center py-20">
     
       {/* Use per-card vertical line image */}
-      <img src={lineSrc} alt={`Vertical connector ${value}`} className="mt-4 h-full w-auto" />
+      <img src={lineSrc} alt={`Vertical connector ${value}`} className="mt-8 h-[400px] w-auto" />
     </div>
   );
 }
@@ -17,7 +17,7 @@ export default function ServicesCards() {
   return (
     <section className="w-full max-w-[1200px] mx-auto  py-16">
       {/* Card 1 */}
-      <div className="grid h-full grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
+      <div className="grid h-auto grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
         <div className="space-y-6">
           <p className="font-['Neue_Montreal:Medium',sans-serif] text-[28px] md:text-[32px] text-white">MarQ Consultancy</p>
           <p className="text-white/70 text-sm md:text-base">Growth strategy consultant for startups and enterprises delivering AI business roadmaps, generative search optimization, and go-to-market execution.</p>
@@ -39,14 +39,14 @@ export default function ServicesCards() {
         </div>
         <NumberBadge value={1} />
         <div>
-          <img src="/images/pillar1.png" alt="Strategy & Digital Transformation" className="w-full max-w-[430px] h-[280px] rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
+          <img src="/images/pillar1.png" alt="Strategy & Digital Transformation" className="w-full h-full  rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
         </div>
       </div>
 
       {/* Card 2 (reverse layout) */}
-      <div className="grid h-[90vh]  grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
+      <div className="grid h-auto grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
         <div>
-          <img src="/images/pillar2.png" alt="Brand + Experience Design" className="w-full max-w-[430px] h-[280px] rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
+          <img src="/images/pillar2.png" alt="Brand + Experience Design" className="w-full h-full rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
         </div>
         <NumberBadge value={2} />
         <div className="space-y-6">
@@ -71,7 +71,7 @@ export default function ServicesCards() {
       </div>
 
       {/* Card 3 */}
-      <div className="grid h-[90vh]  grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
+      <div className="grid h-auto  grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
         <div className="space-y-6">
           <p className="font-['Neue_Montreal:Medium',sans-serif] text-[28px] md:text-[32px] text-white">MarQ Software House</p>
           <p className="text-white/70 text-sm md:text-base">Custom software development company specializing in scalable AI websites, MVP builds, and headless eCommerce.</p>
@@ -93,14 +93,14 @@ export default function ServicesCards() {
         </div>
         <NumberBadge value={3} />
         <div>
-          <img src="/images/pillar3.png" alt="Custom Software & Automation" className="w-full max-w-[430px] h-[280px] rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
+          <img src="/images/pillar3.png" alt="Custom Software & Automation" className="w-full h-full rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
         </div>
       </div>
 
       {/* Card 4 (reverse layout) */}
-      <div className="grid h-[90vh]  grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
+      <div className="grid h-auto grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
         <div>
-          <img src="/images/pillar4.png" alt="Data & Analytics Engineering" className="w-full max-w-[430px] h-[280px] rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
+          <img src="/images/pillar4.png" alt="Data & Analytics Engineering" className="w-full h-full rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
         </div>
         <NumberBadge value={4} />
         <div className="space-y-6">
@@ -125,7 +125,7 @@ export default function ServicesCards() {
       </div>
 
       {/* Card 5 */}
-      <div className="grid h-[90vh]  grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
+      <div className="grid h-auto  grid-cols-[1fr_auto_1fr] gap-12 md:gap-16 items-center">
         <div className="space-y-6">
           <p className="font-['Neue_Montreal:Medium',sans-serif] text-[28px] md:text-[32px] text-white">Offshore Excellence Hub</p>
           <p className="text-white/70 text-sm md:text-base">A globally distributed delivery hub with expert remote teams operating round-the-clock for efficiency and scale.  </p>
@@ -147,7 +147,7 @@ export default function ServicesCards() {
         </div>
         <NumberBadge value={5} />
         <div>
-          <img src="/images/pillar5.png" alt="DevOps, Cloud & Security" className="w-full max-w-[430px] h-[280px] rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
+          <img src="/images/pillar5.png" alt="DevOps, Cloud & Security" className="w-full w-full h-full rounded-[20px] object-cover shadow-[0_0_20px_rgba(0,0,0,0.5)]" />
         </div>
       </div>
     </section>

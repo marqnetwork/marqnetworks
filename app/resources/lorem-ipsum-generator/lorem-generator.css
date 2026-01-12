@@ -1,0 +1,257 @@
+/* Lorem Ipsum Generator Styles */
+
+.lorem-container {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.lorem-hero-section {
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lorem-hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lorem-hero-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #111;
+  border-radius: 999px;
+  padding: 0.25rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.lorem-year {
+  background-color: #39ff14;
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+}
+
+.lorem-tag-text {
+  color: #fff;
+  font-size: 16px;
+}
+
+.lorem-hero-heading {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 400;
+}
+
+.lorem-hero-heading span {
+  background: linear-gradient(90deg, #ccc 0%, #999 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.lorem-hero-subtext {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 800px;
+}
+
+/* Tool Section */
+.lorem-tool-section {
+  padding: 0 2rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.lorem-tool-wrapper {
+  background-color: #111;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+}
+
+.lorem-controls {
+  background-color: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  height: fit-content;
+}
+
+.lorem-control-group {
+  margin-bottom: 1.5rem;
+}
+
+.lorem-control-group label {
+  display: block;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.lorem-select, .lorem-input {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.lorem-select:focus, .lorem-input:focus {
+  border-color: #39ff14;
+}
+
+.lorem-checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.lorem-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #39ff14;
+}
+
+.lorem-btn {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1rem;
+}
+
+.lorem-btn-primary {
+  background-color: #39ff14;
+  color: #000;
+  margin-top: 1rem;
+}
+
+.lorem-btn-primary:hover {
+  background-color: #32e612;
+  transform: translateY(-1px);
+}
+
+.lorem-output-container {
+  position: relative;
+}
+
+.lorem-textarea {
+  width: 100%;
+  min-height: 500px;
+  background-color: #0a0a0a;
+  color: #e5e5e5;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.lorem-copy-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #39ff14;
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lorem-copy-btn:hover {
+  background-color: #32e612;
+}
+
+/* Info Section */
+.lorem-info-section {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.lorem-info-section h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+}
+
+.lorem-info-section h2:first-child {
+  margin-top: 0;
+}
+
+.lorem-info-section p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.lorem-info-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.lorem-info-section li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.lorem-info-section li::before {
+  content: "•";
+  color: #39ff14;
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+  top: -2px;
+}
+
+@media (max-width: 900px) {
+  .lorem-tool-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .lorem-hero-heading {
+    font-size: 2.5rem;
+  }
+}

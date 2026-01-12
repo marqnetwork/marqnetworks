@@ -1,0 +1,252 @@
+/* Word Counter Styles - Matching MarQ Networks Design System */
+
+.wc-container {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.wc-hero-section {
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wc-hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wc-hero-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #111;
+  border-radius: 999px;
+  padding: 0.25rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.wc-year {
+  background-color: #39ff14;
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+}
+
+.wc-tag-text {
+  color: #fff;
+  font-size: 16px;
+}
+
+.wc-hero-heading {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 400;
+}
+
+.wc-hero-heading span {
+  background: linear-gradient(90deg, #ccc 0%, #999 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wc-hero-subtext {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 800px;
+}
+
+/* Tool Section */
+.wc-tool-section {
+  padding: 0 2rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wc-tool-wrapper {
+  background-color: #111;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wc-textarea-container {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.wc-textarea {
+  width: 100%;
+  min-height: 300px;
+  background-color: #0a0a0a;
+  color: #e5e5e5;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+}
+
+.wc-textarea:focus {
+  outline: none;
+  border-color: #39ff14;
+}
+
+.wc-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.wc-stat-card {
+  background-color: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.wc-stat-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(57, 255, 20, 0.3);
+}
+
+.wc-stat-value {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #39ff14;
+  margin-bottom: 0.5rem;
+}
+
+.wc-stat-label {
+  color: #888;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.wc-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.wc-btn {
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.wc-btn-primary {
+  background-color: #39ff14;
+  color: #000;
+}
+
+.wc-btn-primary:hover {
+  background-color: #32e612;
+  transform: translateY(-1px);
+}
+
+.wc-btn-secondary {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wc-btn-secondary:hover {
+  background-color: #333;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Info Section */
+.wc-info-section {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.wc-info-section h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+}
+
+.wc-info-section h2:first-child {
+  margin-top: 0;
+}
+
+.wc-info-section p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.wc-info-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.wc-info-section li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.wc-info-section li::before {
+  content: "•";
+  color: #39ff14;
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+  top: -2px;
+}
+
+@media (max-width: 768px) {
+  .wc-hero-heading {
+    font-size: 2.5rem;
+  }
+  
+  .wc-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .wc-hero-heading {
+    font-size: 2rem;
+  }
+  
+  .wc-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

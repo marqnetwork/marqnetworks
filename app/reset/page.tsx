@@ -3,11 +3,21 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY as string;
-const supabase = createClient(supabaseUrl, supabaseAnonKey, {
-  auth: { persistSession: true, autoRefreshToken: true },
-});
+// Check if environment variables are available before creating the client
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
+
+// Create a dummy client if keys are missing (prevents build failure)
+const supabase = (supabaseUrl && supabaseAnonKey) 
+  ? createClient(supabaseUrl, supabaseAnonKey, {
+      auth: { persistSession: true, autoRefreshToken: true },
+    })
+  : { 
+      auth: { 
+        getSession: async () => ({ data: { session: null }, error: null }),
+        updateUser: async () => ({ error: { message: "Configuration missing" } })
+      } 
+    } as any;
 
 export default function ResetPasswordPage() {
   const [ready, setReady] = useState(false);

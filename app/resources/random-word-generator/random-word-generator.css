@@ -1,0 +1,295 @@
+/* Random Word Generator Styles */
+
+.rwg-container {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.rwg-hero-section {
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rwg-hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rwg-hero-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #111;
+  border-radius: 999px;
+  padding: 0.25rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.rwg-year {
+  background-color: #39ff14;
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+}
+
+.rwg-tag-text {
+  color: #fff;
+  font-size: 16px;
+}
+
+.rwg-hero-heading {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 400;
+}
+
+.rwg-hero-heading span {
+  background: linear-gradient(90deg, #ccc 0%, #999 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rwg-hero-subtext {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 800px;
+}
+
+/* Tool Section */
+.rwg-tool-section {
+  padding: 0 2rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rwg-tool-wrapper {
+  background-color: #0a0a0a;
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-height: 500px;
+}
+
+.rwg-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #111;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rwg-control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 200px;
+}
+
+.rwg-control-group label {
+  color: #888;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.rwg-select, .rwg-input {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.rwg-select:focus, .rwg-input:focus {
+  border-color: #39ff14;
+}
+
+.rwg-btn {
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  font-size: 1rem;
+  background-color: #39ff14;
+  color: #000;
+  box-shadow: 0 4px 15px rgba(57, 255, 20, 0.2);
+  height: 46px;
+  margin-top: auto;
+}
+
+.rwg-btn:hover {
+  background-color: #32e612;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(57, 255, 20, 0.3);
+}
+
+/* Output Area */
+.rwg-output-container {
+  background-color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  min-height: 300px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.rwg-output-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rwg-output-count {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.rwg-copy-btn {
+  background-color: rgba(57, 255, 20, 0.1);
+  color: #39ff14;
+  border: 1px solid rgba(57, 255, 20, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rwg-copy-btn:hover {
+  background-color: #39ff14;
+  color: #000;
+}
+
+.rwg-copy-btn.copied {
+  background-color: #39ff14;
+  color: #000;
+}
+
+.rwg-words-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-content: flex-start;
+}
+
+.rwg-word-card {
+  background-color: #111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  color: #e5e5e5;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.rwg-word-card:hover {
+  border-color: #39ff14;
+  transform: translateY(-2px);
+  background-color: rgba(57, 255, 20, 0.05);
+}
+
+/* Info Section */
+.rwg-info-section {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.rwg-info-section h2 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  margin-top: 3rem;
+  font-weight: 400;
+}
+
+.rwg-info-section h2:first-child {
+  margin-top: 0;
+}
+
+.rwg-info-section p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #a0a0a0;
+}
+
+.rwg-info-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+
+.rwg-info-section li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  color: #a0a0a0;
+}
+
+.rwg-info-section li::before {
+  content: "→";
+  color: #39ff14;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+  top: 2px;
+}
+
+@media (max-width: 768px) {
+  .rwg-hero-heading {
+    font-size: 2.5rem;
+  }
+  
+  .rwg-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .rwg-control-group {
+    width: 100%;
+  }
+  
+  .rwg-btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}

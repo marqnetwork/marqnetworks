@@ -184,6 +184,7 @@ const Navbar = () => {
             <li><a href="/resources/lorem-ipsum-generator">Lorem Ipsum Generator</a></li>
             <li><a href="/resources/comma-separator">Comma Separator</a></li>
             <li><a href="/resources/remove-line-breaks">Remove Line Breaks</a></li>
+            <li><a href="/resources/random-word-generator">Random Word Generator</a></li>
             {/* <li><a href="/resources/facebook-video-downloader">Facebook Video Downloader</a></li> */}
             {/* <li><a href="/resources/ai-instagram-caption-generator">AI Instagram Caption Generator</a></li> */}
           </ul>

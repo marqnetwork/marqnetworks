@@ -11,8 +11,10 @@ export default function LoremGeneratorPage() {
   const [count, setCount] = useState<number>(5);
   const [htmlMarkup, setHtmlMarkup] = useState<boolean>(false);
   const [output, setOutput] = useState<string>("");
+  const [copied, setCopied] = useState(false);
 
   const generateLorem = () => {
+    setCopied(false);
     let result = "";
     const sentences = LOREM_TEXT.split(". ");
     const words = LOREM_TEXT.replace(/[.,]/g, "").split(" ");
@@ -70,6 +72,8 @@ export default function LoremGeneratorPage() {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(output);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
@@ -142,8 +146,11 @@ export default function LoremGeneratorPage() {
 
           {/* Output */}
           <div className="lorem-output-container">
-            <button className="lorem-copy-btn" onClick={handleCopy}>
-              Copy Text
+            <button 
+              className={`lorem-copy-btn ${copied ? "copied" : ""}`} 
+              onClick={handleCopy}
+            >
+              {copied ? "Copied!" : "Copy Text"}
             </button>
             <textarea
               className="lorem-textarea"

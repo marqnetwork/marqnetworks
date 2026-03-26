@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import "./comma-separator.css";
 
-// Comma Separator — MarQ Networks Resource
+// Comma Separator — MarQ Networks Tool
 
 export default function CommaSeparatorPage() {
   const [input, setInput] = useState<string>("");
@@ -61,7 +61,7 @@ export default function CommaSeparatorPage() {
         <div className="cs-hero-container">
           <div className="cs-hero-tag">
             <span className="cs-year">Free Tool</span>
-            <span className="cs-tag-text">Resources</span>
+            <span className="cs-tag-text">Tools</span>
           </div>
 
           <h1 className="cs-hero-heading">

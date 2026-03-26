@@ -10,7 +10,6 @@ function trackEvent(event: string, params?: Record<string, any>) {
     if (typeof window !== "undefined" && (window as any).dataLayer) {
       (window as any).dataLayer.push({ event, ...(params || {}) });
     }
-    console.log("trackEvent", event, params || {});
   } catch {}
 }
 
@@ -73,7 +72,7 @@ export default function FacebookVideoDownloaderPage() {
         <div className="qr-hero-container">
           <div className="qr-hero-tag">
             <span className="qr-year">New</span>
-            <span className="qr-tag-text">Resources</span>
+            <span className="qr-tag-text">Tools</span>
           </div>
           <h1 className="qr-hero-heading" style={{fontSize: "3rem"}}>
             Facebook <span>Video Downloader</span>

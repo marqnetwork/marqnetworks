@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import "./remove-line-breaks.css";
 
-// Remove Line Breaks — MarQ Networks Resource
+// Remove Line Breaks — MarQ Networks Tool
 
 export default function RemoveLineBreaksPage() {
   const [input, setInput] = useState<string>("");
@@ -57,7 +57,7 @@ export default function RemoveLineBreaksPage() {
         <div className="rlb-hero-container">
           <div className="rlb-hero-tag">
             <span className="rlb-year">Free Tool</span>
-            <span className="rlb-tag-text">Resources</span>
+            <span className="rlb-tag-text">Tools</span>
           </div>
 
           <h1 className="rlb-hero-heading">

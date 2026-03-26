@@ -2,7 +2,7 @@
 import { useState, useMemo } from "react";
 import "./word-counter.css";
 
-// Word Counter — MarQ Networks Resource
+// Word Counter — MarQ Networks Tool
 // Features: Word count, character count, paragraph count, sentence count, reading time
 
 export default function WordCounterPage() {
@@ -55,7 +55,7 @@ export default function WordCounterPage() {
         <div className="wc-hero-container">
           <div className="wc-hero-tag">
             <span className="wc-year">Free Tool</span>
-            <span className="wc-tag-text">Resources</span>
+            <span className="wc-tag-text">Tools</span>
           </div>
 
           <h1 className="wc-hero-heading">

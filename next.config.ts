@@ -10,8 +10,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Use default server output to support dynamic routes
-  images: { unoptimized: true },
+  output: "standalone",
+  images: {
+    unoptimized: true,
+    remotePatterns: [
+      { protocol: "https", hostname: "marqnetworks.co" },
+      { protocol: "https", hostname: "www.marqnetworks.co" }
+    ]
+  },
 
   // ✅ This disables Next.js internal type checking during build
   typescript: {

@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import "./random-word-generator.css";
 
-// Random Word Generator — MarQ Networks Resource
+// Random Word Generator — MarQ Networks Tool
 
 type WordCategory = "all" | "nouns" | "verbs" | "adjectives";
 
@@ -99,7 +99,7 @@ export default function RandomWordGeneratorPage() {
         <div className="rwg-hero-container">
           <div className="rwg-hero-tag">
             <span className="rwg-year">Free Tool</span>
-            <span className="rwg-tag-text">Resources</span>
+            <span className="rwg-tag-text">Tools</span>
           </div>
 
           <h1 className="rwg-hero-heading">

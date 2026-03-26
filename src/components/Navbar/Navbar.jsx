@@ -5,26 +5,10 @@ import MarqButton from "../MarqButton/MarqButton";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [resourcesOpen, setResourcesOpen] = useState(false);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleResources = () => setResourcesOpen(!resourcesOpen);
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
   }, [isMenuOpen]);
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (resourcesOpen && !event.target.closest('.navbar__dropdown')) {
-        setResourcesOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [resourcesOpen]);
 
   // Inject chat widget + React scripts
   useEffect(() => {
@@ -145,50 +129,7 @@ const Navbar = () => {
         <li><a href="/digital-growth-solutions">Solutions</a></li>
         <li><a href="/project-case-studies">Portfolio</a></li>
         <li><a href="/blog">Blogs</a></li>
-            <li className="navbar__dropdown">
-          <a
-            href="#"
-            aria-haspopup="menu"
-            aria-expanded={resourcesOpen}
-            aria-controls="navbar-resources-menu"
-            onClick={(e) => { e.preventDefault(); toggleResources(); }}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                toggleResources();
-              }
-              if (e.key === 'Escape') {
-                setResourcesOpen(false);
-              }
-            }}
-          >
-            Resources
-            <svg
-              className={`navbar__caret ${resourcesOpen ? 'navbar__caret--open' : ''}`}
-              width="12"
-              height="12"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
-          <ul id="navbar-resources-menu" role="menu" className={`navbar__dropdown-menu ${resourcesOpen ? 'navbar__dropdown-menu--active' : ''}`}>
-            <li><a href="/qr-code-scanner">QR Scanner</a></li>
-            <li><a href="/qr-generator">QR Generator</a></li>
-            <li><a href="/link-shortener">Link Shortener</a></li>
-            <li><a href="/percentage-calculator">Percentage Calculator</a></li>
-            <li><a href="/resources/roi-calculator">ROI Calculator</a></li>
-            <li><a href="/resources/word-counter">Word Counter</a></li>
-            <li><a href="/resources/lorem-ipsum-generator">Lorem Ipsum Generator</a></li>
-            <li><a href="/resources/comma-separator">Comma Separator</a></li>
-            <li><a href="/resources/remove-line-breaks">Remove Line Breaks</a></li>
-            <li><a href="/resources/random-word-generator">Random Word Generator</a></li>
-            {/* <li><a href="/resources/facebook-video-downloader">Facebook Video Downloader</a></li> */}
-            {/* <li><a href="/resources/ai-instagram-caption-generator">AI Instagram Caption Generator</a></li> */}
-          </ul>
-        </li>
+        <li><a href="/tools">Tools</a></li>
         <li><a href="/contact-marq-networks">Contact</a></li>
       </ul>
 

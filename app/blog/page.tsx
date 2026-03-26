@@ -1,39 +1,28 @@
-'use client'
+ 
 
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import './style.css'
 
-// const filterOptions = ['All'] // You can later add categories here
+export const dynamic = 'force-dynamic'
+export const dynamicParams = true
 
-export default function BlogListPage() {
-  const [posts, setPosts] = useState<any[]>([])
-  const [activeFilter, setActiveFilter] = useState('All')
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const res = await fetch('https://marqnetworks.co/wp-json/wp/v2/posts?_embed')
-      const data = await res.json()
-
-      const postsWithImages = data.map((post: any) => {
-        const featuredImage =
-          post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/images/bir.png'
-
-        return {
-          id: post.id,
-          slug: post.slug,
-          title: post.title.rendered,
-          excerpt: post.excerpt.rendered,
-          featuredImage,
-        }
-      })
-
-      setPosts(postsWithImages)
-    }
-
-    fetchPosts()
-  }, [])
+export default async function BlogListPage() {
+  let posts: any[] = []
+  try {
+    const res = await fetch('https://marqnetworks.co/wp-json/wp/v2/posts?_embed', { cache: 'no-store' })
+    const data = await res.json()
+    posts = (Array.isArray(data) ? data : []).map((post: any) => {
+      const featuredImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/images/bir.png'
+      return {
+        id: post.id,
+        slug: post.slug,
+        title: post.title.rendered,
+        excerpt: post.excerpt.rendered,
+        featuredImage,
+      }
+    })
+  } catch {}
 
   return (
     <main className="bg-black text-white min-h-screen flex flex-col items-center px-4 py-16">

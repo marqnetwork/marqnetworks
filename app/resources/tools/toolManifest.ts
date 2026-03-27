@@ -43,9 +43,6 @@ export const TOOL_IDS = [
   "sitemap-generator",
   "slug-generator",
   "social-media-bio-generator",
-  "sitemap-generator",
-  "slug-generator",
-  "social-media-bio-generator",
   "text-cleaner",
   "text-reverser",
   "text-sorter",
@@ -197,3 +194,44 @@ export const RESOURCES_STATIC_ITEMS: ResourceCardItem[] = [
     category: "Tools",
   },
 ];
+
+export function getAllToolItems() {
+  const staticSlugs = new Set<string>(RESOURCES_STATIC_SLUGS as unknown as string[]);
+  const toolItems = TOOL_IDS.filter((id) => !staticSlugs.has(id)).map((id) =>
+    getToolMeta(id),
+  );
+
+  const all = [...STANDALONE_TOOL_ITEMS, ...RESOURCES_STATIC_ITEMS, ...toolItems];
+  const bySlug = new Map<string, ResourceCardItem>();
+  for (const item of all) {
+    if (!bySlug.has(item.slug)) bySlug.set(item.slug, item);
+  }
+  return Array.from(bySlug.values()).sort((a, b) => a.title.localeCompare(b.title));
+}
+
+function toolTypeFromSlug(slug: string) {
+  const s = slug.toLowerCase();
+  if (s.includes("calculator") || s.includes("roi") || s.includes("tax")) {
+    return "Calculators";
+  }
+  if (s.includes("generator") || s.includes("uuid") || s.includes("slug")) {
+    return "Generators";
+  }
+  if (s.includes("analyzer") || s.includes("audit") || s.includes("checker")) {
+    return "Analyzers";
+  }
+  return "Utilities";
+}
+
+export function getRelatedToolItems(currentSlug: string, limit = 6) {
+  const all = getAllToolItems();
+  const currentType = toolTypeFromSlug(currentSlug);
+
+  const sameType = all.filter(
+    (item) => item.slug !== currentSlug && toolTypeFromSlug(item.slug) === currentType,
+  );
+  const fallback = all.filter((item) => item.slug !== currentSlug);
+
+  const pickFrom = sameType.length >= limit ? sameType : fallback;
+  return pickFrom.slice(0, limit);
+}

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import "../../../src/components/QRGeneratorContent/QRGeneratorContent.css";
+import { RelatedToolsSection } from "../../components/RelatedToolsSection";
 
 function trackEvent(event: string, params?: Record<string, any>) {
   try {
@@ -184,6 +185,8 @@ export default function FacebookVideoDownloaderPage() {
           </div>
         </div>
       </section>
+
+      <RelatedToolsSection currentSlug="facebook-video-downloader" />
     </div>
   );
 }

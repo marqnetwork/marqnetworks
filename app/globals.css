@@ -43,6 +43,82 @@ body {
   font-family: var(--font-dm-sans);
   background-color: black;
 }
+
+.tool-content {
+  width: 100%;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.tool-content .max-w-xl,
+.tool-content .max-w-2xl,
+.tool-content .max-w-3xl,
+.tool-content .max-w-4xl,
+.tool-content .max-w-5xl,
+.tool-content .max-w-6xl {
+  max-width: 100% !important;
+}
+
+.tool-content input,
+.tool-content select,
+.tool-content textarea {
+  width: 100%;
+  padding: 0.85rem 0.9rem;
+  background: #222;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.tool-content textarea {
+  resize: vertical;
+}
+
+.tool-content input:focus,
+.tool-content select:focus,
+.tool-content textarea:focus {
+  outline: none;
+  border-color: #39ff14;
+  box-shadow: 0 0 0 2px rgba(57, 255, 20, 0.2);
+}
+
+.tool-content label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.tool-content button,
+.tool-content a[role="button"] {
+  font-family: inherit;
+}
+
+.tool-content button {
+  background: #39ff14;
+  color: #000;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.tool-content button:hover {
+  opacity: 0.92;
+}
+
+.tool-content button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 div#chat-widget-container p {
     color: black;
 }

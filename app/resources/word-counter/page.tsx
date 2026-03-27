@@ -1,6 +1,7 @@
 "use client";
 import { useState, useMemo } from "react";
 import "./word-counter.css";
+import { RelatedToolsSection } from "../../components/RelatedToolsSection";
 
 // Word Counter — MarQ Networks Tool
 // Features: Word count, character count, paragraph count, sentence count, reading time
@@ -143,6 +144,8 @@ export default function WordCounterPage() {
           <li><strong>Analyze Structure:</strong> Get insights into your writing's complexity and length.</li>
         </ul>
       </section>
+
+      <RelatedToolsSection currentSlug="word-counter" />
     </div>
   );
 }

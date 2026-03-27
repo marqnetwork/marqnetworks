@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import "./roi-calculator.css";
+import { RelatedToolsSection } from "../../components/RelatedToolsSection";
 
 // ROI Calculator — MarQ Networks Resource
 // Stack: Next.js (App Router) + Tailwind + Vanilla JS
@@ -540,6 +541,8 @@ export default function ROICalculatorPage() {
           </div>
         </div>
       </section>
+
+      <RelatedToolsSection currentSlug="roi-calculator" />
     </div>
   );
 }

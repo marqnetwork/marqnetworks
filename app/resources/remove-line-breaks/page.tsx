@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import "./remove-line-breaks.css";
+import { RelatedToolsSection } from "../../components/RelatedToolsSection";
 
 // Remove Line Breaks — MarQ Networks Tool
 
@@ -170,6 +171,8 @@ export default function RemoveLineBreaksPage() {
           <li><strong>Optimize Web Content:</strong> Ensure content fits seamlessly within web templates without excessive breaks.</li>
         </ul>
       </section>
+
+      <RelatedToolsSection currentSlug="remove-line-breaks" />
     </div>
   );
 }

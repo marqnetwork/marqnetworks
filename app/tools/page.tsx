@@ -7,6 +7,8 @@ export const metadata: Metadata = {
     "Explore free tools from MarQ Networks—calculators, generators, analyzers, and utilities.",
 };
 
+export const dynamic = "force-dynamic";
+
 export default function ToolsPage() {
   return <ToolsHubClient />;
 }

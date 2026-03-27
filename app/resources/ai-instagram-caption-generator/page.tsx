@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
 import "./caption-generator.css";
+import { RelatedToolsSection } from "../../components/RelatedToolsSection";
 
 type Tone = "Professional" | "Fun" | "Luxury" | "Inspirational" | "Bold" | "Emotional";
 type Mode = "Business" | "Personal";
@@ -412,6 +413,8 @@ export default function AIInstagramCaptionGeneratorPage() {
           </div>
         </div>
       </section>
+
+      <RelatedToolsSection currentSlug="ai-instagram-caption-generator" />
     </section>
   );
 }

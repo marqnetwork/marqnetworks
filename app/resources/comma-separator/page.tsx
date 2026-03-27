@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import "./comma-separator.css";
+import { RelatedToolsSection } from "../../components/RelatedToolsSection";
 
 // Comma Separator — MarQ Networks Tool
 
@@ -176,6 +177,8 @@ export default function CommaSeparatorPage() {
           <li><strong>Adaptability:</strong> The tool is perfect for SQL queries (IN clauses), array initialization, or CSV formatting.</li>
         </ul>
       </section>
+
+      <RelatedToolsSection currentSlug="comma-separator" />
     </div>
   );
 }

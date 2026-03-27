@@ -7,8 +7,10 @@ export const metadata = {
   },
 };
 
-import dynamic from "next/dynamic";
-const HomeContent = dynamic(() => import("./HomeContent"));
+export const dynamic = "force-dynamic";
+
+import nextDynamic from "next/dynamic";
+const HomeContent = nextDynamic(() => import("./HomeContent"));
 
 export default function HomePage() {
   return <HomeContent />;

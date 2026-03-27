@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import "./lorem-generator.css";
+import { RelatedToolsSection } from "../../components/RelatedToolsSection";
 
 // Lorem Ipsum Generator — MarQ Networks Tool
 
@@ -178,6 +179,8 @@ export default function LoremGeneratorPage() {
           <li><strong>Flexible Options:</strong> Generate words, sentences, paragraphs, or lists with optional HTML tags.</li>
         </ul>
       </section>
+
+      <RelatedToolsSection currentSlug="lorem-ipsum-generator" />
     </div>
   );
 }

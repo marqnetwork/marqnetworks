@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import "./random-word-generator.css";
+import { RelatedToolsSection } from "../../components/RelatedToolsSection";
 
 // Random Word Generator — MarQ Networks Tool
 
@@ -210,6 +211,8 @@ export default function RandomWordGeneratorPage() {
           <strong>Game Development:</strong> For game developers, it's a handy tool to generate random challenges or naming elements.
         </p>
       </section>
+
+      <RelatedToolsSection currentSlug="random-word-generator" />
     </div>
   );
 }

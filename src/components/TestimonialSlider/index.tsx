@@ -61,13 +61,13 @@ const TestimonialSlider = () => {
     {
       id: 4,
       quote:
-        'Karen Swain, President & CEO of Excelus, says marQ Networks turned their unsecured site into a rock-solid, fully rebranded platform—backed by stellar communication and an unwavering partnership that’s become part of their organization’s very fabric.',
+        'Karen Swain, President & CEO of Excelous, says marQ Networks turned their unsecured site into a rock-solid, fully rebranded platform—backed by stellar communication and an unwavering partnership that’s become part of their organization’s very fabric.',
       author: 'Karen Swain',
-      role: 'CEO, Excelus',
+      role: 'CEO, Excelous',
       logo: '/images/texe.png',
       authorImage: '/images/karen.jpg',
       videoUrl: '/images/test4.mp4',
-      linkLabel: 'Excelus',
+      linkLabel: 'Excelous',
       linkUrl: '#',
       leftBg: '#070707',
       rightBg: '#1a1a1a',

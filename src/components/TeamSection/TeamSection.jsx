@@ -37,13 +37,6 @@ const teamMembers = [
     alt: "Maheen Malik, CMO & Junior Partner at MarQ Networks — driving funnel marketing, lead generation services, and AI-powered brand growth",
     linkedin: "#",
   },
-  {
-    name: "Yasir Khan",
-    role: "Head of Media Department",
-    image: "/images/Yasir.png",
-    alt: "Yasir Khan, Head of Media Department at MarQ Networks — leading creative visual campaigns and AI-enhanced content strategy across channels.",
-    linkedin: "#",
-  },
 ];
 
 

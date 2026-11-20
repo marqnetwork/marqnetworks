@@ -37,13 +37,6 @@ const teamMembers = [
     alt: "Maheen Malik, CMO & Junior Partner at MarQ Networks — driving funnel marketing, lead generation services, and AI-powered brand growth",
     linkedin: "#",
   },
-  {
-    name: "Maheen Malik",
-    role: "CMO & Junior Partner",
-    image: "/images/Maheen.png",
-    alt: "Maheen Malik, CMO & Junior Partner at MarQ Networks — driving funnel marketing, lead generation services, and AI-powered brand growth",
-    linkedin: "#",
-  },
 ];
 
 

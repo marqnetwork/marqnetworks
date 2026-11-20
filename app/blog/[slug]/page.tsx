@@ -6,12 +6,14 @@ export const dynamic = 'force-dynamic'
 export const dynamicParams = true
 
 export async function generateStaticParams() {
-  const res = await fetch('https://marqnetworks.co/wp-json/wp/v2/posts?_embed', { cache: 'no-store' })
-  const posts = await res.json()
+  // const res = await fetch('https://marqnetworks.co/wp-json/wp/v2/posts?_embed', { cache: 'no-store' })
+  // const posts = await res.json()
 
-  return posts.map((post: any) => ({
-    slug: post.slug
-  }))
+  // return posts.map((post: any) => ({
+  //   slug: post.slug
+  // }))
+  // Bypass expired API during build
+  return [];
 }
 
 interface BlogPageProps {
